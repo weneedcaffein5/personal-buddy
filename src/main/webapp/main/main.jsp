@@ -6,16 +6,30 @@
 <head>
 <meta charset="UTF-8">
 <title>main</title>
-
+<link rel="stylesheet" href="../assets/css/main/main.css">
 </head>
 <body>
+	<%@ include file="../layout/header.jsp" %>
+	
+
+	<div class="banner-container">
+    	<div class="banner-wrapper">
+        	<img src="../assets/images/main/banner-blue.png" class="banner-slide" alt="배너 1">
+        	<img src="../assets/images/main/banner-green.png" class="banner-slide" alt="배너 2">
+        	<img src="../assets/images/main/banner-yellow.png" class="banner-slide" alt="배너 3">
+        	<img src="../assets/images/main/banner-blue.png" class="banner-slide" alt="배너 1 (복사)">
+    	</div>
+	</div>
+
+
+
 	  <main class="content-wrapper">
-        <!-- 음식 추천 영역 -->
+        <!-- 음식 추천  -->
         <section class="food-recommend">
             <h2>어제 한식을 드셨네요? 오늘 ‘역삼역’에서 점심 이런 메뉴 어때요?!!</h2>
             <div class="food-list">
                 <div class="food-item"> 
-                    <img src="./img/만땅스시.jpg" alt="만땅스시">
+                    <img src="../assets/images/main/만땅스시.jpg" alt="만땅스시">
                     <div class="food-info">
                         <h3 class="restaurant-name">만땅스시 역삼점</h3>
                         <p class="rating">4.0(49)</p>
@@ -25,7 +39,7 @@
                     </div>
                 </div>
                 <div class="food-item"> 
-                    <img src="./img/갓포돈.jpg" alt="갓포돈">
+                    <img src="../assets/images/main/갓포돈.jpg" alt="갓포돈">
                     <div class="food-info">
                         <h3 class="restaurant-name">돈까스마을 역삼점</h3>
                         <p class="rating">4.2(89)</p>
@@ -35,7 +49,7 @@
                     </div>
                 </div>
                 <div class="food-item"> 
-                    <img src="./img/네네치킨 역삼1호점.jpg" alt="네네치킨 역삼 1호점">
+                    <img src="../assets/images/main/갓포돈.jpg" alt="네네치킨 역삼 1호점">
                     <div class="food-info">
                         <h3 class="restaurant-name">스테이크하우스</h3>
                         <p class="rating">4.5(120)</p>
@@ -45,7 +59,7 @@
                     </div>
                 </div>
                 <div class="food-item"> 
-                    <img src="./img/food4.jpg" alt="음식 이미지">
+                    <img src="../assets/images/main/갓포돈.jpg">
                     <div class="food-info">
                         <h3 class="restaurant-name">한식당 청담</h3>
                         <p class="rating">4.3(65)</p>
@@ -57,5 +71,31 @@
             </div>
         </section>
     </main>
+    
+    <!-- 카페 추천-->
+	<section class="cafe-recommend">
+    	<h2>카페에 가실 예정이시네요!</h2>
+    	<p>스터디에 최적화된 카페 몇 군데를 찾아보았어요</p>
+    
+    	<div class="cafe-list">
+        	<div class="cafe-item">
+            	<img src="../assets/images/cafe/cafe1.jpg" alt="카페인사이드">
+            	<div class="cafe-info">
+                	<div class="cafe-tag">스터디 카페</div>
+                	<h3 class="cafe-title">조용한 분위기의 공부 잘되는 카페!</h3>
+                	<p class="cafe-name">카페인사이드</p>
+                	<p class="cafe-rating">4.4(69) <span class="cafe-price">· ₩1~10,000 · 카페</span></p>
+                	<p class="cafe-location">도곡로3길 27</p>
+            	</div>
+        	</div>
+    	</div>
+</section>
+    
 </body>
+
+
+
+
+
+
 </html>
