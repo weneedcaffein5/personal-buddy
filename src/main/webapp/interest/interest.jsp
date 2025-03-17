@@ -12,7 +12,7 @@
             반영하여, 일정과 추천 콘텐츠를 더욱 편리하게<br> 
             제공해드릴게요.
         </div>
-        <img src="/img/personalBody_logo 1.png" alt="로고 이미지" class="logo-img">
+        <img src="../assets/images/interest/logo.png" alt="로고 이미지" class="logo-img">
         <button class="start-btn">시작하기</button>
     </div>
 </body>
