@@ -6,11 +6,24 @@
 <head>
 <meta charset="UTF-8">
 <title>main</title>
-<link rel="stylesheet" href="../assets/css/main/header4.css">
+<link rel="stylesheet" href="../assets/css/main/main.css">
 </head>
 <body>
+	<%@ include file="../layout/header.jsp" %>
+	
+
+	<div class="banner-container">
+	
+    	<div class="banner-wrapper">
+        	<img src="../assets/images/main/banner-blue.png" class="banner-slide" alt="배너 1">
+        	<img src="../assets/images/main/banner-green.png" class="banner-slide" alt="배너 2">
+        	<img src="../assets/images/main/banner-yellow.png" class="banner-slide" alt="배너 3">
+    	</div>
+	</div>
+
+
 	  <main class="content-wrapper">
-        <!-- 음식 추천 영역 -->
+        <!-- 음식 추천  -->
         <section class="food-recommend">
             <h2>어제 한식을 드셨네요? 오늘 ‘역삼역’에서 점심 이런 메뉴 어때요?!!</h2>
             <div class="food-list">
@@ -58,4 +71,23 @@
         </section>
     </main>
 </body>
+<script>
+    let index = 0;
+    const bannerWrapper = document.querySelector(".banner-wrapper");
+    const slides = document.querySelectorAll(".banner-slide");
+    const totalSlides = slides.length; 
+
+    function slideBanner() {
+        index = (index + 1) % totalSlides; 
+        console.log("슬라이드 변경:", index); 
+        bannerWrapper.style.transform = `translateX(${-index * 100}%)`;
+    }
+
+    setInterval(slideBanner, 2000);
+</script>
+
+
+
+
+
 </html>
