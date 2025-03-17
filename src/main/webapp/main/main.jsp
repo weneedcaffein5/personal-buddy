@@ -13,13 +13,14 @@
 	
 
 	<div class="banner-container">
-	
     	<div class="banner-wrapper">
         	<img src="../assets/images/main/banner-blue.png" class="banner-slide" alt="배너 1">
         	<img src="../assets/images/main/banner-green.png" class="banner-slide" alt="배너 2">
         	<img src="../assets/images/main/banner-yellow.png" class="banner-slide" alt="배너 3">
+        	<img src="../assets/images/main/banner-blue.png" class="banner-slide" alt="배너 1 (복사)">
     	</div>
 	</div>
+
 
 
 	  <main class="content-wrapper">
@@ -70,21 +71,28 @@
             </div>
         </section>
     </main>
+    
+    <!-- 카페 추천-->
+	<section class="cafe-recommend">
+    	<h2>카페에 가실 예정이시네요!</h2>
+    	<p>스터디에 최적화된 카페 몇 군데를 찾아보았어요</p>
+    
+    	<div class="cafe-list">
+        	<div class="cafe-item">
+            	<img src="../assets/images/cafe/cafe1.jpg" alt="카페인사이드">
+            	<div class="cafe-info">
+                	<div class="cafe-tag">스터디 카페</div>
+                	<h3 class="cafe-title">조용한 분위기의 공부 잘되는 카페!</h3>
+                	<p class="cafe-name">카페인사이드</p>
+                	<p class="cafe-rating">4.4(69) <span class="cafe-price">· ₩1~10,000 · 카페</span></p>
+                	<p class="cafe-location">도곡로3길 27</p>
+            	</div>
+        	</div>
+    	</div>
+</section>
+    
 </body>
-<script>
-    let index = 0;
-    const bannerWrapper = document.querySelector(".banner-wrapper");
-    const slides = document.querySelectorAll(".banner-slide");
-    const totalSlides = slides.length; 
 
-    function slideBanner() {
-        index = (index + 1) % totalSlides; 
-        console.log("슬라이드 변경:", index); 
-        bannerWrapper.style.transform = `translateX(${-index * 100}%)`;
-    }
-
-    setInterval(slideBanner, 2000);
-</script>
 
 
 
