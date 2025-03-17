@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>main</title>
-
+<link rel="stylesheet" href="../assets/css/main/header4.css">
 </head>
 <body>
 	  <main class="content-wrapper">
@@ -15,7 +15,7 @@
             <h2>어제 한식을 드셨네요? 오늘 ‘역삼역’에서 점심 이런 메뉴 어때요?!!</h2>
             <div class="food-list">
                 <div class="food-item"> 
-                    <img src="./img/만땅스시.jpg" alt="만땅스시">
+                    <img src="../assets/images/main/만땅스시.jpg" alt="만땅스시">
                     <div class="food-info">
                         <h3 class="restaurant-name">만땅스시 역삼점</h3>
                         <p class="rating">4.0(49)</p>
@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="food-item"> 
-                    <img src="./img/갓포돈.jpg" alt="갓포돈">
+                    <img src="../assets/images/main/갓포돈.jpg" alt="갓포돈">
                     <div class="food-info">
                         <h3 class="restaurant-name">돈까스마을 역삼점</h3>
                         <p class="rating">4.2(89)</p>
@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 <div class="food-item"> 
-                    <img src="./img/네네치킨 역삼1호점.jpg" alt="네네치킨 역삼 1호점">
+                    <img src="../assets/images/main/갓포돈.jpg" alt="네네치킨 역삼 1호점">
                     <div class="food-info">
                         <h3 class="restaurant-name">스테이크하우스</h3>
                         <p class="rating">4.5(120)</p>
@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div class="food-item"> 
-                    <img src="./img/food4.jpg" alt="음식 이미지">
+                    <img src="../assets/images/main/갓포돈.jpg">
                     <div class="food-info">
                         <h3 class="restaurant-name">한식당 청담</h3>
                         <p class="rating">4.3(65)</p>
