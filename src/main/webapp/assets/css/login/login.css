@@ -1,5 +1,13 @@
 @charset "UTF-8";
 /* styles.css */
+/* 전체 페이지에서 드래그 방지 */
+body, html {
+    user-select: none; /* 텍스트 드래그 방지 */
+    -webkit-user-select: none; /* 크롬, 사파리 */
+    -moz-user-select: none; /* 파이어폭스 */
+    -ms-user-select: none; /* 인터넷 익스플로러 */
+}
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -90,6 +98,9 @@ body {
 .input-group input.filled {
     border-color: #01CD74; /* 초록색 테두리 유지 */
 }
+.input-group input:not(.filled) {
+    border-color: #5a6268; /* 초록색 테두리 유지 */
+}
 
 /* 로그인 버튼 기본 스타일 */
 .login-btn {
@@ -146,4 +157,14 @@ body {
 /* 입력 취소 아이콘 */
 .clear-input {
     right: 10px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    cursor: pointer;
 }
