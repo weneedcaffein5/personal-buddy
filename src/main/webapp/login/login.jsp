@@ -7,29 +7,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Buddy 로그인</title>
-    <link rel="stylesheet" href="./css/login-main.css">
+    <link rel="stylesheet" href="../assets/css/login/login.css">
 </head>
 <body>
-    <img src="./image/project-logo-check.png" alt="Personal Buddy 로고" class="logo">
+    <img src="../assets/images/login/logo-login.png" alt="Personal Buddy 로고" class="logo">
     <div class="login-container">
         <form action="login.jsp" method="POST">
             <div class="input-group">
                 <label for="email">이메일</label>
                 <div class="input-wrapper">
                     <input type="email" id="email" name="email" required>
-                    <img src="./image/login-input-cancel-icon.png" alt="입력 취소" class="clear-input" onclick="clearInput('email')">
+                    <img src="../assets/images/login/login-input-cancel-icon.png" alt="입력 취소" class="clear-input" onclick="clearInput('email')">
                 </div>
             </div>
             <div class="input-group">
                 <label for="password">비밀번호</label>
                 <div class="input-wrapper">
                     <input type="password" id="password" name="password" required>
-                    <img src="./image/login-input-cancel-icon.png" alt="입력 취소" class="clear-input" onclick="clearInput('password')">
-                    <img src="./image/see-password-icon-false.png" alt="비밀번호 보기" class="toggle-password" onclick="togglePassword()">
+                    <img src="../assets/images/login/login-input-cancel-icon.png" alt="입력 취소" class="clear-input" onclick="clearInput('password')">
+                    <img src="../assets/images/login/see-password-icon-false.png" alt="비밀번호 보기" class="toggle-password" onclick="togglePassword()">
                 </div>
             </div>
             <div class="remember-me">
-                <img src="./image/checkbox-icon-false.png" alt="로그인 상태 유지" class="checkbox-icon" onclick="toggleCheckbox(this)">
+                <img src="../assets/images/login/checkbox-icon-false.png" alt="로그인 상태 유지" class="checkbox-icon" onclick="toggleCheckbox(this)">
                 로그인 상태 유지
             </div>
             <button type="submit" class="login-btn" disabled>로그인</button>
@@ -46,10 +46,10 @@
             
             if (passwordInput.type === "password") {
                 passwordInput.type = "text";
-                toggleIcon.src = "./image/see-password-icon-true.png";
+                toggleIcon.src = "../assets/images/login/see-password-icon-true.png";
             } else {
                 passwordInput.type = "password";
-                toggleIcon.src = "./image/see-password-icon-false.png";
+                toggleIcon.src = "../assets/images/login/see-password-icon-false.png";
             }
         }
         
@@ -60,9 +60,9 @@
         
         function toggleCheckbox(icon) {
             if (icon.src.includes("checkbox-icon-false.png")) {
-                icon.src = "./image/checkbox-icon-true.png";
+                icon.src = "../assets/images/login/checkbox-icon-true.png";
             } else {
-                icon.src = "./image/checkbox-icon-false.png";
+                icon.src = "../assets/images/login/checkbox-icon-false.png";
             }
         }
     </script>
