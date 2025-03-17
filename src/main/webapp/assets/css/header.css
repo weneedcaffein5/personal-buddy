@@ -1,1 +1,38 @@
 @charset "UTF-8";
+
+.header-container {
+	width: 100vw;
+	max-width: 1920px;
+	height: 90px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.header-wrapper {
+	max-width: 1400px;
+    width: calc(100% - 520px);
+	height: 90px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 260px 0 260px;
+}
+.header-wrapper a {
+	width: 80px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size : 18px;
+    color: #000;
+	text-decoration: none;
+    margin: 0 40px 0 0;
+}
+
+.leftheader {
+	display: flex;
+}
+
+.rightheader {
+	display: flex;
+}
