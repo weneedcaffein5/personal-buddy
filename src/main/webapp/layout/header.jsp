@@ -10,15 +10,15 @@
 <body>
 	<div class="header-container">
         <div class="header-wrapper">
-            <a href="#" class="logo"><img src="assets/images/logo.png" alt="로고"></a>
-            <div class="header1">
+            <div class="leftheader">
+            	<a href="#" class="logo"><img src="assets/images/logo.png" alt="로고"></a>
                 <a href="#">일정 관리</a>
                 <a href="#">컨텐츠</a>
                 <a href="#">이벤트</a>
                 <a href="#">커뮤니티</a>
                 <a href="#">고객센터</a>
             </div>
-            <div class="auth">
+            <div class="rightheader">
                 <a href="#">회원가입</a>
                 <a href="#">로그인</a>
             </div>
