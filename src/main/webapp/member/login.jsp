@@ -6,8 +6,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Buddy 로그인</title>
     <link rel="stylesheet" href="../assets/css/member/login.css">
+    <title>Personal Buddy 로그인</title>
 </head>
 <body>
     <img src="../assets/images/member/logo-login.png" alt="Personal Buddy 로고" class="logo">
