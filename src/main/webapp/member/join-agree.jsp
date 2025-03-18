@@ -11,9 +11,9 @@
 	<div id="agree-container">
 		<img src="../assets/images/member/logo-login.png" alt="Personal Buddy 로고" class="logo">			
 		<div class="wrapper">
-			<form action="join-agree.member" method="post">
+			<form action="join-write.member" method="post">
 				<div class="wrapper">
-					<input type="hidden" class="agree-all" name="agreeAll" value="false" required/>
+					<input type="hidden" class="agree-all" name="agreeAll" value="false"/>
 					<img src="../assets/images/member/checkbox-icon-false.png" alt="체크박스" id="check-all" class="checkbox" onclick="toggleCheckbox(this)">
                 	<span onclick="toggleCheckbox(document.getElementById('check-all'))">전체 동의</span>
                 	<p>실명 인증된 아이디로 가입, 위치기반서비스 이용약관 (필수), 이벤트・혜택 정보 수신 (선택) 동의를 포함합니다.</p>

@@ -40,11 +40,11 @@
                 <img src="../assets/images/member/checkbox-icon-false.png" alt="로그인 상태 유지" class="checkbox-icon" onclick="toggleCheckbox(this)">
                 <span onclick="toggleCheckbox(document.querySelector('.checkbox-icon'))">로그인 상태 유지</span>
             </div>
-            <button type="submit" class="login-btn" disabled>로그인</button>
+            <button class="login-btn" disabled>로그인</button>
         </form>
     </div>
 	<div class="links">
-            <a href="#">아이디 찾기</a> | <a href="#">비밀번호 찾기</a> | <a href="#">회원가입</a>
+            <a href="#">아이디 찾기</a> | <a href="#">비밀번호 찾기</a> | <a href="join-agree.jsp">회원가입</a>
     </div>
     
     <script>
