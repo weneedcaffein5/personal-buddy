@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Buddy 로그인</title>
-    <link rel="stylesheet" href="../assets/css/login/login.css">
+    <link rel="stylesheet" href="../assets/css/member/login.css">
 </head>
 <body>
-    <img src="../assets/images/login/logo-login.png" alt="Personal Buddy 로고" class="logo">
+    <img src="../assets/images/member/logo-login.png" alt="Personal Buddy 로고" class="logo">
     <div class="login-container">
     	<div class="login-select">
     		<span style="border-radius: 0px 30px 0px 0px;">아이디 로그인</span>
@@ -25,19 +25,19 @@
                 <div class="input-wrapper">
                     <input type="email" id="email" name="email" required onfocus="handleLabel('email', true)" onblur="handleLabel('email', false)" oninput="checkValue('email')">
 			        <label for="email" class="floating-label">이메일</label>
-			        <img src="../assets/images/login/login-input-cancel-icon.png" alt="입력 취소" class="clear-input" onclick="clearInput('email')">
+			        <img src="../assets/images/member/login-input-cancel-icon.png" alt="입력 취소" class="clear-input" onclick="clearInput('email')">
                 </div>
             </div>
             <div class="input-group">
                 <div class="input-wrapper">
                     <input type="password" id="password" name="password" required onfocus="handleLabel('password', true)" onblur="handleLabel('password', false)" oninput="checkValue('password')">
 			        <label for="password" class="floating-label">비밀번호</label>
-			        <img src="../assets/images/login/login-input-cancel-icon.png" alt="입력 취소" class="clear-input" onclick="clearInput('password')">
-			        <img src="../assets/images/login/see-password-icon-false.png" alt="비밀번호 보기" class="toggle-password" onclick="togglePassword()">
+			        <img src="../assets/images/member/login-input-cancel-icon.png" alt="입력 취소" class="clear-input" onclick="clearInput('password')">
+			        <img src="../assets/images/member/see-password-icon-false.png" alt="비밀번호 보기" class="toggle-password" onclick="togglePassword()">
                 </div>
             </div>
             <div class="remember-me" >
-                <img src="../assets/images/login/checkbox-icon-false.png" alt="로그인 상태 유지" class="checkbox-icon" onclick="toggleCheckbox(this)">
+                <img src="../assets/images/member/checkbox-icon-false.png" alt="로그인 상태 유지" class="checkbox-icon" onclick="toggleCheckbox(this)">
                 <span onclick="toggleCheckbox(document.querySelector('.checkbox-icon'))">로그인 상태 유지</span>
             </div>
             <button type="submit" class="login-btn" disabled>로그인</button>
@@ -85,10 +85,10 @@
         
         if (passwordInput.type === "password") {
             passwordInput.type = "text";
-            toggleIcon.src = "../assets/images/login/see-password-icon-true.png";
+            toggleIcon.src = "../assets/images/member/see-password-icon-true.png";
         } else {
             passwordInput.type = "password";
-            toggleIcon.src = "../assets/images/login/see-password-icon-false.png";
+            toggleIcon.src = "../assets/images/member/see-password-icon-false.png";
         }
     }
     
@@ -104,9 +104,9 @@
     
     function toggleCheckbox(icon) {
         if (icon.src.includes("checkbox-icon-false.png")) {
-            icon.src = "../assets/images/login/checkbox-icon-true.png";
+            icon.src = "../assets/images/member/checkbox-icon-true.png";
         } else {
-            icon.src = "../assets/images/login/checkbox-icon-false.png";
+            icon.src = "../assets/images/member/checkbox-icon-false.png";
         }
     }
 	</script>
