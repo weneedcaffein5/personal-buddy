@@ -15,6 +15,7 @@
 
 	<div class="banner-container">	
     	<div class="banner-wrapper">
+    	<a href="#" class="banner-slide">
     		<div class="banner-slide">
         		<img src="../assets/images/main/banner-blue.png" class="banner-slide" alt="배너 1">
         		<div class="banner-text">
@@ -22,6 +23,9 @@
         			<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
     			</div>
     		</div>
+    		</a>
+    		
+    		<a href="#" class="banner-slide">
     		<div class="banner-slide">
         		<img src="../assets/images/main/banner-green.png" class="banner-slide" alt="배너 2">
         		<div class="banner-text">
@@ -29,6 +33,9 @@
         			<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
     			</div>
     		</div>
+    		</a>
+    		
+    		<a href="#" class="banner-slide">
     		<div class="banner-slide">
         		<img src="../assets/images/main/banner-yellow.png" class="banner-slide" alt="배너 3">
         		<div class="banner-text">
@@ -36,6 +43,9 @@
         			<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
     			</div>
     		</div>
+    		</a>
+    		
+    		<a href="#" class="banner-slide">
     		<div class="banner-slide">
         		<img src="../assets/images/main/banner-blue.png" class="banner-slide" alt="배너 1(복사)">
         		<div class="banner-text">
@@ -43,7 +53,14 @@
         			<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
     			</div>
     		</div> 
+    		</a>
     	</div>
+    	 	
+    	  <button class="banner-button" id="buttonSlide">&lt;</button>
+    <div class="banner-counter">
+        <span id="current-slide">1</span> / <span id="total-slides">3</span>
+    </div>
+    <button class="banner-button-next" id="nextSlide">&gt;</button>	
 	</div>
 
 
@@ -170,40 +187,79 @@
     </div>
 </section>
     
-	
-
-
-
 
 </body>
 <script>
 
+/* 배너 슬라이드 버튼 */
 document.addEventListener("DOMContentLoaded", function () {
-    const placeItems = document.querySelectorAll(".place-item");
-    const placeDetails = document.querySelector(".place-details");
+    const slides = document.querySelector(".banner-wrapper"); 
+    const slideItems = document.querySelectorAll(".banner-slide"); 
+    const totalSlides = slideItems.length - 1; // 마지막 슬라이드 제외
+    const prevButton = document.getElementById("buttonSlide");
+    const nextButton = document.getElementById("nextSlide");
+    const currentSlideText = document.getElementById("current-slide");
+    const totalSlidesText = document.getElementById("total-slides");
 
-    placeItems.forEach(item => {
-		item.addEventListener("click", function () {     
-			placeItems.forEach(i => i.classList.remove("active"));
-            this.classList.add("active");
-            
-            const placeName = this.querySelector(".place-name").textContent;
-            const placeSub = this.querySelector(".place-sub").textContent;
-            const placeRating = this.querySelector(".place-rating").textContent;
-            const placeLocation = this.querySelector(".place-location").textContent;
-            const placeImg = this.querySelector("img").src;
-          
-            placeDetails.innerHTML = `<img src="${placeImg}" alt="${placeName}">
-                <h3>${placeName}</h3>
-                <p>${placeSub}</p>
-                <p>${placeRating}</p>
-                <p>${placeLocation}</p>`;
-                
-            placeDetails.classList.add("active");
-        });
+    let currentIndex = 0;
+    totalSlidesText.textContent = totalSlides; 
+
+    function updateSlide() {
+        slides.style.transition = "transform 0.5s ease-in-out";
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`; 
+        currentSlideText.textContent = currentIndex + 1; 
+
+        // 첫 번째 슬라이드면 이전 버튼 비활성화
+        prevButton.disabled = (currentIndex === 0);
+        // 마지막 슬라이드면 다음 버튼 비활성화
+        nextButton.disabled = (currentIndex === totalSlides - 1);
+    }
+
+    prevButton.addEventListener("click", function () {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateSlide();
+        }
     });
+
+    nextButton.addEventListener("click", function () {
+        if (currentIndex < totalSlides - 1) {
+            currentIndex++;
+            updateSlide();
+        }
+    });
+
+    updateSlide(); 
 });
 
+
+	
+
+
+/* 장소 추천 */
+document.addEventListener("click", function (event) {
+    const clickedItem = event.target.closest(".place-item");
+    if (!clickedItem) return;
+
+    const placeDetails = document.querySelector(".place-details");
+    
+    document.querySelectorAll(".place-item").forEach(i => i.classList.remove("active"));
+    clickedItem.classList.add("active");
+    
+    const placeName = clickedItem.querySelector(".place-name").textContent;
+    const placeSub = clickedItem.querySelector(".place-sub").textContent;
+    const placeRating = clickedItem.querySelector(".place-rating").textContent;
+    const placeLocation = clickedItem.querySelector(".place-location").textContent;
+    const placeImg = clickedItem.querySelector("img").src;
+  
+    placeDetails.innerHTML = `<img src="${placeImg}" alt="${placeName}">
+        <h3>${placeName}</h3>
+        <p>${placeSub}</p>
+        <p>${placeRating}</p>
+        <p>${placeLocation}</p>`;
+
+    placeDetails.classList.add("active");
+});
 
 </script>
 
