@@ -13,11 +13,36 @@
 	
 
 	<div class="banner-container">
+	
     	<div class="banner-wrapper">
-        	<img src="../assets/images/main/banner-blue.png" class="banner-slide" alt="배너 1">
-        	<img src="../assets/images/main/banner-green.png" class="banner-slide" alt="배너 2">
-        	<img src="../assets/images/main/banner-yellow.png" class="banner-slide" alt="배너 3">
-        	<img src="../assets/images/main/banner-blue.png" class="banner-slide" alt="배너 1 (복사)">
+    		<div class="banner-slide">
+        		<img src="../assets/images/main/banner-blue.png" class="banner-slide" alt="배너 1">
+        		<div class="banner-text">
+        			<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
+        			<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
+    			</div>
+    		</div>
+    		<div class="banner-slide">
+        		<img src="../assets/images/main/banner-green.png" class="banner-slide" alt="배너 2">
+        		<div class="banner-text">
+        			<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
+        			<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
+    			</div>
+    		</div>
+    		<div class="banner-slide">
+        		<img src="../assets/images/main/banner-yellow.png" class="banner-slide" alt="배너 3">
+        		<div class="banner-text">
+        			<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
+        			<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
+    			</div>
+    		</div>
+    		<div class="banner-slide">
+        		<img src="../assets/images/main/banner-blue.png" class="banner-slide" alt="배너 1(복사)">
+        		<div class="banner-text">
+        			<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
+        			<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
+    			</div>
+    		</div> 
     	</div>
 	</div>
 
@@ -49,7 +74,7 @@
                     </div>
                 </div>
                 <div class="food-item"> 
-                    <img src="../assets/images/main/갓포돈.jpg" alt="네네치킨 역삼 1호점">
+                    <img src="../assets/images/main/스테이크하우스.jpg" alt="스테이크하우스">
                     <div class="food-info">
                         <h3 class="restaurant-name">스테이크하우스</h3>
                         <p class="rating">4.5(120)</p>
@@ -59,7 +84,7 @@
                     </div>
                 </div>
                 <div class="food-item"> 
-                    <img src="../assets/images/main/갓포돈.jpg">
+                    <img src="../assets/images/main/한식당청담.jpg" alt="한식당 청담">
                     <div class="food-info">
                         <h3 class="restaurant-name">한식당 청담</h3>
                         <p class="rating">4.3(65)</p>
@@ -92,10 +117,6 @@
 </section>
     
 </body>
-
-
-
-
 
 
 </html>
