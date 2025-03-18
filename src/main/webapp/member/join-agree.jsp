@@ -11,12 +11,12 @@
 	<div id="agree-container">
 		<img src="../assets/images/member/logo-login.png" alt="Personal Buddy 로고" class="logo">			
 		<div class="wrapper">
-			<form action="join-agree.jsp">
+			<form action="join-agree.member" method="post">
 				<div class="wrapper">
 					<input type="hidden" class="agree-all" name="agreeAll" value="false" required/>
 					<img src="../assets/images/member/checkbox-icon-false.png" alt="체크박스" id="check-all" class="checkbox" onclick="toggleCheckbox(this)">
                 	<span onclick="toggleCheckbox(document.getElementById('check-all'))">전체 동의</span>
-                	<p>실명 인증된 아이디로 가입, 위치기반서비스 이용약관(선택), 이벤트・혜택 정보 수신(선택) 동의를 포함합니다.</p>
+                	<p>실명 인증된 아이디로 가입, 위치기반서비스 이용약관 (필수), 이벤트・혜택 정보 수신 (선택) 동의를 포함합니다.</p>
 				</div>
 				<div class="wrapper">
 					<input type="hidden" class="agree-service" name="agreeService" value="false" required/>
@@ -107,7 +107,7 @@
 				<div class="wrapper">
 					<input type="hidden" class="agree-location" name="agreeLocation" value="false"/>
 					<img src="../assets/images/member/checkbox-icon-false.png" alt="체크박스" id="check-location" class="checkbox" onclick="toggleCheckbox(this)">
-					<span class="text-optional">[선택]</span>
+					<span class="text-essential">[필수]</span>
                 	<span onclick="toggleCheckbox(document.getElementById('check-location'))">위치기반 서비스 이용약관</span>
                 	<p>
                 	위치기반서비스 이용 동의<br /><br />
@@ -177,7 +177,7 @@
 	        			img.src = "../assets/images/member/checkbox-icon-false.png";
 	        		});
 	        		inputs.forEach(input => {
-		        			input.value = false;
+	        			input.value = false;
 	        		});
 	        		break;
 	        	case "check-service":
@@ -195,10 +195,30 @@
 	        }
 	    }
 	    
+	    const nextButton = document.querySelector(".next-btn");
+	    
+	    if (checkInputs()) {
+	    	nextButton.classList.add("active");
+	    	nextButton.removeAttribute("disabled");
+        } else {
+        	nextButton.classList.remove("active");
+            nextButton.setAttribute("disabled", "true");
+        }
 	}
 	
-	checkInputs = () => {
+	function checkInputs(){
+		 const inputs = document.querySelectorAll("#agree-container input");
+		 let check = true;
+		 
+		inputs.forEach(input => {
+			if(input.className != "agree-all"){
+				if(input.value === "false"){
+					check = false;
+				}
+			}
+		});
 		
+		return check;
 	}
 </script>
 </html>
