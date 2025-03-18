@@ -5,8 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="../assets/css/mypage/mypage-main.css" />
 <link rel="stylesheet" type="text/css" href="../assets/css/global.css" />
+<link rel="stylesheet" type="text/css" href="../assets/css/mypage/mypage-main.css" />
 <title>Insert title here</title>
 </head>
 <body>
