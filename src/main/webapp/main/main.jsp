@@ -12,21 +12,49 @@
 	<%@ include file="../layout/header.jsp" %>
 	
 
-	<div class="banner-container">
+	<div class="banner-container">	
     	<div class="banner-wrapper">
-        	<img src="../assets/images/main/banner-blue.png" class="banner-slide" alt="배너 1">
-        	<img src="../assets/images/main/banner-green.png" class="banner-slide" alt="배너 2">
-        	<img src="../assets/images/main/banner-yellow.png" class="banner-slide" alt="배너 3">
-        	<img src="../assets/images/main/banner-blue.png" class="banner-slide" alt="배너 1 (복사)">
+    		<div class="banner-slide">
+        		<img src="../assets/images/main/banner-blue.png" class="banner-slide" alt="배너 1">
+        		<div class="banner-text">
+        			<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
+        			<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
+    			</div>
+    		</div>
+    		<div class="banner-slide">
+        		<img src="../assets/images/main/banner-green.png" class="banner-slide" alt="배너 2">
+        		<div class="banner-text">
+        			<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
+        			<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
+    			</div>
+    		</div>
+    		<div class="banner-slide">
+        		<img src="../assets/images/main/banner-yellow.png" class="banner-slide" alt="배너 3">
+        		<div class="banner-text">
+        			<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
+        			<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
+    			</div>
+    		</div>
+    		<div class="banner-slide">
+        		<img src="../assets/images/main/banner-blue.png" class="banner-slide" alt="배너 1(복사)">
+        		<div class="banner-text">
+        			<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
+        			<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
+    			</div>
+    		</div> 
     	</div>
 	</div>
 
+
+	<div>
+		<h2>캘린더</h2>
+	</div>
 
 
 	  <main class="content-wrapper">
         <!-- 음식 추천  -->
         <section class="food-recommend">
-            <h2>어제 한식을 드셨네요? 오늘 ‘역삼역’에서 점심 이런 메뉴 어때요?!!</h2>
+            <p class="title"> 어제 한식을 드셨네요? 오늘 ‘역삼역’에서 점심 이런 메뉴 어때요?!!</p>
             <div class="food-list">
                 <div class="food-item"> 
                     <img src="../assets/images/main/만땅스시.jpg" alt="만땅스시">
@@ -49,7 +77,7 @@
                     </div>
                 </div>
                 <div class="food-item"> 
-                    <img src="../assets/images/main/갓포돈.jpg" alt="네네치킨 역삼 1호점">
+                    <img src="../assets/images/main/스테이크하우스.jpg" alt="스테이크하우스">
                     <div class="food-info">
                         <h3 class="restaurant-name">스테이크하우스</h3>
                         <p class="rating">4.5(120)</p>
@@ -59,7 +87,7 @@
                     </div>
                 </div>
                 <div class="food-item"> 
-                    <img src="../assets/images/main/갓포돈.jpg">
+                    <img src="../assets/images/main/한식당청담.jpg" alt="한식당 청담">
                     <div class="food-info">
                         <h3 class="restaurant-name">한식당 청담</h3>
                         <p class="rating">4.3(65)</p>
@@ -72,30 +100,45 @@
         </section>
     </main>
     
-    <!-- 카페 추천-->
-	<section class="cafe-recommend">
-    	<h2>카페에 가실 예정이시네요!</h2>
-    	<p>스터디에 최적화된 카페 몇 군데를 찾아보았어요</p>
-    
-    	<div class="cafe-list">
-        	<div class="cafe-item">
-            	<img src="../assets/images/cafe/cafe1.jpg" alt="카페인사이드">
-            	<div class="cafe-info">
-                	<div class="cafe-tag">스터디 카페</div>
-                	<h3 class="cafe-title">조용한 분위기의 공부 잘되는 카페!</h3>
-                	<p class="cafe-name">카페인사이드</p>
-                	<p class="cafe-rating">4.4(69) <span class="cafe-price">· ₩1~10,000 · 카페</span></p>
-                	<p class="cafe-location">도곡로3길 27</p>
-            	</div>
-        	</div>
-    	</div>
+    <section class="place-recommend">
+    <p class="place-title1">카페에 가실 예정이시네요!</p>
+    <p class="place-title2">스터디에 최적화된 카페 몇 군데를 찾아보았어요</p>
+
+    <div class="place-list">
+        <div class="place-item">
+            <div class="place-hover"></div> 
+            <img src="../assets/images/main/카페사진1.png" alt="카페사진1">
+            <div class="place-info">
+                <h3 class="place-name">조용한 분위기의 공부 잘되는 카페!</h3>
+                <p class="place-sub">카페인사이드</p>
+                <p class="place-rating">4.4(69) <span class="place-price">· ₩1~10,000 · 카페</span></p>
+                <p class="place-location">도곡로3길 27</p>
+            </div>
+        </div>
+
+        <div class="place-item">
+            <div class="place-hover"></div>
+            <img src="../assets/images/main/카페사진2.png" alt="지오바네커피">
+            <div class="place-info">
+                <h3 class="place-name">라떼가 맛있는 카페</h3>
+                <p class="place-sub">지오반니커피</p>
+                <p class="place-rating">4.7(53) <span class="place-price">· ₩1~10,000 · 커피숍</span></p>
+                <p class="place-location">역삼동 667-17 1층 101호</p>
+            </div>
+        </div>
+    </div>
 </section>
+</div>
+
+
+	
+	
+
+
+
+	
     
 </body>
-
-
-
-
 
 
 </html>
