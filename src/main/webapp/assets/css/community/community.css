@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     background-color: #f0f0f0;
-    border-radius: 25px;
+    border-radius: 20px;
     padding: 5px;
     width: 560px;
     height: 55px;
@@ -17,10 +17,10 @@
 .toggle-option {
     flex: 1;
     text-align: center;
-    padding: 10px 20px;
-    border-radius: 25px;
+    padding: 20px 15px;
+    border-radius: 20px;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 700;
     cursor: pointer;
 }
 .inactive {
@@ -28,5 +28,5 @@
 }
 .active {
     background-color: #01CD74;
-    color: white;
+    color: #000;
 }
