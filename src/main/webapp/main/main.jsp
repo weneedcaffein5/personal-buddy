@@ -162,27 +162,66 @@
 	</div>
 	</section>
 	
+    <!-- 코디 추천 -->
     
-    <section class="cloth-recommend">
+	<section class="cloth-recommend">
     <p class="cloth-title">이런 날씨엔 이런 코디</p>
     <div class="cloth-main">
         <div class="cloth-image">
-            <img id="main-cloth" src="../assets/images/main/cloth-1.png" alt="코디1">
+            <img id="main-cloth" src="../assets/images/main/cloth-5.jpg" alt="코디1">
         </div>
         <div class="cloth-text">
-            <p id="main-desc-title" class="cloth-desc-title">다름 속 빛나는 조화</p>
-            <p id="main-desc" class="cloth-desc">다양성을 포용하는 오픈와이와이의 우리이자 나를 위한 컬렉션을 소개합니다.</p>
+            <p id="main-desc-title" class="cloth-desc-title">쿨톤에게 추천하는 허그유어스킨 스타일</p>
+            <div class="cloth-info">
+                    <img class="cloth-info-image" src="../assets/images/main/pants1.jpg" alt="조거 팬츠">
+                <p><a href="https://www.musinsa.com/products/4757432" target="_blank">허그유어스킨-레이스 조거 팬츠(블랙)</a><br>98,100원</p>
+            </div>
+            <div class="cloth-info">
+                    <img class="cloth-info-image" src="../assets/images/main/dress1.png" alt="오프숄더 드레스">
+                <p><a href="https://www.musinsa.com/products/4757324" target="_blank">드로우 스트링 오프숄더 드레스 (핑크)</a><br>88,200원</p>
+            </div>
+            <div class="cloth-info">
+                    <img class="cloth-info-image" src="../assets/images/main/belt1.jpg" alt="스커트 벨트">
+                <p><a href="https://www.musinsa.com/products/4757300" target="_blank">플리츠 스커트 벨트</a><br>52,200원</p>
+            </div>
         </div>
     </div>
     <div class="cloth-thumbnail-list">
-        <img class="cloth-thumbnail" src="../assets/images/main/cloth-1.png" alt="코디1" data-title="다름 속 빛나는 조화" data-desc="다양성을 포용하는 오픈와이와이의 우리이자 나를 위한 컬렉션을 소개합니다.">
-        <img class="cloth-thumbnail" src="../assets/images/main/cloth-2.png" alt="코디2" data-title="스타일과 편안함" data-desc="모던한 감각과 함께 편안함을 제공하는 룩을 만나보세요.">
-        <img class="cloth-thumbnail" src="../assets/images/main/cloth-3.png" alt="코디3" data-title="트렌디한 감각" data-desc="유행을 선도하는 감각적인 스타일을 즐겨보세요.">
-        <img class="cloth-thumbnail" src="../assets/images/main/cloth-4.png" alt="코디4" data-title="감각적인 레이어드" data-desc="레이어드를 활용한 스타일링으로 개성을 표현하세요.">
+        <img class="cloth-thumbnail" src="../assets/images/main/cloth-5.jpg" alt="코디1" 
+        data-title="쿨톤에게 추천하는 허그유어스킨 스타일" 
+        data-desc='<div class="cloth-info">
+                    <a href="https://www.musinsa.com/products/4757432" target="_blank">
+                        <img class="cloth-info-image" src="../assets/images/main/pants1.jpg" alt="조거 팬츠">
+                    </a>
+                    <p><a href="https://www.musinsa.com/products/4757432" target="_blank">허그유어스킨-레이스 조거 팬츠(블랙)</a><br>98,100원</p>
+                  </div>
+                  <div class="cloth-info">
+                    <a href="https://www.musinsa.com/products/4757433" target="_blank">
+                        <img class="cloth-info-image" src="../assets/images/main/dress1.png" alt="오프숄더 드레스">
+                    </a>
+                    <p><a href="https://www.musinsa.com/products/4757433" target="_blank">드로우 스트링 오프숄더 드레스 (핑크)</a><br>88,200원</p>
+                  
+                  <div class="cloth-info">
+                    <a href="https://www.musinsa.com/products/4757433" target="_blank">
+                        <img class="cloth-info-image" src="../assets/images/main/belt1.jpg" alt="스커트 벨트">
+                    </a>
+                    <p><a href="https://www.musinsa.com/products/4757300" target="_blank">플리츠 스커트 벨트</a><br>52,200원</p>
+                  </div>'>
+                  
+                  
+                  
+                  
+        <img class="cloth-thumbnail" src="../assets/images/main/cloth-2.png" alt="코디2" 
+        data-title="스타일과 편안함" 
+        data-desc="모던한 감각과 함께 편안함을 제공하는 룩을 만나보세요.">
+        
+        <img class="cloth-thumbnail" src="../assets/images/main/cloth-3.png" alt="코디3" 
+        data-title="트렌디한 감각" data-desc="유행을 선도하는 감각적인 스타일을 즐겨보세요.">
+        
+        <img class="cloth-thumbnail" src="../assets/images/main/cloth-4.png" alt="코디4"
+         data-title="감각적인 레이어드" data-desc="레이어드를 활용한 스타일링으로 개성을 표현하세요.">
     </div>
 </section>
-    
-
 </body>
 <script>
 
@@ -226,17 +265,16 @@ document.addEventListener("click", function (e) {
 
 /* 코디 추천 */
 
-document.querySelectorAll('.cloth-thumbnail').forEach(item => {
-    item.addEventListener('click', function() {
-    	/* console.log("Clicked thumbnail:", this.src);
-        console.log("Title:", this.getAttribute('data-title'));
-        console.log("Description:", this.getAttribute('data-desc')); */
-        
+document.querySelectorAll('.cloth-thumbnail').forEach(item => {    	
+    item.addEventListener('click', function() {       
         document.getElementById('main-cloth').src = this.src;
         document.getElementById('main-desc-title').textContent = this.getAttribute('data-title');
-        document.getElementById('main-desc').textContent = this.getAttribute('data-desc');
+        document.getElementById('main-desc').innerHTML = this.getAttribute('data-desc');
     });
 });
+console.log("Clicked thumbnail:", this.src);
+console.log("Title:", this.getAttribute('data-title'));
+console.log("Description:", this.getAttribute('data-desc'));
 
 </script>
 </html>
