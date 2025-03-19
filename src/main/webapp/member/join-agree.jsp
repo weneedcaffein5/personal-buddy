@@ -1,3 +1,4 @@
+<%@page import="com.app.vo.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,15 +12,15 @@
 	<div id="agree-container">
 		<img src="../assets/images/member/logo-login.png" alt="Personal Buddy 로고" class="logo">			
 		<div class="wrapper">
-			<form action="join-agree.member" method="post">
+			<form action="join-write.member" method="post">
 				<div class="wrapper">
-					<input type="hidden" class="agree-all" name="agreeAll" value="false" required/>
+					<input type="hidden" class="agree-all" name="agreeAll" value="0"/>
 					<img src="../assets/images/member/checkbox-icon-false.png" alt="체크박스" id="check-all" class="checkbox" onclick="toggleCheckbox(this)">
                 	<span onclick="toggleCheckbox(document.getElementById('check-all'))">전체 동의</span>
                 	<p>실명 인증된 아이디로 가입, 위치기반서비스 이용약관 (필수), 이벤트・혜택 정보 수신 (선택) 동의를 포함합니다.</p>
 				</div>
 				<div class="wrapper">
-					<input type="hidden" class="agree-service" name="agreeService" value="false" required/>
+					<input type="hidden" class="agree-service" name="agreeService" value="0" required/>
 					<img src="../assets/images/member/checkbox-icon-false.png" alt="체크박스" id="check-service" class="checkbox" onclick="toggleCheckbox(this)">
 					<span class="text-essential">[필수]</span>
                 	<span onclick="toggleCheckbox(document.getElementById('check-service'))">퍼스널 버디 이용약관</span>
@@ -77,7 +78,7 @@
                 	</p>
 				</div>
 				<div class="wrapper">
-					<input type="hidden" class="agree-information" name="agreeInformation" value="false" required/>
+					<input type="hidden" class="agree-information" name="agreeInformation" value="0" required/>
 					<img src="../assets/images/member/checkbox-icon-false.png" alt="체크박스" id="check-information" class="checkbox" onclick="toggleCheckbox(this)">
 					<span class="text-essential">[필수]</span>
                 	<span onclick="toggleCheckbox(document.getElementById('check-information'))">개인정보 수집 및 이용</span>
@@ -105,7 +106,7 @@
                 	</p>
 				</div>
 				<div class="wrapper">
-					<input type="hidden" class="agree-location" name="agreeLocation" value="false"/>
+					<input type="hidden" class="agree-location" name="agreeLocation" value="0" required/>
 					<img src="../assets/images/member/checkbox-icon-false.png" alt="체크박스" id="check-location" class="checkbox" onclick="toggleCheckbox(this)">
 					<span class="text-essential">[필수]</span>
                 	<span onclick="toggleCheckbox(document.getElementById('check-location'))">위치기반 서비스 이용약관</span>
@@ -127,8 +128,8 @@
                 	단, 위치기반 맞춤형 서비스 및 광고 수신이 제한될 수 있습니다.<br /><br />
                 	</p>
 				</div>
+			<button class="next-btn" disabled>다음</button>
 			</form>
-			<button type="submit" class="next-btn" disabled>다음</button>
 		</div>
 	</div>
 </body>
@@ -147,23 +148,23 @@
 	        			img.src = "../assets/images/member/checkbox-icon-true.png";
 	        		});
 	        		inputs.forEach(input => {
-	        			input.value = true;
+	        			input.value = 1;
 	        		});
 	        		break;
 	        		
 	        	case "check-service":
 	        		const serviceInput = document.querySelector(".agree-service");
-	        		serviceInput.value = true;
+	        		serviceInput.value = 1;
 	        		break;
 	        		
 	        	case "check-information":
 	        		const informationIput = document.querySelector(".agree-information");
-	        		informationIput.value = true;
+	        		informationIput.value = 1;
 	        		break;
 	        		
 	        	case "check-location":
 	        		const locationInput = document.querySelector(".agree-location");
-	        		locationInput.value = true;
+	        		locationInput.value = 1;
 	        		break;
 	        }
 	    } else {
@@ -177,20 +178,20 @@
 	        			img.src = "../assets/images/member/checkbox-icon-false.png";
 	        		});
 	        		inputs.forEach(input => {
-	        			input.value = false;
+	        			input.value = 0;
 	        		});
 	        		break;
 	        	case "check-service":
 	        		const serviceInput = document.querySelector(".agree-service");
-	        		serviceInput.value = false;
+	        		serviceInput.value = 0;
 	        		break;
 	        	case "check-information":
 	        		const informationIput = document.querySelector(".agree-information");
-	        		informationIput.value = false;
+	        		informationIput.value = 0;
 	        		break;
 	        	case "check-location":
 	        		const locationInput = document.querySelector(".agree-location");
-	        		locationInput.value = false;
+	        		locationInput.value = 0;
 	        		break;
 	        }
 	    }
@@ -211,13 +212,12 @@
 		 let check = true;
 		 
 		inputs.forEach(input => {
-			if(input.className != "agree-all"){
-				if(input.value === "false"){
+			if(input.className !== "agree-all"){
+				if(input.value == 0){
 					check = false;
 				}
 			}
 		});
-		
 		return check;
 	}
 </script>

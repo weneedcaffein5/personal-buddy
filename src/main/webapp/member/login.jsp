@@ -16,7 +16,7 @@
     		<span style="border-radius: 0px 30px 0px 0px;">아이디 로그인</span>
     		<span style="background-color: #D9D9D9; border-radius: 0px 30px 0px 0px;">간편 로그인</span>
     	</div>
-        <form action="login.jsp" method="POST">
+        <form action="login-ok.member" method="POST">
         	<div class="login-fail">
         		<span >아이디 혹은 비밀번호를 잘못 입력하셨거나 등록되지 않은 아이디 입니다.</span>
         		<!-- style="display: none;" -->
@@ -40,11 +40,11 @@
                 <img src="../assets/images/member/checkbox-icon-false.png" alt="로그인 상태 유지" class="checkbox-icon" onclick="toggleCheckbox(this)">
                 <span onclick="toggleCheckbox(document.querySelector('.checkbox-icon'))">로그인 상태 유지</span>
             </div>
-            <button type="submit" class="login-btn" disabled>로그인</button>
+            <button class="login-btn" disabled>로그인</button>
         </form>
     </div>
 	<div class="links">
-            <a href="#">아이디 찾기</a> | <a href="#">비밀번호 찾기</a> | <a href="#">회원가입</a>
+            <a href="#">아이디 찾기</a> | <a href="#">비밀번호 찾기</a> | <a href="join-agree.member">회원가입</a>
     </div>
     
     <script>
