@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .body {
     display: flex;
     justify-content: center;
@@ -35,6 +34,12 @@
     justify-content: space-between;
     padding-bottom: 20px;
 }
+
+.tree-info-style {
+    font-size: 14px;
+    font-weight: 100;
+}
+
 .tree-info-left {
     width: 1160x;
     height: 70px;
@@ -45,6 +50,12 @@
 .go-tree {
     display: flex;
     justify-content: space-between;
+    font-size: 14px;
+    color: #424242;
+}
+
+.go-tree-style {
+    font-size: 18px;
 }
 
 .tree {
@@ -67,6 +78,8 @@
 }
 
 .profile-setting {
+	font-weight: 300;
+	font-size: 14px;
     width: 200px;
     height: 100px;
     border-bottom: solid #DDDDDD 1px;
@@ -102,17 +115,19 @@
     display: flex;
     flex-direction: column;
 }
-/* <div class="profile">
-                </div>
-                <div class="profile-setting">
-                </div>
-                <div class="mypage">
-                </div>
-                <div class="community">
-                </div>
-                <div class="myinfo"> */
+
 .guestbook-container {
     width: 1160px;
+}
+
+.comment-display {
+    width: 1140px;
+    height: 100px;
+    border: 1px solid #ccc;
+    background: #fff;
+    margin-top: 60px;
+    padding: 10px;
+    overflow-y: auto;
 }
                 
 .guestbook-header {
@@ -156,13 +171,15 @@ textarea {
 
 .comment-footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     align-items: center;
     margin-top: 10px;
+    padding-bottom: 50px;
 }
 
 #char-count {
     font-size: 12px;
+    padding: 10px;
     color: #666;
 }
 
@@ -183,8 +200,9 @@ textarea {
 }
 
 .link {
-    /* padding-top: px; */
-    padding-left: 43px;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 2px 0 2px 44px;
 }
 
 a {
@@ -196,4 +214,8 @@ a {
 a:hover {
     color: #01CD74; /* 마우스를 올렸을 때 색 변경 */
 }
-                
+
+strong {
+    font-size: 18px;
+    font-weight: 500;
+}

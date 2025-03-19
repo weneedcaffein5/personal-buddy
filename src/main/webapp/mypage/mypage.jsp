@@ -5,9 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="../assets/css/mypage/mypage-main.css" />
 <link rel="stylesheet" type="text/css" href="../assets/css/global.css" />
-<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../assets/css/mypage/mypage-main.css" />
+<title>마이페이지</title>
 </head>
 <body>
 	<%@ include file="../layout/header.jsp" %>
@@ -18,7 +18,7 @@
                     <span><img src="../assets/images/mypage/profile-default-image.png"></span>
                 </div>
                 <div class="profile-setting">
-                    <strong class="nickname">나는바보입니다</strong>
+                    <strong class="nickname">나는 신이다</strong>
                     <span>반가워요</span>
                 </div>
                 <div class="mypage">
@@ -28,7 +28,7 @@
                 </div>
                 <div class="community">
                     <strong><img class="icon" src="../assets/images/mypage/community-icon.png">커뮤니티</strong>
-                    <a class="link" href="#">내 게시물</a>
+                    <a class="link" href="../main/main.jsp">내 게시물</a>
                     <a class="link" href="#">내가 쓴 댓글</a>
                 </div>
                 <div class="myinfo">
@@ -41,9 +41,9 @@
             <div class="right-contentbox">
                 <div class="tree-info">
                     <div class="tree-info-left">
-                        <div><span>자신만의 나무를 꾸며보세요</span></div>
+                        <div><span class="tree-info-style">자신만의 나무를 꾸며보세요</span></div>
                         <div class="go-tree">
-                            <span>나만의 나무</span>
+                            <span class="go-tree-style">나만의 나무</span>
                             <a href="#">나만의 나무 꾸미기 >></a>
                         </div>
                     </div>
@@ -64,30 +64,40 @@
                             <button id="submit-btn" disabled>등록</button>
                         </div>
                     </div>
+                    <div id="comment-display" class="comment-display"></div>
                 </div>
-                
             </div>
         </div>
     </div>
     <script>
-        const commentInput = document.getElementById("comment-input");
-        const charCount = document.getElementById("char-count");
-        const submitBtn = document.getElementById("submit-btn");
+    const commentInput = document.getElementById("comment-input");
+    const charCount = document.getElementById("char-count");
+    const submitBtn = document.getElementById("submit-btn");
 
-        commentInput.addEventListener("input", function () {
-            let length = commentInput.value.length;
-            charCount.textContent = `${length} / 500`;
+    commentInput.addEventListener("input", function () {
+        let length = commentInput.value.length;
+        charCount.textContent = length + " / 500";
 
-            if (length > 0) {
-                submitBtn.style.backgroundColor = "#009DCC";
-                submitBtn.style.cursor = "pointer";
-                submitBtn.disabled = false;
-            } else {
-                submitBtn.style.backgroundColor = "#ccc";
-                submitBtn.style.cursor = "not-allowed";
-                submitBtn.disabled = true;
-            }
-        });
+        if (length > 0) {
+            submitBtn.style.backgroundColor = "#009DCC";
+            submitBtn.style.cursor = "pointer";
+            submitBtn.disabled = false;
+        } else {
+            submitBtn.style.backgroundColor = "#ccc";
+            submitBtn.style.cursor = "not-allowed";
+            submitBtn.disabled = true;
+        }
+    });
+    
+    function addComment() {
+        let inputField = document.getElementById("comment-input");
+        let commentDisplay = document.getElementById("comment-display");
+        
+        if (inputField.value.trim() !== "") {
+            commentDisplay.innerHTML = `<p>${inputField.value}</p>`;
+            inputField.value = "";
+        }
+    }
     </script>
 </body>
 
