@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>main</title>
+<!-- <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=KAKAO_API_KEY&libraries=services"></script> -->
 <link rel="stylesheet" href="../assets/css/main/main.css">
 </head>
 <body>
@@ -54,7 +55,7 @@
 	  <main class="content-wrapper">
         <!-- 음식 추천  -->
         <section class="food-recommend">
-            <p class="title"> 어제 한식을 드셨네요? 오늘 ‘역삼역’에서 점심 이런 메뉴 어때요?!!</p>
+            <p class="food-title"> 어제 한식을 드셨네요? 오늘 ‘역삼역’에서 점심 이런 메뉴 어때요?!!</p>
             <div class="food-list">
                 <div class="food-item"> 
                     <img src="../assets/images/main/만땅스시.jpg" alt="만땅스시">
@@ -101,44 +102,109 @@
     </main>
     
     <section class="place-recommend">
-    <p class="place-title1">카페에 가실 예정이시네요!</p>
-    <p class="place-title2">스터디에 최적화된 카페 몇 군데를 찾아보았어요</p>
-
     <div class="place-list">
+        <p class="place-title1">카페에 가실 예정이시네요!</p>
+        <p class="place-title2">스터디에 최적화된 카페 몇 군데를 찾아보았어요</p>
+
         <div class="place-item">
-            <div class="place-hover"></div> 
-            <img src="../assets/images/main/카페사진1.png" alt="카페사진1">
+            <div class="place-hover"></div>
+            <img src="../assets/images/main/카페사진1.png" alt="카페1">
             <div class="place-info">
                 <h3 class="place-name">조용한 분위기의 공부 잘되는 카페!</h3>
                 <p class="place-sub">카페인사이드</p>
-                <p class="place-rating">4.4(69) <span class="place-price">· ₩1~10,000 · 카페</span></p>
+                <p class="place-rating">4.4(69) · ₩1~10,000 · 카페</p>
                 <p class="place-location">도곡로3길 27</p>
             </div>
         </div>
 
         <div class="place-item">
             <div class="place-hover"></div>
-            <img src="../assets/images/main/카페사진2.png" alt="지오바네커피">
+            <img src="../assets/images/main/카페사진2.png" alt="카페2">
             <div class="place-info">
                 <h3 class="place-name">라떼가 맛있는 카페</h3>
                 <p class="place-sub">지오반니커피</p>
-                <p class="place-rating">4.7(53) <span class="place-price">· ₩1~10,000 · 커피숍</span></p>
+                <p class="place-rating">4.7(53) · ₩1~10,000 · 커피숍</p>
+                <p class="place-location">역삼동 667-17 1층 101호</p>
+            </div>
+        </div>
+        
+        <div class="place-item">
+            <div class="place-hover"></div>
+            <img src="../assets/images/main/카페사진3.png" alt="카페3">
+            <div class="place-info">
+                <h3 class="place-name">24시간 공부할수 있는 카페를 찾으신다면?</h3>
+                <p class="place-sub">타우너스 에스프레소바</p>
+                <p class="place-rating">4.7(53) · ₩1~10,000 · 커피숍</p>
                 <p class="place-location">역삼동 667-17 1층 101호</p>
             </div>
         </div>
     </div>
-</section>
-</div>
 
-
-	
-	
-
-
-
+    <div class="place-details">
+    	<h3 class="place-title">카페 정보</h3>
+    	<p class="place-sub">클릭하면 여기 상세 정보가 표시됩니다.</p>
+    	<p class="place-address"></p>  
+	</div>
+	</section>
 	
     
-</body>
+    <section class="cloth-recommend">
+    <p class="cloth-title">이런 날씨엔 이런 코디</p>
+    <div class="cloth-list">
+        <div class="cloth-item">
+            <img src="../assets/images/main/cloth-1.png" alt="코디1">
+            <p class="cloth-desc">다름 속 빛나는 조화</p>
+        </div>
+        <div class="cloth-item">
+            <img src="../assets/images/main/cloth-2.png" alt="코디2">
+            <p class="cloth-desc">다름 속 빛나는 조화</p>
+        </div>
+        <div class="cloth-item">
+            <img src="../assets/images/main/cloth-3.png" alt="코디3">
+            <p class="cloth-desc">다름 속 빛나는 조화</p>
+        </div>
+        <div class="cloth-item">
+            <img src="../assets/images/main/cloth-4.png" alt="코디4">
+            <p class="cloth-desc">다름 속 빛나는 조화</p>
+        </div>
+    </div>
+</section>
+    
+	
 
+
+
+
+</body>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    const placeItems = document.querySelectorAll(".place-item");
+    const placeDetails = document.querySelector(".place-details");
+
+    placeItems.forEach(item => {
+		item.addEventListener("click", function () {     
+			placeItems.forEach(i => i.classList.remove("active"));
+            this.classList.add("active");
+            
+            const placeName = this.querySelector(".place-name").textContent;
+            const placeSub = this.querySelector(".place-sub").textContent;
+            const placeRating = this.querySelector(".place-rating").textContent;
+            const placeLocation = this.querySelector(".place-location").textContent;
+            const placeImg = this.querySelector("img").src;
+          
+            placeDetails.innerHTML = `<img src="${placeImg}" alt="${placeName}">
+                <h3>${placeName}</h3>
+                <p>${placeSub}</p>
+                <p>${placeRating}</p>
+                <p>${placeLocation}</p>`;
+                
+            placeDetails.classList.add("active");
+        });
+    });
+});
+
+
+</script>
 
 </html>
