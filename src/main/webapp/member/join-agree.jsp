@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="../assets/css/global.css">
 <link rel="stylesheet" href="../assets/css/member/join-agree.css">
 <title>Personal Buddy 약관동의</title>
 </head>
