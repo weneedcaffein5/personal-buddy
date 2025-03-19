@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>main</title>
 <!-- <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=KAKAO_API_KEY&libraries=services"></script> -->
+<link rel="stylesheet" href="../assets/css/global.css">
 <link rel="stylesheet" href="../assets/css/main/main.css">
 </head>
 <body>
