@@ -37,7 +37,8 @@
                     <a class="link" href="#">포인트 내역</a>
                 </div>
             </div>           
-            <div class="right-contentbox">         
+            <div class="right-contentbox">
+                     
         	</div>
     	</div>
     </div>
