@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+.container {
+	width:1920px;
+	height: 3000px;
+	display: flex;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 25px;
+    padding: 5px;
+    width: 200px;
+}
+.toggle-option {
+    flex: 1;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.inactive {
+    color: #aaa;
+}
+.active {
+    background-color: #00c853;
+    color: white;
+}
