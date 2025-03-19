@@ -56,11 +56,11 @@
     		</a>
     	</div>
     	    	 	
-    	<button class="banner-button" id="buttonSlide">&lt;</button>
+    	<!-- <button class="banner-button" id="buttonSlide">&lt;</button>
     		<div class="banner-counter">
         		<span id="current-slide">1</span> / <span id="total-slides">3</span>
     		</div>
-    		<button class="banner-button-next" id="nextSlide">&gt;</button>	
+    		<button class="banner-button-next" id="nextSlide">&gt;</button>	 -->
 		</div>
 
 	<div>
@@ -219,20 +219,35 @@
                         <img class="cloth-info-image" src="../assets/images/main/dress3.png" alt="원피스3">
                     </a>
                     <p><a href="https://sculptorpage.com/product/detail.html?product_no=10107&cate_no=783&display_group=1" target="_blank">카고 집업 드레스(소프트 브라운)</a><br>95,400원</p>
-                  </div>          
-                  </div>'>
+                  </div>     
                   
-        <img class="cloth-thumbnail" src="../assets/images/main/cloth-3.png" alt="코디3" 
-        data-title="선호하시는 브랜드인 '스컬프터'에 맞는 힙한 스타일입니다." 
+                  <div class="cloth-info">
+                    <a href="https://www.musinsa.com/products/4757324" target="_blank">
+                        <img class="cloth-info-image" src="../assets/images/main/dress1.png" alt="오프숄더 드레스">
+                    </a>
+                    <p><a href="https://www.musinsa.com/products/4757324" target="_blank">드로우 스트링 오프숄더 드레스 (핑크)</a><br>88,200원</p>
+                  </div>  
+                  
+                  <div class="cloth-info">
+                    <a href="https://www.musinsa.com/products/4757324" target="_blank">
+                        <img class="cloth-info-image" src="../assets/images/main/dress1.png" alt="오프숄더 드레스">
+                    </a>
+                    <p><a href="https://www.musinsa.com/products/4757324" target="_blank">드로우 스트링 오프숄더 드레스 (핑크)</a><br>88,200원</p>
+                  </div>
+                     
+                  </div>'>
+                   
+        <img class="cloth-thumbnail" src="../assets/images/main/dress4.png" alt="코디3" 
+        data-title="선호하시는 브랜드인 '미우미우'의 스타일이에요" 
         data-desc='<div class="cloth-info">
                     <a href="https://www.musinsa.com/products/4757550" target="_blank">
                         <img class="cloth-info-image" src="../assets/images/main/jacket1.jpg" alt="블레이저">
                     </a>
-                    <p><a href="https://www.musinsa.com/products/4757550" target="_blank">클래식 블레이저 (네이비)</a><br>159,000원</p>
+                    <p><a href="https://www.musinsa.com/products/4757550" target="_blank">포플린 드레스(핑크)</a><br> 5,150,000원</p>
                   </div>'>  
                   
-        <img class="cloth-thumbnail" src="../assets/images/main/cloth-4.png" alt="코디4"
-         data-title="감각적인 레이어드" 
+        <img class="cloth-thumbnail" src="../assets/images/main/cloth-7.png" alt="코디4"
+         data-title="선호하시는 브랜드인 '칼하트'의 스타일이에요"  
          data-desc='<div class="cloth-info">
                     <a href="https://www.musinsa.com/products/4757600" target="_blank">
                         <img class="cloth-info-image" src="../assets/images/main/coat1.jpg" alt="트렌치 코트">
