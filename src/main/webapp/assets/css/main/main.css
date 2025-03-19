@@ -304,65 +304,45 @@ body, html {
 
 /* 코디 추천 section */
 
-.cloth-title {
-	 width: 1421px;
-    margin: 60px auto 0 auto;
-    padding: 20px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 20px;
-    margin-top: 60px;
-}
-
 .cloth-recommend {
     width: 927px;
-    height: 1136px;
-    margin:auto;
+    margin: auto;
     padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .cloth-title {
     font-size: 24px;
-    font-weight: regular;
-   
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-.cloth-list {
+.cloth-main {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     gap: 20px;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
-.cloth-item {
+.cloth-image img {
     width: 440px;
     height: 430px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.cloth-item img {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
     border-radius: 10px;
     transition: transform 0.3s ease-in-out;
 }
 
+.cloth-image img:hover {
+    transform: scale(1.05);
+}
+
 .cloth-text {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 10px;
-    border-radius: 5px;
-    width: 90%;
+    width: 440px;
+    text-align: left;
 }
 
 .cloth-desc-title {
@@ -373,6 +353,25 @@ body, html {
 
 .cloth-desc {
     font-size: 14px;
-    font-weight: regular;
+}
+
+.cloth-thumbnail-list {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cloth-thumbnail {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cloth-thumbnail:hover {
+    transform: scale(1.1);
 }
 

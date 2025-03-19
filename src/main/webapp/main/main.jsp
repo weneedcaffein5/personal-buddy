@@ -162,37 +162,22 @@
 	</section>
 	
     
-    <p class="cloth-title">이런 날씨엔 이런 코디</p>
     <section class="cloth-recommend">
-    <div class="cloth-list">
-        <div class="cloth-item">
-            <img src="../assets/images/main/cloth-1.png" alt="코디1">
-            <div class="cloth-text">
-                <p class="cloth-desc-title">다름 속 빛나는 조화</p>
-                <p class="cloth-desc">다양성을 포용하는 오픈와이와이의 우리이자 나를 위한 컬렉션을 소개합니다.</p>
-            </div>
+    <p class="cloth-title">이런 날씨엔 이런 코디</p>
+    <div class="cloth-main">
+        <div class="cloth-image">
+            <img id="main-cloth" src="../assets/images/main/cloth-1.png" alt="코디1">
         </div>
-        <div class="cloth-item">
-            <img src="../assets/images/main/cloth-2.png" alt="코디2">
-            <div class="cloth-text">
-                <p class="cloth-desc-title">다름 속 빛나는 조화</p>
-                <p class="cloth-desc">다양성을 포용하는 오픈와이와이의 우리이자 나를 위한 컬렉션을 소개합니다.</p>
-            </div>
+        <div class="cloth-text">
+            <p id="main-desc-title" class="cloth-desc-title">다름 속 빛나는 조화</p>
+            <p id="main-desc" class="cloth-desc">다양성을 포용하는 오픈와이와이의 우리이자 나를 위한 컬렉션을 소개합니다.</p>
         </div>
-        <div class="cloth-item">
-            <img src="../assets/images/main/cloth-3.png" alt="코디3">
-            <div class="cloth-text">
-                <p class="cloth-desc-title">다름 속 빛나는 조화</p>
-                <p class="cloth-desc">다양성을 포용하는 오픈와이와이의 우리이자 나를 위한 컬렉션을 소개합니다.</p>
-            </div>
-        </div>
-        <div class="cloth-item">
-            <img src="../assets/images/main/cloth-4.png" alt="코디4">
-            <div class="cloth-text">
-                <p class="cloth-desc-title">다름 속 빛나는 조화</p>
-                <p class="cloth-desc">다양성을 포용하는 오픈와이와이의 우리이자 나를 위한 컬렉션을 소개합니다.</p>
-            </div>
-        </div>
+    </div>
+    <div class="cloth-thumbnail-list">
+        <img class="cloth-thumbnail" src="../assets/images/main/cloth-1.png" alt="코디1" data-title="다름 속 빛나는 조화" data-desc="다양성을 포용하는 오픈와이와이의 우리이자 나를 위한 컬렉션을 소개합니다.">
+        <img class="cloth-thumbnail" src="../assets/images/main/cloth-2.png" alt="코디2" data-title="스타일과 편안함" data-desc="모던한 감각과 함께 편안함을 제공하는 룩을 만나보세요.">
+        <img class="cloth-thumbnail" src="../assets/images/main/cloth-3.png" alt="코디3" data-title="트렌디한 감각" data-desc="유행을 선도하는 감각적인 스타일을 즐겨보세요.">
+        <img class="cloth-thumbnail" src="../assets/images/main/cloth-4.png" alt="코디4" data-title="감각적인 레이어드" data-desc="레이어드를 활용한 스타일링으로 개성을 표현하세요.">
     </div>
 </section>
     
@@ -201,9 +186,14 @@
 <script>
 
 /* 장소 추천 */
-document.addEventListener("click", function (event) {
-    const clickedItem = event.target.closest(".place-item");
-    if (!clickedItem) return;
+
+document.addEventListener("click", function (e) {
+	/*  const clickedItem = e.target.value(".place-item"); */
+    const clickedItem = e.target.closest(".place-item");
+    /* console.log(clickedItem); */
+    if (!clickedItem) {
+    	return;
+    }
 
     const placeDetails = document.querySelector(".place-details");
     
@@ -215,6 +205,12 @@ document.addEventListener("click", function (event) {
     const placeRating = clickedItem.querySelector(".place-rating").textContent;
     const placeLocation = clickedItem.querySelector(".place-location").textContent;
     const placeImg = clickedItem.querySelector("img").src;
+    
+    /* console.log(placeName);
+    console.log(placeSub);
+    console.log(placeRating);
+    console.log(placeLocation);
+    console.log(placeImg); */
   
     placeDetails.innerHTML = `<img src="${placeImg}" alt="${placeName}">
         <h3>${placeName}</h3>
@@ -223,6 +219,19 @@ document.addEventListener("click", function (event) {
         <p>${placeLocation}</p>`;
 
     placeDetails.classList.add("active");
+    /*  console.log(placeDetails.classList); */
+});
+
+
+/* 코디 추천 */
+
+documenr.querySelectorAll('.cloth-thumbnail').forEach(data => {
+	data.addEventListener('click', function(){
+		document.getElementryById('main-cloth')
+		document.getElementryById('main-desc-title')
+		document.getElementryById('main-desc')
+		
+	});
 });
 
 </script>
