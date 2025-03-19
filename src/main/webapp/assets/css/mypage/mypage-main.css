@@ -78,6 +78,8 @@
 }
 
 .profile-setting {
+	font-weight: 300;
+	font-size: 14px;
     width: 200px;
     height: 100px;
     border-bottom: solid #DDDDDD 1px;
