@@ -15,11 +15,11 @@ public class MemberJoinWriteController implements Action {
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, SecurityException {
 		Result result = new Result();
 		
+		MemberVO member = new MemberVO();
+		
 		int agreeService = Integer.parseInt(req.getParameter("agreeService"));
 		int agreeInformation = Integer.parseInt(req.getParameter("agreeInformation"));
 		int agreeLocation = Integer.parseInt(req.getParameter("agreeLocation"));
-		
-		MemberVO member = new MemberVO();
 		
 		member.setMemberTermServiceAgree(agreeService);
 		member.setMemberTermInformationAgree(agreeInformation);
