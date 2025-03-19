@@ -12,7 +12,7 @@
 <body>
 	<div id="agree-container">
 		<img src="../assets/images/member/logo-login.png" alt="Personal Buddy 로고" class="logo">			
-		<div class="wrapper">
+		<div class="agree-group">
 			<form action="join-write.member" method="post">
 				<div class="wrapper">
 					<input type="hidden" class="agree-all" name="agreeAll" value="0"/>

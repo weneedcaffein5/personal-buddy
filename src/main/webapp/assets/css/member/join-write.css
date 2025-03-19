@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+body {
+    padding: 50px; /* 상단 로고 잘림으로 인해 padding 추가 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
