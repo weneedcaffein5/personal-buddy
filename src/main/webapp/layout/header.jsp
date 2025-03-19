@@ -21,7 +21,7 @@
             </div>
             <div class="rightheader">
                 <a href="#">회원가입</a>
-                <a href="#">로그인</a>
+                <a href="../member/login.jsp">로그인</a>
             </div>
         </div>
     </div>
