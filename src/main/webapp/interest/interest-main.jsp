@@ -2,10 +2,12 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<!DOCTYPE html>
+<html>
 <head>
 <meta charset="UTF-8">
 <title>설문조사</title>
-<link rel="stylesheet"  href="../assets/css/interest/interest.css">
+<link rel="stylesheet" href="../assets/css/interest/interest-main.css">
 </head>
 <body>
 	 <div class="container">
@@ -18,5 +20,5 @@
         <img src="../assets/images/interest/logo.png" alt="로고 이미지" class="logo-img">
         <button class="start-btn">시작하기</button>
     </div>
-</body>
+</body>	
 </html>
