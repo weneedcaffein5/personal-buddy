@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="../assets/css/event-main/event-main.css">
 </head>
 <body>
-
 	<div class="event-main">
 		<!-- 헤더 -->
         <%@ include file="../layout/header.jsp" %>

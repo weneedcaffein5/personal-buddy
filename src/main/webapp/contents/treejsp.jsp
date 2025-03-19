@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>탭 네비게이션</title>
     <link rel="stylesheet" href="../assets/css/contents/contents.css" />
+    <link rel="stylesheet" href="../assets/css/global.css" />
 </head>
 <body>
     <div class="page-container">
