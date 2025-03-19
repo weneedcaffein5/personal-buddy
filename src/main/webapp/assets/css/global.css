@@ -1,5 +1,52 @@
 @charset "UTF-8";
 
+:root{
+	
+	/* font-size */
+	--h1: 36px;
+	--h2: 32px;
+	--h3: 28px;
+	--h4: 24px;
+	--h5: 20px;
+	--h6: 18px;
+	--h7: 16px;
+	--h8: 14px;
+	--h9: 12px;
+	--h10: 10px;
+	
+	/* color */
+	--main-green: #01CD74;
+	--sub-green: #24C394;
+	--light-green: #EFFFF8;
+	
+	--warning-red: #FF3F3F;
+	--point-red: #FF4E00;
+	--white: #FFFFFF;
+	--gray1: #EEEEEE;
+	--gray2: #DDDDDD;
+	--gray3: #BBBBBB;
+	--gray4: #999999;
+	--gray5: #777777;
+	--gray6: #555555;
+	--black: #000000;
+	
+}
+
+body, html {
+    user-select: none; /* 텍스트 드래그 방지 */
+    -webkit-user-select: none; /* 크롬, 사파리 */
+    -moz-user-select: none; /* 파이어폭스 */
+    -ms-user-select: none; /* 인터넷 익스플로러 */
+}
+
 body {
-	font-family: 'Spoqa Han Sans Neo', sans-serif;
+    font-family: 'Spoqa Han Sans Neo', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }

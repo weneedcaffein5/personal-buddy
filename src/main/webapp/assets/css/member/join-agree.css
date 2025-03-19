@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+body {
+    padding: 50px; /* 상단 로고 잘림으로 인해 padding 추가 */
+}
+
+#agree-container{
+	display: flex;
+	width: 460px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#agree-container span{
+	font-size: 20px;
+	font-weight: 500; 
+}
+
+.logo {
+    margin-bottom: 45px; /* 기존보다 간격을 줄이기 위해 10px로 설정 */
+}
+
+p{
+	font-size: 16px;
+	font-weight: 300;
+	margin: 0px 18px 0px 32px;
+	width: 395px;
+	max-height: 85px;
+	border: 1px solid #D9D9D9;
+	border-radius: 10px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	line-height: 25px;
+	padding: 15px;
+}
+
+
+.wrapper{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+	margin-bottom: 25px;
+}
+
+.wrapper img{
+	width: 32px;
+	height: 32px; 
+}
+
+.text-essential{
+	color: #01CD74;
+}
+
+.text-optional{
+	color: #8E8E93;
+}
+
+.next-btn {
+    width: 460px;
+    height: 50px;
+    padding: 10px;
+    background-color: #A5ADB8; /* 비활성화된 버튼 */
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: not-allowed;
+    transition: all 0.3s ease-in-out;
+}
+/* 로그인 버튼이 활성화될 때 */
+.next-btn.active {
+    background-color: #01CD74;
+    cursor: pointer;
+}
+
+.next-btn.active:hover {
+    background-color: #218838;
+}
