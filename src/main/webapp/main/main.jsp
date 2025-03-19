@@ -264,6 +264,8 @@ document.addEventListener("click", function (e) {
     const placeLocation = clickedItem.querySelector(".place-location").textContent;
     const placeImg = clickedItem.querySelector("img").src;
     
+    
+    
     /* console.log(placeName);
     console.log(placeSub);
     console.log(placeRating);
