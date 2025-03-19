@@ -3,7 +3,6 @@
 .container {
 	width:1920px;
 	height: 3000px;
-	display: flex;
 }
 
 .toggle-container {
@@ -12,14 +11,14 @@
     background-color: #f0f0f0;
     border-radius: 25px;
     padding: 5px;
-    width: 200px;
+    width: 560px;
+    height: 55px;
 }
 .toggle-option {
     flex: 1;
     text-align: center;
     padding: 10px 20px;
     border-radius: 25px;
-    font-family: Arial, sans-serif;
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
@@ -28,6 +27,6 @@
     color: #aaa;
 }
 .active {
-    background-color: #00c853;
+    background-color: #01CD74;
     color: white;
 }

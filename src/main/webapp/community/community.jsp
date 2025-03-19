@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="../assets/css/main/main.css">
 <link rel="stylesheet" href="../assets/css/community/community.css">
+<link rel="stylesheet" href="../assets/css/main/main.css">
 <title>커뮤니티</title>
 </head>
 <body>
