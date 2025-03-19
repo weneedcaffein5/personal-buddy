@@ -8,6 +8,14 @@ body {
     background-color: 000000;
 }
 
+/* 전체 페이지에서 드래그 방지 */
+body, html {
+    user-select: none; /* 텍스트 드래그 방지 */
+    -webkit-user-select: none; /* 크롬, 사파리 */
+    -moz-user-select: none; /* 파이어폭스 */
+    -ms-user-select: none; /* 인터넷 익스플로러 */
+}
+
 .banner-container {
     width: 100%;
     height: 300px;
@@ -296,29 +304,40 @@ body {
 
 /* 코디 추천 section */
 
+.cloth-title {
+	 width: 1421px;
+    margin: 60px auto 0 auto;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    margin-top: 60px;
+}
+
 .cloth-recommend {
-    width: 1421px;
-    margin: 60px auto;
+    width: 927px;
+    height: 1136px;
+    margin:auto;
     padding: 20px 0;
 }
 
 .cloth-title {
     font-size: 24px;
-    font-weight: bold;
-    color: #000;
-    margin-bottom: 20px;
+    font-weight: regular;
+   
 }
 
 .cloth-list {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
 .cloth-item {
-    width: 320px;
-    height: 450px;
+    width: 440px;
+    height: 430px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -334,20 +353,26 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 
-.cloth-item:hover img {
-    transform: scale(1.05);
+.cloth-text {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    width: 90%;
+}
+
+.cloth-desc-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .cloth-desc {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: black;
-    padding: 10px 15px;
-    border-radius: 5px;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: regular;
 }
-
 

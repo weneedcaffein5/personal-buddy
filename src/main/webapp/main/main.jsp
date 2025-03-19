@@ -12,7 +12,6 @@
 <body>
 	<%@ include file="../layout/header.jsp" %>
 	
-
 	<div class="banner-container">	
     	<div class="banner-wrapper">
     	<a href="#" class="banner-slide">
@@ -55,19 +54,17 @@
     		</div> 
     		</a>
     	</div>
-    	 	
-    	  <button class="banner-button" id="buttonSlide">&lt;</button>
-    <div class="banner-counter">
-        <span id="current-slide">1</span> / <span id="total-slides">3</span>
-    </div>
-    <button class="banner-button-next" id="nextSlide">&gt;</button>	
-	</div>
-
+    	    	 	
+    	<button class="banner-button" id="buttonSlide">&lt;</button>
+    		<div class="banner-counter">
+        		<span id="current-slide">1</span> / <span id="total-slides">3</span>
+    		</div>
+    		<button class="banner-button-next" id="nextSlide">&gt;</button>	
+		</div>
 
 	<div>
 		<h2>캘린더</h2>
 	</div>
-
 
 	  <main class="content-wrapper">
         <!-- 음식 추천  -->
@@ -165,24 +162,36 @@
 	</section>
 	
     
-    <section class="cloth-recommend">
     <p class="cloth-title">이런 날씨엔 이런 코디</p>
+    <section class="cloth-recommend">
     <div class="cloth-list">
         <div class="cloth-item">
             <img src="../assets/images/main/cloth-1.png" alt="코디1">
-            <p class="cloth-desc">다름 속 빛나는 조화</p>
+            <div class="cloth-text">
+                <p class="cloth-desc-title">다름 속 빛나는 조화</p>
+                <p class="cloth-desc">다양성을 포용하는 오픈와이와이의 우리이자 나를 위한 컬렉션을 소개합니다.</p>
+            </div>
         </div>
         <div class="cloth-item">
             <img src="../assets/images/main/cloth-2.png" alt="코디2">
-            <p class="cloth-desc">다름 속 빛나는 조화</p>
+            <div class="cloth-text">
+                <p class="cloth-desc-title">다름 속 빛나는 조화</p>
+                <p class="cloth-desc">다양성을 포용하는 오픈와이와이의 우리이자 나를 위한 컬렉션을 소개합니다.</p>
+            </div>
         </div>
         <div class="cloth-item">
             <img src="../assets/images/main/cloth-3.png" alt="코디3">
-            <p class="cloth-desc">다름 속 빛나는 조화</p>
+            <div class="cloth-text">
+                <p class="cloth-desc-title">다름 속 빛나는 조화</p>
+                <p class="cloth-desc">다양성을 포용하는 오픈와이와이의 우리이자 나를 위한 컬렉션을 소개합니다.</p>
+            </div>
         </div>
         <div class="cloth-item">
             <img src="../assets/images/main/cloth-4.png" alt="코디4">
-            <p class="cloth-desc">다름 속 빛나는 조화</p>
+            <div class="cloth-text">
+                <p class="cloth-desc-title">다름 속 빛나는 조화</p>
+                <p class="cloth-desc">다양성을 포용하는 오픈와이와이의 우리이자 나를 위한 컬렉션을 소개합니다.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -190,51 +199,6 @@
 
 </body>
 <script>
-
-/* 배너 슬라이드 버튼 */
-document.addEventListener("DOMContentLoaded", function () {
-    const slides = document.querySelector(".banner-wrapper"); 
-    const slideItems = document.querySelectorAll(".banner-slide"); 
-    const totalSlides = slideItems.length - 1; // 마지막 슬라이드 제외
-    const prevButton = document.getElementById("buttonSlide");
-    const nextButton = document.getElementById("nextSlide");
-    const currentSlideText = document.getElementById("current-slide");
-    const totalSlidesText = document.getElementById("total-slides");
-
-    let currentIndex = 0;
-    totalSlidesText.textContent = totalSlides; 
-
-    function updateSlide() {
-        slides.style.transition = "transform 0.5s ease-in-out";
-        slides.style.transform = `translateX(-${currentIndex * 100}%)`; 
-        currentSlideText.textContent = currentIndex + 1; 
-
-        // 첫 번째 슬라이드면 이전 버튼 비활성화
-        prevButton.disabled = (currentIndex === 0);
-        // 마지막 슬라이드면 다음 버튼 비활성화
-        nextButton.disabled = (currentIndex === totalSlides - 1);
-    }
-
-    prevButton.addEventListener("click", function () {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateSlide();
-        }
-    });
-
-    nextButton.addEventListener("click", function () {
-        if (currentIndex < totalSlides - 1) {
-            currentIndex++;
-            updateSlide();
-        }
-    });
-
-    updateSlide(); 
-});
-
-
-	
-
 
 /* 장소 추천 */
 document.addEventListener("click", function (event) {
@@ -262,5 +226,4 @@ document.addEventListener("click", function (event) {
 });
 
 </script>
-
 </html>
