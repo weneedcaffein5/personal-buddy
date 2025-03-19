@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="../assets/css/global.css" />
 <link rel="stylesheet" type="text/css" href="../assets/css/mypage/mypage-main.css" />
-<title>Insert title here</title>
+<title>마이페이지</title>
 </head>
 <body>
 	<%@ include file="../layout/header.jsp" %>
@@ -70,34 +70,34 @@
         </div>
     </div>
     <script>
-        const commentInput = document.getElementById("comment-input");
-        const charCount = document.getElementById("char-count");
-        const submitBtn = document.getElementById("submit-btn");
+    const commentInput = document.getElementById("comment-input");
+    const charCount = document.getElementById("char-count");
+    const submitBtn = document.getElementById("submit-btn");
 
-        commentInput.addEventListener("input", function () {
-            let length = commentInput.value.length;
-            charCount.textContent = `${length} / 500`;
+    commentInput.addEventListener("input", function () {
+        let length = commentInput.value.length;
+        charCount.textContent = length + " / 500";
 
-            if (length > 0) {
-                submitBtn.style.backgroundColor = "#009DCC";
-                submitBtn.style.cursor = "pointer";
-                submitBtn.disabled = false;
-            } else {
-                submitBtn.style.backgroundColor = "#ccc";
-                submitBtn.style.cursor = "not-allowed";
-                submitBtn.disabled = true;
-            }
-        });
-        
-        function addComment() {
-            let inputField = document.getElementById("comment-input");
-            let commentDisplay = document.getElementById("comment-display");
-            
-            if (inputField.value.trim() !== "") {
-                commentDisplay.innerHTML = `<p>${inputField.value}</p>`;
-                inputField.value = "";
-            }
+        if (length > 0) {
+            submitBtn.style.backgroundColor = "#009DCC";
+            submitBtn.style.cursor = "pointer";
+            submitBtn.disabled = false;
+        } else {
+            submitBtn.style.backgroundColor = "#ccc";
+            submitBtn.style.cursor = "not-allowed";
+            submitBtn.disabled = true;
         }
+    });
+    
+    function addComment() {
+        let inputField = document.getElementById("comment-input");
+        let commentDisplay = document.getElementById("comment-display");
+        
+        if (inputField.value.trim() !== "") {
+            commentDisplay.innerHTML = `<p>${inputField.value}</p>`;
+            inputField.value = "";
+        }
+    }
     </script>
 </body>
 
