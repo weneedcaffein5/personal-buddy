@@ -301,9 +301,7 @@
 
 .cloth-title {
     font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
+    font-weight: regular;
 }
 
 .cloth-main {
@@ -322,9 +320,6 @@
     transition: transform 0.3s ease-in-out;
 }
 
-.cloth-image img:hover {
-    transform: scale(1.05);
-}
 
 .cloth-text {
     width: 440px;

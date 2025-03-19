@@ -226,13 +226,16 @@ document.addEventListener("click", function (e) {
 
 /* 코디 추천 */
 
-documenr.querySelectorAll('.cloth-thumbnail').forEach(data => {
-	data.addEventListener('click', function(){
-		document.getElementryById('main-cloth')
-		document.getElementryById('main-desc-title')
-		document.getElementryById('main-desc')
-		
-	});
+document.querySelectorAll('.cloth-thumbnail').forEach(item => {
+    item.addEventListener('click', function() {
+    	/* console.log("Clicked thumbnail:", this.src);
+        console.log("Title:", this.getAttribute('data-title'));
+        console.log("Description:", this.getAttribute('data-desc')); */
+        
+        document.getElementById('main-cloth').src = this.src;
+        document.getElementById('main-desc-title').textContent = this.getAttribute('data-title');
+        document.getElementById('main-desc').textContent = this.getAttribute('data-desc');
+    });
 });
 
 </script>
