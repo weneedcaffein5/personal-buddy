@@ -1,0 +1,231 @@
+@charset "UTF-8";
+
+/* 기본 레이아웃 */
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 1400px;
+    display: flex;
+    justify-content: center;
+    margin: 0 260px;
+}
+
+/* 마이페이지 오른쪽 내용 */
+.right-contentbox {
+    width: 1159px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+}
+
+/* 마이페이지 왼쪽 바 */
+.sidebar {
+    width: 200px;
+    height: 1000px;
+    border: solid #DDDDDD 1px;
+    margin: 70px 40px 0 0;
+}
+
+/* 유저 프로필 */
+.profile {
+    width: 200px;
+    height: 200px;
+    border-bottom: solid #DDDDDD 1px;
+}
+
+.profile-setting {
+	font-weight: 300;
+	font-size: 14px;
+    width: 200px;
+    height: 100px;
+    border-bottom: solid #DDDDDD 1px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nickname {
+    padding-top: 20px;
+}
+
+/* 사이드바 메뉴 */
+.mypage, .community, .myinfo {
+    width: 200px;
+    height: 100px;
+    border-bottom: solid #DDDDDD 1px;
+    display: flex;
+    flex-direction: column;
+}
+
+.icon {
+    padding-left: 20px;
+    padding-right: 5px;
+    padding-top: 20px;
+}
+
+.link {
+    font-size: 14px;
+    font-weight: 300;
+    padding: 2px 0 2px 44px;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #01CD74;
+}
+
+strong {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* ======================================================================================== */
+
+/* 내가 작성한 댓글 */
+.mycomments-container {
+    width: 1160px;
+    margin: 0 auto;
+}
+
+.mycomments-description {
+    font-size: 14px;
+    font-weight: 300;
+    color: #666;
+    margin: 0;
+}
+
+.mycomments-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.mycomments-divider {
+    border: none;
+    height: 1px;
+    background-color: black;
+    width: 1160px;
+    margin-bottom: 20px;
+}
+
+.mycomments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.my-comments {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+
+.my-comments-content {
+    width: 650px;
+    
+}
+
+.my-comments-title {
+    font-size: 16px;
+    font-weight: 500;
+    
+}
+
+.my-comments-text {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.6;
+    margin-top: 5px;
+}
+
+.my-comments-user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.my-comments-user-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.my-comments-username {
+    font-size: 14px;
+    color: #444;
+}
+
+.my-comments-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #777;
+    margin-top: 5px;
+}
+
+
+/* pagination */
+
+.pagination {
+	/* position: sticky; */
+	position: fixed; 
+	bottom: 0px;
+	left: 50%;
+	/*transform: translateX(-50%);  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: #aaa;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+.pagination a.active {
+    background: #06C371;
+    color: white;
+    font-weight: bold;
+}
+
+.pagination a:hover {
+    background: rgba(106, 191, 105, 0.2);
+}
+
+.pagination .dots {
+    color: #aaa;
+    font-size: 18px;
+}
+
+.pagination .arrow {
+    font-size: 20px;
+    color: #6abf69;
+    cursor: pointer;
+}
+
+.pagination .arrow:hover {
+    opacity: 0.7;
+}
