@@ -10,8 +10,13 @@
 <link rel="stylesheet" href="../assets/css/event/event-main.css">
 </head>
 <body>
+
+	
+
+
    <div class="event-main">
       <!-- 헤더 -->
+
         <%@ include file="../layout/header.jsp" %>
         <!-- 배너 -->
         <div class="banner-container">   
