@@ -56,11 +56,11 @@
     		</a>
     	</div>
     	    	 	
-    	<button class="banner-button" id="buttonSlide">&lt;</button>
+    	<!-- <button class="banner-button" id="buttonSlide">&lt;</button>
     		<div class="banner-counter">
         		<span id="current-slide">1</span> / <span id="total-slides">3</span>
     		</div>
-    		<button class="banner-button-next" id="nextSlide">&gt;</button>	
+    		<button class="banner-button-next" id="nextSlide">&gt;</button>	 -->
 		</div>
 
 	<div>
@@ -162,39 +162,145 @@
 	</div>
 	</section>
 	
+    <!-- 코디 추천 -->
     
-    <section class="cloth-recommend">
-    <p class="cloth-title">이런 날씨엔 이런 코디</p>
+	<section class="cloth-recommend">
+    <p class="cloth-title">당신이 원하는 '그' 코디</p>
     <div class="cloth-main">
         <div class="cloth-image">
-            <img id="main-cloth" src="../assets/images/main/cloth-1.png" alt="코디1">
+            <img id="main-cloth" src="../assets/images/main/cloth-5.jpg" alt="코디1">
         </div>
         <div class="cloth-text">
-            <p id="main-desc-title" class="cloth-desc-title">다름 속 빛나는 조화</p>
-            <p id="main-desc" class="cloth-desc">다양성을 포용하는 오픈와이와이의 우리이자 나를 위한 컬렉션을 소개합니다.</p>
+            <p id="main-desc-title" class="cloth-desc-title">선호하시는 브랜드인 '허그유어스킨'의 스타일이에요</p>
+            
+            <div id="main-desc">
+	            <div class="cloth-info">
+	                    <img class="cloth-info-image" src="../assets/images/main/pants1.jpg" alt="조거 팬츠">
+	                <p><a href="https://www.musinsa.com/products/4757432" target="_blank">허그유어스킨-레이스 조거 팬츠(블랙)</a><br>98,100원</p>
+	            </div>
+	            <div class="cloth-info">
+	                    <img class="cloth-info-image" src="../assets/images/main/dress1.png" alt="오프숄더 드레스">
+	                <p><a href="https://www.musinsa.com/products/4757324" target="_blank">드로우 스트링 오프숄더 드레스 (핑크)</a><br>88,200원</p>
+	            </div>
+	            <div class="cloth-info">
+	                    <img class="cloth-info-image" src="../assets/images/main/belt1.jpg" alt="스커트 벨트">
+	                <p><a href="https://www.musinsa.com/products/4757300" target="_blank">플리츠 스커트 벨트</a><br>52,200원</p>
+	            </div>
+            </div>
+            
         </div>
     </div>
     <div class="cloth-thumbnail-list">
-        <img class="cloth-thumbnail" src="../assets/images/main/cloth-1.png" alt="코디1" data-title="다름 속 빛나는 조화" data-desc="다양성을 포용하는 오픈와이와이의 우리이자 나를 위한 컬렉션을 소개합니다.">
-        <img class="cloth-thumbnail" src="../assets/images/main/cloth-2.png" alt="코디2" data-title="스타일과 편안함" data-desc="모던한 감각과 함께 편안함을 제공하는 룩을 만나보세요.">
-        <img class="cloth-thumbnail" src="../assets/images/main/cloth-3.png" alt="코디3" data-title="트렌디한 감각" data-desc="유행을 선도하는 감각적인 스타일을 즐겨보세요.">
-        <img class="cloth-thumbnail" src="../assets/images/main/cloth-4.png" alt="코디4" data-title="감각적인 레이어드" data-desc="레이어드를 활용한 스타일링으로 개성을 표현하세요.">
+        <img class="cloth-thumbnail" src="../assets/images/main/cloth-5.jpg" alt="코디1" 
+        data-title="선호하시는 브랜드인 '허그유어스킨'의 스타일이에요" 
+        data-desc='<div class="cloth-info">
+                    <a href="https://www.musinsa.com/products/4757432" target="_blank">
+                        <img class="cloth-info-image" src="../assets/images/main/pants1.jpg" alt="조거 팬츠">
+                    </a>
+                    <p><a href="https://www.musinsa.com/products/4757432" target="_blank">허그유어스킨-레이스 조거 팬츠(블랙)</a><br>98,100원</p>
+                  </div>
+                  <div class="cloth-info">
+                    <a href="https://www.musinsa.com/products/4757324" target="_blank">
+                        <img class="cloth-info-image" src="../assets/images/main/dress1.png" alt="오프숄더 드레스">
+                    </a>
+                    <p><a href="https://www.musinsa.com/products/4757324" target="_blank">드로우 스트링 오프숄더 드레스 (핑크)</a><br>88,200원</p>
+                  </div>
+                  <div class="cloth-info">
+                    <a href="https://www.musinsa.com/products/4757300" target="_blank">
+                        <img class="cloth-info-image" src="../assets/images/main/belt1.jpg" alt="스커트 벨트">
+                    </a>
+                    <p><a href="https://www.musinsa.com/products/4757300" target="_blank">플리츠 스커트 벨트</a><br>52,200원</p>
+                  </div>'>
+                  
+        <img class="cloth-thumbnail" src="../assets/images/main/cloth-2.png" alt="코디2" 
+        data-title="선호하시는 브랜드인 '스컬프터'의 스타일이에요"  
+        data-desc='<div class="cloth-info">
+                    <a href="https://www.musinsa.com/products/750908" target="_blank">
+                        <img class="cloth-info-image" src="../assets/images/main/dress3.png" alt="원피스3">
+                    </a>
+                    <p><a href="https://sculptorpage.com/product/detail.html?product_no=10107&cate_no=783&display_group=1" target="_blank">카고 집업 드레스(소프트 브라운)</a><br>95,400원</p>
+                  </div>     
+                  
+                  <div class="cloth-info">
+                    <a href="https://sculptorpage.com/product/detail.html?product_no=12184&cate_no=785&display_group=1" target="_blank">
+                        <img class="cloth-info-image" src="../assets/images/main/스컬프터-가방1.jpg" alt="스컬프터 가방">
+                    </a>
+                    <p><a href="https://sculptorpage.com/product/detail.html?product_no=12184&cate_no=801&display_group=1" target="_blank">메탈릭 호버백(블랙)</a><br>128,700원</p>
+                  </div>  
+                  
+                  <div class="cloth-info">
+                    <a href="https://sculptorpage.com/product/detail.html?product_no=12079&cate_no=785&display_group=1" target="_blank">
+                        <img class="cloth-info-image" src="../assets/images/main/스컬프터-악세1.jpg" alt="악세사리">
+                    </a>
+                    <p><a href="https://sculptorpage.com/product/detail.html?product_no=12079&cate_no=785&display_group=1" target="_blank">멀티 브로치 세트</a><br>15,900원</p>
+                  </div>
+                     
+                  </div>'>
+                   
+        <img class="cloth-thumbnail" src="../assets/images/main/dress4.png" alt="코디3" 
+        data-title="선호하시는 브랜드인 '미우미우'의 스타일이에요" 
+        data-desc='<div class="cloth-info">
+                    <a href="https://www.miumiu.com/kr/ko/p/%ED%8F%AC%ED%94%8C%EB%A6%B0-%EB%93%9C%EB%A0%88%EC%8A%A4/MF5787_1BMS_F0E18_S_OOO" target="_blank">
+                        <img class="cloth-info-image" src="../assets/images/main/miumiu-dress.png" alt="드레스">
+                    </a>
+                    <p><a href="https://www.miumiu.com/kr/ko/p/%ED%8F%AC%ED%94%8C%EB%A6%B0-%EB%93%9C%EB%A0%88%EC%8A%A4/MF5787_1BMS_F0E18_S_OOO" target="_blank">포플린 드레스(핑크)</a><br> 5,150,000원</p>                  
+                   </div>
+                   
+                   <div class="cloth-info">
+                   <a href="https://www.miumiu.com/kr/ko/p/%EC%8A%A4%ED%8A%B8%EB%9E%A9%EC%9D%B4-%EB%8B%AC%EB%A6%B0-%ED%8C%A8%EB%B8%8C%EB%A6%AD-%EC%8A%AC%EB%A7%81%EB%B0%B1/5I013E_650_F0002_F_M055
+                   " target="_blank">
+                        <img class="cloth-info-image" src="../assets/images/main/miumiu-shoes.png" alt="신발">
+                   </a>
+                   <p><a href="https://www.miumiu.com/kr/ko/p/%EC%8A%A4%ED%8A%B8%EB%9E%A9%EC%9D%B4-%EB%8B%AC%EB%A6%B0-%ED%8C%A8%EB%B8%8C%EB%A6%AD-%EC%8A%AC%EB%A7%81%EB%B0%B1/5I013E_650_F0002_F_M055
+                   " target="_blank">포플린 드레스(핑크)</a><br> 5,150,000원</p>                  
+                   </div>
+                   
+                   <div class="cloth-info">
+                   <a href="https://www.musinsa.com/products/4757550" target="_blank">
+                        <img class="cloth-info-image" src="../assets/images/main/jacket1.jpg" alt="블레이저">
+                   </a>
+                   <p><a href="https://www.musinsa.com/products/4757550" target="_blank">포플린 드레스(핑크)</a><br> 5,150,000원</p>                  
+                   </div>
+                                    	
+                  </div>'>  
+                  
+        <img class="cloth-thumbnail" src="../assets/images/main/cloth-7.png" alt="코디4"
+         data-title="선호하시는 브랜드인 '칼하트'의 스타일이에요"  
+         data-desc='<div class="cloth-info">
+                    <a href="https://www.musinsa.com/products/4757600" target="_blank">
+                        <img class="cloth-info-image" src="../assets/images/main/coat1.jpg" alt="트렌치 코트">
+                    </a>
+                    <p><a href="https://www.musinsa.com/products/4757600" target="_blank">트렌치 코트 (베이지)</a><br>198,000원</p>
+                  	</div>
+                  	
+                  	<div class="cloth-info">
+                  	<a href="https://www.musinsa.com/products/4757600" target="_blank">
+                        <img class="cloth-info-image" src="../assets/images/main/coat1.jpg" alt="트렌치 코트">
+                    </a>
+                    <p><a href="https://www.musinsa.com/products/4757600" target="_blank">트렌치 코트 (베이지)</a><br>198,000원</p>
+                  	</div>
+                  	
+                  	<div class="cloth-info">
+                  	<a href="https://www.musinsa.com/products/4757600" target="_blank">
+                        <img class="cloth-info-image" src="../assets/images/main/coat1.jpg" alt="트렌치 코트">
+                    </a>
+                    <p><a href="https://www.musinsa.com/products/4757600" target="_blank">트렌치 코트 (베이지)</a><br>198,000원</p>
+                  	</div>	
+                  	
+                  </div>'>
     </div>
 </section>
-    
-
 </body>
 <script>
 
 /* 장소 추천 */
-
 document.addEventListener("click", function (e) {
 	/*  const clickedItem = e.target.value(".place-item"); */
     const clickedItem = e.target.closest(".place-item");
     /* console.log(clickedItem); */
     if (!clickedItem) {
     	return;
-    }
+    }    
 
     const placeDetails = document.querySelector(".place-details");
     
@@ -206,6 +312,8 @@ document.addEventListener("click", function (e) {
     const placeRating = clickedItem.querySelector(".place-rating").textContent;
     const placeLocation = clickedItem.querySelector(".place-location").textContent;
     const placeImg = clickedItem.querySelector("img").src;
+    
+    
     
     /* console.log(placeName);
     console.log(placeSub);
@@ -226,14 +334,17 @@ document.addEventListener("click", function (e) {
 
 /* 코디 추천 */
 
-documenr.querySelectorAll('.cloth-thumbnail').forEach(data => {
-	data.addEventListener('click', function(){
-		document.getElementryById('main-cloth')
-		document.getElementryById('main-desc-title')
-		document.getElementryById('main-desc')
-		
-	});
+document.querySelectorAll('.cloth-thumbnail').forEach(item => {    	
+    item.addEventListener('click', function() {       
+        document.getElementById('main-cloth').src = this.src;
+        document.getElementById('main-desc-title').textContent = this.getAttribute('data-title');
+        document.getElementById('main-desc').innerHTML = this.getAttribute('data-desc');
+    });
 });
+
+/* console.log("Clicked thumbnail:", this.src);
+console.log("Title:", this.getAttribute('data-title'));
+console.log("Description:", this.getAttribute('data-desc')); */
 
 </script>
 </html>
