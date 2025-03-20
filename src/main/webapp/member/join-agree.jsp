@@ -10,8 +10,8 @@
 <title>Personal Buddy 약관동의</title>
 </head>
 <body>
+	<img src="../assets/images/member/logo-login.png" alt="Personal Buddy 로고" class="logo">
 	<div id="agree-container">
-		<img src="../assets/images/member/logo-login.png" alt="Personal Buddy 로고" class="logo">			
 		<div class="agree-group">
 			<form action="join-write.member" method="post">
 				<div class="wrapper">

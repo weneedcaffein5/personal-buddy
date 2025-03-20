@@ -26,6 +26,7 @@ body {
     width: 100%;
     height: 60px;
     padding: 10px 50px 10px 10px; /* 오른쪽 패딩 추가하여 아이콘과 간격 조정 */
+    color: var(--gray6);
     margin: 0px 50px;
     border: none;
     display: block;
@@ -58,6 +59,21 @@ body {
     left: 15px;
     width: 20px;
     height: 20px;
+}
+
+.request-email-confirm {
+	width: 200px;
+	line-height: 30px;
+	margin-right: 15px;
+	background-color: var(--white);
+	color: var(--sub-green);
+	border: 1px solid var(--sub-green);
+	border-radius: 10px;
+}
+
+.request-email-confirm:hover {
+	background-color: var(--light-green);
+	font-weight: 700;
 }
 
 .input-wrapper .toggle-password{
@@ -109,8 +125,84 @@ body {
 }
 
 .input-wrapper .phone-confirm-check {
-	display: none; 
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	opacity: 0;
 }
+
+/* 캘린더 배경색 변경 */
+.flatpickr-calendar {
+	font-family: 'Spoqa Han Sans Neo', sans-serif;
+    background: var(--white);
+    border: 1px solid var(--main-green);
+    border-radius: 10px 10px 0 0;
+}
+/* Flatpickr 헤더 스타일 */
+.flatpickr-months {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    background-color: var(--sub-green); /* 배경색 */
+    color: white; /* 글자색 */
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+}
+
+.flatpickr-current-month{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/* 드롭다운 내부 옵션 스타일 */
+.flatpickr-monthDropdown-months{
+    margin-right: 20px !important;
+}
+
+/* 드롭다운 내부 옵션 스타일 */
+.flatpickr-monthDropdown-months option {
+    color: black;
+    font-size: var(--h8);
+}
+/* 📌 헤더(월/연도)의 글자 색상 강제 변경 */
+.flatpickr-current-month input.cur-year,
+.flatpickr-monthDropdown-months {
+    color: var(--white) !important; /* 글자색 변경 */
+    font-weight: 500;
+    font-size: var(--h6);
+}
+
+/* 이전/다음 버튼 색상 변경 */
+.flatpickr-prev-month svg, .flatpickr-next-month svg {
+	margin-top: 15px;
+    fill: var(--white) !important; /* 기본 버튼 색상 */
+}
+
+.flatpickr-prev-month:hover svg, .flatpickr-next-month:hover svg {
+    fill: var(--white) !important; /* 마우스 오버 시 색상 변경 */
+    transition: 0.3s ease-in-out;
+}
+
+.flatpickr-day:hover{
+	background: var(--light-green) !important;
+	border: 1px solid var(--sub-green) !important;
+	color: var(--black) !important;
+}
+
+/* 오늘 날짜 스타일 */
+.flatpickr-day.today {
+    background: white;
+    border: 1px solid var(--sub-green) !important;
+    color: var(--sub-green);
+}
+
+
+.flatpickr-day.selected {
+	background: var(--main-green) !important;
+    border: 1px solid var(--sub-green) !important;
+    color: var(--light-green);
+}
+
 
 .request-phone-confirm {
 	color: var(--gray5);

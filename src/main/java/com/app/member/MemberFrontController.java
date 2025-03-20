@@ -30,7 +30,10 @@ public class MemberFrontController extends HttpServlet{
 			result = new MemberJoinAgreeController().execute(req, resp);
 		}else if(target.equals("join-write")) {
 			result = new MemberJoinWriteController().execute(req, resp);
-		}else if(target.equals("join-profile")) {
+		}else if(target.equals("join-mail-check")) {
+			result = new MemberJoinWriteController().execute(req, resp);
+		}
+		else if(target.equals("join-profile")) {
 			result = new MemberJoinProfileController().execute(req, resp);
 		}else if(target.equals("login")) {
 			result = new MemberLoginController().execute(req, resp);
