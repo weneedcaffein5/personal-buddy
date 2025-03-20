@@ -13,6 +13,7 @@ import com.app.member.controller.MemberJoinProfileController;
 import com.app.member.controller.MemberJoinWriteController;
 import com.app.member.controller.MemberLoginController;
 import com.app.member.controller.MemberLoginOkController;
+import com.app.member.controller.MemberSendMailController;
 
 public class MemberFrontController extends HttpServlet{
 
@@ -30,10 +31,11 @@ public class MemberFrontController extends HttpServlet{
 			result = new MemberJoinAgreeController().execute(req, resp);
 		}else if(target.equals("join-write")) {
 			result = new MemberJoinWriteController().execute(req, resp);
-		}else if(target.equals("join-mail-check")) {
-			result = new MemberJoinWriteController().execute(req, resp);
-		}
-		else if(target.equals("join-profile")) {
+		}else if(target.equals("send-mail")) {
+			result = new MemberSendMailController().execute(req, resp);
+		}else if(target.equals("mail-check")) {
+			result = new MemberSendMailController().execute(req, resp);
+		}else if(target.equals("join-profile")) {
 			result = new MemberJoinProfileController().execute(req, resp);
 		}else if(target.equals("login")) {
 			result = new MemberLoginController().execute(req, resp);

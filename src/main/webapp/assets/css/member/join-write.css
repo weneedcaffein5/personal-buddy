@@ -61,7 +61,7 @@ body {
     height: 20px;
 }
 
-.request-email-confirm {
+#mail-button {
 	width: 200px;
 	line-height: 30px;
 	margin-right: 15px;
@@ -71,10 +71,38 @@ body {
 	border-radius: 10px;
 }
 
-.request-email-confirm:hover {
+#mail-button:hover {
 	background-color: var(--light-green);
 	font-weight: 700;
 }
+
+#mail-button.process{
+	color: var(--sub-green);
+	border: 1px solid var(--sub-green);
+}
+
+#mail-button.success{
+	color: var(--sub-blue) !important;
+	border: 1px solid var(--sub-blue) !important;
+}
+#mail-button.fail{
+	color: var(--warning-red) !important;
+	border: 1px solid var(--warning-red) !important;
+}
+
+.email-confirm {
+	color: var(--gray5);
+	font-size: var(--h9);
+    text-decoration: none;
+    margin: 0 5px;
+    text-align: center;
+    width: 100px;
+}
+.email-confirm:hover{
+	color: blue;
+    text-decoration: underline;
+}
+
 
 .input-wrapper .toggle-password{
 	position: absolute;

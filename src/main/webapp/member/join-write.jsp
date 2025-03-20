@@ -32,13 +32,14 @@
         		<!-- id(email 주소) -->
 	            <div class="input-wrapper" style="border-radius: 10px 10px 0px 0px;">
 	                <img src="../assets/images/member/message-icon.png" class="input-icon">
-	                <input type="email" id="email" placeholder="아이디 (이메일 주소)" name="memberEmail" required>
-	                <button type="button" class="request-email-confirm">인증메일 발송</button>
+	                <input type="email" id="email" placeholder="아이디 (이메일 주소)" name="memberEmail"
+	                value="<%= session.getAttribute("email") != null ? session.getAttribute("email") : "" %>" required />
+	                <button id="mail-button" type="button" onclick="sendMail()">인증메일 발송</button>
 	            </div>
 	            <div class="input-wrapper">
 	                <img src="../assets/images/member/message-icon.png" class="input-icon">
 	                <input type="text" maxlength="6" placeholder="인증번호 6자리 입력">
-	                <span class="request-phone-confirm">확인</span>
+	                <span class="email-confirm" onclick="mailCheck()">확인</span>
 	            </div>
 	            <!-- 비밀번호 -->
 	            <div class="input-wrapper" style="border-radius: 0px 0px 10px 10px;">
@@ -57,12 +58,12 @@
 	                <!-- 성별 선택 -->
                 	<div class="gender-select">
                 		<label>
-	                		<input onchange="checkState(this)" id="genderMale" type="radio" name="memberGender" />
-		                	<span style="border-radius: 10px 0px 0px 10px;">남자</span>
+	                		<input onchange="checkState(this)" id="genderMale" type="radio" name="memberGender" value="남성"/>
+		                	<span style="border-radius: 10px 0px 0px 10px;">남성</span>
 	                	</label>
 	                	<label>
-		                	<input onchange="checkState(this)" id="genderFemale"  type="radio" name="memberGender" />
-		                	<span style="border-radius: 0px 10px 10px 0px;">여자</span>
+		                	<input onchange="checkState(this)" id="genderFemale"  type="radio" name="memberGender" value="여성"/>
+		                	<span style="border-radius: 0px 10px 10px 0px;">여성</span>
 	                	</label>
                 	</div>
 	            </div>
@@ -111,37 +112,62 @@
 </body>
 <script>
 
-	document.addEventListener("DOMContentLoaded", function () {
-	    const inputs = document.querySelectorAll(".input-group input");
-	    const loginButton = document.querySelector(".login-btn");
+	/**
+	 * 이메일 인증번호 요청 (AJAX)
+	 * - 사용자가 "인증번호 요청" 버튼을 클릭하면 실행됨
+	 * - 서버의 `send-mail` 컨트롤러로 이메일을 전송하고 인증번호를 요청함
+	 */
+	function sendMail() {
+	    let email = document.getElementById("email").value; // 입력된 이메일 가져오기
+	    let button = document.getElementById("mail-button");
+	    
+	    button.innerText = "메일 전송 중";
+	    button.classList.remove("success");
+	    button.classList.remove("fail");
+	    button.classList.add("process");
+	    
+	    fetch("send-mail.member", { // AJAX 요청 (비동기)
+	        method: "POST",
+	        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+	        body: new URLSearchParams({ email: email }).toString()
+	    })
+	    .then(response => response.json()) // 서버에서 JSON 응답을 받음
+	    .then(data => {
+	    	if(data.success){
+	    		button.classList.remove("process");
+	    		button.classList.remove("fail");
+	    		button.classList.add("success");
+	    	}else{
+	    		button.classList.remove("process");
+		    	button.classList.remove("success");
+	    		button.classList.add("fail");
+	    	}
+	    	
+	    	button.innerText = data.message; // 메시지 표시
+	    })
+	    .catch(error => console.error("Error:", error)); // 에러 처리
+	}
 	
-	    function checkInputs() {
-	        let allFilled = true;
-	        inputs.forEach(input => {
-		            if (input.value.trim() === "") {
-		                allFilled = false;
-		                input.classList.remove("filled");
-		            } else {
-		                input.classList.add("filled");
-	            }
-	        });
-		
-	        if (allFilled) {
-	            loginButton.classList.add("active");
-	            loginButton.removeAttribute("disabled");
-	        } else {
-	            loginButton.classList.remove("active");
-	            loginButton.setAttribute("disabled", "true");
-	        }
-	    }
-		
-	    inputs.forEach(input => {
-	        input.addEventListener("input", checkInputs);
-	    });
-	
-	    checkInputs(); // 페이지 로드 시 실행
-	});
+	 /**
+     * 인증번호 확인 요청 (AJAX)
+     * - 사용자가 "인증 확인" 버튼을 클릭하면 실행됨
+     * - 서버의 `mail-check` 컨트롤러로 인증번호를 전송하고 검증 요청
+     */
+    function mailCheck() {
+        let authCode = document.getElementById("authCode").value; // 입력된 인증번호 가져오기
 
+        fetch("mail-check.member", { // AJAX 요청 (비동기)
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams({ authCode: authCode }).toString()
+        })
+        .then(response => response.json()) // 서버에서 JSON 응답을 받음
+        .then(data => {
+            alert(data.message); // 인증 결과 메시지 출력
+        })
+        .catch(error => console.error("Error:", error)); // 에러 처리
+    }
+	
 	document.querySelectorAll("img").forEach(img => {
 		img.addEventListener("dragstart", function (event) {
 		    event.preventDefault();
@@ -164,36 +190,12 @@
 		})
 	})
 	
-	public class 함지현{
-	
-		private static 눈물;
-		private static 절반남기기;
-		private static 디자인 감각;
-		
-		
-		국비(){
-			if(지현 목적지 == 빠스){
-				빠스먹고 행복 코딩;
-			}else if(지현 목적지 == 우진이 개싸움){
-				암걸림
-			}else if(지현 목적지 == 집){
-				집에서 새벽 4시까지 
-				혼자서 울다가 
-				디코하고 같이 문제풀기
-			}else{
-				그 외의 결과는 없다.
-				벌써 다 들켰죠?
-			}
-		}
-	}
-	
 	// 기본 Flatpickr 적용
     flatpickr("#birth", {
         enableTime: false, // 시간 선택 비활성화
         dateFormat: "Y-m-d", // 날짜 형식 (예: 2024-03-19)
         minDate: "1900-01-01", // 최소 선택 가능 날짜
     });
-
 	document.getElementById("birth-icon").addEventListener("click",() => {
 		document.getElementById("birth")._flatpickr.open();
 	})
