@@ -322,23 +322,40 @@
     transition: transform 0.3s ease-in-out;
 }
 
-.cloth-image img:hover {
-    transform: scale(1.05);
-}
-
 .cloth-text {
     width: 440px;
     text-align: left;
 }
 
-.cloth-desc-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 5px;
+.cloth-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
 }
+
+.cloth-info-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+	/* box-shadow: 8px 8px 8px rgba(0.05, 0.05, 0.05, 0.05); */
+    cursor: pointer;
+}
+
+.cloth-desc-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+    color: #333;
+    min-height: 50px;
+}
+
 
 .cloth-desc {
     font-size: 14px;
+    line-height: 1.5;
 }
 
 .cloth-thumbnail-list {
@@ -357,7 +374,8 @@
     transition: transform 0.3s ease-in-out;
 }
 
-.cloth-thumbnail:hover {
+.cloth-thumbnail:hover{
     transform: scale(1.1);
 }
+
 
