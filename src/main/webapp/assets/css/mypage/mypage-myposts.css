@@ -316,3 +316,52 @@ textarea {
     display: flex;
     gap: 10px;
 }
+
+
+
+
+/* pagination */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: #aaa;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+.pagination a.active {
+    background: #06C371;
+    color: white;
+    font-weight: bold;
+}
+
+.pagination a:hover {
+    background: rgba(106, 191, 105, 0.2);
+}
+
+.pagination .dots {
+    color: #aaa;
+    font-size: 18px;
+}
+
+.pagination .arrow {
+    font-size: 20px;
+    color: #6abf69;
+    cursor: pointer;
+}
+
+.pagination .arrow:hover {
+    opacity: 0.7;
+}

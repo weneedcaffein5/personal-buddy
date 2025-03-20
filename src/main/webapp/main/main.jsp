@@ -222,17 +222,17 @@
                   </div>     
                   
                   <div class="cloth-info">
-                    <a href="https://www.musinsa.com/products/4757324" target="_blank">
-                        <img class="cloth-info-image" src="../assets/images/main/dress1.png" alt="오프숄더 드레스">
+                    <a href="https://sculptorpage.com/product/detail.html?product_no=12184&cate_no=785&display_group=1" target="_blank">
+                        <img class="cloth-info-image" src="../assets/images/main/스컬프터-가방1.jpg" alt="스컬프터 가방">
                     </a>
-                    <p><a href="https://www.musinsa.com/products/4757324" target="_blank">드로우 스트링 오프숄더 드레스 (핑크)</a><br>88,200원</p>
+                    <p><a href="https://sculptorpage.com/product/detail.html?product_no=12184&cate_no=801&display_group=1" target="_blank">메탈릭 호버백(블랙)</a><br>128,700원</p>
                   </div>  
                   
                   <div class="cloth-info">
-                    <a href="https://www.musinsa.com/products/4757324" target="_blank">
-                        <img class="cloth-info-image" src="../assets/images/main/dress1.png" alt="오프숄더 드레스">
+                    <a href="https://sculptorpage.com/product/detail.html?product_no=12079&cate_no=785&display_group=1" target="_blank">
+                        <img class="cloth-info-image" src="../assets/images/main/스컬프터-악세1.jpg" alt="악세사리">
                     </a>
-                    <p><a href="https://www.musinsa.com/products/4757324" target="_blank">드로우 스트링 오프숄더 드레스 (핑크)</a><br>88,200원</p>
+                    <p><a href="https://sculptorpage.com/product/detail.html?product_no=12079&cate_no=785&display_group=1" target="_blank">멀티 브로치 세트</a><br>15,900원</p>
                   </div>
                      
                   </div>'>
@@ -240,10 +240,28 @@
         <img class="cloth-thumbnail" src="../assets/images/main/dress4.png" alt="코디3" 
         data-title="선호하시는 브랜드인 '미우미우'의 스타일이에요" 
         data-desc='<div class="cloth-info">
-                    <a href="https://www.musinsa.com/products/4757550" target="_blank">
-                        <img class="cloth-info-image" src="../assets/images/main/jacket1.jpg" alt="블레이저">
+                    <a href="https://www.miumiu.com/kr/ko/p/%ED%8F%AC%ED%94%8C%EB%A6%B0-%EB%93%9C%EB%A0%88%EC%8A%A4/MF5787_1BMS_F0E18_S_OOO" target="_blank">
+                        <img class="cloth-info-image" src="../assets/images/main/miumiu-dress.png" alt="드레스">
                     </a>
-                    <p><a href="https://www.musinsa.com/products/4757550" target="_blank">포플린 드레스(핑크)</a><br> 5,150,000원</p>
+                    <p><a href="https://www.miumiu.com/kr/ko/p/%ED%8F%AC%ED%94%8C%EB%A6%B0-%EB%93%9C%EB%A0%88%EC%8A%A4/MF5787_1BMS_F0E18_S_OOO" target="_blank">포플린 드레스(핑크)</a><br> 5,150,000원</p>                  
+                   </div>
+                   
+                   <div class="cloth-info">
+                   <a href="https://www.miumiu.com/kr/ko/p/%EC%8A%A4%ED%8A%B8%EB%9E%A9%EC%9D%B4-%EB%8B%AC%EB%A6%B0-%ED%8C%A8%EB%B8%8C%EB%A6%AD-%EC%8A%AC%EB%A7%81%EB%B0%B1/5I013E_650_F0002_F_M055
+                   " target="_blank">
+                        <img class="cloth-info-image" src="../assets/images/main/miumiu-shoes.png" alt="신발">
+                   </a>
+                   <p><a href="https://www.miumiu.com/kr/ko/p/%EC%8A%A4%ED%8A%B8%EB%9E%A9%EC%9D%B4-%EB%8B%AC%EB%A6%B0-%ED%8C%A8%EB%B8%8C%EB%A6%AD-%EC%8A%AC%EB%A7%81%EB%B0%B1/5I013E_650_F0002_F_M055
+                   " target="_blank">포플린 드레스(핑크)</a><br> 5,150,000원</p>                  
+                   </div>
+                   
+                   <div class="cloth-info">
+                   <a href="https://www.musinsa.com/products/4757550" target="_blank">
+                        <img class="cloth-info-image" src="../assets/images/main/jacket1.jpg" alt="블레이저">
+                   </a>
+                   <p><a href="https://www.musinsa.com/products/4757550" target="_blank">포플린 드레스(핑크)</a><br> 5,150,000원</p>                  
+                   </div>
+                                    	
                   </div>'>  
                   
         <img class="cloth-thumbnail" src="../assets/images/main/cloth-7.png" alt="코디4"
@@ -253,6 +271,22 @@
                         <img class="cloth-info-image" src="../assets/images/main/coat1.jpg" alt="트렌치 코트">
                     </a>
                     <p><a href="https://www.musinsa.com/products/4757600" target="_blank">트렌치 코트 (베이지)</a><br>198,000원</p>
+                  	</div>
+                  	
+                  	<div class="cloth-info">
+                  	<a href="https://www.musinsa.com/products/4757600" target="_blank">
+                        <img class="cloth-info-image" src="../assets/images/main/coat1.jpg" alt="트렌치 코트">
+                    </a>
+                    <p><a href="https://www.musinsa.com/products/4757600" target="_blank">트렌치 코트 (베이지)</a><br>198,000원</p>
+                  	</div>
+                  	
+                  	<div class="cloth-info">
+                  	<a href="https://www.musinsa.com/products/4757600" target="_blank">
+                        <img class="cloth-info-image" src="../assets/images/main/coat1.jpg" alt="트렌치 코트">
+                    </a>
+                    <p><a href="https://www.musinsa.com/products/4757600" target="_blank">트렌치 코트 (베이지)</a><br>198,000원</p>
+                  	</div>	
+                  	
                   </div>'>
     </div>
 </section>

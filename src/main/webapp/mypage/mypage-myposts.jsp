@@ -101,9 +101,124 @@
                     <span>👁 1,200</span>
                 	</div>
         	</div>
-    	</div>
+        	
+        	
+        	<div class="mypost">
+            <img class="mypost-image" src="../assets/images/posts/post-4.jpg" alt="게시물 이미지">
+            <div class="mypost-content">
+                <h3 class="mypost-title">🌃 강남에서 야경 보기 좋은 카페</h3>
+                <p class="mypost-text">야경이 멋진 강남 카페를 찾아봤어요! 차분한 분위기에서 커피 한 잔하며 야경을 즐길 수 있는 곳 추천합니다.</p>
+            	</div>
+                <p class="mypost-meta">2025.02.01 게시</p>
+                <div class="mypost-stats">
+                    <span>👍 380</span>
+                    <span>💬 45</span>
+                    <span>👁 1,200</span>
+                	</div>
+        	</div>        	       	
+    	</div>	  	
 	</div>
-</div> 
-	
+		<div class="pagination">
+        	<span class="arrow">&lt;</span>
+        	<a href="#" class="active">1</a>
+        	<a href="#">2</a>
+        	<a href="#">3</a>
+        	<a href="#">4</a>
+        	<span class="dots">...</span>
+        	<a href="#">10</a>
+        	<span class="arrow">&gt;</span>
+        </div>
+	</div> 	
 </body>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+	const posts = document.querySelectorAll(".mypost");
+	const paginationLinks = document.querySelectorAll(".pagination a");
+	const prevArrow = document.querySelector(".pagination .arrow:first-child");
+	const nextArrow = document.querySelector(".pagination .arrow:last-child");
+	
+	/* console.log(posts);
+	console.log(paginationLinks);
+	console.log(prevArrow);
+	console.log(nextArrow); */
+	
+	let currentPage = 1;
+	const postPerPage = 4;
+	
+	console.log("총 ㄱㅔ시글 수 : " + posts.length);
+	console.log( "한 페이지당 게시글 수 : " +  postPerPage); 
+	console.log("현재 페이지 : " + currentPage);
+	
+	function updatePagination(){
+		paginationContainer.innerHTML = "";
+		
+		paginationContainer.appendChild(prevArrow);
+		
+		const totalPages = Math.ceil(posts.length / postPerPage); 
+		
+		for(let i = 1; i <= totalPages; i++){
+			const pageLink = document.createElement("a");
+			
+		}
+	}
+	
+	/* 게시글 4개씩만 */
+	
+	function showPosts(){
+		posts.forEach((post, i)=>{
+			/*  배열 인덱스는 0부터 시작하지만, 페이지는 1부터 시작하므로 -1 */
+			if(i >= (currentPage -1) * postPerPage && i < currentPage * postPerPage){
+				post.style.display = "flex";
+				
+			}else{
+				post.style.display = "none";
+			}
+		});
+	}
+
+	function changePage(newPage){
+		console.log("새로운 페이지로 변경" + newPage);
+		
+		const totalPages = posts.length / postPerPage;
+		
+		
+		if(newPage < 1 || (newPage - 1) * postPerPage >= posts.length){
+			console.error("잘못된 페이지 요청입니다." + newPage);
+			return;
+		}
+		
+		console.log("페이지 변경에 성공하였습니다." + currentPage + "-->" +  newPage);
+		currentPage = newPage;
+		showPosts();	
+		}
+	
+	/* 페이지네이션 버튼 클릭 */
+	paginationLinks.forEach((link, index) => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            console.log("페이지 버튼이 클릭되었습니다." + (index + 1) + "번 페이지");
+            changePage(index + 1);
+        });
+    });
+	
+	
+	/* < 버튼 클릭 */
+	prevArrow.addEventListener("click", () => {
+        console.log("이전 페이지 버튼 클릭");
+        changePage(currentPage - 1);
+    });
+	
+	
+	/* > 버튼 클릭  */
+	nextArrow.addEventListener("click", () => {
+        console.log("다음 페이지 버튼 클릭");
+        changePage(currentPage + 1);
+    });
+	
+		
+});
+		
+
+
+</script>
 </html>
