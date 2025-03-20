@@ -13,6 +13,7 @@
     margin: 0 260px;
 }
 
+/* 마이페이지 오른쪽 내용 */
 .right-contentbox {
     width: 1159px;
     display: flex;
@@ -20,6 +21,7 @@
     margin-top: 70px;
 }
 
+/* 마이페이지 왼쪽 바 */
 .sidebar {
     width: 200px;
     height: 1000px;
@@ -28,13 +30,64 @@
 }
 
 
+/* 나만의 나무 설명 텍스트 */
+.tree-info {
+    width: 1159px;
+    height: 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.tree-info-style {
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.tree-info-left {
+    width: 1160x;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.go-tree {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #424242;
+}
+
+.go-tree-style {
+    font-size: 18px;
+}
+
+/* 나만의 나무 */
+.tree {
+    width: 1159px;
+    height: 600px;
+    border: solid #DDDDDD 1px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+
+.tree-background {
+    width: 1160px;
+    height: 600px;
+}
+
+/* 유저 프로필 사진 */
 .profile {
     width: 200px;
     height: 200px;
     border-bottom: solid #DDDDDD 1px;
 }
 
+/* 유저 닉네임, 상태 메세지 */
 .profile-setting {
+	font-weight: 300;
+	font-size: 14px;
     width: 200px;
     height: 100px;
     border-bottom: solid #DDDDDD 1px;
@@ -47,6 +100,7 @@
     padding-top: 20px;
 }
 
+/* 마이페이지 항목 */
 .mypage {
     width: 200px;
     height: 100px;
@@ -55,6 +109,7 @@
     flex-direction: column;
 }
 
+/* 커뮤니티 항목 */
 .community {
     width: 200px;
     height: 100px;
@@ -63,6 +118,7 @@
     flex-direction: column;
 }
 
+/* 내 정보 항목 */
 .myinfo {
     width: 200px;
     height: 120px;
@@ -70,17 +126,48 @@
     display: flex;
     flex-direction: column;
 }
-/* <div class="profile">
-                </div>
-                <div class="profile-setting">
-                </div>
-                <div class="mypage">
-                </div>
-                <div class="community">
-                </div>
-                <div class="myinfo"> */
+
+.icon {
+    padding-left: 20px;
+    padding-right: 5px;
+    padding-top: 20px;
+}
+
+.link {
+    font-size: 14px;
+    font-weight: 300;
+    padding: 2px 0 2px 44px;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #01CD74; /* 마우스를 올렸을 때 색 변경 */
+}
+
+strong {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* ======================================================================================== */
+
 .guestbook-container {
     width: 1160px;
+}
+
+.comment-display {
+    width: 1140px;
+    height: 100px;
+    border: 1px solid #ccc;
+    background: #fff;
+    margin-top: 60px;
+    padding: 10px;
+    overflow-y: auto;
 }
                 
 .guestbook-header {
@@ -124,16 +211,20 @@ textarea {
 
 .comment-footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     align-items: center;
     margin-top: 10px;
+    padding-bottom: 50px;
 }
 
+/* 0 / 500 */
 #char-count {
     font-size: 12px;
+    padding: 10px;
     color: #666;
 }
 
+/* 등록 버튼 */
 #submit-btn {
     padding: 8px 15px;
     background-color: #ccc;
@@ -144,24 +235,133 @@ textarea {
     cursor: not-allowed;
 }
 
-.icon {
-    padding-left: 20px;
-    padding-right: 5px;
-    padding-top: 20px;
+
+
+.myposts-container {
+    width: 1160px;
+    margin: 0 auto;
 }
 
-.link {
-    /* padding-top: px; */
-    padding-left: 43px;
+.myposts-description {
+	
+    font-size: 14px;
+    font-weight: 300;
+    color: #666;
+    margin:0;
 }
 
-a {
-    color: #000;
+.myposts-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.myposts-divider {
+    border: none;
+    height: 1px;
+    background-color: black;
+    width: 1160px;
+    margin-bottom: 20px;
+}
+
+.myposts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mypost {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+
+.mypost-image {
+    width: 230px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.mypost-content {
+    width: 650px;
+}
+
+.mypost-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.mypost-text {
+    font-size: 14px;
+    font-weight: 400;
+    color: #444;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+
+.mypost-meta {
+    font-size: 14px;
+    font-weight: 400;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.mypost-stats {
+    font-size: 12px;
+    color: #999;
+    display: flex;
+    gap: 10px;
+}
+
+
+
+
+/* pagination */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.pagination a {
     text-decoration: none;
-    transition: color 0.3s ease;
+    color: #aaa;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.2s;
 }
 
-a:hover {
-    color: #01CD74; /* 마우스를 올렸을 때 색 변경 */
+.pagination a.active {
+    background: #06C371;
+    color: white;
+    font-weight: bold;
 }
-                
+
+.pagination a:hover {
+    background: rgba(106, 191, 105, 0.2);
+}
+
+.pagination .dots {
+    color: #aaa;
+    font-size: 18px;
+}
+
+.pagination .arrow {
+    font-size: 20px;
+    color: #6abf69;
+    cursor: pointer;
+}
+
+.pagination .arrow:hover {
+    opacity: 0.7;
+}
