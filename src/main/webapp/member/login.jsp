@@ -6,6 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="../assets/css/member/login.css">
     <title>Personal Buddy 로그인</title>
 </head>
@@ -23,14 +24,14 @@
         	</div>
             <div class="input-group">
                 <div class="input-wrapper">
-                    <input type="email" id="email" name="email" required onfocus="handleLabel('email', true)" onblur="handleLabel('email', false)" oninput="checkValue('email')">
+                    <input type="email" id="email" name="email" required>
 			        <label for="email" class="floating-label">이메일</label>
 			        <img src="../assets/images/member/login-input-cancel-icon.png" alt="입력 취소" class="clear-input" onclick="clearInput('email')">
                 </div>
             </div>
             <div class="input-group">
                 <div class="input-wrapper">
-                    <input type="password" id="password" name="password" required onfocus="handleLabel('password', true)" onblur="handleLabel('password', false)" oninput="checkValue('password')">
+                    <input type="password" id="password" name="password" required>
 			        <label for="password" class="floating-label">비밀번호</label>
 			        <img src="../assets/images/member/login-input-cancel-icon.png" alt="입력 취소" class="clear-input" onclick="clearInput('password')">
 			        <img src="../assets/images/member/see-password-icon-false.png" alt="비밀번호 보기" class="toggle-password" onclick="togglePassword()">

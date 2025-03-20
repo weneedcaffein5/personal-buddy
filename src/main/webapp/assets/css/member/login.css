@@ -60,30 +60,6 @@ body {
     display: block;
     margin-bottom: 5px;
 }
-.input-group input {
-    width: 100%;  /* 부모 요소(.input-group)의 너비에 맞춤 */
-    padding: 10px;
-    margin: 0px 20px;
-    border: 1px solid #D9D9D9;
-    border-radius: 5px;
-    display: block;
-    font-size: 14px;
-    box-sizing: border-box; /* padding과 border를 포함한 너비 계산 */
-    outline: none;
-    transition: all 0.3s ease-in-out;
-}
-
-/* 입력 필드가 포커스를 받았을 때 */
-.input-group input:focus {
-    border-color: #01CD74; /* 초록색 테두리 */
-}
-/* 입력 필드가 값이 있을 때 */
-.input-group input.filled {
-    border-color: #01CD74; /* 초록색 테두리 유지 */
-}
-.input-group input:not(.filled) {
-    border-color: #C5CCD2; /* 초록색 테두리 유지 */
-}
 
 .input-wrapper {
     position: relative;
@@ -99,9 +75,9 @@ body {
     left: 10px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 16px;
+    font-size: var(--h7);
     font-weight: 300;
-    color: #C5CCD2;
+    color: var(--gray2);
     pointer-events: none;
     transition: all 0.3s ease-in-out;
 }
@@ -110,20 +86,36 @@ body {
 .input-wrapper input:focus + .floating-label,
 .input-wrapper input.filled + .floating-label {
     top: 10px;
-    font-size: 12px;
-    color: #01CD74;
+    font-size: var(--h9);
+    color: var(--main-green);
 }
 
 .input-wrapper input {
     width: 100%;
     height: 60px;
     padding: 10px 40px 10px 10px; /* 오른쪽 패딩 추가하여 아이콘과 간격 조정 */
+    margin: 0px 20px;
     border: 1px solid #C5CCD2;
     border-radius: 10px;
-    font-size: 16px;
+    font-size: var(--h7);
     font-weight: 300;
     box-sizing: border-box;
+    outline: none;
+    transition: all 0.3s ease-in-out;
 }
+
+/* 입력 필드가 포커스를 받았을 때 */
+.input-wrapper input:focus {
+    border-color: var(--main-green); /* 초록색 테두리 */
+}
+/* 입력 필드가 값이 있을 때 */
+.input-wrapper input.filled {
+    border-color: var(--main-green); /* 초록색 테두리 유지 */
+}
+.input-wrapper input:not(.filled) {
+    border-color: var(--gray3); /* 초록색 테두리 유지 */
+}
+
 
 /* 아이콘 스타일 (입력 필드 내부 배치) */
 .input-wrapper img {
@@ -134,9 +126,9 @@ body {
 }
 
 .login-fail{
-	color: #FF3F3F;		/* login-fail 시 */
-	color: #FFF;		/* default */
-	font-size: 12px;
+	color: var(--warning-red);		/* login-fail 시 */
+	color: var(--white);		/* default */
+	font-size: var(--h9);
 	font-weight: 500;
 	margin: 20px;
 }
@@ -182,7 +174,7 @@ body {
 }
 /* 로그인 버튼이 활성화될 때 */
 .login-btn.active {
-    background-color: #01CD74;
+    background-color: var(--main-green);
     cursor: pointer;
 }
 
@@ -190,21 +182,21 @@ body {
     background-color: #218838;
 }
 .links {
-	color: #888888;
+	color: var(--gray5);
     margin-top: 15px;
-    font-size: 14px;
+    font-size: var(--h8);
     font-weight: 300;
 }
 
 .links a {
-	color: #888888;
+	color: var(--gray5);
     text-decoration: none;
     margin: 0 5px;
     
 }
 
 .links a:hover {
-	color: #000;
+	color: var(--black);
     text-decoration: underline;
 }
 
