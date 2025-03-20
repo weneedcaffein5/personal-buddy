@@ -1,39 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>탭 네비게이션</title>
-    <link rel="stylesheet" href="../assets/css/contents/contents.css" />
-</head>
-<body>
-    <div class="page-container">
-        <div class="tab-container">
-            <div class="tab" id="tab1">업적</div>
-            <div class="tab active" id="tab2">나의 성장 나무</div>
-            <div class="tab" id="tab3">포인트 샵</div>
-        </div>
-        <h1 class="tree-title-word">나의 성장나무</h1>
-        <div class="tree-wrapper">
-            <div class="tree-container">
-                <div class="tree-box"></div>
-            </div>
-            <div class="tree-button-group">
-                <button class="save-button">저장</button>
-                <button class="cancel-button">취소</button>
-            </div>
-        </div>
-        <h1 class="decorate-title-word">나의 꾸미기</h1>
-        <div class="decorate-tab-container">
-            <button class="decorate-tab">전체</button>
-            <button class="decorate-tab">배경</button>
-            <button class="decorate-tab">스티커</button>
-            <button class="decorate-tab">나무</button>
-        </div>
-        <div class="container">
-            <h2 class="decorate-menu-word">전체 | 배경 | 바닥</h2>
             <div class="folder-wrapper">
                 <div class="folder">
                     <div class="folder-item">
@@ -144,28 +110,22 @@
                 <a href="#">10</a>
                 <span class="arrow">&gt;</span>
             </div>
-        </div>
+
+<!-- <div class="decorate-content-container">
+    <div id="decorateAll" class="decorate-content">
+        <h2>전체 꾸미기</h2>
+        <p>전체 항목을 여기에 표시합니다.</p>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const folderItems = document.querySelectorAll(".folder-item");
-
-            folderItems.forEach((item) => {
-                item.addEventListener("click", function () {
-                    folderItems.forEach((el) => el.classList.remove("selected"));
-                    this.classList.add("selected");
-                });
-            });
-
-            const tabElements = document.querySelectorAll(".decorate-tab");
-
-            tabElements.forEach((element) => {
-                element.addEventListener("click", function () {
-                    tabElements.forEach((el) => el.classList.remove("selected"));
-                    this.classList.add("selected");
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+    <div id="decorateBackground" class="decorate-content" style="display: none;">
+        <h2>배경 꾸미기</h2>
+        <p>배경 관련 항목을 여기에 표시합니다.</p>
+    </div>
+    <div id="decorateSticker" class="decorate-content" style="display: none;">
+        <h2>스티커 꾸미기</h2>
+        <p>스티커 관련 항목을 여기에 표시합니다.</p>
+    </div>
+    <div id="decorateTree" class="decorate-content" style="display: none;">
+        <h2>나무 꾸미기</h2>
+        <p>나무 관련 항목을 여기에 표시합니다.</p>
+    </div>
+</div> -->
