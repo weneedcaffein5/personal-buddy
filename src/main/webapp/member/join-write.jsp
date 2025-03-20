@@ -37,8 +37,8 @@
 	                <button id="mail-button" type="button" onclick="sendMail()">인증메일 발송</button>
 	            </div>
 	            <div class="input-wrapper">
-	                <img src="../assets/images/member/message-icon.png" class="input-icon">
-	                <input type="text" maxlength="6" placeholder="인증번호 6자리 입력">
+	                <img src="../assets/images/member/send-mail.png" class="input-icon">
+	                <input type="text" id="authCode" maxlength="6" placeholder="인증번호 6자리 입력" name="authCode">
 	                <span class="email-confirm" onclick="mailCheck()">확인</span>
 	            </div>
 	            <!-- 비밀번호 -->
@@ -53,7 +53,7 @@
 	            
 	            <!-- 이름 -->
 	            <div class="input-wrapper" style="border-radius: 10px 10px 0px 0px;">
-	                <img src="../assets/images/member/person-icon.png" class="input-icon">
+	                <img src="../assets/images/member/smile.png" class="input-icon">
 	                <input type="text" id="name" placeholder="이름" required>
 	                <!-- 성별 선택 -->
                 	<div class="gender-select">
@@ -116,7 +116,7 @@
 	 * 이메일 인증번호 요청 (AJAX)
 	 * - 사용자가 "인증번호 요청" 버튼을 클릭하면 실행됨
 	 * - 서버의 `send-mail` 컨트롤러로 이메일을 전송하고 인증번호를 요청함
-	 */
+	 **/
 	function sendMail() {
 	    let email = document.getElementById("email").value; // 입력된 이메일 가져오기
 	    let button = document.getElementById("mail-button");
@@ -133,6 +133,10 @@
 	    })
 	    .then(response => response.json()) // 서버에서 JSON 응답을 받음
 	    .then(data => {
+	    	if(data.sameId){
+	    		button.classList.remove("process");
+	    		button.innerText = "중복 메일";
+	    	}
 	    	if(data.success){
 	    		button.classList.remove("process");
 	    		button.classList.remove("fail");
@@ -157,18 +161,18 @@
         let authCode = document.getElementById("authCode").value; // 입력된 인증번호 가져오기
 
         fetch("mail-check.member", { // AJAX 요청 (비동기)
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams({ authCode: authCode }).toString()
-        })
-        .then(response => response.json()) // 서버에서 JSON 응답을 받음
-        .then(data => {
-            alert(data.message); // 인증 결과 메시지 출력
-        })
-        .catch(error => console.error("Error:", error)); // 에러 처리
-    }
+	            method: "POST",
+	            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+	            body: new URLSearchParams({ authCode: authCode }).toString()
+	        })
+	        .then(response => response.json()) // 서버에서 JSON 응답을 받음
+	        .then(data => {
+	            alert(data.message); // 인증 결과 메시지 출력
+	        })
+	        .catch(error => console.error("Error:", error)); // 에러 처리
+    	}
 	
-	document.querySelectorAll("img").forEach(img => {
+		document.querySelectorAll("img").forEach(img => {
 		img.addEventListener("dragstart", function (event) {
 		    event.preventDefault();
 		});
