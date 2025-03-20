@@ -1,0 +1,271 @@
+@charset "UTF-8";
+
+body {
+    padding: 50px; /* 상단 로고 잘림으로 인해 padding 추가 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.join-container {
+    background: white;
+    width: 460px;
+    margin-top: 30px; /* 컨테이너 위치 조정 */
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: var(--gray2) 1px solid;
+    margin-bottom: -1px;
+}
+
+.input-wrapper input{
+    width: 100%;
+    height: 60px;
+    padding: 10px 50px 10px 10px; /* 오른쪽 패딩 추가하여 아이콘과 간격 조정 */
+    color: var(--gray6);
+    margin: 0px 50px;
+    border: none;
+    display: block;
+    font-size: var(--h7);
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-wrapper select {
+    width: 100%;
+    height: 60px;
+    padding: 10px 50px 10px 10px; /* 오른쪽 패딩 추가하여 아이콘과 간격 조정 */
+    margin: 0px 20px 0px 50px;
+    border: none;
+    display: block;
+    font-size: var(--h7);
+    box-sizing: border-box;
+    outline: none;
+    color: var(--gray6);
+    transition: all 0.3s ease-in-out;
+}
+
+.input-wrapper input:focus {
+    border-color: var(--main-green); /* 초록색 테두리 */
+}
+
+.input-wrapper .input-icon {
+    position: absolute;
+    left: 15px;
+    width: 20px;
+    height: 20px;
+}
+
+#mail-button {
+	width: 200px;
+	line-height: 30px;
+	margin-right: 15px;
+	background-color: var(--white);
+	color: var(--sub-green);
+	border: 1px solid var(--sub-green);
+	border-radius: 10px;
+}
+
+#mail-button:hover {
+	background-color: var(--light-green);
+	font-weight: 700;
+}
+
+#mail-button.process{
+	color: var(--sub-green);
+	border: 1px solid var(--sub-green);
+}
+
+#mail-button.success{
+	color: var(--sub-blue) !important;
+	border: 1px solid var(--sub-blue) !important;
+}
+#mail-button.fail{
+	color: var(--warning-red) !important;
+	border: 1px solid var(--warning-red) !important;
+}
+
+.email-confirm {
+	color: var(--gray5);
+	font-size: var(--h9);
+    text-decoration: none;
+    margin: 0 5px;
+    text-align: center;
+    width: 100px;
+}
+.email-confirm:hover{
+	color: blue;
+    text-decoration: underline;
+}
+
+
+.input-wrapper .toggle-password{
+	position: absolute;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.gender-select{
+	display: flex;
+	margin: 0px 15px 0px -15px;
+}
+
+.gender-select span{
+	display: inline-block;
+	position: relative;
+	width: 100px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	border: 1px solid var(--gray3);
+	font-size: var(--h9);
+	color: var(--gray4);
+	margin-left: -1px;
+}
+
+.gender-select span:hover{
+	z-index : 1 !important;
+	border: 1px solid var(--main-green) !important;
+	background-color: var(--light-green) !important;
+	color: var(--sub-green) !important;
+	font-weight: 500;
+}
+
+.gender-select span:not(hover){
+	z-index : 0;
+	font-weight: 300;
+}
+
+.gender-select input{
+	display: none;
+}
+
+
+.input-wrapper div{
+	display: flex;
+}
+
+.input-wrapper .phone-confirm-check {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	opacity: 0;
+}
+
+/* 캘린더 배경색 변경 */
+.flatpickr-calendar {
+	font-family: 'Spoqa Han Sans Neo', sans-serif;
+    background: var(--white);
+    border: 1px solid var(--main-green);
+    border-radius: 10px 10px 0 0;
+}
+/* Flatpickr 헤더 스타일 */
+.flatpickr-months {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    background-color: var(--sub-green); /* 배경색 */
+    color: white; /* 글자색 */
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+}
+
+.flatpickr-current-month{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/* 드롭다운 내부 옵션 스타일 */
+.flatpickr-monthDropdown-months{
+    margin-right: 20px !important;
+}
+
+/* 드롭다운 내부 옵션 스타일 */
+.flatpickr-monthDropdown-months option {
+    color: black;
+    font-size: var(--h8);
+}
+/* 📌 헤더(월/연도)의 글자 색상 강제 변경 */
+.flatpickr-current-month input.cur-year,
+.flatpickr-monthDropdown-months {
+    color: var(--white) !important; /* 글자색 변경 */
+    font-weight: 500;
+    font-size: var(--h6);
+}
+
+/* 이전/다음 버튼 색상 변경 */
+.flatpickr-prev-month svg, .flatpickr-next-month svg {
+	margin-top: 15px;
+    fill: var(--white) !important; /* 기본 버튼 색상 */
+}
+
+.flatpickr-prev-month:hover svg, .flatpickr-next-month:hover svg {
+    fill: var(--white) !important; /* 마우스 오버 시 색상 변경 */
+    transition: 0.3s ease-in-out;
+}
+
+.flatpickr-day:hover{
+	background: var(--light-green) !important;
+	border: 1px solid var(--sub-green) !important;
+	color: var(--black) !important;
+}
+
+/* 오늘 날짜 스타일 */
+.flatpickr-day.today {
+    background: white;
+    border: 1px solid var(--sub-green) !important;
+    color: var(--sub-green);
+}
+
+
+.flatpickr-day.selected {
+	background: var(--main-green) !important;
+    border: 1px solid var(--sub-green) !important;
+    color: var(--light-green);
+}
+
+
+.request-phone-confirm {
+	color: var(--gray5);
+	font-size: var(--h9);
+    text-decoration: none;
+    margin: 0 5px;
+    text-align: center;
+    width: 100px;
+}
+
+.request-phone-confirm:hover {
+	color: blue;
+    text-decoration: underline;
+}
+
+.signup-btn {
+    width: 460px;
+    height: 50px;
+    padding: 10px;
+    background-color: #A5ADB8; /* 비활성화된 버튼 */
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 5px;
+    margin-top: 40px;
+    cursor: not-allowed;
+    transition: all 0.3s ease-in-out;
+}
+/* 다음 버튼이 활성화될 때 */
+.signup-btn.active {
+    background-color: var(--main-green);
+    cursor: pointer;
+}
+
+.signup-btn.active:hover {
+    background-color: #218838;
+}
