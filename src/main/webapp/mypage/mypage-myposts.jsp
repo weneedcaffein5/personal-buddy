@@ -89,7 +89,6 @@
                 내 절망관 상관 없이 무심하게도 아침은 날 깨우네
                 상처는 생각보다 쓰리고 아픔은 생각보다 깊어가 
                 널 원망하던 수많은 밤이 내겐 지옥같아
-                내 곁에 있어줘 내게 머물러줘 ...
                 </p>
             </div>
                 <p class="mypost-meta">2025.02.01 게시
@@ -108,7 +107,7 @@
                 <p class="mypost-text">
                 답답한 창살은 뜯어버려 단숨에 작살을 내 짐승은 발톱을 갈아야 해 일격에 숨통을 쳐 
                 이빨로 목덜밀 물어 푸짐한 저녁 식탁 피비린내 나는 축제 난장판쳐라
-                그래 난 박살낼 테다 세상의 평화 타락한 너의 영혼을 신봉할 테다 난 ...
+                그래 난 박살낼 테다 세상의 평화 타락한 너의 영혼을 신봉할 테다 
                 </p>
             	</div>
                 <p class="mypost-meta">2025.02.01 게시
@@ -186,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	console.log(nextArrow); */
 	
     let currentPage = 1;
-    const postPerPage = 4;
+    const postPerPage = 3;
 
     console.log("총 ㄱㅔ시글 수 : " + posts.length);
     console.log("한 페이지당 게시글 수 : " + postPerPage);
