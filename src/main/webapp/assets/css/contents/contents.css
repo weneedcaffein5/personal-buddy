@@ -1,22 +1,92 @@
 @charset "UTF-8";
 
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+/* 배너 스타일 */
 
-body {
-    align-items: flex-start;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
+.banner-container {
+    width: 100%;	
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner-text {
+    position: absolute;
+    top: 20%;
+    left: 380px;
+    color: white;
+    text-align: left;
+    width: 100%;
+    opacity: 0; 
+    animation: fadeInText 20s infinite ease-in-out;
+}
+
+.banner-subtitle {
+    font-size: 18px;
+    font-weight: regular;
     
 }
 
-.page-container {
+.banner-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.banner-wrapper {
     display: flex;
-    width: 1440px;
+    width: 100%; 
+    animation: slide 20s infinite ease-in-out;
+}
+
+.banner-slide {
+    min-width: 100%;
+    height: 300px;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.banner-slide img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+
+.banner-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+@keyframes slide {
+    0%, 25% { transform: translateX(0%); }      
+    30%, 55% { transform: translateX(-100%); }  
+    60%, 85% { transform: translateX(-200%); }   
+    90%, 100% { transform: translateX(-300%); } 
+}
+
+
+@keyframes fadeInText {
+    0%, 25% { opacity: 1; }      
+    30%, 55% { opacity: 1; }   
+    60%, 85% { opacity: 1; }   
+    90%, 100% { opacity: 1; }  
+}
+
+.page-container {
+    width: 1400px;
+    display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 auto;
 }
 
 /* tab */
@@ -126,13 +196,13 @@ body {
 
 /* item */
 .container {
+	position: relative;
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 1402px;
+    width: 1400px;
     height: 1300px;
     background: #f5fcf0;
-    padding: 20px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     border: 1px solid #06C371;
@@ -179,6 +249,12 @@ body {
    color: #ffffff;
 }
 
+.folder-wrapper {
+	display: flex;
+	justify-content: center;
+	margin-top:107px;
+}
+
 .folder {
     display: flex;
     justify-content: center;
@@ -208,7 +284,8 @@ body {
 }
 
 .folder-wrapper {
-    width: 1172px;
+	position: relative;
+    width: 1400px;
     height: 1063px;
 }
 
@@ -255,15 +332,16 @@ body {
     margin-top:30px;
 }
 
-.item-button-group button:hover {
-    background: #45a049;
+.item-button-group .remove-btn:hover {
+    background: #ff3f3f;
 }
 
 /* pagination */
 
 .pagination {
+	position: absolute;
+	bottom:60px;
     display: flex;
-    align-items: center;
     gap: 10px;
     background: #f8fdf7;
     padding: 10px 20px;

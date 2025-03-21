@@ -1,16 +1,65 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>탭 네비게이션</title>
-<link rel="stylesheet" href="../assets/css/contents/contents.css" />
+<title>컨텐츠 메인</title>
 <link rel="stylesheet" href="../assets/css/global.css" />
+<link rel="stylesheet" href="../assets/css/contents/contents.css" />
 </head>
 <body>
+	<!-- 헤더 -->
+	<%@ include file="../layout/header.jsp"%>
+	<!-- 배너 -->
+	<div class="banner-container">
+		<div class="banner-wrapper">
+			<div class="banner-slide">
+				<img src="../assets/images/main/banner-blue.png"
+					class="banner-slide" alt="배너 1">
+				<div class="banner-text">
+					<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
+					<h2 class="banner-title">
+						버디들의 관심 일정을 <br> 공유해주세요!
+					</h2>
+				</div>
+			</div>
+			<div class="banner-slide">
+				<img src="../assets/images/main/banner-green.png"
+					class="banner-slide" alt="배너 2">
+				<div class="banner-text">
+					<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
+					<h2 class="banner-title">
+						버디들의 관심 일정을 <br> 공유해주세요!
+					</h2>
+				</div>
+			</div>
+			<div class="banner-slide">
+				<img src="../assets/images/main/banner-yellow.png"
+					class="banner-slide" alt="배너 3">
+				<div class="banner-text">
+					<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
+					<h2 class="banner-title">
+						버디들의 관심 일정을 <br> 공유해주세요!
+					</h2>
+				</div>
+			</div>
+			<div class="banner-slide">
+				<img src="../assets/images/main/banner-blue.png"
+					class="banner-slide" alt="배너 1(복사)">
+				<div class="banner-text">
+					<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
+					<h2 class="banner-title">
+						버디들의 관심 일정을 <br> 공유해주세요!
+					</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="page-container">
 		<div class="tab-container">
 			<div class="tab-btn"></div>
@@ -18,7 +67,7 @@
 			<div id="myTreeTab" class="tab-text tab-text-on">나의 성장 나무</div>
 			<div id="pointShopTab" class="tab-text tab-text-off">포인트 샵</div>
 		</div>
-		<h1 class="tree-title-word">나의 성장나무</h1>
+		<h1 class="tree-title-word">나의 성장나무🎄</h1>
 		<div class="tree-wrapper">
 			<div class="tree-container">
 				<img src="../assets/images/contents/default/default.png">
@@ -30,7 +79,7 @@
 		</div>
 
 		<!-- 나의꾸미기 -->
-		<h1 class="decorate-title-word">나의 꾸미기</h1>
+		<h1 class="decorate-title-word">나의 꾸미기🎨</h1>
 		<div class="decorate-tab-container">
 			<button class="decorate-tab selected" onclick="showContent('전체')">전체</button>
 			<button class="decorate-tab" onclick="showContent('배경')">배경</button>
@@ -40,8 +89,8 @@
 		<div class="container" id="content-container">
 			<%@ include file="contents-sticker.jsp"%>
 		</div>
-		</div>
-		<script>
+	</div>
+	<script>
         document.addEventListener("DOMContentLoaded", function () {
             const folderItems = document.querySelectorAll(".folder-item");
 
@@ -107,7 +156,6 @@
         });
        
         document.addEventListener("DOMContentLoaded", function () {
-            // 초기에 로드된 경우에만 이벤트 등록
             attachFolderItemClickEvent();
         });
 
@@ -121,7 +169,6 @@
             });
         }
 
-        // showContent() 함수에서 content 변경 후 이벤트 재등록
         function showContent(category) {
             document.querySelectorAll(".decorate-tab").forEach(tab => {
                 tab.classList.remove("selected");
@@ -161,7 +208,6 @@
                 .then(data => {
                     document.getElementById("content-container").innerHTML = data;
 
-                    // **새로운 콘텐츠가 로드된 후 다시 이벤트 등록**
                     attachFolderItemClickEvent();
                 })
                 .catch(error => console.error("Error loading content:", error));
