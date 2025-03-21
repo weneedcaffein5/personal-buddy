@@ -21,8 +21,8 @@
                 <a href="#">고객센터</a>
             </div>
             <div class="rightheader">
-                <a href="../member/join-agree.jsp">회원가입</a>
-                <a href="../member/login.jsp">로그인</a>
+                <a href="../member/join-agree.member">회원가입</a>
+                <a href="../member/login.member">로그인</a>
             </div>
         </div>
     </div>
