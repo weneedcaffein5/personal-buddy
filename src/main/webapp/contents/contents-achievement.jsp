@@ -67,31 +67,34 @@
 
     <section class="points-section">
         <div class="point-box">
+        
             <h3>일간 목표</h3>
             <ul>
-                <li><input type="checkbox" checked> 일정 등록 ( 1 / 1 ) <span class="points">30P 획득</span></li>
-                <li><input type="checkbox"> 운동 일정 등록 ( 0 / 1 ) <span class="points">40P 획득</span></li>
-                <li><input type="checkbox"> 공부 일정 등록 ( 0 / 1 ) <span class="points">50P 획득</span></li>
-                <li><input type="checkbox"> 약속 일정 등록 ( 0 / 1 ) <span class="points">50P 획득</span></li>
-                <li><input type="checkbox"> 공부 일정 등록 ( 0 / 1 ) <span class="points">50P 획득</span></li>
+                <li><input type="checkbox" checked onclick="return false;" class="custom-checkbox" > 일정 등록 ( 1 / 1 ) <span class="points">30P 획득</span></li>
+                <li><input type="checkbox" disabled class="custom-checkbox"> 운동 일정 등록 ( 0 / 1 ) <span class="points">40P 획득</span></li>
+                <li><input type="checkbox" disabled class="custom-checkbox"> 공부 일정 등록 ( 0 / 1 ) <span class="points">50P 획득</span></li>
+                <li><input type="checkbox" disabled class="custom-checkbox"> 약속 일정 등록 ( 0 / 1 ) <span class="points">50P 획득</span></li>
+                <li><input type="checkbox" disabled class="custom-checkbox"> 일일 목표 모두 달성 ( 1 / 4 ) <span class="points">50P 획득</span></li>
             </ul>
         </div>
 
         <div class="point-box">
             <h3>주간 목표</h3>
             <ul>
-                <li><input type="checkbox" checked> 일일 목표 (5/5) <span class="points">100P 획득</span></li>
-                <li><input type="checkbox"> 연속 달성 (2/5) <span class="points">30P 획득</span></li>
-                <li><input type="checkbox"> 주간 목표 완료 (1/4) <span class="points">50P 획득</span></li>
+                <li><input type="checkbox" checked disabled class="custom-checkbox"> 일정 등록 ( 5 / 5 ) <span class="points">100P 획득</span></li>
+                <li><input type="checkbox" class="custom-checkbox"> 운동 일정 등록 ( 2 / 5 ) <span class="points">30P 획득</span></li>
+                <li><input type="checkbox" class="custom-checkbox"> 공부 일정 등록 ( 0 / 5 ) <span class="points">50P 획득</span></li>
+                <li><input type="checkbox" class="custom-checkbox"> 약속 일정 등록 ( 3 / 5 ) <span class="points">50P 획득</span></li>
+                <li><input type="checkbox" class="custom-checkbox"> 주간 목표 모두 달성 ( 1 / 4 ) <span class="points">50P 획득</span></li>
             </ul>
         </div>
 
         <div class="point-box">
             <h3>월간 목표</h3>
             <ul>
-                <li><input type="checkbox" checked> 일일 목표 (20/20) <span class="points">10P 획득</span></li>
-                <li><input type="checkbox"> 연속 목표 (4/20) <span class="points">30P 획득</span></li>
-                <li><input type="checkbox"> 월간 목표 완료 (1/4) <span class="points">50P 획득</span></li>
+                <li><input type="checkbox" checked disabled class="custom-checkbox"> 일일 목표 (20/20) <span class="points">10P 획득</span></li>
+                <li><input type="checkbox" class="custom-checkbox"> 연속 목표 (4/20) <span class="points">30P 획득</span></li>
+                <li><input type="checkbox" class="custom-checkbox"> 월간 목표 완료 (1/4) <span class="points">50P 획득</span></li>
             </ul>
         </div>
     </section>
