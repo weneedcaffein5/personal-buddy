@@ -1,0 +1,148 @@
+@charset "UTF-8";
+
+.banner-container {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner-wrapper {
+    display: flex;
+    width: 100%; 
+    animation: slide 20s infinite ease-in-out;
+}
+
+.banner-slide {
+    min-width: 100%;
+    height: 300px;
+    position: relative;
+    cursor: pointer;
+}
+
+.banner-slide img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.banner-text {
+    position: absolute;
+    top: 20%;
+    left: 380px;
+    color: white;
+    text-align: left;
+    width: 100%;
+    opacity: 0; 
+    animation: fadeInText 20s infinite ease-in-out;
+}
+
+.banner-subtitle {
+    font-size: 18px;
+    font-weight: regular; 
+}
+
+.banner-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.banner-button, .banner-button-next{
+	position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    color: white;
+    border:none;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.banner-button {
+    left: 10px;
+}
+
+.banner-button-next {
+    right: 10px;
+}
+
+.banner-counter {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+
+@keyframes slide {
+    0%, 25% { transform: translateX(0%); }      
+    30%, 55% { transform: translateX(-100%); }  
+    60%, 85% { transform: translateX(-200%); }   
+    90%, 100% { transform: translateX(-300%); } 
+} 
+
+
+
+@keyframes fadeInText {
+    0%, 25% { opacity: 1; }      
+    30%, 55% { opacity: 1; }   
+    60%, 85% { opacity: 1; }   
+    90%, 100% { opacity: 1; }  
+}
+
+
+
+.points-section {
+    display: flex;
+    justify-content: space-between;
+    width: 1400px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #EEFFF8;
+    border: 1px solid #24C394;
+    border-radius: 10px;
+}
+
+.point-box {
+    width: 32%;
+    padding: 15px;
+    border-radius: 8px;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+}
+
+.point-box h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.point-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.point-box li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    margin: 5px 0;
+    color: #333;
+}
+
+.points {
+    font-size: 14px;
+    font-weight: bold;
+    color: #FF6B00;
+}
+
