@@ -7,8 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>이벤트</title>
-<link rel="stylesheet" href="../assets/css/event/event-main.css">
 <link rel="stylesheet" href="../assets/css/global.css">
+<link rel="stylesheet" href="../assets/css/event/event-main.css">
 </head>
 <body>	
 

@@ -7,8 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>설문조사 카테고리</title>
-<link rel="stylesheet" href="../assets/css/interest/interest-category.css">
 <link rel="stylesheet" href="../assets/css/global.css">
+<link rel="stylesheet" href="../assets/css/interest/interest-category.css">
 </head>
 <body>
 	<div class="container">

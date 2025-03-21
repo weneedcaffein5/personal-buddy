@@ -7,8 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>님의 게시글</title>
-<link rel="stylesheet" href="../assets/css/community-post/community-post.css">
 <link rel="stylesheet" href="../assets/css/global.css">
+<link rel="stylesheet" href="../assets/css/community-post/community-post.css">
 </head>
 <body>
 	<div class="community-post">

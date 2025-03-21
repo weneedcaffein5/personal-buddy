@@ -7,8 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>포인트 샵</title>
-<link rel="stylesheet" href="../assets/css/contents-point-shop/contents-point-shop.css" />
 <link rel="stylesheet" href="../assets/css/global.css" />
+<link rel="stylesheet" href="../assets/css/contents-point-shop/contents-point-shop.css" />
 </head>
 <body>
 	<!-- 헤더 -->
@@ -46,8 +46,27 @@
              </div> 
           </div>
       </div>
-      <!-- 메인 -->
-		<div class="">
+		
+		<!-- 메인 -->
+		<div class="main">
+			<div class="tab-box">
+				<div class="tab-container">
+					<div class="tab-btn"></div>
+					<div id="achievementTab" class="tab-text tab-text-off">업적</div>
+					<div id="myTreeTab" class="tab-text tab-text-on">나의 성장 나무</div>
+					<div id="pointShopTab" class="tab-text tab-text-off">포인트 샵</div>
+				</div>
+			</div>
+			<div class="title">
+				<span>포인트 샵 💰</span>
+			</div>
+			<div class="point-info">
+				<span>🏆 보유 포인트  :</span>
+				<span class="member-point">1000 P</span>
+			</div>
+			<div class="point-log">
+				<a>포인트 이용 내역 보기 >></a>
+			</div>
 		</div>
 		
 </body>
