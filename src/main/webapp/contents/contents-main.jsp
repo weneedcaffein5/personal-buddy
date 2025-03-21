@@ -67,21 +67,27 @@
         const myTreeTab = document.getElementById("myTreeTab");
         const pointShopTab = document.getElementById("pointShopTab");
         const tabBtn = document.querySelector(".tab-btn");
-        
+
+        // 처음에는 myTreeTab이 활성화 상태
+        myTreeTab.classList.add("tab-text-on");
+        achievementTab.classList.add("tab-text-off");
+        pointShopTab.classList.add("tab-text-off");
+
+        // 탭 클릭 이벤트 추가
         achievementTab.addEventListener("click", () => {
-            tabBtn.classList.remove("tab-btn-second", "tab-btn-third");
+            tabBtn.style.transform = "translateX(0%)";  // 첫 번째 탭으로 이동
+
             achievementTab.classList.add("tab-text-on");
             achievementTab.classList.remove("tab-text-off");
             myTreeTab.classList.add("tab-text-off");
             myTreeTab.classList.remove("tab-text-on");
             pointShopTab.classList.add("tab-text-off");
             pointShopTab.classList.remove("tab-text-on");
-            
         });
 
         myTreeTab.addEventListener("click", () => {
-        	tabBtn.classList.remove("tab-btn-third");
-            tabBtn.classList.add("tab-btn-second");
+            tabBtn.style.transform = "translateX(100%)";  // 기본 위치(두 번째 탭)로 이동
+
             myTreeTab.classList.add("tab-text-on");
             myTreeTab.classList.remove("tab-text-off");
             achievementTab.classList.add("tab-text-off");
@@ -89,10 +95,10 @@
             pointShopTab.classList.add("tab-text-off");
             pointShopTab.classList.remove("tab-text-on");
         });
-        
+
         pointShopTab.addEventListener("click", () => {
-        	tabBtn.classList.remove("tab-btn-second");
-            tabBtn.classList.add("tab-btn-third");
+            tabBtn.style.transform = "translateX(200%)";  // 세 번째 탭으로 이동
+
             pointShopTab.classList.add("tab-text-on");
             pointShopTab.classList.remove("tab-text-off");
             myTreeTab.classList.add("tab-text-off");
