@@ -1,20 +1,5 @@
 @charset "UTF-8";
 
-body, html {
-    user-select: none; /* 텍스트 드래그 방지 */
-    -webkit-user-select: none; /* 크롬, 사파리 */
-    -moz-user-select: none; /* 파이어폭스 */
-    -ms-user-select: none; /* 인터넷 익스플로러 */
-}
-
-body {
-    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
-    text-align: center;
-    background-color: #ffffff;
-    margin: 0;
-    padding: 0;
-}
-
 .container {
     display: flex;
     justify-content: center;
