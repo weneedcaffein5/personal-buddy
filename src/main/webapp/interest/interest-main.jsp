@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <title>설문조사</title>
 <link rel="stylesheet" href="../assets/css/interest/interest-main.css">
+<link rel="stylesheet" href="../assets/css/global.css">
 </head>
 <body>
 	 <div class="container">

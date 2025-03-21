@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <title>악기 카테고리</title>
 <link rel="stylesheet"  href="../assets/css/interest/interest-category-select.css">
+<link rel="stylesheet" href="../assets/css/global.css">
 </head>
 <body>
     <div class="container">
