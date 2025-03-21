@@ -1,16 +1,65 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>탭 네비게이션</title>
-<link rel="stylesheet" href="../assets/css/contents/contents.css" />
+<title>컨텐츠 메인</title>
 <link rel="stylesheet" href="../assets/css/global.css" />
+<link rel="stylesheet" href="../assets/css/contents/contents.css" />
 </head>
 <body>
+	<!-- 헤더 -->
+	<%@ include file="../layout/header.jsp"%>
+	<!-- 배너 -->
+	<div class="banner-container">
+		<div class="banner-wrapper">
+			<div class="banner-slide">
+				<img src="../assets/images/main/banner-blue.png"
+					class="banner-slide" alt="배너 1">
+				<div class="banner-text">
+					<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
+					<h2 class="banner-title">
+						버디들의 관심 일정을 <br> 공유해주세요!
+					</h2>
+				</div>
+			</div>
+			<div class="banner-slide">
+				<img src="../assets/images/main/banner-green.png"
+					class="banner-slide" alt="배너 2">
+				<div class="banner-text">
+					<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
+					<h2 class="banner-title">
+						버디들의 관심 일정을 <br> 공유해주세요!
+					</h2>
+				</div>
+			</div>
+			<div class="banner-slide">
+				<img src="../assets/images/main/banner-yellow.png"
+					class="banner-slide" alt="배너 3">
+				<div class="banner-text">
+					<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
+					<h2 class="banner-title">
+						버디들의 관심 일정을 <br> 공유해주세요!
+					</h2>
+				</div>
+			</div>
+			<div class="banner-slide">
+				<img src="../assets/images/main/banner-blue.png"
+					class="banner-slide" alt="배너 1(복사)">
+				<div class="banner-text">
+					<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
+					<h2 class="banner-title">
+						버디들의 관심 일정을 <br> 공유해주세요!
+					</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="page-container">
 		<div class="tab-container">
 			<div class="tab-btn"></div>
@@ -18,10 +67,10 @@
 			<div id="myTreeTab" class="tab-text tab-text-on">나의 성장 나무</div>
 			<div id="pointShopTab" class="tab-text tab-text-off">포인트 샵</div>
 		</div>
-		<h1 class="tree-title-word">나의 성장나무</h1>
+		<h1 class="tree-title-word">나의 성장나무🎄</h1>
 		<div class="tree-wrapper">
 			<div class="tree-container">
-				<div class="tree-box"></div>
+				<img src="../assets/images/contents/default/default.png">
 			</div>
 			<div class="tree-button-group">
 				<button class="save-button">저장</button>
@@ -30,7 +79,7 @@
 		</div>
 
 		<!-- 나의꾸미기 -->
-		<h1 class="decorate-title-word">나의 꾸미기</h1>
+		<h1 class="decorate-title-word">나의 꾸미기🎨</h1>
 		<div class="decorate-tab-container">
 			<button class="decorate-tab selected" onclick="showContent('전체')">전체</button>
 			<button class="decorate-tab" onclick="showContent('배경')">배경</button>
@@ -38,11 +87,10 @@
 			<button class="decorate-tab" onclick="showContent('나무')">나무</button>
 		</div>
 		<div class="container" id="content-container">
-			<%-- <%@ include file="contents-background.jsp" %> --%>
 			<%@ include file="contents-sticker.jsp"%>
 		</div>
-		</div>
-		<script>
+	</div>
+	<script>
         document.addEventListener("DOMContentLoaded", function () {
             const folderItems = document.querySelectorAll(".folder-item");
 
@@ -67,21 +115,27 @@
         const myTreeTab = document.getElementById("myTreeTab");
         const pointShopTab = document.getElementById("pointShopTab");
         const tabBtn = document.querySelector(".tab-btn");
-        
+
+        // 처음에는 myTreeTab이 활성화 상태
+        myTreeTab.classList.add("tab-text-on");
+        achievementTab.classList.add("tab-text-off");
+        pointShopTab.classList.add("tab-text-off");
+
+        // 탭 클릭 이벤트 추가
         achievementTab.addEventListener("click", () => {
-            tabBtn.classList.remove("tab-btn-second", "tab-btn-third");
+            tabBtn.style.transform = "translateX(0%)";  // 첫 번째 탭으로 이동
+
             achievementTab.classList.add("tab-text-on");
             achievementTab.classList.remove("tab-text-off");
             myTreeTab.classList.add("tab-text-off");
             myTreeTab.classList.remove("tab-text-on");
             pointShopTab.classList.add("tab-text-off");
             pointShopTab.classList.remove("tab-text-on");
-            
         });
 
         myTreeTab.addEventListener("click", () => {
-        	tabBtn.classList.remove("tab-btn-third");
-            tabBtn.classList.add("tab-btn-second");
+            tabBtn.style.transform = "translateX(100%)";  // 기본 위치(두 번째 탭)로 이동
+
             myTreeTab.classList.add("tab-text-on");
             myTreeTab.classList.remove("tab-text-off");
             achievementTab.classList.add("tab-text-off");
@@ -89,10 +143,10 @@
             pointShopTab.classList.add("tab-text-off");
             pointShopTab.classList.remove("tab-text-on");
         });
-        
+
         pointShopTab.addEventListener("click", () => {
-        	tabBtn.classList.remove("tab-btn-second");
-            tabBtn.classList.add("tab-btn-third");
+            tabBtn.style.transform = "translateX(200%)";  // 세 번째 탭으로 이동
+
             pointShopTab.classList.add("tab-text-on");
             pointShopTab.classList.remove("tab-text-off");
             myTreeTab.classList.add("tab-text-off");
@@ -102,7 +156,6 @@
         });
        
         document.addEventListener("DOMContentLoaded", function () {
-            // 초기에 로드된 경우에만 이벤트 등록
             attachFolderItemClickEvent();
         });
 
@@ -116,7 +169,6 @@
             });
         }
 
-        // showContent() 함수에서 content 변경 후 이벤트 재등록
         function showContent(category) {
             document.querySelectorAll(".decorate-tab").forEach(tab => {
                 tab.classList.remove("selected");
@@ -156,7 +208,6 @@
                 .then(data => {
                     document.getElementById("content-container").innerHTML = data;
 
-                    // **새로운 콘텐츠가 로드된 후 다시 이벤트 등록**
                     attachFolderItemClickEvent();
                 })
                 .catch(error => console.error("Error loading content:", error));
