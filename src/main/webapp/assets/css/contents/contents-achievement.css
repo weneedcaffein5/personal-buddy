@@ -1,0 +1,366 @@
+@charset "UTF-8";
+
+.banner-container {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner-wrapper {
+    display: flex;
+    width: 100%; 
+    animation: slide 20s infinite ease-in-out;
+}
+
+.banner-slide {
+    min-width: 100%;
+    height: 300px;
+    position: relative;
+    cursor: pointer;
+}
+
+.banner-slide img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.banner-text {
+    position: absolute;
+    top: 20%;
+    left: 380px;
+    color: white;
+    text-align: left;
+    width: 100%;
+    opacity: 0; 
+    animation: fadeInText 20s infinite ease-in-out;
+}
+
+.banner-subtitle {
+    font-size: 18px;
+    font-weight: regular; 
+}
+
+.banner-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.banner-button, .banner-button-next{
+	position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    color: white;
+    border:none;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.banner-button {
+    left: 10px;
+}
+
+.banner-button-next {
+    right: 10px;
+}
+
+.banner-counter {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+
+@keyframes slide {
+    0%, 25% { transform: translateX(0%); }      
+    30%, 55% { transform: translateX(-100%); }  
+    60%, 85% { transform: translateX(-200%); }   
+    90%, 100% { transform: translateX(-300%); } 
+} 
+
+
+
+@keyframes fadeInText {
+    0%, 25% { opacity: 1; }      
+    30%, 55% { opacity: 1; }   
+    60%, 85% { opacity: 1; }   
+    90%, 100% { opacity: 1; }  
+}
+
+
+
+.points-section {
+    display: flex;
+    justify-content: space-between;
+    width: 1400px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #EEFFF8;
+    border: 1px solid #24C394;
+    border-radius: 10px;
+}
+
+.point-box {
+    width: 32%;
+    padding: 15px;
+    border-radius: 8px;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+}
+
+.point-box h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.point-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.point-box li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    margin: 5px 0;
+    color: #333;
+}
+
+.points{
+	
+	font-size: 17px;
+}
+
+.points {
+    font-size: 14px;
+    font-weight: bold;
+    color: #FF6B00;
+}
+
+
+
+/* 탭 스타일 */
+
+.tab-box {
+	width: 100%;
+	height: 55px;
+	margin-top: 80px;
+	display: flex;
+	justify-content: center;
+}
+
+.tab-container {
+    position: relative;
+    width: 830px;
+    height: 100%;
+    background: var(--gray1);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.tab-btn {
+    position: absolute;
+    width:33.3%;
+    height: 100%;
+    background: var(--main-green);
+    border-radius: 30px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.tab-btn-0 {
+	transform: translateX(0%);
+}
+
+.tab-btn-200 {
+    transform: translateX(200%);
+}
+
+.tab-text {
+    flex: 1;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 2;
+    transition: color 0.3s ease-in-out;
+}
+
+.tab-text-on {
+    color: black;
+    font-weight: bold;
+}
+
+.tab-text-off {
+    color: #999999;
+    font-weight: bold;
+}
+
+
+/* 체크박스 스타일 커스텀 */
+.custom-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #01CD74;
+    border-radius: 4px;
+    background-color: none;
+    cursor: not-allowed;
+    position: relative;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+
+.custom-checkbox:checked {
+    background-color: #01CD74; 
+    border-color: #01CD74;
+}
+
+.custom-checkbox:checked::after {
+    content: '✔';
+    color: white;
+    position: absolute;
+    top: -2px;
+    left: 1px;
+    font-size: 13px;
+}
+
+
+
+/* 업적 카드 */
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.achievements-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    margin-top: 60px;
+    justify-content:center;
+    column-gap: 40px; 
+    row-gap: 100px; 
+}
+
+.achievement-card {
+    width: 100%;
+    max-width: 200px;
+    height: 230px;
+    background-color: #EEFFF8;
+    border: 1px solid #01CD74;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:0;
+    padding-top: 40px;
+    text-align: center;
+}
+
+.achievement-icon-container {
+    position: absolute;
+    top: -40px; 
+    background-color: #FFF45F; 
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.achievement-icon {
+    width: 80px;
+    height: 80px;
+}
+
+.achievement-desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.achievement-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 17px;
+    margin-bottom:17px;
+}
+
+.achievement-line {
+    width: 163px;
+    height: 1px;
+    background-color: #B9D2C7;
+    margin-bottom: 6px;
+}
+
+.achievement-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 80%;
+    height: auto;
+    margin-top: 17px;
+}
+
+.achievement-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 6px;
+    padding:0;
+}
+
+.check-icon {
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+}
+
+.achievement-description {
+    font-size: 14px;
+    color: #000;
+    text-align: left;
+    margin:0;
+    padding:0;
+}
+
+.achievement-points {
+	text-align:left;
+    font-size: 14px;
+    color: #000;
+    font-weight: regular;
+    margin:0;
+    padding:0;  
+}
+
+.highlight {
+    color: #FF4E00;
+}
+
+
