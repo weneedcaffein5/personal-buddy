@@ -237,6 +237,7 @@ textarea {
 
 
 
+
 .myposts-container {
     width: 1160px;
     margin: 0 auto;
@@ -277,6 +278,8 @@ textarea {
     border-bottom: 1px solid #ddd;
     padding-bottom: 20px;
 }
+
+
 
 .mypost-image {
     width: 230px;
@@ -323,6 +326,11 @@ textarea {
 /* pagination */
 
 .pagination {
+	/* position: sticky; */
+	position: fixed; 
+	bottom: 0px;
+	left: 50%;
+	/*transform: translateX(-50%);  */
     display: flex;
     justify-content: center;
     align-items: center;
