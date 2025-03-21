@@ -8,13 +8,13 @@ body {
     display: flex;
     justify-content: center;
     height: 100vh;
-    background-color: #f9f9f9;
     margin: 0;
     
 }
 
 .page-container {
     display: flex;
+    width: 1440px;
     flex-direction: column;
     align-items: center;
 }
@@ -23,7 +23,7 @@ body {
 
 .tab-container {
     position: relative;
-    width: 560px;
+    width: 840px;
     height: 55px;
     background: #EEEEEE;
     border-radius: 30px;
@@ -33,8 +33,6 @@ body {
     box-sizing: border-box;
     padding: 0;
     margin-top: 80px;
-    margin-left: 50%;
-    transform: translateX(-50%);
 }
 
 .tab-btn {
@@ -84,7 +82,7 @@ body {
 .tree-container {
     width: 1160px;
     height: 600px;
-    background-color: gray;
+    
 }
 
 .tree-title-word {

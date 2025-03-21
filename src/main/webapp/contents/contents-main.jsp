@@ -21,7 +21,7 @@
 		<h1 class="tree-title-word">나의 성장나무</h1>
 		<div class="tree-wrapper">
 			<div class="tree-container">
-				<div class="tree-box"></div>
+				<img src="../assets/images/contents/default/default.png">
 			</div>
 			<div class="tree-button-group">
 				<button class="save-button">저장</button>
@@ -38,7 +38,6 @@
 			<button class="decorate-tab" onclick="showContent('나무')">나무</button>
 		</div>
 		<div class="container" id="content-container">
-			<%-- <%@ include file="contents-background.jsp" %> --%>
 			<%@ include file="contents-sticker.jsp"%>
 		</div>
 		</div>
