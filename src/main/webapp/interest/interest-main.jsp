@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>설문조사</title>
+<link rel="stylesheet" href="../assets/css/global.css">
 <link rel="stylesheet" href="../assets/css/interest/interest-main.css">
 </head>
 <body>
