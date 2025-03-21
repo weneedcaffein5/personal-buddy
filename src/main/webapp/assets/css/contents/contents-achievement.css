@@ -243,3 +243,100 @@
     font-size: 13px;
 }
 
+
+
+/* 업적 카드 */
+
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.achievements-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.achievement-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between; 
+    width: 200px;
+    height: 230px;
+    background-color: #EEFFF8;
+    border: 1px solid #01CD74;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.achievement-icon {
+	position: relative;
+	top:-50px;
+    width: 80px;
+    height: 80px;
+}
+
+
+
+.achievment-desc {
+	
+
+}
+
+.achievement-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.achievement-line {
+    width: 163px; 
+    height: 1px; 
+    background-color: #B9D2C7; 
+    margin: 10px auto;
+}
+
+.achievement-description {
+    font-size: 14px;
+    font-weight: normal;
+    color: #333;
+}
+
+
+.achievement-tasks {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+
+.achievement-tasks li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.check-icon {
+    width: 14px;
+    height: 14px;
+}
+
+.achievement-points {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.highlight {
+    color: #FF4E00;
+}
+
+
