@@ -247,7 +247,6 @@
 
 /* 업적 카드 */
 
-
 .section-title {
     font-size: 24px;
     font-weight: bold;
@@ -255,84 +254,109 @@
 }
 
 .achievements-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    margin-top: 60px;
+    justify-content:center;
+    column-gap: 40px; 
+    row-gap: 100px; 
 }
 
 .achievement-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: space-between; 
-    width: 200px;
+    width: 100%;
+    max-width: 200px;
     height: 230px;
     background-color: #EEFFF8;
     border: 1px solid #01CD74;
     border-radius: 20px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:0;
+    padding-top: 40px;
+    text-align: center;
+}
+
+.achievement-icon-container {
+    position: absolute;
+    top: -40px; 
+    background-color: #FFF45F; 
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .achievement-icon {
-	position: relative;
-	top:-50px;
     width: 80px;
     height: 80px;
 }
 
-
-
-.achievment-desc {
-	
-
+.achievement-desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .achievement-title {
     font-size: 18px;
     font-weight: bold;
-    margin: 5px 0;
+    margin-top: 17px;
+    margin-bottom:17px;
 }
 
 .achievement-line {
-    width: 163px; 
-    height: 1px; 
-    background-color: #B9D2C7; 
-    margin: 10px auto;
+    width: 163px;
+    height: 1px;
+    background-color: #B9D2C7;
+    margin-bottom: 6px;
 }
 
-.achievement-description {
-    font-size: 14px;
-    font-weight: normal;
-    color: #333;
+.achievement-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 80%;
+    height: auto;
+    margin-top: 17px;
 }
 
-
-.achievement-tasks {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0;
-}
-
-
-.achievement-tasks li {
+.achievement-item {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 5px;
-    font-size: 14px;
-    color: #333;
+    margin: 6px;
+    padding:0;
 }
 
 .check-icon {
     width: 14px;
     height: 14px;
+    vertical-align: middle;
+}
+
+.achievement-description {
+    font-size: 14px;
+    color: #000;
+    text-align: left;
+    margin:0;
+    padding:0;
 }
 
 .achievement-points {
+	text-align:left;
     font-size: 14px;
-    margin-top: 10px;
+    color: #000;
+    font-weight: regular;
+    margin:0;
+    padding:0;  
 }
 
 .highlight {
