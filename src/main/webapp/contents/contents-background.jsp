@@ -7,7 +7,7 @@
                         <span>푸른 들판</span>
                         <div class="item-button-group">
                             <button>변경</button>
-                            <button>제거</button>
+                            <button class="remove-btn">제거</button>
                         </div>
                     </div>
                     <div class="folder-item">
@@ -15,7 +15,7 @@
                         <span>야자수 해변</span>
                         <div class="item-button-group">
                             <button>변경</button>
-                            <button>제거</button>
+                            <button class="remove-btn">제거</button>
                         </div>
                     </div>
                     <div class="folder-item">
@@ -23,7 +23,7 @@
                         <span>빛꽃 들판</span>
                         <div class="item-button-group">
                             <button>변경</button>
-                            <button>제거</button>
+                            <button class="remove-btn">제거</button>
                         </div>
                     </div>
                     <div class="folder-item">
@@ -31,7 +31,7 @@
                         <span>달 밝은 밤</span>
                         <div class="item-button-group">
                             <button>변경</button>
-                            <button>제거</button>
+                            <button class="remove-btn">제거</button>
                         </div>
                     </div>
                      <div class="folder-item">
@@ -39,7 +39,7 @@
                         <span>할로윈</span>
                         <div class="item-button-group">
                             <button>변경</button>
-                            <button>제거</button>
+                            <button class="remove-btn">제거</button>
                         </div>
                     </div>
                      <div class="folder-item">
@@ -47,7 +47,7 @@
                         <span>비내리는 경치</span>
                         <div class="item-button-group">
                             <button>변경</button>
-                            <button>제거</button>
+                            <button class="remove-btn">제거</button>
                         </div>
                     </div>
                      <div class="folder-item">
@@ -55,7 +55,7 @@
                         <span>쓸쓸한 사막</span>
                         <div class="item-button-group">
                             <button>변경</button>
-                            <button>제거</button>
+                            <button class="remove-btn">제거</button>
                         </div>
                     </div>
                      <div class="folder-item">
@@ -63,7 +63,7 @@
                         <span>레고 빌딩</span>
                         <div class="item-button-group">
                             <button>변경</button>
-                            <button>제거</button>
+                            <button class="remove-btn">제거</button>
                         </div>
                     </div>
                      <div class="folder-item">
@@ -71,7 +71,7 @@
                         <span>눈 덮인 풍경</span>
                         <div class="item-button-group">
                             <button>변경</button>
-                            <button>제거</button>
+                            <button class="remove-btn">제거</button>
                         </div>
                     </div>
                      <div class="folder-item">
@@ -79,7 +79,7 @@
                         <span>몽환적 풍경</span>
                         <div class="item-button-group">
                             <button>변경</button>
-                            <button>제거</button>
+                            <button class="remove-btn">제거</button>
                         </div>
                     </div>
                     <div class="folder-item">
@@ -87,7 +87,7 @@
                         <span>비내리는 해변</span>
                         <div class="item-button-group">
                             <button>변경</button>
-                            <button>제거</button>
+                            <button class="remove-btn">제거</button>
                         </div>
                     </div>
                     <div class="folder-item">
@@ -95,7 +95,7 @@
                         <span>석양지는 논밭</span>
                         <div class="item-button-group">
                             <button>변경</button>
-                            <button>제거</button>
+                            <button class="remove-btn">제거</button>
                         </div>
                     </div>
                 </div>
