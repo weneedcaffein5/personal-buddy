@@ -67,6 +67,46 @@
 			<div class="point-log">
 				<a>포인트 이용 내역 보기 >></a>
 			</div>
+			<div class="point-shop-box">
+				<div class="point-shop-tab-box">
+					<button class="point-shop-tab-style">전체</button>
+					<button class="point-shop-tab-style">배경</button>
+					<button class="point-shop-tab-style">스티커</button>
+					<button class="point-shop-tab-style">나무</button>
+				</div>
+				<div class="point-shop-item-box">
+					<div class="item-selecter-box">
+						<button class="item-cart">장바구니</button>
+						<button class="select-all-item">모두 담기</button>
+						<select class="select-category">
+							<option>인기순</option>
+							<option>최신순</option>
+						</select>
+					</div>
+					<div class="item-list-box">
+						<div class="item-list">
+							<div class="item">
+								<div class="img-box">
+									<img alt="" src="">
+								</div>
+								<div class="item-info-box">
+									<span class="item-info">나무</span>
+									<span class="item-info">🏆 1000P</span>
+								</div>
+								<div class="item-btn-box">
+									<button class="buy-item-btn">구매</button>
+									<button class="select-item-btn">담기</button>
+								</div>
+								<button class="view-item">미리보기</button>
+							</div>
+							<div class="item">
+							
+							</div>
+							<div class="item"></div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		
 </body>

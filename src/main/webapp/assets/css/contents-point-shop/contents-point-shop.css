@@ -185,3 +185,125 @@
 	width: 100%;
 	margin-top: 20px;
 }
+
+.point-log a {
+	cursor: pointer;
+}
+
+.point-shop-item-box {
+	width: 100%;
+	height: auto;
+}
+
+.point-shop-tab-box {
+	margin-top: 20px;
+}
+
+.point-shop-tab-style {
+    width:80px;
+    height: 33px;
+    background-color: var(--light-green);
+    border:none;
+    border-top-left-radius: 6.3px;
+    border-top-right-radius: 6.3px;
+    border-top: 1px solid var(--main-green);
+    border-left: 1px solid var(--main-green);
+    border-right: 1px solid var(--main-green);
+    cursor: pointer;
+    color: var(--main-green);
+    font-size: var(--h7);
+}
+
+.point-shop-item-box {
+	width: 100%;
+	height: 1300px;
+	background-color: var(--light-green);
+	border: 1px solid var(--main-green);
+}
+
+.item-selecter-box {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin-top: 20px;
+	margin-right: 55px;
+}
+
+.item-cart {
+	width: 85px;
+	height: 35px;
+	background-color: var(--sub-blue);
+	border-radius: 50px;
+	color: var(--white);
+	border: none;
+	font-size: var(--h8);
+	cursor: pointer;
+	margin-right: 10px;
+}
+
+.select-all-item {
+	width: 85px;
+	height: 35px;
+	background-color: var(--main-green);
+	border-radius: 50px;
+	color: var(--white);
+	border: none;
+	font-size: var(--h8);
+	cursor: pointer;
+	margin-right: 55px;
+}
+
+.select-category {
+	width: 250px;
+	height: 44px;
+	border: none;
+	background-color: var(--main-green);
+	cursor: pointer;
+	font-size: var(--h6);
+	padding-left: 10px;
+	border-radius: 5px;
+}
+
+.item-list-box {
+	display: flex;
+	flex-direction: column;
+	width: 1200px;
+	height: 1000px;
+	margin: auto;
+	margin-top: 30px;
+}
+
+.item-list {
+	display: flex;
+	margin-bottom: 40px;
+}
+
+.item {
+	width: 160px;
+	height: 244px;
+	border-radius: 40px;
+	background-color: gray;
+	margin: 0 20px;
+}
+
+.img-box {
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+}
+
+.img-box img {
+	width: 100px;
+	height: 100px;
+	background-color: black;
+}
+
+.item-info-box {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 5px;
+	font-size: var(--h8);
+}
+
