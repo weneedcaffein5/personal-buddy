@@ -5,6 +5,16 @@ const achievementTab = document.getElementById("achievementTab");
 const myTreeTab = document.getElementById("myTreeTab");
 const pointShopTab = document.getElementById("pointShopTab");
 
+/* 상점 카테고리 */
+
+const pointShopTabStyle = document.querySelectorAll(".point-shop-tab-style");
+
+pointShopTabStyle.forEach((tab) => {
+	tab.addEventListener("click", () => {
+		tab.classList.add("point-shop-tab-style-on");
+	})
+})
+
 achievementTab.addEventListener("click", () => {
 	tabBtn.classList.add("tab-btn-0")
 	tabBtn.classList.remove("tab-btn-200")

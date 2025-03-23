@@ -99,9 +99,7 @@
 								</div>
 								<button class="view-item">미리보기</button>
 							</div>
-							<div class="item">
-							
-							</div>
+							<div class="item"></div>
 							<div class="item"></div>
 						</div>
 					</div>

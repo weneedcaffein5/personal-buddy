@@ -214,6 +214,10 @@
     font-size: var(--h7);
 }
 
+.point-shop-tab-style-on {
+	background-color: var(--main-green)
+}
+
 .point-shop-item-box {
 	width: 100%;
 	height: 1300px;
@@ -286,6 +290,15 @@
 	margin: 0 20px;
 }
 
+.item-info-box {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 5px;
+	font-size: var(--h8);
+}
+
 .img-box {
 	display: flex;
 	justify-content: center;
@@ -298,12 +311,32 @@
 	background-color: black;
 }
 
-.item-info-box {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+
+.item-btn-box{
 	margin-top: 5px;
-	font-size: var(--h8);
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
+.buy-item-btn {
+	width: 60px;
+	height: 30px;
+	background-color: var(--sub-blue);
+	border: none;
+	border-radius: 30px;
+}
+
+.select-item-btn {
+	width: 60px;
+	height: 30px;
+	background-color: var(--sub-blue);
+	border: none;
+	border-radius: 30px;
+}
+
+.view-item {
+	margin-top: 5px;
+	border: none;
+	background-color: var(--light-green);
+}
