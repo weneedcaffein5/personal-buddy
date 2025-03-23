@@ -289,7 +289,7 @@
     height: 1063px;
 }
 
-.folder-item.selected {
+.folder-item.selected, .folder-item-sticker.selected {
     border: 3px solid #06C371;
     border-radius: 40px;
 }
