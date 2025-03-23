@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+.customer-service {
+	max-width: 700px;
+	margin: 60px auto;
+	padding: 0 16px;
+	color: #000;
+}
+
+.cs-title {
+	font-size:32px;
+	text-align:center;
+  	font-weight: 400;
+  	margin-bottom:116px;
+}
+
+.cs-sub-label {
+	font-size: 14px;
+ 	font-weight: 400;
+  	margin-bottom: 4px;
+}
+  
+
+.cs-sub-title {
+	font-size: 24px;
+	font-weight: bold;
+	margin-top:0px;
+	margin-bottom: 60px;
+}
+
+.cs-list {
+ 	list-style: none;
+ 	margin: 0;
+ 	padding: 0;
+}
+
+ .cs-header {
+	display: flex;
+	align-items: center;
+	height: 86px;
+	padding: 0 8px;
+	box-sizing: border-box;
+	border-bottom: 1px solid #DDDDDD;
+	gap: 12px;
+	cursor: pointer;
+} 
+
+.cs-item {
+ 	border-bottom: 1px solid #DDDDDD;
+}
+
+.cs-item.active .cs-answer {
+  	display: block;
+}
+
+.cs-item.active .cs-icon {
+  	transform: rotate(90deg);
+  	transition: transform 0.3s ease;
+}
+
+.cs-icon {
+	width: 18px;
+	height: 18px;
+	transition: transform 0.3s ease;
+}
+
+.cs-answer {
+	display: none;
+  	padding: 16px 12px;
+  	font-size: 14px;
+  	font-weight: 300;
+  	line-height: 1.6;
+  	color: #000;
+  	border-bottom: 1px solid #DDDDDD;
+  	border-top: 1px solid #DDDDDD;
+}
+
+.cs-q {
+  	font-size: 18px;
+  	font-weight: 500;
+  	color: #01CD74;
+}
+
+.cs-text {
+	font-size: 18px;
+  	font-weight: 500;
+  	flex-grow: 1;
+}
+
+
