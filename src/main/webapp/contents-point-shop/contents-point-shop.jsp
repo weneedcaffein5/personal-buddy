@@ -11,6 +11,24 @@
 <link rel="stylesheet" href="../assets/css/contents-point-shop/contents-point-shop.css" />
 </head>
 <body>
+	<!-- 단일 구매창 -->
+	<div class="buy-one-item-box hide">
+		<div class="purchase-window">
+			<div class="purchase-window-top">
+				<span>구매 확인</span>
+				<button class="out-purchase-window">X</button>
+			</div>
+			<div class="purchase-window-bottom">
+				<span>나무(🏆 1000P) 상품을 구매 하시겠습니까?</span>
+				<div>
+					<button class="purchase-window-ok-btn">확인</button>
+					<button class="purchase-window-no-btn">취소</button>
+				</div>
+			</div>
+		</div>
+		<div class="black-background"></div>
+	</div>
+	
 	<!-- 헤더 -->
 		<%@ include file="../layout/header.jsp" %>
 		<!-- 배너 -->
