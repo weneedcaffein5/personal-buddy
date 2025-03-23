@@ -66,9 +66,9 @@
             <div class="mypost-content">
                 <h3 class="mypost-title">🖥️ It's all JavaScript. There is No JAVA</h3>
                 <p class="mypost-text">
-                JS is the best Language for all developers.Many developers use JS well. 
-                Whether you're a front developer or a back developer, it's an essential language. 
-                So let's study together.It'll be a blast.
+                	JS is the best Language for all developers.Many developers use JS well. 
+                	Whether you're a front developer or a back developer, it's an essential language. 
+                	So let's study together.It'll be a blast.
                 </p>
             </div>
                 <p class="mypost-meta">2025.02.01 게시
@@ -119,7 +119,6 @@
                 	</p>
         	</div>
         	
-        	
         	<div class="mypost">
             <img class="mypost-image" src="../assets/images/mypage/myposts-dummy-5.jpg" alt="게시물 이미지">
             <div class="mypost-content">
@@ -151,7 +150,9 @@
                     <span>👁 1,910</span>
                 </div>
                 </p>
-        </div>
+        	</div>
+        	
+        	
         	     	       	
     	</div>	  	
 	</div>

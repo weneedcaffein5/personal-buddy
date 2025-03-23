@@ -17,21 +17,25 @@ public class MemberMailCheckController implements Action {
 		HttpSession session = req.getSession();
 		
 		MemberVO member = (MemberVO)session.getAttribute("newMember");
-		String AuthCode = (String)session.getAttribute("authCode");
-		String inputAuthCode = req.getParameter("authCode");
+		String authCode = (String)session.getAttribute("mailAuthCode");
+		String inputAuthCode = req.getParameter("mailAuthCode");
 
-		boolean checkOk = false;
+		boolean mailCheckResult = false;
 		
-		checkOk = inputAuthCode.equals(AuthCode);
+		mailCheckResult = inputAuthCode.equals(authCode);
 		
-        if(checkOk) {
+        if(mailCheckResult) {
         	member.setMemberEmail((String)session.getAttribute("email"));
+        	session.setAttribute("mailAuthCode", authCode);
         	session.setAttribute("newMember", member);
+        }else {
+        	session.setAttribute("email", "");
+        	session.setAttribute("mailAuthCode", "");
         }
         
-        System.out.println(session.getAttribute("newMember"));
+//        System.out.println(session.getAttribute("newMember"));
         resp.setContentType("application/json"); // JSON 응답으로 설정
-        resp.getWriter().write("{\"mailOk\": " + checkOk + ", \"message\": \"" + (checkOk ? "인증 성공" : "인증 실패") + "\"}");
+        resp.getWriter().write("{\"mailCheckResult\": " + mailCheckResult + ", \"mailCheckResultMessage\": \"" + (mailCheckResult ? "인증 성공" : "인증 실패") + "\"}");
         
 		return null;
 	}
