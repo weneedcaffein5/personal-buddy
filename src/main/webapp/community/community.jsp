@@ -135,6 +135,81 @@
 							<span class="comments"><img class="icon" src="../assets/images/community/comment-icon.png">78</span>
 						</div>
 					</div>
+						<div class="content">
+						<a class="image-container" href="#">
+							<img class="img" src="../assets/images/community/jangtachi.jpg">
+							<div class="number-box">6</div>
+						</a>
+						<span class="tag">관심 일정</span>
+						<span class="content-name">환술 거는 법</span>
+						<span class="user-info">장타치</span>
+						<span class="content-date">2025.02.01 게시</span>
+						<div class="content-info">
+							<span class="likes"><img class="icon" src="../assets/images/community/like-icon.png">600</span>
+							<span class="views"><img class="icon" src="../assets/images/community/view-icon.png">9999+</span>
+							<span class="comments"><img class="icon" src="../assets/images/community/comment-icon.png">78</span>
+						</div>
+					</div>
+						<div class="content">
+						<a class="image-container" href="#">
+							<img class="img" src="../assets/images/community/jangtachi.jpg">
+							<div class="number-box">7</div>
+						</a>
+						<span class="tag">관심 일정</span>
+						<span class="content-name">환술 거는 법</span>
+						<span class="user-info">장타치</span>
+						<span class="content-date">2025.02.01 게시</span>
+						<div class="content-info">
+							<span class="likes"><img class="icon" src="../assets/images/community/like-icon.png">600</span>
+							<span class="views"><img class="icon" src="../assets/images/community/view-icon.png">9999+</span>
+							<span class="comments"><img class="icon" src="../assets/images/community/comment-icon.png">78</span>
+						</div>
+					</div>
+						<div class="content">
+						<a class="image-container" href="#">
+							<img class="img" src="../assets/images/community/jangtachi.jpg">
+							<div class="number-box">8</div>
+						</a>
+						<span class="tag">관심 일정</span>
+						<span class="content-name">환술 거는 법</span>
+						<span class="user-info">장타치</span>
+						<span class="content-date">2025.02.01 게시</span>
+						<div class="content-info">
+							<span class="likes"><img class="icon" src="../assets/images/community/like-icon.png">600</span>
+							<span class="views"><img class="icon" src="../assets/images/community/view-icon.png">9999+</span>
+							<span class="comments"><img class="icon" src="../assets/images/community/comment-icon.png">78</span>
+						</div>
+					</div>
+						<div class="content">
+						<a class="image-container" href="#">
+							<img class="img" src="../assets/images/community/jangtachi.jpg">
+							<div class="number-box">9</div>
+						</a>
+						<span class="tag">관심 일정</span>
+						<span class="content-name">환술 거는 법</span>
+						<span class="user-info">장타치</span>
+						<span class="content-date">2025.02.01 게시</span>
+						<div class="content-info">
+							<span class="likes"><img class="icon" src="../assets/images/community/like-icon.png">600</span>
+							<span class="views"><img class="icon" src="../assets/images/community/view-icon.png">9999+</span>
+							<span class="comments"><img class="icon" src="../assets/images/community/comment-icon.png">78</span>
+						</div>
+					</div>
+						<div class="content">
+						<a class="image-container" href="#">
+							<img class="img" src="../assets/images/community/jangtachi.jpg">
+							<div class="number-box">10</div>
+						</a>
+						<span class="tag">관심 일정</span>
+						<span class="content-name">환술 거는 법</span>
+						<span class="user-info">장타치</span>
+						<span class="content-date">2025.02.01 게시</span>
+						<div class="content-info">
+							<span class="likes"><img class="icon" src="../assets/images/community/like-icon.png">600</span>
+							<span class="views"><img class="icon" src="../assets/images/community/view-icon.png">9999+</span>
+							<span class="comments"><img class="icon" src="../assets/images/community/comment-icon.png">78</span>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="button-right">▶</div>
@@ -330,18 +405,20 @@ tags.forEach(tag => {
 document.addEventListener("DOMContentLoaded", () => {
     let currentIndex = 0;
 
-    const slider = document.getElementById("slider");
+    
     const items = document.querySelectorAll(".content");
     const totalItems = items.length;
     const visibleItems = 3;
 
     const itemWidth = items[0].offsetWidth;
-    const gap = 40; // gap과 동일하게
+    const gap = 150; // gap과 동일하게
     const contentWidth = itemWidth + gap;
 
+    
+    
     document.querySelector(".button-left").addEventListener("click", () => {
       if (currentIndex > 0) {
-        currentIndex--;
+   	  	currentIndex--;
         updateSlider();
       }
     });
@@ -354,12 +431,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function updateSlider() {
-      const offset = contentWidth * currentIndex;
-      slider.style.transform = `translateX(-${offset}px)`;
+		const slider = document.getElementById("slider");
+		const offset = contentWidth * currentIndex;
+		console.log(offset)
+		/* slider.style.setProperty("transform", "translateX(-360px)"); */
+		slider.style.setProperty("transform", "translateX(" + -offset + "px)");
+		/* slider.style.transform = `translateX(${ -offset }px)`; */
+		console.log(slider.style.transform);
     }
   });
+  
 
-document.getElementById("slider").style.transform = "translateX(-400px)";
 
 </script>
 </html> 
