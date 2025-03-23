@@ -1,5 +1,6 @@
 package com.app.vo;
 
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.Objects;
 
@@ -16,11 +17,35 @@ public class MemberVO {
 	private String memberPhone;
 	private int memberPoint;
 	private int memberAdmin;
-	private Date memberCreateDate;
+	private Timestamp memberCreateDate;
 	private int memberTermServiceAgree;
 	private int memberTermInformationAgree;
 	private int memberTermLocationAgree;
 	private int memberTermPormotionAgree;
+
+	public MemberVO() {;}
+
+	public MemberVO(Long id, String memberEmail, String memberPassword, String memberNickName, String memberComment,
+			String memberName, String memberGender, Date memberBirth, String memberPhone, int memberPoint,
+			int memberAdmin, Timestamp memberCreateDate, int memberTermServiceAgree, int memberTermInformationAgree,
+			int memberTermLocationAgree, int memberTermPormotionAgree) {
+		this.id = id;
+		this.memberEmail = memberEmail;
+		this.memberPassword = memberPassword;
+		this.memberNickName = memberNickName;
+		this.memberComment = memberComment;
+		this.memberName = memberName;
+		this.memberGender = memberGender;
+		this.memberBirth = memberBirth;
+		this.memberPhone = memberPhone;
+		this.memberPoint = memberPoint;
+		this.memberAdmin = memberAdmin;
+		this.memberCreateDate = memberCreateDate;
+		this.memberTermServiceAgree = memberTermServiceAgree;
+		this.memberTermInformationAgree = memberTermInformationAgree;
+		this.memberTermLocationAgree = memberTermLocationAgree;
+		this.memberTermPormotionAgree = memberTermPormotionAgree;
+	}
 
 	public Long getId() {
 		return id;
@@ -110,11 +135,11 @@ public class MemberVO {
 		this.memberAdmin = memberAdmin;
 	}
 
-	public Date getMemberCreateDate() {
+	public Timestamp getMemberCreateDate() {
 		return memberCreateDate;
 	}
 
-	public void setMemberCreateDate(Date memberCreateDate) {
+	public void setMemberCreateDate(Timestamp memberCreateDate) {
 		this.memberCreateDate = memberCreateDate;
 	}
 
@@ -150,29 +175,6 @@ public class MemberVO {
 		this.memberTermPormotionAgree = memberTermPormotionAgree;
 	}
 
-	public MemberVO() {;}
-	public MemberVO(Long id, String memberEmail, String memberPassword, String memberNickName, String memberComment,
-			String memberName, String memberGender, Date memberBirth, String memberPhone, int memberPoint,
-			int memberAdmin, Date memberCreateDate, int memberTermServiceAgree, int memberTermInformationAgree,
-			int memberTermLocationAgree, int memberTermPormotionAgree) {
-		this.id = id;
-		this.memberEmail = memberEmail;
-		this.memberPassword = memberPassword;
-		this.memberNickName = memberNickName;
-		this.memberComment = memberComment;
-		this.memberName = memberName;
-		this.memberGender = memberGender;
-		this.memberBirth = memberBirth;
-		this.memberPhone = memberPhone;
-		this.memberPoint = memberPoint;
-		this.memberAdmin = memberAdmin;
-		this.memberCreateDate = memberCreateDate;
-		this.memberTermServiceAgree = memberTermServiceAgree;
-		this.memberTermInformationAgree = memberTermInformationAgree;
-		this.memberTermLocationAgree = memberTermLocationAgree;
-		this.memberTermPormotionAgree = memberTermPormotionAgree;
-	}
-
 	@Override
 	public String toString() {
 		return "MemberVO [id=" + id + ", memberEmail=" + memberEmail + ", memberPassword=" + memberPassword
@@ -199,7 +201,7 @@ public class MemberVO {
 			return false;
 		MemberVO other = (MemberVO) obj;
 		return Objects.equals(id, other.id);
-	} 
+	}
 	
 	
 }

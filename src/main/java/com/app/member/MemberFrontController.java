@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
+import com.app.member.controller.MemberBirthCheckController;
 import com.app.member.controller.MemberGenderSelectController;
 import com.app.member.controller.MemberJoinAgreeController;
 import com.app.member.controller.MemberJoinProfileController;
@@ -45,6 +46,8 @@ public class MemberFrontController extends HttpServlet{
 			result = new MemberNameCheckController().execute(req, resp);
 		}else if(target.equals("gender-select")) {
 			result = new MemberGenderSelectController().execute(req, resp);
+		}else if(target.equals("birth-check")) {
+			result = new MemberBirthCheckController().execute(req, resp);
 		}else if(target.equals("login")) {
 			result = new MemberLoginController().execute(req, resp);
 		}else if(target.equals("login-ok")) {

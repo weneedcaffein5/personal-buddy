@@ -89,7 +89,7 @@
 	                </select>
 	            </div>
 	        	<!-- 휴대전화번호 -->
-	            <div class="input-wrapper">
+	            <div class="input-wrapper" id="phone-wrapper">
 	                <img src="../assets/images/member/phone-icon.png" class="input-icon">
 	                <input type="tel" id="phone" placeholder="휴대전화번호">
 	                <div>
@@ -97,7 +97,7 @@
 	                </div>
 	            </div>
 	        	<!-- 인증번호 -->
-	            <div class="input-wrapper" style="border-radius: 0px 0px 10px 10px;">
+	            <div class="input-wrapper" id="phone-auth-wrapper" style="border-radius: 0px 0px 10px 10px;">
 	                <img src="../assets/images/member/lock-icon.png" class="input-icon">
 	                <input type="text" maxlength="4" id="phone-confirm-code" placeholder="인증번호 4자리 입력">
 	                <div class="phone-confirm-check">
@@ -109,7 +109,8 @@
 	        
             <div class="space">
             	<span id="name-fail-message" style="display: none; font-weight: 300;">※ 이름은 필수 정보입니다.</span>
-            	<span id="password-fail-message"></span>
+            	<span id="gender-fail-message"  style="display: none; font-weight: 300;">※ 성별을 입력해주세요.</span>
+            	<span id="birth-fail-message"  style="display: none; font-weight: 300;">※ 생년월일을 입력해주세요.</span>
             </div>
 	
 	        <!-- 가입 버튼 -->
