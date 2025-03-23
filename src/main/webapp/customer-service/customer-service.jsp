@@ -63,11 +63,14 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const items = document.querySelectorAll(".cs-item");
-
+	/* console.log(items); */
+	
     items.forEach(item => {
       const header = item.querySelector(".cs-header");
+      /* console.log(header); */
       header.addEventListener("click", () => {
         item.classList.toggle("active");
+        /* console.log("Toggled active class for item:", item); */
       });
     });
   });

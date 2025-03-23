@@ -26,10 +26,7 @@ document.addEventListener("click", function (e) {
     console.log(placeLocation);
     console.log(placeImg); */
   
-    placeDetails.innerHTML = `<img src="${placeImg}" alt="${placeName}">
-        <h3>${placeName}</h3>
-        <p>${placeSub}</p>
-        <p>${placeRating}</p>
+    placeDetails.innerHTML = `	
         <p>${placeLocation}</p>`;
 
     placeDetails.classList.add("active");
