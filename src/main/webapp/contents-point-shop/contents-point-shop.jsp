@@ -69,7 +69,7 @@
 			</div>
 			<div class="point-shop-box">
 				<div class="point-shop-tab-box">
-					<button class="point-shop-tab-style">전체</button>
+					<button class="point-shop-tab-style point-shop-tab-style-on">전체</button>
 					<button class="point-shop-tab-style">배경</button>
 					<button class="point-shop-tab-style">스티커</button>
 					<button class="point-shop-tab-style">나무</button>
@@ -94,13 +94,29 @@
 									<span class="item-info">🏆 1000P</span>
 								</div>
 								<div class="item-btn-box">
-									<button class="buy-item-btn">구매</button>
-									<button class="select-item-btn">담기</button>
+									<button class="buy-item-btn hide">구매</button>
+									<button class="select-item-btn hide">담기</button>
 								</div>
-								<button class="view-item">미리보기</button>
+								<div class="view-item-box">
+									<button class="view-item hide">미리보기</button>
+								</div>
 							</div>
-							<div class="item"></div>
-							<div class="item"></div>
+							<div class="item">
+								<div class="img-box">
+									<img alt="" src="">
+								</div>
+								<div class="item-info-box">
+									<span class="item-info">나무</span>
+									<span class="item-info">🏆 1000P</span>
+								</div>
+								<div class="item-btn-box">
+									<button class="buy-item-btn hide">구매</button>
+									<button class="select-item-btn hide">담기</button>
+								</div>
+								<div class="view-item-box">
+									<button class="view-item hide">미리보기</button>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
