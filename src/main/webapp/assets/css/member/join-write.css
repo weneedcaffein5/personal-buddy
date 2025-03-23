@@ -103,6 +103,25 @@ body {
     text-decoration: underline;
 }
 
+.space span{
+	display: block;
+}
+#mail-fail-message{
+	line-height: 30px;
+	opacity: 0;
+	font-size: var(--h8);
+	font-weight: 300;
+	color: var(--warning-red);
+	margin-left: 10px;
+}
+#password-fail-message{
+	line-height: 30px;
+	opacity: 0;
+	font-size: var(--h8);
+	font-weight: 300;
+	color: var(--warning-red);
+	margin-left: 10px;
+}
 
 .input-wrapper .toggle-password{
 	position: absolute;

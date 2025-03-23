@@ -8,12 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
+import com.app.member.controller.MemberBirthCheckController;
+import com.app.member.controller.MemberGenderSelectController;
 import com.app.member.controller.MemberJoinAgreeController;
 import com.app.member.controller.MemberJoinProfileController;
 import com.app.member.controller.MemberJoinWriteController;
 import com.app.member.controller.MemberLoginController;
 import com.app.member.controller.MemberLoginOkController;
 import com.app.member.controller.MemberMailCheckController;
+import com.app.member.controller.MemberNameCheckController;
+import com.app.member.controller.MemberPasswordCheckController;
 import com.app.member.controller.MemberSendMailController;
 
 public class MemberFrontController extends HttpServlet{
@@ -36,8 +40,14 @@ public class MemberFrontController extends HttpServlet{
 			result = new MemberSendMailController().execute(req, resp);
 		}else if(target.equals("mail-check")) {
 			result = new MemberMailCheckController().execute(req, resp);
-		}else if(target.equals("join-profile")) {
-			result = new MemberJoinProfileController().execute(req, resp);
+		}else if(target.equals("password-check")) {
+			result = new MemberPasswordCheckController().execute(req, resp);
+		}else if(target.equals("name-check")) {
+			result = new MemberNameCheckController().execute(req, resp);
+		}else if(target.equals("gender-select")) {
+			result = new MemberGenderSelectController().execute(req, resp);
+		}else if(target.equals("birth-check")) {
+			result = new MemberBirthCheckController().execute(req, resp);
 		}else if(target.equals("login")) {
 			result = new MemberLoginController().execute(req, resp);
 		}else if(target.equals("login-ok")) {

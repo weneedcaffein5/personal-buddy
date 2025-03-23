@@ -15,14 +15,14 @@
             <div class="leftheader">
             	<a href="#" class="logo"><img src="../assets/images/mypage/logo.png" alt="로고"></a>
                 <a href="../main/main.jsp">일정 관리</a>
-                <a href="#">컨텐츠</a>
+                <a href="../contents/contents-main.jsp">컨텐츠</a>
                 <a href="../event/event-main.jsp">이벤트</a>
                 <a href="../community/community.jsp">커뮤니티</a>
-                <a href="#">고객센터</a>
+                <a href="../customer-service/customer-service.jsp">고객센터</a>
             </div>
             <div class="rightheader">
-                <a href="../member/join-agree.jsp">회원가입</a>
-                <a href="../member/login.jsp">로그인</a>
+                <a href="../member/join-agree.member">회원가입</a>
+                <a href="../member/login.member">로그인</a>
             </div>
         </div>
     </div>
