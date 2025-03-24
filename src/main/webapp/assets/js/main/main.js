@@ -1,37 +1,47 @@
 /* 장소 추천 */
 document.addEventListener("click", function (e) {
-	/*  const clickedItem = e.target.value(".place-item"); */
     const clickedItem = e.target.closest(".place-item");
-    /* console.log(clickedItem); */
-    if (!clickedItem) {
-    	return;
-    }    
+    if (!clickedItem) return;
 
     const placeDetails = document.querySelector(".place-details");
-    
     document.querySelectorAll(".place-item").forEach(i => i.classList.remove("active"));
     clickedItem.classList.add("active");
-    
-    const placeName = clickedItem.querySelector(".place-name").textContent;
-    const placeSub = clickedItem.querySelector(".place-sub").textContent;
-    const placeRating = clickedItem.querySelector(".place-rating").textContent;
-    const placeLocation = clickedItem.querySelector(".place-location").textContent;
-    const placeImg = clickedItem.querySelector("img").src;
-    
-    
-    
-    /* console.log(placeName);
-    console.log(placeSub);
-    console.log(placeRating);
-    console.log(placeLocation);
-    console.log(placeImg); */
-  
-    placeDetails.innerHTML = `	
-        <p>${placeLocation}</p>`;
 
+    const placeLocation = clickedItem.querySelector(".place-location").textContent;
+
+    placeDetails.innerHTML += `
+        <div id="map" style="width:100%; height:300px; margin-top:20px; border-radius:10px;"></div>
+    `;
     placeDetails.classList.add("active");
-    /*  console.log(placeDetails.classList); */
+
+    const mapContainer = document.getElementById('map');
+    const mapOption = {
+        center: new kakao.maps.LatLng(37.5665, 126.9780),
+        level: 3
+    };
+    const map = new kakao.maps.Map(mapContainer, mapOption);
+    const geocoder = new kakao.maps.services.Geocoder();
+
+    geocoder.addressSearch(placeLocation, function (result, status) {
+        if (status === kakao.maps.services.Status.OK) {
+            const coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+            map.setCenter(coords);
+            const marker = new kakao.maps.Marker({
+                map: map,
+                position: coords
+            });
+
+
+            const infowindow = new kakao.maps.InfoWindow({
+                content: `<div style="padding:5px; font-size:14px;">${placeLocation}</div>`
+            });
+            infowindow.open(map, marker);
+        } else {
+            alert("주소를 찾을 수 없습니다.");
+        }
+    });
 });
+
 
 
 /* 코디 추천 */
