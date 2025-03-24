@@ -3,9 +3,9 @@ package com.app.vo;
 import java.util.Objects;
 
 public class CalendarVO {
-	Long id;
-	String calendarTitle;
-	Long calendarGroupId;
+	private Long id;
+	private String calendarTitle;
+	private Long calendarGroupId;
 	
 	public CalendarVO() {;}
 

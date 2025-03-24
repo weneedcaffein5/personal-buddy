@@ -3,8 +3,8 @@ package com.app.vo;
 import java.util.Objects;
 
 public class CalanderGroupVO {
-	Long id;
-	Long userGroupId;
+	private Long id;
+	private Long userGroupId;
 	
 	public CalanderGroupVO() {;}
 
