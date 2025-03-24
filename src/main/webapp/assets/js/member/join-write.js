@@ -10,16 +10,16 @@ document.querySelectorAll("img").forEach(img => {
  * - 서버의 `send-mail` 컨트롤러로 이메일을 전송하고 인증번호를 요청함
  **/
 function sendMail() {
-	let idWrapper = document.getElementById("id-wrapper");
-	let idAuthWrapper = document.getElementById("id-auth-wrapper");
-    let email = document.getElementById("email").value; // 입력된 이메일 가져오기
-    let button = document.getElementById("mail-button");
+	const idWrapper = document.getElementById("id-wrapper");
+	const idAuthWrapper = document.getElementById("id-auth-wrapper");
+    const email = document.getElementById("email").value; // 입력된 이메일 가져오기
+    const button = document.getElementById("mail-button");
     
 	idWrapper.style.border = "1px solid var(--gray2)";
 	idAuthWrapper.style.border = "1px solid var(--gray2)";
 	idAuthWrapper.style.zIndex = 0;
 
-	    button.innerText = "메일 전송 중";
+    button.innerText = "메일 전송 중";
     button.classList.remove("success");
     button.classList.remove("fail");
     button.classList.add("process");
@@ -31,17 +31,30 @@ function sendMail() {
     })
     .then(resp => resp.json()) // 서버에서 JSON 응답을 받음
     .then(data => {
+		const requestTag = document.querySelector(".email-confirm-check");
+		
     	if(data.sameId){
 			idWrapper.style.border = "1px solid var(--warning-red)";
 			idAuthWrapper.style.border = "var(--warning-red)";
 			idAuthWrapper.style.zIndex = 1;
     		button.classList.remove("process");
     		button.innerText = "중복 메일";
+			
+			requestTag.style.opacity = "1";
     	}else{
 			if(data.sendMailResult){
 				button.classList.remove("process");
 				button.classList.remove("fail");
 				button.classList.add("success");
+				
+				document.getElementById("email-confirm-time").textContent = "";
+				document.getElementById("email-confirm-time").style.color = "var(--gray4)";
+				requestTag.style.opacity = "1";
+
+				mailCheckTimeLeft = mailCountdownSeconds;
+				
+				//1초마다 업데이트
+				mailCheckTimer = setInterval(mailUpdateCountdown, 1000);
 			}else{
 				idWrapper.style.border = "1px solid var(--warning-red)";
 				idAuthWrapper.style.border = "1px solid var(--warning-red)";
@@ -49,12 +62,38 @@ function sendMail() {
 				button.classList.remove("process");
 				button.classList.remove("success");
 				button.classList.add("fail");
+				
+				requestTag.style.opacity = "1";
 			}
 		}
 		
     	button.innerText = data.sendMailResultMessage; // 메시지 표시
     })
     .catch(error => console.error("Error:", error)); // 에러 처리
+}
+
+
+let mailCheckTimer = null;
+let mailCheckTimeLeft = 0;
+/* 인증번호 체크 카운트 다운용 변수 (단위 : 초)*/
+const mailCountdownSeconds = 120;
+
+function mailUpdateCountdown() {
+    let minutes = Math.floor(mailCheckTimeLeft / 60);
+    let seconds = mailCheckTimeLeft % 60;
+    let timerText = document.getElementById("email-confirm-time");
+
+    // 두 자리 숫자로 표시 (ex: 05:00)
+    timerText.textContent = 
+        (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+
+    if (mailCheckTimeLeft > 0) {
+        mailCheckTimeLeft--; // 1초씩 감소
+    } else {
+        clearInterval(mailCheckTimer); // 타이머 중지
+        timerText.textContent = "시간 종료";
+        timerText.style.color = "var(--warning-red)"
+    }
 }
 
  /**
@@ -85,7 +124,6 @@ function mailCheck() {
 			idAuthWrapper.style.border = "1px solid var(--main-green)";
 			idAuthWrapper.style.zIndex = 1;
 			
-			
 			mailCheckMessage.style.opacity = 1;
 			mailCheckMessage.style.color = "var(--main-green)";
 			mailCheckMessage.innerText = "※ 이메일 인증 완료"
@@ -113,7 +151,6 @@ document.getElementById("password").addEventListener("blur", (e) => {
 	passWordFailMessage.style.opacity = 0;
 	passwordWrapper.style.border = "1px solid var(--gray2)";
 	passwordWrapper.style.zIndex = 0;
-	
 	
     fetch("password-check.member", {
         method: "POST",
@@ -323,7 +360,6 @@ function sendPhoneAuth() {
 			
 			requestTag.style.opacity = "1";
     	} else{
-			
 			button.innerText = "전송 완료";
 		    button.classList.remove("process");
 		    button.classList.remove("fail");
@@ -333,7 +369,7 @@ function sendPhoneAuth() {
 			document.getElementById("phone-confirm-time").style.color = "var(--gray4)";
 			requestTag.style.opacity = "1";
 			
-			phoneCheckTimer = phoneCountdownSeconds;
+			phoneCheckTimeLeft = phoneCountdownSeconds;
 			
 			//1초마다 업데이트
 			phoneCheckTimer = setInterval(phoneUpdateCountdown, 1000);
@@ -351,39 +387,32 @@ function phoneCheck() {
 	const phoneWrapper = document.getElementById("phone-wrapper");
 	const phoneAuthWrapper = document.getElementById("phone-auth-wrapper");
 	const phoneCheckMessage = document.getElementById("phone-fail-message");
-    let mailAuthCode = document.getElementById("mail-authCode").value; // 입력된 인증번호 가져오기
+    const phoneAuthCode = document.getElementById("phone-authcode").value; // 입력된 인증번호 가져오기
 	
-	idWrapper.style.border = "1px solid var(--gray2)";
-	idAuthWrapper.style.border = "1px solid var(--gray2)";
-	idAuthWrapper.style.zIndex = 0;
-	mailCheckMessage.style.opacity = 0;
+	phoneWrapper.style.border = "1px solid var(--gray2)";
+	phoneAuthWrapper.style.border = "1px solid var(--gray2)";
+	phoneAuthWrapper.style.zIndex = 0;
 
-    fetch("mail-check.member", { // AJAX 요청 (비동기)
+    fetch("phone-check.member", { // AJAX 요청 (비동기)
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({ mailAuthCode: mailAuthCode }).toString()
+        body: new URLSearchParams({ phoneAuthCode: phoneAuthCode }).toString()
     })
     .then(resp => resp.json()) // 서버에서 JSON 응답을 받음
     .then(data => {
-		if(data.mailCheckResult){
-			idWrapper.style.border = "1px solid var(--main-green)";
-			idAuthWrapper.style.border = "1px solid var(--main-green)";
-			idAuthWrapper.style.zIndex = 1;
-			
-			
-			mailCheckMessage.style.opacity = 1;
-			mailCheckMessage.style.color = "var(--main-green)";
-			mailCheckMessage.innerText = "※ 이메일 인증 완료"
+		console.log(data.phoneCheckResult);
+		if(data.phoneCheckResult){
+			phoneWrapper.style.border = "1px solid var(--main-green)";
+			phoneAuthWrapper.style.border = "1px solid var(--main-green)";
+			phoneAuthWrapper.style.zIndex = 1;
 		}else{
-			idWrapper.style.border = "1px solid var(--warning-red)";
-			idAuthWrapper.style.border = "1px solid var(--warning-red)";
-			idAuthWrapper.style.zIndex = 1;
-			
-			alert(data.mailCheckResultMessage); // 인증 결과 메시지 출력	
-			
-			mailCheckMessage.style.opacity = 1;
-			mailCheckMessage.style.color = "var(--warning-red)";
-			mailCheckMessage.innerText = "※ 이메일 인증 실패"
+			phoneWrapper.style.border = "1px solid var(--warning-red)";
+			phoneWrapper.style.border = "1px solid var(--warning-red)";
+			phoneWrapper.style.zIndex = 1;
+
+			phoneCheckMessage.style.opacity = 1;
+			phoneCheckMessage.style.color = "var(--warning-red)";
+			phoneCheckMessage.innerText = "※ 핸드폰 인증 실패"
 		}
         
 	})
@@ -415,28 +444,6 @@ function phoneUpdateCountdown() {
     }
 }
 
-let mailCheckTimer = null;
-let mailCheckTimeLeft = 0;
-/* 인증번호 체크 카운트 다운용 변수 (단위 : 초)*/
-const mailCountdownSeconds = 120; 
-
-function mailUpdateCountdown() {
-    let minutes = Math.floor(mailCheckTimeLeft / 60);
-    let seconds = mailCheckTimeLeft % 60;
-    let timerText = document.getElementById("mail-confirm-time");
-
-    // 두 자리 숫자로 표시 (ex: 05:00)
-    timerText.textContent = 
-        (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-
-    if (mailCheckTimeLeft > 0) {
-        mailCheckTimeLeft--; // 1초씩 감소
-    } else {
-        clearInterval(mailCheckTimer); // 타이머 중지
-        timerText.textContent = "시간 종료";
-        timerText.style.color = "var(--warning-red)"
-    }
-}
 
 
 	

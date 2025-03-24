@@ -100,9 +100,9 @@
 	        	<!-- 인증번호 -->
 	            <div class="input-wrapper" id="phone-auth-wrapper" style="border-radius: 0px 0px 10px 10px;">
 	                <img src="../assets/images/member/lock-icon.png" class="input-icon">
-	                <input type="text" maxlength="4" id="phone-confirm-code" placeholder="인증번호 4자리 입력">
+	                <input type="text" maxlength="4" id="phone-authcode" placeholder="인증번호 4자리 입력">
 	                <div class="phone-confirm-check">
-	                	<span class="phone-confirm" onclick="mailCheck()">확인</span>
+	                	<span class="phone-confirm" onclick="phoneCheck()">확인</span>
 	                	<span style="width:50px; color: var(--gray4); font-size: var(--h9); text-align: center;" class="confirm-countdown" id="phone-confirm-time"></span>
                 	</div>
 	            </div>
