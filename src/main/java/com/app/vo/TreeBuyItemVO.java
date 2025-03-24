@@ -7,7 +7,6 @@ public class TreeBuyItemVO {
 	private Long itemCount;
 	
 	public TreeBuyItemVO() {;}
-
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
