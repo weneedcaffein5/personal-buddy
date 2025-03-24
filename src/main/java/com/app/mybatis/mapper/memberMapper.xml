@@ -23,4 +23,9 @@
 		FROM TBL_MEMBER
 		WHERE MEMBER_EMAIL = #{memberEmail}
 	</select>
+	<select id="selectMemberCountByPhone" parameterType="String" resultType="int">
+		SELECT COUNT(*)
+		FROM TBL_MEMBER
+		WHERE MEMBER_PHONE = #{memberPhone}
+	</select>
 </mapper>
