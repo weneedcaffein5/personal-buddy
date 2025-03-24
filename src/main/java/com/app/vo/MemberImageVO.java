@@ -10,6 +10,7 @@ public class MemberImageVO {
 	private Long memberId;
 	
 	public MemberImageVO() {;}
+	
 	public MemberImageVO(Long id, String memberImageName, String memberImagePath, Long memberId) {
 		this.id = id;
 		this.memberImageName = memberImageName;

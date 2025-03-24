@@ -15,7 +15,6 @@ public class MemberPointLogVO {
 
 	public MemberPointLogVO(Long id, int memberPointVariance, String memberPointReason, Timestamp memberPointTime,
 			Long memberId) {
-		super();
 		this.id = id;
 		this.memberPointVariance = memberPointVariance;
 		this.memberPointReason = memberPointReason;

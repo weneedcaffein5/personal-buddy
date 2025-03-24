@@ -12,7 +12,6 @@ public class EventCommentLikeVO {
 	public EventCommentLikeVO() {;}
 
 	public EventCommentLikeVO(Long id, Timestamp eventCommentLikeCreateDate, Long eventCommentId, Long memberId) {
-		super();
 		this.id = id;
 		this.eventCommentLikeCreateDate = eventCommentLikeCreateDate;
 		this.eventCommentId = eventCommentId;

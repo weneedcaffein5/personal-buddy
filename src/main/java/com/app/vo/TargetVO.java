@@ -11,6 +11,7 @@ public class TargetVO {
 	private Long memberId;
 	
 	public TargetVO() {;}
+	
 	public TargetVO(Long id, Timestamp targetCompleteDate, String targetScheduleCategory, Long memberId) {
 		super();
 		this.id = id;

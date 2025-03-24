@@ -11,6 +11,19 @@ public class TreeCustomizingVO {
 	private int treeId;
 	
 	public TreeCustomizingVO() {;}
+	
+
+	public TreeCustomizingVO(Long id, int treeCustomizingPositionX, int treeCustomizingPositionY,
+			int treeCustomizingApply, int itemId, int treeId) {
+		this.id = id;
+		this.treeCustomizingPositionX = treeCustomizingPositionX;
+		this.treeCustomizingPositionY = treeCustomizingPositionY;
+		this.treeCustomizingApply = treeCustomizingApply;
+		this.itemId = itemId;
+		this.treeId = treeId;
+	}
+
+
 
 	@Override
 	public String toString() {

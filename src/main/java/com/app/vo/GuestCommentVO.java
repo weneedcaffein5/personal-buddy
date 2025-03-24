@@ -11,6 +11,7 @@ public class GuestCommentVO {
 	private Long memberId;
 	
 	public GuestCommentVO() {;}
+	
 	public GuestCommentVO(Long id, Timestamp guestcommentCreateDate, String guestcommentDescription, Long memberId) {
 		this.id = id;
 		this.guestcommentCreateDate = guestcommentCreateDate;

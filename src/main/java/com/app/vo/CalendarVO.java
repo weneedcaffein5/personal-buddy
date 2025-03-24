@@ -16,7 +16,6 @@ public class CalendarVO {
 	}
 
 	public CalendarVO(Long id, String calendarTitle, Long calendarGroupId) {
-		super();
 		this.id = id;
 		this.calendarTitle = calendarTitle;
 		this.calendarGroupId = calendarGroupId;

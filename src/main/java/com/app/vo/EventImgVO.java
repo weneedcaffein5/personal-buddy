@@ -11,7 +11,6 @@ public class EventImgVO {
 	public EventImgVO() {;}
 
 	public EventImgVO(Long id, String eventImgName, String eventImgePath, Long eventId) {
-		super();
 		this.id = id;
 		this.eventImgName = eventImgName;
 		this.eventImgePath = eventImgePath;

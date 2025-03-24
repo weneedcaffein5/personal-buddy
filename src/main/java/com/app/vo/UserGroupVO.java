@@ -14,7 +14,6 @@ public class UserGroupVO {
 	}
 
 	public UserGroupVO(Long id, Long memberId) {
-		super();
 		this.id = id;
 		this.memberId = memberId;
 	}

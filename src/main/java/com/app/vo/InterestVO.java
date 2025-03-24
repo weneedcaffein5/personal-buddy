@@ -12,7 +12,6 @@ public class InterestVO {
 	public InterestVO() {;}
 
 	public InterestVO(Long id, String interestBig, String interestSmall, Long memberId) {
-		super();
 		this.id = id;
 		this.interestBig = interestBig;
 		this.interestSmall = interestSmall;

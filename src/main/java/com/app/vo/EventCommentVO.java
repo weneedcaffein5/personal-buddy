@@ -14,7 +14,6 @@ public class EventCommentVO {
 
 	public EventCommentVO(Long id, String eventCommentDescription, Timestamp eventCommentCreateDate, Long eventId,
 			Long memberId) {
-		super();
 		this.id = id;
 		this.eventCommentDescription = eventCommentDescription;
 		this.eventCommentCreateDate = eventCommentCreateDate;
