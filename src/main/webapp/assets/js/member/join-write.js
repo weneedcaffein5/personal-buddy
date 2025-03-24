@@ -419,6 +419,7 @@ function phoneCheck() {
 			phoneCheckMessage.innerText = "※ 핸드폰 인증 실패";
 		}
         
+		allCheck()
 	})
 	.catch(error => console.error("Error:", error)); // 에러 처리
 }
@@ -449,6 +450,7 @@ function phoneUpdateCountdown() {
 }
 
 function allCheck(){
+	const button = document.querySelector(".signup-btn");
 	fetch("all-check.member", { // AJAX 요청 (비동기)
 	        method: "POST",
 	        headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -456,9 +458,11 @@ function allCheck(){
 	    .then(resp => resp.json()) // 서버에서 JSON 응답을 받음
 	    .then(data => {
 			if(data.allCheckResult){
-				
+				button.classList.add("active");
+		    	button.removeAttribute("disabled");
 			}else{
-				
+				button.classList.remove("active");
+		        button.setAttribute("disabled", "true");
 			}
 	        
 		})

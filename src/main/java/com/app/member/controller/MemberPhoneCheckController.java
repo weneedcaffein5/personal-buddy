@@ -33,6 +33,8 @@ public class MemberPhoneCheckController implements Action {
         	session.setAttribute("phoneAuthCode", "");
         }
         
+        
+        System.out.println((MemberVO)session.getAttribute("newMember"));
 //        System.out.println(session.getAttribute("newMember"));
         resp.setContentType("application/json"); // JSON 응답으로 설정
         resp.getWriter().write("{\"phoneCheckResult\": " + phoneCheckResult + ", \"phoneCheckResultMessage\": \"" + (phoneCheckResult ? "인증 성공" : "인증 실패") + "\"}");
