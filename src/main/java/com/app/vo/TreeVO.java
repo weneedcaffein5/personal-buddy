@@ -7,6 +7,12 @@ public class TreeVO {
 	private Long memberId;
 	
 	public TreeVO() {;}
+	
+	public TreeVO(Long id, Long memberId) {
+		super();
+		this.id = id;
+		this.memberId = memberId;
+	}
 
 	@Override
 	public String toString() {

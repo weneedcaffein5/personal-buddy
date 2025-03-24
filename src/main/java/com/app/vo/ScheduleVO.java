@@ -17,6 +17,24 @@ public class ScheduleVO {
 	private Long scheduleGroupId;
 	
 	public ScheduleVO() {;}
+	
+	
+	public ScheduleVO(Long id, String scheduleTitle, String scheduleContent, Date scheduleStartDate,
+			Date scheduleEndDate, Timestamp scheduleCreateDate, String scheduleColor, String scheduleCategory,
+			Long calenderId, Long scheduleGroupId) {
+		super();
+		this.id = id;
+		this.scheduleTitle = scheduleTitle;
+		this.scheduleContent = scheduleContent;
+		this.scheduleStartDate = scheduleStartDate;
+		this.scheduleEndDate = scheduleEndDate;
+		this.scheduleCreateDate = scheduleCreateDate;
+		this.scheduleColor = scheduleColor;
+		this.scheduleCategory = scheduleCategory;
+		this.calenderId = calenderId;
+		this.scheduleGroupId = scheduleGroupId;
+	}
+
 
 	@Override
 	public String toString() {
