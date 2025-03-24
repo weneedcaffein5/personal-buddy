@@ -47,7 +47,6 @@ public class MemberSendPhoneAuthController implements Action {
             return null;
         }
         
-        System.out.println(phoneNumber);
         session.setAttribute("phone", phoneNumber);
     	session.setAttribute("phoneAuthCode", authCode);
     	resp.setContentType("application/json"); // JSON 응답으로 설정
