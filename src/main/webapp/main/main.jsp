@@ -6,68 +6,24 @@
 <head>
 <meta charset="UTF-8">
 <title>main</title>
-<!-- <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=KAKAO_API_KEY&libraries=services"></script> -->
 <link rel="stylesheet" href="../assets/css/global.css">
 <link rel="stylesheet" href="../assets/css/main/main.css">
+
 </head>
+
+<!-- <script type="text/javascript" 
+src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5afa&libraries=services">
+</script> -->
+
 <body>
 	<%@ include file="../layout/header.jsp" %>
-	
-	<div class="banner-container">	
-    	<div class="banner-wrapper">
-    	<a href="#" class="banner-slide">
-    		<div class="banner-slide">
-        		<img src="../assets/images/main/banner-blue.png" class="banner-slide" alt="배너 1">
-        		<div class="banner-text">
-        			<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
-        			<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
-    			</div>
-    		</div>
-    		</a>
-    		
-    		<a href="#" class="banner-slide">
-    		<div class="banner-slide">
-        		<img src="../assets/images/main/banner-green.png" class="banner-slide" alt="배너 2">
-        		<div class="banner-text">
-        			<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
-        			<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
-    			</div>
-    		</div>
-    		</a>
-    		
-    		<a href="#" class="banner-slide">
-    		<div class="banner-slide">
-        		<img src="../assets/images/main/banner-yellow.png" class="banner-slide" alt="배너 3">
-        		<div class="banner-text">
-        			<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
-        			<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
-    			</div>
-    		</div>
-    		</a>
-    		
-    		<a href="#" class="banner-slide">
-    		<div class="banner-slide">
-        		<img src="../assets/images/main/banner-blue.png" class="banner-slide" alt="배너 1(복사)">
-        		<div class="banner-text">
-        			<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
-        			<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
-    			</div>
-    		</div> 
-    		</a>
-    	</div>
-    	    	 	
-    	<!-- <button class="banner-button" id="buttonSlide">&lt;</button>
-    		<div class="banner-counter">
-        		<span id="current-slide">1</span> / <span id="total-slides">3</span>
-    		</div>
-    		<button class="banner-button-next" id="nextSlide">&gt;</button>	 -->
-		</div>
+	<%@ include file="../layout/banner.jsp" %>
 
 	<div>
 		<h2>캘린더</h2>
 	</div>
 
-	  <main class="content-wrapper">
+	  <div class="content-wrapper">
         <!-- 음식 추천  -->
         <section class="food-recommend">
             <p class="food-title"> 어제 한식을 드셨네요? 오늘 ‘역삼역’에서 점심 이런 메뉴 어때요?!!</p>
@@ -114,32 +70,35 @@
                 </div>
             </div>
         </section>
-    </main>
+    </div>
     
-    <section class="place-recommend">
-    <div class="place-list">
-        <p class="place-title1">카페에 가실 예정이시네요!</p>
-        <p class="place-title2">스터디에 최적화된 카페 몇 군데를 찾아보았어요</p>
+   <!-- 장소 추천 -->
+    <div class="place-recommend">
+     <div class="place-wrapper">
+    	<div class="place-list">
+        	<p class="place-title1">카페에 가실 예정이시네요!</p>
+        	<p class="place-title2">스터디에 최적화된 카페 몇 군데를 찾아보았어요</p>
 
-        <div class="place-item">
-            <div class="place-hover"></div>
-            <img src="../assets/images/main/카페사진1.png" alt="카페1">
-            <div class="place-info">
-                <h3 class="place-name">조용한 분위기의 공부 잘되는 카페!</h3>
-                <p class="place-sub">카페인사이드</p>
-                <p class="place-rating">4.4(69) · ₩1~10,000 · 카페</p>
-                <p class="place-location">도곡로3길 27</p>
-            </div>
+        	<div class="place-item">
+            	<div class="place-hover"></div>
+            	<img src="../assets/images/main/카페사진1.png" alt="카페1">
+            	<div class="place-info">
+                	<h3 class="place-name">조용한 분위기의 공부 잘되는 카페!</h3>
+                	<p class="place-sub">카페인사이드</p>
+                	<p class="place-rating">4.4(69) · ₩1~10,000 · 카페</p>
+                	<p class="place-location">도곡로3길 27</p>
+            	</div>
+        	</div>
         </div>
-
+         
         <div class="place-item">
             <div class="place-hover"></div>
             <img src="../assets/images/main/카페사진2.png" alt="카페2">
             <div class="place-info">
                 <h3 class="place-name">라떼가 맛있는 카페</h3>
-                <p class="place-sub">지오반니커피</p>
+                <p class="place-sub">지오바네커피</p>
                 <p class="place-rating">4.7(53) · ₩1~10,000 · 커피숍</p>
-                <p class="place-location">역삼동 667-17 1층 101호</p>
+                <p class="place-location">서울특별시 강남구 역삼동 667-17</p>
             </div>
         </div>
         
@@ -155,16 +114,12 @@
         </div>
     </div>
 
-    <div class="place-details">
-    	<h3 class="place-title">카페 정보</h3>
-    	<p class="place-sub">클릭하면 여기 상세 정보가 표시됩니다.</p>
-    	<p class="place-address"></p>  
+    <div class="place-details"> </div>
 	</div>
-	</section>
 	
     <!-- 코디 추천 -->
     
-	<section class="cloth-recommend">
+	<div class="cloth-recommend">
     <p class="cloth-title">당신이 원하는 '그' 코디</p>
     <div class="cloth-main">
         <div class="cloth-image">
@@ -289,8 +244,11 @@
                   	
                   </div>'>
     </div>
-</section>
+</div>
 </body>
-<script src="../assets/js/main/main.js">
-</script>
+
+
+
+<script src="../assets/js/main/main.js"></script>
+
 </html>
