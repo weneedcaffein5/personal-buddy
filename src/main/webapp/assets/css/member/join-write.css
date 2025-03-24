@@ -251,6 +251,35 @@ body {
 }
 
 
+#phone-button {
+	width: 200px;
+	line-height: 30px;
+	margin-right: 15px;
+	background-color: var(--white);
+	color: var(--sub-green);
+	border: 1px solid var(--sub-green);
+	border-radius: 10px;
+}
+
+#phone-button:hover {
+	background-color: var(--light-green);
+	font-weight: 700;
+}
+
+#phone-button.process{
+	color: var(--sub-green);
+	border: 1px solid var(--sub-green);
+}
+
+#phone-button.success{
+	color: var(--sub-blue) !important;
+	border: 1px solid var(--sub-blue) !important;
+}
+#phone-button.fail{
+	color: var(--warning-red) !important;
+	border: 1px solid var(--warning-red) !important;
+}
+
 .request-phone-confirm {
 	color: var(--gray5);
 	font-size: var(--h9);

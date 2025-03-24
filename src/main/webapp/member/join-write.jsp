@@ -35,9 +35,12 @@
 	            </div>
 	            <div class="input-wrapper" id="id-auth-wrapper">
 	                <img src="../assets/images/member/send-mail.png" class="input-icon">
-	                <input type="text" id="mail-authCode" maxlength="6" placeholder="인증번호 6자리 입력" name="mailAuthCode"
-	                value="<%= session.getAttribute("mailAuthCode") != null ? session.getAttribute("mailAuthCode") : "" %>" />
-	                <span class="email-confirm" onclick="mailCheck()">확인</span>
+	                <input type="text" id="mail-authCode" maxlength="6" placeholder="인증번호 6자리 입력" name="mailAuthCode" />
+	                <div class="email-confirm-check">
+	                	<span class="email-confirm" onclick="mailCheck()">확인</span>
+	                	<span style="width:50px; color: var(--gray4); font-size: var(--h9); text-align: center;" class="confirm-countdown" id="email-confirm-time"></span>
+                	</div>
+	                
 	            </div>
 	            <!-- 비밀번호 -->
 	            <div class="input-wrapper" id="password-wrapper" style="border-radius: 0px 0px 10px 10px;">
@@ -92,17 +95,15 @@
 	            <div class="input-wrapper" id="phone-wrapper">
 	                <img src="../assets/images/member/phone-icon.png" class="input-icon">
 	                <input type="tel" id="phone" placeholder="휴대전화번호">
-	                <div>
-	                	<span class="request-phone-confirm">인증번호<br />요청</span>
-	                </div>
+	                <button id="phone-button" type="button" onclick="sendPhoneAuth()">인증번호 발송</button>
 	            </div>
 	        	<!-- 인증번호 -->
 	            <div class="input-wrapper" id="phone-auth-wrapper" style="border-radius: 0px 0px 10px 10px;">
 	                <img src="../assets/images/member/lock-icon.png" class="input-icon">
 	                <input type="text" maxlength="4" id="phone-confirm-code" placeholder="인증번호 4자리 입력">
 	                <div class="phone-confirm-check">
-	                	<span style="width:50px; color: var(--gray4); font-size: var(--h9); text-align: center;" id="confirm-countdown"></span>
-                		<span class="request-phone-confirm">재요청</span>
+	                	<span class="phone-confirm" onclick="mailCheck()">확인</span>
+	                	<span style="width:50px; color: var(--gray4); font-size: var(--h9); text-align: center;" class="confirm-countdown" id="phone-confirm-time"></span>
                 	</div>
 	            </div>
 	        </div>
@@ -111,6 +112,7 @@
             	<span id="name-fail-message" style="display: none; font-weight: 300;">※ 이름은 필수 정보입니다.</span>
             	<span id="gender-fail-message"  style="display: none; font-weight: 300;">※ 성별을 입력해주세요.</span>
             	<span id="birth-fail-message"  style="display: none; font-weight: 300;">※ 생년월일을 입력해주세요.</span>
+            	<span id="phone-fail-message"  style="display: none; font-weight: 300;"></span>
             </div>
 	
 	        <!-- 가입 버튼 -->

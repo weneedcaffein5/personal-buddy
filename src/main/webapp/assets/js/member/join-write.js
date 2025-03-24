@@ -18,8 +18,8 @@ function sendMail() {
 	idWrapper.style.border = "1px solid var(--gray2)";
 	idAuthWrapper.style.border = "1px solid var(--gray2)";
 	idAuthWrapper.style.zIndex = 0;
-	
-    button.innerText = "메일 전송 중";
+
+	    button.innerText = "메일 전송 중";
     button.classList.remove("success");
     button.classList.remove("fail");
     button.classList.add("process");
@@ -223,7 +223,7 @@ document.querySelectorAll(".gender-select-radio").forEach((radio) => {
 			}
 		})
 		.catch(err => {
-			          console.error("요청 실패:", err);
+			console.error("요청 실패:", err);
         });;
 		
 	}))
@@ -265,8 +265,6 @@ flatpickr("#birth", {
 					birthFailMessage.style.display = "block";
 					birthFailMessage.style.color = "var(--warning-red)";
 				}
-				
-				
 			})
 			.catch(err => {
 				console.error("요청 실패:", err);
@@ -279,31 +277,67 @@ document.getElementById("birth-icon").addEventListener("click",() => {
 	document.getElementById("birth")._flatpickr.open();
 })
 
+
+/* 핸드폰 인증번호 전송 함수 */
 function sendPhoneAuth() {
-	let phoneWrapper = document.getElementById("phone-wrapper");
-	let phoneAuthWrapper = document.getElementById("phone-auth-wrapper");
-    
+	const phoneInput = document.getElementById("phone")
+	const phoneWrapper = document.getElementById("phone-wrapper");
+	const phoneAuthWrapper = document.getElementById("phone-auth-wrapper");
+	const phoneCheckMessage = document.getElementById("phone-fail-message");
+	const button = document.getElementById("phone-button");
+	
 	phoneWrapper.style.border = "1px solid var(--gray2)";
 	phoneAuthWrapper.style.border = "1px solid var(--gray2)";
 	phoneAuthWrapper.style.zIndex = 0;
+
+	phoneCheckMessage.style.display = "none";
+	phoneCheckMessage.style.color = "var(--gray2)";
+	phoneCheckMessage.innerText = "";
+	
+    button.innerText = "번호 전송 중";
+    button.classList.remove("success");
+    button.classList.remove("fail");
+    button.classList.add("process");
     
     fetch("send-phone-auth.member", { // AJAX 요청 (비동기)
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({ phone }).toString()
+        body: new URLSearchParams({ phone : phoneInput.value }).toString()
     })
     .then(resp => resp.json()) // 서버에서 JSON 응답을 받음
     .then(data => {
-    	if(data.samePhone){
-			phoneWrapper.style.border = "1px solid var(--warning-red)";
-			phoneAuthWrapper.style.border = "var(--warning-red)";
-			phoneAuthWrapper.style.zIndex = 1;
-    	}else{
-			phoneWrapper.style.border = "1px solid var(--warning-red)";
-			phoneAuthWrapper.style.border = "1px solid var(--warning-red)";
-			phoneAuthWrapper.style.zIndex = 1;
-		}
+		const requestTag = document.querySelector(".phone-confirm-check");
 		
+    	if(data.samePhoneResult){
+			phoneWrapper.style.border = "1px solid var(--warning-red)";
+			phoneWrapper.style.zIndex = 1; 
+			
+			phoneCheckMessage.style.display = "block";
+			phoneCheckMessage.style.color = "var(--warning-red)";
+			phoneCheckMessage.innerText = data.samePhoneResultMessage;
+			
+			button.innerText = "재요청";
+		    button.classList.remove("process");
+		    button.classList.remove("success");
+		    button.classList.add("fail");
+			
+			requestTag.style.opacity = "1";
+    	} else{
+			
+			button.innerText = "전송 완료";
+		    button.classList.remove("process");
+		    button.classList.remove("fail");
+		    button.classList.add("success");
+			
+			document.getElementById("phone-confirm-time").textContent = "";
+			document.getElementById("phone-confirm-time").style.color = "var(--gray4)";
+			requestTag.style.opacity = "1";
+			
+			phoneCheckTimer = phoneCountdownSeconds;
+			
+			//1초마다 업데이트
+			phoneCheckTimer = setInterval(phoneUpdateCountdown, 1000);
+		}
     })
     .catch(error => console.error("Error:", error)); // 에러 처리
 }
@@ -314,9 +348,9 @@ function sendPhoneAuth() {
  * - 서버의 `mail-check` 컨트롤러로 인증번호를 전송하고 검증 요청
  */
 function phoneCheck() {
-	const idWrapper = document.getElementById("id-wrapper");
-	const idAuthWrapper = document.getElementById("id-auth-wrapper");
-	const mailCheckMessage = document.getElementById("mail-fail-message");
+	const phoneWrapper = document.getElementById("phone-wrapper");
+	const phoneAuthWrapper = document.getElementById("phone-auth-wrapper");
+	const phoneCheckMessage = document.getElementById("phone-fail-message");
     let mailAuthCode = document.getElementById("mail-authCode").value; // 입력된 인증번호 가져오기
 	
 	idWrapper.style.border = "1px solid var(--gray2)";
@@ -360,27 +394,13 @@ function phoneCheck() {
 let phoneCheckTimer = null;
 let phoneCheckTimeLeft = 0;
 /* 인증번호 체크 카운트 다운용 변수 (단위 : 초)*/
-const mailCountdownSeconds = 120; 
 const phoneCountdownSeconds = 120; 
-
-/* 인증 시간 체크 함수 */
-document.querySelectorAll(".request-phone-confirm").forEach(eventTag => {
-	eventTag.addEventListener("click", () => {
-		document.getElementById("confirm-countdown").textContent = "";
-		document.getElementById("confirm-countdown").style.color = "var(--gray4)";
-		const requestTag = document.querySelector(".phone-confirm-check");
-		requestTag.style.opacity = "1";
-		phoneCheckTimeLeft = phoneCountdownSeconds;
-		//1초마다 업데이트
-		phoneCheckTimer = setInterval(phoneUpdateCountdown, 1000);
-	})
-})
 
 
 function phoneUpdateCountdown() {
     let minutes = Math.floor(phoneCheckTimeLeft / 60);
     let seconds = phoneCheckTimeLeft % 60;
-    let timerText = document.getElementById("confirm-countdown");
+    let timerText = document.getElementById("phone-confirm-time");
 
     // 두 자리 숫자로 표시 (ex: 05:00)
     timerText.textContent = 
@@ -389,7 +409,30 @@ function phoneUpdateCountdown() {
     if (phoneCheckTimeLeft > 0) {
         phoneCheckTimeLeft--; // 1초씩 감소
     } else {
-        clearInterval(timer); // 타이머 중지
+        clearInterval(phoneCheckTimer); // 타이머 중지
+        timerText.textContent = "시간 종료";
+        timerText.style.color = "var(--warning-red)"
+    }
+}
+
+let mailCheckTimer = null;
+let mailCheckTimeLeft = 0;
+/* 인증번호 체크 카운트 다운용 변수 (단위 : 초)*/
+const mailCountdownSeconds = 120; 
+
+function mailUpdateCountdown() {
+    let minutes = Math.floor(mailCheckTimeLeft / 60);
+    let seconds = mailCheckTimeLeft % 60;
+    let timerText = document.getElementById("mail-confirm-time");
+
+    // 두 자리 숫자로 표시 (ex: 05:00)
+    timerText.textContent = 
+        (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+
+    if (mailCheckTimeLeft > 0) {
+        mailCheckTimeLeft--; // 1초씩 감소
+    } else {
+        clearInterval(mailCheckTimer); // 타이머 중지
         timerText.textContent = "시간 종료";
         timerText.style.color = "var(--warning-red)"
     }
