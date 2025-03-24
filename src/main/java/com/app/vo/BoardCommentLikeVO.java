@@ -5,6 +5,8 @@ import java.util.Objects;
 
 public class BoardCommentLikeVO {
 	
+	public BoardCommentLikeVO() {;}
+	
 	private Long id;
 	private Timestamp boardCommentLikeCreateDate;
 	private Long memberId;

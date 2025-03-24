@@ -5,6 +5,8 @@ import java.util.Objects;
 
 public class BoardCommentsVO {
 	
+	public BoardCommentsVO() {;}
+	
 	private Long id;
 	private String boardContent;
 	private Timestamp boardCreateDate;

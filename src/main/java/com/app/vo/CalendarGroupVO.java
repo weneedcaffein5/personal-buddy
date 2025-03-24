@@ -2,18 +2,18 @@ package com.app.vo;
 
 import java.util.Objects;
 
-public class CalanderGroupVO {
+public class CalendarGroupVO {
 	private Long id;
 	private Long userGroupId;
 	
-	public CalanderGroupVO() {;}
+	public CalendarGroupVO() {;}
 
 	@Override
 	public String toString() {
 		return "CalanderGroupVO [id=" + id + ", userGroupId=" + userGroupId + "]";
 	}
 
-	public CalanderGroupVO(Long id, Long userGroupId) {
+	public CalendarGroupVO(Long id, Long userGroupId) {
 		super();
 		this.id = id;
 		this.userGroupId = userGroupId;
@@ -48,7 +48,7 @@ public class CalanderGroupVO {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		CalanderGroupVO other = (CalanderGroupVO) obj;
+		CalendarGroupVO other = (CalendarGroupVO) obj;
 		return Objects.equals(id, other.id) && Objects.equals(userGroupId, other.userGroupId);
 	}
 	
