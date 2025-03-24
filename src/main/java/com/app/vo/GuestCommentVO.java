@@ -5,10 +5,10 @@ import java.util.Objects;
 
 public class GuestCommentVO {
 
-	Long id;
-	Timestamp guestcommentCreateDate;
-	String guestcommentDescription;
-	Long memberId;
+	private Long id;
+	private Timestamp guestcommentCreateDate;
+	private String guestcommentDescription;
+	private Long memberId;
 	
 	public GuestCommentVO() {;}
 	public GuestCommentVO(Long id, Timestamp guestcommentCreateDate, String guestcommentDescription, Long memberId) {
