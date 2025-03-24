@@ -53,6 +53,6 @@
 		<div class="nav-button right" onclick="nextSlide()">›</div>
 		<div class="dots" id="dots"></div>
 	</div>
-
+<script src="../assets/js/banner.js"></script>
 </body>
 </html>
