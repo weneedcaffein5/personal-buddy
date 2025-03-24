@@ -49,18 +49,21 @@
 }
 
 .nav-button {
+  width: 50px;
+  height: 50px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  font-size: 2.5rem;
+  font-size: 25px;
   color: white;
   background: rgba(0, 0, 0, 0.4);
   border: none;
-  padding: 10px 15px;
+  text-align: center;
+  line-height: 47px;
   cursor: pointer;
   user-select: none;
-  border-radius: 50%;
+  border-radius: 100%;
 }
 
 .nav-button.left {

@@ -82,3 +82,4 @@
 	  moveToSlide(1, false);
 	  startAutoSlide();
 	});
+	
