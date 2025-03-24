@@ -8,6 +8,9 @@ public class AchievementCompleteVO {
 	private int achievementMission;
 	private Long memberId;
 	private Long achievementId;
+	
+	public AchievementCompleteVO() {;}
+	
 	@Override
 	public String toString() {
 		return "AchievementCompleteVO [id=" + id + ", achievementName=" + achievementName + ", achievementMission="
