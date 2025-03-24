@@ -34,4 +34,9 @@ public class MemberDAO {
 	public int selectMemberCountByEmail(String memberEmail) {
 		return sqlSession.selectOne("member.selectMemberCountByEmail", memberEmail);
 	}
+	
+//	이메일 중복체크
+	public int selectMemberCountByPhone(String phone) {
+		return sqlSession.selectOne("member.selectMemberCountByPhone", phone);
+	}
 }

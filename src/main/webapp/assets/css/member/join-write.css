@@ -106,6 +106,7 @@ body {
 .space span{
 	display: block;
 }
+
 #mail-fail-message{
 	line-height: 30px;
 	opacity: 0;
@@ -169,6 +170,13 @@ body {
 
 .input-wrapper div{
 	display: flex;
+}
+
+.input-wrapper .email-confirm-check {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	opacity: 0;
 }
 
 .input-wrapper .phone-confirm-check {
@@ -251,7 +259,36 @@ body {
 }
 
 
-.request-phone-confirm {
+#phone-button {
+	width: 200px;
+	line-height: 30px;
+	margin-right: 15px;
+	background-color: var(--white);
+	color: var(--sub-green);
+	border: 1px solid var(--sub-green);
+	border-radius: 10px;
+}
+
+#phone-button:hover {
+	background-color: var(--light-green);
+	font-weight: 700;
+}
+
+#phone-button.process{
+	color: var(--sub-green);
+	border: 1px solid var(--sub-green);
+}
+
+#phone-button.success{
+	color: var(--sub-blue) !important;
+	border: 1px solid var(--sub-blue) !important;
+}
+#phone-button.fail{
+	color: var(--warning-red) !important;
+	border: 1px solid var(--warning-red) !important;
+}
+
+.phone-confirm {
 	color: var(--gray5);
 	font-size: var(--h9);
     text-decoration: none;
@@ -260,7 +297,7 @@ body {
     width: 100px;
 }
 
-.request-phone-confirm:hover {
+.phone-confirm:hover {
 	color: blue;
     text-decoration: underline;
 }
