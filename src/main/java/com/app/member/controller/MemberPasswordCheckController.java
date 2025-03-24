@@ -27,8 +27,6 @@ public class MemberPasswordCheckController implements Action {
         	session.setAttribute("newMember", member);
         }
         
-        System.out.println((MemberVO)session.getAttribute("newMember"));
-        
         // 응답 설정        
         resp.setContentType("application/json; charset=UTF-8");
         resp.getWriter().write("{\"passwordCheckResult\": " + passwordCheckResult + ", \"passwordCheckResultMessage\": \"" +
