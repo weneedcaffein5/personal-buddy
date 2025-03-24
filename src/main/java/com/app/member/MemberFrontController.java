@@ -18,7 +18,9 @@ import com.app.member.controller.MemberLoginOkController;
 import com.app.member.controller.MemberMailCheckController;
 import com.app.member.controller.MemberNameCheckController;
 import com.app.member.controller.MemberPasswordCheckController;
+import com.app.member.controller.MemberPhoneCheckController;
 import com.app.member.controller.MemberSendMailController;
+import com.app.member.controller.MemberSendPhoneAuthController;
 
 public class MemberFrontController extends HttpServlet{
 
@@ -48,6 +50,10 @@ public class MemberFrontController extends HttpServlet{
 			result = new MemberGenderSelectController().execute(req, resp);
 		}else if(target.equals("birth-check")) {
 			result = new MemberBirthCheckController().execute(req, resp);
+		}else if(target.equals("send-phone-auth")) {
+			result = new MemberSendPhoneAuthController().execute(req, resp);
+		}else if(target.equals("phone-check")) {
+			result = new MemberPhoneCheckController().execute(req, resp);
 		}else if(target.equals("login")) {
 			result = new MemberLoginController().execute(req, resp);
 		}else if(target.equals("login-ok")) {

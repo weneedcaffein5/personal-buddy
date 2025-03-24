@@ -13,7 +13,7 @@ public class MemberVO {
 	private String memberComment;
 	private String memberName;
 	private String memberGender;
-	private Date memberBirth;
+	private Timestamp memberBirth;
 	private String memberPhone;
 	private int memberPoint;
 	private int memberAdmin;
@@ -26,7 +26,7 @@ public class MemberVO {
 	public MemberVO() {;}
 
 	public MemberVO(Long id, String memberEmail, String memberPassword, String memberNickName, String memberComment,
-			String memberName, String memberGender, Date memberBirth, String memberPhone, int memberPoint,
+			String memberName, String memberGender, Timestamp memberBirth, String memberPhone, int memberPoint,
 			int memberAdmin, Timestamp memberCreateDate, int memberTermServiceAgree, int memberTermInformationAgree,
 			int memberTermLocationAgree, int memberTermPormotionAgree) {
 		this.id = id;
@@ -103,11 +103,11 @@ public class MemberVO {
 		this.memberGender = memberGender;
 	}
 
-	public Date getMemberBirth() {
+	public Timestamp getMemberBirth() {
 		return memberBirth;
 	}
 
-	public void setMemberBirth(Date memberBirth) {
+	public void setMemberBirth(Timestamp memberBirth) {
 		this.memberBirth = memberBirth;
 	}
 
@@ -202,6 +202,7 @@ public class MemberVO {
 		MemberVO other = (MemberVO) obj;
 		return Objects.equals(id, other.id);
 	}
+	
 	
 	
 }

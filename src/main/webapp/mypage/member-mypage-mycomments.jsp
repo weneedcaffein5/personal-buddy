@@ -176,9 +176,9 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentPage = 1;
     const postPerPage = 3;
 
-    console.log("총 ㄱㅔ시글 수 : " + posts.length);
+    /* console.log("총 ㄱㅔ시글 수 : " + posts.length);
     console.log("한 페이지당 게시글 수 : " + postPerPage);
-    console.log("현재 페이지 : " + currentPage);
+    console.log("현재 페이지 : " + currentPage); */
 
     function updatePagination() {
         console.log("페이지네이션 업데이트 실행됨");
@@ -231,7 +231,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function changePage(newPage) {
-        console.log("새로운 페이지로 변경: " + newPage);
+       /*  console.log("새로운 페이지로 변경: " + newPage); */
         const totalPages = Math.ceil(posts.length / postPerPage);
 
         if (newPage < 1 || newPage > totalPages) {
@@ -248,27 +248,40 @@ document.addEventListener("DOMContentLoaded", function() {
         // 새롭게 활성화된 페이지 버튼에 active 추가
         document.querySelector(`.pagination a:nth-child(${currentPage + 1})`)?.classList.add("active");
 
-        console.log("페이지 변경 완료: " + currentPage);
+       /*  console.log("페이지 변경 완료: " + currentPage); */
     }
 
-   /*  // 페이지네이션 버튼 클릭 
+     // 페이지네이션 버튼 클릭 
     prevArrow.addEventListener("click", () => {
-        console.log("이전 페이지 버튼 클릭됨");
+        /* console.log("이전 페이지 버튼 클릭됨"); */
         changePage(currentPage - 1);
     });
 
     nextArrow.addEventListener("click", () => {
-        console.log("다음 페이지 버튼 클릭됨");
+       /*  console.log("다음 페이지 버튼 클릭됨"); */
         changePage(currentPage + 1);
-    }); */
+    }); 
 
     showPosts(); // 초기 실행
 });
 
 
+/* 페이지네이션 코드 설명 */
 
-		
+/* querySelectorAll로 모든 게시글을 가져와서
+currentPage, postPerPage로 현재 보여줄 범위 계산한 뒤
+style.display = "flex"로 보이게 하고, 나머진 "none"으로 숨김
 
+페이지 번호(a 태그)는 createElement로 동적으로 생성하고,
+클릭 이벤트(addEventListener)로 원하는 페이지로 이동할 수 있게 함
+
+이전/다음 버튼도 DOM으로 선택해서
+changePage() 함수로 페이지 변경되도록 만들었고,
+맨 앞이나 맨 끝 페이지에서는 버튼을 흐리게(opacity) 처리 */
+
+/* 페이지 로딩하면 showPosts() 호출
+현재 페이지 내용만 보임
+번호 or 화살표 클릭하면 changePage() --> 다시 showPosts() */
 
 </script>
 </html>

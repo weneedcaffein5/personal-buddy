@@ -77,6 +77,7 @@ function toggleCheckbox(icon) {
 function checkInputs(){
 	 const inputs = document.querySelectorAll("#agree-container input");
 	 let check = true;
+	 const allCheck = document.getElementById("check-all"); 
 	 
 	inputs.forEach(input => {
 		if(input.className !== "agree-all"){
@@ -85,5 +86,12 @@ function checkInputs(){
 			}
 		}
 	});
+	
+	if(check){
+		allCheck.src = "../assets/images/member/checkbox-icon-true.png";
+	}else{
+		allCheck.src = "../assets/images/member/checkbox-icon-false.png";
+	}
+	
 	return check;
 }
