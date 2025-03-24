@@ -5,10 +5,10 @@ import java.util.Objects;
 
 public class TargetVO {
 	
-	Long id;
-	Timestamp targetCompleteDate;
-	String targetScheduleCategory;
-	Long memberId;
+	private Long id;
+	private Timestamp targetCompleteDate;
+	private String targetScheduleCategory;
+	private Long memberId;
 	
 	public TargetVO() {;}
 	public TargetVO(Long id, Timestamp targetCompleteDate, String targetScheduleCategory, Long memberId) {

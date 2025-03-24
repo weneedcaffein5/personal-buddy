@@ -4,10 +4,10 @@ import java.util.Objects;
 
 public class MemberImageVO {
 	
-	Long id;
-	String memberImageName;
-	String memberImagePath;
-	Long memberId;
+	private Long id;
+	private String memberImageName;
+	private String memberImagePath;
+	private Long memberId;
 	
 	public MemberImageVO() {;}
 	public MemberImageVO(Long id, String memberImageName, String memberImagePath, Long memberId) {
