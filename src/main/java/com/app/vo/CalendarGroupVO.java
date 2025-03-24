@@ -8,17 +8,17 @@ public class CalendarGroupVO {
 	
 	public CalendarGroupVO() {;}
 
-	@Override
-	public String toString() {
-		return "CalanderGroupVO [id=" + id + ", userGroupId=" + userGroupId + "]";
-	}
 
 	public CalendarGroupVO(Long id, Long userGroupId) {
-		super();
 		this.id = id;
 		this.userGroupId = userGroupId;
 	}
 
+	@Override
+	public String toString() {
+		return "CalanderGroupVO [id=" + id + ", userGroupId=" + userGroupId + "]";
+	}
+	
 	public Long getId() {
 		return id;
 	}

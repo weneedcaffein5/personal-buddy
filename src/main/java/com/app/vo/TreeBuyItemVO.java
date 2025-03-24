@@ -7,6 +7,20 @@ public class TreeBuyItemVO {
 	private Long itemCount;
 	
 	public TreeBuyItemVO() {;}
+	
+	
+	public TreeBuyItemVO(Long id, Long itemCount) {
+		this.id = id;
+		this.itemCount = itemCount;
+	}
+
+	
+	@Override
+	public String toString() {
+		return "TreeBuyItemVO [id=" + id + ", itemCount=" + itemCount + "]";
+	}
+
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);

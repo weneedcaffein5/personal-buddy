@@ -16,7 +16,6 @@ public class ItemVO {
 
 	public ItemVO(Long id, String itemName, int itemPrice, String itemImgPath, String itemImgName, String itemType,
 			String itemCategory) {
-		super();
 		this.id = id;
 		this.itemName = itemName;
 		this.itemPrice = itemPrice;

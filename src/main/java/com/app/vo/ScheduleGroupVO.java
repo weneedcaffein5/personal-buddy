@@ -1,18 +1,37 @@
 package com.app.vo;
 
-import java.sql.Date;
-import java.sql.Timestamp;
 import java.util.Objects;
 
 public class ScheduleGroupVO {
 	private Long id;
+	private Long userGroupId;
 	
 	public ScheduleGroupVO() {;}
-	
-	
+
+	public ScheduleGroupVO(Long id, Long userGroupId) {
+		this.id = id;
+		this.userGroupId = userGroupId;
+	}
+
 	@Override
 	public String toString() {
-		return "ScheduleGroupVO [id=" + id + "]";
+		return "ScheduleGroupVO [id=" + id + ", userGroupId=" + userGroupId + "]";
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Long getUserGroupId() {
+		return userGroupId;
+	}
+
+	public void setUserGroupId(Long userGroupId) {
+		this.userGroupId = userGroupId;
 	}
 
 	@Override
@@ -31,14 +50,7 @@ public class ScheduleGroupVO {
 		ScheduleGroupVO other = (ScheduleGroupVO) obj;
 		return Objects.equals(id, other.id);
 	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-		
+	
+	
 }
 

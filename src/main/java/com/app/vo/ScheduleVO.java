@@ -22,7 +22,6 @@ public class ScheduleVO {
 	public ScheduleVO(Long id, String scheduleTitle, String scheduleContent, Date scheduleStartDate,
 			Date scheduleEndDate, Timestamp scheduleCreateDate, String scheduleColor, String scheduleCategory,
 			Long calenderId, Long scheduleGroupId) {
-		super();
 		this.id = id;
 		this.scheduleTitle = scheduleTitle;
 		this.scheduleContent = scheduleContent;

@@ -9,7 +9,6 @@ public class TreeVO {
 	public TreeVO() {;}
 	
 	public TreeVO(Long id, Long memberId) {
-		super();
 		this.id = id;
 		this.memberId = memberId;
 	}

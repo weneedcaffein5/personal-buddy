@@ -13,7 +13,6 @@ public class EventLikeVO {
 	public EventLikeVO() {;}
 
 	public EventLikeVO(Long id, Timestamp eventLikeCreateTime, Long eventId, Long memberId) {
-		super();
 		this.id = id;
 		this.eventLikeCreateTime = eventLikeCreateTime;
 		this.eventId = eventId;

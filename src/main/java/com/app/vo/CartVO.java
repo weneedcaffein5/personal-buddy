@@ -11,7 +11,6 @@ public class CartVO {
 	public CartVO() {;}
 
 	public CartVO(Long id, int cartItemCount, Long memberId, Long itemId) {
-		super();
 		this.id = id;
 		this.cartItemCount = cartItemCount;
 		this.memberId = memberId;
