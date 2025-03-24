@@ -456,21 +456,9 @@ function allCheck(){
 	    .then(resp => resp.json()) // 서버에서 JSON 응답을 받음
 	    .then(data => {
 			if(data.allCheckResult){
-				phoneWrapper.style.border = "1px solid var(--main-green)";
-				phoneAuthWrapper.style.border = "1px solid var(--main-green)";
-				phoneAuthWrapper.style.zIndex = 1;
-
-				phoneCheckMessage.style.display = "block";
-				phoneCheckMessage.style.color = "var(--main-green)";
-				phoneCheckMessage.innerText = "※ 핸드폰 인증 성공";
+				
 			}else{
-				phoneWrapper.style.border = "1px solid var(--warning-red)";
-				phoneAuthWrapper.style.border = "1px solid var(--warning-red)";
-				phoneAuthWrapper.style.zIndex = 1;
-
-				phoneCheckMessage.style.display = "block";
-				phoneCheckMessage.style.color = "var(--warning-red)";
-				phoneCheckMessage.innerText = "※ 핸드폰 인증 실패";
+				
 			}
 	        
 		})
