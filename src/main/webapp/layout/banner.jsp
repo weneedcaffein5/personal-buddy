@@ -49,10 +49,10 @@
     			</div>
     		</div> 
     	</div>
-		<div class="nav-button left" onclick="prevSlide()">‹</div>
-		<div class="nav-button right" onclick="nextSlide()">›</div>
+		<div class="nav-button left" onclick="prevSlide()"><</div>
+		<div class="nav-button right" onclick="nextSlide()">></div>
 		<div class="dots" id="dots"></div>
 	</div>
-
+<script src="../assets/js/banner.js"></script>
 </body>
 </html>
