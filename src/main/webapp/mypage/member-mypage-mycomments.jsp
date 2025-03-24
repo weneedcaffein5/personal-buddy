@@ -265,10 +265,5 @@ document.addEventListener("DOMContentLoaded", function() {
     showPosts(); // 초기 실행
 });
 
-
-
-		
-
-
 </script>
 </html>
