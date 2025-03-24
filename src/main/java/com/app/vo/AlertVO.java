@@ -5,13 +5,13 @@ import java.util.Objects;
 
 public class AlertVO {
 
-	Long id;
-	String alertType;
-	String alertMessage;
-	Timestamp alertCreateTime;
-	int alertRead;
-	Timestamp alertReadTime;
-	Long memberId;
+	private Long id;
+	private String alertType;
+	private String alertMessage;
+	private Timestamp alertCreateTime;
+	private int alertRead;
+	private Timestamp alertReadTime;
+	private Long memberId;
 	
 	public AlertVO() {;}
 	public AlertVO(Long id, String alertType, String alertMessage, Timestamp alertCreateTime, int alertRead,
