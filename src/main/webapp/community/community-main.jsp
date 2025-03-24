@@ -13,7 +13,12 @@
 	<%@ include file="../layout/header.jsp" %>
 	<%@ include file="../layout/banner.jsp" %>
 	
+	
+	
     <div class="container">
+    	<form action="community-main.community" method="post">
+	    	<button>aaa</button>
+    	</form>
 		<div class="tab-box">
 			<div class="tab-container">
 				<div class="tab-btn"></div>
