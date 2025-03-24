@@ -3,8 +3,8 @@ package com.app.vo;
 import java.util.Objects;
 
 public class UserGroupVO {
-	Long id;
-	Long memberId;
+	private Long id;
+	private Long memberId;
 	
 	public UserGroupVO() {;}
 

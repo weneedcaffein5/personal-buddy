@@ -3,11 +3,11 @@ package com.app.vo;
 import java.util.Objects;
 
 public class AchievementCompleteVO {
-	Long id;
-	String achievementName;
-	int achievementMission;
-	Long memberId;
-	Long achievementId;
+	private Long id;
+	private String achievementName;
+	private int achievementMission;
+	private Long memberId;
+	private Long achievementId;
 	@Override
 	public String toString() {
 		return "AchievementCompleteVO [id=" + id + ", achievementName=" + achievementName + ", achievementMission="

@@ -4,12 +4,12 @@ import java.util.Objects;
 
 public class AchievementVO {
 	
-	Long id;
-	String achievementName;
-	int achievementMission;
-	String achievementImgName;
-	String achievementImgPath;
-	String achievementGetPoint;
+	private Long id;
+	private String achievementName;
+	private int achievementMission;
+	private String achievementImgName;
+	private String achievementImgPath;
+	private String achievementGetPoint;
 	
 	public AchievementVO() {;}
 
