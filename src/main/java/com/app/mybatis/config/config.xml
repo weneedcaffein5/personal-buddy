@@ -52,6 +52,14 @@
     
     <mappers>
     	<mapper resource="com/app/mybatis/mapper/memberMapper.xml" />
+    	<mapper resource="com/app/mybatis/mapper/communityMapper.xml" />
+    	<mapper resource="com/app/mybatis/mapper/contentsMapper.xml" />
+    	<mapper resource="com/app/mybatis/mapper/customerServiceMapper.xml" />
+    	<mapper resource="com/app/mybatis/mapper/eventMapper.xml" />
+    	<mapper resource="com/app/mybatis/mapper/interestMapper.xml" />
+    	<mapper resource="com/app/mybatis/mapper/introduceMapper.xml" />
+    	<mapper resource="com/app/mybatis/mapper/mainMapper.xml" />
+    	<mapper resource="com/app/mybatis/mapper/myPageMapper.xml" />
     </mappers>
     
  </configuration>

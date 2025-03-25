@@ -3,9 +3,9 @@ package com.app.vo;
 import java.sql.Timestamp;
 import java.util.Objects;
 
-public class BoardCommentsVO {
+public class BoardCommentVO {
 	
-	public BoardCommentsVO() {;}
+	public BoardCommentVO() {;}
 	
 	private Long id;
 	private String boardContent;
@@ -13,7 +13,7 @@ public class BoardCommentsVO {
 	private Long memberId;
 	private Long boardPostId;
 	
-	public BoardCommentsVO(Long id, String boardContent, Timestamp boardCreateDate, Long memberId, Long boardPostId) {
+	public BoardCommentVO(Long id, String boardContent, Timestamp boardCreateDate, Long memberId, Long boardPostId) {
 		this.id = id;
 		this.boardContent = boardContent;
 		this.boardCreateDate = boardCreateDate;
@@ -80,7 +80,7 @@ public class BoardCommentsVO {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		BoardCommentsVO other = (BoardCommentsVO) obj;
+		BoardCommentVO other = (BoardCommentVO) obj;
 		return Objects.equals(id, other.id);
 	}
 	
