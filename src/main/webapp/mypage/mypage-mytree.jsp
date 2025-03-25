@@ -6,11 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="../assets/css/global.css" />
-<link rel="stylesheet" type="text/css" href="../assets/css/mypage/mypage-main.css" />
-<title>마이페이지</title>
+<link rel="stylesheet" type="text/css" href="../assets/css/mypage/mypage-mytree.css" />
+<link rel="stylesheet" type="text/css" href="../assets/css/header.css" />
+<title>나의 나무</title>
 </head>
 <body>
 	<%@ include file="../layout/header.jsp" %>
+	
 	<div class="body">
         <div class="container">
             <div class="sidebar">
@@ -24,7 +26,7 @@
                 <div class="mypage">
                     <div><strong><img class="icon" src="../assets/images/mypage/mypage-icon.png">마이페이지</strong></div>
                     <div><a id="now" class="link" href="#">나의 나무</a></div>
-                    <div><a class="link" href="#">나의 업적</a></div>
+                    <div><a class="link" href="mypage-myachievement.jsp">나의 업적</a></div>
                 </div>
                 <div class="community">
                     <strong><img class="icon" src="../assets/images/mypage/community-icon.png">커뮤니티</strong>
@@ -44,7 +46,7 @@
                         <div><span class="tree-info-style">자신만의 나무를 꾸며보세요</span></div>
                         <div class="go-tree">
                             <span class="go-tree-style">나만의 나무</span>
-                            <a href="../contents/treejsp.jsp">나만의 나무 꾸미기 >></a>
+                            <a href="../contents/contents-main.jsp">나만의 나무 꾸미기 >></a>
                         </div>
                     </div>
                 </div>    

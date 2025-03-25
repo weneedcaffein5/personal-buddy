@@ -1,48 +1,56 @@
 @charset "UTF-8";
 
+/* 전체 헤더 박스 */
 .header-container {
-	width: 100vw;
-	max-width: 1920px;
-	height: 90px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  width: 100%;
+  max-width: 1920px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;             /* 👈 브라우저 중앙 정렬 */
+  box-sizing: border-box;
+  padding: 0 20px;            /* 여백 여유 있게 */
 }
+
+/* 안쪽 컨텐츠 정렬 */
 .header-wrapper {
-	max-width: 1400px;
-    width: calc(100% - 520px);
-	height: 90px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin: auto;
-}
-.header-wrapper a {
-	width: 80px;
-    height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size : 18px;
-    color: #000;
-	text-decoration: none;
-    margin: 0 40px 0 0;
+  width: 100%;
+  max-width: 1400px;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
 }
 
+/* 왼쪽 메뉴 */
 .leftheader {
-	display: flex;
+  display: flex;
+  align-items: center;
+  gap: 40px;
 }
 
+/* 오른쪽 메뉴 */
 .rightheader {
-	display: flex;
+  display: flex;
+  align-items: center;
+  gap: 40px;
 }
 
-a {
-    color: #000;
-    text-decoration: none;
-    transition: color 0.3s ease;
+/* 모든 링크 공통 스타일 */
+.header-wrapper a {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-a:hover {
-    color: #01CD74; /* 마우스를 올렸을 때 색 변경 */
+/* 마우스 호버 효과 */
+.header-wrapper a:hover {
+  color: #01CD74;
 }

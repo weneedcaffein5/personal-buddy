@@ -61,6 +61,7 @@
 
 .go-tree-style {
     font-size: 18px;
+    font-weight: 500;
 }
 
 /* 나만의 나무 */
@@ -98,6 +99,11 @@
 
 .nickname {
     padding-top: 20px;
+}
+
+#now {
+	color: #01CD74;
+	text-decoration: underline;
 }
 
 /* 마이페이지 항목 */
@@ -147,6 +153,10 @@ a {
 
 a:hover {
     color: #01CD74; /* 마우스를 올렸을 때 색 변경 */
+}
+
+.go-tree a {
+	font-weight: 300;
 }
 
 strong {
