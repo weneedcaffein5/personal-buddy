@@ -17,20 +17,20 @@
 </head>
 <body>
 	<%
-		MemberVO newMember = (MemberVO)request.getAttribute("newMember");
+		MemberVO newMember = (MemberVO)session.getAttribute("newMember");
 	%>
 	
 	<img src="../assets/images/member/logo-login.png" alt="Personal Buddy 로고" class="logo">
 
     <div class="join-container">
-        <!-- 첫 번째 입력 박스 -->
-        <div class="input-group">
-        	<form action="join-profile.member" method="post">
+    	<form action="join-profile.member" method="post">
+	        <!-- 첫 번째 입력 박스 -->
+	        <div class="input-group">
         		<!-- id(email 주소) -->
 	            <div class="input-wrapper" id="id-wrapper" style="border-radius: 10px 10px 0px 0px;">
 	                <img src="../assets/images/member/message-icon.png" class="input-icon">
 	                <input type="email" id="email" placeholder="아이디 (이메일 주소)" name="memberEmail"
-	                value="<%= session.getAttribute("email") != null ? session.getAttribute("email") : "" %>" required />
+	                value="<%= newMember.getMemberEmail() != null ? newMember.getMemberEmail() : "" %>" required />
 	                <button id="mail-button" type="button" onclick="sendMail()">인증메일 발송</button>
 	            </div>
 	            <div class="input-wrapper" id="id-auth-wrapper">
@@ -46,7 +46,7 @@
 	            <div class="input-wrapper" id="password-wrapper" style="border-radius: 0px 0px 10px 10px;">
 	                <img src="../assets/images/member/lock-icon.png" class="input-icon">
 	                <input type="password" id="password" placeholder="비밀번호" name = "memberPassword"
-	                value="<%= session.getAttribute("password") != null ? session.getAttribute("password") : "" %>" required>
+	                value="<%= newMember.getMemberPassword() != null ? newMember.getMemberPassword() : "" %>" required>
 	                <img src="../assets/images/member/see-password-icon-false.png" class="toggle-password" onclick="togglePassword()">
 	            </div>
 	            
@@ -59,7 +59,7 @@
 	            <div class="input-wrapper" id="name-wrapper" style="border-radius: 10px 10px 0px 0px;">
 	                <img src="../assets/images/member/smile.png" class="input-icon">
 	                <input type="text" id="name" placeholder="이름"  name= "memberName"
-	                value="<%= session.getAttribute("name") != null ? session.getAttribute("name") : "" %>" required>
+	                value="<%= newMember.getMemberName() != null ? newMember.getMemberName() : "" %>" required>
 	                <!-- 성별 선택 -->
                 	<div class="gender-select">
                 		<label>
@@ -76,7 +76,8 @@
 	        	<!-- 생년월일 -->
 	            <div class="input-wrapper" id="birth-wrapper">
 	                <img src="../assets/images/member/calendar-icon.png" id="birth-icon" class="input-icon" style="cursor: pointer;">
-	                <input type="text" id="birth" name="memberBirth" placeholder="생년월일 선택">
+	                <input type="text" id="birth" name="memberBirth" placeholder="생년월일 선택"
+	                value="<%= newMember.getMemberBirth() != null ? new java.text.SimpleDateFormat("yyyy-MM-dd").format(newMember.getMemberBirth()) : "" %>" required>
 	            </div>
 	        	<!-- 통신사 선택 -->
 	            <div class="input-wrapper" style="display: none">
@@ -94,7 +95,8 @@
 	        	<!-- 휴대전화번호 -->
 	            <div class="input-wrapper" id="phone-wrapper">
 	                <img src="../assets/images/member/phone-icon.png" class="input-icon">
-	                <input type="tel" id="phone" placeholder="휴대전화번호">
+	                <input type="tel" id="phone" placeholder="휴대전화번호"
+	                value="<%= newMember.getMemberPhone() != null ? newMember.getMemberPhone() : "" %>" required>
 	                <button id="phone-button" type="button" onclick="sendPhoneAuth()">인증번호 발송</button>
 	            </div>
 	        	<!-- 인증번호 -->
@@ -116,7 +118,7 @@
             </div>
 	
 	        <!-- 가입 버튼 -->
-	        <button type="button" class="signup-btn">가입하기</button>
+	        <button class="signup-btn">가입하기</button>
         </form>
     </div>
 </body>
