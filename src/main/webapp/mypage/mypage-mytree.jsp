@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="../assets/css/global.css" />
 <link rel="stylesheet" type="text/css" href="../assets/css/mypage/mypage-mytree.css" />
-<title>마이페이지</title>
+<title>나의 나무</title>
 </head>
 <body>
 	<%@ include file="../layout/header.jsp" %>

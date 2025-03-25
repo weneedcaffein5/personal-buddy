@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="../assets/css/global.css" />
 <link rel="stylesheet" type="text/css" href="../assets/css/mypage/mypage-myachievement.css" />
-<title>Insert title here</title>
+<title>나의 업적</title>
 </head>
 <body>
 	<%@ include file="../layout/header.jsp" %>
@@ -43,10 +43,261 @@
                         <div><span class="tree-info-style">도전과제를 달성하고 나만의 업적을 쌓아보세요</span></div>
                         <div class="go-tree">
                             <span class="go-tree-style">나의 대표 업적</span>
-                            <a href="../contents/contents-achievement.jsp">나의 업적 보러 가기 >></a>
                         </div>
                     </div>
                 </div>
+                <div class="best-achievement">
+                	<div class="best-achievements-container">
+					    <div class="achievement-card">
+					        <div class="achievement-icon-container">
+					            <img src="../assets/images/contents/achievement/퍼스널버디.png" alt="퍼스널 버디" class="achievement-icon">
+					        </div>
+					        <div class="achievement-desc">
+					            <h3 class="achievement-title">퍼스널 버디</h3>
+					            <div class="achievement-line"></div> 
+					
+					            <div class="achievement-content">
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">퍼스널 버디 첫 가입 시</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">기본 증정 배지</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">( 1 / 1 )</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-points">달성 시 <span class="highlight">300P</span> 획득</p>
+					                </div>
+					            </div> 
+					        </div> 
+					    </div>  
+					    <!-- 알쓰 -->
+					    <div class="achievement-card">
+					        <div class="achievement-icon-container">
+					            <img src="../assets/images/contents/achievement/알쓰.png" alt="알쓰" class="achievement-icon">
+					        </div>
+					
+					        <div class="achievement-desc">
+					            <h3 class="achievement-title">알쓰</h3>
+					            <div class="achievement-line"></div> 
+					
+					            <div class="achievement-content">
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">음주 약속 일정</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">10회 완료 시 달성</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">( 10 / 10 )</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-points">달성 시 <span class="highlight">30P</span> 획득</p>
+					                </div>
+					            </div> 
+					        </div> 
+					    </div>  
+					    <!-- 헬린이 -->
+					    <div class="achievement-card">
+					        <div class="achievement-icon-container">
+					            <img src="../assets/images/contents/achievement/헬린이.png" alt="헬린이" class="achievement-icon">
+					        </div>
+					
+					        <div class="achievement-desc">
+					            <h3 class="achievement-title">헬린이</h3>
+					            <div class="achievement-line"></div> 
+					
+					            <div class="achievement-content">
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">운동 일정</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">10회 완료 시 달성</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">( 10 / 10 )</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-points">달성 시 <span class="highlight">50P</span> 획득</p>
+					                </div>
+					            </div> 
+					        </div> 
+					    </div>
+                	</div>
+            	</div>
+            	<div class="my-have-achievement">
+            		<div class="tree-info">
+	                    <div class="tree-info-left">
+	                        <div class="go-tree">
+	                            <span class="go-tree-style">나의 달성한 업적</span>
+	                            <a href="../contents/contents-achievement.jsp">나의 업적 보러 가기 >></a>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="achievements-container">
+					    <div class="achievement-card">
+					        <div class="achievement-icon-container">
+					            <img src="../assets/images/contents/achievement/퍼스널버디.png" alt="퍼스널 버디" class="achievement-icon">
+					        </div>
+					
+					        <div class="achievement-desc">
+					            <h3 class="achievement-title">퍼스널 버디</h3>
+					            <div class="achievement-line"></div> 
+					
+					            <div class="achievement-content">
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">퍼스널 버디 첫 가입 시</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">기본 증정 배지</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">( 1 / 1 )</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-points">달성 시 <span class="highlight">300P</span> 획득</p>
+					                </div>
+					            </div> 
+					        </div> 
+					    </div>  
+					    <!-- 알쓰 -->
+					    <div class="achievement-card">
+					        <div class="achievement-icon-container">
+					            <img src="../assets/images/contents/achievement/알쓰.png" alt="알쓰" class="achievement-icon">
+					        </div>
+					
+					        <div class="achievement-desc">
+					            <h3 class="achievement-title">알쓰</h3>
+					            <div class="achievement-line"></div> 
+					
+					            <div class="achievement-content">
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">음주 약속 일정</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">10회 완료 시 달성</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">( 10 / 10 )</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-points">달성 시 <span class="highlight">30P</span> 획득</p>
+					                </div>
+					            </div> 
+					        </div> 
+					    </div>  
+					    <!-- 헬린이 -->
+					    <div class="achievement-card">
+					        <div class="achievement-icon-container">
+					            <img src="../assets/images/contents/achievement/헬린이.png" alt="헬린이" class="achievement-icon">
+					        </div>
+					
+					        <div class="achievement-desc">
+					            <h3 class="achievement-title">헬린이</h3>
+					            <div class="achievement-line"></div> 
+					
+					            <div class="achievement-content">
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">운동 일정</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">10회 완료 시 달성</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">( 10 / 10 )</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-points">달성 시 <span class="highlight">50P</span> 획득</p>
+					                </div>
+					            </div> 
+					        </div> 
+					    </div>
+					    <div class="achievement-card">
+					        <div class="achievement-icon-container">
+					            <img src="../assets/images/contents/achievement/중고트레이너.png" alt="중고트레이너" class="achievement-icon">
+					        </div>
+					
+					        <div class="achievement-desc">
+					            <h3 class="achievement-title">중고트레이너</h3>
+					            <div class="achievement-line"></div> 
+					
+					            <div class="achievement-content">
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">운동 일정</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">30회 완료 시 획득</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">( 30 / 30 )</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-points">달성 시 <span class="highlight">150P</span> 획득</p>
+					                </div>
+					            </div> 
+					        </div> 
+					    </div>
+					    <!-- 칠가이 -->
+					    <div class="achievement-card">
+					        <div class="achievement-icon-container">
+					            <img src="../assets/images/contents/achievement/중고트레이너.png" alt="중고트레이너" class="achievement-icon">
+					        </div>
+					
+					        <div class="achievement-desc">
+					            <h3 class="achievement-title">중고트레이너</h3>
+					            <div class="achievement-line"></div> 
+					
+					            <div class="achievement-content">
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">운동 일정</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">30회 완료 시 획득</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">( 30 / 30 )</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-points">달성 시 <span class="highlight">150P</span> 획득</p>
+					                </div>
+					            </div> 
+					        </div> 
+					    </div>
+                	</div>
+            	</div>
             </div>
         </div>
     </div>

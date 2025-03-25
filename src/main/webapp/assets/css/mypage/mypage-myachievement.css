@@ -57,10 +57,13 @@
     justify-content: space-between;
     font-size: 14px;
     color: #424242;
+    height: 40px;
+    border-bottom: 1px solid black;
 }
 
 .go-tree-style {
     font-size: 18px;
+    font-weight: 500;
 }
 
 /* 나만의 나무 */
@@ -144,6 +147,8 @@
 	text-decoration: underline;
 }
 
+
+
 a {
     color: #000;
     text-decoration: none;
@@ -154,7 +159,139 @@ a:hover {
     color: #01CD74; /* 마우스를 올렸을 때 색 변경 */
 }
 
+.go-tree a {
+	font-weight: 300;
+}
+
 strong {
     font-size: 18px;
     font-weight: 500;
+}
+
+/* =================================================================== */
+
+.best-achievement {
+	margin-top: 20px;
+	width: 100%;
+	height: 400px;
+}
+
+.best-achievements-container {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 1000px;
+    margin:0 auto;
+    margin-top: 60px;
+    gap: 40px;
+}
+
+.achievements-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1160px;
+    margin:0 auto;
+    margin-top: 60px;
+    gap: 40px;
+}
+
+.achievement-card {
+    width: 200px;
+    height: 230px;
+    background-color: #EEFFF8;
+    border: 1px solid #01CD74;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:0;
+    padding-top: 40px;
+    text-align: center;
+}
+
+.achievement-icon-container {
+    position: absolute;
+    top: -40px; 
+    background-color: #FFF45F; 
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.achievement-icon {
+    width: 80px;
+    height: 80px;
+}
+
+.achievement-desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.achievement-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 17px;
+    margin-bottom:17px;
+}
+
+.achievement-line {
+    width: 163px;
+    height: 1px;
+    background-color: #B9D2C7;
+    margin-bottom: 6px;
+}
+
+.achievement-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 80%;
+    height: auto;
+    margin-top: 17px;
+}
+
+.achievement-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 6px;
+    padding:0;
+}
+
+.check-icon {
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+}
+
+.achievement-description {
+    font-size: 14px;
+    color: #000;
+    text-align: left;
+    margin:0;
+    padding:0;
+}
+
+.achievement-points {
+	text-align:left;
+    font-size: 14px;
+    color: #000;
+    font-weight: regular;
+    margin:0;
+    padding:0;  
+}
+
+.have-achievement {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 20px;
+	width: 920px;
+	height: 100%;
 }
