@@ -11,6 +11,9 @@ import com.app.Result;
 public class ContentsMyTreeController implements Action{
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, SecurityException {
-		return null;
+		Result result = new Result();
+		
+		result.setPath("contents-mytree.jsp");
+		return result;
 	}
 }
