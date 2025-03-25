@@ -170,7 +170,7 @@ strong {
 
 /* =================================================================== */
 
-.best-achievement {
+/* .best-achievement {
 	margin-top: 20px;
 	width: 100%;
 	height: 400px;
@@ -309,7 +309,12 @@ strong {
 	width: 920px;
 	height: 100%;
 }
+ */
+ 
+ * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: sans-serif; background-color: #fff; }
 
+<<<<<<< HEAD
 .best-achievement-card {
     border: 1px solid black;
     background-color: #EEFFF8;
@@ -321,3 +326,127 @@ strong {
     background-color: #EEFFF8;
     transition: 0.3s;
 }
+=======
+    .achievement-page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      padding: 40px 0;
+    }
+
+    /* 포인트 요약 박스 */
+    .points-summary {
+      width: 1400px;
+      height: 270px;
+      background-color: #EEFFF8;
+      border: 1px solid #B9D2C7;
+      border-radius: 20px;
+      display: flex;
+      justify-content: space-between;
+      padding: 40px 60px;
+      margin-bottom: 80px;
+    }
+
+    .points-column {
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .points-column h3 {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    /* 대표 업적 */
+    .best-achievements {
+      width: 1160px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 100px;
+    }
+
+    /* 전체 업적 */
+    .my-achievements .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 100px 40px;
+      width: 1160px;
+    }
+
+    .achievement-card, .best-achievement-card {
+      width: 200px;
+      height: 230px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-top: 40px;
+      position: relative;
+    }
+
+    .best-achievement-card {
+      background-color: #EEFFF8;
+      border-color: #01CD74;
+    }
+
+    .achievement-icon-container {
+      position: absolute;
+      top: -40px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .achievement-icon {
+      width: 80px;
+      height: 80px;
+    }
+
+    .achievement-title {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .achievement-line {
+      width: 80%;
+      height: 1px;
+      background-color: #B9D2C7;
+      margin: 10px 0;
+    }
+
+    .achievement-content {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+      font-size: 13px;
+    }
+
+    .achievement-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .check-icon {
+      width: 14px;
+      height: 14px;
+    }
+>>>>>>> 5c9bf3c0fc4c539e0f90f3e3b426444d7ec991b7

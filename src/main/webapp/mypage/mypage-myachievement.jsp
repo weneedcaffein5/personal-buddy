@@ -368,6 +368,9 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("대표 업적이 적용되었습니다!");
     });
 });
+
+
+<%@ include file="../layout/footer.jsp" %>
 </script>
 </body>
 
