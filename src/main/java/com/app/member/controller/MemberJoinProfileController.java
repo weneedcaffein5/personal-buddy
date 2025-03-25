@@ -8,7 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import com.app.Action;
 import com.app.Result;
-import com.app.vo.MemberImageVO;
+import com.app.vo.MemberImgVO;
 import com.app.vo.MemberVO;
 
 public class MemberJoinProfileController implements Action {
@@ -19,7 +19,7 @@ public class MemberJoinProfileController implements Action {
 		
 		HttpSession session = req.getSession();
 		MemberVO member = (MemberVO)session.getAttribute("newMember");
-		MemberImageVO memberImage = new MemberImageVO();
+		MemberImgVO memberImage = new MemberImgVO();
 		
 		session.setAttribute("newMember", member);
 		session.setAttribute("newMemberImage", memberImage);

@@ -2,16 +2,16 @@ package com.app.vo;
 
 import java.util.Objects;
 
-public class MemberImageVO {
+public class MemberImgVO {
 	
 	private Long id;
 	private String memberImageName;
 	private String memberImagePath;
 	private Long memberId;
 	
-	public MemberImageVO() {;}
+	public MemberImgVO() {;}
 	
-	public MemberImageVO(Long id, String memberImageName, String memberImagePath, Long memberId) {
+	public MemberImgVO(Long id, String memberImageName, String memberImagePath, Long memberId) {
 		this.id = id;
 		this.memberImageName = memberImageName;
 		this.memberImagePath = memberImagePath;
@@ -58,7 +58,7 @@ public class MemberImageVO {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		MemberImageVO other = (MemberImageVO) obj;
+		MemberImgVO other = (MemberImgVO) obj;
 		return Objects.equals(id, other.id);
 	}
 	
