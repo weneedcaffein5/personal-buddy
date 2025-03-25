@@ -141,6 +141,8 @@ function mailCheck() {
         
 	})
 	.catch(error => console.error("Error:", error)); // 에러 처리
+	
+	allCheck();
 }
 
 document.getElementById("password").addEventListener("blur", (e) => {
@@ -171,7 +173,12 @@ document.getElementById("password").addEventListener("blur", (e) => {
         }
 		passWordFailMessage.style.opacity = 1;
 		passWordFailMessage.innerText = data.passwordCheckResultMessage;
+    })
+	.catch(err => {
+					console.error("요청 실패:", err);
     });
+	
+	allCheck();
 });
 
 
@@ -215,7 +222,12 @@ document.getElementById("name").addEventListener("blur", (e) => {
 			nameFailMessage.style.color = "var(--warning-red)";
 		}
 		
+    })
+	.catch(err => {
+				console.error("요청 실패:", err);
     });
+	
+	allCheck();
 });
 
 document.getElementById("name").addEventListener("focus", (e) => {
@@ -262,7 +274,7 @@ document.querySelectorAll(".gender-select-radio").forEach((radio) => {
 		.catch(err => {
 			console.error("요청 실패:", err);
         });;
-		
+		allCheck();
 	}))
 });
 
@@ -306,6 +318,8 @@ flatpickr("#birth", {
 			.catch(err => {
 				console.error("요청 실패:", err);
 			});
+			
+			allCheck();
 		}
 	}
 });
@@ -419,7 +433,7 @@ function phoneCheck() {
 			phoneCheckMessage.innerText = "※ 핸드폰 인증 실패";
 		}
         
-		allCheck()
+		allCheck();
 	})
 	.catch(error => console.error("Error:", error)); // 에러 처리
 }

@@ -18,15 +18,14 @@
 <body>
 	<%
 		MemberVO newMember = (MemberVO)session.getAttribute("newMember");
-		System.out.println(newMember);
 	%>
 	
 	<img src="../assets/images/member/logo-login.png" alt="Personal Buddy 로고" class="logo">
 
     <div class="join-container">
-        <!-- 첫 번째 입력 박스 -->
-        <div class="input-group">
-        	<form action="join-profile.member" method="post">
+    	<form action="join-profile.member" method="post">
+	        <!-- 첫 번째 입력 박스 -->
+	        <div class="input-group">
         		<!-- id(email 주소) -->
 	            <div class="input-wrapper" id="id-wrapper" style="border-radius: 10px 10px 0px 0px;">
 	                <img src="../assets/images/member/message-icon.png" class="input-icon">
@@ -119,7 +118,7 @@
             </div>
 	
 	        <!-- 가입 버튼 -->
-	        <button type="button" class="signup-btn">가입하기</button>
+	        <button class="signup-btn">가입하기</button>
         </form>
     </div>
 </body>

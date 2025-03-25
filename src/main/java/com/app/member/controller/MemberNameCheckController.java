@@ -20,7 +20,6 @@ public class MemberNameCheckController implements Action {
 		String name = req.getParameter("name");
 		boolean nameCheckResult = name != "";
 		
-		System.out.println(nameCheckResult);
 		if(nameCheckResult) {
 			member.setMemberName(name);
 	    	session.setAttribute("newMember", member);

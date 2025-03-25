@@ -57,6 +57,8 @@ public class MemberFrontController extends HttpServlet{
 			result = new MemberPhoneCheckController().execute(req, resp);
 		}else if(target.equals("all-check")) {
 			result = new MemberAllCheckController().execute(req, resp);
+		}else if(target.equals("join-profile")) {
+			result = new MemberJoinProfileController().execute(req, resp);
 		}else if(target.equals("login")) {
 			result = new MemberLoginController().execute(req, resp);
 		}else if(target.equals("login-ok")) {
