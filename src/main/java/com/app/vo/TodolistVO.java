@@ -8,46 +8,21 @@ public class TodolistVO {
 	private Long completed;
 	private Long calendarGroupId;
 	
-	public TodolistVO() {;}
 	public TodolistVO(Long id, String content, Long completed, Long calendarGroupId) {
+		super();
 		this.id = id;
 		this.content = content;
 		this.completed = completed;
 		this.calendarGroupId = calendarGroupId;
 	}
 
+	public TodolistVO() {;}
 
 	@Override
 	public String toString() {
 		return "TodolistVO [id=" + id + "]";
 	}
 
-	
-	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-	public String getContent() {
-		return content;
-	}
-	public void setContent(String content) {
-		this.content = content;
-	}
-	public Long getCompleted() {
-		return completed;
-	}
-	public void setCompleted(Long completed) {
-		this.completed = completed;
-	}
-	public Long getCalendarGroupId() {
-		return calendarGroupId;
-	}
-	public void setCalendarGroupId(Long calendarGroupId) {
-		this.calendarGroupId = calendarGroupId;
-	}
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -64,8 +39,5 @@ public class TodolistVO {
 		TodolistVO other = (TodolistVO) obj;
 		return Objects.equals(id, other.id);
 	}
-
-	
-	
 	
 }

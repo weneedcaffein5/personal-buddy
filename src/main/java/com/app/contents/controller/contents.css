@@ -1,96 +1,15 @@
 @charset "UTF-8";
 
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
-/* 배너 스타일 */
-
-.banner-container {
-    width: 100%;	
-    height: 300px;
-    overflow: hidden;
-    position: relative;
-}
-
-.banner-text {
-    position: absolute;
-    top: 20%;
-    left: 380px;
-    color: white;
-    text-align: left;
-    width: 100%;
-    opacity: 0; 
-    animation: fadeInText 20s infinite ease-in-out;
-}
-
-.banner-subtitle {
-    font-size: 18px;
-    font-weight: regular;
-    
-}
-
-.banner-title {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.banner-wrapper {
-    display: flex;
-    width: 100%; 
-    animation: slide 20s infinite ease-in-out;
-}
-
-.banner-slide {
-    min-width: 100%;
-    height: 300px;
-    position: relative;
-    cursor: pointer;
-}
-
-
-.banner-slide img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}
-
-
-.banner-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 18px;
-    border-radius: 5px;
-}
-
-@keyframes slide {
-    0%, 25% { transform: translateX(0%); }      
-    30%, 55% { transform: translateX(-100%); }  
-    60%, 85% { transform: translateX(-200%); }   
-    90%, 100% { transform: translateX(-300%); } 
-}
-
-
-@keyframes fadeInText {
-    0%, 25% { opacity: 1; }      
-    30%, 55% { opacity: 1; }   
-    60%, 85% { opacity: 1; }   
-    90%, 100% { opacity: 1; }  
-}
-
-.page-container {
-    width: 1400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-}
-
 /* tab */
-
+.page-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width:1400px;
+	margin: auto;
+	margin-top:80px;
+}
 .tab-container {
     position: relative;
     width: 840px;
@@ -102,7 +21,6 @@
     cursor: pointer;
     box-sizing: border-box;
     padding: 0;
-    margin-top: 80px;
 }
 
 .tab-btn {
@@ -158,18 +76,12 @@
 .tree-title-word {
     width: 100%;
     font-size: 24px;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    margin-top: 34px;
-    margin-bottom: 34px;
 }
 
 .tree-button-group {
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    gap: 10px;
-    margin-top: 10px;
 }
 
 .tree-button-group .save-button,
@@ -211,16 +123,11 @@
 .decorate-title-word {
     width: 100%;
     font-size: 24px;
-    padding-top: 79px;
-    padding-bottom: 79px;
 }
 
 .decorate-menu-word {
     width: 100%;
     font-size: 14px;
-    margin-top: 20px;
-    margin-left: 14px;
-    margin-bottom: 56px;
 }
 
 .decorate-tab-container {
@@ -260,11 +167,11 @@
     justify-content: center;
     gap: 40px;
     flex-wrap: wrap;
-    width: 1172px;
-    height: 100px;
+    width: 1160px;
+    height: 1060px;
 }
 
-.folder-item, .folder-item-sticker {
+.folder-item {
     width: 160px;
     height: 244px;
     background: #fff;
@@ -294,11 +201,11 @@
     border-radius: 40px;
 }
 
-.folder-item img {
-    width: 116px;
-    height: 60px;
+.background-image {
+    width: 100px;
+    height: 100px;
     border-radius: 5px;
-    
+    object-fit: cover;
 }
 
 .folder-item span {
