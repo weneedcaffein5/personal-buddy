@@ -4,10 +4,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="../assets/css/global.css">
-<link rel="stylesheet" href="../assets/css/member/join-agree.css">
-<title>Personal Buddy 약관동의</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../assets/css/global.css">
+	<link rel="stylesheet" href="../assets/css/member/join-agree.css">
+	<title>Personal Buddy 약관동의</title>
 </head>
 <body>
 	<img src="../assets/images/member/logo-login.png" alt="Personal Buddy 로고" class="logo">
