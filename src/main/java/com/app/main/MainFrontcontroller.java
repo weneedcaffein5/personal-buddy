@@ -8,8 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
-import com.app.member.controller.MemberJoinAgreeController;
-import com.app.member.controller.MemberJoinWriteController;
+import com.app.main.controller.MainMainController;
 
 public class MainFrontcontroller extends HttpServlet {
 	@Override
@@ -23,9 +22,7 @@ public class MainFrontcontroller extends HttpServlet {
 		Result result = null;
 		
 		if(target.equals("main")) {
-			result = new MemberJoinAgreeController().execute(req, resp);
-		}else if(target.equals("")) {
-			result = new MemberJoinWriteController().execute(req, resp);
+			result = new MainMainController().execute(req, resp);
 		}else {
 //			전부 404
 		}
