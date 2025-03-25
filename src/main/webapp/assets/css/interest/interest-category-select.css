@@ -2,28 +2,29 @@
 
 .container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
     height: 100vh;
 }
 
-.left-box {
+.container-left {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 50%;
 }
 
 .speech-bubble {
-    background-color: #01CD74;
-    color: white;
-    padding: 15px 20px;
-    border-radius: 20px;
-    max-width: 400px;
-    font-size: 18px;
-    line-height: 2; 
     position: relative;
+    background-color: var(--main-green);
+	color: var(--white);
+    padding: 35px 35px;
+    border-radius: 20px;
+    font-size: var(--h4);
+	font-family: 500;
     text-align: left;
+	line-height: 45px;
 }
 
 .speech-bubble::after {
@@ -32,14 +33,17 @@
     bottom: -20px;
     left: 50%;
     transform: translateX(-50%);
+    width: 0;
+    height: 0;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-top: 20px solid #01CD74;
+    border-top: 20px solid var(--main-green);
 }
 
-.logo-img {
-    width: 180px;
-    margin: 20px 0;
+.container-left img {
+    width: 240px;
+    height: 185px;
+    margin-top: 50px;
 }
 
 .right-box {

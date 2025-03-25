@@ -5,19 +5,20 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100vw;
     height: 100vh;
 }
 
 .speech-bubble {
-    background-color: #01CD74;
-    color: white;
-    padding: 15px 20px;
-    border-radius: 20px;
-    max-width: 500px;
-    font-size: 16px;
-    line-height: 2;
     position: relative;
+    background-color: var(--main-green);
+	color: var(--white);
+    padding: 35px 35px;
+    border-radius: 20px;
+    font-size: var(--h4);
+	font-family: 500;
     text-align: left;
+	line-height: 45px;
 }
 
 .speech-bubble::after {
@@ -30,23 +31,24 @@
     height: 0;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-top: 20px solid #01CD74;
+    border-top: 20px solid var(--main-green);
 }
 
 .logo-img {
-    width: 180px;
-    margin: 80px 0;
+    width: 240px;
+    height: 185px;
+    margin: 50px 0px;
 }
 
 .start-btn {
-    background-color: #009DCC;
-    width: 157PX;
-    height: 43PX;
-    color: white;
+	background-color: var(--sub-blue);
+	width: 157px;
+    height: 43px;
+    color: var(--white);
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
+    font-size: var(--h6);
+    font-family: 600;
+    border-radius: 10px;
     cursor: pointer;
 }
 
