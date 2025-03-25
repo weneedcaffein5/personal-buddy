@@ -1,19 +1,13 @@
-const eventTab = document.getElementById("eventTab");
-const boardTab = document.getElementById("boardTab");
-const tabBtn = document.querySelector(".tab-btn");
+const slideAll = document.querySelectorAll(".slide");
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
 
-eventTab.addEventListener("click", () => {
-    tabBtn.classList.remove("tab-btn-change");
-    eventTab.classList.add("tab-text-on");
-    eventTab.classList.remove("tab-text-off");
-    boardTab.classList.add("tab-text-off");
-    boardTab.classList.remove("tab-text-on");
-});
+const index = 0;
 
-boardTab.addEventListener("click", () => {
-    tabBtn.classList.add("tab-btn-change");
-    boardTab.classList.add("tab-text-on");
-    boardTab.classList.remove("tab-text-off");
-    eventTab.classList.add("tab-text-off");
-    eventTab.classList.remove("tab-text-on");
-});
+function updateSlide() {
+    slides.style.transform = `translateX(-${index * 100}%)`;
+}
+
+prevBtn.addEventListener("click", () => {
+	console.log(index);
+})

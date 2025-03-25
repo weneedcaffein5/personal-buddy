@@ -41,15 +41,15 @@
 		    <span>진행중인 이벤트</span>
 		</div>
         <div class="slider-container">
-            <div class="slider">
-	            <a>
-	                <img src="../assets/images/event/이벤트 이미지1.png" alt="이벤트 슬라이드 이미지1">
-	            </a>
-                <img src="../assets/images/event/이벤트 이미지2.png" alt="이벤트 슬라이드 이미지2">
-                <img src="../assets/images/event/이벤트 이미지3.png" alt="이벤트 슬라이드 이미지3">
-            </div>
-            <!-- <button></button>
-            <button></button> -->
+		    <div class="slider">
+		        <div class="slides">
+		            <a href="#" class="slide"><img src="../assets/images/event/이벤트 이미지1.png" alt="이벤트 슬라이드 이미지1"></a>
+		            <a href="#" class="slide"><img src="../assets/images/event/이벤트 이미지2.png" alt="이벤트 슬라이드 이미지2"></a>
+		            <a href="#" class="slide"><img src="../assets/images/event/이벤트 이미지3.png" alt="이벤트 슬라이드 이미지3"></a>
+		        </div>
+		        <button class="prev">&#10094;</button>
+		        <button class="next">&#10095;</button>
+		    </div>
         </div>
 	    <div class="title-sub">
 		    <span>BUDDYGROUND</span>
