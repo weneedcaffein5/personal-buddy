@@ -19,7 +19,7 @@ public class MemberSendPhoneAuthController implements Action {
 		String phoneNumber = req.getParameter("phone");
 		MemberDAO memberDao = new MemberDAO();
 		
-		String smsText = "[퍼스널 버디 인증 확인 메일]";
+		String smsText = "[퍼스널 버디 인증 확인]";
         
 		String regex = "^[0-9]{11}$";
         boolean phoneCheckResult = phoneNumber != null && phoneNumber != "" && phoneNumber.matches(regex);
@@ -47,7 +47,6 @@ public class MemberSendPhoneAuthController implements Action {
             return null;
         }
         
-        System.out.println(phoneNumber);
         session.setAttribute("phone", phoneNumber);
     	session.setAttribute("phoneAuthCode", authCode);
     	resp.setContentType("application/json"); // JSON 응답으로 설정

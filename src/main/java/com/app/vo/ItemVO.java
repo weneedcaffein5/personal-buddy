@@ -13,7 +13,6 @@ public class ItemVO {
 	private String itemCategory;
 	
 	public ItemVO() {;}
-
 	public ItemVO(Long id, String itemName, int itemPrice, String itemImgPath, String itemImgName, String itemType,
 			String itemCategory) {
 		this.id = id;

@@ -29,13 +29,14 @@ public class MemberPhoneCheckController implements Action {
         	session.setAttribute("phoneAuthCode", authCode);
         	session.setAttribute("newMember", member);
         }else {
-        	session.setAttribute("email", "");
+        	session.setAttribute("phone", "");
         	session.setAttribute("phoneAuthCode", "");
         }
         
+        
 //        System.out.println(session.getAttribute("newMember"));
         resp.setContentType("application/json"); // JSON 응답으로 설정
-        resp.getWriter().write("{\"mailCheckResult\": " + phoneCheckResult + ", \"mailCheckResultMessage\": \"" + (phoneCheckResult ? "인증 성공" : "인증 실패") + "\"}");
+        resp.getWriter().write("{\"phoneCheckResult\": " + phoneCheckResult + ", \"phoneCheckResultMessage\": \"" + (phoneCheckResult ? "인증 성공" : "인증 실패") + "\"}");
         
 		
 		return null;

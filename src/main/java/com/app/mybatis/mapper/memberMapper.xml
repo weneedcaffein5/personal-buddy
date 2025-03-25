@@ -28,4 +28,9 @@
 		FROM TBL_MEMBER
 		WHERE MEMBER_PHONE = #{memberPhone}
 	</select>
+	<select id="selectMemberCountByNickName" parameterType="String" resultType="int">
+		SELECT COUNT(*)
+		FROM TBL_MEMBER
+		WHERE MEMBER_NICKNAME = #{memberNickName}
+	</select>
 </mapper>
