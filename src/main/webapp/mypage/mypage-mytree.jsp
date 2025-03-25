@@ -7,10 +7,12 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="../assets/css/global.css" />
 <link rel="stylesheet" type="text/css" href="../assets/css/mypage/mypage-mytree.css" />
+<link rel="stylesheet" type="text/css" href="../assets/css/header.css" />
 <title>나의 나무</title>
 </head>
 <body>
 	<%@ include file="../layout/header.jsp" %>
+	
 	<div class="body">
         <div class="container">
             <div class="sidebar">

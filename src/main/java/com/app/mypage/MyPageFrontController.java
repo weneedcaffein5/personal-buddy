@@ -17,7 +17,6 @@ public class MyPageFrontController extends HttpServlet{
 		resp.setContentType("text/html; charset=utf-8;");
 		
 		String controllerName = "/mypage/";
-		
 		String target = req.getRequestURI().replace(req.getContextPath() + controllerName, "").split("\\.")[0];
 		Result result = null;
 		

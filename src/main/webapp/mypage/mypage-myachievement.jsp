@@ -47,8 +47,11 @@
                     </div>
                 </div>
                 <div class="best-achievement">
+                	<div class="apply-button-wrapper" style="margin-top: 10px; text-align: right;">
+					    <button id="save-best-achievements" style="padding: 8px 16px; font-weight: bold;">대표 업적 적용</button>
+					</div>
                 	<div class="best-achievements-container">
-					    <div class="achievement-card">
+					   <!-- <div class="best-achievement-card">
 					        <div class="achievement-icon-container">
 					            <img src="../assets/images/contents/achievement/퍼스널버디.png" alt="퍼스널 버디" class="achievement-icon">
 					        </div>
@@ -76,8 +79,8 @@
 					            </div> 
 					        </div> 
 					    </div>  
-					    <!-- 알쓰 -->
-					    <div class="achievement-card">
+					    알쓰
+					    <div class="best-achievement-card">
 					        <div class="achievement-icon-container">
 					            <img src="../assets/images/contents/achievement/알쓰.png" alt="알쓰" class="achievement-icon">
 					        </div>
@@ -106,8 +109,8 @@
 					            </div> 
 					        </div> 
 					    </div>  
-					    <!-- 헬린이 -->
-					    <div class="achievement-card">
+					    헬린이
+					    <div class="best-achievement-card">
 					        <div class="achievement-icon-container">
 					            <img src="../assets/images/contents/achievement/헬린이.png" alt="헬린이" class="achievement-icon">
 					        </div>
@@ -135,8 +138,8 @@
 					                </div>
 					            </div> 
 					        </div> 
-					    </div>
-                	</div>
+					    </div> -->
+                	</div> 
             	</div>
             	<div class="my-have-achievement">
             		<div class="tree-info">
@@ -152,7 +155,6 @@
 					        <div class="achievement-icon-container">
 					            <img src="../assets/images/contents/achievement/퍼스널버디.png" alt="퍼스널 버디" class="achievement-icon">
 					        </div>
-					
 					        <div class="achievement-desc">
 					            <h3 class="achievement-title">퍼스널 버디</h3>
 					            <div class="achievement-line"></div> 
@@ -301,5 +303,71 @@
             </div>
         </div>
     </div>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const myAchievements = document.querySelectorAll(".achievement-card");
+    const bestContainer = document.querySelector(".best-achievements-container");
+    const applyButton = document.getElementById("save-best-achievements");
+
+    // 대표 업적 리스트 저장용 (Set으로 중복 방지)
+    const selectedTitles = new Set();
+
+    function createClone(card) {
+        const cloned = card.cloneNode(true);
+        cloned.classList.add("best-achievement-card");
+        cloned.classList.remove("achievement-card");
+        return cloned;
+    }
+
+    function updateBestAchievementsView() {
+        bestContainer.innerHTML = ""; // 초기화
+        selectedTitles.forEach(title => {
+            const original = [...myAchievements].find(card =>
+                card.querySelector(".achievement-title")?.textContent === title
+            );
+            if (original) {
+                bestContainer.appendChild(createClone(original));
+            }
+        });
+    }
+
+    myAchievements.forEach(card => {
+        card.addEventListener("click", function () {
+            const title = card.querySelector(".achievement-title").textContent;
+
+            if (selectedTitles.has(title)) {
+                // 이미 선택되어 있으면 해제
+                selectedTitles.delete(title);
+                card.classList.remove("selected-for-best");
+            } else {
+                if (selectedTitles.size >= 3) {
+                    alert("대표 업적은 최대 3개까지 선택할 수 있어요!");
+                    return;
+                }
+                selectedTitles.add(title);
+                card.classList.add("selected-for-best");
+            }
+
+            updateBestAchievementsView();
+        });
+    });
+
+    applyButton.addEventListener("click", function () {
+        // 실제 저장 로직은 여기에 AJAX 등으로 연결
+        const selectedArray = Array.from(selectedTitles);
+        console.log("저장할 대표 업적:", selectedArray);
+
+        // 예시: fetch 또는 jQuery ajax로 서버 전송 가능
+        // fetch('/save-best-achievements', {
+        //     method: 'POST',
+        //     headers: { 'Content-Type': 'application/json' },
+        //     body: JSON.stringify({ achievements: selectedArray })
+        // }).then(res => ...);
+
+        alert("대표 업적이 적용되었습니다!");
+    });
+});
+</script>
 </body>
+
 </html>

@@ -187,19 +187,33 @@ strong {
 }
 
 .achievements-container {
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    gap: 100px 40px;
+    width: max-content;
+    margin: 60px auto 0;
+}
+
+.best-achievement-card {
+	width: 200px;
+    height: 230px;
+    background-color: #EEFFF8;
+    border: 1px solid #01CD74;
+    border-radius: 20px;
+    position: relative;
     display: flex;
-    flex-wrap: wrap;
-    width: 1160px;
-    margin:0 auto;
-    margin-top: 60px;
-    gap: 40px;
+    flex-direction: column;
+    align-items: center;
+    margin:0;
+    padding-top: 40px;
+    text-align: center;
 }
 
 .achievement-card {
     width: 200px;
     height: 230px;
-    background-color: #EEFFF8;
-    border: 1px solid #01CD74;
+    background-color: #FFF;
+    border: 1px solid #000;
     border-radius: 20px;
     position: relative;
     display: flex;
@@ -295,3 +309,4 @@ strong {
 	width: 920px;
 	height: 100%;
 }
+
