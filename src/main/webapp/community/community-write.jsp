@@ -8,11 +8,14 @@
 <meta charset="UTF-8">
 <title>커뮤니티-글쓰기</title>
 <link rel="stylesheet" href="../assets/css/global.css" />
+<link rel="stylesheet" href="../assets/css/banner.css" />
 <link rel="stylesheet"
 	href="../assets/css/community/community-write.css" />
-<link rel="stylesheet" href="../assets/css/banner.css" />
 </head>
  <body>
+	<%@ include file="../layout/header.jsp" %>
+	<%@ include file="../layout/banner.jsp" %>
+	
     <div class="page-container">
       <div class="title">
         <div class="title-container">

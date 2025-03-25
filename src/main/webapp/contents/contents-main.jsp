@@ -12,54 +12,10 @@
 <link rel="stylesheet" href="../assets/css/contents/contents.css" />
 </head>
 <body>
-	<!-- 헤더 -->
-	<%@ include file="../layout/header.jsp"%>
-	<!-- 배너 -->
-	<div class="banner-container">
-		<div class="banner-wrapper">
-			<div class="banner-slide">
-				<img src="../assets/images/main/banner-blue.png"
-					class="banner-slide" alt="배너 1">
-				<div class="banner-text">
-					<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
-					<h2 class="banner-title">
-						버디들의 관심 일정을 <br> 공유해주세요!
-					</h2>
-				</div>
-			</div>
-			<div class="banner-slide">
-				<img src="../assets/images/main/banner-green.png"
-					class="banner-slide" alt="배너 2">
-				<div class="banner-text">
-					<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
-					<h2 class="banner-title">
-						버디들의 관심 일정을 <br> 공유해주세요!
-					</h2>
-				</div>
-			</div>
-			<div class="banner-slide">
-				<img src="../assets/images/main/banner-yellow.png"
-					class="banner-slide" alt="배너 3">
-				<div class="banner-text">
-					<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
-					<h2 class="banner-title">
-						버디들의 관심 일정을 <br> 공유해주세요!
-					</h2>
-				</div>
-			</div>
-			<div class="banner-slide">
-				<img src="../assets/images/main/banner-blue.png"
-					class="banner-slide" alt="배너 1(복사)">
-				<div class="banner-text">
-					<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
-					<h2 class="banner-title">
-						버디들의 관심 일정을 <br> 공유해주세요!
-					</h2>
-				</div>
-			</div>
-		</div>
-	</div>
 
+	<%@ include file="../layout/header.jsp" %>
+	<%@ include file="../layout/banner.jsp" %>
+	
 	<div class="page-container">
 		<div class="tab-container">
 			<div class="tab-btn"></div>
@@ -154,10 +110,7 @@
             achievementTab.classList.add("tab-text-off");
             achievementTab.classList.remove("tab-text-on");
         });
-       
-        document.addEventListener("DOMContentLoaded", function () {
-            attachFolderItemClickEvent();
-        });
+      
 
         function attachFolderItemClickEvent() {
             const folderItems = document.querySelectorAll(".folder-item");
