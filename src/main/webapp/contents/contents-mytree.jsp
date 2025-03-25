@@ -12,54 +12,10 @@
 <link rel="stylesheet" href="../assets/css/contents/contents.css" />
 </head>
 <body>
-	<!-- 헤더 -->
-	<%@ include file="../layout/header.jsp"%>
-	<!-- 배너 -->
-	<div class="banner-container">
-		<div class="banner-wrapper">
-			<div class="banner-slide">
-				<img src="../assets/images/main/banner-blue.png"
-					class="banner-slide" alt="배너 1">
-				<div class="banner-text">
-					<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
-					<h2 class="banner-title">
-						버디들의 관심 일정을 <br> 공유해주세요!
-					</h2>
-				</div>
-			</div>
-			<div class="banner-slide">
-				<img src="../assets/images/main/banner-green.png"
-					class="banner-slide" alt="배너 2">
-				<div class="banner-text">
-					<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
-					<h2 class="banner-title">
-						버디들의 관심 일정을 <br> 공유해주세요!
-					</h2>
-				</div>
-			</div>
-			<div class="banner-slide">
-				<img src="../assets/images/main/banner-yellow.png"
-					class="banner-slide" alt="배너 3">
-				<div class="banner-text">
-					<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
-					<h2 class="banner-title">
-						버디들의 관심 일정을 <br> 공유해주세요!
-					</h2>
-				</div>
-			</div>
-			<div class="banner-slide">
-				<img src="../assets/images/main/banner-blue.png"
-					class="banner-slide" alt="배너 1(복사)">
-				<div class="banner-text">
-					<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
-					<h2 class="banner-title">
-						버디들의 관심 일정을 <br> 공유해주세요!
-					</h2>
-				</div>
-			</div>
-		</div>
-	</div>
 
+	<%@ include file="../layout/header.jsp" %>
+	<%@ include file="../layout/banner.jsp" %>
+	
 	<div class="page-container">
 		<div class="tab-container">
 			<div class="tab-btn"></div>
@@ -79,6 +35,7 @@
 		</div>
 
 		<!-- 나의꾸미기 -->
+		<div class = "decorate-title-tab-container">
 		<h1 class="decorate-title-word">나의 꾸미기🎨</h1>
 		<div class="decorate-tab-container">
 			<button class="decorate-tab selected" onclick="showContent('전체')">전체</button>
@@ -88,6 +45,7 @@
 		</div>
 		<div class="container" id="content-container">
 			<%@ include file="contents-sticker.jsp"%>
+		</div>
 		</div>
 	</div>
 	<script>
@@ -154,10 +112,7 @@
             achievementTab.classList.add("tab-text-off");
             achievementTab.classList.remove("tab-text-on");
         });
-       
-        document.addEventListener("DOMContentLoaded", function () {
-            attachFolderItemClickEvent();
-        });
+      
 
         function attachFolderItemClickEvent() {
             const folderItems = document.querySelectorAll(".folder-item");
