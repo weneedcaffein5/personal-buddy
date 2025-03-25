@@ -298,7 +298,7 @@
     width: 116px;
     height: 60px;
     border-radius: 5px;
-    
+    object-fit: cover;
 }
 
 .folder-item span {
