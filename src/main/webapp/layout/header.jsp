@@ -17,7 +17,7 @@
                 <a href="../main/main.jsp">일정 관리</a>
                 <a href="../contents/contents-main.jsp">컨텐츠</a>
                 <a href="../event/event-main.jsp">이벤트</a>
-                <a href="../community/community.jsp">커뮤니티</a>
+                <a href="../community/community-main.jsp">커뮤니티</a>
                 <a href="../customer-service/customer-service.jsp">고객센터</a>
             </div>
             <div class="rightheader">
