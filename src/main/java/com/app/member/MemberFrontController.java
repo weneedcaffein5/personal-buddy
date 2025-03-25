@@ -12,6 +12,7 @@ import com.app.member.controller.MemberAllCheckController;
 import com.app.member.controller.MemberBirthCheckController;
 import com.app.member.controller.MemberGenderSelectController;
 import com.app.member.controller.MemberJoinAgreeController;
+import com.app.member.controller.MemberJoinOkController;
 import com.app.member.controller.MemberJoinProfileController;
 import com.app.member.controller.MemberJoinWriteController;
 import com.app.member.controller.MemberLoginController;
@@ -32,7 +33,7 @@ public class MemberFrontController extends HttpServlet{
 		resp.setContentType("text/html; charset=utf-8;");
 		
 		String controllerName = "/member/";
-		
+		String redirectControllerName = "";
 		String target = req.getRequestURI().replace(req.getContextPath() + controllerName, "").split("\\.")[0];
 		Result result = null;
 		
@@ -62,6 +63,9 @@ public class MemberFrontController extends HttpServlet{
 			result = new MemberJoinProfileController().execute(req, resp);
 		}else if(target.equals("nickname-check")) {
 			result = new MemberNickNameCheckController().execute(req, resp);
+		}else if(target.equals("join-ok")) {
+			redirectControllerName = "/interest/";
+			result = new MemberJoinOkController().execute(req, resp);
 		}else if(target.equals("login")) {
 			result = new MemberLoginController().execute(req, resp);
 		}else if(target.equals("login-ok")) {
@@ -80,7 +84,7 @@ public class MemberFrontController extends HttpServlet{
 		
 		if(result != null) {
 			if(result.isRedirect()) {
-				resp.sendRedirect(result.getPath());
+				resp.sendRedirect(req.getContextPath() + redirectControllerName + result.getPath());
 			}else {
 				req.getRequestDispatcher(result.getPath()).forward(req, resp);
 			}

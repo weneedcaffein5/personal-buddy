@@ -17,11 +17,13 @@ public class MemberSendMailController implements Action {
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, SecurityException {
 		HttpSession session = req.getSession();
+		
 		String email = req.getParameter("email");
 		MemberDAO memberDao = new MemberDAO();
 		AuthenticationEmailService mailService = new AuthenticationEmailService();
 		String mailTitle = "[퍼스널 버디 인증 확인 메일]";
         
+		
         // 6자리 랜덤 인증번호 생성
         // 테스트용 숫자 0 6자리
         String authCode = "000000";
