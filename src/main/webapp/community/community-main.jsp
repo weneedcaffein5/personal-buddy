@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="../assets/css/global.css" />
-<link rel="stylesheet" href="../assets/css/banner.css">
 <link rel="stylesheet" href="../assets/css/community/community.css">
 <title>커뮤니티</title>
 </head>
@@ -227,21 +226,34 @@
 				<span class="post-sort">조회 순</span>
 			</div>
 			<div class="main2">
-				<div>
-	            	<div class="event-sub-title">어디에도 풀지 못했던 은밀한 TMI</div>
-	            	<div class="event-main-title">버디들의 자유 게시판 💭</div>
+				<div class="main2-left">
+					<div class="community-info">
+		            	<div class="event-sub-title">어디에도 풀지 못했던 은밀한 TMI</div>
+		            	<div class="event-main-title">버디들의 자유 게시판 💭</div>
+					</div>
+					<div class="main2-center">
+						<div class="post-search">
+			            	<form class="search-form" action="#" method="get">
+			            		<input type="text" class="search-box" placeholder="검색어를 입력해주세요.">
+			            		<button type="submit" class ="search-button">
+    								<img src="../assets/images/community/search-icon.png" alt="검색" />
+  								</button>
+			            	</form>
+						</div>
+		        		<div class="tags">
+		            		<span class="search-tag">#관심 일정</span>
+		            		<span class="search-tag">#자유 게시글</span>
+		            		<span class="search-tag">#공유 일정</span>
+		        		</div>
+					</div>
 				</div>
-				<div class="post-search">
-	            	<input type="text" class="search-box" placeholder="검색어를 입력해주세요.">				
-	        		<div class="tags">
-	            		<span class="search-tag">#관심 일정</span>
-	            		<span class="search-tag">#자유 게시글</span>
-	            		<span class="search-tag">#공유 일정</span>
+				<div class="main2-right">
+	        		<div class="button-container">
+	            		<button class="write-button">
+	            			<a class="go-write" href="community-write.jsp">글쓰기</a>
+	            		</button>
 	        		</div>
 				</div>
-        		<div class="button-container">
-            		<button class="write-button">글쓰기</button>
-        		</div>
         	</div>
 			<div class="post-contents">
 				<div class="post-content">
