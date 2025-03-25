@@ -10,102 +10,165 @@
 </head>
 <body>
 	<%@ include file="../layout/header.jsp" %>
+	<%@ include file="../layout/banner.jsp" %>
 	
-	<div class="banner-container">	
-    	<div class="banner-wrapper">
-    	<a href="#" class="banner-slide">
-	    		<div class="banner-slide">
-	        		<img src="../assets/images/main/banner-blue.png" class="banner-slide" alt="배너 1">
-	        		<div class="banner-text">
-	        			<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
-	        			<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
-	    			</div>
-	    		</div>
-    		</a>
-    		
-    		<a href="#" class="banner-slide">
-	    		<div class="banner-slide">
-	        		<img src="../assets/images/main/banner-green.png" class="banner-slide" alt="배너 2">
-	        		<div class="banner-text">
-	        			<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
-	        			<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
-	    			</div>
-	    		</div>
-    		</a>
-    		
-    		<a href="#" class="banner-slide">
-	    		<div class="banner-slide">
-	        		<img src="../assets/images/main/banner-yellow.png" class="banner-slide" alt="배너 3">
-	        		<div class="banner-text">
-	        			<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
-	        			<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
-	    			</div>
-	    		</div>
-    		</a>
-    		
-    		<a href="#" class="banner-slide">
-	    		<div class="banner-slide">
-	        		<img src="../assets/images/main/banner-blue.png" class="banner-slide" alt="배너 1(복사)">
-	        		<div class="banner-text">
-	        			<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
-	        			<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
-	    			</div>
-	    		</div> 
-    		</a>
-    	</div> 	    
-	</div>
-
-
-    <div class="tab-box">
-				<div class="tab-container">
+	<div class="container">
+    	<div class="tab-box">
+			<div class="tab-container">
 					<div class="tab-btn"></div>
 					<div id="achievementTab" class="tab-text tab-text-off">업적</div>
 					<div id="myTreeTab" class="tab-text tab-text-on">나의 성장 나무</div>
 					<div id="pointShopTab" class="tab-text tab-text-off">포인트 샵</div>
-				</div>
 			</div>
+		</div>
 
-    <div class="points-container">
-        기간별 포인트 획득을 확인해보세요! <span>💸 포인트 획득</span>
+	<div class="sub-title-wrap">
+    	<div class="board-sub-title">기간별 포인트 획득을 확인해보세요!</div>
+		<div class="board-main-title">포인트 획득 💸</div>
+	</div>
+	
+    <div class="points-section">
+        <div class="point-box">
+  <h3>일간 목표</h3>
+  <ul>
+    <li>
+      <div class="point-left">
+        <input type="checkbox" checked onclick="return false;" class="custom-checkbox">
+        <span>일정 등록 ( 1 / 1 )</span>
+      </div>
+      <div class="points">30P 획득</div>
+    </li>
+
+    <li>
+      <div class="point-left">
+        <input type="checkbox" disabled class="custom-checkbox">
+        <span>운동 일정 등록 ( 0 / 1 )</span>
+      </div>
+      <div class="points">40P 획득</div>
+    </li>
+
+    <li>
+      <div class="point-left">
+        <input type="checkbox" disabled class="custom-checkbox">
+        <span>공부 일정 등록 ( 0 / 1 )</span>
+      </div>
+      <div class="points">50P 획득</div>
+    </li>
+
+    <li>
+      <div class="point-left">
+        <input type="checkbox" disabled class="custom-checkbox">
+        <span>약속 일정 등록 ( 0 / 1 )</span>
+      </div>
+      <div class="points">50P 획득</div>
+    </li>
+
+    <li>
+      <div class="point-left">
+        <input type="checkbox" disabled class="custom-checkbox">
+        <span>일일 목표 모두 달성 ( 1 / 4 )</span>
+      </div>
+      <div class="points">50P 획득</div>
+    </li>
+  </ul>
+</div>
+
+        <div class="point-box">
+  <h3>일간 목표</h3>
+  <ul>
+    <li>
+      <div class="point-left">
+        <input type="checkbox" checked onclick="return false;" class="custom-checkbox">
+        <span>일정 등록 ( 1 / 1 )</span>
+      </div>
+      <div class="points">30P 획득</div>
+    </li>
+
+    <li>
+      <div class="point-left">
+        <input type="checkbox" disabled class="custom-checkbox">
+        <span>운동 일정 등록 ( 0 / 1 )</span>
+      </div>
+      <div class="points">40P 획득</div>
+    </li>
+
+    <li>
+      <div class="point-left">
+        <input type="checkbox" disabled class="custom-checkbox">
+        <span>공부 일정 등록 ( 0 / 1 )</span>
+      </div>
+      <div class="points">50P 획득</div>
+    </li>
+
+    <li>
+      <div class="point-left">
+        <input type="checkbox" disabled class="custom-checkbox">
+        <span>약속 일정 등록 ( 0 / 1 )</span>
+      </div>
+      <div class="points">50P 획득</div>
+    </li>
+
+    <li>
+      <div class="point-left">
+        <input type="checkbox" disabled class="custom-checkbox">
+        <span>일일 목표 모두 달성 ( 1 / 4 )</span>
+      </div>
+      <div class="points">50P 획득</div>
+    </li>
+  </ul>
+</div>
+
+        <div class="point-box">
+  <h3>일간 목표</h3>
+  <ul>
+    <li>
+      <div class="point-left">
+        <input type="checkbox" checked onclick="return false;" class="custom-checkbox">
+        <span>일정 등록 ( 1 / 1 )</span>
+      </div>
+      <div class="points">30P 획득</div>
+    </li>
+
+    <li>
+      <div class="point-left">
+        <input type="checkbox" disabled class="custom-checkbox">
+        <span>운동 일정 등록 ( 0 / 1 )</span>
+      </div>
+      <div class="points">40P 획득</div>
+    </li>
+
+    <li>
+      <div class="point-left">
+        <input type="checkbox" disabled class="custom-checkbox">
+        <span>공부 일정 등록 ( 0 / 1 )</span>
+      </div>
+      <div class="points">50P 획득</div>
+    </li>
+
+    <li>
+      <div class="point-left">
+        <input type="checkbox" disabled class="custom-checkbox">
+        <span>약속 일정 등록 ( 0 / 1 )</span>
+      </div>
+      <div class="points">50P 획득</div>
+    </li>
+
+    <li>
+      <div class="point-left">
+        <input type="checkbox" disabled class="custom-checkbox">
+        <span>일일 목표 모두 달성 ( 1 / 4 )</span>
+      </div>
+      <div class="points">50P 획득</div>
+    </li>
+  </ul>
+</div>
     </div>
-
-    <section class="points-section">
-        <div class="point-box">
-        
-            <h3>일간 목표</h3>
-            <ul>
-                <li><input type="checkbox" checked onclick="return false;" class="custom-checkbox" > 일정 등록 ( 1 / 1 ) <span class="points">30P 획득</span></li>
-                <li><input type="checkbox" disabled class="custom-checkbox"> 운동 일정 등록 ( 0 / 1 ) <span class="points">40P 획득</span></li>
-                <li><input type="checkbox" disabled class="custom-checkbox"> 공부 일정 등록 ( 0 / 1 ) <span class="points">50P 획득</span></li>
-                <li><input type="checkbox" disabled class="custom-checkbox"> 약속 일정 등록 ( 0 / 1 ) <span class="points">50P 획득</span></li>
-                <li><input type="checkbox" disabled class="custom-checkbox"> 일일 목표 모두 달성 ( 1 / 4 ) <span class="points">50P 획득</span></li>
-            </ul>
-        </div>
-
-        <div class="point-box">
-            <h3>주간 목표</h3>
-            <ul>
-                <li><input type="checkbox" checked disabled class="custom-checkbox"> 일정 등록 ( 5 / 5 ) <span class="points">100P 획득</span></li>
-                <li><input type="checkbox" disabled class="custom-checkbox"> 운동 일정 등록 ( 2 / 5 ) <span class="points">30P 획득</span></li>
-                <li><input type="checkbox" disabled class="custom-checkbox"> 공부 일정 등록 ( 0 / 5 ) <span class="points">50P 획득</span></li>
-                <li><input type="checkbox" disabled class="custom-checkbox"> 약속 일정 등록 ( 3 / 5 ) <span class="points">50P 획득</span></li>
-                <li><input type="checkbox" disabled class="custom-checkbox"> 주간 목표 모두 달성 ( 1 / 4 ) <span class="points">50P 획득</span></li>
-            </ul>
-        </div>
-
-        <div class="point-box">
-            <h3>월간 목표</h3>
-            <ul>
-                <li><input type="checkbox" checked disabled class="custom-checkbox"> 일일 목표 (20/20) <span class="points">10P 획득</span></li>
-                <li><input type="checkbox" disabled class="custom-checkbox"> 연속 목표 (4/20) <span class="points">30P 획득</span></li>
-                <li><input type="checkbox" disabled class="custom-checkbox"> 월간 목표 완료 (1/4) <span class="points">50P 획득</span></li>
-            </ul>
-        </div>
-    </section>
  
-    <h2 class="section-title">업적 목록 📝</h2>
-    
     <!-- 업적 -->
+    <div>
+    <div class="board-sub-title">TOP10</div>
+		<div class="board-main-title">버디들의 HOT 🔥</div>
+		
     <div class="achievements-container">
     <div class="achievement-card">
         <div class="achievement-icon-container">
@@ -327,10 +390,13 @@
             </div> 
         </div> 
     </div> 
+ </div>
     
     
        
 </div> 
+</div>
+
  
 </body>
 <script src="../assets/js/contents/contents-achievement.js"></script>

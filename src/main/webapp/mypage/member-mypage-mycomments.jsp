@@ -72,6 +72,82 @@
 				    </div>
 				  </div>
 				  <div class="my-comments-meta-box">
+				    <p class="my-comments-meta">2025.03.20 게시</p>
+				  </div>
+				</div>
+				
+				
+				<!-- 두 번째 댓글 -->
+	            <div class="my-comments">
+				  <div class="my-comments-left">
+				    
+				    <div class="my-comments-content">
+				      <div class="my-comments-title-wrap">
+				        <span class="my-comments-title">게시글 | </span>
+				        <span class="my-comments-title">JAVA 공부해요~</span>
+				      </div>
+				      <div class="my-comments-info">
+				      <img class="my-comments-user-image" src="../assets/images/mypage/user-profile1.jpg" alt="유저 프로필">
+				      <span>skyoung</span>
+				      </div>
+				      <p class="my-comments-text">
+				      영수는 행복해 영수는 우영우 영수는 엄수 그리고 검수 천재 김영수
+				      </p>
+				    </div>
+				  </div>
+				  <div class="my-comments-meta-box">
+				    <p class="my-comments-meta">2025.03.08 게시</p>
+				  </div>
+				</div>
+				
+				
+				<!-- 세 번째 댓글 -->
+	            <div class="my-comments">
+				  <div class="my-comments-left">
+				    
+				    <div class="my-comments-content">
+				      <div class="my-comments-title-wrap">
+				        <span class="my-comments-title">게시글 | </span>
+				        <span class="my-comments-title">2025 KBO 개막 일정</span>
+				      </div>
+				      <div class="my-comments-info">
+				      <img class="my-comments-user-image" src="../assets/images/mypage/user-profile1.jpg" alt="유저 프로필">
+				      <span>skyoung</span>
+				      </div>
+				      <p class="my-comments-text">
+				    	달려라 서울의 용사여 LG 승리의 그 이름 LG트윈스
+						싸워라 무적의 용사여 LG 영원한 그 이름 LG트윈스
+						손을 들어 함께 외치는거야 승리를 향해 달리는거야
+						하나가 되어 나아가자 LG트윈스 무적의 LG트윈스
+						신바람 L...
+				      </p>
+				    </div>
+				  </div>
+				  <div class="my-comments-meta-box">
+				    <p class="my-comments-meta">2025.02.27 게시</p>
+				  </div>
+				</div>
+				
+				
+				<!-- 네 번째 댓글 -->
+	            <div class="my-comments">
+				  <div class="my-comments-left">
+				    
+				    <div class="my-comments-content">
+				      <div class="my-comments-title-wrap">
+				        <span class="my-comments-title">게시글 | </span>
+				        <span class="my-comments-title">Alive</span>
+				      </div>
+				      <div class="my-comments-info">
+				      <img class="my-comments-user-image" src="../assets/images/mypage/user-profile1.jpg" alt="유저 프로필">
+				      <span>skyoung</span>
+				      </div>
+				      <p class="my-comments-text">
+				      나는 따자하오 영수 나는 자바의 신 아무도 날 못 이겨 나는 우영우 음메ㅔㅔㅔㅔㅔ
+				      </p>
+				    </div>
+				  </div>
+				  <div class="my-comments-meta-box">
 				    <p class="my-comments-meta">2025.02.01 게시</p>
 				  </div>
 				</div>
