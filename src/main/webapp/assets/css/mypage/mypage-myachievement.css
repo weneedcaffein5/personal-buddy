@@ -139,6 +139,11 @@
     padding: 2px 0 2px 44px;
 }
 
+#now {
+	color: #01CD74;
+	text-decoration: underline;
+}
+
 a {
     color: #000;
     text-decoration: none;

@@ -22,8 +22,8 @@
                 </div>
                 <div class="mypage">
                     <div><strong><img class="icon" src="../assets/images/mypage/mypage-icon.png">마이페이지</strong></div>
-                    <div><a id="now" class="link" href="#">나의 나무</a></div>
-                    <div><a class="link" href="#">나의 업적</a></div>
+                    <div><a class="link" href="mypage-mytree.jsp">나의 나무</a></div>
+                    <div><a id="now" class="link" href="#">나의 업적</a></div>
                 </div>
                 <div class="community">
                     <strong><img class="icon" src="../assets/images/mypage/community-icon.png">커뮤니티</strong>
@@ -43,7 +43,7 @@
                         <div><span class="tree-info-style">도전과제를 달성하고 나만의 업적을 쌓아보세요</span></div>
                         <div class="go-tree">
                             <span class="go-tree-style">나의 대표 업적</span>
-                            <a href="#">나의 업적 보러 가기 >></a>
+                            <a href="../contents/contents-achievement.jsp">나의 업적 보러 가기 >></a>
                         </div>
                     </div>
                 </div>
