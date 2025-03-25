@@ -3,7 +3,7 @@
  */
 
 document.addEventListener("DOMContentLoaded", function () {
-	/*const loginFail = new URLSearchParams(window.location.search).get("login");
+	const loginFail = new URLSearchParams(window.location.search).get("login");
 
 	const loginFailMessage = document.getElementById("login-fail");
 	
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         loginFailMessage.style.color = "var(--warning-red)";
     }else{
 		loginFailMessage.style.color = "var(--white)";
-	}*/
+	}
 	
     const inputs = document.querySelectorAll(".input-group input");
     const loginButton = document.querySelector(".login-btn");
