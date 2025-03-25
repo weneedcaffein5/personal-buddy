@@ -19,6 +19,11 @@ public class MemberJoinProfileController implements Action {
 		
 		HttpSession session = req.getSession();
 		MemberVO member = (MemberVO)session.getAttribute("newMember");
+		
+		if(member.getMemberComment() == null) {
+			member.setMemberComment("");
+		}
+		
 		MemberImgVO memberImage = new MemberImgVO();
 		
 		session.setAttribute("newMember", member);
