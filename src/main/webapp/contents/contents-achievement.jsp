@@ -628,7 +628,7 @@
 </div> 
 </div>
 
- 
+ <%@ include file="../layout/footer.jsp" %>
 </body>
 <script src="../assets/js/contents/contents-achievement.js"></script>
 </html>
