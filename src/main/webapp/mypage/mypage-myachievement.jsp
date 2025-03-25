@@ -10,6 +10,7 @@
 </head>
 <body>
 	<%@ include file="../layout/header.jsp" %>
+	
 	<div class="body">
         <div class="container">
             <div class="sidebar">
@@ -314,7 +315,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function createClone(card) {
         const cloned = card.cloneNode(true);
-        cloned.classList.add("best-achievement-card");
+        cloned.classList.add("best-achievement-card", "selected-for-best");
         cloned.classList.remove("achievement-card");
         return cloned;
     }
