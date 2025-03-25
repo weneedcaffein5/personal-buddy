@@ -133,8 +133,10 @@ strong {
 
 .my-comments-content {
     width: 650px;
+    margin-left:100px;
     
 }
+
 
 .my-comments-title {
     font-size: 16px;
@@ -147,6 +149,8 @@ strong {
     color: #444;
     line-height: 1.6;
     margin-top: 5px;
+    margin-bottom:42px;
+    margin-left:30px;
 }
 
 .my-comments-user {
@@ -176,6 +180,13 @@ strong {
     font-size: 14px;
     color: #777;
     margin-top: 5px;
+}
+
+.my-comments-stats {
+    font-size: 12px;
+    color: #999;
+    display: flex;
+    gap: 10px;
 }
 
 

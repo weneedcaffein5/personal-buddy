@@ -16,26 +16,30 @@
                 <div class="profile">
                     <span><img src="../assets/images/mypage/profile-default-image.png"></span>
                 </div>
+                
                 <div class="profile-setting">
                     <strong class="nickname">나는 신이다</strong>
                     <span>반가워요</span>
                 </div>
+                
                 <div class="mypage">
                     <div><strong><img class="icon" src="../assets/images/mypage/mypage-icon.png">마이페이지</strong></div>
                     <div><a id="now" class="link" href="#">나의 나무</a></div>
                     <div><a class="link" href="#">나의 업적</a></div>
                 </div>
+                
                 <div class="community">
                     <strong><img class="icon" src="../assets/images/mypage/community-icon.png">커뮤니티</strong>
-                    <a class="link" href="mypage-mycomments.jsp">내 게시물</a>
+                    <a class="link" href="mypage-myposts.jsp">내 게시물</a>
                     <a class="link" href="#">내가 쓴 댓글</a>
                 </div>
+                
                 <div class="myinfo">
-                    <strong><img class="icon" src="../assets/images/mypage/mypage-icon.png">내 정보</strong>
+                        <strong><img class="icon" src="../assets/images/mypage/mypage-icon.png">내 정보</strong>
                     <a class="link" href="#">프로필 설정</a>
                     <a class="link" href="#">계정 설정</a>
                     <a class="link" href="#">포인트 내역</a>
-                </div>
+                </div>                              
             </div>
             
             <div class="right-contentbox">
@@ -46,118 +50,55 @@
                     
                     <div class="mycomments-list">
                     
-                        <div class="my-comments">
-                            <div class="my-comments-content">                           
-                                <span class="my-comments-title">게시글 | </span>
-                                <span class="my-comments-title">Alive</span>
-                                <div class="my-comments-user">
-                                    <img class="my-comments-user-image" src="../assets/images/mypage/user-profile1.jpg" alt="유저 프로필">
-                                    <span class="my-comments-username">skyoung</span>
-                                </div>                             
-                                <p class="my-comments-text">
-                                    엄..
-                                </p>
+            <!-- 첫 번째 댓글 -->
+	            <div class="my-comments">
+                	<div class="my-comments-content"> 
+                		<div>                      
+                    		<span class="my-comments-title">게시글 | </span>
+                        	<span class="my-comments-title">Alive</span>
+                        </div>    
+                        	<div class="my-comments-user">
+                            	<img class="my-comments-user-image" src="../assets/images/mypage/user-profile1.jpg" alt="유저 프로필">
+                                <span class="my-comments-username">skyoung</span>
                             </div>
-                            <p class="my-comments-meta">2025.02.01 게시
-                                <span>🤍 300</span>
-                                <span>👁 1032</span>
-                                <span>💬 78</span>
-                            </p>
-                        </div>	
-                        
-                        <div class="my-comments">
-                            <div class="my-comments-content">                           
-                                <span class="my-comments-title">게시글 | </span>
-                                <span class="my-comments-title">같이 카공해요</span>
-                                <div class="my-comments-user">
-                                    <img class="my-comments-user-image" src="../assets/images/mypage/user-profile1.jpg" alt="유저 프로필">
-                                    <span class="my-comments-username">skyoung</span>
-                                </div>                             
-                                <p class="my-comments-text">
-                                    아?
-                                </p>
-                            </div>
-                            <p class="my-comments-meta">2025.02.01 게시
-                                <span>🤍 300</span>
-                                <span>👁 1032</span>
-                                <span>💬 78</span>
-                            </p>
-                        </div>	
-                                              
-                        <div class="my-comments">
-                            <div class="my-comments-content">                           
-                                <span class="my-comments-title">게시글 | </span>
-                                <span class="my-comments-title">강남에 있는 카페 추천리스트</span>
-                                <div class="my-comments-user">
-                                    <img class="my-comments-user-image" src="../assets/images/mypage/user-profile1.jpg" alt="유저 프로필">
-                                    <span class="my-comments-username">skyoung</span>
-                                </div>                             
-                                <p class="my-comments-text">
-                                    냥냥
-                                </p>
-                            </div>
-                            <p class="my-comments-meta">2025.02.01 게시
-                                <span>🤍 300</span>
-                                <span>👁 1032</span>
-                                <span>💬 78</span>
-                            </p>
-                        </div>	
-                        
-                        <div class="my-comments">
-                            <div class="my-comments-content">                           
-                                <span class="my-comments-title">게시글 | </span>
-                                <span class="my-comments-title">같이 카공해요</span>
-                                <div class="my-comments-user">
-                                    <img class="my-comments-user-image" src="../assets/images/mypage/user-profile1.jpg" alt="유저 프로필">
-                                    <span class="my-comments-username">skyoung</span>
-                                </div>                             
-                                <p class="my-comments-text">
-                                    에오
-                                </p>
-                            </div>
-                            <p class="my-comments-meta">2025.02.01 게시
-                                <span>🤍 300</span>
-                                <span>👁 1032</span>
-                                <span>💬 78</span>
-                            </p>
-                        </div>	
-                        
-                        <div class="my-comments">
-                            <div class="my-comments-content">                           
-                                <span class="my-comments-title">게시글 | </span>
-                                <span class="my-comments-title">올해 꼭 먹어야 할 음식</span>
-                                <div class="my-comments-user">
-                                    <img class="my-comments-user-image" src="../assets/images/mypage/user-profile1.jpg" alt="유저 프로필">
-                                    <span class="my-comments-username">skyoung</span>
-                                </div>                             
-                                <p class="my-comments-text">
-                                    꾸기가가고
-                                </p>
-                            </div>
-                            <p class="my-comments-meta">2025.02.01 게시
-                                <span>🤍 300</span>
-                                <span>👁 1032</span>
-                                <span>💬 78</span>
-                            </p>
-                        </div>	
-                               	
-                    </div>	  	
-                </div>
+                            	<div class="my-comments-text">                            
+                                	<p>엄..</p>
+                                </div>
+                      		</div> 
+
+	            
+	            <div class="my-comments-meta-box">
+			    <p class="my-comments-meta">2025.02.01 게시</p>
+				    <div class="my-comments-stats">
+				      <span><img src="../assets/images/community/like-icon.png" alt="좋아요"> 800</span>
+				      <span><img src="../assets/images/community/comment-icon.png" alt="댓글"> 20</span>
+				      <span><img src="../assets/images/community/view-icon.png" alt="조회수"> 2,310</span>
+				    </div>
+			  	</div>
+	          
+	          
+	    
 	
-                <div class="pagination">
-                    <span class="arrow">&lt;</span>
-                    <a href="#" class="active">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <span class="dots">...</span>
-                    <a href="#">10</a>
-                    <span class="arrow">&gt;</span>
-                </div>
-            </div> 	
-        </div>
-</body>
-<script>
+			<!-- 페이지네이션 -->
+	      <div class="pagination">
+	        <span class="arrow">&lt;</span>
+	        <a href="#" class="active">1</a>
+	        <a href="#">2</a>
+	        <a href="#">3</a>
+	        <a href="#">4</a>
+	        <span class="dots">...</span>
+	        <a href="#">10</a>
+	        <span class="arrow">&gt;</span>
+	      </div>
+	    </div>
+	
+	  </div>
+	</div>	
+	</body>
+	
+	<script>	
+            
+            
 
 /* 페이지네이션 */
 

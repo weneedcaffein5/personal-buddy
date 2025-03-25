@@ -237,7 +237,7 @@ textarea {
 
 
 .myposts-container {
-    width: 1160px;
+    max-width: 1160px;
     margin: 0 auto;
 }
 
@@ -269,13 +269,25 @@ textarea {
     gap: 20px;
 }
 
-.mypost {
+/* .mypost {
     display: flex;
   	justify-content: space-between;
   	align-items: flex-start;
   	gap: 46px;
   	border-bottom: 1px solid #ddd;
   	padding-bottom: 20px;
+} */
+
+.mypost {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .mypost-left {
@@ -291,16 +303,25 @@ textarea {
   justify-content: space-between;
 }
 
-.mypost-image {
+/* .mypost-image {
     width: 230px;
     height: 120px;
     object-fit: cover;
     border-radius: 8px;
+} */
+
+.mypost-image {
+  width: 230px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
 }
 
 .mypost-content {
     width: 650px;
-}
+    margin-right: 0;
+} 
 
 .mypost-title {
     font-size: 18px;
@@ -329,8 +350,6 @@ textarea {
     display: flex;
     gap: 10px;
 }
-
-
 
 
 /* pagination */

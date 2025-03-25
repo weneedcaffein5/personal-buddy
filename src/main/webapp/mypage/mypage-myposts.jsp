@@ -57,6 +57,7 @@
               <h3 class="mypost-title">⚽ 2025 토트넘 경기 일정</h3>
               <p class="mypost-text">이번 시즌 토트넘의 경기 일정을 공유합니다. 챔피언스리그와 프리미어리그 일정을 한눈에 볼 수 있도록 정리했습니다.</p>
             </div>
+            
             <div class="mypost-meta-box">
 		    <p class="mypost-meta">2025.02.01 게시</p>
 			    <div class="mypost-stats">
