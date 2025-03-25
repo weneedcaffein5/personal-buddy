@@ -59,12 +59,12 @@
             </div>
             <div class="mypost-meta-box">
 		    <p class="mypost-meta">2025.02.01 게시</p>
-		    <div class="mypost-stats">
-		      <span><img src="../assets/images/community/like-icon.png" alt="좋아요"> 800</span>
-		      <span><img src="../assets/images/icons/comment.png" alt="댓글"> 20</span>
-		      <span><img src="../assets/images/icons/view.png" alt="조회수"> 2,310</span>
-		    </div>
-		  </div>
+			    <div class="mypost-stats">
+			      <span><img src="../assets/images/community/like-icon.png" alt="좋아요"> 800</span>
+			      <span><img src="../assets/images/community/comment-icon.png" alt="댓글"> 20</span>
+			      <span><img src="../assets/images/community/view-icon.png" alt="조회수"> 2,310</span>
+			    </div>
+		  	</div>
           </div>
           
           <!-- 두 번째 게시물 -->
@@ -80,12 +80,12 @@
             </div>
             <div class="mypost-meta-box">
 		    <p class="mypost-meta">2025.02.01 게시</p>
-		    <div class="mypost-stats">
-		      <span><img src="../assets/images/community/like-icon.png" alt="좋아요"> 800</span>
-		      <span><img src="../assets/images/icons/comment.png" alt="댓글"> 20</span>
-		      <span><img src="../assets/images/icons/view.png" alt="조회수"> 2,310</span>
-		    </div>
-		  </div>
+			    <div class="mypost-stats">
+			      <span><img src="../assets/images/community/like-icon.png" alt="좋아요"> 800</span>
+			      <span><img src="../assets/images/community/comment-icon.png" alt="댓글"> 20</span>
+			      <span><img src="../assets/images/community/view-icon.png" alt="조회수"> 2,310</span>
+			    </div>
+		  	</div>
           </div>
           
           <!-- 세 번째 게시물 -->
@@ -102,12 +102,12 @@
             </div>
             <div class="mypost-meta-box">
 		    <p class="mypost-meta">2025.02.01 게시</p>
-		    <div class="mypost-stats">
-		      <span><img src="../assets/images/community/like-icon.png" alt="좋아요"> 800</span>
-		      <span><img src="../assets/images/icons/comment.png" alt="댓글"> 20</span>
-		      <span><img src="../assets/images/icons/view.png" alt="조회수"> 2,310</span>
-		    </div>
-		  </div>
+			    <div class="mypost-stats">
+			      <span><img src="../assets/images/community/like-icon.png" alt="좋아요"> 800</span>
+			      <span><img src="../assets/images/community/comment-icon.png" alt="댓글"> 20</span>
+			      <span><img src="../assets/images/community/view-icon.png" alt="조회수"> 2,310</span>
+			    </div>
+		  	</div>
           </div>
           
           <!-- 네 번째 게시물 -->
@@ -125,39 +125,34 @@
 		    <p class="mypost-meta">2025.02.01 게시</p>
 			    <div class="mypost-stats">
 			      <span><img src="../assets/images/community/like-icon.png" alt="좋아요"> 800</span>
-			      <span><img src="../assets/images/icons/comment.png" alt="댓글"> 20</span>
-			      <span><img src="../assets/images/icons/view.png" alt="조회수"> 2,310</span>
+			      <span><img src="../assets/images/community/comment-icon.png" alt="댓글"> 20</span>
+			      <span><img src="../assets/images/community/view-icon.png" alt="조회수"> 2,310</span>
 			    </div>
 		  	</div>
           </div>
           
-          <!-- 다섯 번째 게시물 -->
-          <div class="mypost">  
-		  <!--이미지 + 텍스트-->
-		  <div class="mypost-left">
-		    <img class="mypost-image" src="../assets/images/mypage/myposts-dummy-5.jpg" alt="게시물 이미지">
-		    
-		    <div class="mypost-content">
-		      <h3 class="mypost-title">🌃 강남에서 야경 보기 좋은 카페</h3>
-		      <p class="mypost-text">
-		        는 구라죠. 야경 볼 시간 없죠. 공부해야돼죠. 자바 모르죠. 리액트 모르죠. JSP 모르죠.<br>
-		        아는 거 없죠. 팩트죠. 반박 시 님 말이 다 맞음 앙~
-		      </p>
-		    </div>
-		  </div>
-		
-		  <!-- 날짜 + 통계-->
-		  <div class="mypost-meta-box">
+          <!-- 다섯번 째 게시물 -->
+          <div class="mypost">
+            <img class="mypost-image" src="../assets/images/mypage/myposts-dummy-4.jpg" alt="게시물 이미지">
+            <div class="mypost-content">
+              <h3 class="mypost-title">🔥 Alive</h3>
+              <p class="mypost-text">
+              답답한 창살은 뜯어버려 단숨에 작살을 내 짐승은 발톱을 갈아야 해 일격에 숨통을 쳐 
+              이빨로 목덜밀 물어 푸짐한 저녁 식탁 피비린내 나는 축제 난장판쳐라
+              그래 난 박살낼 테다 세상의 평화 타락한 너의 영혼을 신봉할 테다 
+              </p>
+            </div>
+            <div class="mypost-meta-box">
 		    <p class="mypost-meta">2025.02.01 게시</p>
-		    <div class="mypost-stats">
-		      <span><img src="../assets/images/community/like-icon.png" alt="좋아요"> 800</span>
-		      <span><img src="../assets/images/icons/comment.png" alt="댓글"> 20</span>
-		      <span><img src="../assets/images/icons/view.png" alt="조회수"> 2,310</span>
-		    </div>
-		  </div>
-		</div>
-
-        
+			    <div class="mypost-stats">
+			      <span><img src="../assets/images/community/like-icon.png" alt="좋아요"> 800</span>
+			      <span><img src="../assets/images/community/comment-icon.png" alt="댓글"> 20</span>
+			      <span><img src="../assets/images/community/view-icon.png" alt="조회수"> 2,310</span>
+			    </div>
+		  	</div>
+          </div>
+          
+    
 
 		<!-- 페이지네이션 -->
       <div class="pagination">
@@ -193,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	console.log(nextArrow); */
 	
     let currentPage = 1;
-    const postPerPage = 3;
+    const postPerPage = 4;
 
     console.log("총 ㄱㅔ시글 수 : " + posts.length);
     console.log("한 페이지당 게시글 수 : " + postPerPage);
