@@ -57,14 +57,14 @@
               <h3 class="mypost-title">⚽ 2025 토트넘 경기 일정</h3>
               <p class="mypost-text">이번 시즌 토트넘의 경기 일정을 공유합니다. 챔피언스리그와 프리미어리그 일정을 한눈에 볼 수 있도록 정리했습니다.</p>
             </div>
-            <div>
-              <p class="mypost-meta">2025.02.01 게시</p>
-              <div class="mypost-stats">
-                <span>👍 800</span>
-                <span>💬 20</span>
-                <span>👁 2,310</span>
-              </div>
-            </div>
+            <div class="mypost-meta-box">
+		    <p class="mypost-meta">2025.02.01 게시</p>
+		    <div class="mypost-stats">
+		      <span><img src="../assets/images/community/like-icon.png" alt="좋아요"> 800</span>
+		      <span><img src="../assets/images/icons/comment.png" alt="댓글"> 20</span>
+		      <span><img src="../assets/images/icons/view.png" alt="조회수"> 2,310</span>
+		    </div>
+		  </div>
           </div>
           
           <!-- 두 번째 게시물 -->
@@ -78,14 +78,14 @@
               So let's study together.It'll be a blast.
               </p>
             </div>
-            <div>
-              <p class="mypost-meta">2025.02.01 게시</p>
-              <div class="mypost-stats">
-                <span>👍 500</span>
-                <span>💬 80</span>
-                <span>👁 1,910</span>
-              </div>
-            </div>
+            <div class="mypost-meta-box">
+		    <p class="mypost-meta">2025.02.01 게시</p>
+		    <div class="mypost-stats">
+		      <span><img src="../assets/images/community/like-icon.png" alt="좋아요"> 800</span>
+		      <span><img src="../assets/images/icons/comment.png" alt="댓글"> 20</span>
+		      <span><img src="../assets/images/icons/view.png" alt="조회수"> 2,310</span>
+		    </div>
+		  </div>
           </div>
           
           <!-- 세 번째 게시물 -->
@@ -100,14 +100,14 @@
               널 원망하던 수많은 밤이 내겐 지옥같아
               </p>
             </div>
-            <div>
-              <p class="mypost-meta">2025.02.01 게시</p>
-              <div class="mypost-stats">
-                <span>👍 800</span>
-                <span>💬 20</span>
-                <span>👁 2,310</span>
-              </div>
-            </div>
+            <div class="mypost-meta-box">
+		    <p class="mypost-meta">2025.02.01 게시</p>
+		    <div class="mypost-stats">
+		      <span><img src="../assets/images/community/like-icon.png" alt="좋아요"> 800</span>
+		      <span><img src="../assets/images/icons/comment.png" alt="댓글"> 20</span>
+		      <span><img src="../assets/images/icons/view.png" alt="조회수"> 2,310</span>
+		    </div>
+		  </div>
           </div>
           
           <!-- 네 번째 게시물 -->
@@ -121,14 +121,14 @@
               그래 난 박살낼 테다 세상의 평화 타락한 너의 영혼을 신봉할 테다 
               </p>
             </div>
-            <div>
-              <p class="mypost-meta">2025.02.01 게시</p>
-              <div class="mypost-stats">
-                <span>👍 800</span>
-                <span>💬 20</span>
-                <span>👁 2,310</span>
-              </div>
-            </div>
+            <div class="mypost-meta-box">
+		    <p class="mypost-meta">2025.02.01 게시</p>
+			    <div class="mypost-stats">
+			      <span><img src="../assets/images/community/like-icon.png" alt="좋아요"> 800</span>
+			      <span><img src="../assets/images/icons/comment.png" alt="댓글"> 20</span>
+			      <span><img src="../assets/images/icons/view.png" alt="조회수"> 2,310</span>
+			    </div>
+		  	</div>
           </div>
           
           <!-- 다섯 번째 게시물 -->
