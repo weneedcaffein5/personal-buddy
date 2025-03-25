@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="../assets/css/global.css" />
 <link rel="stylesheet" type="text/css" href="../assets/css/mypage/mypage-mytree.css" />
+<link rel="stylesheet" type="text/css" href="../assets/css/event/event-post.css" />
 <link rel="stylesheet" type="text/css" href="../assets/css/header.css" />
 <title>나의 나무</title>
 </head>
@@ -25,8 +26,8 @@
                 </div>
                 <div class="mypage">
                     <div><strong><img class="icon" src="../assets/images/mypage/mypage-icon.png">마이페이지</strong></div>
-                    <div><a id="now" class="link" href="#">나의 나무</a></div>
-                    <div><a class="link" href="mypage-myachievement.jsp">나의 업적</a></div>
+                    <div><a id="now" class="link" href="mypage-mytree.mypage">나의 나무</a></div>
+                    <div><a class="link" href="mypage-myachievement.mypage">나의 업적</a></div>
                 </div>
                 <div class="community">
                     <strong><img class="icon" src="../assets/images/mypage/community-icon.png">커뮤니티</strong>
@@ -66,7 +67,122 @@
                             <button id="submit-btn" disabled>등록</button>
                         </div>
                     </div>
-                    <div id="comment-display" class="comment-display"></div>
+                    <div class="post-comment-box">
+                <div class="post-comment">
+                    <div class="comment-member-box">
+                        <div class="member-info">
+                            <img src="../assets/images/community/프로필 사진.png" alt="프로필 사진">
+                            <span class="member-name">나무조하</span>
+                        </div>
+                        <button class="member-comment-modify">수정</button>
+                    </div>
+                    <div class="member-comment-box">
+                        <span class="member-comment">소나무 인가요? 좋네요.</span>
+                    </div>
+                    <div class="modify-hide-box">
+                        <span class="comment-text-count hide">0</span>
+                        <span class="comment-text-max hide">/ 500</span>
+                        <button class="modify-delete-btn hide">삭제</button>
+                        <button class="modify-add-btn hide">수정 완료</button>
+                    </div>
+                    <div class="comment-info">
+                        <div class="comment-create-time">2025.02.05  03:20</div>
+                        <div class="comment-like-count">♡ 99</div>
+                    </div>
+                </div>
+                <div class="post-comment">
+                    <div class="comment-member-box">
+                        <div class="member-info">
+                            <img src="../assets/images/community/프로필 사진.png" alt="프로필 사진">
+                            <span class="member-name">캣대디</span>
+                        </div>
+                        <button class="member-comment-modify">수정</button>
+                    </div>
+                    <div class="member-comment-box">
+                        <span class="member-comment">포인트 나눔 부탁드려요~~~</span>
+                    </div>
+                    <div class="modify-hide-box">
+                        <span class="comment-text-count hide">0</span>
+                        <span class="comment-text-max hide">/ 500</span>
+                        <button class="modify-delete-btn hide">삭제</button>
+                        <button class="modify-add-btn hide">수정 완료</button>
+                    </div>
+                    <div class="comment-info">
+                        <div class="comment-create-time">2025.02.05  03:20</div>
+                        <div class="comment-like-count">♡ 99</div>
+                    </div>
+                </div>
+                <div class="post-comment">
+                    <div class="comment-member-box">
+                        <div class="member-info">
+                            <img src="../assets/images/community/프로필 사진.png" alt="프로필 사진">
+                            <span class="member-name">쓰소미</span>
+                        </div>
+                        <button class="member-comment-modify none">수정</button>
+                    </div>
+                    <div class="member-comment-box">
+                        <span class="member-comment">요즘 날씨에 건강 유의하세요~ 공감 꾹 누르고 갑니당😊</span>
+                    </div>
+                    <div class="modify-hide-box">
+                        <span class="comment-text-count hide">0</span>
+                        <span class="comment-text-max hide">/ 500</span>
+                        <button class="modify-delete-btn hide">삭제</button>
+                        <button class="modify-add-btn hide">수정 완료</button>
+                    </div>
+                    <div class="comment-info">
+                        <div class="comment-create-time">2025.02.05  03:20</div>
+                        <div class="comment-like-count">♡ 99</div>
+                    </div>
+                </div>
+                <div class="post-comment">
+                    <div class="comment-member-box">
+                        <div class="member-info">
+                            <img src="../assets/images/community/프로필 사진.png" alt="프로필 사진">
+                            <span class="member-name">강이주인</span>
+                        </div>
+                        <button class="member-comment-modify none">수정</button>
+                    </div>
+                    <div class="member-comment-box">
+                        <span class="member-comment">
+                        	제 헤드셋 여기 있나요?
+						</span>
+                    </div>
+                    <div class="modify-hide-box">
+                        <span class="comment-text-count hide">0</span>
+                        <span class="comment-text-max hide">/ 500</span>
+                        <button class="modify-delete-btn hide">삭제</button>
+                        <button class="modify-add-btn hide">수정 완료</button>
+                    </div>
+                    <div class="comment-info">
+                        <div class="comment-create-time">2025.02.05  03:20</div>
+                        <div class="comment-like-count">♡ 99</div>
+                    </div>
+                </div>
+                <div class="post-comment">
+                    <div class="comment-member-box">
+                        <div class="member-info">
+                            <img src="../assets/images/community/프로필 사진.png" alt="프로필 사진">
+                            <span class="member-name">고령신씨</span>
+                        </div>
+                        <button class="member-comment-modify none">수정</button>
+                    </div>
+                    <div class="member-comment-box">
+                        <span class="member-comment">
+                        	체조 3회 실시.
+						</span>
+                    </div>
+                    <div class="modify-hide-box">
+                        <span class="comment-text-count hide">0</span>
+                        <span class="comment-text-max hide">/ 500</span>
+                        <button class="modify-delete-btn hide">삭제</button>
+                        <button class="modify-add-btn hide">수정 완료</button>
+                    </div>
+                    <div class="comment-info">
+                        <div class="comment-create-time">2025.02.05  03:20</div>
+                        <div class="comment-like-count">♡ 99</div>
+                    </div>
+                </div>
+            </div>
                 </div>
             </div>
         </div>
@@ -102,5 +218,5 @@
     }
     </script>
 </body>
-
+<script src="../assets/js/community/community-post.js"></script>
 </html>
