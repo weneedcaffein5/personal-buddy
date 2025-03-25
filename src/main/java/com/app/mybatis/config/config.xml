@@ -9,7 +9,33 @@
    
    <typeAliases>
     	<typeAlias type="com.app.vo.MemberVO" alias="MemberVO"/>
-
+    	<typeAlias type="com.app.vo.AchievementCompleteVO" alias="AchievementCompleteVO"/>
+    	<typeAlias type="com.app.vo.AchievementVO" alias="AchievementVO"/>
+    	<typeAlias type="com.app.vo.AlertVO" alias="AlertVO"/>
+    	<typeAlias type="com.app.vo.BoardCommentLikeVO" alias="BoardCommentLikeVO"/>
+    	<typeAlias type="com.app.vo.BoardCommentVO" alias="BoardCommentVO"/>
+    	<typeAlias type="com.app.vo.BoardImgVO" alias="BoardImgVO"/>
+    	<typeAlias type="com.app.vo.BoardLikeVO" alias="BoardLikeVO"/>
+    	<typeAlias type="com.app.vo.BoardPostVO" alias="BoardPostVO"/>
+    	<typeAlias type="com.app.vo.CalendarGroupVO" alias="CalendarGroupVO"/>
+    	<typeAlias type="com.app.vo.CalendarVO" alias="CalendarVO"/>
+    	<typeAlias type="com.app.vo.CartVO" alias="CartVO"/>
+    	<typeAlias type="com.app.vo.EventCommentLikeVO" alias="EventCommentLikeVO"/>
+    	<typeAlias type="com.app.vo.EventCommentVO" alias="EventCommentVO"/>
+    	<typeAlias type="com.app.vo.EventImgVO" alias="EventImgVO"/>
+    	<typeAlias type="com.app.vo.EventLikeVO" alias="EventLikeVO"/>
+    	<typeAlias type="com.app.vo.GuestCommentVO" alias="GuestCommentVO"/>
+    	<typeAlias type="com.app.vo.InterestVO" alias="InterestVO"/>
+    	<typeAlias type="com.app.vo.ItemVO" alias="ItemVO"/>
+    	<typeAlias type="com.app.vo.MemberImgVO" alias="MemberImgVO"/>
+    	<typeAlias type="com.app.vo.MemberPointLogVO" alias="MemberPointLogVO"/>
+    	<typeAlias type="com.app.vo.ScheduleGroupVO" alias="ScheduleGroupVO"/>
+    	<typeAlias type="com.app.vo.TargetVO" alias="TargetVO"/>
+    	<typeAlias type="com.app.vo.TodolistVO" alias="TodolistVO"/>
+    	<typeAlias type="com.app.vo.TreeBuyItemVO" alias="TreeBuyItemVO"/>
+    	<typeAlias type="com.app.vo.TreeCustomizingVO" alias="TreeCustomizingVO"/>
+    	<typeAlias type="com.app.vo.TreeVO" alias="TreeVO"/>
+    	<typeAlias type="com.app.vo.UserGroupVO" alias="UserGroupVO"/>
     </typeAliases>
     
    <environments default="oracle">

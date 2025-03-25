@@ -1,4 +1,4 @@
-<%@page import="com.app.vo.MemberImageVO"%>
+<%@page import="com.app.vo.MemberImgVO"%>
 <%@page import="com.app.vo.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -13,12 +13,11 @@
 </head>
 <body>
 	<%
-		MemberVO newMember = (MemberVO)session.getAttribute("newMember");
-		MemberImageVO newMemberImage = (MemberImageVO)session.getAttribute("newMemberImage");
-		
-		System.out.println(newMember);
-		System.out.println(newMemberImage);
-		
+	MemberVO newMember = (MemberVO)session.getAttribute("newMember");
+			MemberImgVO newMemberImage = (MemberImgVO)session.getAttribute("newMemberImage");
+			
+			System.out.println(newMember);
+			System.out.println(newMemberImage);
 	%>
 	
 	<img src="../assets/images/member/logo-login.png" alt="Personal Buddy 로고" class="logo">
