@@ -8,6 +8,8 @@
 <meta charset="UTF-8">
 <title>님의 게시글</title>
 <link rel="stylesheet" href="../assets/css/global.css">
+<link rel="stylesheet" type="text/css" href="../assets/css/header.css" />
+<link rel="stylesheet" type="text/css" href="../assets/css/banner.css" />
 <link rel="stylesheet" href="../assets/css/event/event-post.css">
 </head>
 <body>

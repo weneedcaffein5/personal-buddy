@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
+import com.app.mypage.controller.MyPageMyAchievement;
 import com.app.mypage.controller.MyPageMyTreeController;
 
 public class MyPageFrontController extends HttpServlet{
@@ -22,7 +23,10 @@ public class MyPageFrontController extends HttpServlet{
 		
 		if(target.equals("mypage-mytree")) {
 			result = new MyPageMyTreeController().execute(req, resp);
+		}else if(target.equals("mypage-myachievement")) {
+			result = new MyPageMyAchievement().execute(req, resp);
 		}else if(target.equals("")) {
+			
 		}else {
 //			전부 404
 		}
