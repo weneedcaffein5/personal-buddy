@@ -150,7 +150,7 @@
 		  <div class="mypost-meta-box">
 		    <p class="mypost-meta">2025.02.01 게시</p>
 		    <div class="mypost-stats">
-		      <span><img src="../assets/images/icons/like.png" alt="좋아요"> 800</span>
+		      <span><img src="../assets/images/community/like-icon.png" alt="좋아요"> 800</span>
 		      <span><img src="../assets/images/icons/comment.png" alt="댓글"> 20</span>
 		      <span><img src="../assets/images/icons/view.png" alt="조회수"> 2,310</span>
 		    </div>
