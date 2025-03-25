@@ -23,7 +23,7 @@ function sendMail() {
     button.classList.remove("success");
     button.classList.remove("fail");
     button.classList.add("process");
-    
+	
     fetch("send-mail.member", { // AJAX 요청 (비동기)
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -69,8 +69,10 @@ function sendMail() {
 		
     	button.innerText = data.sendMailResultMessage; // 메시지 표시
     })
-    .catch(error => console.error("Error:", error)); // 에러 처리
-}
+    .catch(error => {
+		console.error("Error:", error)
+	}); // 에러 처리
+};
 
 
 let mailCheckTimer = null;
@@ -94,7 +96,7 @@ function mailUpdateCountdown() {
         timerText.textContent = "시간 종료";
         timerText.style.color = "var(--warning-red)"
     }
-}
+};
 
  /**
  * 인증번호 확인 요청 (AJAX)
@@ -140,10 +142,12 @@ function mailCheck() {
 		}
         
 	})
-	.catch(error => console.error("Error:", error)); // 에러 처리
+	.catch(error => {
+		console.error("Error:", error)
+	}); // 에러 처리
 	
 	allCheck();
-}
+};
 
 document.getElementById("password").addEventListener("blur", (e) => {
     let password = e.target.value;
@@ -175,7 +179,7 @@ document.getElementById("password").addEventListener("blur", (e) => {
 		passWordFailMessage.innerText = data.passwordCheckResultMessage;
     })
 	.catch(err => {
-					console.error("요청 실패:", err);
+		console.error("요청 실패:", err);
     });
 	
 	allCheck();
@@ -245,7 +249,6 @@ document.getElementById("name").addEventListener("focus", (e) => {
 document.querySelectorAll(".gender-select-radio").forEach((radio) => {
 	radio.addEventListener("change", ((e) => {
 		let gender = e.target.value;
-		console.log(gender);
 	
 		fetch("gender-select.member", {
 		    method: "POST",

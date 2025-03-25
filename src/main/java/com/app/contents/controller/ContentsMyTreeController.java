@@ -1,4 +1,4 @@
-package com.app.interest.controller;
+package com.app.contents.controller;
 
 import java.io.IOException;
 
@@ -8,12 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import com.app.Action;
 import com.app.Result;
 
-public class InterestMainController implements Action{
+public class ContentsMyTreeController implements Action{
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, SecurityException {
-		Result result = new Result();
-		
-		result.setPath("interest-main.jsp");
-		return result;
+		return null;
 	}
 }

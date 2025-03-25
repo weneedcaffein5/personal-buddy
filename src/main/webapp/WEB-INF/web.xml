@@ -14,10 +14,81 @@
   	<servlet-name>MemberFrontController</servlet-name>
   	<servlet-class>com.app.member.MemberFrontController</servlet-class>
   </servlet>
-  
   <servlet-mapping>
   	<servlet-name>MemberFrontController</servlet-name>
   	<url-pattern>*.member</url-pattern>
+  </servlet-mapping>
+    
+  <servlet>
+  	<servlet-name>ContentsFrontController</servlet-name>
+  	<servlet-class>com.app.contents.ContentsFrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ContentsFrontController</servlet-name>
+  	<url-pattern>*.contents</url-pattern>
+  </servlet-mapping>
+    
+  <servlet>
+  	<servlet-name>IntroduceFrontController</servlet-name>
+  	<servlet-class>com.app.introduce.IntroduceFrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>IntroduceFrontController</servlet-name>
+  	<url-pattern>*.introduce</url-pattern>
+  </servlet-mapping>
+    
+  <servlet>
+  	<servlet-name>MainFrontcontroller</servlet-name>
+  	<servlet-class>com.app.main.MainFrontcontroller</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>MainFrontcontroller</servlet-name>
+  	<url-pattern>*.main</url-pattern>
+  </servlet-mapping>
+    
+  <servlet>
+  	<servlet-name>CutomerServiceFrontController</servlet-name>
+  	<servlet-class>com.app.customerService.CutomerServiceFrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>CutomerServiceFrontController</servlet-name>
+  	<url-pattern>*.customerService</url-pattern>
+  </servlet-mapping>
+    
+  <servlet>
+  	<servlet-name>EventFrontController</servlet-name>
+  	<servlet-class>com.app.event.EventFrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>EventFrontController</servlet-name>
+  	<url-pattern>*.event</url-pattern>
+  </servlet-mapping>
+    
+  <servlet>
+  	<servlet-name>InterestFrontController</servlet-name>
+  	<servlet-class>com.app.interest.InterestFrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>InterestFrontController</servlet-name>
+  	<url-pattern>*.interest</url-pattern>
+  </servlet-mapping>
+    
+  <servlet>
+  	<servlet-name>CommunityFrontController</servlet-name>
+  	<servlet-class>com.app.community.CommunityFrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>CommunityFrontController</servlet-name>
+  	<url-pattern>*.community</url-pattern>
+  </servlet-mapping>
+    
+  <servlet>
+  	<servlet-name>MyPageFrontController</servlet-name>
+  	<servlet-class>com.app.myPage.MyPageFrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>MyPageFrontController</servlet-name>
+  	<url-pattern>*.myPage</url-pattern>
   </servlet-mapping>
   
 </web-app>
