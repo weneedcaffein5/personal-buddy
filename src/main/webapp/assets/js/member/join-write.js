@@ -141,6 +141,8 @@ function mailCheck() {
         
 	})
 	.catch(error => console.error("Error:", error)); // 에러 처리
+	
+	allCheck();
 }
 
 document.getElementById("password").addEventListener("blur", (e) => {
@@ -171,7 +173,12 @@ document.getElementById("password").addEventListener("blur", (e) => {
         }
 		passWordFailMessage.style.opacity = 1;
 		passWordFailMessage.innerText = data.passwordCheckResultMessage;
+    })
+	.catch(err => {
+					console.error("요청 실패:", err);
     });
+	
+	allCheck();
 });
 
 
@@ -215,7 +222,12 @@ document.getElementById("name").addEventListener("blur", (e) => {
 			nameFailMessage.style.color = "var(--warning-red)";
 		}
 		
+    })
+	.catch(err => {
+		console.error("요청 실패:", err);
     });
+	
+	allCheck();
 });
 
 document.getElementById("name").addEventListener("focus", (e) => {
@@ -262,7 +274,7 @@ document.querySelectorAll(".gender-select-radio").forEach((radio) => {
 		.catch(err => {
 			console.error("요청 실패:", err);
         });;
-		
+		allCheck();
 	}))
 });
 
@@ -306,6 +318,8 @@ flatpickr("#birth", {
 			.catch(err => {
 				console.error("요청 실패:", err);
 			});
+			
+			allCheck();
 		}
 	}
 });
@@ -392,6 +406,7 @@ function phoneCheck() {
 	phoneWrapper.style.border = "1px solid var(--gray2)";
 	phoneAuthWrapper.style.border = "1px solid var(--gray2)";
 	phoneAuthWrapper.style.zIndex = 0;
+	phoneCheckMessage.style.display = "none";
 
     fetch("phone-check.member", { // AJAX 요청 (비동기)
         method: "POST",
@@ -400,21 +415,25 @@ function phoneCheck() {
     })
     .then(resp => resp.json()) // 서버에서 JSON 응답을 받음
     .then(data => {
-		console.log(data.phoneCheckResult);
 		if(data.phoneCheckResult){
 			phoneWrapper.style.border = "1px solid var(--main-green)";
 			phoneAuthWrapper.style.border = "1px solid var(--main-green)";
 			phoneAuthWrapper.style.zIndex = 1;
+
+			phoneCheckMessage.style.display = "block";
+			phoneCheckMessage.style.color = "var(--main-green)";
+			phoneCheckMessage.innerText = "※ 핸드폰 인증 성공";
 		}else{
 			phoneWrapper.style.border = "1px solid var(--warning-red)";
-			phoneWrapper.style.border = "1px solid var(--warning-red)";
-			phoneWrapper.style.zIndex = 1;
+			phoneAuthWrapper.style.border = "1px solid var(--warning-red)";
+			phoneAuthWrapper.style.zIndex = 1;
 
-			phoneCheckMessage.style.opacity = 1;
+			phoneCheckMessage.style.display = "block";
 			phoneCheckMessage.style.color = "var(--warning-red)";
-			phoneCheckMessage.innerText = "※ 핸드폰 인증 실패"
+			phoneCheckMessage.innerText = "※ 핸드폰 인증 실패";
 		}
         
+		allCheck();
 	})
 	.catch(error => console.error("Error:", error)); // 에러 처리
 }
@@ -444,6 +463,25 @@ function phoneUpdateCountdown() {
     }
 }
 
+function allCheck(){
+	const button = document.querySelector(".signup-btn");
+	fetch("all-check.member", { // AJAX 요청 (비동기)
+	        method: "POST",
+	        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+	    })
+	    .then(resp => resp.json()) // 서버에서 JSON 응답을 받음
+	    .then(data => {
+			if(data.allCheckResult){
+				button.classList.add("active");
+		    	button.removeAttribute("disabled");
+			}else{
+				button.classList.remove("active");
+		        button.setAttribute("disabled", "true");
+			}
+	        
+		})
+		.catch(error => console.error("Error:", error)); // 에러 처리
+}
 
 
 	

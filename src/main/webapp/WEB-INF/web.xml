@@ -20,13 +20,4 @@
   	<url-pattern>*.member</url-pattern>
   </servlet-mapping>
   
-  <servlet>
-  	<servlet-name>AuthenticationFrontController</servlet-name>
-  	<servlet-class>com.app.authentication.AuthenticationFrontController</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-  	<servlet-name>AuthenticationFrontController</servlet-name>
-  	<url-pattern>*.authentication</url-pattern>
-  </servlet-mapping>
 </web-app>

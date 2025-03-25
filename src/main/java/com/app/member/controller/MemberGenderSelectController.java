@@ -20,8 +20,6 @@ public class MemberGenderSelectController implements Action {
 		MemberVO member = (MemberVO)session.getAttribute("newMember");
 		String gender = (String)req.getParameter("gender");
 		
-		System.out.println(gender);
-		
 		member.setMemberGender(gender);
 		session.setAttribute("newMember", member);
 		
