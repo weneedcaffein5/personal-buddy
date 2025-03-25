@@ -35,6 +35,7 @@
 		</div>
 
 		<!-- 나의꾸미기 -->
+		<div class = "decorate-title-tab-container">
 		<h1 class="decorate-title-word">나의 꾸미기🎨</h1>
 		<div class="decorate-tab-container">
 			<button class="decorate-tab selected" onclick="showContent('전체')">전체</button>
@@ -44,6 +45,7 @@
 		</div>
 		<div class="container" id="content-container">
 			<%@ include file="contents-sticker.jsp"%>
+		</div>
 		</div>
 	</div>
 	<script>

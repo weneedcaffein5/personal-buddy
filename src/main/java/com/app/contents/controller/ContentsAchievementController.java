@@ -8,9 +8,14 @@ import javax.servlet.http.HttpServletResponse;
 import com.app.Action;
 import com.app.Result;
 
-public class ContentsMainController implements Action {
+public class ContentsAchievementController implements Action {
+
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, SecurityException {
-		return null;
+		Result result = new Result();
+		
+		result.setPath("contents-achievement.jsp");
+		return result;
 	}
+
 }
