@@ -8,45 +8,16 @@
 <meta charset="UTF-8">
 <title>님의 게시글</title>
 <link rel="stylesheet" href="../assets/css/global.css">
-<link rel="stylesheet" href="../assets/css/community-post/community-post.css">
+<link rel="stylesheet" href="../assets/css/community/community-post.css">
 </head>
 <body>
 	<div class="community-post">
         <!-- 헤더 -->
         <%@ include file="../layout/header.jsp" %>
+        
         <!-- 배너 -->
-        <div class="banner-container">	
-	    	<div class="banner-wrapper">
-	    		<div class="banner-slide">
-	        		<img src="../assets/images/main/banner-blue.png" class="banner-slide" alt="배너 1">
-	        		<div class="banner-text">
-	        			<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
-	        			<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
-	    			</div>
-	    		</div>
-	    		<div class="banner-slide">
-	        		<img src="../assets/images/main/banner-green.png" class="banner-slide" alt="배너 2">
-	        		<div class="banner-text">
-	        			<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
-	        			<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
-	    			</div>
-	    		</div>
-	    		<div class="banner-slide">
-	        		<img src="../assets/images/main/banner-yellow.png" class="banner-slide" alt="배너 3">
-	        		<div class="banner-text">
-	        			<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
-	        			<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
-	    			</div>
-	    		</div>
-	    		<div class="banner-slide">
-	        		<img src="../assets/images/main/banner-blue.png" class="banner-slide" alt="배너 1(복사)">
-	        		<div class="banner-text">
-	        			<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
-	        			<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
-	    			</div>
-	    		</div> 
-	    	</div>
-		</div>
+        <%@ include file="../layout/banner.jsp" %>
+        
 		<!-- post-main -->
         <div class="main">
             <div class="title">
@@ -56,7 +27,7 @@
                 </div>
                 <div class="title-bottom">
                     <div class="member-info">
-                        <img src="../assets/images/community-post/프로필 사진.png" alt="프로필 사진">
+                        <img src="../assets/images/community/프로필 사진.png" alt="프로필 사진">
                         <span class="member-name">슛돌이</span>
                     </div>
                     <div class="post-info">
@@ -97,7 +68,7 @@
                 <div class="post-comment">
                     <div class="comment-member-box">
                         <div class="member-info">
-                            <img src="../assets/images/community-post/프로필 사진.png" alt="프로필 사진">
+                            <img src="../assets/images/community/프로필 사진.png" alt="프로필 사진">
                             <span class="member-name">슛돌이</span>
                         </div>
                         <button class="member-comment-modify">수정</button>
@@ -120,7 +91,7 @@
                 <div class="post-comment">
                     <div class="comment-member-box">
                         <div class="member-info">
-                            <img src="../assets/images/community-post/프로필 사진.png" alt="프로필 사진">
+                            <img src="../assets/images/community/프로필 사진.png" alt="프로필 사진">
                             <span class="member-name">슛돌이</span>
                         </div>
                         <button class="member-comment-modify">수정</button>
@@ -143,7 +114,7 @@
                 <div class="post-comment">
                     <div class="comment-member-box">
                         <div class="member-info">
-                            <img src="../assets/images/community-post/프로필 사진.png" alt="프로필 사진">
+                            <img src="../assets/images/community/프로필 사진.png" alt="프로필 사진">
                             <span class="member-name">아스날</span>
                         </div>
                         <button class="member-comment-modify none">수정</button>
@@ -166,7 +137,7 @@
                 <div class="post-comment">
                     <div class="comment-member-box">
                         <div class="member-info">
-                            <img src="../assets/images/community-post/프로필 사진.png" alt="프로필 사진">
+                            <img src="../assets/images/community/프로필 사진.png" alt="프로필 사진">
                             <span class="member-name">아스날</span>
                         </div>
                         <button class="member-comment-modify none">수정</button>
@@ -191,5 +162,5 @@
     </div>
 
 </body>
-<script src="../assets/js/community-post/community-post.js"></script>
+<script src="../assets/js/community/community-post.js"></script>
 </html>

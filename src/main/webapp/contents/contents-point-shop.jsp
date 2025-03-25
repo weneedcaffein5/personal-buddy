@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>포인트 샵</title>
 <link rel="stylesheet" href="../assets/css/global.css" />
-<link rel="stylesheet" href="../assets/css/contents-point-shop/contents-point-shop.css" />
+<link rel="stylesheet" href="../assets/css/contents/contents-point-shop.css" />
 </head>
 <body>
 	<!-- 단일 구매창 -->
@@ -142,5 +142,5 @@
 		</div>
 		
 </body>
-<script src="../assets/js/contents-point-shop/contents-point-shop.js"></script>
+<script src="../assets/js/contents/contents-point-shop.js"></script>
 </html>
