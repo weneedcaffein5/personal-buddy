@@ -1,4 +1,4 @@
-package com.app.contents;
+package com.app.contents.controller;
 
 import java.io.IOException;
 
@@ -8,11 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import com.app.Action;
 import com.app.Result;
 
-public class ContentsAchievementController implements Action {
-
+public class ContentsMyTreeController implements Action{
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, SecurityException {
 		return null;
 	}
-
 }

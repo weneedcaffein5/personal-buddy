@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
+import com.app.contents.controller.ContentsAchievementController;
+import com.app.contents.controller.ContentsMyTreeController;
+import com.app.contents.controller.ContentsPointShopController;
 
 
 public class ContentsFrontController extends HttpServlet{
@@ -22,12 +25,12 @@ public class ContentsFrontController extends HttpServlet{
 	String target = req.getRequestURI().replace(req.getContextPath() + controllerName, "").split("\\.")[0];
 	Result result = null;
 	
-	if(target.equals("contents-main")) {
-		
+	if(target.equals("contents-achievement")) {
+		result = new ContentsAchievementController().execute(req, resp);
+	}else if(target.equals("contents-mytree")) {
+		result = new ContentsMyTreeController().execute(req, resp);
 	}else if(target.equals("contents-point-shop")) {
-		
-	}else if(target.equals("contents-achievement")) {
-		
+		result = new ContentsPointShopController().execute(req, resp);
 	}else {
 //		전부 404
 	}
