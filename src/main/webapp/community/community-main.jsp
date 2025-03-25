@@ -6,13 +6,12 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="../assets/css/global.css" />
 <link rel="stylesheet" href="../assets/css/community/community.css">
+
 <title>커뮤니티</title>
 </head>
 <body>
 	<%@ include file="../layout/header.jsp" %>
 	<%@ include file="../layout/banner.jsp" %>
-	
-	
 	
     <div class="container">
     	<form action="community-main.community" method="post">
