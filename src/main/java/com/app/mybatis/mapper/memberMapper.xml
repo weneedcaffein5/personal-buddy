@@ -5,7 +5,7 @@
 	<insert id="insert" parameterType="MemberVO">
 		INSERT INTO TBL_MEMBER
 		VALUES(SEQ_MEMBER.NEXTVAL, #{memberEmail}, #{memberPassword}, #{memberNickName}, #{memberComment}, #{memberName},
-		#{memberGender}, #{memberBirth}, #{memberPhone}, #{memberPoint}, #{memberAdmin}, #{memberCreateDate}, 
+		#{memberGender}, #{memberBirth}, #{memberPhone}, #{memberPoint}, #{memberAdmin}, SYSTIMESTAMP, 
 		#{memberTermServiceAgree}, #{memberTermInformationAgree}, #{memberTermLocationAgree}, #{memberTermPormotionAgree})
 	</insert>
 	<select id="selectByEmailAndPassword" parameterType="MemberVO" resultType="String">

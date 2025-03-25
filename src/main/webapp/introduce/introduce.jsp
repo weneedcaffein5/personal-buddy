@@ -7,6 +7,7 @@
 <title>퍼스널 버디</title>
 <link rel="stylesheet" href="../assets/css/global.css">
 <link rel="stylesheet" href="../assets/css/introduce/introduce.css">
+<link rel="stylesheet" type="text/css" href="../assets/css/header.css" />
 </head>
 <body>
 	<%@ include file="../layout/header.jsp" %>
