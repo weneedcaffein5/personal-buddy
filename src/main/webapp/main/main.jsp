@@ -25,13 +25,13 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
 
 	  <div class="content-wrapper">
         <!-- 음식 추천  -->
-        <section class="food-recommend">
+        <div class="food-recommend">
             <p class="food-title"> 어제 한식을 드셨네요? 오늘 ‘역삼역’에서 점심 이런 메뉴 어때요?!!</p>
             <div class="food-list">
                 <div class="food-item"> 
                     <img src="../assets/images/main/만땅스시.jpg" alt="만땅스시">
                     <div class="food-info">
-                        <h3 class="restaurant-name">만땅스시 역삼점</h3>
+                        <div class="restaurant-name">만땅스시 역삼점</div>
                         <p class="rating">4.0(49)</p>
                         <p class="price-category">₩10,000~20,000 · 초밥</p>
                         <p class="location">역삼로 128 1층</p>
@@ -41,7 +41,7 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
                 <div class="food-item"> 
                     <img src="../assets/images/main/갓포돈.jpg" alt="갓포돈">
                     <div class="food-info">
-                        <h3 class="restaurant-name">돈까스마을 역삼점</h3>
+                        <div class="restaurant-name">돈까스마을 역삼점</div>
                         <p class="rating">4.2(89)</p>
                         <p class="price-category">₩9,000~15,000 · 돈까스</p>
                         <p class="location">역삼로 102 2층</p>
@@ -51,7 +51,7 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
                 <div class="food-item"> 
                     <img src="../assets/images/main/스테이크하우스.jpg" alt="스테이크하우스">
                     <div class="food-info">
-                        <h3 class="restaurant-name">스테이크하우스</h3>
+                        <div class="restaurant-name">스테이크하우스</div>
                         <p class="rating">4.5(120)</p>
                         <p class="price-category">₩15,000~30,000 · 스테이크</p>
                         <p class="location">강남대로 210</p>
@@ -61,7 +61,7 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
                 <div class="food-item"> 
                     <img src="../assets/images/main/한식당청담.jpg" alt="한식당 청담">
                     <div class="food-info">
-                        <h3 class="restaurant-name">한식당 청담</h3>
+                        <div class="restaurant-name">한식당 청담</div>
                         <p class="rating">4.3(65)</p>
                         <p class="price-category">₩12,000~20,000 · 한식</p>
                         <p class="location">청담로 45</p>
@@ -69,7 +69,7 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
     
    <!-- 장소 추천 -->
