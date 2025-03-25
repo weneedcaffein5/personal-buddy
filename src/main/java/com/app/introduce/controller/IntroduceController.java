@@ -12,8 +12,9 @@ public class IntroduceController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, SecurityException {
-		// TODO Auto-generated method stub
-		return null;
+		Result result = new Result();
+		
+		result.setPath("introduce.jsp");
+		return result;
 	}
-
 }

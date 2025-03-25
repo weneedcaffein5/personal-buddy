@@ -18,6 +18,7 @@ public class IntroduceFrontController extends HttpServlet{
 	resp.setContentType("text/html; charset=utf-8;");
 	
 	String controllerName = "/introduce/";
+	String redirectControllerName = "";
 	
 	String target = req.getRequestURI().replace(req.getContextPath() + controllerName, "").split("\\.")[0];
 	Result result = null;
@@ -30,7 +31,7 @@ public class IntroduceFrontController extends HttpServlet{
 	
 	if(result != null) {
 		if(result.isRedirect()) {
-			resp.sendRedirect(result.getPath());
+			resp.sendRedirect(req.getContextPath() + redirectControllerName + result.getPath());
 		}else {
 			req.getRequestDispatcher(result.getPath()).forward(req, resp);
 		}
