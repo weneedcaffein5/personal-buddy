@@ -7,6 +7,8 @@
 <meta charset="UTF-8">
 <title>main2</title>
 <link rel="stylesheet" href="../assets/css/global.css">
+<link rel="stylesheet" href="../assets/css/header.css">
+<link rel="stylesheet" href="../assets/css/banner.css">
 <link rel="stylesheet" href="../assets/css/main/main.css">
 
 </head>

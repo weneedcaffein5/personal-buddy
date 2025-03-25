@@ -35,13 +35,12 @@
 	margin-top:67px;
 	margin-bottom:60px;
 	
-	
 }
 
 .point-box {
     width: 33.33%;
     padding: 0 20px;
-    border-right: 1px solid #B9D2C7;
+    border-right: 1px dashed #000000;
     box-sizing: border-box;
 }
 
@@ -69,6 +68,28 @@
     padding-bottom: 55px;
 }
 
+.board-sub-title-wrap{
+	margin-top:67px;
+	margin-bottom:60px;
+}
+
+.go-profile{
+	width: 1400px;
+	align-items: center;
+	display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+
+}
+
+.go-profile a {
+	white-space: nowrap;
+  	font-size: 16px;
+	color: #424242; 
+  text-decoration: none;
+
+}
+
 .point-box ul {
     list-style: none;
     padding: 0;
@@ -77,7 +98,6 @@
 
 .point-box li {
     display: flex;
-
     align-items: center;
     justify-content: space-between;
     font-size: 14px;
@@ -231,10 +251,25 @@
     text-align: center;
 }
 
+.achievement-card-white {
+    width: 100%;
+    max-width: 200px;
+    height: 230px;
+    background-color: #ffffff;
+    border: 1px solid #999999;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:0;
+    padding-top: 40px;
+    text-align: center;
+}
+
 .achievement-icon-container {
     position: absolute;
     top: -40px; 
-    background-color: #FFF45F; 
     width: 80px;
     height: 80px;
     border-radius: 50%;
