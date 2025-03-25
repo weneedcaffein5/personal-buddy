@@ -18,6 +18,7 @@ import com.app.member.controller.MemberLoginController;
 import com.app.member.controller.MemberLoginOkController;
 import com.app.member.controller.MemberMailCheckController;
 import com.app.member.controller.MemberNameCheckController;
+import com.app.member.controller.MemberNickNameCheckController;
 import com.app.member.controller.MemberPasswordCheckController;
 import com.app.member.controller.MemberPhoneCheckController;
 import com.app.member.controller.MemberSendMailController;
@@ -59,6 +60,8 @@ public class MemberFrontController extends HttpServlet{
 			result = new MemberAllCheckController().execute(req, resp);
 		}else if(target.equals("join-profile")) {
 			result = new MemberJoinProfileController().execute(req, resp);
+		}else if(target.equals("nickname-check")) {
+			result = new MemberNickNameCheckController().execute(req, resp);
 		}else if(target.equals("login")) {
 			result = new MemberLoginController().execute(req, resp);
 		}else if(target.equals("login-ok")) {

@@ -38,38 +38,34 @@
 	            </div>
 	            
 	            <!-- 이름 -->
-	            <div class="input-wrapper" id="nickname-wrapper" style="border-radius: 10px 10px 0px 0px;">
-	                <img src="../assets/images/member/smile.png" class="input-icon">
-	                <input type="text" id="nickname" placeholder="이름"  name= "memberNickname"
-	                value="<%= newMember.getMemberName() != null ? newMember.getMemberName() : "" %>" required>
-                	<div class="gender-select">
-	                	<span>남성</span>
-	                	<span>여성</span>
+	            <div class="wrapper">
+	            	<div class="input-title">
+                		<span>닉네임</span>
+                		<span id="nickname-fail-message" style="display: none;"></span>
                 	</div>
-	            </div>
-	            
-	        	<!-- 인증번호 -->
-	            <div class="input-wrapper" id="phone-auth-wrapper" style="border-radius: 0px 0px 10px 10px;">
-	                <img src="../assets/images/member/lock-icon.png" class="input-icon">
-	                <input type="text" maxlength="4" id="phone-authcode" placeholder="인증번호 4자리 입력">
-	                <div class="phone-confirm-check">
-	                	<span class="phone-confirm" onclick="phoneCheck()">확인</span>
-	                	<span style="width:50px; color: var(--gray4); font-size: var(--h9); text-align: center;" class="confirm-countdown" id="phone-confirm-time"></span>
-                	</div>
-	            </div>
+               		<div class="input-wrapper" id="nickname-wrapper">
+	                	<input type="text" id="nickname" placeholder="닉네임을 입력해주세요. (최대 14자)"  name= "memberNickName" maxlength="14" required>
+		                <span id="nickname-input-length"></span>
+	            	</div>
+               	</div>
+               	
+               	<!-- 이름 -->
+	            <div class="wrapper">
+                	<span>상태 메세지</span>
+               		<div class="input-wrapper" id="comment-wrapper">
+	                	<input type="text" id="comment" placeholder="메세지를 입력해주세요. (최대 30자)"  name= "memberComment" maxlength="30"
+		                	value="<%= newMember.getMemberComment() != null ? newMember.getMemberComment() : "" %>">
+		                <span id="comment-input-length"></span>
+	            	</div>
+               	</div>
 	        </div>
-	        
-            <div class="space">
-            	<span id="name-fail-message" style="display: none; font-weight: 300;">※ 이름은 필수 정보입니다.</span>
-            	<span id="gender-fail-message"  style="display: none; font-weight: 300;">※ 성별을 입력해주세요.</span>
-            	<span id="birth-fail-message"  style="display: none; font-weight: 300;">※ 생년월일을 입력해주세요.</span>
-            	<span id="phone-fail-message"  style="display: none; font-weight: 300;"></span>
-            </div>
 	
 	        <!-- 가입 버튼 -->
 	        <button class="signup-btn">가입하기</button>
-	        </form>
+        </form>
     </div>
     
 </body>
+<script src="../assets/js/member/join-profile.js">
+</script>
 </html>

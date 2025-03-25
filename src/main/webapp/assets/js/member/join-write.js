@@ -224,7 +224,7 @@ document.getElementById("name").addEventListener("blur", (e) => {
 		
     })
 	.catch(err => {
-				console.error("요청 실패:", err);
+		console.error("요청 실패:", err);
     });
 	
 	allCheck();
