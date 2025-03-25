@@ -50,35 +50,34 @@
                     
                     <div class="mycomments-list">
                     
-            <!-- 첫 번째 댓글 -->
+			<!-- 첫 번째 댓글 -->
 	            <div class="my-comments">
-                	<div class="my-comments-content"> 
-                		<div>                      
-                    		<span class="my-comments-title">게시글 | </span>
-                        	<span class="my-comments-title">Alive</span>
-                        </div>    
-                        	<div class="my-comments-user">
-                            	<img class="my-comments-user-image" src="../assets/images/mypage/user-profile1.jpg" alt="유저 프로필">
-                                <span class="my-comments-username">skyoung</span>
-                            </div>
-                            	<div class="my-comments-text">                            
-                                	<p>엄..</p>
-                                </div>
-                      		</div> 
-
-	            
-	            <div class="my-comments-meta-box">
-			    <p class="my-comments-meta">2025.02.01 게시</p>
-				    <div class="my-comments-stats">
-				      <span><img src="../assets/images/community/like-icon.png" alt="좋아요"> 800</span>
-				      <span><img src="../assets/images/community/comment-icon.png" alt="댓글"> 20</span>
-				      <span><img src="../assets/images/community/view-icon.png" alt="조회수"> 2,310</span>
+				  <div class="my-comments-left">
+				    
+				    <div class="my-comments-content">
+				      <div class="my-comments-title-wrap">
+				        <span class="my-comments-title">게시글 | </span>
+				        <span class="my-comments-title">Alive</span>
+				      </div>
+				      <div class="my-comments-info">
+				      <img class="my-comments-user-image" src="../assets/images/mypage/user-profile1.jpg" alt="유저 프로필">
+				      <span>skyoung</span>
+				      </div>
+				      <p class="my-comments-text">
+				      후회 하고 있어요 우리 다투던 그날
+                      괜한 자존심 때문에 끝내자고 말을 해버린거야
+                      금방 볼 줄 알았어 날 찾길 바랬어
+                      허나 며칠이 지나도 아무소식 조차 없어
+				      </p>
 				    </div>
-			  	</div>
-	          
-	          
-	    
-	
+				  </div>
+				  <div class="my-comments-meta-box">
+				    <p class="my-comments-meta">2025.02.01 게시</p>
+				  </div>
+				</div>
+
+			  	
+			  	
 			<!-- 페이지네이션 -->
 	      <div class="pagination">
 	        <span class="arrow">&lt;</span>

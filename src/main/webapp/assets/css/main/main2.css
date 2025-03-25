@@ -2,9 +2,10 @@
 
 
 .content-wrapper {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 20px;
+  width: 1400px;
+  margin: auto;
+  height: 100%;
+  
 }
 
 
@@ -24,8 +25,7 @@
 
 .food-list {
     display: flex;
-    width: 1507px;
-    height: 374px;
+
     justify-content: space-between;
     gap: 0px; 
     flex-wrap: wrap;

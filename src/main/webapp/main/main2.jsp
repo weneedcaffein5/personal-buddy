@@ -19,13 +19,13 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
 	<%@ include file="../layout/header.jsp" %>
 	<%@ include file="../layout/banner.jsp" %>
 
-	<div>
-		<h2>캘린더</h2>
-	</div>
 	
 
 <div class="content-wrapper">
-  <section class="food-recommend">
+	<div>
+		<h2>캘린더</h2>
+	</div>
+  <div class="food-recommend">
     <h2 class="food-title">어제 한식을 드셨네요? 오늘 ‘역삼역’에서 점심 이런 메뉴 어때요?!!</h2>
     
     <div class="food-list">
@@ -88,7 +88,7 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
 
     
