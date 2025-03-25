@@ -2,15 +2,18 @@
 
 
 .content-wrapper {
-    width: 1421px;
-    margin: 0 auto;
-    padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 
 .food-recommend {
-    width: 1421px;
-    height: 470px;
+    width: 1507px;
+    height: 374px;
     margin-bottom: 60px;
    
 }
@@ -30,9 +33,7 @@
     flex-wrap: wrap;
 }
 
-.food-item {  
-    padding: 15px;
-    
+.food-item {     
     text-align: center;
     width: 320px;
     height: 374px;
@@ -43,7 +44,7 @@
 
 .food-item img {
     width: 320px;
-    height: 220px;
+    height: 206px;
     object-fit: cover;
     border-radius: 10px;
 }
@@ -58,6 +59,7 @@
     font-size: 14px;
     font-weight: 300; 
     color: #000;
+    margin-top:19px;
 }
 
 .rating {
@@ -238,7 +240,6 @@
     height: 50px;
     object-fit: cover;
     border-radius: 50%;
-	/* box-shadow: 8px 8px 8px rgba(0.05, 0.05, 0.05, 0.05); */
     cursor: pointer;
 }
 
