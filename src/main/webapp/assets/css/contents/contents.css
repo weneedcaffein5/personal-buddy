@@ -260,8 +260,8 @@
     justify-content: center;
     gap: 40px;
     flex-wrap: wrap;
-    width: 1172px;
-    height: 100px;
+    width: 1160px;
+    height: 1060px;
 }
 
 .folder-item, .folder-item-sticker {
