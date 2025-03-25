@@ -13,18 +13,25 @@
 <body>	
 
 	<!-- 헤더 -->
-	<%-- <%@ include file="../layout/header.jsp" %> --%>
+	<%@ include file="../layout/header.jsp" %>
 	
 	<!-- 배너 -->
-	<%-- <%@ include file="../layout/banner.jsp" %> --%>
+	<%@ include file="../layout/banner.jsp" %>
 	
 	<!-- 이벤트 메인 페이지 -->
 	<div class="event-main">
 		<div class="tab-container">
 			<div class="tab">
-			    <div class="tab-position"></div>
-				<button class="event-tab tab-text-on">EVENT</button>
-				<button class="board-tab tab-text-off">BOARD</button>
+			    <div class="tab-position">
+					<a href="../event/event-main.jsp">
+				    	<span>EVENT</span>
+					</a>
+			    </div>
+			    <div class="tab-sub-position">
+					<a href="../community/community.jsp">
+				    	<span>BOARD</span>
+					</a>
+			    </div>
 			</div>
 		</div>
 		<div class="title-sub">
@@ -35,9 +42,11 @@
 		</div>
         <div class="slider-container">
             <div class="slider">
-                <img src="../assets/images/event-main/이벤트 이미지1.png" alt="이벤트 슬라이드 이미지1">
-                <img src="../assets/images/event-main/이벤트 이미지2.png" alt="이벤트 슬라이드 이미지2">
-                <img src="../assets/images/event-main/이벤트 이미지3.png" alt="이벤트 슬라이드 이미지3">
+	            <a>
+	                <img src="../assets/images/event/이벤트 이미지1.png" alt="이벤트 슬라이드 이미지1">
+	            </a>
+                <img src="../assets/images/event/이벤트 이미지2.png" alt="이벤트 슬라이드 이미지2">
+                <img src="../assets/images/event/이벤트 이미지3.png" alt="이벤트 슬라이드 이미지3">
             </div>
             <!-- <button></button>
             <button></button> -->
@@ -50,19 +59,88 @@
 		</div>
         <div class="event-list-container">
         	<div class="event-list">
+					<div class="event-list-info">
+			        	<a href="event-post.jsp?id=1">
+							<div class="event-list-img">
+								<img src="../assets/images/event/이벤트 세부 이미지1.png" alt="이벤트 리스트 이미지1">
+							</div>
+							<div class="event-list-title">
+								<span>오늘의 미션 : 오전6시 기상</span>
+							</div>
+							<div class="event-list-time">
+								<span>2025.03.05</span>
+							</div>
+			        	</a>
+					</div>    		
 				<div class="event-list-info">
-					<div>
-						<img alt="" src="">
-					</div>
-					<div>
-						<span></span>	
-					</div>
-					<div>
-						<span></span>	
-					</div>
+					<a href="event-post.jsp">
+						<div class="event-list-img">
+							<img src="../assets/images/event/이벤트 세부 이미지2.png" alt="이벤트 리스트 이미지2">
+						</div>
+						<div class="event-list-title">
+							<span>매일매일 출석체크</span>
+						</div>
+						<div class="event-list-time">
+							<span>2025.03.05</span>
+						</div>
+			        </a>
+				</div>    		
+        	</div>
+        	<div class="event-list">
+				<div class="event-list-info">
+					<a href="event-post.jsp">
+						<div class="event-list-img">
+							<img src="../assets/images/event/이벤트 세부 이미지3.png" alt="이벤트 리스트 이미지3">
+						</div>
+						<div class="event-list-title">
+							<span>한 곡 타임 어택 챌린지</span>
+						</div>
+						<div class="event-list-time">
+							<span>2025.03.05</span>
+						</div>
+		        	</a>
 				</div>    		
 				<div class="event-list-info">
-				</div>    		        		
+					<a href="event-post.jsp">
+						<div class="event-list-img">
+							<img src="../assets/images/event/이벤트 세부 이미지4.png" alt="이벤트 리스트 이미지4">
+						</div>
+						<div class="event-list-title">
+							<span>오늘 하루는 힐링 데이</span>
+						</div>
+						<div class="event-list-time">
+							<span>2025.03.05</span>
+						</div>
+		        	</a>
+				</div>    		
+        	</div>
+        	<div class="event-list">
+				<div class="event-list-info">
+					<a href="event-post.jsp">
+						<div class="event-list-img">
+							<img src="../assets/images/event/이벤트 세부 이미지5.png" alt="이벤트 리스트 이미지5">
+						</div>
+						<div class="event-list-title">
+							<span>봄맞이 나들이 챌린지</span>
+						</div>
+						<div class="event-list-time">
+							<span>2025.03.05</span>
+						</div>
+		        	</a>
+				</div>    		
+				<div class="event-list-info">
+					<a href="event-post.jsp">
+						<div class="event-list-img">
+							<img src="../assets/images/event/이벤트 세부 이미지6.png" alt="이벤트 리스트 이미지6">
+						</div>
+						<div class="event-list-title">
+							<span>집중력 업! 공부 타임 챌린지</span>
+						</div>
+						<div class="event-list-time">
+							<span>2025.03.05</span>
+						</div>
+		        	</a>
+				</div>    		
         	</div>
         </div>
     </div>
