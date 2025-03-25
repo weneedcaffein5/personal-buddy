@@ -5,15 +5,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="../assets/css/global.css">
-<link rel="stylesheet" href="../assets/css/member/join-write.css">
-
-<!-- 생일 입력 용 FlatPickr 라이브러리 추가 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-
-<title>Personal Buddy 회원가입</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../assets/css/global.css">
+	<link rel="stylesheet" href="../assets/css/member/join-write.css">
+	
+	<!-- 생일 입력 용 FlatPickr 라이브러리 추가 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	
+	<title>Personal Buddy 회원가입</title>
 </head>
 <body>
 	<%
@@ -29,8 +29,7 @@
         		<!-- id(email 주소) -->
 	            <div class="input-wrapper" id="id-wrapper" style="border-radius: 10px 10px 0px 0px;">
 	                <img src="../assets/images/member/message-icon.png" class="input-icon">
-	                <input type="email" id="email" placeholder="아이디 (이메일 주소)" name="memberEmail"
-	                value="<%= newMember.getMemberEmail() != null ? newMember.getMemberEmail() : "" %>" required />
+	                <input type="email" id="email" placeholder="아이디 (이메일 주소)" name="memberEmail" required />
 	                <button id="mail-button" type="button" onclick="sendMail()">인증메일 발송</button>
 	            </div>
 	            <div class="input-wrapper" id="id-auth-wrapper">
@@ -45,8 +44,7 @@
 	            <!-- 비밀번호 -->
 	            <div class="input-wrapper" id="password-wrapper" style="border-radius: 0px 0px 10px 10px;">
 	                <img src="../assets/images/member/lock-icon.png" class="input-icon">
-	                <input type="password" id="password" placeholder="비밀번호" name = "memberPassword"
-	                value="<%= newMember.getMemberPassword() != null ? newMember.getMemberPassword() : "" %>" required>
+	                <input type="password" id="password" placeholder="비밀번호" name = "memberPassword" required>
 	                <img src="../assets/images/member/see-password-icon-false.png" class="toggle-password" onclick="togglePassword()">
 	            </div>
 	            
@@ -58,8 +56,7 @@
 	            <!-- 이름 -->
 	            <div class="input-wrapper" id="name-wrapper" style="border-radius: 10px 10px 0px 0px;">
 	                <img src="../assets/images/member/smile.png" class="input-icon">
-	                <input type="text" id="name" placeholder="이름"  name= "memberName"
-	                value="<%= newMember.getMemberName() != null ? newMember.getMemberName() : "" %>" required>
+	                <input type="text" id="name" placeholder="이름"  name= "memberName" required>
 	                <!-- 성별 선택 -->
                 	<div class="gender-select">
                 		<label>
@@ -76,8 +73,7 @@
 	        	<!-- 생년월일 -->
 	            <div class="input-wrapper" id="birth-wrapper">
 	                <img src="../assets/images/member/calendar-icon.png" id="birth-icon" class="input-icon" style="cursor: pointer;">
-	                <input type="text" id="birth" name="memberBirth" placeholder="생년월일 선택"
-	                value="<%= newMember.getMemberBirth() != null ? new java.text.SimpleDateFormat("yyyy-MM-dd").format(newMember.getMemberBirth()) : "" %>" required>
+	                <input type="text" id="birth" name="memberBirth" placeholder="생년월일 선택" required>
 	            </div>
 	        	<!-- 통신사 선택 -->
 	            <div class="input-wrapper" style="display: none">
@@ -95,8 +91,7 @@
 	        	<!-- 휴대전화번호 -->
 	            <div class="input-wrapper" id="phone-wrapper">
 	                <img src="../assets/images/member/phone-icon.png" class="input-icon">
-	                <input type="tel" id="phone" placeholder="휴대전화번호"
-	                value="<%= newMember.getMemberPhone() != null ? newMember.getMemberPhone() : "" %>" required>
+	                <input type="tel" id="phone" placeholder="휴대전화번호" required>
 	                <button id="phone-button" type="button" onclick="sendPhoneAuth()">인증번호 발송</button>
 	            </div>
 	        	<!-- 인증번호 -->

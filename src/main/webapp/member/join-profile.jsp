@@ -5,11 +5,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="../assets/css/global.css">
-<link rel="stylesheet" href="../assets/css/member/join-profile.css">
-
-<title>프로필 작성</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../assets/css/global.css">
+	<link rel="stylesheet" href="../assets/css/member/join-profile.css">
+	<title>프로필 작성</title>
 </head>
 <body>
 	<%
