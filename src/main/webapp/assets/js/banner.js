@@ -1,85 +1,91 @@
 /**
  * 
  */
-	let currentIndex = 1; // 실제 슬라이드는 1번부터 시작 (0은 clone)
-	const bannerWrapper = document.getElementById("bannerWrapper");
-	const slides = document.querySelectorAll("#banner-slide");
-	const totalSlides = slides.length;
-	const realSlideCount = totalSlides - 2; // clone 제외한 진짜 슬라이드 수
-	const slideWidth = 1920;
-	const intervalTime = 5000;
-	let slideTimer;
-	
-	// 페이징 점
-	const dotsContainer = document.getElementById("dots");
-	for (let i = 0; i < realSlideCount; i++) {
-	  const dot = document.createElement("span");
-	  dot.classList.add("dot");
-	  if (i === 0) dot.classList.add("active");
-	  dot.addEventListener("click", () => {
-	    moveToSlide(i + 1); // clone 고려해서 +1
-	    resetAutoSlide();
-	  });
-	  dotsContainer.appendChild(dot);
-	}
-	const dots = document.querySelectorAll(".dot");
-	
-	function moveToSlide(index, animated = true) {
-	  if (!animated) bannerWrapper.style.transition = "none";
-	  else bannerWrapper.style.transition = "transform 0.5s ease";
-	
-	  bannerWrapper.style.transform = "translateX(-" + (slideWidth * index) + "px)";
-	  currentIndex = index;
-	
-	  updateDots();
-	}
-	
-	function updateDots() {
-	  dots.forEach(dot => dot.classList.remove("active"));
-	  const realIndex = currentIndex - 1;
-	  if (realIndex >= 0 && realIndex < realSlideCount) {
-	    dots[realIndex].classList.add("active");
-	  }
-	}
-	
-	function nextSlide() {
-	  if (currentIndex >= totalSlides - 1) return;
-	  moveToSlide(currentIndex + 1);
-	  resetAutoSlide();
-	}
-	
-	function prevSlide() {
-	  if (currentIndex <= 0) return;
-	  moveToSlide(currentIndex - 1);
-	  resetAutoSlide();
-	}
-	
-	function startAutoSlide() {
-	  slideTimer = setInterval(() => {
-	    moveToSlide(currentIndex + 1);
-	  }, intervalTime);
-	}
-	
-	function resetAutoSlide() {
-	  clearInterval(slideTimer);
-	  startAutoSlide();
-	}
-	
-	bannerWrapper.addEventListener("transitionend", () => {
-	  // 오른쪽 끝 (clone 첫 번째)
-	  if (currentIndex === totalSlides - 1) {
-	    moveToSlide(1, false); // 순간이동
-	  }
-	
-	  // 왼쪽 끝 (clone 마지막)
-	  if (currentIndex === 0) {
-	    moveToSlide(realSlideCount, false); // 순간이동
-	  }
-	});
-	
-	// 시작
-	window.addEventListener("load", () => {
-	  moveToSlide(1, false);
-	  startAutoSlide();
-	});
+const bannerWrapper = document.getElementById("bannerWrapper");
+  const slides = document.querySelectorAll("#banner-slide");
+  const totalSlides = slides.length;
+  const realSlides = totalSlides - 2;
+  const dotsContainer = document.getElementById("dots");
+  let slideWidth = window.innerWidth;
+  let currentIndex = 1;
+  let slideTimer;
+
+  // dots 생성
+  dotsContainer.innerHTML = "";
+  for (let i = 0; i < realSlides; i++) {
+    const dot = document.createElement("span");
+    dot.classList.add("dot");
+    if (i === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => {
+      moveToSlide(i + 1);
+      resetAutoSlide();
+    });
+    dotsContainer.appendChild(dot);
+  }
+  const dots = document.querySelectorAll(".dot");
+
+  function updateDots() {
+    dots.forEach(dot => dot.classList.remove("active"));
+    if (currentIndex >= 1 && currentIndex <= realSlides) {
+      dots[currentIndex - 1].classList.add("active");
+    }
+  }
+
+  function moveToSlide(index, animated = true) {
+    if (!animated) bannerWrapper.style.transition = "none";
+    else bannerWrapper.style.transition = "transform 0.5s ease";
+
+    currentIndex = index;
+    bannerWrapper.style.transform = "translateX(-" + (slideWidth * index) + "px)";
+    updateDots();
+  }
+
+  function nextSlide() {
+    if (currentIndex < totalSlides - 1) {
+      moveToSlide(currentIndex + 1);
+    }
+    resetAutoSlide();
+  }
+
+  function prevSlide() {
+    if (currentIndex > 0) {
+      moveToSlide(currentIndex - 1);
+    }
+    resetAutoSlide();
+  }
+
+  function startAutoSlide() {
+    slideTimer = setInterval(() => {
+      if (currentIndex < totalSlides - 1) {
+        moveToSlide(currentIndex + 1);
+      }
+    }, 5000);
+  }
+
+  function resetAutoSlide() {
+    clearInterval(slideTimer);
+    startAutoSlide();
+  }
+
+  // 무한 루프 순간 이동 처리
+  bannerWrapper.addEventListener("transitionend", () => {
+    if (currentIndex === totalSlides - 1) {
+      moveToSlide(1, false); // clone(1)에서 진짜 1로 순간 이동
+    }
+    if (currentIndex === 0) {
+      moveToSlide(realSlides, false); // clone(4)에서 진짜 4로 순간 이동
+    }
+  });
+
+  // 브라우저 리사이즈나 줌 변경 대응
+  window.addEventListener("resize", () => {
+    slideWidth = window.innerWidth;
+    moveToSlide(currentIndex, false); // 현재 위치를 다시 맞춰줌
+  });
+
+  window.nextSlide = nextSlide;
+  window.prevSlide = prevSlide;
+
+  moveToSlide(1, false);
+  startAutoSlide();
 	

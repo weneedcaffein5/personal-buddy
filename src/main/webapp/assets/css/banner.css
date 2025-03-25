@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 .banner-container {
-  width: 100%;
+  width: 100vw;
   height: 300px;
   overflow: hidden;
   position: relative;
@@ -9,7 +9,6 @@
 
 .banner-wrapper {
   display: flex;
-  width: max-content;
   transition: transform 0.5s ease;
 }
 
@@ -18,7 +17,7 @@
 }
 
 .banner-slide {
-  width: 1920px;
+  width: 100vw;
   height: 300px;
   position: relative;
   flex-shrink: 0;
