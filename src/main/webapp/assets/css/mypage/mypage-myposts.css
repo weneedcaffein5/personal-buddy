@@ -236,8 +236,6 @@ textarea {
 }
 
 
-
-
 .myposts-container {
     width: 1160px;
     margin: 0 auto;
@@ -273,13 +271,25 @@ textarea {
 
 .mypost {
     display: flex;
-    align-items: center;
-    gap: 20px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 20px;
+  	justify-content: space-between;
+  	align-items: flex-start;
+  	gap: 46px;
+  	border-bottom: 1px solid #ddd;
+  	padding-bottom: 20px;
 }
 
+.mypost-left {
+  display: flex;
+  gap: 46px;
+  padding:0;
+}
 
+.mypost-meta-box {
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 .mypost-image {
     width: 230px;
@@ -327,7 +337,7 @@ textarea {
 
 .pagination {
 	/* position: sticky; */
-	position: fixed; 
+	/* position: fixed;  */
 	bottom: 0px;
 	left: 50%;
 	/*transform: translateX(-50%);  */

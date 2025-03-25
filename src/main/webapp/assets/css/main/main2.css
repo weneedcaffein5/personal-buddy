@@ -2,9 +2,6 @@
 
 
 .content-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   max-width: 1400px;
   margin: 0 auto;
   padding: 20px;
@@ -56,11 +53,21 @@
     width: 100%;
 }
 
+.restaurant-header{
+	display:flex;
+	align-items:ceter;
+}
+
+.restaurant-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
 .restaurant-name {
-    font-size: 14px;
-    font-weight: 300; 
-    color: #000;
-    margin-top:19px;
+  font-size: 14px;
+  font-weight: 300;
+  color: #000;
 }
 
 .rating {
