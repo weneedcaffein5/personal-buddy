@@ -31,7 +31,7 @@ public class MemberLoginOkController implements Action {
 		String findEmail = memberDAO.selectByEmailAndPassword(memberVO);
 		
 		if(findEmail == null) {
-			result.setPath(req.getContextPath() + "/login.member?login=false");
+			result.setPath("/member/login.member?login=false");
 		}else {
 			session.setAttribute("loginID", findEmail);
 			result.setPath("../main/main.main");

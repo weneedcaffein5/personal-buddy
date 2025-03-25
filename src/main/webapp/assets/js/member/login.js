@@ -3,12 +3,13 @@
  */
 
 document.addEventListener("DOMContentLoaded", function () {
-	const loginFail = new URLSearchParams(window.location.search).get("login");
+	const loginSuccess = new URLSearchParams(window.location.search).get("login");
 
-	const loginFailMessage = document.getElementById("login-fail");
+	const loginFailMessage = document.querySelector(".login-fail span");
 	
-    if (loginFail != null && !loginFail) {
+    if (loginSuccess === "false") {
         loginFailMessage.style.color = "var(--warning-red)";
+		
     }else{
 		loginFailMessage.style.color = "var(--white)";
 	}

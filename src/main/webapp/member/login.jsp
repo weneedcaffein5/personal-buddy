@@ -20,7 +20,6 @@
         <form action="login-ok.member" method="POST">
         	<div class="login-fail">
         		<span >아이디 혹은 비밀번호를 잘못 입력하셨거나 등록되지 않은 아이디 입니다.</span>
-        		<!-- style="display: none;" -->
         	</div>
             <div class="input-group">
                 <div class="input-wrapper">
