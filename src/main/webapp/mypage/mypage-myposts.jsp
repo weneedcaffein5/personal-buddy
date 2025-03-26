@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="../assets/css/mypage/mypage-myposts.css" />
+<link rel="stylesheet" href="../assets/css/header.css">
 <link rel="stylesheet" type="text/css" href="../assets/css/global.css" />
 <title>mypage-myposts</title>
 </head>
