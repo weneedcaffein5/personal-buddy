@@ -2,12 +2,10 @@
 
 
 .content-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 20px;
+  width: 1400px;
+  margin: auto;
+  height: 100%;
+  
 }
 
 
@@ -27,8 +25,7 @@
 
 .food-list {
     display: flex;
-    width: 1507px;
-    height: 374px;
+
     justify-content: space-between;
     gap: 0px; 
     flex-wrap: wrap;
@@ -56,11 +53,21 @@
     width: 100%;
 }
 
+.restaurant-header{
+	display:flex;
+	align-items:ceter;
+}
+
+.restaurant-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
 .restaurant-name {
-    font-size: 14px;
-    font-weight: 300; 
-    color: #000;
-    margin-top:19px;
+  font-size: 14px;
+  font-weight: 300;
+  color: #000;
 }
 
 .rating {
@@ -238,12 +245,21 @@
     margin-top: 10px;
 }
 
-.cloth-info-image {
+.cloth-info-image{
     width: 50px;
     height: 50px;
     object-fit: cover;
     border-radius: 50%;
     cursor: pointer;
+}
+
+.cloth-info a {
+  text-decoration: none; 
+  color: inherit;         
+}
+
+.cloth-info a:hover {
+  color: #01CD74;       
 }
 
 .cloth-desc-title {

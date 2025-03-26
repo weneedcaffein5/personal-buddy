@@ -19,7 +19,9 @@
 	<div class="page-container">
 		<div class="title">
 			<div class="title-container">
+
 				<span class="line1">커뮤니티<br /></span> <strong class="line2">글쓰기</strong>
+
 			</div>
 		</div>
 
@@ -63,7 +65,11 @@
 							첨부파일은 최대 5개, 30MB까지 등록 가능합니다. <label for="file" class="file-font">파일
 								첨부</label>
 						</div>
+<<<<<<< HEAD
 						<div clas="file-wrapper">
+=======
+						<div class="file-wrapper">
+>>>>>>> master
 							<input type="file" id="file" />
 						</div>
 						<div class="file-info">

@@ -89,8 +89,8 @@
 
 /* 유저 닉네임, 상태 메세지 */
 .profile-setting {
-	font-weight: 300;
-	font-size: 14px;
+   font-weight: 300;
+   font-size: 14px;
     width: 200px;
     height: 100px;
     border-bottom: solid #DDDDDD 1px;
@@ -143,8 +143,8 @@
 }
 
 #now {
-	color: #01CD74;
-	text-decoration: underline;
+   color: #01CD74;
+   text-decoration: underline;
 }
 
 
@@ -160,7 +160,7 @@ a:hover {
 }
 
 .go-tree a {
-	font-weight: 300;
+   font-weight: 300;
 }
 
 strong {
@@ -171,13 +171,13 @@ strong {
 /* =================================================================== */
 
 .best-achievement {
-	margin-top: 20px;
-	width: 100%;
-	height: 400px;
+   margin-top: 20px;
+   width: 100%;
+   height: 400px;
 }
 
 .best-achievements-container {
-	display: flex;
+   display: flex;
     flex-wrap: wrap;
     justify-content: center;
     width: 1000px;
@@ -195,7 +195,7 @@ strong {
 }
 
 .best-achievement-card {
-	width: 200px;
+   width: 200px;
     height: 230px;
     background-color: #EEFFF8;
     border: 1px solid #01CD74;
@@ -294,7 +294,7 @@ strong {
 }
 
 .achievement-points {
-	text-align:left;
+   text-align:left;
     font-size: 14px;
     color: #000;
     font-weight: regular;
@@ -303,10 +303,10 @@ strong {
 }
 
 .have-achievement {
-	display: flex;
-	flex-wrap: wrap;
-	margin-top: 20px;
-	width: 920px;
-	height: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   margin-top: 20px;
+   width: 920px;
+   height: 100%;
 }
 
