@@ -2,17 +2,14 @@
 
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
 
-body {
-  display: flex;
-  align-items: center;
-  flex-direction:column;
-}
+
 
 .page-container {
   display: flex;
   flex-direction: column;
   max-width: 1160px;
-  width: 100%;
+  margin: auto;
+  margin-top:156px;
 }
 
 .label-margin {
@@ -147,14 +144,13 @@ textarea {
 .file-info-container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 11px;
 }
 
 .file-container {
   display: flex;
   flex-direction: column;
-  gap: 13px;
-  font-size: 14px;
+  font-weight: 100;
 }
 
 .char-count {
@@ -164,7 +160,7 @@ textarea {
 }
 
 .file-font {
-  font-weight: Medium;
+  font-weight: 500;
   font-size: 14px;
 }
 

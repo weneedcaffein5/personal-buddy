@@ -13,45 +13,51 @@
 </head>
 <body>
 
-	<%@ include file="../layout/header.jsp"%>
-	<%@ include file="../layout/banner.jsp"%>
+	<%-- <%@ include file="../layout/header.jsp"%>
+	<%@ include file="../layout/banner.jsp"%> --%>
 
 	<div class="page-container">
-		<div class="title-word-tab-container">
-			<div class="tab-container">
-				<div class="tab-btn"></div>
-				<div id="achievementTab" class="tab-text tab-text-off">업적</div>
-				<div id="myTreeTab" class="tab-text tab-text-on">나의 성장 나무</div>
-				<div id="pointShopTab" class="tab-text tab-text-off">포인트 샵</div>
-			</div>
-			<div class="tree-title-word">나의 성장나무🎄</div>
-		</div>
-		<div class="tree-wrapper">
-			<div class="tree-container">
-				<img src="../assets/images/contents/default/default.png">
-			</div>
-			<div class="tree-button-group">
-				<button class="save-button">저장</button>
-				<button class="cancel-button">취소</button>
-			</div>
-		</div>
 
-		<!-- 나의꾸미기 -->
-
-		<div class="decorate-title-tab-container">
-			<div class="decorate-title-word">나의 꾸미기🎨</div>
-			<div class="decorate-title-word-tab-container">
-				<div class="decorate-tab-container">
-					<button class="decorate-tab selected" onclick="showContent('전체')">전체</button>
-					<button class="decorate-tab" onclick="showContent('배경')">배경</button>
-					<button class="decorate-tab" onclick="showContent('스티커')">스티커</button>
-					<button class="decorate-tab" onclick="showContent('나무')">나무</button>
+		<div class="tab-container">
+			<div class="tab-btn"></div>
+			<div id="achievementTab" class="tab-text tab-text-off">업적</div>
+			<div id="myTreeTab" class="tab-text tab-text-on">나의 성장 나무</div>
+			<div id="pointShopTab" class="tab-text tab-text-off">포인트 샵</div>
+		</div>
+		
+		<div class="contents-container">
+			<div class="tree-image">
+				<div class="tree-title-word">나의 성장나무🎄</div>
+				<div class="tree-wrapper">
+					<div class="tree-container">
+						<img src="../assets/images/contents/default/default.png">
+					</div>
+					<div class="tree-button-group">
+						<button class="save-button">저장</button>
+						<button class="cancel-button">취소</button>
+					</div>
 				</div>
-				<div class="container" id="content-container">
-				<%@ include file="contents-sticker.jsp"%>
 			</div>
+
+
+
+			<!-- 나의꾸미기 -->
+
+			<div class="decorate-container">
+				<div class="decorate-title-word">나의 꾸미기🎨</div>
+				<div class="decorate-items-container">
+					<div class="decorate-tab-container">
+						<button class="decorate-tab selected" onclick="showContent('전체')">전체</button>
+						<button class="decorate-tab" onclick="showContent('배경')">배경</button>
+						<button class="decorate-tab" onclick="showContent('스티커')">스티커</button>
+						<button class="decorate-tab" onclick="showContent('나무')">나무</button>
+					</div>
+					<div class="item-wrapper" id="content-container">
+						<%@ include file="contents-sticker.jsp"%>
+					</div>
+				</div>
+
 			</div>
-			
 		</div>
 	</div>
 	<script>
