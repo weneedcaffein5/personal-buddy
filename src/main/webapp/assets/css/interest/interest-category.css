@@ -17,6 +17,8 @@
 }
 
 .speech-bubble {
+	width: 480px;
+	height: 135px;
     position: relative;
     background-color: var(--main-green);
 	color: var(--white);
@@ -25,12 +27,14 @@
     font-size: var(--h4);
 	font-family: 500;
 	line-height: 45px;
+	display: flex;
+	align-items: center;
 }
 
 .speech-bubble::after {
     content: "";
     position: absolute;
-    bottom: -20px;
+    bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
     width: 0;
@@ -78,7 +82,10 @@
 }
 
 .tags {
+	display: flex;
+	flex-wrap: wrap;
 	margin-top: 30px;
+	overflow: hidden;
 }
 
 .tag {
@@ -89,7 +96,6 @@
 	font-family: 500;
 	margin-top: 11px;
 	margin-right: 11px;
-	line-height: 50px;
 }
 
 .tag:hover {
@@ -110,6 +116,24 @@
 	width: 100%;
 	display: flex;
 	justify-content: center;
+}
+
+.btn-spacing {
+	width: 344px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.back-btn {
+	background-color: var(--gray3);
+	width: 157px;
+    height: 43px;
+    color: var(--white);
+    border: none;
+    font-size: var(--h6);
+    font-family: 600;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 .next-btn {

@@ -22,8 +22,18 @@
         <div class="main">
             <div class="title">
                 <div class="title-top">
-                    <h1 class="post-title">2025 토트넘 경기 일정</h1>
-                    <h2 class="post-create-time">2025.01.28게시</h2>
+                	<div class="title-top-reft">
+	                    <span class="post-title">2025 토트넘 경기 일정</span>
+                	</div>
+                    <div class="title-top-right">
+	                    <form action="">
+	 	                   <button class="post-update">수정</button>
+	                    </form>
+	                    <form action="">
+		                    <button class="post-delete">삭제</button>
+	                    </form>
+	                    <span class="post-create-time">2025.01.28게시</span>
+                    </div>
                 </div>
                 <div class="title-bottom">
                     <div class="member-info">
@@ -36,26 +46,29 @@
                             <span class="post-info-count">9999</span>
                         </div>
                         <div class="post-info-box">
-                            <span class="post-info-text">| 좋아요</span>
+                            <span class="post-info-text">좋아요</span>
                             <span class="post-info-count">999</span>
                         </div>
                         <div class="post-info-box">
-                            <span class="post-info-text">| 댓글</span>
+                            <span class="post-info-text">댓글</span>
                             <span class="post-info-count">99</span>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="post-main">
-                내용내용내용내용내용내용내용내용내용내용내용내용<br>
-                내용내용내용내용내용내용내용내용내용내용내용내용<br>
-                내용내용내용내용내용내용내용내용내용내용내용내용
+            	<img alt="" src="../assets/images/community/토트넘 경기일정 1.png">
+            	<span>
+	                2025 토트넘 경기 일정입니다.<br>
+					1월 2월 3월 4월 5월 6월 7월 8월 9월 10월 11월 12월<br>
+					축구 하나도 몰라도 일단 일정 하나쯤은 알고 있어야지 
+            	</span>
             </div>
             <div class="post-like-btn">
                 <button class="post-like-btn-off">좋아요</button>
             </div>
             <div class="post-comment-title">
-                <span class="post-comment-title-text">댓글 |</span>
+                <span class="post-comment-title-text">댓글</span>
                 <span class="post-comment-title-count">99</span>    
             </div>
             <textarea class="input-comment" maxlength="500" placeholder="댓글을 입력해주세요"></textarea>
