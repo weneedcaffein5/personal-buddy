@@ -272,17 +272,43 @@
 					    <!-- 칠가이 -->
 					    <div class="achievement-card">
 					        <div class="achievement-icon-container">
-					            <img src="../assets/images/contents/achievement/중고트레이너.png" alt="중고트레이너" class="achievement-icon">
+					            <img src="../assets/images/contents/achievement/칠가이2.png" alt="칠가이" class="achievement-icon">
 					        </div>
-					
 					        <div class="achievement-desc">
-					            <h3 class="achievement-title">중고트레이너</h3>
+					            <h3 class="achievement-title">CHILL GUY</h3>
 					            <div class="achievement-line"></div> 
-					
 					            <div class="achievement-content">
 					                <div class="achievement-item">
 					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
-					                    <p class="achievement-description">운동 일정</p>
+					                    <p class="achievement-description">음주 약속 일정</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">30회 완료 시 달성</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">( 30 / 30 )</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-points">달성 시 <span class="highlight">100P</span> 획득</p>
+					                </div>
+					            </div> 
+					        </div> 
+					    </div>
+					    <!-- 무거운 엉덩이 -->
+					    <div class="achievement-card">
+					        <div class="achievement-icon-container">
+					            <img src="../assets/images/contents/achievement/무거운엉덩이.png" alt="무거운엉덩이" class="achievement-icon">
+					        </div>
+					        <div class="achievement-desc">
+					            <h3 class="achievement-title">무거운엉덩이</h3>
+					            <div class="achievement-line"></div> 
+					            <div class="achievement-content">
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">공부 일정</p>
 					                </div>
 					                <div class="achievement-item">
 					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
@@ -294,7 +320,7 @@
 					                </div>
 					                <div class="achievement-item">
 					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
-					                    <p class="achievement-points">달성 시 <span class="highlight">150P</span> 획득</p>
+					                    <p class="achievement-points">달성 시 <span class="highlight">300P</span> 획득</p>
 					                </div>
 					            </div> 
 					        </div> 
