@@ -6,14 +6,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>패션 카테고리</title>
+<title>설문조사 카테고리</title>
 <link rel="stylesheet" href="../assets/css/global.css">
-<link rel="stylesheet"  href="../assets/css/interest/interest-category-select.css">
+<link rel="stylesheet" href="../assets/css/interest/interest-category.css">
 </head>
 <body>
 	<div class="container">
         <!-- 왼쪽 말풍선 -->
-        <div class="left-box">
+        <div class="container-left">
             <div class="speech-bubble">
                 어떤 스타일을 선호하시나요?<br>
                 평소 자주 입는 스타일을 선택해주시면,<br>
@@ -23,54 +23,70 @@
         </div>
 
         <!-- 오른쪽 관심사 선택 -->
-        <div class="right-box">
-            <h2>0. (패션) 선호 하는 스타일을 선택 해주세요.</h2>
-            <p class="subtext">최소 2개 이상</p>
-            <div class="interests">
-                <span class="tag">나이키</span>
-                <span class="tag">뉴발란스</span>
-                <span class="tag">스투시</span>
-                <span class="tag">아미</span>
-                <span class="tag">팔라스</span>
-                <span class="tag">디키즈</span>
-                <span class="tag">아디다스</span>
-                <span class="tag">칼하트</span>
-                <span class="tag">필라</span>
-                <span class="tag">LEE</span>
-                <span class="tag">KANGOL</span>
-                <span class="tag">COS</span>
-                <span class="tag">SATUR</span>
-                <span class="tag">아더에러</span>
-                <span class="tag">우영미</span>
-                <span class="tag">겐조</span>
-                <span class="tag">샤넬</span>
-                <span class="tag">구찌</span>
-                <span class="tag">미우미우</span>
-                <span class="tag">프라다</span>
-                <span class="tag">입생로랑</span>
-                <span class="tag">톰 브라운</span>
-                <span class="tag">스톤 아일랜드</span>
-                <span class="tag">폴로 (랄프로렌)</span>
-                <span class="tag">디올</span>
-                <span class="tag">버버리</span>
-                <span class="tag">노스 페이스</span>
-                <span class="tag">K2</span>
-                <span class="tag">아크 테릭스</span>
-                <span class="tag">스컬프터</span>
-                <span class="tag">키츠네</span>
-                <span class="tag">지방시</span>
-                <span class="tag">휴먼 메이드</span>
-                <span class="tag">스파오</span>
-                <span class="tag">유니클로</span>
-                <span class="tag">에잇 세컨즈</span>
-                <span class="tag">H&M</span>
-                <span class="tag">자라</span>
-                <span class="tag">후아유</span>
-                <span class="tag">지오다노</span>
-                <span class="tag">PATAGONIA</span>
-            </div>
-            <button class="back-btn">뒤로가기</button>
-            <button class="next-btn">다음으로</button>
+        <div class="container-right">
+	        <div class="container-right-wrapper">
+	        	<div class="wrapper">
+					<div class="main-title">
+						<span>0. (패션) 선호 하는 스타일을 선택 해주세요</span>
+					</div>
+					<div class="sub-title">
+						<span>최소 2개 이상</span>
+					</div>     
+		            <div class="tags">
+		                <span class="tag">나이키</span>
+		                <span class="tag">뉴발란스</span>
+		                <span class="tag">스투시</span>
+		                <span class="tag">아미</span>
+		                <span class="tag">팔라스</span>
+		                <span class="tag">디키즈</span>
+		                <span class="tag">아디다스</span>
+		                <span class="tag">칼하트</span>
+		                <span class="tag">필라</span>
+		                <span class="tag">LEE</span>
+		                <span class="tag">KANGOL</span>
+		                <span class="tag">COS</span>
+		                <span class="tag">SATUR</span>
+		                <span class="tag">아더에러</span>
+		                <span class="tag">우영미</span>
+		                <span class="tag">겐조</span>
+		                <span class="tag">샤넬</span>
+		                <span class="tag">구찌</span>
+		                <span class="tag">미우미우</span>
+		                <span class="tag">프라다</span>
+		                <span class="tag">입생로랑</span>
+		                <span class="tag">톰 브라운</span>
+		                <span class="tag">스톤 아일랜드</span>
+		                <span class="tag">폴로 (랄프로렌)</span>
+		                <span class="tag">디올</span>
+		                <span class="tag">버버리</span>
+		                <span class="tag">노스 페이스</span>
+		                <span class="tag">K2</span>
+		                <span class="tag">아크 테릭스</span>
+		                <span class="tag">스컬프터</span>
+		                <span class="tag">키츠네</span>
+		                <span class="tag">지방시</span>
+		                <span class="tag">휴먼 메이드</span>
+		                <span class="tag">스파오</span>
+		                <span class="tag">유니클로</span>
+		                <span class="tag">에잇 세컨즈</span>
+		                <span class="tag">H&M</span>
+		                <span class="tag">자라</span>
+		                <span class="tag">후아유</span>
+		                <span class="tag">지오다노</span>
+		                <span class="tag">PATAGONIA</span>
+		            </div>
+	        	</div>
+	        	<div class="next-btn-wrapper">
+	        		<div class="btn-spacing">
+		        		<form action="">
+		        			<button class="back-btn">뒤로가기</button>
+		        		</form>
+			        	<form action="">
+				            <button class="next-btn">다음으로</button>
+			        	</form>
+	        		</div>
+	        	</div>
+	        </div>
         </div>
     </div>
 </body>
