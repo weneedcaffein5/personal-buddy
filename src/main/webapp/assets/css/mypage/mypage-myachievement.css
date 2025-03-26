@@ -310,3 +310,8 @@ strong {
    height: 100%;
 }
 
+.selected-for-best {
+    outline: 1px solid #01CD74;
+    background-color: #EEFFF8;
+    transition: 0.3s;
+}
