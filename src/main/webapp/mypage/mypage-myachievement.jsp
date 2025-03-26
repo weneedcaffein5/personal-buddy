@@ -5,11 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="../assets/css/global.css" />
+<link rel="stylesheet" type="text/css" href="../assets/css/header.css" />
 <link rel="stylesheet" type="text/css" href="../assets/css/mypage/mypage-myachievement.css" />
 <title>나의 업적</title>
 </head>
 <body>
-	<%@ include file="../layout/header.jsp" %>
+	
 	<div class="body">
         <div class="container">
             <div class="sidebar">
@@ -22,8 +23,8 @@
                 </div>
                 <div class="mypage">
                     <div><strong><img class="icon" src="../assets/images/mypage/mypage-icon.png">마이페이지</strong></div>
-                    <div><a class="link" href="mypage-mytree.jsp">나의 나무</a></div>
-                    <div><a id="now" class="link" href="#">나의 업적</a></div>
+                    <div><a class="link" href="mypage-mytree.mypage">나의 나무</a></div>
+                    <div><a id="now" class="link" href="mypage-achievement.mypage">나의 업적</a></div>
                 </div>
                 <div class="community">
                     <strong><img class="icon" src="../assets/images/mypage/community-icon.png">커뮤니티</strong>
@@ -314,7 +315,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function createClone(card) {
         const cloned = card.cloneNode(true);
-        cloned.classList.add("best-achievement-card");
+        cloned.classList.add("best-achievement-card", "selected-for-best");
         cloned.classList.remove("achievement-card");
         return cloned;
     }
@@ -369,7 +370,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-<%@ include file="../layout/footer.jsp" %>
+<%-- <%@ include file="../layout/footer.jsp" %> --%>
 </script>
 </body>
 
