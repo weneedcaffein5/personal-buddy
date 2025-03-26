@@ -1,4 +1,4 @@
-package com.app.cutomerService;
+package com.app.customerService;
 
 import java.io.IOException;
 
@@ -11,7 +11,7 @@ import com.app.Result;
 import com.app.member.controller.MemberJoinAgreeController;
 import com.app.member.controller.MemberJoinWriteController;
 
-public class CutomerServiceFrontController extends HttpServlet {
+public class CustomerServiceFrontController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");

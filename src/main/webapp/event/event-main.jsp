@@ -28,7 +28,7 @@
 					</a>
 			    </div>
 			    <div class="tab-sub-position">
-					<a href="../community/community.jsp">
+					<a href="../community/community-main.jsp">
 				    	<span>BOARD</span>
 					</a>
 			    </div>
@@ -47,8 +47,8 @@
 		            <a href="#" class="slide"><img src="../assets/images/event/이벤트 이미지2.png" alt="이벤트 슬라이드 이미지2"></a>
 		            <a href="#" class="slide"><img src="../assets/images/event/이벤트 이미지3.png" alt="이벤트 슬라이드 이미지3"></a>
 		        </div>
-		        <button class="prev">&#10094;</button>
-		        <button class="next">&#10095;</button>
+		        <button class="prev-btn">&#10094;</button>
+		        <button class="next-btn">&#10095;</button>
 		    </div>
         </div>
 	    <div class="title-sub">

@@ -173,7 +173,7 @@
 		    <div class="board-sub-title">프로필을 멋지게 장식해봐요!</div>
 		    <div class="board-main-title">업적 목록 🎖</div>
 		  </div>	
-		  <a class="go-profile-link" href="../mypage/mypage-myachievement.jsp">프로필 설정하러 가기 >></a>
+		 <!--  <a class="go-profile-link" href="../mypage/mypage-myachievement.jsp">프로필 설정하러 가기 >></a> -->
 		</div>
 		
     <div class="achievements-container">
