@@ -46,9 +46,7 @@
 		            </div>
 	        	</div>
 	        	<div class="next-btn-wrapper">
-		        	<form action="">
 			            <button class="next-btn">다음으로</button>
-		        	</form>
 	        	</div>
 	        </div>
         </div>
