@@ -13,7 +13,7 @@
 <body>
 	<div class="container">
         <!-- 왼쪽 말풍선 -->
-        <div class="left-box">
+        <div class="container-left">
             <div class="speech-bubble">
                 더 나은 맞춤형 경험을 위해 당신의 관심사를<br>
                 알려주세요! 선택해주신 관심사를 바탕으로<br>
@@ -23,22 +23,34 @@
         </div>
 
         <!-- 오른쪽 관심사 선택 -->
-        <div class="right-box">
-            <h2>1. 관심사를 선택해 주세요</h2>
-            <p class="subtext">최소 2개 이상</p>
-            <div class="interests">
-                <span class="tag">맛집 탐방</span>
-                <span class="tag">운동</span>
-                <span class="tag">구기 종목</span>
-                <span class="tag">음악 감상</span>
-                <span class="tag">영화 감상</span>
-                <span class="tag">독서</span>
-                <span class="tag">패션</span>
-                <span class="tag">여행</span>
-                <span class="tag">쇼핑</span>
-                <span class="tag">연주</span>
-            </div>
-            <button class="next-btn">다음으로</button>
+        <div class="container-right">
+	        <div class="container-right-wrapper">
+	        	<div class="wrapper">
+					<div class="main-title">
+						<span>1. 관심사를 선택해 주세요</span>
+					</div>
+					<div class="sub-title">
+						<span>최소 2개 이상</span>
+					</div>     
+		            <div class="tags">
+		                <span class="tag">맛집 탐방</span>
+		                <span class="tag">운동</span>
+		                <span class="tag">구기 종목</span>
+		                <span class="tag">음악 감상</span>
+		                <span class="tag">영화 감상</span>
+		                <span class="tag">독서</span>
+		                <span class="tag">패션</span>
+		                <span class="tag">여행</span>
+		                <span class="tag">쇼핑</span>
+		                <span class="tag">연주</span>
+		            </div>
+	        	</div>
+	        	<div class="next-btn-wrapper">
+		        	<form action="">
+			            <button class="next-btn">다음으로</button>
+		        	</form>
+	        	</div>
+	        </div>
         </div>
     </div>
 </body>

@@ -6,14 +6,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>영화 카테고리</title>
+<title>설문조사 카테고리</title>
 <link rel="stylesheet" href="../assets/css/global.css">
-<link rel="stylesheet"  href="../assets/css/interest/interest-category-select.css">
+<link rel="stylesheet" href="../assets/css/interest/interest-category.css">
 </head>
 <body>
-    <div class="container">
+	<div class="container">
         <!-- 왼쪽 말풍선 -->
-        <div class="left-box">
+        <div class="container-left">
             <div class="speech-bubble">
                 선호하는 영화 장르를 선택하시면,<br>
                 일정과 연계된 영화 추천도 받아보실 수 있어요.
@@ -22,38 +22,54 @@
         </div>
 
         <!-- 오른쪽 관심사 선택 -->
-        <div class="right-box">
-            <h2>0. (영화 감상) 선호 하는 영화 장르를 선택 해주세요.</h2>
-            <p class="subtext">최소 2개 이상</p>
-            <div class="interests">
-                <span class="tag">액션</span>
-                <span class="tag">모험</span>
-                <span class="tag">SF</span>
-                <span class="tag">판타지</span>
-                <span class="tag">드라마</span>
-                <span class="tag">스릴러</span>
-                <span class="tag">공포</span>
-                <span class="tag">코미디</span>
-                <span class="tag">로맨스</span>
-                <span class="tag">범죄</span>
-                <span class="tag">전쟁</span>
-                <span class="tag">음악 / 뮤지컬</span>
-                <span class="tag">스포츠</span>
-                <span class="tag">다큐멘터리</span>
-                <span class="tag">느와르</span>
-                <span class="tag">포스트 아포칼립스</span>
-                <span class="tag">디스토피아</span>
-                <span class="tag">고어</span>
-                <span class="tag">좀비</span>
-                <span class="tag">괴수</span>
-                <span class="tag">서부극</span>
-                <span class="tag">첩보물</span>
-                <span class="tag">법정/재판</span>
-                <span class="tag">로드 무비</span>
-                <span class="tag">블랙 코미디</span>
-            </div>
-            <button class="back-btn">뒤로가기</button>
-            <button class="next-btn">다음으로</button>
+        <div class="container-right">
+	        <div class="container-right-wrapper">
+	        	<div class="wrapper">
+					<div class="main-title">
+						<span>0. (영화 감상) 선호 하는 영화 장르를 선택 해주세요</span>
+					</div>
+					<div class="sub-title">
+						<span>최소 2개 이상</span>
+					</div>     
+		            <div class="tags">
+		                <span class="tag">액션</span>
+		                <span class="tag">모험</span>
+		                <span class="tag">SF</span>
+		                <span class="tag">판타지</span>
+		                <span class="tag">드라마</span>
+		                <span class="tag">스릴러</span>
+		                <span class="tag">공포</span>
+		                <span class="tag">코미디</span>
+		                <span class="tag">로맨스</span>
+		                <span class="tag">범죄</span>
+		                <span class="tag">전쟁</span>
+		                <span class="tag">음악 / 뮤지컬</span>
+		                <span class="tag">스포츠</span>
+		                <span class="tag">다큐멘터리</span>
+		                <span class="tag">느와르</span>
+		                <span class="tag">포스트 아포칼립스</span>
+		                <span class="tag">디스토피아</span>
+		                <span class="tag">고어</span>
+		                <span class="tag">좀비</span>
+		                <span class="tag">괴수</span>
+		                <span class="tag">서부극</span>
+		                <span class="tag">첩보물</span>
+		                <span class="tag">법정/재판</span>
+		                <span class="tag">로드 무비</span>
+		                <span class="tag">블랙 코미디</span>
+		            </div>
+	        	</div>
+	        	<div class="next-btn-wrapper">
+	        		<div class="btn-spacing">
+		        		<form action="">
+		        			<button class="back-btn">뒤로가기</button>
+		        		</form>
+			        	<form action="">
+				            <button class="next-btn">다음으로</button>
+			        	</form>
+	        		</div>
+	        	</div>
+	        </div>
         </div>
     </div>
 </body>
