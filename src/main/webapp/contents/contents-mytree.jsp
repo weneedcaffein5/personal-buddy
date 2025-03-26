@@ -13,8 +13,8 @@
 </head>
 <body>
 
-	<%-- <%@ include file="../layout/header.jsp"%>
-	<%@ include file="../layout/banner.jsp"%> --%>
+	<%@ include file="../layout/header.jsp"%>
+	<%@ include file="../layout/banner.jsp"%>
 
 	<div class="page-container">
 
