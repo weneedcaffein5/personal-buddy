@@ -19,7 +19,9 @@
             제공해드릴게요.
         </div>
         <img src="../assets/images/interest/logo.png" alt="로고 이미지" class="logo-img">
-        <button class="start-btn">시작하기</button>
+        <form action="interest-category.jsp" method="post">
+	        <button class="start-btn">시작하기</button>
+        </form>
     </div>
 </body>	
 </html>
