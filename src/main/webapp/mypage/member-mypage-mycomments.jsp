@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="../assets/css/mypage/member-mypage-mycomments.css" />
+<link rel="stylesheet" href="../assets/css/header.css">
 <link rel="stylesheet" type="text/css" href="../assets/css/global.css" />
 <title>member-mypage-mycomments</title>
 </head>
