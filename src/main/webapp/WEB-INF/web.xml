@@ -84,11 +84,11 @@
     
   <servlet>
   	<servlet-name>MyPageFrontController</servlet-name>
-  	<servlet-class>com.app.myPage.MyPageFrontController</servlet-class>
+  	<servlet-class>com.app.mypage.MyPageFrontController</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>MyPageFrontController</servlet-name>
-  	<url-pattern>*.myPage</url-pattern>
+  	<url-pattern>*.mypage</url-pattern>
   </servlet-mapping>
   
 </web-app>

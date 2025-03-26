@@ -5,14 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="../assets/css/global.css" />
+<link rel="stylesheet" type="text/css" href="../assets/css/header.css" />
+<link rel="stylesheet" type="text/css" href="../assets/css/banner.css" />
 <link rel="stylesheet" href="../assets/css/community/community.css">
+
 <title>커뮤니티</title>
 </head>
 <body>
 	<%@ include file="../layout/header.jsp" %>
 	<%@ include file="../layout/banner.jsp" %>
-	
-	
 	
     <div class="container">
     	<form action="community-main.community" method="post">
@@ -73,7 +74,7 @@
 								<img class="img" src="../assets/images/community/post3.png">
 								<div class="number-box">3</div>
 							</a>
-							<span class="tag">관심 일정</span>
+							<span class="tag">공유 일정</span>
 							<span class="content-name">⚽ 2025 챔피언스 리그 16강 대진표</span>
 							<div class="user-info">
 							<img class="mini-profile" src="../assets/images/mypage/user-profile1.jpg">

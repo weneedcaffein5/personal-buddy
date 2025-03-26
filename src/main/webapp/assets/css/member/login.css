@@ -126,7 +126,6 @@ body {
 }
 
 .login-fail{
-	color: var(--warning-red);		/* login-fail 시 */
 	color: var(--white);		/* default */
 	font-size: var(--h9);
 	font-weight: 500;

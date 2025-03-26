@@ -16,159 +16,143 @@
                 <div class="profile">
                     <span><img src="../assets/images/mypage/profile-default-image.png"></span>
                 </div>
+                
                 <div class="profile-setting">
                     <strong class="nickname">나는 신이다</strong>
                     <span>반가워요</span>
                 </div>
+                
                 <div class="mypage">
                     <div><strong><img class="icon" src="../assets/images/mypage/mypage-icon.png">마이페이지</strong></div>
                     <div><a id="now" class="link" href="#">나의 나무</a></div>
                     <div><a class="link" href="#">나의 업적</a></div>
                 </div>
+                
                 <div class="community">
                     <strong><img class="icon" src="../assets/images/mypage/community-icon.png">커뮤니티</strong>
                     <a class="link" href="mypage-myposts.jsp">내 게시물</a>
                     <a class="link" href="#">내가 쓴 댓글</a>
                 </div>
+                
                 <div class="myinfo">
                         <strong><img class="icon" src="../assets/images/mypage/mypage-icon.png">내 정보</strong>
                     <a class="link" href="#">프로필 설정</a>
                     <a class="link" href="#">계정 설정</a>
                     <a class="link" href="#">포인트 내역</a>
-                </div>
+                </div>                              
             </div>
             
             <div class="right-contentbox">
-            
-            <div class="myposts-container">
-    			<p class="myposts-description">내가 커뮤니티에 등록한 게시물을 확인하고 관리할 수 있습니다.</p>
-    			<h2 class="myposts-title">내 게시물</h2>
-    			<hr class="myposts-divider">
-    	
-    		<div class="myposts-list">
-        	<div class="mypost">
-            	<img class="mypost-image" src="../assets/images/mypage/myposts-dummy-1.jpg" alt="게시물 이미지">
-            <div class="mypost-content">
-                <h3 class="mypost-title">⚽ 2025 토트넘 경기 일정</h3>
-                <p class="mypost-text">이번 시즌 토트넘의 경기 일정을 공유합니다. 챔피언스리그와 프리미어리그 일정을 한눈에 볼 수 있도록 정리했습니다.</p>
-            </div>
-                <p class="mypost-meta">2025.02.01 게시
-            <div class="mypost-stats">
-            	<span>👍 800</span>
-            	<span>💬 20</span>
-            	<span>👁 2,310</span>
-            </div>
-            </p>
-        </div>
+      <div class="myposts-container">
+        <p class="myposts-description">내가 커뮤니티에 등록한 게시물을 확인하고 관리할 수 있습니다.</p>
+        <h2 class="myposts-title">내 게시물</h2>
+        <hr class="myposts-divider">
+
+        <div class="myposts-list">
         
-        <div class="mypost">
+        <!-- 첫 번째 게시물 -->
+        	<div class="mypost">
+            <img class="mypost-image" src="../assets/images/mypage/myposts-dummy-1.jpg" alt="게시물 이미지">
+            <div class="mypost-content">
+              <h3 class="mypost-title">⚽ 2025 토트넘 경기 일정</h3>
+              <p class="mypost-text">이번 시즌 토트넘의 경기 일정을 공유합니다. 챔피언스리그와 프리미어리그 일정을 한눈에 볼 수 있도록 정리했습니다.</p>
+            </div>
+            
+            <div class="mypost-meta-box">
+		    <p class="mypost-meta">2025.02.01 게시</p>
+			    <!-- <div class="mypost-stats">
+			      <span><img src="../assets/images/community/like-icon.png" alt="좋아요"> 800</span>
+			      <span><img src="../assets/images/community/comment-icon.png" alt="댓글"> 20</span>
+			      <span><img src="../assets/images/community/view-icon.png" alt="조회수"> 2,310</span>
+			    </div> -->
+		  	</div>
+          </div>
+          
+          <!-- 두 번째 게시물 -->
+          <div class="mypost">
             <img class="mypost-image" src="../assets/images/mypage/myposts-dummy-2.jpg" alt="게시물 이미지">
             <div class="mypost-content">
-                <h3 class="mypost-title">🖥️ It's all JavaScript. There is No JAVA</h3>
-                <p class="mypost-text">
-                	JS is the best Language for all developers.Many developers use JS well. 
-                	Whether you're a front developer or a back developer, it's an essential language. 
-                	So let's study together.It'll be a blast.
-                </p>
+              <h3 class="mypost-title">🖥️ It's all JavaScript. There is No JAVA</h3>
+              <p class="mypost-text">
+              JS is the best Language for all developers.Many developers use JS well. 
+              Whether you're a front developer or a back developer, it's an essential language. 
+              So let's study together.It'll be a blast.
+              </p>
             </div>
-                <p class="mypost-meta">2025.02.01 게시
-                <div class="mypost-stats">
-                    <span>👍 500</span>
-                    <span>💬 80</span>
-                    <span>👁 1,910</span>
-                </div>
-                </p>
-        </div>
-        
-        <div class="mypost">
+            <div class="mypost-meta-box">
+		    <p class="mypost-meta">2025.02.01 게시</p>
+			    
+		  	</div>
+          </div>
+          
+          <!-- 세 번째 게시물 -->
+          <div class="mypost">
             <img class="mypost-image" src="../assets/images/mypage/myposts-dummy-3.jpg" alt="게시물 이미지">
             <div class="mypost-content">
-                <h3 class="mypost-title">☕ 같이 카공해요</h3>
-                <p class="mypost-text">
-                서러운 맘을 못 이겨 잠 못 들던 어둔 밤을 또 견디고
-                내 절망관 상관 없이 무심하게도 아침은 날 깨우네
-                상처는 생각보다 쓰리고 아픔은 생각보다 깊어가 
-                널 원망하던 수많은 밤이 내겐 지옥같아
-                </p>
+              <h3 class="mypost-title">☕ 같이 카공해요</h3>
+              <p class="mypost-text">
+              서러운 맘을 못 이겨 잠 못 들던 어둔 밤을 또 견디고
+              내 절망관 상관 없이 무심하게도 아침은 날 깨우네
+              상처는 생각보다 쓰리고 아픔은 생각보다 깊어가 
+              널 원망하던 수많은 밤이 내겐 지옥같아
+              </p>
             </div>
-                <p class="mypost-meta">2025.02.01 게시
-                <div class="mypost-stats">
-                    <span>👍 420</span>
-                    <span>💬 60</span>
-                    <span>👁 1,500</span>
-                </div>
-                </p>
-        </div>
-        
-        <div class="mypost">
+            <div class="mypost-meta-box">
+		    <p class="mypost-meta">2025.02.01 게시</p>
+		  	</div>
+          </div>
+          
+          <!-- 네 번째 게시물 -->
+          <div class="mypost">
             <img class="mypost-image" src="../assets/images/mypage/myposts-dummy-4.jpg" alt="게시물 이미지">
             <div class="mypost-content">
-                <h3 class="mypost-title">🔥 Alive</h3>
-                <p class="mypost-text">
-                답답한 창살은 뜯어버려 단숨에 작살을 내 짐승은 발톱을 갈아야 해 일격에 숨통을 쳐 
-                이빨로 목덜밀 물어 푸짐한 저녁 식탁 피비린내 나는 축제 난장판쳐라
-                그래 난 박살낼 테다 세상의 평화 타락한 너의 영혼을 신봉할 테다 
-                </p>
-            	</div>
-                <p class="mypost-meta">2025.02.01 게시
-                <div class="mypost-stats">
-                    <span>👍 380</span>
-                    <span>💬 45</span>
-                    <span>👁 1,200</span>
-                	</div>
-                	</p>
-        	</div>
-        	
-        	<div class="mypost">
-            <img class="mypost-image" src="../assets/images/mypage/myposts-dummy-5.jpg" alt="게시물 이미지">
-            <div class="mypost-content">
-                <h3 class="mypost-title">🌃 강남에서 야경 보기 좋은 카페</h3>
-                <p class="mypost-text">
-                는 구라죠. 야경 볼 시간 없죠. 공부해야돼죠. 자바 모르죠. 리액트 모르죠. JSP 모르죠.
-                아는 거 없죠. 팩트죠. 반박 시 님 말이 다 맞음 앙~ 
-                </p>
-            	</div>
-                <p class="mypost-meta">2025.02.01 게시
-                <div class="mypost-stats">
-                    <span>👍 380</span>
-                    <span>💬 45</span>
-                    <span>👁 1,200</span>
-                </div>
-                </p>
-        	</div> 
-        	
-        	<div class="mypost">
-            <img class="mypost-image" src="../assets/images/mypage/myposts-dummy-6.jpg" alt="게시물 이미지">
-            <div class="mypost-content">
-                <h3 class="mypost-title">🌆 올해 꼭 먹어야 할 음식</h3>
-                <p class="mypost-text">서울에서 꼭 먹어봐야 할 음식 리스트를 정리해보았습니다. 추천 맛집과 메뉴도 함께 공유합니다! 크히야!</p>
+              <h3 class="mypost-title">🔥 Alive</h3>
+              <p class="mypost-text">
+              답답한 창살은 뜯어버려 단숨에 작살을 내 짐승은 발톱을 갈아야 해 일격에 숨통을 쳐 
+              이빨로 목덜밀 물어 푸짐한 저녁 식탁 피비린내 나는 축제 난장판쳐라
+              그래 난 박살낼 테다 세상의 평화 타락한 너의 영혼을 신봉할 테다 
+              </p>
             </div>
-                <p class="mypost-meta">2025.02.01 게시
-                <div class="mypost-stats">
-                    <span>👍 500</span>
-                    <span>💬 80</span>
-                    <span>👁 1,910</span>
-                </div>
-                </p>
-        	</div>
-        	
-        	
-        	     	       	
-    	</div>	  	
-	</div>
-	
-		<div class="pagination">
-        	<span class="arrow">&lt;</span>
-        	<a href="#" class="active">1</a>
-        	<a href="#">2</a>
-        	<a href="#">3</a>
-        	<a href="#">4</a>
-        	<span class="dots">...</span>
-        	<a href="#">10</a>
-        	<span class="arrow">&gt;</span>
-        </div>
-	</div> 	
+            <div class="mypost-meta-box">
+		    <p class="mypost-meta">2025.02.01 게시</p>
+		  	</div>
+          </div>
+          
+          <!-- 다섯번 째 게시물 -->
+          <div class="mypost">
+            <img class="mypost-image" src="../assets/images/mypage/myposts-dummy-4.jpg" alt="게시물 이미지">
+            <div class="mypost-content">
+              <h3 class="mypost-title">🔥 Alive</h3>
+              <p class="mypost-text">
+              답답한 창살은 뜯어버려 단숨에 작살을 내 짐승은 발톱을 갈아야 해 일격에 숨통을 쳐 
+              이빨로 목덜밀 물어 푸짐한 저녁 식탁 피비린내 나는 축제 난장판쳐라
+              그래 난 박살낼 테다 세상의 평화 타락한 너의 영혼을 신봉할 테다 
+              </p>
+            </div>
+            <div class="mypost-meta-box">
+		    <p class="mypost-meta">2025.02.01 게시</p>
+		  	</div>
+          </div>
+          
+    
+
+		<!-- 페이지네이션 -->
+      <div class="pagination">
+        <span class="arrow">&lt;</span>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <span class="dots">...</span>
+        <a href="#">10</a>
+        <span class="arrow">&gt;</span>
+      </div>
+    </div>
+
+  </div>
+</div>	
 </body>
+
 <script>
 
 /* 페이지네이션 */
@@ -186,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	console.log(nextArrow); */
 	
     let currentPage = 1;
-    const postPerPage = 3;
+    const postPerPage = 4;
 
     console.log("총 ㄱㅔ시글 수 : " + posts.length);
     console.log("한 페이지당 게시글 수 : " + postPerPage);
