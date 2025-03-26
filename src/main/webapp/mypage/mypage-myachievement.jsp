@@ -5,11 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="../assets/css/global.css" />
+<link rel="stylesheet" type="text/css" href="../assets/css/header.css" />
 <link rel="stylesheet" type="text/css" href="../assets/css/mypage/mypage-myachievement.css" />
 <title>나의 업적</title>
 </head>
 <body>
-	<%@ include file="../layout/header.jsp" %>
+	
 	<div class="body">
         <div class="container">
             <div class="sidebar">
@@ -22,8 +23,8 @@
                 </div>
                 <div class="mypage">
                     <div><strong><img class="icon" src="../assets/images/mypage/mypage-icon.png">마이페이지</strong></div>
-                    <div><a class="link" href="mypage-mytree.jsp">나의 나무</a></div>
-                    <div><a id="now" class="link" href="#">나의 업적</a></div>
+                    <div><a class="link" href="mypage-mytree.mypage">나의 나무</a></div>
+                    <div><a id="now" class="link" href="mypage-achievement.mypage">나의 업적</a></div>
                 </div>
                 <div class="community">
                     <strong><img class="icon" src="../assets/images/mypage/community-icon.png">커뮤니티</strong>
@@ -271,17 +272,43 @@
 					    <!-- 칠가이 -->
 					    <div class="achievement-card">
 					        <div class="achievement-icon-container">
-					            <img src="../assets/images/contents/achievement/중고트레이너.png" alt="중고트레이너" class="achievement-icon">
+					            <img src="../assets/images/contents/achievement/칠가이2.png" alt="칠가이" class="achievement-icon">
 					        </div>
-					
 					        <div class="achievement-desc">
-					            <h3 class="achievement-title">중고트레이너</h3>
+					            <h3 class="achievement-title">CHILL GUY</h3>
 					            <div class="achievement-line"></div> 
-					
 					            <div class="achievement-content">
 					                <div class="achievement-item">
 					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
-					                    <p class="achievement-description">운동 일정</p>
+					                    <p class="achievement-description">음주 약속 일정</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">30회 완료 시 달성</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">( 30 / 30 )</p>
+					                </div>
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-points">달성 시 <span class="highlight">100P</span> 획득</p>
+					                </div>
+					            </div> 
+					        </div> 
+					    </div>
+					    <!-- 무거운 엉덩이 -->
+					    <div class="achievement-card">
+					        <div class="achievement-icon-container">
+					            <img src="../assets/images/contents/achievement/무거운엉덩이.png" alt="무거운엉덩이" class="achievement-icon">
+					        </div>
+					        <div class="achievement-desc">
+					            <h3 class="achievement-title">무거운엉덩이</h3>
+					            <div class="achievement-line"></div> 
+					            <div class="achievement-content">
+					                <div class="achievement-item">
+					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
+					                    <p class="achievement-description">공부 일정</p>
 					                </div>
 					                <div class="achievement-item">
 					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
@@ -293,7 +320,7 @@
 					                </div>
 					                <div class="achievement-item">
 					                    <img src="../assets/images/contents/achievement/checkbox-icon-true.png" alt="체크" class="check-icon">
-					                    <p class="achievement-points">달성 시 <span class="highlight">150P</span> 획득</p>
+					                    <p class="achievement-points">달성 시 <span class="highlight">300P</span> 획득</p>
 					                </div>
 					            </div> 
 					        </div> 
@@ -314,7 +341,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function createClone(card) {
         const cloned = card.cloneNode(true);
-        cloned.classList.add("best-achievement-card");
+        cloned.classList.add("best-achievement-card", "selected-for-best");
         cloned.classList.remove("achievement-card");
         return cloned;
     }
@@ -367,6 +394,9 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("대표 업적이 적용되었습니다!");
     });
 });
+
+
+<%-- <%@ include file="../layout/footer.jsp" %> --%>
 </script>
 </body>
 

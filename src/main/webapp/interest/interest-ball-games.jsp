@@ -6,14 +6,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>구기 종목 카테고리</title>
+<title>설문조사 카테고리</title>
 <link rel="stylesheet" href="../assets/css/global.css">
-<link rel="stylesheet"  href="../assets/css/interest/interest-category-select.css">
+<link rel="stylesheet" href="../assets/css/interest/interest-category.css">
 </head>
 <body>
 	<div class="container">
         <!-- 왼쪽 말풍선 -->
-        <div class="left-box">
+        <div class="container-left">
             <div class="speech-bubble">
                 좋아하는 구기 종목을 알려주시면,<br>
                 관련된 종목에 관련된 소식이나 정보를 알려드릴게요!
@@ -22,25 +22,41 @@
         </div>
 
         <!-- 오른쪽 관심사 선택 -->
-        <div class="right-box">
-            <h2>0. (구기 종목) 선호 하는 운동을 선택 해주세요.</h2>
-            <p class="subtext">최소 2개 이상</p>
-            <div class="interests">
-                <span class="tag">축구</span>
-                <span class="tag">야구</span>
-                <span class="tag">농구</span>
-                <span class="tag">배구</span>
-                <span class="tag">테니스</span>
-                <span class="tag">스쿼시</span>
-                <span class="tag">배드민턴</span>
-                <span class="tag">골프</span>
-                <span class="tag">볼링</span>
-                <span class="tag">탁구</span>
-                <span class="tag">핸드볼</span>
-                <span class="tag">카바디</span>
-            </div>
-            <button class="back-btn">뒤로가기</button>
-            <button class="next-btn">다음으로</button>
+        <div class="container-right">
+	        <div class="container-right-wrapper">
+	        	<div class="wrapper">
+					<div class="main-title">
+						<span>0. (구기 종목) 선호 하는 운동을 선택 해주세요</span>
+					</div>
+					<div class="sub-title">
+						<span>최소 2개 이상</span>
+					</div>     
+		            <div class="tags">
+		                <span class="tag">축구</span>
+		                <span class="tag">야구</span>
+		                <span class="tag">농구</span>
+		                <span class="tag">배구</span>
+		                <span class="tag">테니스</span>
+		                <span class="tag">스쿼시</span>
+		                <span class="tag">배드민턴</span>
+		                <span class="tag">골프</span>
+		                <span class="tag">볼링</span>
+		                <span class="tag">탁구</span>
+		                <span class="tag">핸드볼</span>
+		                <span class="tag">카바디</span>
+		            </div>
+	        	</div>
+	        	<div class="next-btn-wrapper">
+	        		<div class="btn-spacing">
+		        		<form action="">
+		        			<button class="back-btn">뒤로가기</button>
+		        		</form>
+			        	<form action="">
+				            <button class="next-btn">다음으로</button>
+			        	</form>
+	        		</div>
+	        	</div>
+	        </div>
         </div>
     </div>
 </body>

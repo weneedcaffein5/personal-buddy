@@ -9,21 +9,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>컨텐츠 메인</title>
 <link rel="stylesheet" href="../assets/css/global.css" />
-<link rel="stylesheet" href="../assets/css/contents/contents.css" />
+<link rel="stylesheet" href="../assets/css/contents/contents-mytree.css" />
 </head>
 <body>
 
-	<%@ include file="../layout/header.jsp" %>
-	<%@ include file="../layout/banner.jsp" %>
-	
+	<%@ include file="../layout/header.jsp"%>
+	<%@ include file="../layout/banner.jsp"%>
+
 	<div class="page-container">
-		<div class="tab-container">
-			<div class="tab-btn"></div>
-			<div id="achievementTab" class="tab-text tab-text-off">업적</div>
-			<div id="myTreeTab" class="tab-text tab-text-on">나의 성장 나무</div>
-			<div id="pointShopTab" class="tab-text tab-text-off">포인트 샵</div>
+		<div class="title-word-tab-container">
+			<div class="tab-container">
+				<div class="tab-btn"></div>
+				<div id="achievementTab" class="tab-text tab-text-off">업적</div>
+				<div id="myTreeTab" class="tab-text tab-text-on">나의 성장 나무</div>
+				<div id="pointShopTab" class="tab-text tab-text-off">포인트 샵</div>
+			</div>
+			<div class="tree-title-word">나의 성장나무🎄</div>
 		</div>
-		<h1 class="tree-title-word">나의 성장나무🎄</h1>
 		<div class="tree-wrapper">
 			<div class="tree-container">
 				<img src="../assets/images/contents/default/default.png">
@@ -35,17 +37,21 @@
 		</div>
 
 		<!-- 나의꾸미기 -->
-		<div class = "decorate-title-tab-container">
-		<h1 class="decorate-title-word">나의 꾸미기🎨</h1>
-		<div class="decorate-tab-container">
-			<button class="decorate-tab selected" onclick="showContent('전체')">전체</button>
-			<button class="decorate-tab" onclick="showContent('배경')">배경</button>
-			<button class="decorate-tab" onclick="showContent('스티커')">스티커</button>
-			<button class="decorate-tab" onclick="showContent('나무')">나무</button>
-		</div>
-		<div class="container" id="content-container">
-			<%@ include file="contents-sticker.jsp"%>
-		</div>
+
+		<div class="decorate-title-tab-container">
+			<div class="decorate-title-word">나의 꾸미기🎨</div>
+			<div class="decorate-title-word-tab-container">
+				<div class="decorate-tab-container">
+					<button class="decorate-tab selected" onclick="showContent('전체')">전체</button>
+					<button class="decorate-tab" onclick="showContent('배경')">배경</button>
+					<button class="decorate-tab" onclick="showContent('스티커')">스티커</button>
+					<button class="decorate-tab" onclick="showContent('나무')">나무</button>
+				</div>
+				<div class="container" id="content-container">
+				<%@ include file="contents-sticker.jsp"%>
+			</div>
+			</div>
+			
 		</div>
 	</div>
 	<script>
