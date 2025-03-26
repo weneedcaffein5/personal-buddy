@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <title>커뮤니티-글쓰기</title>
 <link rel="stylesheet" href="../assets/css/global.css" />
+<link rel="stylesheet" href="../assets/css/header.css" />
 <link rel="stylesheet" href="../assets/css/banner.css" />
 <link rel="stylesheet"
 	href="../assets/css/community/community-write.css" />
