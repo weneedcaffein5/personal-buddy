@@ -10,7 +10,7 @@
                             <button class="remove-btn">제거</button>
                         </div>
                     </div>
-                    <div class="folder-item">
+                    <div class="folder-item located">
                     <img src="../assets/images/contents/beach-bg.png" alt="beach-bg" class="background-image">
                         <span>야자수 해변</span>
                         <div class="item-button-group">
@@ -100,13 +100,4 @@
                     </div>
                 </div>
             </div>
-            <div class="pagination">
-                <span class="arrow">&lt;</span>
-                <a href="#" class="active">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <span class="dots">...</span>
-                <a href="#">10</a>
-                <span class="arrow">&gt;</span>
-            </div>
+           

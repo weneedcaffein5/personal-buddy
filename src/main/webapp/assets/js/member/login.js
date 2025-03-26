@@ -17,6 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const inputs = document.querySelectorAll(".input-group input");
     const loginButton = document.querySelector(".login-btn");
 
+	inputs.forEach((input) => {
+		input.addEventListener("focus", () => {
+			loginFailMessage.style.color = "var(--white)";
+		});
+	})
+	
+	
     function checkInputs() {
         let allFilled = true;
         inputs.forEach(input => {
