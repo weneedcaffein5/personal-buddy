@@ -9,6 +9,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>컨텐츠 메인</title>
 <link rel="stylesheet" href="../assets/css/global.css" />
+<link rel="stylesheet" href="../assets/css/header.css" />
+<link rel="stylesheet" href="../assets/css/banner.css" />
 <link rel="stylesheet" href="../assets/css/contents/contents-mytree.css" />
 </head>
 <body>

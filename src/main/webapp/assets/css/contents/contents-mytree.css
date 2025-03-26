@@ -1,8 +1,11 @@
 @charset "UTF-8";
 
-@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
 
-
+button {
+  font-family: 'Spoqa Han Sans Neo';
+  font-weight: 500;
+  font-style: normal;
+}
 
 .page-container {
 	display: flex;
@@ -96,6 +99,7 @@
 }
 
 .tree-button-group {
+	font-size: 14px;
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -152,9 +156,11 @@
 .decorate-tab {
     text-align: center;
     line-height: 33px;
+    font-size:16px;
     width:80px;
     height: 33px;
     color:#06C371;
+    font-weight: 500;
     background-color: #EEFFF8;;
     border:none;
     border-top-left-radius: 6.3px;
