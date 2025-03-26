@@ -1,7 +1,9 @@
 @charset "UTF-8";
 
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
-/* tab */
+
+
+
 .page-container {
 	display: flex;
 	flex-direction: column;
@@ -10,6 +12,9 @@
 	margin: auto;
 	margin-top:80px;
 }
+
+/* tab */
+
 .tab-container {
     position: relative;
     width: 840px;
@@ -45,7 +50,7 @@
     flex: 1;
     text-align: center;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 600;
     z-index: 2;
     transition: color 0.3s ease-in-out;
 }
@@ -57,39 +62,37 @@
 
 .tab-text-off {
     color: #999999;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 /* tree */
-.title-word-tab-container {
-	width: 1400px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 92px;
+
+.contents-container{
+	margin-top: 92px;
+	display:flex;
+	flex-direction:column;
+	gap:25px;
 }
 
 .tree-image {
-	display: felx;
-	flex-direction: column;
-	align-items:center;
-}
-
-.tree-wrapper {
 	display: flex;
 	flex-direction: column;
-    gap:10px;
-}
-
-.tree-container {
-    width: 1160px;
-    height: 600px;
-    
+	align-items:center;
+	gap:93px;
 }
 
 .tree-title-word {
     width: 100%;
     font-size: 24px;
+}
+
+.tree-wrapper {
+	width: 1160px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+    gap:10px;
+    
 }
 
 .tree-button-group {
@@ -122,18 +125,6 @@
 }
 
 /* item */
-.container {
-	position: relative;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 1400px;
-    height: 1300px;
-    background: #f5fcf0;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border: 1px solid #06C371;
-}
 
 .decorate-container{
 	display: flex;
@@ -155,6 +146,7 @@
     width:  100%;
     display: flex;
     flex-direction: row;
+    gap:3px;
 }
 
 .decorate-tab {
@@ -162,7 +154,8 @@
     line-height: 33px;
     width:80px;
     height: 33px;
-    background-color: #f5fcf0;
+    color:#06C371;
+    background-color: #EEFFF8;;
     border:none;
     border-top-left-radius: 6.3px;
     border-top-right-radius: 6.3px;
@@ -174,12 +167,6 @@
 .decorate-tab.selected {
    background-color: #06C371;
    color: #ffffff;
-}
-
-.folder-wrapper {
-	display: flex;
-	justify-content: center;
-	margin-top:107px;
 }
 
 .folder {
@@ -203,23 +190,37 @@
     border-radius: 40px;
     box-sizing: border-box; 
     border: 3px solid transparent;
+    
 }
-
+.folder-item.located {
+    background-color: #DDDDDD; 
+}
 
 .item-button-group button:nth-child(2) {
     background: #EEEEEE;
 }
 
 .folder-wrapper {
-	position: relative;
+	display: flex;
+	justify-content: center;
     width: 1400px;
     height: 1063px;
+    background-color: #EEFFF8;
+    border: 1px solid #06C371;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
-.folder-item.selected, .folder-item-sticker.selected {
-    border: 3px solid #06C371;
+.folder {
+	margin-top: 92px;
+}
+
+.folder-item.selected {
+    border: 5px solid #06C371;
     border-radius: 40px;
 }
+
+
 
 .background-image {
     width: 100px;
