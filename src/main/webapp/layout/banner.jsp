@@ -6,7 +6,7 @@
     	<div class="banner-slide clone" id="banner-slide">
 			<img src="../assets/images/main/banner-yellow.png" class="banner-slide" alt="배너 3(복사)">
 			<div class="banner-text">
-				<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
+				<a><p class="banner-subtitle">버디들이 관심 있는 일정은?</p></a>
 				<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
     		</div>
     	</div>
