@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 const bannerWrapper = document.getElementById("bannerWrapper");
   const slides = document.querySelectorAll("#banner-slide");
   const totalSlides = slides.length;
@@ -9,7 +7,27 @@ const bannerWrapper = document.getElementById("bannerWrapper");
   let slideWidth = window.innerWidth;
   let currentIndex = 1;
   let slideTimer;
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    const slides = document.querySelectorAll("#banner-slide");
 
+	
+    slides.forEach(slide => {
+      const link = slide.getAttribute("data-link"); 
+	 /* console.log(slide)
+	  console.log(link)*/
+	  
+      if (link) {
+        slide.style.cursor = "pointer";
+        slide.addEventListener("click", () => {
+			/*console.log("클릭됨" + link);*/
+          location.href = link;
+        });
+      }
+    });
+  });
+
+  
   // dots 생성
   dotsContainer.innerHTML = "";
   for (let i = 0; i < realSlides; i++) {

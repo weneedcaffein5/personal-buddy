@@ -3,29 +3,32 @@
 
 <div class="banner-container">	
    	<div class="banner-wrapper" id="bannerWrapper">
+   	
+   		<!-- <a href="../contents/contents-achievement.jsp"> -->
     	<div class="banner-slide clone" id="banner-slide">
-			<img src="../assets/images/main/banner-yellow.png" class="banner-slide" alt="배너 3(복사)">
-			<div class="banner-text">
-				<a><p class="banner-subtitle">버디들이 관심 있는 일정은?</p></a>
-				<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
-    		</div>
-    	</div>
+		  <img src="../assets/images/main/banner-yellow.png" class="banner-slide" alt="배너 3(복사)">
+		  <div class="banner-text">
+		    <p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
+		    <h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
+		  </div>
+		</div>
+    	<!-- </a> -->
     	
-   		<div class="banner-slide" id="banner-slide">
+   		<div class="banner-slide" id="banner-slide" data-link="../event/event-main.jsp">
        		<img src="../assets/images/main/banner-blue.png" class="banner-slide" alt="배너 1">
        		<div class="banner-text">
        			<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
        			<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
    			</div>
    		</div>
-   		<div class="banner-slide" id="banner-slide">
+   		<div class="banner-slide" id="banner-slide"  data-link="../main/main.main">
        		<img src="../assets/images/main/banner-green.png" class="banner-slide" alt="배너 2">
        		<div class="banner-text">
        			<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
        			<h2 class="banner-title">버디들의 관심 일정을 <br> 공유해주세요!</h2>
    			</div>
    		</div>
-   		<div class="banner-slide" id="banner-slide">
+   		<div class="banner-slide" id="banner-slide" data-link="../contents/contents-mytree.contents">
        		<img src="../assets/images/main/banner-yellow.png" class="banner-slide" alt="배너 3">
        		<div class="banner-text">
        			<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
