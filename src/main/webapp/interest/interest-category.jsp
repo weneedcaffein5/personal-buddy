@@ -46,7 +46,10 @@
 		            </div>
 	        	</div>
 	        	<div class="next-btn-wrapper">
-			            <button class="next-btn">다음으로</button>
+	        		<form class="next-form" action="interest-category-sub.interest" method="post">
+	        			<input type="hidden" class="hidden-input" name="categoryValue">
+			            <button type="button" class="next-btn">다음으로</button>
+	        		</form>
 	        	</div>
 	        </div>
         </div>

@@ -10,15 +10,22 @@ tags.forEach(tag => {
 /* 쿼리스트링으로 카테고리값 전달 */
 
 const nextBtn = document.querySelector(".next-btn");
-const selected = document.querySelectorAll(".selected");
-let index = 0;
+const hiddenInput = document.querySelector(".hidden-input");
+const nextForm = document.querySelector(".next-form");
+let selectedValues = [];
 
 nextBtn.addEventListener("click", () => {
-	tags.forEach((tag) => {
+	tags.forEach(tag => {
 		if(tag.classList.contains("selected")){
-			index = index + 1;
-			console.log(tag.textContent);
-		};
+			selectedValues.push(tag.textContent);
+		}
 	})
-	console.log(index + " 선택된 태그 수")
+	console.log(selectedValues);
+	if(selectedValues.length <= 1) {
+		alert("최소 2개 이상의 카테고리를 선택해 주세요.");
+		selectedValues.length = 0;
+		return;
+	};
+	hiddenInput.value = selectedValues.join(",");
+    nextForm.submit();
 })

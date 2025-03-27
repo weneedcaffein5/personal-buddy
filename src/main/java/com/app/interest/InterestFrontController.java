@@ -28,7 +28,7 @@ public class InterestFrontController extends HttpServlet {
 			result = new InterestMainController().execute(req, resp);
 		}else if(target.equals("interest-category")) {
 			result = new InterestCategoryController().execute(req, resp);
-		}else if(target.equals("interest-category-")) {
+		}else if(target.equals("interest-category-sub")) {
 			
 		}else if(target.equals("interest-category")) {
 			
