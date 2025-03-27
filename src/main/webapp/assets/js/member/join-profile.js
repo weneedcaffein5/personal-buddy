@@ -71,6 +71,6 @@ document.getElementById("comment").addEventListener('input', (e) => {
 	const lengthSpan = document.getElementById("comment-input-length");
 	
 	const currentLength = e.target.value.length;
-	lengthSpan.innerText = currentLength + " / 30";
+	lengthSpan.innerText = currentLength + " / 20";
 });
 

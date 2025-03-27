@@ -10,19 +10,14 @@ public class BoardCommentLikeVO {
 	private Long id;
 	private Timestamp boardCommentLikeCreateDate;
 	private Long memberId;
-	private Long boardCommentsId;
+	private Long boardCommentId;
 	
-	public BoardCommentLikeVO(Long id, Timestamp boardCommentLikeCreateDate, Long memberId, Long boardCommentsId) {
+	public BoardCommentLikeVO(Long id, Timestamp boardCommentLikeCreateDate, Long memberId, Long boardCommentId) {
+		super();
 		this.id = id;
 		this.boardCommentLikeCreateDate = boardCommentLikeCreateDate;
 		this.memberId = memberId;
-		this.boardCommentsId = boardCommentsId;
-	}
-
-	@Override
-	public String toString() {
-		return "BoardCommentLikeVO [id=" + id + ", boardCommentLikeCreateDate=" + boardCommentLikeCreateDate
-				+ ", memberId=" + memberId + ", boardCommentsId=" + boardCommentsId + "]";
+		this.boardCommentId = boardCommentId;
 	}
 
 	public Long getId() {
@@ -49,12 +44,18 @@ public class BoardCommentLikeVO {
 		this.memberId = memberId;
 	}
 
-	public Long getBoardCommentsId() {
-		return boardCommentsId;
+	public Long getBoardCommentId() {
+		return boardCommentId;
 	}
 
-	public void setBoardCommentsId(Long boardCommentsId) {
-		this.boardCommentsId = boardCommentsId;
+	public void setBoardCommentId(Long boardCommentId) {
+		this.boardCommentId = boardCommentId;
+	}
+
+	@Override
+	public String toString() {
+		return "BoardCommentLikeVO [id=" + id + ", boardCommentLikeCreateDate=" + boardCommentLikeCreateDate
+				+ ", memberId=" + memberId + ", boardCommentId=" + boardCommentId + "]";
 	}
 
 	@Override
