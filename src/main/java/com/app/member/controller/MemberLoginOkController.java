@@ -34,7 +34,7 @@ public class MemberLoginOkController implements Action {
 			result.setPath("/member/login.member?login=false");
 		}else {
 			session.setAttribute("loginID", findEmail);
-			result.setPath("../main/main.main");
+			result.setPath("/main/main.main");
 		}
 		
 		return result;
