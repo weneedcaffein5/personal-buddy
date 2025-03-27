@@ -1,7 +1,6 @@
 /*업적 조회*/
 
 package com.app.dto;
-
 import java.util.Objects;
 
 public class AchievementViewDTO {
@@ -113,6 +112,4 @@ public class AchievementViewDTO {
 		AchievementViewDTO other = (AchievementViewDTO) obj;
 		return Objects.equals(achievementId, other.achievementId) && Objects.equals(memberId, other.memberId);
 	}
-	
-	
 }

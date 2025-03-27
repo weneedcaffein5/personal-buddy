@@ -42,7 +42,7 @@
                 		<span id="nickname-fail-message" style="display: none;"></span>
                 	</div>
                		<div class="input-wrapper" id="nickname-wrapper">
-	                	<input type="text" id="nickname" placeholder="닉네임을 입력해주세요. (최대 14자)"  name= "memberNickName" maxlength="14" required>
+	                	<input type="text" id="nickname" placeholder="닉네임을 입력해주세요. (최대 14자)"  name= "memberNickName" maxlength="10" required>
 		                <span id="nickname-input-length"></span>
 	            	</div>
                	</div>
@@ -51,7 +51,7 @@
 	            <div class="wrapper">
                 	<span>상태 메세지</span>
                		<div class="input-wrapper" id="comment-wrapper">
-	                	<input type="text" id="comment" placeholder="메세지를 입력해주세요. (최대 30자)"  name= "memberComment" maxlength="30"
+	                	<input type="text" id="comment" placeholder="메세지를 입력해주세요. (최대 20자)"  name= "memberComment" maxlength="20"
 		                	value="<%= newMember.getMemberComment() != null ? newMember.getMemberComment() : "" %>">
 		                <span id="comment-input-length"></span>
 	            	</div>

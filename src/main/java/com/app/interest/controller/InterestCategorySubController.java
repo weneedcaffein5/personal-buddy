@@ -14,9 +14,8 @@ public class InterestCategorySubController implements Action {
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, SecurityException {
 		Result result = new Result();
-		HttpSession session = req.getSession();
 		
-		String categoryMain = session.getAttribute("categoryValue");
+		String mainCategory = req.getParameter()
 		
 		return result;
 	}
