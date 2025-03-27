@@ -4,24 +4,15 @@ import java.util.Objects;
 
 public class AchievementCompleteVO {
 	private Long id;
-	private String achievementName;
-	private int achievementMission;
+	private int achievementCurrentMission;
 	private Long memberId;
 	private Long achievementId;
 	
 	public AchievementCompleteVO() {;}
-	
-	@Override
-	public String toString() {
-		return "AchievementCompleteVO [id=" + id + ", achievementName=" + achievementName + ", achievementMission="
-				+ achievementMission + ", memberId=" + memberId + ", achievementId=" + achievementId + "]";
-	}
-	public AchievementCompleteVO(Long id, String achievementName, int achievementMission, Long memberId,
-			Long achievementId) {
+	public AchievementCompleteVO(Long id, int achievementCurrentMission, Long memberId, Long achievementId) {
 		super();
 		this.id = id;
-		this.achievementName = achievementName;
-		this.achievementMission = achievementMission;
+		this.achievementCurrentMission = achievementCurrentMission;
 		this.memberId = memberId;
 		this.achievementId = achievementId;
 	}
@@ -31,17 +22,11 @@ public class AchievementCompleteVO {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getAchievementName() {
-		return achievementName;
+	public int getAchievementCurrentMission() {
+		return achievementCurrentMission;
 	}
-	public void setAchievementName(String achievementName) {
-		this.achievementName = achievementName;
-	}
-	public int getAchievementMission() {
-		return achievementMission;
-	}
-	public void setAchievementMission(int achievementMission) {
-		this.achievementMission = achievementMission;
+	public void setAchievementCurrentMission(int achievementCurrentMission) {
+		this.achievementCurrentMission = achievementCurrentMission;
 	}
 	public Long getMemberId() {
 		return memberId;
@@ -56,8 +41,13 @@ public class AchievementCompleteVO {
 		this.achievementId = achievementId;
 	}
 	@Override
+	public String toString() {
+		return "AchievementCompleteVO [id=" + id + ", achievementCurrentMission=" + achievementCurrentMission
+				+ ", memberId=" + memberId + ", achievementId=" + achievementId + "]";
+	}
+	@Override
 	public int hashCode() {
-		return Objects.hash(achievementId, id, memberId);
+		return Objects.hash(id);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -68,10 +58,8 @@ public class AchievementCompleteVO {
 		if (getClass() != obj.getClass())
 			return false;
 		AchievementCompleteVO other = (AchievementCompleteVO) obj;
-		return Objects.equals(achievementId, other.achievementId) && Objects.equals(id, other.id)
-				&& Objects.equals(memberId, other.memberId);
-	}	
-
+		return Objects.equals(id, other.id);
+	}
 	
 	
 }
