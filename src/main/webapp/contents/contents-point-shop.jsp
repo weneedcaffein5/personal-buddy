@@ -8,6 +8,8 @@
 <meta charset="UTF-8">
 <title>포인트 샵</title>
 <link rel="stylesheet" href="../assets/css/global.css" />
+<link rel="stylesheet" type="text/css" href="../assets/css/header.css" />
+<link rel="stylesheet" type="text/css" href="../assets/css/banner.css" />
 <link rel="stylesheet" href="../assets/css/contents/contents-point-shop.css" />
 </head>
 <body>
