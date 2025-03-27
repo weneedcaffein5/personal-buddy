@@ -5,26 +5,21 @@ import java.util.Objects;
 
 public class BoardCommentVO {
 	
-	public BoardCommentVO() {;}
-	
 	private Long id;
-	private String boardContent;
-	private Timestamp boardCreateDate;
+	private String boardCommentContent;
+	private Timestamp boardCommentCreateDate;
 	private Long memberId;
 	private Long boardPostId;
 	
-	public BoardCommentVO(Long id, String boardContent, Timestamp boardCreateDate, Long memberId, Long boardPostId) {
+	public BoardCommentVO() {;}
+
+	public BoardCommentVO(Long id, String boardCommentContent, Timestamp boardCommentCreateDate, Long memberId,
+			Long boardPostId) {
 		this.id = id;
-		this.boardContent = boardContent;
-		this.boardCreateDate = boardCreateDate;
+		this.boardCommentContent = boardCommentContent;
+		this.boardCommentCreateDate = boardCommentCreateDate;
 		this.memberId = memberId;
 		this.boardPostId = boardPostId;
-	}
-
-	@Override
-	public String toString() {
-		return "BoardCommentsVO [id=" + id + ", boardContent=" + boardContent + ", boardCreateDate=" + boardCreateDate
-				+ ", memberId=" + memberId + ", boardPostId=" + boardPostId + "]";
 	}
 
 	public Long getId() {
@@ -35,20 +30,20 @@ public class BoardCommentVO {
 		this.id = id;
 	}
 
-	public String getBoardContent() {
-		return boardContent;
+	public String getBoardCommentContent() {
+		return boardCommentContent;
 	}
 
-	public void setBoardContent(String boardContent) {
-		this.boardContent = boardContent;
+	public void setBoardCommentContent(String boardCommentContent) {
+		this.boardCommentContent = boardCommentContent;
 	}
 
-	public Timestamp getBoardCreateDate() {
-		return boardCreateDate;
+	public Timestamp getBoardCommentCreateDate() {
+		return boardCommentCreateDate;
 	}
 
-	public void setBoardCreateDate(Timestamp boardCreateDate) {
-		this.boardCreateDate = boardCreateDate;
+	public void setBoardCommentCreateDate(Timestamp boardCommentCreateDate) {
+		this.boardCommentCreateDate = boardCommentCreateDate;
 	}
 
 	public Long getMemberId() {
@@ -66,12 +61,16 @@ public class BoardCommentVO {
 	public void setBoardPostId(Long boardPostId) {
 		this.boardPostId = boardPostId;
 	}
-
+	
+	@Override
+	public String toString() {
+		return "BoardCommentVO [id=" + id + ", boardCommentContent=" + boardCommentContent + ", boardCommentCreateDate="
+				+ boardCommentCreateDate + ", memberId=" + memberId + ", boardPostId=" + boardPostId + "]";
+	}
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -83,6 +82,5 @@ public class BoardCommentVO {
 		BoardCommentVO other = (BoardCommentVO) obj;
 		return Objects.equals(id, other.id);
 	}
-	
 	
 }
