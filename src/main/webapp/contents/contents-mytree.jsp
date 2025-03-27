@@ -26,7 +26,8 @@
 			<div id="myTreeTab" class="tab-text tab-text-on">나의 성장 나무</div>
 			<div id="pointShopTab" class="tab-text tab-text-off">포인트 샵</div>
 		</div>
-		
+
+
 		<div class="contents-container">
 			<div class="tree-image">
 				<div class="tree-title-word">나의 성장나무🎄</div>
@@ -62,7 +63,29 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- 모달 -->
+
+	<div class="set-modal-container">
+		<div class="set-modal-background-conntaier">
+			<div class="set-modal-top">
+				<span>배경 적용</span>
+				<button class="out-set-modal">X</button>
+			</div>
+			<div class="set-modal-bottom">
+				<span>배경 사항을 적용하시겠습니까?</span>
+				<div>
+					<button class="set-modal-ok-button">확인</button>
+					<button class="set-modal-no-button">취소</button>
+				</div>
+			</div>
+		</div>
+		<div class="black-background"></div>
+	</div>
+
 	<script>
+	
+		
         document.addEventListener("DOMContentLoaded", function () {
             const folderItems = document.querySelectorAll(".folder-item");
 
@@ -181,6 +204,22 @@
                 })
                 .catch(error => console.error("Error loading content:", error));
         }
+        
+        document.addEventListener("DOMContentLoaded", function () {
+        	  const modal = document.querySelector(".set-modal-container");
+        	  const noButton = document.querySelector(".set-modal-no-button");
+
+        	  document.getElementById("content-container").addEventListener("click", function (e) {
+        	    if (e.target.classList.contains("change-button")) {
+        	      modal.classList.add("active");
+        	    }
+        	  });
+
+        	  noButton.addEventListener("click", () => {
+        	    modal.classList.remove("active");
+        	  });
+        	});
+		
     </script>
 </body>
 </html>
