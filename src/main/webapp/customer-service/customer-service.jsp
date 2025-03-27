@@ -61,26 +61,9 @@
         </div>
         <div class="cs-answer">
 	    	퍼스널 버디에서는 보안 및 시스템상의 이유로 이미 등록한 이메일은 변경할 수 없습니다.<br/>
-			다른 이메일를 사용하려면 새로운 이메일로 다시 가입 후 이용해주세요.
+			다른 이메일를 사용하려면 새로운 이메일로 다시 가입해주시기 바랍니다.
 	  	</div>
       </li>
-      
-      
-      <li class="cs-item">
-      	<div class="cs-header">
-        	<span class="cs-q">Q.</span>
-        	<span class="cs-text">정산 내역은 어떻게 보이나요?</span>
-        	<img src="../assets/images/customer-service/arrow-icon.png" alt=">" class="cs-icon">
-        </div>
-        <div class="cs-answer">
-	    	퍼스널 버디란 "Personal"(개인적인, 나만의)과 "Buddy"(친구, 동반자)의 조합으로,<br/>
-	    	언제 어디서나 나를 이해하고 도와주는 '맞춤형 일정 & 라이프 관리 친구’ 라는 의미를 담고 있습니다.<br/>
-	    	퍼스널 버디는 개인화된 일정 관리와 삶의 질 향상을 목표로 한 혁신 플랫폼입니다.<br/>
-	    	업무 일정과 개인 일정을 분리하고 추천 시스템과 커뮤니티 기능의 통합으로 재미를 더 하였으며,<br/>
-	    	퍼스널 버디만의 성장나무로 성취감과 몰입을 강화했습니다.
-	  	</div>
-      </li>
-      
       
       <li class="cs-item">
       	<div class="cs-header">
@@ -89,11 +72,8 @@
         	<img src="../assets/images/customer-service/arrow-icon.png" alt=">" class="cs-icon">
         </div>
         <div class="cs-answer">
-	    	퍼스널 버디란 "Personal"(개인적인, 나만의)과 "Buddy"(친구, 동반자)의 조합으로,<br/>
-	    	언제 어디서나 나를 이해하고 도와주는 '맞춤형 일정 & 라이프 관리 친구’ 라는 의미를 담고 있습니다.<br/>
-	    	퍼스널 버디는 개인화된 일정 관리와 삶의 질 향상을 목표로 한 혁신 플랫폼입니다.<br/>
-	    	업무 일정과 개인 일정을 분리하고 추천 시스템과 커뮤니티 기능의 통합으로 재미를 더 하였으며,<br/>
-	    	퍼스널 버디만의 성장나무로 성취감과 몰입을 강화했습니다.
+	    	마이페이지 > 추천 정보 수정 탭에서 변경하시어 
+	    	추천받는 콘텐츠나 관심사를 수정하실 수 있습니다.
 	  	</div>
       </li>
       
