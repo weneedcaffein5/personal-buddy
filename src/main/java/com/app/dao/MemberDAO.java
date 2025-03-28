@@ -16,7 +16,7 @@ public class MemberDAO {
 	}
 	
 //	회원가입
-	public void isnert(MemberVO memberVO) {
+	public void insert(MemberVO memberVO) {
 		sqlSession.insert("member.insert", memberVO);
 	}
 	
