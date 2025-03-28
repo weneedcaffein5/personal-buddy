@@ -19,7 +19,7 @@
             제공해드릴게요.
         </div>
         <img src="../assets/images/interest/logo.png" alt="로고 이미지" class="logo-img">
-        <form action="interest-category.interest" method="post">
+        <form action="interest-main-category.interest" method="post">
 	        <button class="start-btn">시작하기</button>
         </form>
     </div>
