@@ -51,7 +51,6 @@
 			<button class = "remove-button">제거</button>
 			</div>
 		</div>
-
 	</div>
 </div>
 

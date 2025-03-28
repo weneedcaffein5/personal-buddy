@@ -182,8 +182,9 @@ button {
     justify-content: center;
     gap: 40px;
     flex-wrap: wrap;
-    width: 1160px;
-    height: 1060px;
+    margin-top: 92px;
+	width: 1172px;
+	height: 1063px;
 }
 
 .folder-item {
@@ -220,15 +221,11 @@ button {
 	display: flex;
 	justify-content: center;
     width: 1400px;
-    height: 1063px;
+    height: 1300px;
     background-color: #EEFFF8;
     border: 1px solid #06C371;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-}
-
-.folder {
-	margin-top: 92px;
 }
 
 .folder-item.selected {
