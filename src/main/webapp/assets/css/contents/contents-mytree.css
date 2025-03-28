@@ -128,7 +128,7 @@ button {
     border-radius: 50px;
 }
 
-/* item */
+/* decorate-tab */
 
 .decorate-container{
 	display: flex;
@@ -175,6 +175,8 @@ button {
    color: #ffffff;
 }
 
+/* folder */
+
 .folder {
     display: flex;
     justify-content: center;
@@ -195,13 +197,21 @@ button {
     border-radius: 40px;
     box-sizing: border-box; 
     border: 3px solid transparent;
-    
+}
+
+.image-text-container{
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100px;
+	height: 146px;
 }
 .folder-item.located {
     background-color: #DDDDDD; 
 }
 
-.background-button-group button:nth-child(2), .sticker-button-group button:nth-child(2) {
+.background-button-group button:nth-child(2), .sticker-button-group button:nth-child(2),
+.tree-item-button-group button:nth-child(2){
     background: #EEEEEE;
 }
 
@@ -240,19 +250,20 @@ button {
     font-size: 14px;
 }
 
-.background-button-group, .sticker-button-group {
+.background-button-group, .sticker-button-group, .tree-item-button-group {
     display: none;
-    margin-top: 15px;
     gap: 10px;
 }
 
 .folder-item.selected .background-button-group, 
-.folder-item.selected .sticker-button-group {
+.folder-item.selected .sticker-button-group,
+.folder-item.selected .tree-item-button-group {
     display: flex;
 }
 
 .background-button-group button,
-.sticker-button-group button {
+.sticker-button-group button,
+.tree-item-button-group button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -269,9 +280,12 @@ button {
 }
 
 .background-button-group .remove-button:hover, 
-.sticker-button-group .remove-button:hover {
+.sticker-button-group .remove-button:hover,
+.tree-item-button-group .remove-button:hover {
     background: #ff3f3f;
 }
+
+/* modal */
 
 .set-modal-container {
 	position: fixed;

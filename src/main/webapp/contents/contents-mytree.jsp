@@ -70,11 +70,11 @@
 	<div class="set-modal-container">
 		<div class="set-modal-background-conntaier">
 			<div class="set-modal-top">
-				<span id="modal-title">배경 적용</span>
+				<span id="modal-title"></span>
 				<button class="out-set-modal">X</button>
 			</div>
 			<div class="set-modal-bottom">
-				<span id="modal-message">배경 사항을 적용하시겠습니까?</span>
+				<span id="modal-message">적용하시겠습니까?</span>
 				<div>
 					<button class="set-modal-ok-button">확인</button>
 					<button class="set-modal-no-button">취소</button>

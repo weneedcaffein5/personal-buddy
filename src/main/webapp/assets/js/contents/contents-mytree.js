@@ -80,7 +80,7 @@ function showContent(category) {
     })
     .then(data => {
       document.getElementById("content-container").innerHTML = data;
-      attachFolderItemClickEvent(); // 새로 로드된 요소에도 이벤트 적용
+      attachFolderItemClickEvent();
     })
     .catch(error => console.error("Error loading content:", error));
 }
@@ -115,19 +115,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // 모달 열고 닫기, 텍스트 변경
   const modal = document.querySelector(".set-modal-container");
   const noButton = document.querySelector(".set-modal-no-button");
+  const contentContainer = document.querySelector(".contents-container");
 
-  document.getElementById("content-container").addEventListener("click", function (e) {
-    if (e.target.classList.contains("change-button")) {
-      const isSticker = e.target.closest(".sticker-button-group") !== null;
-
-      document.getElementById("modal-title").textContent = isSticker ? "스티커 적용" : "배경 적용";
-      document.getElementById("modal-message").textContent = isSticker
-        ? "스티커를 적용하시겠습니까?"
-        : "배경 사항을 적용하시겠습니까?";
-
+  contentContainer.addEventListener("click", function (e) {
+    if (e.target.classList.contains("save-button")) {
+      document.getElementById("modal-title").textContent = "저장";
+      document.getElementById("modal-message").textContent = "저장하시겠습니까?";
       modal.classList.add("active");
     }
   });
@@ -135,4 +130,5 @@ document.addEventListener("DOMContentLoaded", function () {
   noButton.addEventListener("click", () => {
     modal.classList.remove("active");
   });
+  
 });
