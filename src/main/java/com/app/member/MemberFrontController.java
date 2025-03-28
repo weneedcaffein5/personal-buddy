@@ -71,6 +71,8 @@ public class MemberFrontController extends HttpServlet{
 		}else if(target.equals("login-ok")) {
 			result = new MemberLoginOkController().execute(req, resp);
 		}else if(target.equals("find-id")) {
+		
+		}else if(target.equals("find-id-fail")) {
 			
 		}else if(target.equals("find-id-ok")) {
 			
