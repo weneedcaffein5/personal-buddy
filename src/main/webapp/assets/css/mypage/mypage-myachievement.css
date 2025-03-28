@@ -25,6 +25,8 @@
 .sidebar {
     width: 200px;
     height: 1000px;
+    display: flex;
+    flex-direction: column;
     border: solid #DDDDDD 1px;
     margin: 70px 40px 0 0;
 }
@@ -57,8 +59,6 @@
     justify-content: space-between;
     font-size: 14px;
     color: #424242;
-    height: 40px;
-    border-bottom: 1px solid black;
 }
 
 .go-tree-style {
@@ -89,10 +89,10 @@
 
 /* 유저 닉네임, 상태 메세지 */
 .profile-setting {
-   font-weight: 300;
-   font-size: 14px;
+	font-weight: 300;
+	font-size: 14px;
     width: 200px;
-    height: 100px;
+    height: 120px;
     border-bottom: solid #DDDDDD 1px;
     display: flex;
     align-items: center;
@@ -100,13 +100,36 @@
 }
 
 .nickname {
+	width: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 24px;
     padding-top: 20px;
+}
+
+.status-message {
+	padding-top: 5px;
+	width: 130px;
+	height: 48px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 14px;
+	font-weight: 200;
+}
+
+#now {
+	color: #01CD74;
+	text-decoration: underline;
 }
 
 /* 마이페이지 항목 */
 .mypage {
     width: 200px;
-    height: 100px;
+    height: 114px;
     border-bottom: solid #DDDDDD 1px;
     display: flex;
     flex-direction: column;
@@ -115,7 +138,7 @@
 /* 커뮤니티 항목 */
 .community {
     width: 200px;
-    height: 100px;
+    height: 114px;
     border-bottom: solid #DDDDDD 1px;
     display: flex;
     flex-direction: column;
@@ -124,11 +147,26 @@
 /* 내 정보 항목 */
 .myinfo {
     width: 200px;
-    height: 120px;
+    height: 195px;
     border-bottom: solid #DDDDDD 1px;
     display: flex;
     flex-direction: column;
 }
+
+.tap-name {
+	width: 200px;
+	height: 40px;
+	font-weight: 500;
+	line-height: 24px;
+	padding-bottom: 2px;
+}
+
+.a-wrapper {
+	height: 24px;
+	padding-top: 3px;
+	padding-left: 4px;
+}
+
 
 .icon {
     padding-left: 20px;
@@ -142,13 +180,6 @@
     padding: 2px 0 2px 44px;
 }
 
-#now {
-   color: #01CD74;
-   text-decoration: underline;
-}
-
-
-
 a {
     color: #000;
     text-decoration: none;
@@ -160,12 +191,7 @@ a:hover {
 }
 
 .go-tree a {
-   font-weight: 300;
-}
-
-strong {
-    font-size: 18px;
-    font-weight: 500;
+	font-weight: 300;
 }
 
 /* =================================================================== */

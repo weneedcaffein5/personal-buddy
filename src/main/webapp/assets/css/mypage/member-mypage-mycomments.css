@@ -26,22 +26,74 @@
 .sidebar {
     width: 200px;
     height: 1000px;
+    display: flex;
+    flex-direction: column;
     border: solid #DDDDDD 1px;
     margin: 70px 40px 0 0;
 }
 
-/* 유저 프로필 */
+
+/* 나만의 나무 설명 텍스트 */
+.tree-info {
+    width: 1159px;
+    height: 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.tree-info-style {
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.tree-info-left {
+    width: 1160x;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.go-tree {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #424242;
+}
+
+.go-tree-style {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* 나만의 나무 */
+.tree {
+    width: 1159px;
+    height: 600px;
+    border: solid #DDDDDD 1px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+
+.tree-background {
+    width: 1160px;
+    height: 600px;
+}
+
+/* 유저 프로필 사진 */
 .profile {
     width: 200px;
     height: 200px;
     border-bottom: solid #DDDDDD 1px;
 }
 
+/* 유저 닉네임, 상태 메세지 */
 .profile-setting {
 	font-weight: 300;
 	font-size: 14px;
     width: 200px;
-    height: 100px;
+    height: 120px;
     border-bottom: solid #DDDDDD 1px;
     display: flex;
     align-items: center;
@@ -49,17 +101,73 @@
 }
 
 .nickname {
+	width: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 24px;
     padding-top: 20px;
 }
 
-/* 사이드바 메뉴 */
-.mypage, .community, .myinfo {
+.status-message {
+	padding-top: 5px;
+	width: 130px;
+	height: 48px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 14px;
+	font-weight: 200;
+}
+
+#now {
+	color: #01CD74;
+	text-decoration: underline;
+}
+
+/* 마이페이지 항목 */
+.mypage {
     width: 200px;
-    height: 100px;
+    height: 114px;
     border-bottom: solid #DDDDDD 1px;
     display: flex;
     flex-direction: column;
 }
+
+/* 커뮤니티 항목 */
+.community {
+    width: 200px;
+    height: 114px;
+    border-bottom: solid #DDDDDD 1px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 내 정보 항목 */
+.myinfo {
+    width: 200px;
+    height: 195px;
+    border-bottom: solid #DDDDDD 1px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tap-name {
+	width: 200px;
+	height: 40px;
+	font-weight: 500;
+	line-height: 24px;
+	padding-bottom: 2px;
+}
+
+.a-wrapper {
+	height: 24px;
+	padding-top: 3px;
+	padding-left: 4px;
+}
+
 
 .icon {
     padding-left: 20px;
@@ -80,12 +188,11 @@ a {
 }
 
 a:hover {
-    color: #01CD74;
+    color: #01CD74; /* 마우스를 올렸을 때 색 변경 */
 }
 
-strong {
-    font-size: 18px;
-    font-weight: 500;
+.go-tree a {
+	font-weight: 300;
 }
 
 /* ======================================================================================== */
