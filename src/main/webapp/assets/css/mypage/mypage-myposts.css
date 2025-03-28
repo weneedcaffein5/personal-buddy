@@ -13,18 +13,12 @@
     margin: 0 260px;
 }
 
-/* 마이페이지 오른쪽 내용 */
-.right-contentbox {
-    width: 1159px;
-    display: flex;
-    flex-direction: column;
-    margin-top: 70px;
-}
-
 /* 마이페이지 왼쪽 바 */
 .sidebar {
     width: 200px;
     height: 1000px;
+    display: flex;
+    flex-direction: column;
     border: solid #DDDDDD 1px;
     margin: 70px 40px 0 0;
 }
@@ -61,6 +55,7 @@
 
 .go-tree-style {
     font-size: 18px;
+    font-weight: 500;
 }
 
 /* 나만의 나무 */
@@ -89,7 +84,7 @@
 	font-weight: 300;
 	font-size: 14px;
     width: 200px;
-    height: 100px;
+    height: 120px;
     border-bottom: solid #DDDDDD 1px;
     display: flex;
     align-items: center;
@@ -97,13 +92,36 @@
 }
 
 .nickname {
+	width: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 24px;
     padding-top: 20px;
+}
+
+.status-message {
+	padding-top: 5px;
+	width: 130px;
+	height: 48px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 14px;
+	font-weight: 200;
+}
+
+#now {
+	color: #01CD74;
+	text-decoration: underline;
 }
 
 /* 마이페이지 항목 */
 .mypage {
     width: 200px;
-    height: 100px;
+    height: 114px;
     border-bottom: solid #DDDDDD 1px;
     display: flex;
     flex-direction: column;
@@ -112,7 +130,7 @@
 /* 커뮤니티 항목 */
 .community {
     width: 200px;
-    height: 100px;
+    height: 114px;
     border-bottom: solid #DDDDDD 1px;
     display: flex;
     flex-direction: column;
@@ -121,11 +139,26 @@
 /* 내 정보 항목 */
 .myinfo {
     width: 200px;
-    height: 120px;
+    height: 195px;
     border-bottom: solid #DDDDDD 1px;
     display: flex;
     flex-direction: column;
 }
+
+.tap-name {
+	width: 200px;
+	height: 40px;
+	font-weight: 500;
+	line-height: 24px;
+	padding-bottom: 2px;
+}
+
+.a-wrapper {
+	height: 24px;
+	padding-top: 3px;
+	padding-left: 4px;
+}
+
 
 .icon {
     padding-left: 20px;
@@ -149,9 +182,8 @@ a:hover {
     color: #01CD74; /* 마우스를 올렸을 때 색 변경 */
 }
 
-strong {
-    font-size: 18px;
-    font-weight: 500;
+.go-tree a {
+	font-weight: 300;
 }
 
 /* ======================================================================================== */
