@@ -2,6 +2,11 @@
 
 /* 이벤트 메인 스타일 */
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .event-main {
 	display: flex;
     flex-direction: column;

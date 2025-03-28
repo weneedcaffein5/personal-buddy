@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
+import com.app.interest.controller.InterestCategoryController;
+import com.app.interest.controller.InterestCategoryMainController;
+import com.app.interest.controller.InterestCategorySubController;
 import com.app.interest.controller.InterestMainController;
 
 public class InterestFrontController extends HttpServlet {
@@ -25,6 +28,12 @@ public class InterestFrontController extends HttpServlet {
 		
 		if(target.equals("interest-main")) {
 			result = new InterestMainController().execute(req, resp);
+		}else if(target.equals("interest-category")) {
+			result = new InterestCategoryController().execute(req, resp);
+		}else if(target.equals("interest-category-main")) {
+			result = new InterestCategoryMainController().execute(req, resp);
+		}else if(target.equals("interest-category-sub")) {
+			result = new InterestCategorySubController().execute(req, resp);
 		}else if(target.equals("interest-category")) {
 			
 		}else {
