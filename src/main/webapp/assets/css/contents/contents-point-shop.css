@@ -2,6 +2,11 @@
 
 /* 단품 구매 스타일 */
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .purchase-window {
 	position: fixed;
 	width: 400px;

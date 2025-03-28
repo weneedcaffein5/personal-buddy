@@ -13,7 +13,7 @@ public class ScheduleVO {
 	private Timestamp scheduleCreateDate;
 	private String scheduleColor;
 	private String scheduleCategory;
-	private Long calenderId;
+	private Long calendarId;
 	private Long scheduleGroupId;
 	
 	public ScheduleVO() {;}
@@ -21,7 +21,7 @@ public class ScheduleVO {
 	
 	public ScheduleVO(Long id, String scheduleTitle, String scheduleContent, Date scheduleStartDate,
 			Date scheduleEndDate, Timestamp scheduleCreateDate, String scheduleColor, String scheduleCategory,
-			Long calenderId, Long scheduleGroupId) {
+			Long calendarId, Long scheduleGroupId) {
 		this.id = id;
 		this.scheduleTitle = scheduleTitle;
 		this.scheduleContent = scheduleContent;
@@ -30,7 +30,7 @@ public class ScheduleVO {
 		this.scheduleCreateDate = scheduleCreateDate;
 		this.scheduleColor = scheduleColor;
 		this.scheduleCategory = scheduleCategory;
-		this.calenderId = calenderId;
+		this.calendarId = calendarId;
 		this.scheduleGroupId = scheduleGroupId;
 	}
 
@@ -121,12 +121,12 @@ public class ScheduleVO {
 		this.scheduleCategory = scheduleCategory;
 	}
 
-	public Long getCalenderId() {
-		return calenderId;
+	public Long getCalendarId() {
+		return calendarId;
 	}
 
-	public void setCalenderId(Long calenderId) {
-		this.calenderId = calenderId;
+	public void setCalendarId(Long calenderId) {
+		this.calendarId = calenderId;
 	}
 
 	public Long getScheduleGroupId() {

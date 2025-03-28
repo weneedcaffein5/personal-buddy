@@ -1,4 +1,4 @@
-package com.app.interest;
+package com.app.customerService;
 
 import java.io.IOException;
 
@@ -8,34 +8,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
-import com.app.interest.controller.InterestCategoryController;
-import com.app.interest.controller.InterestCategoryMainController;
-import com.app.interest.controller.InterestCategorySubController;
-import com.app.interest.controller.InterestMainController;
+import com.app.member.controller.MemberJoinAgreeController;
+import com.app.member.controller.MemberJoinWriteController;
 
-public class InterestFrontController extends HttpServlet {
-	
-
+public class CustomerServiceFrontController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
 		resp.setContentType("text/html; charset=utf-8;");
 		
-		String controllerName = "/interest/";
+		String controllerName = "/cutomer-service/";
 		
 		String target = req.getRequestURI().replace(req.getContextPath() + controllerName, "").split("\\.")[0];
 		Result result = null;
 		
-		if(target.equals("interest-main")) {
-			result = new InterestMainController().execute(req, resp);
-		}else if(target.equals("interest-category")) {
-			result = new InterestCategoryController().execute(req, resp);
-		}else if(target.equals("interest-category-main")) {
-			result = new InterestCategoryMainController().execute(req, resp);
-		}else if(target.equals("interest-category-sub")) {
-			result = new InterestCategorySubController().execute(req, resp);
-		}else if(target.equals("interest-category")) {
-			
+		if(target.equals("cutomer-service")) {
+			result = new MemberJoinAgreeController().execute(req, resp);
 		}else {
 //			전부 404
 		}
@@ -51,6 +39,6 @@ public class InterestFrontController extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		doGet(req, resp);
+		doPost(req, resp);
 	}
-}
+}	
