@@ -48,6 +48,8 @@
             </div>
             <div class="post-main">
             	<img src="../assets/images/event/event6am.png">
+            	
+            	
             </div>
             <div class="post-like-btn">
                 <button class="post-like-btn-off">좋아요</button>
