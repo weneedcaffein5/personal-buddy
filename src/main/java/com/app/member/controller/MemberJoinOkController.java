@@ -22,7 +22,7 @@ public class MemberJoinOkController implements Action {
 		MemberDAO memberDAO = new MemberDAO();
 		
 		System.out.println(member);
-		memberDAO.isnert(member);
+		memberDAO.insert(member);
 		
 		result.setRedirect(true);
 		result.setPath("interest-main.interest");
