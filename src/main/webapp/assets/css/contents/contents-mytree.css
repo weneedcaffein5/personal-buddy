@@ -201,9 +201,10 @@ button {
     background-color: #DDDDDD; 
 }
 
-.item-button-group button:nth-child(2) {
+.background-button-group button:nth-child(2), .sticker-button-group button:nth-child(2) {
     background: #EEEEEE;
 }
+
 
 .folder-wrapper {
 	display: flex;
@@ -239,17 +240,19 @@ button {
     font-size: 14px;
 }
 
-.item-button-group {
+.background-button-group, .sticker-button-group {
     display: none;
     margin-top: 15px;
     gap: 10px;
 }
 
-.folder-item.selected .item-button-group {
+.folder-item.selected .background-button-group, 
+.folder-item.selected .sticker-button-group {
     display: flex;
 }
 
-.item-button-group button {
+.background-button-group button,
+.sticker-button-group button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -262,10 +265,11 @@ button {
     height: 30px;
     border-radius: 50px;
     transition: 0.3s;
-    margin-top:30px;
+    margin-top: 30px;
 }
 
-.item-button-group .remove-button:hover {
+.background-button-group .remove-button:hover, 
+.sticker-button-group .remove-button:hover {
     background: #ff3f3f;
 }
 
