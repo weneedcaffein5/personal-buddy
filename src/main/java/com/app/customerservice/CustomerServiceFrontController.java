@@ -1,4 +1,4 @@
-package com.app.customerService;
+package com.app.customerservice;
 
 import java.io.IOException;
 
@@ -8,8 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
-import com.app.member.controller.MemberJoinAgreeController;
-import com.app.member.controller.MemberJoinWriteController;
 
 public class CustomerServiceFrontController extends HttpServlet {
 	@Override
@@ -17,13 +15,15 @@ public class CustomerServiceFrontController extends HttpServlet {
 		req.setCharacterEncoding("UTF-8");
 		resp.setContentType("text/html; charset=utf-8;");
 		
-		String controllerName = "/cutomer-service/";
+		String controllerName = "/customer-service/";
 		
 		String target = req.getRequestURI().replace(req.getContextPath() + controllerName, "").split("\\.")[0];
 		Result result = null;
 		
-		if(target.equals("cutomer-service")) {
-			result = new MemberJoinAgreeController().execute(req, resp);
+		if(target.equals("customer-service")) {
+//			result = new CustomerServiceReadController().execute(req, resp);
+//		}else if {
+		
 		}else {
 //			전부 404
 		}
