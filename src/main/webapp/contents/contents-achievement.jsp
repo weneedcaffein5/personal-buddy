@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="../assets/css/global.css" />
 <link rel="stylesheet" href="../assets/css/header.css">
 <link rel="stylesheet" href="../assets/css/banner.css">
+<link rel="stylesheet" href="../assets/css/footer.css">
 <link rel="stylesheet" type="text/css" href="../assets/css/contents/contents-achievement.css" />
 <title>Insert title here</title>
 </head>
