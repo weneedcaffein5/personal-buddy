@@ -10,52 +10,57 @@
 
 
 .food-recommend {
-    width: 1509px;
-    height: 475px;
-   
+  width: 100%;
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .food-title {
-	font-size: 24px;
-    font-weight: regular
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
-
-
-/* 메뉴 추천 section */
 
 .food-list {
-    display: flex;
-
-    justify-content: space-between;
-    gap: 0px; 
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-.food-item {     
-    text-align: center;
-    width: 320px;
-    height: 374px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.food-item {
+  width: 320px;
+  height: 374px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: #fff;
 }
 
 .food-item img {
-    width: 320px;
-    height: 206px;
-    object-fit: cover;
-    border-radius: 10px;
+  width: 320px;
+  height: 206px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .food-info {
-    padding: 10px 0;
-    text-align: left;
-    width: 100%;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.restaurant-header{
-	display:flex;
-	align-items:ceter;
+.restaurant-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .restaurant-title {
@@ -71,27 +76,25 @@
 }
 
 .rating {
-    font-size: 14px;
-    font-weight: 400;
-    color: #FDC234;
-    margin-top:13px;
-    margin:0px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #FDC234;
+  margin: 0;
 }
 
 .price-category {
-    font-size: 14px;
-    font-weight: 400; 
-    color: #333;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
 }
 
-.location, .service {
-    font-size: 14px;
-    font-weight: 300; 
-    color: #666;
+.location,
+.service {
+  font-size: 14px;
+  font-weight: 300;
+  color: #666;
 }
 
-
-/* 장소 추천 section */
 
 .place-recommend {
     width: 1421px;
@@ -201,100 +204,48 @@
 
 /* 코디 추천 section */
 
-.cloth-recommend {
-    width: 927px;
-    margin: auto;
-    padding: 20px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.cloth-main.new-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  width: 100%;
 }
 
-.cloth-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
+.cloth-left-text {
+  width: 260px;
+  text-align: left;
 }
 
-.cloth-main {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.cloth-image img {
-    width: 440px;
-    height: 430px;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.cloth-text {
-    width: 440px;
-    text-align: left;
+.cloth-product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 220px;
 }
 
 .cloth-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.cloth-info-image{
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 50%;
-    cursor: pointer;
+.cloth-info-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
-.cloth-info a {
-  text-decoration: none; 
-  color: inherit;         
-}
-
-.cloth-info a:hover {
-  color: #01CD74;       
-}
-
-.cloth-desc-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-align: left;
-    color: #333;
-    min-height: 50px;
+.cloth-image img {
+  width: 330px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 
-.cloth-desc {
-    font-size: 14px;
-    line-height: 1.5;
-}
 
-.cloth-thumbnail-list {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-}
 
-.cloth-thumbnail {
-    width: 140px;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-}
-
-.cloth-thumbnail:hover{
-    transform: scale(1.1);
-}
 
 

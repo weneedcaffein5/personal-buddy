@@ -27,6 +27,7 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
 	<div>
 		<h2>캘린더</h2>
 	</div>
+	
   <div class="food-recommend">
     <h2 class="food-title">어제 한식을 드셨네요? 오늘 ‘역삼역’에서 점심 이런 메뉴 어때요?!!</h2>
     
@@ -57,12 +58,12 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
           	
           	<div>
           	<span>메인</span>
-          	<p class="price-category">₩9,000~15,000 · 돈까스</p>
+          	<span class="price-category">₩9,000~15,000 · 돈까스</span>
           	</div>
           	
           	<div>
           	<span> 주소</span>
-          	<p class="location">역삼로 102 2층 <br>매장 내 식사·테이크아웃</p>
+          	<span class="location">역삼로 102 2층 <br>매장 내 식사·테이크아웃</span>
           	<p class="service"></p>
           	</div>
         </div>
@@ -139,134 +140,50 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
     <div class="place-details"> </div>
 	</div>
 	
+	
     <!-- 코디 추천 -->
-    
 	<div class="cloth-recommend">
-    <p class="cloth-title">당신이 원하는 '그' 코디</p>
-    <div class="cloth-main">
-        <div class="cloth-image">
-            <img id="main-cloth" src="../assets/images/main/cloth-5.jpg" alt="코디1">
-        </div>
-        <div class="cloth-text">
-            <p id="main-desc-title" class="cloth-desc-title">선호하시는 브랜드인 '허그유어스킨'의 스타일이에요</p>
-            
-            <div id="main-desc">
-	            <div class="cloth-info">
-	                    <img class="cloth-info-image" src="../assets/images/main/pants1.jpg" alt="조거 팬츠">
-	                <p><a href="https://www.musinsa.com/products/4757432" target="_blank">허그유어스킨-레이스 조거 팬츠(블랙)</a><br>98,100원</p>
-	            </div>
-	            <div class="cloth-info">
-	                    <img class="cloth-info-image" src="../assets/images/main/dress1.png" alt="오프숄더 드레스">
-	                <p><a href="https://www.musinsa.com/products/4757324" target="_blank">드로우 스트링 오프숄더 드레스 (핑크)</a><br>88,200원</p>
-	            </div>
-	            <div class="cloth-info">
-	                    <img class="cloth-info-image" src="../assets/images/main/belt1.jpg" alt="스커트 벨트">
-	                <p><a href="https://www.musinsa.com/products/4757300" target="_blank">플리츠 스커트 벨트</a><br>52,200원</p>
-	            </div>
-            </div>
-            
-        </div>
-    </div>
-    <div class="cloth-thumbnail-list">
-        <img class="cloth-thumbnail" src="../assets/images/main/cloth-5.jpg" alt="코디1" 
-        data-title="선호하시는 브랜드인 '허그유어스킨'의 스타일이에요" 
-        data-desc='<div class="cloth-info">
-                    <a href="https://www.musinsa.com/products/4757432" target="_blank">
-                        <img class="cloth-info-image" src="../assets/images/main/pants1.jpg" alt="조거 팬츠">
-                    </a>
-                    <p><a href="https://www.musinsa.com/products/4757432" target="_blank">허그유어스킨-레이스 조거 팬츠(블랙)</a><br>98,100원</p>
-                  </div>
-                  <div class="cloth-info">
-                    <a href="https://www.musinsa.com/products/4757324" target="_blank">
-                        <img class="cloth-info-image" src="../assets/images/main/dress1.png" alt="오프숄더 드레스">
-                    </a>
-                    <p><a href="https://www.musinsa.com/products/4757324" target="_blank">드로우 스트링 오프숄더 드레스 (핑크)</a><br>88,200원</p>
-                  </div>
-                  <div class="cloth-info">
-                    <a href="https://www.musinsa.com/products/4757300" target="_blank">
-                        <img class="cloth-info-image" src="../assets/images/main/belt1.jpg" alt="스커트 벨트">
-                    </a>
-                    <p><a href="https://www.musinsa.com/products/4757300" target="_blank">플리츠 스커트 벨트</a><br>52,200원</p>
-                  </div>'>
-                  
-        <img class="cloth-thumbnail" src="../assets/images/main/cloth-2.png" alt="코디2" 
-        data-title="선호하시는 브랜드인 '스컬프터'의 스타일이에요"  
-        data-desc='<div class="cloth-info">
-                    <a href="https://www.musinsa.com/products/750908" target="_blank">
-                        <img class="cloth-info-image" src="../assets/images/main/dress3.png" alt="원피스3">
-                    </a>
-                    <p><a href="https://sculptorpage.com/product/detail.html?product_no=10107&cate_no=783&display_group=1" target="_blank">카고 집업 드레스(소프트 브라운)</a><br>95,400원</p>
-                  </div>     
-                  
-                  <div class="cloth-info">
-                    <a href="https://sculptorpage.com/product/detail.html?product_no=12184&cate_no=785&display_group=1" target="_blank">
-                        <img class="cloth-info-image" src="../assets/images/main/스컬프터-가방1.jpg" alt="스컬프터 가방">
-                    </a>
-                    <p><a href="https://sculptorpage.com/product/detail.html?product_no=12184&cate_no=801&display_group=1" target="_blank">메탈릭 호버백(블랙)</a><br>128,700원</p>
-                  </div>  
-                  
-                  <div class="cloth-info">
-                    <a href="https://sculptorpage.com/product/detail.html?product_no=12079&cate_no=785&display_group=1" target="_blank">
-                        <img class="cloth-info-image" src="../assets/images/main/스컬프터-악세1.jpg" alt="악세사리">
-                    </a>
-                    <p><a href="https://sculptorpage.com/product/detail.html?product_no=12079&cate_no=785&display_group=1" target="_blank">멀티 브로치 세트</a><br>15,900원</p>
-                  </div>
-                     
-                  </div>'>
-                   
-        <img class="cloth-thumbnail" src="../assets/images/main/dress4.png" alt="코디3" 
-        data-title="선호하시는 브랜드인 '미우미우'의 스타일이에요" 
-        data-desc='<div class="cloth-info">
-                    <a href="https://www.miumiu.com/kr/ko/p/%ED%8F%AC%ED%94%8C%EB%A6%B0-%EB%93%9C%EB%A0%88%EC%8A%A4/MF5787_1BMS_F0E18_S_OOO" target="_blank">
-                        <img class="cloth-info-image" src="../assets/images/main/miumiu-dress.png" alt="드레스">
-                    </a>
-                    <p><a href="https://www.miumiu.com/kr/ko/p/%ED%8F%AC%ED%94%8C%EB%A6%B0-%EB%93%9C%EB%A0%88%EC%8A%A4/MF5787_1BMS_F0E18_S_OOO" target="_blank">포플린 드레스(핑크)</a><br> 5,150,000원</p>                  
-                   </div>
-                   
-                   <div class="cloth-info">
-                   <a href="https://www.miumiu.com/kr/ko/p/%EC%8A%A4%ED%8A%B8%EB%9E%A9%EC%9D%B4-%EB%8B%AC%EB%A6%B0-%ED%8C%A8%EB%B8%8C%EB%A6%AD-%EC%8A%AC%EB%A7%81%EB%B0%B1/5I013E_650_F0002_F_M055
-                   " target="_blank">
-                        <img class="cloth-info-image" src="../assets/images/main/miumiu-shoes.png" alt="신발">
-                   </a>
-                   <p><a href="https://www.miumiu.com/kr/ko/p/%EC%8A%A4%ED%8A%B8%EB%9E%A9%EC%9D%B4-%EB%8B%AC%EB%A6%B0-%ED%8C%A8%EB%B8%8C%EB%A6%AD-%EC%8A%AC%EB%A7%81%EB%B0%B1/5I013E_650_F0002_F_M055
-                   " target="_blank">포플린 드레스(핑크)</a><br> 5,150,000원</p>                  
-                   </div>
-                   
-                   <div class="cloth-info">
-                   <a href="https://www.musinsa.com/products/4757550" target="_blank">
-                        <img class="cloth-info-image" src="../assets/images/main/jacket1.jpg" alt="블레이저">
-                   </a>
-                   <p><a href="https://www.musinsa.com/products/4757550" target="_blank">포플린 드레스(핑크)</a><br> 5,150,000원</p>                  
-                   </div>
-                                    	
-                  </div>'>  
-                  
-        <img class="cloth-thumbnail" src="../assets/images/main/cloth-7.png" alt="코디4"
-         data-title="선호하시는 브랜드인 '칼하트'의 스타일이에요"  
-         data-desc='<div class="cloth-info">
-                    <a href="https://www.musinsa.com/products/4757600" target="_blank">
-                        <img class="cloth-info-image" src="../assets/images/main/coat1.jpg" alt="트렌치 코트">
-                    </a>
-                    <p><a href="https://www.musinsa.com/products/4757600" target="_blank">트렌치 코트 (베이지)</a><br>198,000원</p>
-                  	</div>
-                  	
-                  	<div class="cloth-info">
-                  	<a href="https://www.musinsa.com/products/4757600" target="_blank">
-                        <img class="cloth-info-image" src="../assets/images/main/coat1.jpg" alt="트렌치 코트">
-                    </a>
-                    <p><a href="https://www.musinsa.com/products/4757600" target="_blank">트렌치 코트 (베이지)</a><br>198,000원</p>
-                  	</div>
-                  	
-                  	<div class="cloth-info">
-                  	<a href="https://www.musinsa.com/products/4757600" target="_blank">
-                        <img class="cloth-info-image" src="../assets/images/main/coat1.jpg" alt="트렌치 코트">
-                    </a>
-                    <p><a href="https://www.musinsa.com/products/4757600" target="_blank">트렌치 코트 (베이지)</a><br>198,000원</p>
-                  	</div>	
-                  	
-                  </div>'>
-    		</div>
+	  <p class="cloth-title">당신이 원하는 '그' 코디</p>
+	
+	  <div class="cloth-main new-layout">
+	    
+	    
+	
+	    <!-- 가운데 이미지 -->
+	    <div class="cloth-image">
+	      <img id="main-cloth" src="../assets/images/main/cloth-5.jpg" alt="코디1">
+	    </div>
+	    
+	    <!-- 왼쪽 설명 -->
+	    <div class="cloth-left-text">
+	      <p class="cloth-desc-title">선호하시는 브랜드인 ‘허그유어스킨’의 스타일이에요</p>
+	      <p class="cloth-desc">
+	        요즘처럼 일교차가 큰 날씨엔, 레이어드 스타일이 제격입니다. <br>
+	        기본이 되는 화이트 티셔츠나 무지 셔츠에 얇은 니트나 가디건, 또는 오버핏 자켓을 매치해보세요. <br>
+	        여기에 슬랙스나 와이드 핏 청바지, 운동화나 로퍼를 더하면 깔끔하면서도 꾸안꾸 느낌을 살릴 수 있어요.
+	      </p>
+	    </div>
+	
+	    <!-- 오른쪽 상품 -->
+	    <div class="cloth-product-list">
+	      <div class="cloth-info">
+	        <img class="cloth-info-image" src="../assets/images/main/pants1.jpg" alt="조거 팬츠">
+	        <p><a href="https://www.musinsa.com/products/4757432" target="_blank">허그유어스킨-레이스 조거 팬츠(블랙)</a><br>98,100원</p>
+	      </div>
+	      <div class="cloth-info">
+	        <img class="cloth-info-image" src="../assets/images/main/dress1.png" alt="오프숄더 드레스">
+	        <p><a href="https://www.musinsa.com/products/4757324" target="_blank">드로우 스트링 오프숄더 드레스 (핑크)</a><br>88,200원</p>
+	      </div>
+	      <div class="cloth-info">
+	        <img class="cloth-info-image" src="../assets/images/main/belt1.jpg" alt="스커트 벨트">
+	        <p><a href="https://www.musinsa.com/products/4757300" target="_blank">플리츠 스커트 벨트</a><br>52,200원</p>
+	      </div>
+	    </div>
+	
+	  </div>
 	</div>
+
+
 	</div> 	
 
 
