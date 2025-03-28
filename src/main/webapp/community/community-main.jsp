@@ -5,8 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="../assets/css/global.css" />
-<link rel="stylesheet" type="text/css" href="../assets/css/header.css" />
-<link rel="stylesheet" type="text/css" href="../assets/css/banner.css" />
 <link rel="stylesheet" href="../assets/css/community/community.css">
 
 <title>커뮤니티</title>
