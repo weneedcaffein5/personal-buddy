@@ -14,6 +14,7 @@ public class InterestMainController implements Action{
 		Result result = new Result();
 		
 		result.setPath("interest-main.jsp");
+		
 		return result;
 	}
 }
