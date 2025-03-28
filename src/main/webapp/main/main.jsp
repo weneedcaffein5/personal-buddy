@@ -267,8 +267,7 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
                   </div>'>
     		</div>
 	</div>
-	</div>
-</body>
+	</div> 	
 
 
 
