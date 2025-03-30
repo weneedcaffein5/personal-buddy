@@ -13,7 +13,9 @@
 </head>
 <body>
 	<%@ include file="../layout/header.jsp" %>
+<div>
 	<%@ include file="../layout/banner.jsp" %>
+</div>
 	
 	<div class="container">
     	<div class="tab-box">
@@ -26,8 +28,8 @@
 		</div>
 
 	<div class="sub-title-wrap">
-    	<div class="board-sub-title">기간별 포인트 획득을 확인해보세요!</div>
-		<div class="board-main-title">포인트 획득 💸</div>
+    		<div class="board-sub-title">기간별 포인트 획득을 확인해보세요!</div>
+			<div class="board-main-title">포인트 획득 💸</div>
 	</div>
 	
     <div class="points-section">
@@ -171,8 +173,14 @@
     <div>
     	<div class="go-profile">
 		  <div class="board-sub-title-wrap">
-		    <div class="board-sub-title">프로필을 멋지게 장식해봐요!</div>
-		    <div class="board-main-title">업적 목록 🎖</div>
+		 	<div>
+		    	<div class="board-sub-title">프로필을 멋지게 장식해봐요!</div>
+		    </div>
+		    
+		    <div style='display:flex; width:1400px;'>	
+		    	<div class="board-main-title">업적 목록 🎖</div>
+				<a href="../mypage/mypage-myachievement.jsp">프로필 설정하러 가기 >></a>
+			</div>
 		  </div>	
 		 <!--  <a class="go-profile-link" href="../mypage/mypage-myachievement.jsp">프로필 설정하러 가기 >></a> -->
 		</div>

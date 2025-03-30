@@ -1,4 +1,5 @@
 /* 장소 추천 */
+
 document.addEventListener("click", function (e) {
     const clickedItem = e.target.closest(".place-item");
     if (!clickedItem) return;
