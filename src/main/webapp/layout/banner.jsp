@@ -14,7 +14,7 @@
 		</div>
     	<!-- </a> -->
     	
-   		<div class="banner-slide" id="banner-slide" data-link="../event/event-main.jsp">
+   		<div class="banner-slide" id="banner-slide" data-link="../main/main.main">
        		<img src="../assets/images/main/banner-blue.png" class="banner-slide" alt="배너 1">
        		<div class="banner-text">
        			<p class="banner-subtitle">버디들이 관심 있는 일정은?</p>
