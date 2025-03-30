@@ -2,104 +2,128 @@
 
 
 .content-wrapper {
-  width: 1400px;
-  margin: auto;
-  height: 100%;
+  	width: 1400px;
+  	margin: 0 auto;
+  	height: 100%;
   
 }
 
-
 .food-recommend {
-  width: 100%;
-  max-width: 1400px;
-  margin: 40px auto;
-  padding: 20px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+  	width: 100%;
+  	max-width: 1400px;
+  	margin: 40px auto;
+  	padding: 20px 0;
+  	display: flex;
+  	flex-direction: column;
+  	gap: 30px;
 }
 
 .food-title {
-  font-size: 24px;
-  font-weight: 500;
-  margin-bottom: 10px;
+  	font-size: 24px;
+  	font-weight: 500;
+  	line-height: 35px;
+  	margin-bottom: 50px;
+  	margin-top: 100px;
 }
 
 .food-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
+  	display: flex;
+  	justify-content: space-between;
+  	gap: 20px;
+  	padding: 0;
 }
 
 .food-item {
-  width: 320px;
-  height: 374px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  background-color: #fff;
+  	width: 320px;
+  	height: 374px;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	gap: 10px;
+  	cursor: pointer;
 }
 
-.food-item img {
-  width: 320px;
-  height: 206px;
-  object-fit: cover;
-  border-radius: 10px;
+.food-img a {
+  	display: block;
+  	border-radius: 10px;
+  	overflow: hidden;
+  	transition: transform 0.3s ease;
 }
+
+.food-img a:hover {
+  	transform: scale(1.05);
+}
+
+.food-img img {
+  	width: 320px;
+  	height: 206px;
+  	object-fit: cover;
+  	border-radius: 10px;
+  	display: block;
+}
+
 
 .food-info {
-  padding: 10px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  	padding: 20px;
+  	width: 100%;
+  	display: flex;
+  	flex-direction: column;
+  	justify-content: center;
+  	gap: 12px;
 }
 
-.restaurant-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.info-block {
+  	display: flex;
+  	align-items: center;
+  	gap: 16px;
 }
 
-.restaurant-title {
-  font-size: 14px;
-  font-weight: 600;
-  color: #333;
+.label {
+  	font-size: 14px;
+  	font-weight: 500;
+  	color: #000;
+  	min-width: 48px;
+  	line-height: 28px;
 }
 
-.restaurant-name {
-  font-size: 14px;
-  font-weight: 300;
-  color: #000;
+.value.name {
+  	font-size: 14px;
+  	font-weight: 100;
+  	color: #000;
 }
 
-.rating {
-  font-size: 14px;
-  font-weight: 400;
-  color: #FDC234;
-  margin: 0;
+.value.rating {
+  	font-size: 14px;
+  	font-weight: 300;
+  	color: #FDC234;
 }
 
-.price-category {
-  font-size: 14px;
-  font-weight: 400;
-  color: #333;
+.value.main {
+  	font-size: 14px;
+  	font-weight: 400;
+  	color: #000;
 }
 
-.location,
-.service {
-  font-size: 14px;
-  font-weight: 300;
-  color: #666;
+.address .value {
+  	font-size: 14px;
+  	font-weight: 100;
+  	color: #000;
+}
+
+.address .service {
+  	font-size: 14px;
+  	font-weight: 300;
+  	color: #000;
+  	line-height: 28px;
 }
 
 
+
+
+/* 장소 추천 */
 .place-recommend {
     width: 1421px;
     margin: 60px auto 0 auto;
-    padding: 20px 0;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -107,9 +131,10 @@
 }
 
 .place-list {
-    display: flex;
-    flex-direction: column;
-    width: 650px;
+  	display: flex;
+  	flex-direction: column;
+  	width: 600px;
+  	gap: 20px;
 }
 
 .place-item {
@@ -178,7 +203,7 @@
 .place-details.active {
     display: flex;
     width: 680px;
-    height:540px;
+    height:520px;
 }
 
 
@@ -191,58 +216,61 @@
 
 .place-title1 {
 	font-size: 24px;
-    font-weight: regular;
-    
-}
-
-.place-title2 {
-	font-size: 24px;
-    font-weight: regular;
-
+    font-weight: 500;
+    line-height: 35px;
+    margin-bottom: 50px;
+    margin-top: 100px;
 }
 
 
 /* 코디 추천 section */
 
-.cloth-main.new-layout {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 30px;
-  width: 100%;
+.cloth-grid-wrap {
+  	width: 1400px;
+  	margin: 60px auto;
 }
 
-.cloth-left-text {
-  width: 260px;
-  text-align: left;
+.cloth-title {
+  	font-size: 24px;
+  	font-weight: 400;
+  	margin-bottom: 50px;
 }
 
-.cloth-product-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  width: 220px;
+.cloth-grid {
+  	display: grid;
+  	grid-template-columns: repeat(3, 1fr);
+  	gap: 40px 60px;
 }
 
-.cloth-info {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.cloth-card {
+  	display: flex; 
+  	flex-direction: column;
+  	align-items: flex-start;
+  	gap: 10px;
+  	margin: 0;
+  	margin-bottom:80px;
 }
 
-.cloth-info-image {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-  border-radius: 50%;
+.cloth-card img {
+  	width: 100%;
+  	height: 500px;
+  	object-fit: cover;
+  	border-radius: 12px;
 }
 
-.cloth-image img {
-  width: 330px;
-  height: 420px;
-  object-fit: cover;
-  border-radius: 10px;
+.cloth-card-title{
+  	font-size: 18px;
+  	font-weight: 500;
+	margin-bottom: 3px;
 }
+
+.cloth-card-desc {
+  	font-size: 14px;
+  	font-weight: 300;
+  	margin:0;
+}
+
+
 
 
 
