@@ -1,4 +1,3 @@
-
 // 상단 탭 관련 변수 
 const achievementTab = document.getElementById("achievementTab");
 const myTreeTab = document.getElementById("myTreeTab");
@@ -115,20 +114,93 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // 선택된 ID 전역 변수
+  let selectedTreeId = null;
+  let selectedBackgroundId = null;
+
+  // 배경 이미지 ID → 파일명 매핑
+  const backgroundImageMap = {
+    1: "field-bg.png",
+    2: "beach-bg.png",
+    3: "cherry-tree-bg.png",
+    4: "night-field-bg.png",
+    5: "halloween-bg.png",
+    6: "rain-mountain-bg.png",
+    7: "dessert-bg.png",
+    8: "lego-building-bg.png",
+    9: "snow-bg.png",
+    10: "dream-field-bg.png",
+    11: "rain-ocean-bg.png",
+    12: "field-bg2.png",
+  };
+
+  // 모달 관련 요소
   const modal = document.querySelector(".set-modal-container");
   const noButton = document.querySelector(".set-modal-no-button");
+  const yesButton = document.querySelector(".set-modal-ok-button");
   const contentContainer = document.querySelector(".contents-container");
+  const modalTitle = document.getElementById("modal-title");
+  const modalMessage = document.getElementById("modal-message");
 
+  // 변경 버튼 클릭 시 미리보기 변경
+  document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("change-button")) {
+      const treeForm = e.target.closest(".tree-change-form");
+      const backgroundForm = e.target.closest(".background-change-form");
+
+      //  나무
+      if (treeForm) {
+        selectedTreeId = treeForm.querySelector("input[name='selectedTreeId']").value;
+        const treeImage = document.getElementById("treeImage");
+        if (treeImage) {
+          treeImage.src = `../assets/images/contents/tree/tree${selectedTreeId}.png`;
+          treeImage.classList.add("enlarged");
+        }
+        console.log(" 선택된 나무:", selectedTreeId);
+      }
+
+      //  배경
+      if (backgroundForm) {
+        selectedBackgroundId = backgroundForm.querySelector("input[name='selectedBackgroundId']").value;
+        const bgImage = document.getElementById("backgroundImage");
+        if (bgImage && backgroundImageMap[selectedBackgroundId]) {
+          bgImage.src = `../assets/images/contents/${backgroundImageMap[selectedBackgroundId]}`;
+        }
+        console.log(" 선택된 배경:", selectedBackgroundId);
+      }
+    }
+  });
+
+  // 저장 버튼 클릭 시 모달 열기
   contentContainer.addEventListener("click", function (e) {
     if (e.target.classList.contains("save-button")) {
-      document.getElementById("modal-title").textContent = "저장";
-      document.getElementById("modal-message").textContent = "저장하시겠습니까?";
+      if (!selectedTreeId && !selectedBackgroundId) {
+        alert("변경된 사항이 없습니다.");
+        return;
+      }
+
+      modalTitle.textContent = "저장";
+      modalMessage.textContent = "저장하시겠습니까?";
       modal.classList.add("active");
     }
   });
 
+  // 모달 취소 버튼
   noButton.addEventListener("click", () => {
     modal.classList.remove("active");
+  });
+
+  // 모달 확인 버튼 → form 전송
+  yesButton.addEventListener("click", () => {
+    if (selectedTreeId) {
+      document.getElementById("finalSelectedTreeId").value = selectedTreeId;
+      document.getElementById("saveTreeForm").submit();
+    }
+
+    if (selectedBackgroundId) {
+      document.getElementById("finalSelectedBackgroundId").value = selectedBackgroundId;
+      document.getElementById("saveBackgroundForm").submit();
+    }
   });
   
 });

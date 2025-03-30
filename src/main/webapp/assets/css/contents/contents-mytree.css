@@ -81,6 +81,13 @@ button {
 	gap: 93px;
 }
 
+.tree-image.enlarged {
+	position: absolute;
+	top: 65%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(4) ;
+}
+
 .tree-title-word {
 	width: 100%;
 	font-size: 24px;

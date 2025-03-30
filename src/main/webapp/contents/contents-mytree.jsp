@@ -34,21 +34,35 @@
 				<div class="tree-title-word">나의 성장나무🎄</div>
 				<div class="tree-wrapper">
 					<div class="tree-container">
+
+						<!-- 나무 이미지 -->
 						<c:choose>
 							<c:when test="${not empty currentTreeId}">
 								<img
 									src="../assets/images/contents/tree/tree${currentTreeId}.png"
-									class="tree-image">
+									class="tree-image enlarged" id="treeImage" />
 							</c:when>
 							<c:otherwise>
 								<img src="../assets/images/contents/default/default-tree.png"
-									class="tree-image">
+									class="tree-image" id="treeImage" />
 							</c:otherwise>
 						</c:choose>
 
-						<img src="../assets/images/contents/default/default.png"
-							class="background">
+						<!-- 배경 이미지 -->
+						<c:choose>
+							<c:when test="${not empty currentBackgroundId}">
+								<img
+									src="../assets/images/contents/background/background${currentBackgroundId}.png"
+									class="background" id="backgroundImage" />
+							</c:when>
+							<c:otherwise>
+								<img src="../assets/images/contents/default/default.png"
+									class="background" id="backgroundImage" />
+							</c:otherwise>
+						</c:choose>
+
 					</div>
+
 					<div class="tree-button-group">
 						<button class="save-button">저장</button>
 						<button class="cancel-button">취소</button>
@@ -56,7 +70,6 @@
 				</div>
 			</div>
 		</div>
-
 
 
 		<!-- 나의꾸미기 -->
@@ -77,7 +90,7 @@
 
 		</div>
 	</div>
-	</div>
+
 
 	<!-- 모달 -->
 

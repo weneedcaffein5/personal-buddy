@@ -24,17 +24,17 @@ public class ContentsMyTreeController implements Action{
         
         String selectedTreeId = req.getParameter("selectedTreeId");
         String userId = String.valueOf(req.getSession().getAttribute("userId"));
+        TreeDAO treeDAO = new TreeDAO();
         
         if (selectedTreeId != null) {
             TreeViewDTO treeViewDTO = new TreeViewDTO();
             treeViewDTO.setMemberId(Long.parseLong(userId));
             treeViewDTO.setTreeId(Long.parseLong(selectedTreeId));
 
-            TreeDAO treeDAO = new TreeDAO();
             treeDAO.updateUserTree(treeViewDTO); 
         }
         
-        TreeViewDTO myTree = treeDAO.selectUserTree(Long.parseLong(userId));
+        TreeViewDTO myTree = treeDAO.selectUserTree(Long.parseLong(userId)) ;
         req.setAttribute("currentTreeId", myTree.getTreeId());
         
         Result result = new Result();

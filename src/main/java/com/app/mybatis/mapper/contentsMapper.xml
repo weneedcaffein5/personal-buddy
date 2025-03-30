@@ -8,4 +8,12 @@
 		SET ID = #{treeId}
 		WHERE MEMBER_ID = #{memberId}
 	</update>
+	
+	<select id="selectUserTree" parameterType="long" resultType="com.app.dto.TreeViewDTO">
+    SELECT 
+        ID AS treeId,
+        MEMBER_ID AS memberId
+    FROM TBL_TREE
+    WHERE MEMBER_ID = #{memberId}
+</select>
 </mapper>

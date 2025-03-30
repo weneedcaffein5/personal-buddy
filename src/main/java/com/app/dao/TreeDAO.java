@@ -12,10 +12,15 @@ public class TreeDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
-	// 회원의 트리에 붙은 스티커 목록 조회 (R)
+	// 현재 적용된 나무 조회
+    public TreeViewDTO selectUserTree(Long memberId) {
+        return sqlSession.selectOne("contents.selectUserTree", memberId);
+    }
+    
 	public void updateUserTree(TreeViewDTO dto) {
 	    sqlSession.update("contents.updateUserTree", dto);
 	}
+	// 회원의 트리에 붙은 스티커 목록 조회 (R)
 	
 	// 성장나무 커스터마이징 (적용여부 변경) (U)
 	

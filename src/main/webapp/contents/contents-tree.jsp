@@ -1,105 +1,96 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<div class="folder-wrapper">
-	<div class="folder">
+		<div class="folder-wrapper">
+			<div class="folder">
 
-		<!-- tree1 -->
-		<form action="myTree.contents" method="post" class="tree-change-form">
-			<div class="folder-item">
-				<img src="../assets/images/contents/tree/tree1.png"
-					alt="field-bg" class="sticker-image">
-				<span>단풍나무1</span><span>보유 : 2</span>
+				<!-- tree1 -->
+				<div class="tree-change-form">
+					<div class="folder-item">
+						<img src="../assets/images/contents/tree/tree1.png" alt="field-bg"
+							class="sticker-image"> <span>단풍나무1</span><span>보유 :
+							2</span> <input type="hidden" name="selectedTreeId" value="1" />
 
-				<input type="hidden" name="selectedTreeId" value="1" />
-
-				<div class="tree-item-button-group">
-					<button class="change-button" type="submit">변경</button>
-					<button class="remove-button" type="button">제거</button>
+						<div class="tree-item-button-group">
+							<button class="change-button" type="button">변경</button>
+							<button class="remove-button" type="button">제거</button>
+						</div>
+					</div>
 				</div>
-			</div>
-		</form>
 
-		<!-- tree2 -->
-		<form action="myTree.contents" method="post" class="tree-change-form">
-			<div class="folder-item">
-				<img src="../assets/images/contents/tree/tree2.png"
-					alt="beach-bg" class="sticker-image">
-				<span>단풍나무2</span><span>보유 : 2</span>
+				<!-- tree2 -->
+				<div class="tree-change-form">
+					<div class="folder-item">
+						<img src="../assets/images/contents/tree/tree2.png" alt="beach-bg"
+							class="sticker-image"> <span>단풍나무2</span><span>보유 :
+							2</span> <input type="hidden" name="selectedTreeId" value="2" />
 
-				<input type="hidden" name="selectedTreeId" value="2" />
-
-				<div class="tree-item-button-group">
-					<button class="change-button" type="submit">변경</button>
-					<button class="remove-button" type="button">제거</button>
+						<div class="tree-item-button-group">
+							<button class="change-button" type="button">변경</button>
+							<button class="remove-button" type="button">제거</button>
+						</div>
+					</div>
 				</div>
-			</div>
-		</form>
 
-		<!-- tree3 -->
-		<form action="myTree.contents" method="post" class="tree-change-form">
-			<div class="folder-item">
-				<img src="../assets/images/contents/tree/tree3.png"
-					alt="cherry-tree-bg" class="sticker-image">
-				<span>단풍나무3</span><span>보유 : 1</span>
+				<!-- tree3 -->
+				<div class="tree-change-form">
+					<div class="folder-item">
+						<img src="../assets/images/contents/tree/tree3.png"
+							alt="cherry-tree-bg" class="sticker-image"> <span>단풍나무3</span><span>보유
+							: 1</span> <input type="hidden" name="selectedTreeId" value="3" />
 
-				<input type="hidden" name="selectedTreeId" value="3" />
-
-				<div class="tree-item-button-group">
-					<button class="change-button" type="submit">변경</button>
-					<button class="remove-button" type="button">제거</button>
+						<div class="tree-item-button-group">
+							<button class="change-button" type="button">변경</button>
+							<button class="remove-button" type="button">제거</button>
+						</div>
+					</div>
 				</div>
-			</div>
-		</form>
 
-		<!-- tree4 -->
-		<form action="myTree.contents" method="post" class="tree-change-form">
-			<div class="folder-item">
-				<img src="../assets/images/contents/tree/tree4.png"
-					alt="night-field-bg" class="sticker-image">
-				<span>나무1</span><span>보유 : 1</span>
+				<!-- tree4 -->
+				<div class="tree-change-form">
+					<div class="folder-item">
+						<img src="../assets/images/contents/tree/tree4.png"
+							alt="night-field-bg" class="sticker-image"> <span>나무1</span><span>보유
+							: 1</span> <input type="hidden" name="selectedTreeId" value="4" />
 
-				<input type="hidden" name="selectedTreeId" value="4" />
-
-				<div class="tree-item-button-group">
-					<button class="change-button" type="submit">변경</button>
-					<button class="remove-button" type="button">제거</button>
+						<div class="tree-item-button-group">
+							<button class="change-button" type="button">변경</button>
+							<button class="remove-button" type="button">제거</button>
+						</div>
+					</div>
 				</div>
-			</div>
-		</form>
 
-		<!-- tree5 -->
-		<form action="myTree.contents" method="post" class="tree-change-form">
-			<div class="folder-item">
-				<img src="../assets/images/contents/tree/tree5.png"
-					alt="halloween-bg" class="sticker-image">
-				<span>나무2</span><span>보유 : 1</span>
+				<!-- tree5 -->
+				<div class="tree-change-form">
+					<div class="folder-item">
+						<img src="../assets/images/contents/tree/tree5.png"
+							alt="halloween-bg" class="sticker-image"> <span>나무2</span><span>보유
+							: 1</span> <input type="hidden" name="selectedTreeId" value="5" />
 
-				<input type="hidden" name="selectedTreeId" value="5" />
-
-				<div class="tree-item-button-group">
-					<button class="change-button" type="submit">변경</button>
-					<button class="remove-button" type="button">제거</button>
+						<div class="tree-item-button-group">
+							<button class="change-button" type="button">변경</button>
+							<button class="remove-button" type="button">제거</button>
+						</div>
+					</div>
 				</div>
-			</div>
-		</form>
 
-		<!-- tree6 -->
-		<form action="myTree.contents" method="post" class="tree-change-form">
-			<div class="folder-item">
-				<img src="../assets/images/contents/tree/tree6.png"
-					alt="rain-mountain-bg" class="sticker-image">
-				<span>나무3</span><span>보유 : 1</span>
+				<!-- tree6 -->
+				<div class="tree-change-form">
+					<div class="folder-item">
+						<img src="../assets/images/contents/tree/tree6.png"
+							alt="rain-mountain-bg" class="sticker-image"> <span>나무3</span><span>보유
+							: 1</span> <input type="hidden" name="selectedTreeId" value="6" />
 
-				<input type="hidden" name="selectedTreeId" value="6" />
-
-				<div class="tree-item-button-group">
-					<button class="change-button" type="submit">변경</button>
-					<button class="remove-button" type="button">제거</button>
+						<div class="tree-item-button-group">
+							<button class="change-button" type="button">변경</button>
+							<button class="remove-button" type="button">제거</button>
+						</div>
+					</div>
 				</div>
+
 			</div>
-		</form>
+		</div>
 
-	</div>
-</div>
-
+<form id="saveTreeForm" action="myTree.contents" method="post" style="display: none;">
+  <input type="hidden" name="selectedTreeId" id="finalSelectedTreeId">
+</form>
