@@ -12,15 +12,6 @@ import com.app.interest.controller.InterestBackController;
 import com.app.interest.controller.InterestMainCategoryController;
 import com.app.interest.controller.InterestSelectMainCategoryController;
 import com.app.interest.controller.InterestSubCategoryController;
-import com.app.interest.controller.item.InterestBallGamesController;
-import com.app.interest.controller.item.InterestFashionController;
-import com.app.interest.controller.item.InterestFoodController;
-import com.app.interest.controller.item.InterestMovieController;
-import com.app.interest.controller.item.InterestMusicController;
-import com.app.interest.controller.item.InterestMusicalInstrumentController;
-import com.app.interest.controller.item.InterestReadingController;
-import com.app.interest.controller.item.InterestSportsController;
-import com.app.interest.controller.item.InterestTravelController;
 import com.app.interest.controller.InterestMainController;
 import com.app.interest.controller.InterestNextController;
 
@@ -75,23 +66,3 @@ public class InterestFrontController extends HttpServlet {
 		doGet(req, resp);
 	}
 }
-
-
-//		}else if(target.equals("interest-ball-games")) {
-//			result = new InterestBallGamesController().execute(req, resp);
-//		}else if(target.equals("interest-fashion")) {
-//			result = new InterestFashionController().execute(req, resp);
-//		}else if(target.equals("interest-food")) {
-//			result = new InterestFoodController().execute(req, resp);
-//		}else if(target.equals("interest-movie")) {
-//			result = new InterestMovieController().execute(req, resp);
-//		}else if(target.equals("interest-music")) {
-//			result = new InterestMusicController().execute(req, resp);
-//		}else if(target.equals("interest-musical-instrument")) {
-//			result = new InterestMusicalInstrumentController().execute(req, resp);
-//		}else if(target.equals("interest-reading")) {
-//			result = new InterestReadingController().execute(req, resp);
-//		}else if(target.equals("interest-sports")) {
-//			result = new InterestSportsController().execute(req, resp);
-//		}else if(target.equals("interest-travel")) {
-//			result = new InterestTravelController().execute(req, resp);
