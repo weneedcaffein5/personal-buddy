@@ -15,16 +15,23 @@ public class InterestBackController implements Action {
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, SecurityException {
 		Result result = new Result();
 		HttpSession session = req.getSession();
-		int mainCategoryLength = (int)session.getAttribute("mainCategoryLength");
-		int mainCategoryLengthMax = (int)session.getAttribute("mainCategoryLengthMax");
 		
-		mainCategoryLength = mainCategoryLength + 1;
+//		메인 카테고리(배열)을 세션에서 받기
+		String[] mainCategoryArray = (String[])session.getAttribute("mainCategoryArray");
 		
-		session.setAttribute("mainCategoryLength", mainCategoryLength);
+//		메인 카테고리[현재 인덱스]와 최대 인덱스 범위를 받기
+		int mainCategoryIndex = (int)session.getAttribute("mainCategoryIndex");
+		int mainCategoryIndexMax = (int)session.getAttribute("mainCategoryIndexMax");
 		
-		if (mainCategoryLength > mainCategoryLengthMax) {
+//		메인 카테고리의 현재 인덱스 변동
+		mainCategoryIndex = mainCategoryIndex + 1;
+		session.setAttribute("mainCategoryIndex", mainCategoryIndex);
+		
+//		만약 현재 인덱스가 최대 인덱스 범위보다 크면 다시 메인 카테고리 선택으로 이동
+		if (mainCategoryIndex > mainCategoryIndexMax) {
 			result.setPath("interest-main-category.interest");
 			return result;
+//		아니라면 이전 인덱스로 이동
 		} else {
 			result.setPath("interest-sub-category.interest");
 			return result;
