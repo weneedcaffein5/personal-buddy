@@ -57,14 +57,17 @@
 		            </div>
 	        	</div>
 	        	<div class="next-btn-wrapper">
+	        		<div class="next-btn-wrapper">
 	        		<div class="btn-spacing">
-		        		<form action="">
+		        		<form class="back-form" action="interest-back.interest" method="post">
 		        			<button class="back-btn">뒤로가기</button>
 		        		</form>
-			        	<form action="">
+			        	<form class="next-form" action="interest-next.interest" method="post">
+			        		<input type="hidden" class="hidden-input" name="sub-category-travel">
 				            <button class="next-btn">다음으로</button>
 			        	</form>
 	        		</div>
+	        	</div>
 	        	</div>
 	        </div>
         </div>

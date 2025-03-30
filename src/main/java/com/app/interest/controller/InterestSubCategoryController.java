@@ -14,13 +14,42 @@ public class InterestSubCategoryController implements Action{
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, SecurityException {
 		Result result = new Result();
 		HttpSession session = req.getSession();
+		String[] mainCategoryArray = (String[])session.getAttribute("mainCategoryArray");
+		int mainCategoryLength = (int)session.getAttribute("mainCategoryLength");
+		String mainCategory = mainCategoryArray[mainCategoryLength];
 		
-		String[] mainCategory = (String[])session.getAttribute("mainCategory");
-		int categoryIndex = mainCategory.length;
+		System.out.println(mainCategory);
 		
-		
-		
-		result.setPath("../main/main.jsp");
-		return result;
+		if (mainCategory.equals("구기 종목")) {
+			result.setPath("interest-sub-ball-games.jsp");
+			return result;
+		} else if (mainCategory.equals("패션")) {
+			result.setPath("interest-sub-fashion.jsp");
+			return result;
+		} else if (mainCategory.equals("맛집 탐방")) {
+			result.setPath("interest-sub-food.jsp");
+			return result;
+		} else if (mainCategory.equals("영화 감상")) {
+			result.setPath("interest-sub-movie.jsp");
+			return result;
+		} else if (mainCategory.equals("음악 감상")) {
+			result.setPath("interest-sub-music.jsp");
+			return result;
+		} else if (mainCategory.equals("연주")) {
+			result.setPath("interest-sub-musical-instrument.jsp");
+			return result;
+		} else if (mainCategory.equals("독서")) {
+			result.setPath("interest-sub-reading.jsp");
+			return result;
+		} else if (mainCategory.equals("운동")) {
+			result.setPath("interest-sub-sports.jsp");
+			return result;
+		} else if (mainCategory.equals("여행")) {
+			result.setPath("interest-sub-travel.jsp");
+			return result;
+		} else {
+			result.setPath("interest-main.jsp");
+			return result;
+		}
 	}
 }

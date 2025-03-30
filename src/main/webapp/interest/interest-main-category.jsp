@@ -41,7 +41,7 @@
 		                <span class="tag">독서</span>
 		                <span class="tag">패션</span>
 		                <span class="tag">여행</span>
-		                <span class="tag">쇼핑</span>
+		                <!-- <span class="tag">쇼핑</span> -->
 		                <span class="tag">연주</span>
 		            </div>
 	        	</div>

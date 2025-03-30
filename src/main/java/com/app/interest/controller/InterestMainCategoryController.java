@@ -13,7 +13,7 @@ public class InterestMainCategoryController implements Action{
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, SecurityException {
 		Result result = new Result();
 		
-		result.setPath("interest-category.jsp");
+		result.setPath("interest-main-category.jsp");
 		
 		return result;
 	}

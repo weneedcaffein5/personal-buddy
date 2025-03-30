@@ -15,13 +15,17 @@ public class InterestSelectMainCategoryController implements Action {
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, SecurityException {
 		Result result = new Result();
 		HttpSession session = req.getSession();
+		int mainCategoryLength = 0;
 		
-//		카테고리 대분류로 불러와서 자르고 문자배열
-		String[] mainCategory = req.getParameter("mainCategory").split(",");
-		session.setAttribute("mainCategory", mainCategory);
+		String mainCategory = req.getParameter("mainCategory");
+		String[] mainCategoryArray = mainCategory.split(",");
+		mainCategoryLength = mainCategoryArray.length;
+		
+		session.setAttribute("mainCategoryArray", mainCategoryArray);
+		session.setAttribute("mainCategoryLength", mainCategoryLength - 1);
+		session.setAttribute("mainCategoryLengthMax", mainCategoryLength - 1);
 		
 		result.setPath("interest-sub-category.interest");
 		return result;
 	}
-
 }
