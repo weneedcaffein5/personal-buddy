@@ -2,16 +2,14 @@ package com.app.vo;
 
 import java.util.Objects;
 
-public class TodolistVO {
+public class TodoListVO {
 	private Long id;
 	private String todoListContent;
 	private int todoListCompleted;
 	private Long calendarGroupId;
 
-	public TodolistVO() {;}
-
-	public TodolistVO(Long id, String todoListContent, int todoListCompleted, Long todoListCalendarGroupId) {
-		super();
+	public TodoListVO() {;}
+	public TodoListVO(Long id, String todoListContent, int todoListCompleted, Long todoListCalendarGroupId) {
 		this.id = id;
 		this.todoListContent = todoListContent;
 		this.todoListCompleted = todoListCompleted;
@@ -69,7 +67,7 @@ public class TodolistVO {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		TodolistVO other = (TodolistVO) obj;
+		TodoListVO other = (TodoListVO) obj;
 		return Objects.equals(id, other.id);
 	}
 	
