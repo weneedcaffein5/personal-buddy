@@ -5,7 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="../assets/css/global.css" />
-<link rel="stylesheet" href="../assets/css/community/community.css">
+<link rel="stylesheet" href="../assets/css/header.css">
+<link rel="stylesheet" href="../assets/css/banner.css">
+<link rel="stylesheet" href="../assets/css/community/community-main.css">
 
 <title>커뮤니티</title>
 </head>
@@ -17,8 +19,12 @@
 		<div class="tab-box">
 			<div class="tab-container">
 				<div class="tab-btn"></div>
-				<div id="eventTab" class="tab-text tab-text-on">EVENT</div>
-				<div id="boardTab" class="tab-text tab-text-off">BOARD</div>
+				<div id="eventTab" class="tab-text tab-text-on">
+					<a href="../event/event-main.jsp">EVENT</a>
+				</div>
+				<div id="boardTab" class="tab-text tab-text-off">
+					<a href="community-main.community">BOARD</a>
+				</div>
 			</div>
 	    </div>
 		<div class="board-sub-title">TOP10</div>
@@ -65,7 +71,7 @@
 							</div>
 						</div>
 						<div class="content">
-							<a class="image-container" href="#">
+							<a class="image-container" href="community-post.jsp">
 								<img class="img" src="../assets/images/community/post3.png">
 								<div class="number-box">3</div>
 							</a>
