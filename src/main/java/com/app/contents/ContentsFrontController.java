@@ -26,12 +26,12 @@ public class ContentsFrontController extends HttpServlet{
 		
 		if(target.equals("contents-achievement")) {
 			result = new ContentsAchievementController().execute(req, resp);
-		}else if(target.equals("contents-mytree")) {
+		}else if(target.equals("myTree")) {
 			result = new ContentsMyTreeController().execute(req, resp);
 		}else if(target.equals("contents-point-shop")) {
 			result = new ContentsPointShopController().execute(req, resp);
 		}else {
-	//		전부 404
+			
 		}
 		
 		if(result != null) {

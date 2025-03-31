@@ -8,13 +8,13 @@ tags.forEach(tag => {
 });
 
 /* 쿼리스트링으로 카테고리값 전달 */
-
 const nextBtn = document.querySelector(".next-btn");
 const hiddenInput = document.querySelector(".hidden-input");
 const nextForm = document.querySelector(".next-form");
 let selectedValues = [];
 
 nextBtn.addEventListener("click", () => {
+	selectedValues.length = 0;
 	tags.forEach(tag => {
 		if(tag.classList.contains("selected")){
 			selectedValues.push(tag.textContent);
