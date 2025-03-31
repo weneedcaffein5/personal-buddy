@@ -11,7 +11,7 @@ document.addEventListener("click", function (e) {
     const placeLocation = clickedItem.querySelector(".place-location").textContent;
 
     placeDetails.innerHTML += `
-        <div id="map" style="width:100%; height:300px; margin-top:20px; border-radius:10px;"></div>
+        <div id="map" style="width:100%; height:520px;border-radius:10px;"></div>
     `;
     placeDetails.classList.add("active");
 

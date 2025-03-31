@@ -2,4 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="contents">
+	<update id="updateUserTree"
+		parameterType="com.app.dto.TreeViewDTO">
+		UPDATE TBL_TREE
+		SET ID = #{treeId}
+		WHERE MEMBER_ID = #{memberId}
+	</update>
+	
+	<select id="selectUserTree" parameterType="long" resultType="com.app.dto.TreeViewDTO">
+    SELECT 
+        ID AS treeId,
+        MEMBER_ID AS memberId
+    FROM TBL_TREE
+    WHERE MEMBER_ID = #{memberId}
+</select>
 </mapper>
