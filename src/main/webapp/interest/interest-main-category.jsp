@@ -27,7 +27,7 @@
 	        <div class="container-right-wrapper">
 	        	<div class="wrapper">
 					<div class="main-title">
-						<span>1. 관심사를 선택해 주세요</span>
+						<span>0. 관심사를 선택해 주세요</span>
 					</div>
 					<div class="sub-title">
 						<span>최소 2개 이상</span>

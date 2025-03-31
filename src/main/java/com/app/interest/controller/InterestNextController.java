@@ -58,12 +58,11 @@ public class InterestNextController implements Action{
 		}
 		
 		mainCategoryIndex++;
-//		System.out.println(mainCategoryIndex + " / 다음 인덱스 값");
-		
+		System.out.println(mainCategoryIndex + " / 다음 인덱스 값");
 		session.setAttribute("mainCategoryIndex", mainCategoryIndex);
 		
 //		인덱스값이 범위를 벗어나면 지금까지 서브 카테고리값을 DB에 저장
-		if (mainCategoryIndex > mainCategoryIndexMax) {
+		if (mainCategoryIndex == mainCategoryIndexMax) {
 			result.setPath("interest-insert.interest");
 			return result;
 		}

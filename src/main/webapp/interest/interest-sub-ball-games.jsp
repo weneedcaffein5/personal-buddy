@@ -12,8 +12,6 @@
 </head>
 <body>
 	<div class="container">
-        <input class="category-index" type="hidden" value="${sessionScope.mainCategoryIndex }">
-        <input class="category-max-index" type="hidden" value="${sessionScope.mainCategoryIndexMax }">
         <!-- 왼쪽 말풍선 -->
         <div class="container-left">
             <div class="speech-bubble">
@@ -57,13 +55,12 @@
 			        		<input type="hidden" class="hidden-input" name="sub-category-ball-games">
 				            <button type="button" class="next-btn">
 				            	<c:choose>
-										<c:when test="${sessionScope.mainCategoryIndex == sessionScope.mainCategoryIndexMax }">
-											<span>완료하기</span>
-											<c:set var="mainCategoryIndex" value="${mainCategoryIndex + 1 }" scope="session" />
-										</c:when>
-										<c:otherwise>
-											<span>다음으로</span>
-										</c:otherwise>
+									<c:when test="${sessionScope.mainCategoryIndex == sessionScope.mainCategoryIndexMax }">
+										<span>완료하기</span>
+									</c:when>
+									<c:otherwise>
+										<span>다음으로</span>
+									</c:otherwise>
 								</c:choose>
 				            </button>
 			        	</form>

@@ -18,9 +18,16 @@ public class InterestInsertController implements Action{
 		HttpSession session = req.getSession();
 		InterestDAO interestDAO = new InterestDAO();
 		InterestVO interestVO = new InterestVO();
+		String category = "";
+		String[] categoryArray = null;
 		
 		if (session.getAttribute("sub-category-ball-games") != null) {
 			System.out.println(session.getAttribute("sub-category-ball-games"));
+			category = (String)session.getAttribute("sub-category-ball-games");
+			categoryArray = category.split(",");
+			for (int i = 0; i < categoryArray.length; i++) {
+				
+			}
 		}
 		if (session.getAttribute("sub-category-fashion") != null) {
 			System.out.println(session.getAttribute("sub-category-fashion"));
