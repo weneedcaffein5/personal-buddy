@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.app.Result;
 import com.app.member.controller.MemberAllCheckController;
 import com.app.member.controller.MemberBirthCheckController;
+import com.app.member.controller.MemberFindIdController;
 import com.app.member.controller.MemberGenderSelectController;
 import com.app.member.controller.MemberJoinAgreeController;
 import com.app.member.controller.MemberJoinOkController;
@@ -71,6 +72,8 @@ public class MemberFrontController extends HttpServlet{
 		}else if(target.equals("login-ok")) {
 			result = new MemberLoginOkController().execute(req, resp);
 		}else if(target.equals("find-id")) {
+			result = new MemberFindIdController().execute(req, resp);
+		}else if(target.equals("find-id-fail")) {
 			
 		}else if(target.equals("find-id-ok")) {
 			
