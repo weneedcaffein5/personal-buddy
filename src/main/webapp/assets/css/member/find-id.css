@@ -1,1 +1,105 @@
 @charset "UTF-8";
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: var(--gray2) 1px solid;
+    margin-bottom: -1px;
+}
+
+.input-wrapper input{
+    width: 100%;
+    height: 60px;
+    padding: 10px 50px 10px 10px; /* 오른쪽 패딩 추가하여 아이콘과 간격 조정 */
+    color: var(--gray6);
+    margin: 0px 50px;
+    border: none;
+    display: block;
+    font-size: var(--h7);
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.input-wrapper input:focus {
+    border-color: var(--main-green); /* 초록색 테두리 */
+}
+
+.input-wrapper .input-icon {
+    position: absolute;
+    left: 15px;
+    width: 20px;
+    height: 20px;
+}
+
+
+.input-wrapper .phone-confirm-check {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	opacity: 0;
+}
+
+#phone-button {
+	width: 200px;
+	line-height: 30px;
+	margin-right: 15px;
+	background-color: var(--white);
+	color: var(--sub-green);
+	border: 1px solid var(--sub-green);
+	border-radius: 10px;
+}
+
+#phone-button:hover {
+	background-color: var(--light-green);
+	font-weight: 700;
+}
+
+#phone-button.process{
+	color: var(--sub-green);
+	border: 1px solid var(--sub-green);
+}
+
+#phone-button.success{
+	color: var(--sub-blue) !important;
+	border: 1px solid var(--sub-blue) !important;
+}
+#phone-button.fail{
+	color: var(--warning-red) !important;
+	border: 1px solid var(--warning-red) !important;
+}
+
+.phone-confirm {
+	color: var(--gray5);
+	font-size: var(--h9);
+    text-decoration: none;
+    margin: 0 5px;
+    text-align: center;
+    width: 100px;
+}
+
+.signup-btn {
+    width: 460px;
+    height: 50px;
+    padding: 10px;
+    background-color: #A5ADB8; /* 비활성화된 버튼 */
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 5px;
+    margin-top: 40px;
+    cursor: not-allowed;
+    transition: all 0.3s ease-in-out;
+}
+/* 다음 버튼이 활성화될 때 */
+.signup-btn.active {
+    background-color: var(--main-green);
+    cursor: pointer;
+}
+
+.signup-btn.active:hover {
+    background-color: #218838;
+}
