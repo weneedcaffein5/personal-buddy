@@ -15,8 +15,9 @@
         <!-- 왼쪽 말풍선 -->
         <div class="container-left">
             <div class="speech-bubble">
-                좋아하는 구기 종목을 알려주시면,<br>
-                관련된 종목에 관련된 소식이나 정보를 알려드릴게요!
+                더 나은 맞춤형 경험을 위해 당신의 관심사를<br>
+                알려주세요! 선택해주신 관심사를 바탕으로<br>
+                유용한 정보와 맞춤형 추천을 제공해드립니다.
             </div>
             <img src="../assets/images/interest/logo.png" alt="로고 이미지" class="logo-img">
         </div>
@@ -26,35 +27,29 @@
 	        <div class="container-right-wrapper">
 	        	<div class="wrapper">
 					<div class="main-title">
-						<span>0. (구기 종목) 선호 하는 운동을 선택 해주세요</span>
+						<span>1. 관심사를 선택해 주세요</span>
 					</div>
 					<div class="sub-title">
 						<span>최소 2개 이상</span>
 					</div>     
 		            <div class="tags">
-		                <span class="tag">축구</span>
-		                <span class="tag">야구</span>
-		                <span class="tag">농구</span>
-		                <span class="tag">배구</span>
-		                <span class="tag">테니스</span>
-		                <span class="tag">스쿼시</span>
-		                <span class="tag">배드민턴</span>
-		                <span class="tag">골프</span>
-		                <span class="tag">볼링</span>
-		                <span class="tag">탁구</span>
-		                <span class="tag">핸드볼</span>
-		                <span class="tag">카바디</span>
+		                <span class="tag">맛집 탐방</span>
+		                <span class="tag">운동</span>
+		                <span class="tag">구기 종목</span>
+		                <span class="tag">음악 감상</span>
+		                <span class="tag">영화 감상</span>
+		                <span class="tag">독서</span>
+		                <span class="tag">패션</span>
+		                <span class="tag">여행</span>
+		                <!-- <span class="tag">쇼핑</span> -->
+		                <span class="tag">연주</span>
 		            </div>
 	        	</div>
 	        	<div class="next-btn-wrapper">
-	        		<div class="btn-spacing">
-		        		<form action="">
-		        			<button class="back-btn">뒤로가기</button>
-		        		</form>
-			        	<form action="">
-				            <button class="next-btn">다음으로</button>
-			        	</form>
-	        		</div>
+	        		<form class="next-form" action="interest-select-main-category.interest" method="post">
+	        			<input type="hidden" class="hidden-input" name="mainCategory">
+			            <button type="button" class="next-btn">다음으로</button>
+	        		</form>
 	        	</div>
 	        </div>
         </div>

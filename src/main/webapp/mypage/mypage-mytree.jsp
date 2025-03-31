@@ -23,7 +23,7 @@
                 </div>
                 <div class="profile-setting">
                 	<div class="nickname">
-	                    <span>나는 신이다</span>                	
+	                    <span>나는신이다</span>                	
                 	</div>
                 	<div class="status-message">
 	                    <span>반가워요</span>                	

@@ -8,10 +8,13 @@ import javax.servlet.http.HttpServletResponse;
 import com.app.Action;
 import com.app.Result;
 
-public class InterestCategorySubController implements Action{
+public class InterestMainCategoryController implements Action{
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, SecurityException {
 		Result result = new Result();
-		return null;
+		
+		result.setPath("interest-main-category.jsp");
+		
+		return result;
 	}
 }
