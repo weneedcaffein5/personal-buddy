@@ -4,17 +4,19 @@ public class TreeViewDTO {
 	
 	    private Long treeId;         
 	    private Long memberId;       
-	    private int positionX;       
+	    private int positionX;
+	    private int positionY;
 	    private int apply;           
 	    private Long itemId;     
 	    
 	    public TreeViewDTO() {;}
 
-		public TreeViewDTO(Long treeId, Long memberId, int positionX, int apply, Long itemId) {
+		public TreeViewDTO(Long treeId, Long memberId, int positionX, int positionY, int apply, Long itemId) {
 			super();
 			this.treeId = treeId;
 			this.memberId = memberId;
 			this.positionX = positionX;
+			this.positionY = positionY;
 			this.apply = apply;
 			this.itemId = itemId;
 		}
@@ -41,6 +43,14 @@ public class TreeViewDTO {
 
 		public void setPositionX(int positionX) {
 			this.positionX = positionX;
+		}
+
+		public int getPositionY() {
+			return positionY;
+		}
+
+		public void setPositionY(int positionY) {
+			this.positionY = positionY;
 		}
 
 		public int getApply() {
