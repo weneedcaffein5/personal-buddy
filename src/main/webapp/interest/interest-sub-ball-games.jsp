@@ -15,8 +15,8 @@
         <!-- 왼쪽 말풍선 -->
         <div class="container-left">
             <div class="speech-bubble">
-                선호하는 악기를 알려주시면,<br>
-                악기에 관련된 소식이나 정보를 알려드릴게요!
+                좋아하는 구기 종목을 알려주시면,<br>
+                관련된 종목에 관련된 소식이나 정보를 알려드릴게요!
             </div>
             <img src="../assets/images/interest/logo.png" alt="로고 이미지" class="logo-img">
         </div>
@@ -26,31 +26,33 @@
 	        <div class="container-right-wrapper">
 	        	<div class="wrapper">
 					<div class="main-title">
-						<span>0. (연주) 선호 하는 악기를 선택 해주세요</span>
+						<span>0. (구기 종목) 선호 하는 운동을 선택 해주세요</span>
 					</div>
 					<div class="sub-title">
 						<span>최소 2개 이상</span>
 					</div>     
 		            <div class="tags">
-	               		<span class="tag">피아노</span>
-		                <span class="tag">바이올린</span>
-		                <span class="tag">비올라</span>
-		                <span class="tag">기타</span>
-		                <span class="tag">베이스</span>
-		                <span class="tag">드럼</span>
-		                <span class="tag">플루트</span>
-		                <span class="tag">리코더</span>
-		                <span class="tag">하모니카</span>
-		                <span class="tag">색소폰</span>
-		                <span class="tag">보컬</span>
+		                <span class="tag">축구</span>
+		                <span class="tag">야구</span>
+		                <span class="tag">농구</span>
+		                <span class="tag">배구</span>
+		                <span class="tag">테니스</span>
+		                <span class="tag">스쿼시</span>
+		                <span class="tag">배드민턴</span>
+		                <span class="tag">골프</span>
+		                <span class="tag">볼링</span>
+		                <span class="tag">탁구</span>
+		                <span class="tag">핸드볼</span>
+		                <span class="tag">카바디</span>
 		            </div>
 	        	</div>
 	        	<div class="next-btn-wrapper">
 	        		<div class="btn-spacing">
-		        		<form action="">
+		        		<form class="back-form" action="interest-back.interest" method="post">
 		        			<button class="back-btn">뒤로가기</button>
 		        		</form>
-			        	<form action="">
+			        	<form class="next-form" action="interest-next.interest" method="post">
+			        		<input type="hidden" class="hidden-input" name="sub-category-ball-games">
 				            <button class="next-btn">다음으로</button>
 			        	</form>
 	        		</div>

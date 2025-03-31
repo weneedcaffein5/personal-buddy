@@ -15,9 +15,8 @@
         <!-- 왼쪽 말풍선 -->
         <div class="container-left">
             <div class="speech-bubble">
-                더 나은 맞춤형 경험을 위해 당신의 관심사를<br>
-                알려주세요! 선택해주신 관심사를 바탕으로<br>
-                유용한 정보와 맞춤형 추천을 제공해드립니다.
+                선호하는 악기를 알려주시면,<br>
+                악기에 관련된 소식이나 정보를 알려드릴게요!
             </div>
             <img src="../assets/images/interest/logo.png" alt="로고 이미지" class="logo-img">
         </div>
@@ -27,29 +26,35 @@
 	        <div class="container-right-wrapper">
 	        	<div class="wrapper">
 					<div class="main-title">
-						<span>1. 관심사를 선택해 주세요</span>
+						<span>0. (연주) 선호 하는 악기를 선택 해주세요</span>
 					</div>
 					<div class="sub-title">
 						<span>최소 2개 이상</span>
 					</div>     
 		            <div class="tags">
-		                <span class="tag">맛집 탐방</span>
-		                <span class="tag">운동</span>
-		                <span class="tag">구기 종목</span>
-		                <span class="tag">음악 감상</span>
-		                <span class="tag">영화 감상</span>
-		                <span class="tag">독서</span>
-		                <span class="tag">패션</span>
-		                <span class="tag">여행</span>
-		                <span class="tag">쇼핑</span>
-		                <span class="tag">연주</span>
+	               		<span class="tag">피아노</span>
+		                <span class="tag">바이올린</span>
+		                <span class="tag">비올라</span>
+		                <span class="tag">기타</span>
+		                <span class="tag">베이스</span>
+		                <span class="tag">드럼</span>
+		                <span class="tag">플루트</span>
+		                <span class="tag">리코더</span>
+		                <span class="tag">하모니카</span>
+		                <span class="tag">색소폰</span>
+		                <span class="tag">보컬</span>
 		            </div>
 	        	</div>
 	        	<div class="next-btn-wrapper">
-	        		<form class="next-form" action="interest-category-main.interest" method="post">
-	        			<input type="hidden" class="hidden-input" name="mainCategory">
-			            <button type="button" class="next-btn">다음으로</button>
-	        		</form>
+	        		<div class="btn-spacing">
+		        		<form class="back-form" action="interest-back.interest" method="post">
+		        			<button class="back-btn">뒤로가기</button>
+		        		</form>
+			        	<form class="next-form" action="interest-next.interest" method="post">
+			        		<input type="hidden" class="hidden-input" name="sub-category-musical-instrument">
+				            <button class="next-btn">다음으로</button>
+			        	</form>
+	        		</div>
 	        	</div>
 	        </div>
         </div>

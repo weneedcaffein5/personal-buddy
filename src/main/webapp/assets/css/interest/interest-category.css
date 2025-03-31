@@ -101,6 +101,7 @@ a {
 	font-family: 500;
 	margin-top: 11px;
 	margin-right: 11px;
+	cursor: pointer;
 }
 
 .tag:hover {
