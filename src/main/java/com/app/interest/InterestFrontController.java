@@ -9,10 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
 import com.app.interest.controller.InterestBackController;
+import com.app.interest.controller.InterestInsertController;
 import com.app.interest.controller.InterestMainCategoryController;
 import com.app.interest.controller.InterestSelectMainCategoryController;
 import com.app.interest.controller.InterestSubCategoryController;
 import com.app.interest.controller.InterestMainController;
+import com.app.interest.controller.InterestMainRemoveController;
 import com.app.interest.controller.InterestNextController;
 
 public class InterestFrontController extends HttpServlet {
@@ -34,6 +36,9 @@ public class InterestFrontController extends HttpServlet {
 		}else if(target.equals("interest-main-category")) {
 //			설문조사 메인 카테고리 페이지로 이동
 			result = new InterestMainCategoryController().execute(req, resp);
+		}else if(target.equals("interest-main-remove-category")) {
+//			설문조사 서브 카테고리값을 리셋
+			result = new InterestMainRemoveController().execute(req, resp);
 		}else if(target.equals("interest-select-main-category")) {
 //			메인 카테고리값을 받고 세션에 저장 -> 서브 카테고리로 이동
 			result = new InterestSelectMainCategoryController().execute(req, resp);
@@ -48,6 +53,7 @@ public class InterestFrontController extends HttpServlet {
 			result = new InterestBackController().execute(req, resp);
 		}else if(target.equals("interest-insert")) {
 //			DB에 값 등록
+			result = new InterestInsertController().execute(req, resp);
 		}else {
 //			전부 404
 		}

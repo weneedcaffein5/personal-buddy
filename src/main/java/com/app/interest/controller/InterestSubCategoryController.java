@@ -17,17 +17,17 @@ public class InterestSubCategoryController implements Action{
 		
 //		메인 카테고리(배열)을 세션에서 받기
 		String[] mainCategoryArray = (String[])session.getAttribute("mainCategoryArray");
-		for (int i = 0; i < mainCategoryArray.length; i++) {
-			System.out.println(mainCategoryArray[i] + " / 메인 카테고리 배열");
-		}
+//		for (int i = 0; i < mainCategoryArray.length; i++) {
+//			System.out.println(mainCategoryArray[i] + " / 메인 카테고리 배열");
+//		}
 		
 //		메인 카테고리[현재 인덱스]를 세션에서 받기
 		int mainCategoryIndex = (int)session.getAttribute("mainCategoryIndex");
-		System.out.println(mainCategoryIndex + " / 메인 카테고리 현재 인덱스");
+//		System.out.println(mainCategoryIndex + " / 메인 카테고리 현재 인덱스");
 		
 //		메인 카테고리[현재 인덱스]값을 저장
 		String mainCategory = mainCategoryArray[mainCategoryIndex];
-		System.out.println(mainCategory + " / 메인 카테고리 현재 인덱스값");
+//		System.out.println(mainCategory + " / 메인 카테고리 현재 인덱스값");
 		
 //		메인 카테고리[현재 인덱스]가 해당하는 주소로 이동
 		if (mainCategory.equals("구기 종목")) {

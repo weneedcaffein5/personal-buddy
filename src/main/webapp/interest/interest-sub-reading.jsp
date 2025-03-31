@@ -27,7 +27,7 @@
 	        <div class="container-right-wrapper">
 	        	<div class="wrapper">
 					<div class="main-title">
-						<span>0. (독서) 선호 하는 책 장르를 선택 해주세요</span>
+						<span><c:out value="${sessionScope.mainCategoryIndex + 1}"></c:out>. (독서) 선호 하는 책 장르를 선택 해주세요</span>
 					</div>
 					<div class="sub-title">
 						<span>최소 2개 이상</span>
