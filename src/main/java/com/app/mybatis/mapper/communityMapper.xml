@@ -2,4 +2,39 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="community">
+	<select id="sortByLatest" parameterType="BoardViewDTO">
+		SELECT
+	        P.ID AS POST_ID,
+	        P.BOARD_TITLE,
+	        P.BOARD_CONTENT,
+	        P.BOARD_CONTENT_VIEWS,
+	        P.BOARD_CONTENT_CREATE_DATE,
+	        P.BOARD_HASHTAG,
+	
+	        M.NICKNAME AS MEMBER_NICKNAME,
+	
+	        NVL(L.LIKE_COUNT, 0) AS LIKE_COUNT,
+	        NVL(C.COMMENT_COUNT, 0) AS COMMENT_COUNT,
+	
+	        NVL(I.BOARD_IMG_PATH, '/images/community/') AS BOARD_IMG_PATH,
+	        NVL(I.BOARD_IMG_NAME, 'default.png') AS BOARD_IMG_NAME
+	
+	    FROM TBL_BOARD_POST P
+	
+	    JOIN TBL_MEMBER M ON P.MEMBER_ID = M.ID
+	
+	    LEFT JOIN (
+	        SELECT BOARD_POST_ID, COUNT(*) AS LIKE_COUNT
+	        FROM TBL_BOARD_LIKE
+	        GROUP BY BOARD_POST_ID
+	    ) L ON P.ID = L.BOARD_POST_ID
+	
+	    LEFT JOIN (
+	        SELECT BOARD_POST_ID, COUNT(*) AS COMMENT_COUNT
+	        FROM TBL_BOARD_COMMENT
+	        GROUP BY BOARD_POST_ID
+	    ) C ON P.ID = C.BOARD_POST_ID
+	
+	    LEFT JOIN TBL_BOARD_IMG I ON P.ID = I.BOARD_POST_ID
+	</select>
 </mapper>

@@ -30,7 +30,9 @@
 		<div class="board-sub-title">TOP10</div>
 		<div class="board-main-title">버디들의 HOT 🔥</div>
 		<div class="hot-container">
-			<div class="button-left">◀</div>
+			<div class="button-left">
+				<img src="../assets/images/community/button-left-on.png" />
+			</div>
 	        <div class="hot">
 				<div class="hot-contents" id="slider">
 						<div class="content">
@@ -216,7 +218,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="button-right">▶</div>
+			<div class="button-right">
+				<img src="../assets/images/community/button-right-on.png" />
+			</div>
 		</div>
 
 		<div class="post-container">
@@ -321,17 +325,17 @@
 					</div>
 				</div>
 				<div class="post-content">
-					<a  href="#"><img class="img" src="../assets/images/community/post3.png"></a>
+					<a  href="#"><img class="img" src="../assets/images/community/default.png"></a>
 					<span class="tag">관심 일정</span>
-					<span class="content-name">⚽ 2025 챔피언스 리그 16강 대진표</span>
+					<span class="content-name">퍼스널 버디 좋아요</span>
 					<div class="user-info">
 						<img class="mini-profile" src="../assets/images/mypage/user-profile1.jpg">
-						<span class="user-nickname">슛돌이</span>
+						<span class="user-nickname">버디버디</span>
 					</div>
 					<span class="content-date">2025.02.01 게시</span>
 					<div class="content-info">
-						<span class="likes"><img class="icon" src="../assets/images/community/like-icon.png">600</span>
-						<span class="views"><img class="icon" src="../assets/images/community/view-icon.png">9999+</span>
+						<span class="likes"><img class="icon" src="../assets/images/community/like-icon.png">300</span>
+						<span class="views"><img class="icon" src="../assets/images/community/view-icon.png">1032</span>
 						<span class="comments"><img class="icon" src="../assets/images/community/comment-icon.png">78</span>
 					</div>
 				</div>

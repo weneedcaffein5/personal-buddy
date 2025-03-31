@@ -336,9 +336,8 @@
 	padding-bottom: 50px;
 }
 .search-box {
- 	padding: 10px;
- 	margin-left: 32px;
-	width: 450px;
+ 	margin-left: 16px;
+	width: 100%;
 	height: 20px;
 	border: none;
 	outline: none;
@@ -346,7 +345,7 @@
 }
 
 .search-form {
-	width: 540px;
+	width: 560px;
 	height: 40px;
 	display: flex;
 	justify-content: center;
@@ -359,7 +358,7 @@
 	padding: 0;
 	cursor: pointer;
 	margin: auto 0;
-	margin-right: 32px;
+	margin-right: 16px;
 }
 
 
