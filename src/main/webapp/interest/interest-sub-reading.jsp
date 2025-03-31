@@ -65,7 +65,7 @@
 		        		</form>
 			        	<form class="next-form" action="interest-next.interest" method="post">
 			        		<input type="hidden" class="hidden-input" name="sub-category-reading">
-				            <button class="next-btn">다음으로</button>
+				            <button type="button" class="next-btn">다음으로</button>
 			        	</form>
 	        		</div>
 	        	</div>

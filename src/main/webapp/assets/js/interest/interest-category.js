@@ -7,6 +7,7 @@ tags.forEach(tag => {
     });
 });
 
+
 /* 쿼리스트링으로 카테고리값 전달 */
 const nextBtn = document.querySelector(".next-btn");
 const hiddenInput = document.querySelector(".hidden-input");
