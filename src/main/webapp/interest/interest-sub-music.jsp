@@ -26,7 +26,7 @@
 	        <div class="container-right-wrapper">
 	        	<div class="wrapper">
 					<div class="main-title">
-						<span>0. (음악) 선호 음악 장르를 선택 해주세요</span>
+						<span><c:out value="${sessionScope.mainCategoryIndex + 1}"></c:out>. (음악) 선호 음악 장르를 선택 해주세요</span>
 					</div>
 					<div class="sub-title">
 						<span>최소 2개 이상</span>
