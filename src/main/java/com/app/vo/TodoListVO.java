@@ -9,6 +9,7 @@ public class TodoListVO {
 	private Long calendarGroupId;
 
 	public TodoListVO() {;}
+	
 	public TodoListVO(Long id, String todoListContent, int todoListCompleted, Long todoListCalendarGroupId) {
 		this.id = id;
 		this.todoListContent = todoListContent;
