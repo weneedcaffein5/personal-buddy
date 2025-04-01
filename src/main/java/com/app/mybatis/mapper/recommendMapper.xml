@@ -3,14 +3,23 @@
 
 <mapper namespace="recommendMapper">
 
-  <select id="selectByCategory" parameterType="String" resultType="com.app.dto.RecommendDTO">
-    <!-- SELECT * 
-    FROM TBL_RECOMMEND
-    WHERE CATEGORY = #{category} -->
-    
-    SELECT
-    FROM
-    WHERE
-    
-  </select>
+  <select id="selectByMemberId" parameterType="long" resultType="com.app.dto.RecommendDTO">
+    SELECT 
+        M.ID AS MEMBER_ID, <!-- 회원ID -->
+        M.MEMBER_NICKNAME, <!-- 닉네임 -->
+        I.INTEREST_BIG,  <!-- 관심사 대분류 -->
+        I.INTEREST_SMALL, <!-- 관심사 소분류 -->
+        R.ID AS RECOMMEND_ID, <!-- 추천ID -->
+        R.CATEGORY, <!-- 추천 카테고리 -->
+        R.DESCRIPTION <!-- 추천 설명 -->
+    FROM 
+        TBL_MEMBER M
+    JOIN 
+        TBL_INTEREST I ON M.ID = I.MEMBER_ID
+    JOIN 
+        TBL_RECOMMEND R ON TRIM(I.INTEREST_SMALL) = TRIM(R.CATEGORY)
+    WHERE 
+        M.ID = #{memberId}
+</select>
+  
 </mapper>
