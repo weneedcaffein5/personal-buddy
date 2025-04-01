@@ -75,18 +75,22 @@
             <div class="right-contentbox">
                 <div class="tree-info">
                     <div class="tree-info-left">
-                        <div><span class="tree-info-style">도전과제를 달성하고 나만의 업적을 쌓아보세요</span></div>
+                        <div>
+                        	<span class="tree-info-style">도전과제를 달성하고 나만의 업적을 쌓아보세요</span>
+                        </div>
                         <div class="go-tree">
                             <span class="go-tree-style">나의 대표 업적</span>
+                            
                         </div>
+                        
                     </div>
                 </div>
                 <div class="best-achievement">
                 	<div class="apply-button-wrapper" style="margin-top: 10px; text-align: right;">
-					    <button id="save-best-achievements" style="padding: 8px 16px; font-weight: bold;">대표 업적 적용</button>
-					</div>
+					    		<button id="save-best-achievements" style="width: 80px; height: 32px; line-height: 18px; font-size: 14px; border: none; background: #009DCC; color: white; border-radius: 50px; padding: 8px 16px; font-weight: bold;">적용</button>
+							</div>
                 	<div class="best-achievements-container">
-
+		
                 	</div> 
             	</div>
             	<div class="my-have-achievement">

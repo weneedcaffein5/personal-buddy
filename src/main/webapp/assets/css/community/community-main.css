@@ -295,9 +295,6 @@
 	justify-content: space-between;
 }
 
-.main2-center {
-	
-}
 
 .main2-right {
 	width: 120px;
@@ -396,11 +393,20 @@
 	cursor: pointer;
 }
 
+.post-array span{
+	height: 20px;
+}
+
 .post-sort {
 	color: black;
 	text-decoration: none;
     transition: color 0.3s ease;
     cursor: pointer;
+}
+
+.post-sort.active {
+  color: #01CD74;
+  border-bottom: 1px solid #01CD74;
 }
 
 .go-write {
@@ -433,7 +439,6 @@
 	font-size: 20px;
 	width: 50px;
 	height: 50px;
-	background: #24C394;
     border-radius: 100%;
     text-align: center;
     cursor: pointer;
@@ -444,22 +449,11 @@
 	font-size: 20px;
 	width: 50px;
 	height: 50px;
-	background: #24C394;
     border-radius: 100%;
     text-align: center;
     cursor: pointer;
     line-height: 50px;
 
-}
-
-.button-left:hover {
-    background-color: black;
-    color: white;
-}
-
-.button-right:hover {
-    background-color: black;
-    color: white;
 }
 
 
