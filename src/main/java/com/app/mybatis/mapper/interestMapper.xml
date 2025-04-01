@@ -4,7 +4,7 @@
 <mapper namespace="interest">
 	<insert id="insert" parameterType="interestVO">
 		INSERT INTO TBL_INTEREST
-		VALUES(SEQ_MEMBER.NEXTVAL, #{interestBig}, #{interestSmall} #{memberId})
+		VALUES(SEQ_INTEREST.NEXTVAL, #{interestBig}, #{interestSmall}, #{memberId})
 	</insert>
 	<delete id="delete" parameterType="Long">
 		DELETE FROM TBL_INTEREST

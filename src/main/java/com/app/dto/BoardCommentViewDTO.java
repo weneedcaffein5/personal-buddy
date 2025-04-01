@@ -1,13 +1,14 @@
 package com.app.dto;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class BoardCommentViewDTO {
 
     // 댓글 정보
     private Long commentId;
-    private String content;
-    private Date createDate;
+    private String boardCommentContent;
+    private Timestamp boardCommentCreateDate;
 
     // 작성자 정보
     private Long memberId;
@@ -20,95 +21,103 @@ public class BoardCommentViewDTO {
     private boolean likedByLoginUser;
 
     // 기본 생성자
-    public BoardCommentViewDTO() {}
+    public BoardCommentViewDTO() {;}
 
     // 전체 필드 생성자
-    public BoardCommentViewDTO(Long commentId, String content, Date createDate,
-                               Long memberId, String memberNickname,
-                               String memberProfileImgName, String memberProfileImgPath,
-                               int likeCount, boolean likedByLoginUser) {
-        this.commentId = commentId;
-        this.content = content;
-        this.createDate = createDate;
-        this.memberId = memberId;
-        this.memberNickname = memberNickname;
-        this.memberProfileImgName = memberProfileImgName;
-        this.memberProfileImgPath = memberProfileImgPath;
-        this.likeCount = likeCount;
-        this.likedByLoginUser = likedByLoginUser;
-    }
+    public BoardCommentViewDTO(Long commentId, String boardCommentContent, Timestamp boardCommentCreateDate, Long memberId,
+			String memberNickname, String memberProfileImgName, String memberProfileImgPath, int likeCount,
+			boolean likedByLoginUser) {
+		this.commentId = commentId;
+		this.boardCommentContent = boardCommentContent;
+		this.boardCommentCreateDate = boardCommentCreateDate;
+		this.memberId = memberId;
+		this.memberNickname = memberNickname;
+		this.memberProfileImgName = memberProfileImgName;
+		this.memberProfileImgPath = memberProfileImgPath;
+		this.likeCount = likeCount;
+		this.likedByLoginUser = likedByLoginUser;
+	}
 
-    // Getter & Setter
+	@Override
+	public String toString() {
+		return "BoardCommentViewDTO [commentId=" + commentId + ", boardCommentContent=" + boardCommentContent
+				+ ", boardCommentCreateDate=" + boardCommentCreateDate + ", memberId=" + memberId + ", memberNickname="
+				+ memberNickname + ", memberProfileImgName=" + memberProfileImgName + ", memberProfileImgPath="
+				+ memberProfileImgPath + ", likeCount=" + likeCount + ", likedByLoginUser=" + likedByLoginUser + "]";
+	}
 
-    public Long getCommentId() {
-        return commentId;
-    }
+	public Long getCommentId() {
+		return commentId;
+	}
 
-    public void setCommentId(Long commentId) {
-        this.commentId = commentId;
-    }
+	public void setCommentId(Long commentId) {
+		this.commentId = commentId;
+	}
 
-    public String getContent() {
-        return content;
-    }
+	public String getBoardCommentContent() {
+		return boardCommentContent;
+	}
 
-    public void setContent(String content) {
-        this.content = content;
-    }
+	public void setBoardCommentContent(String boardCommentContent) {
+		this.boardCommentContent = boardCommentContent;
+	}
 
-    public Date getCreateDate() {
-        return createDate;
-    }
+	public Date getBoardCommentCreateDate() {
+		return boardCommentCreateDate;
+	}
 
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
-    }
+	public void setBoardCommentCreateDate(Timestamp boardCommentCreateDate) {
+		this.boardCommentCreateDate = boardCommentCreateDate;
+	}
 
-    public Long getMemberId() {
-        return memberId;
-    }
+	public Long getMemberId() {
+		return memberId;
+	}
 
-    public void setMemberId(Long memberId) {
-        this.memberId = memberId;
-    }
+	public void setMemberId(Long memberId) {
+		this.memberId = memberId;
+	}
 
-    public String getMemberNickname() {
-        return memberNickname;
-    }
+	public String getMemberNickname() {
+		return memberNickname;
+	}
 
-    public void setMemberNickname(String memberNickname) {
-        this.memberNickname = memberNickname;
-    }
+	public void setMemberNickname(String memberNickname) {
+		this.memberNickname = memberNickname;
+	}
 
-    public String getMemberProfileImgName() {
-        return memberProfileImgName;
-    }
+	public String getMemberProfileImgName() {
+		return memberProfileImgName;
+	}
 
-    public void setMemberProfileImgName(String memberProfileImgName) {
-        this.memberProfileImgName = memberProfileImgName;
-    }
+	public void setMemberProfileImgName(String memberProfileImgName) {
+		this.memberProfileImgName = memberProfileImgName;
+	}
 
-    public String getMemberProfileImgPath() {
-        return memberProfileImgPath;
-    }
+	public String getMemberProfileImgPath() {
+		return memberProfileImgPath;
+	}
 
-    public void setMemberProfileImgPath(String memberProfileImgPath) {
-        this.memberProfileImgPath = memberProfileImgPath;
-    }
+	public void setMemberProfileImgPath(String memberProfileImgPath) {
+		this.memberProfileImgPath = memberProfileImgPath;
+	}
 
-    public int getLikeCount() {
-        return likeCount;
-    }
+	public int getLikeCount() {
+		return likeCount;
+	}
 
-    public void setLikeCount(int likeCount) {
-        this.likeCount = likeCount;
-    }
+	public void setLikeCount(int likeCount) {
+		this.likeCount = likeCount;
+	}
 
-    public boolean isLikedByLoginUser() {
-        return likedByLoginUser;
-    }
+	public boolean isLikedByLoginUser() {
+		return likedByLoginUser;
+	}
 
-    public void setLikedByLoginUser(boolean likedByLoginUser) {
-        this.likedByLoginUser = likedByLoginUser;
-    }
+	public void setLikedByLoginUser(boolean likedByLoginUser) {
+		this.likedByLoginUser = likedByLoginUser;
+	}
+    
+    
+
 }

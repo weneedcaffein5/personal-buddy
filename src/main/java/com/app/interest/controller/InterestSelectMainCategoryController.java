@@ -17,6 +17,7 @@ public class InterestSelectMainCategoryController implements Action {
 		HttpSession session = req.getSession();
 		int mainCategoryIndex = 0;
 		int mainCategoryIndexMax = 0;
+		int mainCategoryIndexCheck = 0;
 
 //		메인에서 서브로 넘어가기 전에 값을 초기화
 		if (session.getAttribute("sub-category-ball-games") != null) {
@@ -51,12 +52,14 @@ public class InterestSelectMainCategoryController implements Action {
 		String mainCategory = req.getParameter("mainCategory");
 		String[] mainCategoryArray = mainCategory.split(",");
 //		메인 카테고리 배열의 인덱스값
-		mainCategoryIndexMax = mainCategoryArray.length - 1;
+		mainCategoryIndexMax = mainCategoryArray.length;
+		mainCategoryIndexCheck = mainCategoryArray.length - 1;
 		
 //		배열, 인덱스 주소값, 최대 인덱스 길이 값을 세션에 저장
 		session.setAttribute("mainCategoryArray", mainCategoryArray);
 		session.setAttribute("mainCategoryIndex", mainCategoryIndex);
 		session.setAttribute("mainCategoryIndexMax", mainCategoryIndexMax);
+		session.setAttribute("mainCategoryIndexCheck", mainCategoryIndexCheck);
 		
 		result.setPath("interest-sub-category.interest");
 		return result;

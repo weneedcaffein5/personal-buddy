@@ -30,7 +30,9 @@
 		<div class="board-sub-title">TOP10</div>
 		<div class="board-main-title">버디들의 HOT 🔥</div>
 		<div class="hot-container">
-			<div class="button-left">◀</div>
+			<div class="button-left">
+				<img id="leftImg" src="../assets/images/community/button-left-on.png" />
+			</div>
 	        <div class="hot">
 				<div class="hot-contents" id="slider">
 						<div class="content">
@@ -216,14 +218,16 @@
 					</div>
 				</div>
 			</div>
-			<div class="button-right">▶</div>
+			<div class="button-right">
+				<img id="rightImg" src="../assets/images/community/button-right-on.png" />
+			</div>
 		</div>
 
 		<div class="post-container">
 			<div class="post-array">
-				<span class="post-sort">좋아요 순</span>
+				<span class="post-sort active">최신 순</span>
 				<span>|</span>
-				<span class="post-sort">최신 순</span>
+				<span class="post-sort">좋아요 순</span>
 				<span>|</span>
 				<span class="post-sort">조회 순</span>
 			</div>
@@ -321,17 +325,17 @@
 					</div>
 				</div>
 				<div class="post-content">
-					<a  href="#"><img class="img" src="../assets/images/community/post3.png"></a>
+					<a  href="#"><img class="img" src="../assets/images/community/default.png"></a>
 					<span class="tag">관심 일정</span>
-					<span class="content-name">⚽ 2025 챔피언스 리그 16강 대진표</span>
+					<span class="content-name">퍼스널 버디 좋아요</span>
 					<div class="user-info">
 						<img class="mini-profile" src="../assets/images/mypage/user-profile1.jpg">
-						<span class="user-nickname">슛돌이</span>
+						<span class="user-nickname">버디버디</span>
 					</div>
 					<span class="content-date">2025.02.01 게시</span>
 					<div class="content-info">
-						<span class="likes"><img class="icon" src="../assets/images/community/like-icon.png">600</span>
-						<span class="views"><img class="icon" src="../assets/images/community/view-icon.png">9999+</span>
+						<span class="likes"><img class="icon" src="../assets/images/community/like-icon.png">300</span>
+						<span class="views"><img class="icon" src="../assets/images/community/view-icon.png">1032</span>
 						<span class="comments"><img class="icon" src="../assets/images/community/comment-icon.png">78</span>
 					</div>
 				</div>
@@ -448,52 +452,80 @@
 const tags = document.querySelectorAll(".search-tag");
 
 tags.forEach(tag => {
-    tag.addEventListener("click", () => {
-        if (tag.classList.contains("selected")) {
-            tag.classList.remove("selected"); // 다시 누르면 해제
-        } else {
-            tags.forEach(t => t.classList.remove("selected")); // 다른 선택 해제
-            tag.classList.add("selected"); // 현재 선택
-        }
-    });
+  tag.addEventListener("click", () => {
+    if (tag.classList.contains("selected")) {
+      tag.classList.remove("selected"); // 다시 누르면 해제
+    } else {
+      tags.forEach(t => t.classList.remove("selected")); // 다른 선택 해제
+      tag.classList.add("selected"); // 현재 선택
+    }
+  });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    let currentIndex = 0;
+  let currentIndex = 0;
 
-    
-    const items = document.querySelectorAll(".content");
-    const totalItems = items.length;
-    const visibleItems = 3;
+  const items = document.querySelectorAll(".content");
+  const totalItems = items.length;
+  const visibleItems = 3;
+  const itemWidth = items[0].offsetWidth;
+  const gap = 100;
+  const contentWidth = itemWidth + gap;
 
-    const itemWidth = items[0].offsetWidth;
-    const gap = 100; // gap과 동일하게
-    const contentWidth = itemWidth + gap;
+  const leftBtnImg = document.getElementById("leftImg");
+  const rightBtnImg = document.getElementById("rightImg");
 
-    
-    
-    document.querySelector(".button-left").addEventListener("click", () => {
-      if (currentIndex > 0) {
-   	  	currentIndex--;
-        updateSlider();
-      }
-    });
-
-    document.querySelector(".button-right").addEventListener("click", () => {
-      if (currentIndex < totalItems - visibleItems) {
-        currentIndex++;
-        updateSlider();
-      }
-    });
-
-    function updateSlider() {
-		const slider = document.getElementById("slider");
-		const offset = contentWidth * currentIndex;
-		console.log(offset)
-		slider.style.setProperty("transform", "translateX(" + -offset + "px)");
-		console.log(slider.style.transform);
+  document.querySelector(".button-left").addEventListener("click", () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSlider();
     }
   });
+
+  document.querySelector(".button-right").addEventListener("click", () => {
+    if (currentIndex < totalItems - visibleItems) {
+      currentIndex++;
+      updateSlider();
+    }
+  });
+
+  function updateSlider() {
+    const slider = document.getElementById("slider");
+    const offset = contentWidth * currentIndex;
+    slider.style.setProperty("transform", "translateX(" + -offset + "px)");
+
+    updateButtonImages();
+  }
+
+  function updateButtonImages() {
+    if (currentIndex === 0) {
+      leftBtnImg.src = "../assets/images/community/button-left-off.png";
+    } else {
+      leftBtnImg.src = "../assets/images/community/button-left-on.png";
+    }
+
+    if (currentIndex >= totalItems - visibleItems) {
+      rightBtnImg.src = "../assets/images/community/button-right-off.png";
+    } else {
+      rightBtnImg.src = "../assets/images/community/button-right-on.png";
+    }
+  }
+
+  // 초기 버튼 이미지 설정
+  updateButtonImages();
+});
+
+const sortButtons = document.querySelectorAll(".post-sort");
+
+sortButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    // 기존 active 제거
+    sortButtons.forEach(btn => btn.classList.remove("active"));
+
+    // 현재 클릭한 버튼에 active 추가
+    button.classList.add("active");
+  });
+});
 </script>
 
 </html> 
