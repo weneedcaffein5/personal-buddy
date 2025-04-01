@@ -8,9 +8,9 @@
     FROM TBL_RECOMMEND
     WHERE CATEGORY = #{category} -->
     
-   <!--  SELECT
-    DROM
+    SELECT
+    FROM
     WHERE
-     -->
+    
   </select>
 </mapper>
