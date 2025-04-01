@@ -7,6 +7,10 @@ a {
   color: inherit;
 }
 
+.hide {
+	display: none;
+}
+
 .event-main {
 	display: flex;
     flex-direction: column;
@@ -94,13 +98,13 @@ a {
 	display: flex;
 	justify-content: center;
 	margin-top: 74px;
+    position: relative;
 }
 
 .slider {
-    position: relative;
     width: 742px;
-    height: 424px;
-    overflow: hidden;
+    border-radius: 20px;
+	overflow: hidden;
 }
 
 .slides {
@@ -109,32 +113,26 @@ a {
     transform: translate(-100%);
 }
 
-.slide {
-    min-width: 100%;
-}
-
 .slide img {
     width: 742px;
     height: 424px;
 }
 
-.prev, .next {
+.prev-btn, .next-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
     border: none;
-    padding: 10px;
+    background: none;
     cursor: pointer;
 }
 
-.prev { 
-	left: 10px; 
+.prev-btn { 
+	left: 15%; 
 }
 
-.next { 
-	right: 10px; 
+.next-btn { 
+	right: 15%; 
 }
 
 .event-list-container {
