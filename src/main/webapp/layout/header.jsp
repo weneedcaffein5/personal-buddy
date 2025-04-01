@@ -26,11 +26,11 @@
             <%
         		}else{
       		%>
-     				
-             		<a id="profile-nickname" href="<c:url value='/myPage/mypage-mytree?id=<%=loginId%>' />">
-             			<img class="profile-img" src="../<%= memberProfile.getMemberImgPath() + memberProfile.getMemberImgName()%>" alt="프로필 이미지">
-             			<%=memberProfile.getMemberNickName() %>
-             		</a>
+            		<a id="profile-nickname" href="<c:url value='/myPage/mypage-mytree?id=<%=loginId%>' />">
+            			<img class="profile-img" src="../<%= memberProfile.getMemberImgPath() + memberProfile.getMemberImgName()%>" alt="프로필 이미지">
+            			<%=memberProfile.getMemberNickName() %>
+            		</a>
+            		<a href="<c:url value='/member/logout.member' />">로그아웃</a>
             <%
         		}
         	%>
