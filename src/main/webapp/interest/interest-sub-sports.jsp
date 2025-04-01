@@ -27,7 +27,7 @@
 	        <div class="container-right-wrapper">
 	        	<div class="wrapper">
 					<div class="main-title">
-						<span>0. (운동) 선호 하는 운동을 선택 해주세요</span>
+						<span><c:out value="${sessionScope.mainCategoryIndex + 1}"></c:out>. (운동) 선호 하는 운동을 선택 해주세요</span>
 					</div>
 					<div class="sub-title">
 						<span>최소 2개 이상</span>

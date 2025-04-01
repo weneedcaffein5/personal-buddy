@@ -35,7 +35,22 @@
     	<typeAlias type="com.app.vo.TreeBuyItemVO" alias="TreeBuyItemVO"/>
     	<typeAlias type="com.app.vo.TreeCustomizingVO" alias="TreeCustomizingVO"/>
     	<typeAlias type="com.app.vo.TreeVO" alias="TreeVO"/>
-    	<typeAlias type="com.app.vo.UserGroupVO" alias="UserGroupVO"/>
+    	
+    	<!-- DTO -->
+    	<typeAlias type="com.app.dto.AchievementViewDTO" alias="AchievementViewDTO"/>
+    	<typeAlias type="com.app.dto.AlertViewDTO" alias="AlertViewDTO"/>
+    	<typeAlias type="com.app.dto.BoardCommentViewDTO" alias="BoardCommentViewDTO"/>
+    	<typeAlias type="com.app.dto.BoardViewDTO" alias="BoardViewDTO"/>
+    	<typeAlias type="com.app.dto.CalendarViewDTO" alias="CalendarViewDTO"/>
+    	<typeAlias type="com.app.dto.EventCommentViewDTO" alias="EventCommentViewDTO"/>
+    	<typeAlias type="com.app.dto.EventViewDTO" alias="EventViewDTO"/>
+    	<typeAlias type="com.app.dto.GetTargetDTO" alias="GetTargetDTO"/>
+    	<typeAlias type="com.app.dto.GetTrophyDTO" alias="GetTrophyDTO"/>
+    	<typeAlias type="com.app.dto.GuestCommentViewDTO" alias="GuestCommentViewDTO"/>
+    	<typeAlias type="com.app.dto.MemberDTO" alias="MemberDTO"/>
+    	<typeAlias type="com.app.dto.MemberProfileDTO" alias="MemberProfileDTO"/>
+    	<typeAlias type="com.app.dto.PurchaseDTO" alias="PurchaseDTO"/>
+    	<typeAlias type="com.app.dto.TreeViewDTO" alias="TreeViewDTO"/>
     </typeAliases>
     
    <environments default="oracle">

@@ -28,13 +28,14 @@ public class MemberLoginOkController implements Action {
 		memberVO.setMemberEmail(email);
 		memberVO.setMemberPassword(password);
 		
-		String findEmail = memberDAO.selectByEmailAndPassword(memberVO);
+		Long findId = memberDAO.selectByEmailAndPassword(memberVO);
 		
-		if(findEmail == null) {
+		if(findId == null) {
 			result.setPath("/member/login.member?login=false");
 		}else {
-			session.setAttribute("loginID", findEmail);
-			result.setPath("/main/main.main");
+			
+			session.setAttribute("loginId", findId);
+			result.setPath("/main/main.main");                      
 		}
 		
 		return result;

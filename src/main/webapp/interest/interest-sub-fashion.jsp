@@ -27,7 +27,7 @@
 	        <div class="container-right-wrapper">
 	        	<div class="wrapper">
 					<div class="main-title">
-						<span>0. (패션) 선호 하는 스타일을 선택 해주세요</span>
+						<span><c:out value="${sessionScope.mainCategoryIndex + 1}"></c:out>. (패션) 선호 하는 스타일을 선택 해주세요</span>
 					</div>
 					<div class="sub-title">
 						<span>최소 2개 이상</span>
@@ -82,7 +82,7 @@
 		        			<button class="back-btn">뒤로가기</button>
 		        		</form>
 			        	<form class="next-form" action="interest-next.interest" method="post">
-			        		<input type="hidden" class="hidden-input" name="sub-category-fachion">
+			        		<input type="hidden" class="hidden-input" name="sub-category-fashion">
 				            <button class="next-btn">다음으로</button>
 			        	</form>
 	        		</div>
