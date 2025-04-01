@@ -4,7 +4,17 @@
 
 <%
 	Long loginId = (Long)session.getAttribute("loginId");
-	MemberProfileDTO memberProfile = (MemberProfileDTO)session.getAttribute("memberProfile");
+	MemberProfileDTO loginProfile = (MemberProfileDTO)session.getAttribute("loginProfile");
+   	if (loginProfile == null || loginId == null) {
+%>
+	<script>
+       	alert("세션정보가 만료되어 로그인 페이지로 이동합니다.");
+    	// 세션 정보가 없으면 로그인 페이지로 리디렉션
+       	location.href = "<%= request.getContextPath() %>/member/login.member";
+    </script>
+<%        
+       return;
+   	}
 %>
 
 <div class="header-container">
@@ -19,16 +29,17 @@
         </div>
         <div class="rightheader">
         	<%
-        		if(loginId == null){
+        		if(loginId == null || loginProfile == null){
      		%>
        			<a href="<c:url value='/member/join-agree.member' />">회원가입</a>
                 <a href="<c:url value='/member/login.member' />">로그인</a>
             <%
         		}else{
       		%>
-            		<a id="profile-nickname" href="<c:url value='/myPage/mypage-mytree?id=<%=loginId%>' />">
-            			<img class="profile-img" src="../<%= memberProfile.getMemberImgPath() + memberProfile.getMemberImgName()%>" alt="프로필 이미지">
-            			<%=memberProfile.getMemberNickName() %>
+      		
+            		<a id="profile-nickname" href="../mypage/mypage-mytree.mypage?id=<%=loginId%>">
+            			<img class="profile-img" src="../<%= loginProfile.getMemberImgPath() + loginProfile.getMemberImgName()%>" alt="프로필 이미지">
+            			<%=loginProfile.getMemberNickName() %>
             		</a>
             		<a href="<c:url value='/member/logout.member' />">로그아웃</a>
             <%

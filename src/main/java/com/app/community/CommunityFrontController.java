@@ -24,7 +24,7 @@ public class CommunityFrontController extends HttpServlet{
 		
 		if(target.equals("community-main")) {
 			result = new CommunityMainController().execute(req, resp);
-		}else if(target.equals("")) {
+		}else if(target.equals("community-post")) {
 		}else {
 //			전부 404
 		}
