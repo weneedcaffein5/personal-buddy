@@ -20,38 +20,116 @@ public class InterestInsertController implements Action{
 		InterestVO interestVO = new InterestVO();
 		String category = "";
 		String[] categoryArray = null;
+//		Long loginId = (Long)session.getAttribute("loginId");
+		Long loginId = (long)1;
 		
 		if (session.getAttribute("sub-category-ball-games") != null) {
-			System.out.println(session.getAttribute("sub-category-ball-games"));
 			category = (String)session.getAttribute("sub-category-ball-games");
+			System.out.println(category);
 			categoryArray = category.split(",");
 			for (int i = 0; i < categoryArray.length; i++) {
-				
+				interestVO.setInterestBig("구기 종목");
+				interestVO.setInterestSmall(categoryArray[i]);
+				interestVO.setMemberId(loginId);
+				System.out.println(interestVO);
+				interestDAO.insert(interestVO);
 			}
 		}
 		if (session.getAttribute("sub-category-fashion") != null) {
-			System.out.println(session.getAttribute("sub-category-fashion"));
+			category = (String)session.getAttribute("sub-category-fashion");
+			System.out.println(category);
+			categoryArray = category.split(",");
+			for (int i = 0; i < categoryArray.length; i++) {
+				interestVO.setInterestBig("패션");
+				interestVO.setInterestSmall(categoryArray[i]);
+				interestVO.setMemberId(loginId);
+				System.out.println(interestVO);
+				interestDAO.insert(interestVO);
+			}
 		}
 		if (session.getAttribute("sub-category-food") != null) {
-			System.out.println(session.getAttribute("sub-category-food"));
+			category = (String)session.getAttribute("sub-category-food");
+			System.out.println(category);
+			categoryArray = category.split(",");
+			for (int i = 0; i < categoryArray.length; i++) {
+				interestVO.setInterestBig("맛집 탐방");
+				interestVO.setInterestSmall(categoryArray[i]);
+				interestVO.setMemberId(loginId);
+				System.out.println(interestVO);
+				interestDAO.insert(interestVO);
+			}
 		}
 		if (session.getAttribute("sub-category-movie") != null) {
-			System.out.println(session.getAttribute("sub-category-movie"));
+			category = (String)session.getAttribute("sub-category-movie");
+			System.out.println(category);
+			categoryArray = category.split(",");
+			for (int i = 0; i < categoryArray.length; i++) {
+				interestVO.setInterestBig("영화 감상");
+				interestVO.setInterestSmall(categoryArray[i]);
+				interestVO.setMemberId(loginId);
+				System.out.println(interestVO);
+				interestDAO.insert(interestVO);
+			}
 		}
 		if (session.getAttribute("sub-category-music") != null) {
-			System.out.println(session.getAttribute("sub-category-music"));
+			category = (String)session.getAttribute("sub-category-music");
+			System.out.println(category);
+			categoryArray = category.split(",");
+			for (int i = 0; i < categoryArray.length; i++) {
+				interestVO.setInterestBig("음악 감상");
+				interestVO.setInterestSmall(categoryArray[i]);
+				interestVO.setMemberId(loginId);
+				System.out.println(interestVO);
+				interestDAO.insert(interestVO);
+			}
 		}
 		if (session.getAttribute("sub-category-musical-instrument") != null) {
-			System.out.println(session.getAttribute("sub-category-musical-instrument"));
+			category = (String)session.getAttribute("sub-category-musical-instrument");
+			System.out.println(category);
+			categoryArray = category.split(",");
+			for (int i = 0; i < categoryArray.length; i++) {
+				interestVO.setInterestBig("연주");
+				interestVO.setInterestSmall(categoryArray[i]);
+				interestVO.setMemberId(loginId);
+				System.out.println(interestVO);
+				interestDAO.insert(interestVO);
+			}
 		}
 		if (session.getAttribute("sub-category-reading") != null) {
-			System.out.println(session.getAttribute("sub-category-reading"));
+			category = (String)session.getAttribute("sub-category-reading");
+			System.out.println(category);
+			categoryArray = category.split(",");
+			for (int i = 0; i < categoryArray.length; i++) {
+				interestVO.setInterestBig("독서");
+				interestVO.setInterestSmall(categoryArray[i]);
+				interestVO.setMemberId(loginId);
+				System.out.println(interestVO);
+				interestDAO.insert(interestVO);
+			}
 		}
 		if (session.getAttribute("sub-category-sports") != null) {
-			System.out.println(session.getAttribute("sub-category-sports"));
+			category = (String)session.getAttribute("sub-category-sports");
+			System.out.println(category);
+			categoryArray = category.split(",");
+			for (int i = 0; i < categoryArray.length; i++) {
+				interestVO.setInterestBig("운동");
+				interestVO.setInterestSmall(categoryArray[i]);
+				interestVO.setMemberId(loginId);
+				System.out.println(interestVO);
+				interestDAO.insert(interestVO);
+			}
 		}
 		if (session.getAttribute("sub-category-travel") != null) {
-			System.out.println(session.getAttribute("sub-category-travel"));
+			category = (String)session.getAttribute("sub-category-travel");
+			System.out.println(category);
+			categoryArray = category.split(",");
+			for (int i = 0; i < categoryArray.length; i++) {
+				interestVO.setInterestBig("여행");
+				interestVO.setInterestSmall(categoryArray[i]);
+				interestVO.setMemberId(loginId);
+				System.out.println(interestVO);
+				interestDAO.insert(interestVO);
+			}
 		}
 		
 		result.setRedirect(true);

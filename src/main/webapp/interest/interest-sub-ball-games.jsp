@@ -55,7 +55,7 @@
 			        		<input type="hidden" class="hidden-input" name="sub-category-ball-games">
 				            <button type="button" class="next-btn">
 				            	<c:choose>
-									<c:when test="${sessionScope.mainCategoryIndex == sessionScope.mainCategoryIndexMax }">
+									<c:when test="${sessionScope.mainCategoryIndex == sessionScope.mainCategoryIndexCheck}">
 										<span>완료하기</span>
 									</c:when>
 									<c:otherwise>

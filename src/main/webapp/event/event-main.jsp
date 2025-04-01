@@ -45,13 +45,21 @@
         <div class="slider-container">
 		    <div class="slider">
 		        <div class="slides">
-		            <a href="#" class="slide"><img src="../assets/images/event/이벤트 이미지1.png" alt="이벤트 슬라이드 이미지1"></a>
-		            <a href="#" class="slide"><img src="../assets/images/event/이벤트 이미지2.png" alt="이벤트 슬라이드 이미지2"></a>
-		            <a href="#" class="slide"><img src="../assets/images/event/이벤트 이미지3.png" alt="이벤트 슬라이드 이미지3"></a>
+		            <a href="#" class="slide"><img src="../assets/images/event/event-main3.png" alt="이벤트 슬라이드 이미지3"></a>
+		            <a href="#" class="slide"><img src="../assets/images/event/event-main1.png" alt="이벤트 슬라이드 이미지1"></a>
+		            <a href="#" class="slide"><img src="../assets/images/event/event-main2.png" alt="이벤트 슬라이드 이미지2"></a>
+		            <a href="#" class="slide"><img src="../assets/images/event/event-main3.png" alt="이벤트 슬라이드 이미지3"></a>
+		            <a href="#" class="slide"><img src="../assets/images/event/event-main1.png" alt="이벤트 슬라이드 이미지1"></a>
 		        </div>
-		        <button class="prev-btn">&#10094;</button>
-		        <button class="next-btn">&#10095;</button>
 		    </div>
+		        <button class="prev-btn">
+		        	<img class="prev-btn-off hide" alt="left-off" src="../assets/images/event/left-btn-off.png">
+		        	<img class="prev-btn-on" alt="left-on" src="../assets/images/event/left-btn.png">
+		        </button>
+		        <button class="next-btn">
+		        	<img class="next-btn-off hide" alt="right-off" src="../assets/images/event/right-btn-off.png">
+		        	<img class="next-btn-on" alt="right-on" src="../assets/images/event/right-btn.png">
+		        </button>
         </div>
 	    <div class="title-sub">
 		    <span>BUDDYGROUND</span>
@@ -64,7 +72,7 @@
 					<div class="event-list-info">
 			        	<a href="event-post.jsp?id=1">
 							<div class="event-list-img">
-								<img src="../assets/images/event/이벤트 세부 이미지1.png" alt="이벤트 리스트 이미지1">
+								<img src="../assets/images/event/event-list1.png" alt="이벤트 리스트 이미지1">
 							</div>
 							<div class="event-list-title">
 								<span>오늘의 미션 : 오전6시 기상</span>
@@ -75,9 +83,9 @@
 			        	</a>
 					</div>    		
 				<div class="event-list-info">
-					<a href="event-post.jsp">
+					<a href="event-post.jsp?id=">
 						<div class="event-list-img">
-							<img src="../assets/images/event/이벤트 세부 이미지2.png" alt="이벤트 리스트 이미지2">
+							<img src="../assets/images/event/event-list2.png" alt="이벤트 리스트 이미지2">
 						</div>
 						<div class="event-list-title">
 							<span>매일매일 출석체크</span>
@@ -92,7 +100,7 @@
 				<div class="event-list-info">
 					<a href="event-post.jsp">
 						<div class="event-list-img">
-							<img src="../assets/images/event/이벤트 세부 이미지3.png" alt="이벤트 리스트 이미지3">
+							<img src="../assets/images/event/event-list3.png" alt="이벤트 리스트 이미지3">
 						</div>
 						<div class="event-list-title">
 							<span>한 곡 타임 어택 챌린지</span>
@@ -105,7 +113,7 @@
 				<div class="event-list-info">
 					<a href="event-post.jsp">
 						<div class="event-list-img">
-							<img src="../assets/images/event/이벤트 세부 이미지4.png" alt="이벤트 리스트 이미지4">
+							<img src="../assets/images/event/event-list4.png" alt="이벤트 리스트 이미지4">
 						</div>
 						<div class="event-list-title">
 							<span>오늘 하루는 힐링 데이</span>
@@ -120,7 +128,7 @@
 				<div class="event-list-info">
 					<a href="event-post.jsp">
 						<div class="event-list-img">
-							<img src="../assets/images/event/이벤트 세부 이미지5.png" alt="이벤트 리스트 이미지5">
+							<img src="../assets/images/event/event-list5.png" alt="이벤트 리스트 이미지5">
 						</div>
 						<div class="event-list-title">
 							<span>봄맞이 나들이 챌린지</span>
@@ -133,7 +141,7 @@
 				<div class="event-list-info">
 					<a href="event-post.jsp">
 						<div class="event-list-img">
-							<img src="../assets/images/event/이벤트 세부 이미지6.png" alt="이벤트 리스트 이미지6">
+							<img src="../assets/images/event/event-list6.png" alt="이벤트 리스트 이미지6">
 						</div>
 						<div class="event-list-title">
 							<span>집중력 업! 공부 타임 챌린지</span>

@@ -67,7 +67,7 @@
 			        		<input type="hidden" class="hidden-input" name="sub-category-reading">
 				            <button type="button" class="next-btn">
 				            	<c:choose>
-									<c:when test="${sessionScope.mainCategoryIndex == sessionScope.mainCategoryIndexMax }">
+									<c:when test="${sessionScope.mainCategoryIndex == sessionScope.mainCategoryIndexCheck }">
 										<span>완료하기</span>
 										<c:set var="mainCategoryIndex" value="${mainCategoryIndex + 1 }" scope="session" />
 									</c:when>
