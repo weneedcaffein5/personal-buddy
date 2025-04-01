@@ -36,7 +36,7 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
 
 
   <div class="food-recommend">
-    <p class="food-title">어제 한식을 드셨네요? <br>오늘 ‘역삼역’에서 점심 이런 메뉴 어때요?!!</p>
+    <p class="food-title">오늘 점심 이런 메뉴 어때요?!!</p>
     
     <div class="food-list">
       <div class="food-item">
