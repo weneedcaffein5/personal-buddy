@@ -26,10 +26,9 @@ public class MainMainController implements Action {
 		if(loginId != null) {
 			memberProfileDTO = memberDAO.selectMemberProfileById(loginId).orElseThrow(RuntimeException::new);
 			session.setAttribute("loginId", loginId);
-			session.setAttribute("memberProfile", memberProfileDTO);
+			session.setAttribute("loginProfile", memberProfileDTO);
 		}
 		result.setPath("main.jsp");
 		return result;
 	}
-
 }
