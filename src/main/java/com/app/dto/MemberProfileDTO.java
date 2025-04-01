@@ -15,17 +15,17 @@ public class MemberProfileDTO {
 	private Timestamp memberBirth;
 	private Timestamp memberCreateDate;
 	
+	
 //	MemberImgVO
-	private Long memberImageId;
-	private String memberImageName;
-	private String memberImagePath;
+	private Long memberImgId;
+	private String memberImgName;
+	private String memberImgPath;
 	
 	public MemberProfileDTO() {;}
 
 	public MemberProfileDTO(Long memberId, String memberEmail, String memberNickName, String memberComment,
-			String memberName, String memberGender, Timestamp memberBirth, Timestamp memberCreateDate,
-			Long memberImageId, String memberImageName, String memberImagePath) {
-		super();
+			String memberName, String memberGender, Timestamp memberBirth, Timestamp memberCreateDate, Long memberImgId,
+			String memberImgName, String memberImgPath) {
 		this.memberId = memberId;
 		this.memberEmail = memberEmail;
 		this.memberNickName = memberNickName;
@@ -34,9 +34,9 @@ public class MemberProfileDTO {
 		this.memberGender = memberGender;
 		this.memberBirth = memberBirth;
 		this.memberCreateDate = memberCreateDate;
-		this.memberImageId = memberImageId;
-		this.memberImageName = memberImageName;
-		this.memberImagePath = memberImagePath;
+		this.memberImgId = memberImgId;
+		this.memberImgName = memberImgName;
+		this.memberImgPath = memberImgPath;
 	}
 
 	public Long getMemberId() {
@@ -103,28 +103,28 @@ public class MemberProfileDTO {
 		this.memberCreateDate = memberCreateDate;
 	}
 
-	public Long getMemberImageId() {
-		return memberImageId;
+	public Long getMemberImgId() {
+		return memberImgId;
 	}
 
-	public void setMemberImageId(Long memberImageId) {
-		this.memberImageId = memberImageId;
+	public void setMemberImgId(Long memberImgId) {
+		this.memberImgId = memberImgId;
 	}
 
-	public String getMemberImageName() {
-		return memberImageName;
+	public String getMemberImgName() {
+		return memberImgName;
 	}
 
-	public void setMemberImageName(String memberImageName) {
-		this.memberImageName = memberImageName;
+	public void setMemberImgName(String memberImgName) {
+		this.memberImgName = memberImgName;
 	}
 
-	public String getMemberImagePath() {
-		return memberImagePath;
+	public String getMemberImgPath() {
+		return memberImgPath;
 	}
 
-	public void setMemberImagePath(String memberImagePath) {
-		this.memberImagePath = memberImagePath;
+	public void setMemberImgPath(String memberImgPath) {
+		this.memberImgPath = memberImgPath;
 	}
 
 	@Override
@@ -132,13 +132,13 @@ public class MemberProfileDTO {
 		return "MemberProfileDTO [memberId=" + memberId + ", memberEmail=" + memberEmail + ", memberNickName="
 				+ memberNickName + ", memberComment=" + memberComment + ", memberName=" + memberName + ", memberGender="
 				+ memberGender + ", memberBirth=" + memberBirth + ", memberCreateDate=" + memberCreateDate
-				+ ", memberImageId=" + memberImageId + ", memberImageName=" + memberImageName + ", memberImagePath="
-				+ memberImagePath + "]";
+				+ ", memberImgId=" + memberImgId + ", memberImgName=" + memberImgName + ", memberImgPath="
+				+ memberImgPath + "]";
 	}
-	
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(memberId);
+		return Objects.hash(memberId, memberImgId);
 	}
 
 	@Override
@@ -150,7 +150,8 @@ public class MemberProfileDTO {
 		if (getClass() != obj.getClass())
 			return false;
 		MemberProfileDTO other = (MemberProfileDTO) obj;
-		return Objects.equals(memberId, other.memberId);
+		return Objects.equals(memberId, other.memberId) && Objects.equals(memberImgId, other.memberImgId);
 	}
+	
 	
 }
