@@ -65,6 +65,32 @@ body {
 	background-color: var(--black);
 }
 
+#image-minus-button{
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	top: calc(50% - 30px);
+	left: calc(50% + 30px);
+	border: 0px;
+	border-radius: 30px;
+	background-color: #333333;
+	opacity: 0.8;
+	background-image: url("../../images/member/minus-icon.png");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#image-minus-button:hover {
+	background-color: var(--black);
+}
+
+#profile-image{
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+}
+
+
 .input-title{
 	display: flex;
 	align-items: center;

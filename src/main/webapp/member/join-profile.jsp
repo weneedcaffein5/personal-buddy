@@ -25,13 +25,14 @@
     	<form action="join-ok.member" method="post">
         	<!-- 첫 번째 입력 박스 -->
         	<div class="input-group">
-        	
         		<!-- id(email 주소) -->
 	            <div class="wrapper">
 	            	<div id="image-wrapper">
-		            	<button type="button" id="image-plus-button"></button>
-		                <img 
-		                	src="<%= newMemberImage.getMemberImagePath() != null ? newMemberImage.getMemberImagePath() : "../assets/images/member/profile-default.png" %>" id="profile-image">
+		            	<label id="image-plus-button">
+	            	 		<input type="file" id="imageInput" value="../assets/images/member/profile-default.png" name="newMemberImageInput"style="display: none;"/>
+	            	 	</label>
+	            	 	<div id="image-minus-button" style="display: none"></div>
+	                	<img src="../assets/images/member/profile-default.png" id="profile-image">
 	                </div>
 	            </div>
 	            
@@ -51,8 +52,7 @@
 	            <div class="wrapper">
                 	<span>상태 메세지</span>
                		<div class="input-wrapper" id="comment-wrapper">
-	                	<input type="text" id="comment" placeholder="메세지를 입력해주세요. (최대 20자)"  name= "memberComment" maxlength="20"
-		                	value="<%= newMember.getMemberComment() != null ? newMember.getMemberComment() : "" %>">
+	                	<input type="text" id="comment" placeholder="메세지를 입력해주세요. (최대 20자)"  name= "memberComment" maxlength="20" />
 		                <span id="comment-input-length"></span>
 	            	</div>
                	</div>
