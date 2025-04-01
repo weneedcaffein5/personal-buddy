@@ -35,7 +35,6 @@ public class CommunityDAO {
 	public List<BoardViewDTO> filterByFreePost() {
 		return sqlSession.selectList("board.filterByFreePost");
 	}
-	
 
 //	필터링(해시태그 관심 일정)
 	public List<BoardViewDTO> filterByInterestSchedule() {

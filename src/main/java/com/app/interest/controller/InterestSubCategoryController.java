@@ -27,7 +27,7 @@ public class InterestSubCategoryController implements Action{
 		
 //		메인 카테고리[현재 인덱스]값을 저장
 		String mainCategory = mainCategoryArray[mainCategoryIndex];
-//		System.out.println(mainCategory + " / 메인 카테고리 현재 인덱스값");
+		System.out.println(mainCategory + " / 메인 카테고리 현재 인덱스값");
 		
 //		메인 카테고리[현재 인덱스]가 해당하는 주소로 이동
 		if (mainCategory.equals("구기 종목")) {
@@ -65,7 +65,8 @@ public class InterestSubCategoryController implements Action{
 		if (mainCategory.equals("여행")) {
 			result.setPath("../interest/interest-sub-travel.jsp");
 			return result;
-		} 
+		}
+		
 		result.setPath("../interest/interest-main.jsp");
 		return result;
 	}
