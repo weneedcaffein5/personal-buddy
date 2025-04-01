@@ -4,9 +4,13 @@
 <mapper namespace="recommendMapper">
 
   <select id="selectByCategory" parameterType="String" resultType="com.app.dto.RecommendDTO">
-    SELECT * 
+    <!-- SELECT * 
     FROM TBL_RECOMMEND
-    WHERE CATEGORY = #{category}
+    WHERE CATEGORY = #{category} -->
+    
+   <!--  SELECT
+    DROM
+    WHERE
+     -->
   </select>
-
 </mapper>

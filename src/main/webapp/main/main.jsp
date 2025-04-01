@@ -44,18 +44,18 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
       <!-- 1 -->
       <div class="food-img">		
       	<a href="https://map.naver.com/p/entry/place/1608618357?lng=127.0356133&lat=37.501776&placePath=%2Fhome&entry=plt&searchType=place&c=15.00,0,0,0,dh">
-        	<img src="../assets/images/main/갓포돈.jpg" alt="갓포돈">
+        	<img src="../assets/images/main/food-godpodon.jpg" alt="갓포돈">
         </a>
        </div>
         <div class="food-info">
         	<div class="info-block">
 		      <span class="label">식당명</span>
-		      <span class="value name">갓포돈</span>
+		      <span class="value name">호보식당</span>
 		    </div>
 		
 		    <div class="info-block">
 		      <span class="label">별점</span>
-		      <span class="value rating">4.0(49)</span>
+		      <span class="value rating">4.65</span>
 		    </div>
 		
 		    <div class="info-block">
@@ -81,8 +81,7 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
     <div class="place-recommend">
      <div class="place-wrapper">
     	<div class="place-list">
-        	<p class="place-title1">카페에 가실 예정이시네요!<br>
-        	스터디에 최적화된 카페 몇 군데를 찾아보았어요</p>
+        	<p class="place-title1">괜찮은 카페를 찾아봤어요!	</p>
 
         	<div class="place-item">
             	<div class="place-hover"></div>
@@ -109,7 +108,7 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
         
         <div class="place-item">
             <div class="place-hover"></div>
-            <img src="../assets/images/main/카페사진3.png" alt="카페3">
+            <img src="../assets/images/main/place-baguetteK.png" alt="카페3">
             <div class="place-info">
                 <h3 class="place-name">24시간 공부할수 있는 카페를 찾으신다면?</h3>
                 <p class="place-sub">타우너스 에스프레소바</p>
@@ -132,24 +131,12 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
 	    
 	    <!-- 코디 1 -->
 	    <div class="cloth-card">
-	      <img src="../assets/images/main/cloth-2.png" alt="코디1">
+	      <img src="../assets/images/main/cloth-hug1.png" alt="코디1">
 	      <h3 class="cloth-card-title">자연스러운 멋이 담긴 꾸안꾸 무드</h3>
 	      <p class="cloth-card-desc">편안한 분위기의 짙은 브라운 원피스에 양쪽 번 헤어스타일로 귀여움을 더했어요. 튀지 않는 컬러와 조화로운 실루엣으로 실내에서도 자연스럽게 시선을 사로잡는 룩입니다.</p>
 	    </div>
 	
-	    <!-- 코디 2 -->
-	    <div class="cloth-card">
-	      <img src="../assets/images/main/cloth-5.jpg" alt="코디2">
-	      <h3 class="cloth-card-title">레이어드의 정석, 믹스앤매치 감성룩</h3>
-	      <p class="cloth-card-desc">빈티지한 질감의 연보라 컬러 드레스 위에 무심한 듯 블랙 아이템을 레이어드하여 감각적인 스타일을 완성했어요. 여유로운 실루엣과 디테일한 액세서리로 도심 속 아티스트 무드를 담아냈습니다.</p>
-	    </div>
-	
-	    <!-- 코디 3 -->
-	    <div class="cloth-card">
-	      <img src="../assets/images/main/dress3.png" alt="코디3">
-	      <h3 class="cloth-card-title">밀리터리 무드의 스트리트 유니폼</h3>
-	      <p class="cloth-card-desc">짧은 소매와 하이넥이 조화를 이루는 톤다운 브라운 튜닉형 상의는 유틸리티 포켓으로 실용성과 개성을 동시에 잡았어요.시크하면서도 단단한 느낌을 주는 밀리터리 스타일이에요.</p>
-	    </div>
+	    
 	  </div>
 	</div>
 
