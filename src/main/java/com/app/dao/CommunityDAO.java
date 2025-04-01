@@ -16,6 +16,11 @@ public class CommunityDAO {
 	
 //	검색 (타이틀만)
 	
+//	모든 글 조회
+	public List<BoardViewDTO> selectAllBoardPost() {
+		return 	sqlSession.selectList("community.selectAllBoardPost");
+	}
+	
 //	정렬 (최신 순)
 	public List<BoardViewDTO> sortByLatest() {
 		return sqlSession.selectList("board.sortByLatest");
