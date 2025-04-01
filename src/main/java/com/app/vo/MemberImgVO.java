@@ -5,51 +5,62 @@ import java.util.Objects;
 public class MemberImgVO {
 	
 	private Long id;
-	private String memberImageName;
-	private String memberImagePath;
+	private String memberImgName;
+	private String memberImgPath;
 	private Long memberId;
 	
 	public MemberImgVO() {;}
-	
-	public MemberImgVO(Long id, String memberImageName, String memberImagePath, Long memberId) {
+
+	public MemberImgVO(Long id, String memberImgName, String memberImgPath, Long memberId) {
 		this.id = id;
-		this.memberImageName = memberImageName;
-		this.memberImagePath = memberImagePath;
+		this.memberImgName = memberImgName;
+		this.memberImgPath = memberImgPath;
 		this.memberId = memberId;
 	}
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getMemberImageName() {
-		return memberImageName;
+
+	public String getMemberImgName() {
+		return memberImgName;
 	}
-	public void setMemberImageName(String memberImageName) {
-		this.memberImageName = memberImageName;
+
+	public void setMemberImgName(String memberImgName) {
+		this.memberImgName = memberImgName;
 	}
-	public String getMemberImagePath() {
-		return memberImagePath;
+
+	public String getMemberImgPath() {
+		return memberImgPath;
 	}
-	public void setMemberImagePath(String memberImagePath) {
-		this.memberImagePath = memberImagePath;
+
+	public void setMemberImgPath(String memberImgPath) {
+		this.memberImgPath = memberImgPath;
 	}
+
 	public Long getMemberId() {
 		return memberId;
 	}
+
 	public void setMemberId(Long memberId) {
 		this.memberId = memberId;
 	}
+
 	@Override
 	public String toString() {
-		return "MemberImageVO [id=" + id + ", memberImageName=" + memberImageName + ", memberImagePath="
-				+ memberImagePath + ", memberId=" + memberId + "]";
+		return "MemberImgVO [id=" + id + ", memberImgName=" + memberImgName + ", memberImgPath=" + memberImgPath
+				+ ", memberId=" + memberId + "]";
 	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

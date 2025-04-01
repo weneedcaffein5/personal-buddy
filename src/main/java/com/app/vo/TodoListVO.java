@@ -7,6 +7,7 @@ public class TodoListVO {
 	private String todoListContent;
 	private int todoListCompleted;
 	private Long calendarGroupId;
+	
 
 	public TodoListVO() {;}
 	
