@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>main2</title>
+<title>main</title>
 <link rel="stylesheet" href="../assets/css/global.css">
 <link rel="stylesheet" href="../assets/css/header.css">
 <link rel="stylesheet" href="../assets/css/banner.css">
@@ -39,39 +39,41 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
     <p class="food-title">오늘 점심 이런 메뉴 어때요?!!</p>
     
     <div class="food-list">
-      <div class="food-item">
-      
-      <!-- 1 -->
-      <div class="food-img">		
-      	<a href="https://map.naver.com/p/entry/place/1608618357?lng=127.0356133&lat=37.501776&placePath=%2Fhome&entry=plt&searchType=place&c=15.00,0,0,0,dh">
-        	<img src="../assets/images/main/food-godpodon.jpg" alt="갓포돈">
-        </a>
-       </div>
-        <div class="food-info">
-        	<div class="info-block">
-		      <span class="label">식당명</span>
-		      <span class="value name">호보식당</span>
-		    </div>
-		
-		    <div class="info-block">
-		      <span class="label">별점</span>
-		      <span class="value rating">4.65</span>
-		    </div>
-		
-		    <div class="info-block">
-		      <span class="label">메인</span>
-		      <span class="value main">₩10,000~20,000 · 초밥</span>
-		    </div>
-		
-		    <div class="info-block">
-		      <span class="label">주소</span>
-		      <div class="address">
-		        <span class="value">역삼로 128 1층</span><br>
-		      </div>
-		    </div>
-        </div>
-      </div>
-      
+    
+      <c:forEach var="recommend" items="${recommendList}">
+  		<div class="food-item">
+	    <!-- 이미지 링크 -->
+	    <div class="food-img">      
+	      <a href="${recommend.link}">
+	        <img src="${pageContext.request.contextPath}/${recommend.img}" alt="${recommend.name}">
+	      </a>
+	    </div>
+	    
+	    <div class="food-info">
+	      <div class="info-block">
+	        <span class="label">식당명</span>
+	        <span class="value name">${recommend.name}</span>
+	      </div>
+	
+	      <div class="info-block">
+	        <span class="label">별점</span>
+	        <span class="value rating">${recommend.rating}</span>
+	      </div>
+	
+	      <div class="info-block">
+	        <span class="label">메인</span>
+	        <span class="value main">${recommend.price} · ${recommend.menu}</span>
+	      </div>
+	
+	      <div class="info-block">
+	        <span class="label">주소</span>
+	        <div class="address">
+	          <span class="value">${recommend.addr}</span><br>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+		</c:forEach>
     </div>
   </div>
 
