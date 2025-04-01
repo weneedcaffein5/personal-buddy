@@ -23,13 +23,11 @@ public class MainMainController implements Action {
 //		System.out.println("로그인 아이디: " + session.getAttribute("loginId"));
 		Long loginId = (Long)session.getAttribute("loginId");
 		
-		
-		memberProfileDTO = memberDAO.selectMemberProfileById(loginId).orElseThrow(RuntimeException::new);
-		
-		session.setAttribute("loginId", loginId);
-		session.setAttribute("memberProfile", memberProfileDTO);
-		
-		
+		if(loginId != null) {
+			memberProfileDTO = memberDAO.selectMemberProfileById(loginId).orElseThrow(RuntimeException::new);
+			session.setAttribute("loginId", loginId);
+			session.setAttribute("memberProfile", memberProfileDTO);
+		}
 		result.setPath("main.jsp");
 		return result;
 	}
