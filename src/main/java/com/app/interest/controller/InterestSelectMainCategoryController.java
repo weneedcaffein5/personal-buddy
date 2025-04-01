@@ -54,6 +54,8 @@ public class InterestSelectMainCategoryController implements Action {
 //		메인 카테고리 배열의 인덱스값
 		mainCategoryIndexMax = mainCategoryArray.length;
 		mainCategoryIndexCheck = mainCategoryArray.length - 1;
+		System.out.println(mainCategoryIndexMax + " / 카테고리 최댓값");
+		System.out.println(mainCategoryIndexCheck + " / 카테고리 최대값 - 1");
 		
 //		배열, 인덱스 주소값, 최대 인덱스 길이 값을 세션에 저장
 		session.setAttribute("mainCategoryArray", mainCategoryArray);

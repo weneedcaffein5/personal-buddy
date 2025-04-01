@@ -56,7 +56,6 @@
 				            	<c:choose>
 									<c:when test="${sessionScope.mainCategoryIndex == sessionScope.mainCategoryIndexCheck }">
 										<span>완료하기</span>
-										<c:set var="mainCategoryIndex" value="${mainCategoryIndex + 1 }" scope="session" />
 									</c:when>
 									<c:otherwise>
 										<span>다음으로</span>
