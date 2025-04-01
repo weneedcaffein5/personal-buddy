@@ -23,6 +23,7 @@ import com.app.member.controller.MemberNameCheckController;
 import com.app.member.controller.MemberNickNameCheckController;
 import com.app.member.controller.MemberPasswordCheckController;
 import com.app.member.controller.MemberPhoneCheckController;
+import com.app.member.controller.MemberProfileImageUploadController;
 import com.app.member.controller.MemberSendMailController;
 import com.app.member.controller.MemberSendPhoneAuthController;
 
@@ -32,10 +33,10 @@ public class MemberFrontController extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
 		resp.setContentType("text/html; charset=utf-8;");
-		
 		String controllerName = "/member/";
 		String redirectControllerName = "";
 		String target = req.getRequestURI().replace(req.getContextPath() + controllerName, "").split("\\.")[0];
+		
 		Result result = null;
 		
 		if(target.equals("join-agree")) {
@@ -62,6 +63,8 @@ public class MemberFrontController extends HttpServlet{
 			result = new MemberAllCheckController().execute(req, resp);
 		}else if(target.equals("join-profile")) {
 			result = new MemberJoinProfileController().execute(req, resp);
+		}else if(target.equals("join-profile-upload")) {
+			result = new MemberProfileImageUploadController().execute(req, resp);
 		}else if(target.equals("nickname-check")) {
 			result = new MemberNickNameCheckController().execute(req, resp);
 		}else if(target.equals("join-ok")) {
