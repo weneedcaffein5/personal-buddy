@@ -4,7 +4,9 @@ import java.util.Optional;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.app.dto.MemberProfileDTO;
 import com.app.mybatis.config.MyBatisConfig;
+import com.app.vo.MemberImgVO;
 import com.app.vo.MemberVO;
 
 public class MemberDAO {
@@ -15,13 +17,22 @@ public class MemberDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
+	public Long selectNextId() {
+		return sqlSession.selectOne("member.selectNextId");
+	}
+	
 //	회원가입
 	public void insert(MemberVO memberVO) {
 		sqlSession.insert("member.insert", memberVO);
 	}
 	
+//	회원가입(프로필 이미지)
+	public void insertImg(MemberImgVO memberImgVO) {
+		sqlSession.insert("member.insertImg", memberImgVO);
+	}
+	
 //	로그인
-	public String selectByEmailAndPassword(MemberVO memberVO) {
+	public Long selectByEmailAndPassword(MemberVO memberVO) {
 		return sqlSession.selectOne("member.selectByEmailAndPassword", memberVO);
 	}
 	
@@ -45,4 +56,8 @@ public class MemberDAO {
 		return sqlSession.selectOne("member.selectMemberCountByNickName", nickName);
 	}
 
+//	프로필 정보 조회
+	public Optional<MemberProfileDTO> selectMemberProfileById(Long id) {
+		return Optional.ofNullable(sqlSession.selectOne("member.selectMemberProfileById", id));
+	}
 }

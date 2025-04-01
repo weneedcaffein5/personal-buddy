@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import com.app.Action;
 import com.app.Result;
 import com.app.dao.MemberDAO;
+import com.app.vo.MemberImgVO;
 import com.app.vo.MemberVO;
 
 public class MemberJoinOkController implements Action {
@@ -19,10 +20,17 @@ public class MemberJoinOkController implements Action {
 		
 		HttpSession session = req.getSession();
 		MemberVO member = (MemberVO)session.getAttribute("newMember");
+		MemberImgVO memberImg = (MemberImgVO)session.getAttribute("newMemberImage");
+		
+		String comment = req.getParameter("memberComment");
+		
+		member.setMemberComment(comment);
+		System.out.println(comment);
 		MemberDAO memberDAO = new MemberDAO();
 		
-		System.out.println(member);
+		System.out.println(memberImg);
 		memberDAO.insert(member);
+		memberDAO.insertImg(memberImg);
 		
 		result.setRedirect(true);
 		result.setPath("interest-main.interest");

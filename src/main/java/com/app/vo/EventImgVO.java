@@ -5,15 +5,15 @@ import java.util.Objects;
 public class EventImgVO {
 	private Long id;
 	private String eventImgName;
-	private String eventImgePath;
+	private String eventImgPath;
 	private Long eventId;
 	
 	public EventImgVO() {;}
 
-	public EventImgVO(Long id, String eventImgName, String eventImgePath, Long eventId) {
+	public EventImgVO(Long id, String eventImgName, String eventImgPath, Long eventId) {
 		this.id = id;
 		this.eventImgName = eventImgName;
-		this.eventImgePath = eventImgePath;
+		this.eventImgPath = eventImgPath;
 		this.eventId = eventId;
 	}
 
@@ -33,12 +33,12 @@ public class EventImgVO {
 		this.eventImgName = eventImgName;
 	}
 
-	public String getEventImgePath() {
-		return eventImgePath;
+	public String getEventImgPath() {
+		return eventImgPath;
 	}
 
-	public void setEventImgePath(String eventImgePath) {
-		this.eventImgePath = eventImgePath;
+	public void setEventImgPath(String eventImgePath) {
+		this.eventImgPath = eventImgePath;
 	}
 
 	public Long getEventId() {
@@ -51,13 +51,13 @@ public class EventImgVO {
 
 	@Override
 	public String toString() {
-		return "eventImgVO [id=" + id + ", eventImgName=" + eventImgName + ", eventImgePath=" + eventImgePath
+		return "eventImgVO [id=" + id + ", eventImgName=" + eventImgName + ", eventImgPath=" + eventImgPath
 				+ ", eventId=" + eventId + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(eventId, eventImgName, eventImgePath, id);
+		return Objects.hash(eventId, eventImgName, eventImgPath, id);
 	}
 
 	@Override
@@ -70,7 +70,7 @@ public class EventImgVO {
 			return false;
 		EventImgVO other = (EventImgVO) obj;
 		return Objects.equals(eventId, other.eventId) && Objects.equals(eventImgName, other.eventImgName)
-				&& Objects.equals(eventImgePath, other.eventImgePath) && Objects.equals(id, other.id);
+				&& Objects.equals(eventImgPath, other.eventImgPath) && Objects.equals(id, other.id);
 	}
 
 }
