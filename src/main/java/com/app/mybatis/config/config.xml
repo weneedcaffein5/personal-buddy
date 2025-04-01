@@ -31,7 +31,7 @@
     	<typeAlias type="com.app.vo.MemberPointLogVO" alias="MemberPointLogVO"/>
     	<typeAlias type="com.app.vo.ScheduleGroupVO" alias="ScheduleGroupVO"/>
     	<typeAlias type="com.app.vo.TargetVO" alias="TargetVO"/>
-    	<typeAlias type="com.app.vo.TodolistVO" alias="TodolistVO"/>
+    	<typeAlias type="com.app.vo.TodoListVO" alias="TodoListVO"/>
     	<typeAlias type="com.app.vo.TreeBuyItemVO" alias="TreeBuyItemVO"/>
     	<typeAlias type="com.app.vo.TreeCustomizingVO" alias="TreeCustomizingVO"/>
     	<typeAlias type="com.app.vo.TreeVO" alias="TreeVO"/>
