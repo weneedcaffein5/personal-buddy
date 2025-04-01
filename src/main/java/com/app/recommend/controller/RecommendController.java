@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.app.Action;
 import com.app.Result;
+import com.app.dao.RecommendDAO;
 
 public class RecommendController implements Action {
 
@@ -14,7 +15,8 @@ public class RecommendController implements Action {
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, SecurityException {
 		Result result = new Result();
 	
-		/* RecommendDAO recommendDAO = RecommendDAO(); */
+		RecommendDAO recommendDAO = new RecommendDAO();
+		
 		
 		
 		return result;
