@@ -18,6 +18,16 @@
 <body>
 	<%
 		MemberVO newMember = (MemberVO)session.getAttribute("newMember");
+	    if (newMember == null) {
+    %>
+		<script>
+       		alert("세션정보가 만료되어 로그인 페이지로 이동합니다.");
+	    	// 세션 정보가 없으면 로그인 페이지로 리디렉션
+       		location.href = "<%= request.getContextPath() %>/member/login.member";
+    	</script>
+	<%        
+       	return;
+   		}
 	%>
 	
 	<img src="../assets/images/member/logo-login.png" alt="Personal Buddy 로고" class="logo">
