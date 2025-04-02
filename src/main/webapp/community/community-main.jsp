@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -225,11 +227,20 @@
 
 		<div class="post-container">
 			<div class="post-array">
-				<span class="post-sort active">최신 순</span>
+				<a href="${pageContext.request.contextPath}/community/community-main.community?sort=latest"
+				   class="post-sort ${selectedSort eq 'latest' || empty selectedSort ? 'active' : ''}">
+				   최신 순
+				</a>
 				<span>|</span>
-				<span class="post-sort">좋아요 순</span>
+				<a href="${pageContext.request.contextPath}/community/community-main.community?sort=like"
+				   class="post-sort ${selectedSort eq 'like' ? 'active' : ''}">
+				   좋아요 순
+				</a>
 				<span>|</span>
-				<span class="post-sort">조회 순</span>
+				<a href="${pageContext.request.contextPath}/community/community-main.community?sort=view"
+				   class="post-sort ${selectedSort eq 'view' ? 'active' : ''}">
+				   조회 순
+				</a>
 			</div>
 			<div class="main2">
 				<div class="main2-left">
@@ -262,188 +273,25 @@
 				</div>
         	</div>
 			<div class="post-contents">
-				<div class="post-content">
-					<a class="image-container" href="#">
-						<img class="img" src="../assets/images/community/jason.jpg">
-					</a>
-					<span class="tag">관심 일정</span>
-					<span class="content-name">나는 신이다</span>
-					<div class="user-info">
-						<img class="mini-profile" src="../assets/images/mypage/user-profile1.jpg">
-						<span class="user-nickname">GODJSON</span>
-					</div>
-					<span class="content-date">2025.02.01 게시</span>
-					<div class="content-info">
-						<span class="likes"><img class="icon" src="../assets/images/community/like-icon.png">600</span>
-						<span class="views"><img class="icon" src="../assets/images/community/view-icon.png">9999+</span>
-						<span class="comments"><img class="icon" src="../assets/images/community/comment-icon.png">78</span>
-					</div>
-				</div>
-				<div class="post-content">
-					<a  href="#"><img class="img" src="../assets/images/community/jinyoung-oni.png"></a>
-					<span class="tag">관심 일정</span>
-					<span class="content-name">진영오니 입니다</span>
-					<div class="user-info">
-						<img class="mini-profile" src="../assets/images/mypage/user-profile1.jpg">
-						<span class="user-nickname">진진자라</span>
-					</div>
-					<span class="content-date">2025.02.01 게시</span>
-					<div class="content-info">
-						<span class="likes"><img class="icon" src="../assets/images/community/like-icon.png">600</span>
-						<span class="views"><img class="icon" src="../assets/images/community/view-icon.png">9999+</span>
-						<span class="comments"><img class="icon" src="../assets/images/community/comment-icon.png">78</span>
-					</div>
-				</div>
-				<div class="post-content">
-					<a  href="#"><img class="img" src="../assets/images/community/jihyun-oni.png"></a>
-					<span class="tag">관심 일정</span>
-					<span class="content-name">지현오니 입니다</span>
-					<div class="user-info">
-						<img class="mini-profile" src="../assets/images/mypage/user-profile1.jpg">
-						<span class="user-nickname">함지옥</span>
-					</div>
-					<span class="content-date">2025.02.01 게시</span>
-					<div class="content-info">
-						<span class="likes"><img class="icon" src="../assets/images/community/like-icon.png">600</span>
-						<span class="views"><img class="icon" src="../assets/images/community/view-icon.png">9999+</span>
-						<span class="comments"><img class="icon" src="../assets/images/community/comment-icon.png">78</span>
-					</div>
-				</div>
-				<div class="post-content">
-					<a  href="#"><img class="img" src="../assets/images/community/umsoo.jpg"></a>
-					<span class="tag">관심 일정</span>
-					<span class="content-name">따자하오영수 실물</span>
-					<div class="user-info">
-						<img class="mini-profile" src="../assets/images/mypage/user-profile1.jpg">
-						<span class="user-nickname">시간엄수</span>
-					</div>
-					<span class="content-date">2025.02.01 게시</span>
-					<div class="content-info">
-						<span class="likes"><img class="icon" src="../assets/images/community/like-icon.png">600</span>
-						<span class="views"><img class="icon" src="../assets/images/community/view-icon.png">9999+</span>
-						<span class="comments"><img class="icon" src="../assets/images/community/comment-icon.png">78</span>
-					</div>
-				</div>
-				<div class="post-content">
-					<a  href="#"><img class="img" src="../assets/images/community/default.png"></a>
-					<span class="tag">관심 일정</span>
-					<span class="content-name">퍼스널 버디 좋아요</span>
-					<div class="user-info">
-						<img class="mini-profile" src="../assets/images/mypage/user-profile1.jpg">
-						<span class="user-nickname">버디버디</span>
-					</div>
-					<span class="content-date">2025.02.01 게시</span>
-					<div class="content-info">
-						<span class="likes"><img class="icon" src="../assets/images/community/like-icon.png">300</span>
-						<span class="views"><img class="icon" src="../assets/images/community/view-icon.png">1032</span>
-						<span class="comments"><img class="icon" src="../assets/images/community/comment-icon.png">78</span>
-					</div>
-				</div>
-				<div class="post-content">
-					<a  href="#"><img class="img" src="../assets/images/community/post3.png"></a>
-					<span class="tag">관심 일정</span>
-					<span class="content-name">⚽ 2025 챔피언스 리그 16강 대진표</span>
-					<div class="user-info">
-						<img class="mini-profile" src="../assets/images/mypage/user-profile1.jpg">
-						<span class="user-nickname">슛돌이</span>
-					</div>
-					<span class="content-date">2025.02.01 게시</span>
-					<div class="content-info">
-						<span class="likes"><img class="icon" src="../assets/images/community/like-icon.png">600</span>
-						<span class="views"><img class="icon" src="../assets/images/community/view-icon.png">9999+</span>
-						<span class="comments"><img class="icon" src="../assets/images/community/comment-icon.png">78</span>
-					</div>
-				</div>
-				<div class="post-content">
-					<a  href="#"><img class="img" src="../assets/images/community/post3.png"></a>
-					<span class="tag">관심 일정</span>
-					<span class="content-name">⚽ 2025 챔피언스 리그 16강 대진표</span>
-					<div class="user-info">
-						<img class="mini-profile" src="../assets/images/mypage/user-profile1.jpg">
-						<span class="user-nickname">슛돌이</span>
-					</div>
-					<span class="content-date">2025.02.01 게시</span>
-					<div class="content-info">
-						<span class="likes"><img class="icon" src="../assets/images/community/like-icon.png">600</span>
-						<span class="views"><img class="icon" src="../assets/images/community/view-icon.png">9999+</span>
-						<span class="comments"><img class="icon" src="../assets/images/community/comment-icon.png">78</span>
-					</div>
-				</div>
-				<div class="post-content">
-					<a  href="#"><img class="img" src="../assets/images/community/post3.png"></a>
-					<span class="tag">관심 일정</span>
-					<span class="content-name">⚽ 2025 챔피언스 리그 16강 대진표</span>
-					<div class="user-info">
-						<img class="mini-profile" src="../assets/images/mypage/user-profile1.jpg">
-						<span class="user-nickname">슛돌이</span>
-					</div>
-					<span class="content-date">2025.02.01 게시</span>
-					<div class="content-info">
-						<span class="likes"><img class="icon" src="../assets/images/community/like-icon.png">600</span>
-						<span class="views"><img class="icon" src="../assets/images/community/view-icon.png">9999+</span>
-						<span class="comments"><img class="icon" src="../assets/images/community/comment-icon.png">78</span>
-					</div>
-				</div>
-				<div class="post-content">
-					<a  href="#"><img class="img" src="../assets/images/community/post3.png"></a>
-					<span class="tag">관심 일정</span>
-					<span class="content-name">⚽ 2025 챔피언스 리그 16강 대진표</span>
-					<div class="user-info">
-						<img class="mini-profile" src="../assets/images/mypage/user-profile1.jpg">
-						<span class="user-nickname">슛돌이</span>
-					</div>
-					<span class="content-date">2025.02.01 게시</span>
-					<div class="content-info">
-						<span class="likes"><img class="icon" src="../assets/images/community/like-icon.png">600</span>
-						<span class="views"><img class="icon" src="../assets/images/community/view-icon.png">9999+</span>
-						<span class="comments"><img class="icon" src="../assets/images/community/comment-icon.png">78</span>
-					</div>
-				</div>
-				<div class="post-content">
-					<a  href="#"><img class="img" src="../assets/images/community/post3.png"></a>
-					<span class="tag">관심 일정</span>
-					<span class="content-name">⚽ 2025 챔피언스 리그 16강 대진표</span>
-					<div class="user-info">
-						<img class="mini-profile" src="../assets/images/mypage/user-profile1.jpg">
-						<span class="user-nickname">슛돌이</span>
-					</div>
-					<span class="content-date">2025.02.01 게시</span>
-					<div class="content-info">
-						<span class="likes"><img class="icon" src="../assets/images/community/like-icon.png">600</span>
-						<span class="views"><img class="icon" src="../assets/images/community/view-icon.png">9999+</span>
-						<span class="comments"><img class="icon" src="../assets/images/community/comment-icon.png">78</span>
-					</div>
-				</div>
-				<div class="post-content">
-					<a  href="#"><img class="img" src="../assets/images/community/post3.png"></a>
-					<span class="tag">관심 일정</span>
-					<span class="content-name">⚽ 2025 챔피언스 리그 16강 대진표</span>
-					<div class="user-info">
-						<img class="mini-profile" src="../assets/images/mypage/user-profile1.jpg">
-						<span class="user-nickname">슛돌이</span>
-					</div>
-					<span class="content-date">2025.02.01 게시</span>
-					<div class="content-info">
-						<span class="likes"><img class="icon" src="../assets/images/community/like-icon.png">600</span>
-						<span class="views"><img class="icon" src="../assets/images/community/view-icon.png">9999+</span>
-						<span class="comments"><img class="icon" src="../assets/images/community/comment-icon.png">78</span>
-					</div>
-				</div>
-				<div class="post-content">
-					<a  href="#"><img class="img" src="../assets/images/community/post3.png"></a>
-					<span class="tag">관심 일정</span>
-					<span class="content-name">⚽ 2025 챔피언스 리그 16강 대진표</span>
-					<div class="user-info">
-						<img class="mini-profile" src="../assets/images/mypage/user-profile1.jpg">
-						<span class="user-nickname">슛돌이</span>
-					</div>
-					<span class="content-date">2025.02.01 게시</span>
-					<div class="content-info">
-						<span class="likes"><img class="icon" src="../assets/images/community/like-icon.png">600</span>
-						<span class="views"><img class="icon" src="../assets/images/community/view-icon.png">9999+</span>
-						<span class="comments"><img class="icon" src="../assets/images/community/comment-icon.png">78</span>
-					</div>
-				</div>
+				<c:forEach var="post" items="${posts}">
+				    <div class="post-content">
+				        <a href="#"><img class="img" src="${pageContext.request.contextPath}${post.boardImgPath}/${post.boardImgName}" /></a>
+				        <span class="tag">${post.boardHashtag}</span>
+				        <span class="content-name">${post.boardTitle}</span>
+				        <div class="user-info">
+				            <img class="mini-profile" src="${pageContext.request.contextPath}${post.memberProfileImgPath}/${post.memberProfileImgName}" />
+				            <span class="user-nickname">${post.memberNickname}</span>
+				        </div>
+				        <span class="content-date">
+				            <fmt:formatDate value="${post.boardContentCreateDate}" pattern="yyyy.MM.dd HH:mm" /> 게시
+				        </span>
+				        <div class="content-info">
+				            <span class="likes"><img class="icon" src="../assets/images/community/like-icon.png">${post.likeCount}</span>
+				            <span class="views"><img class="icon" src="../assets/images/community/view-icon.png">${post.boardContentViews}</span>
+				            <span class="comments"><img class="icon" src="../assets/images/community/comment-icon.png">${post.commentCount}</span>
+				        </div>
+				    </div>
+				</c:forEach>
 			</div>
 		</div>
 	</div>
