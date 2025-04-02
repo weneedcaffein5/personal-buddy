@@ -1,6 +1,12 @@
 @charset "UTF-8";
 
+.container {
+	border: 1px var(--gray2) solid	; 
+	margin: 10px; 
+}
+
 .calendar-upper{
+	margin: 20px;
 	display: flex;
 	justify-content: space-between;
 }
@@ -267,7 +273,7 @@
 /* ✅ 혹시 남아 있는 가상요소 제거 */
 .fc-scrollgrid-section-body::after {
   display: none !important;
-}
+} 
 
 /* 요일 헤더 전체 테두리 제거 */
 .fc-col-header {
@@ -275,14 +281,45 @@
 }
 
 /* 오늘 날짜의 숫자 텍스트만 스타일링 */
-.fc-day-today{
+.fc-dayGridMonth-view .fc-day-today{
 	background-color: var(--white) !important;
 }
 /* 오늘 날짜의 숫자 텍스트만 스타일링 */
-.fc-day-today .fc-daygrid-day-number {
+.fc-dayGridMonth-view .fc-day-today .fc-daygrid-day-number {
 	background-color: var(--main-green);
+	width: 30px;
+	text-align: right;
 	border-radius: 5px;
 	color: var(--white);
+}
+
+.fc-timegrid-col-misc{
+	display: none;
+}
+
+.fc-timegrid-slots tr {
+  line-height: 40px !important;
+  border: none !important;
+}
+
+.fc-timegrid-slot.fc-timegrid-slot-minor {
+  border-bottom: 1px solid var(--gray3) !important;
+}
+.fc-timegrid-slots colgroup{
+	border-left: 1px solid var(--gray3) !important;
+}
+.fc-timegrid-col-frame{
+	border-right: 1px solid var(--gray3) !important;
+}
+
+.fc-direction-ltr .fc-timegrid-slot-label-frame{
+	position: relative;
+	top: 50%;
+	text-align: center;
+}
+
+.fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink{
+	border: none;
 }
 
 /* 선택된 셀 스타일 */
@@ -298,14 +335,24 @@
 	min-width: 300px;
 }
 
+.calendar-date-set{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
 .calendar-section {
-	margin-bottom: 20px;
+	height: 40px;
+	display: flex; 
+	gap: 95px;
 }
 
 .calendar-section label {
-	font-weight: bold;
-	display: block;
-	margin-bottom: 6px;
+	line-height: 100%;
+	vertical-align: center;
+	font-size: var(--h8);
+	font-weight: 400;
+	text-align: center;
 }
 
 .calendar-section input,

@@ -11,7 +11,7 @@
 <title>캘린더 테스트</title>
 </head>
 <body>
-	<div>
+	<div class="container">
 		<div class="calendar-upper">
 			<div class="calendar-upper-left">
 				<span class="today-span"></span>
@@ -43,30 +43,38 @@
 			<!-- 좌측: FullCalendar 캘린더 -->
 			<div id="calendar"></div>
 			<!-- 우측: 사이드 일정 정보 입력창 -->
-			<div class="calendar-detail-panel">
-			  <div class="calendar-section">
-			    <label>시작</label>
-			    <div><input type="date" id="start-date"> <input type="time" id="start-time"></div>
-			  </div>
-			  <div class="calendar-section">
-			    <label>종료</label>
-			    <div><input type="date" id="end-date"> <input type="time" id="end-time"></div>
-			  </div>
-			  <div class="calendar-section">
-			    <label>색</label>
-			    <div>
-			      <span class="color-dot" style="background-color: #01cd74;"></span>
-			      <span>에메랄드 그린</span>
-			    </div>
-			  </div>
-			  <div class="calendar-section">
-			    <label>내용</label>
-			    <textarea id="event-desc" rows="4" placeholder="일정 내용을 입력하세요"></textarea>
-			  </div>
-			  <div class="calendar-btns">
-			    <button class="cancel-btn">취소</button>
-			    <button class="save-btn">저장</button>
-			  </div>
+			<div class="calendar-detail-panel" style="display: flex; flex-direction: column; gap: 25px;">
+				<div class="calendar-date-set">
+					<div class="calendar-section">
+						<label>시작</label>
+						<div style="display: flex; gap: 40px;">
+							<input type="date" id="start-date" disabled>
+				    		<input type="time" id="start-time">
+			    		</div>
+				  	</div>
+				  	<div class="calendar-section">
+					    <label>종료</label>
+					    <div style="display: flex; gap: 40px;">
+					    	<input type="date" id="end-date" disabled>
+					    	<input type="time" id="end-time">
+				    	</div>
+				  	</div>
+			  	</div>
+			  	<div class="calendar-section">
+				    <label>색</label>
+				    <div>
+				      	<span class="color-dot" style="background-color: #01cd74;"></span>
+				      	<span>에메랄드 그린</span>
+				    </div>
+			  	</div>
+			  	<div class="calendar-section" style="height: 250px;">
+		    		<label>내용</label>
+				    <textarea id="event-desc" rows="4" placeholder="일정 내용을 입력하세요"></textarea>
+			  	</div>
+		  		<div class="calendar-btns">
+			    	<button class="cancel-btn">취소</button>
+			    	<button class="save-btn">저장</button>
+		  		</div>
 			</div>
 		</div>
 	</div>
