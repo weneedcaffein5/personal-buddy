@@ -24,11 +24,6 @@ public class RecommendDAO {
 	}
 	
 	public List<RecommendDTO> selectByMemberId(Long memberId) {
-	    List<RecommendDTO> list = sqlSession.selectList("recommendMapper.selectByMemberId", memberId);
-	    for (RecommendDTO dto : list) {
-	        dto.setDescription(dto.getDescription());
-	    }
-	    return list;
-	}
-	
-}
+        return sqlSession.selectList("recommendMapper.selectByMemberId", memberId);
+    }
+};

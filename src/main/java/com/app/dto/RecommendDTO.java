@@ -27,8 +27,8 @@ public class RecommendDTO {
 		 for (String part : parts) {
 			 String[] kv = part.split("=", 2);
 			 if (kv.length == 2) {
-				 String key = kv[0];
-				 String value = kv[1];
+				 String key = kv[0].trim();
+				 String value = kv[1].trim();
 				 switch (key) {
 				 	case "name": name = value; break;
 				 	case "rating": rating = value; break;
