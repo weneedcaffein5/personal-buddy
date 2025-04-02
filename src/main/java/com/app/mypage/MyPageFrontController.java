@@ -14,18 +14,19 @@ import com.app.mypage.controller.MypageInfoController;
 public class MyPageFrontController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    	
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html; charset=utf-8;");
-
-        // ✅ 요청 URI에서 target 추출 (/mypage-info.mypage → mypage-info)
-        String target = req.getRequestURI()
-                           .replace(req.getContextPath() + "/", "")
-                           .split("\\.")[0];
-
+        String controllerName = "/mypage/";
+        String target = req.getRequestURI().replace(req.getContextPath() + controllerName, "").split("\\.")[0];
+        System.out.println("요청 URI: " + req.getRequestURI());
+        System.out.println("ContextPath: " + req.getContextPath());
+        System.out.println("최종 target: " + target);
         Result result = null;
 
         // ✅ target 값으로 분기 처리
         if (target.equals("mypage-info")) {
+        	System.out.println("진입");
             result = new MypageInfoController().execute(req, resp);
         } else if (target.equals("mypage-mytree")) {
             result = new MyPageMyTreeController().execute(req, resp);

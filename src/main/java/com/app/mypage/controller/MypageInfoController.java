@@ -18,24 +18,30 @@ public class MypageInfoController implements Action {
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("application/json");
         resp.setCharacterEncoding("UTF-8");
-
+        System.out.println("성공");
         HttpSession session = req.getSession();
         String email = (String) session.getAttribute("userEmail");
 
-        // 임시 이메일 설정 (개발용)
-        if (email == null) {
-            email = "wlsud94@naver.com";
-            session.setAttribute("userEmail", email);
-        }
-
+		/*
+		 * // 임시 이메일 설정 (개발용) if (email == null) { email = "wlsud94@naver.com";
+		 * session.setAttribute("userEmail", email); }
+		 */
         // DAO 준비
         MemberDAO memberDAO = new MemberDAO();
         Optional<MemberVO> memberVO = memberDAO.selectByEmail(email);
-
+        System.out.println(email);
         // 요청 구분: check or change
         String mode = req.getParameter("mode");
-
-        // ✅ 비밀번호 확인
+        
+        System.out.println(mode);
+        if (mode == null) {
+            Result result = new Result();
+            result.setPath("mypage-Infokkk.jsp");
+            result.setRedirect(false);
+            return result;
+        }
+        
+        //  비밀번호 확인
         if ("check".equals(mode)) {
             String inputPassword = req.getParameter("password");
 
@@ -46,14 +52,14 @@ public class MypageInfoController implements Action {
             }
         }
 
-        // ✅ 비밀번호 변경
+        //  비밀번호 변경
         if ("change".equals(mode)) {
             String newPassword = req.getParameter("newPassword");
 
             if (memberVO.isPresent()) {
                 MemberVO member = memberVO.get();
                 member.setMemberPassword(newPassword);
-                memberDAO.updatePassword(member); // ✅ MemberVO 기반 update
+                memberDAO.updatePassword(member);
 
                 resp.getWriter().write("{\"result\":\"success\"}");
             } else {
