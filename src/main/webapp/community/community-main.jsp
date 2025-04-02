@@ -227,11 +227,20 @@
 
 		<div class="post-container">
 			<div class="post-array">
-				<span class="post-sort active">최신 순</span>
+				<a href="${pageContext.request.contextPath}/community/community-main.community?sort=latest"
+				   class="post-sort ${selectedSort eq 'latest' || empty selectedSort ? 'active' : ''}">
+				   최신 순
+				</a>
 				<span>|</span>
-				<span class="post-sort">좋아요 순</span>
+				<a href="${pageContext.request.contextPath}/community/community-main.community?sort=like"
+				   class="post-sort ${selectedSort eq 'like' ? 'active' : ''}">
+				   좋아요 순
+				</a>
 				<span>|</span>
-				<span class="post-sort">조회 순</span>
+				<a href="${pageContext.request.contextPath}/community/community-main.community?sort=view"
+				   class="post-sort ${selectedSort eq 'view' ? 'active' : ''}">
+				   조회 순
+				</a>
 			</div>
 			<div class="main2">
 				<div class="main2-left">
@@ -264,40 +273,22 @@
 				</div>
         	</div>
 			<div class="post-contents">
-				<c:forEach var="post" items="${boardList}">
+				<c:forEach var="post" items="${posts}">
 				    <div class="post-content">
-				        <!-- 게시글 썸네일 이미지 -->
-				        <a href="#">
-				        	<img class="img" src="${pageContext.request.contextPath}${post.boardImgPath}/${post.boardImgName}" />
-				        </a>
-				
-				        <!-- 해시태그 -->
+				        <a href="#"><img class="img" src="${pageContext.request.contextPath}${post.boardImgPath}/${post.boardImgName}" /></a>
 				        <span class="tag">${post.boardHashtag}</span>
-				
-				        <!-- 게시글 제목 -->
 				        <span class="content-name">${post.boardTitle}</span>
-				
-				        <!-- 작성자 정보 -->
 				        <div class="user-info">
 				            <img class="mini-profile" src="${pageContext.request.contextPath}${post.memberProfileImgPath}/${post.memberProfileImgName}" />
 				            <span class="user-nickname">${post.memberNickname}</span>
 				        </div>
-				
-				        <!-- 작성일 -->
-				        <fmt:formatDate value="${post.boardContentCreateDate}" pattern="yyyy.MM.dd" var="formattedDate"/>
-				        <span class="content-date">${formattedDate} 게시</span>
-				
-				        <!-- 좋아요, 조회수, 댓글 -->
+				        <span class="content-date">
+				            <fmt:formatDate value="${post.boardContentCreateDate}" pattern="yyyy.MM.dd HH:mm" /> 게시
+				        </span>
 				        <div class="content-info">
-				            <span class="likes">
-				                <img class="icon" src="../assets/images/community/like-icon.png" />${post.likeCount}
-				            </span>
-				            <span class="views">
-				                <img class="icon" src="../assets/images/community/view-icon.png" />${post.boardContentViews}
-				            </span>
-				            <span class="comments">
-				                <img class="icon" src="../assets/images/community/comment-icon.png" />${post.commentCount}
-				            </span>
+				            <span class="likes"><img class="icon" src="../assets/images/community/like-icon.png">${post.likeCount}</span>
+				            <span class="views"><img class="icon" src="../assets/images/community/view-icon.png">${post.boardContentViews}</span>
+				            <span class="comments"><img class="icon" src="../assets/images/community/comment-icon.png">${post.commentCount}</span>
 				        </div>
 				    </div>
 				</c:forEach>

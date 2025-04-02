@@ -23,27 +23,27 @@ public class CommunityDAO {
 	
 //	정렬 (최신 순)
 	public List<BoardViewDTO> sortByLatest() {
-		return sqlSession.selectList("board.sortByLatest");
+		return sqlSession.selectList("community.sortByLatest");
 	}
 	
 //	정렬 (좋아요 순)
 	public List<BoardViewDTO> sortByLikes() {
-		return sqlSession.selectList("board.sortByLikes");
+		return sqlSession.selectList("community.sortByLikes");
 	}
 	
 //	정렬 (조회 순)
 	public List<BoardViewDTO> sortByViews() {
-		return sqlSession.selectList("board.sortByViews");
+		return sqlSession.selectList("community.sortByViews");
 	}
 	
 //	필터링(해시태그 자유 게시글)
 	public List<BoardViewDTO> filterByFreePost() {
-		return sqlSession.selectList("board.filterByFreePost");
+		return sqlSession.selectList("community.filterByFreePost");
 	}
 
 //	필터링(해시태그 관심 일정)
 	public List<BoardViewDTO> filterByInterestSchedule() {
-		return sqlSession.selectList("board.filterByInterestSchdule");
+		return sqlSession.selectList("community.filterByInterestSchdule");
 	}
 	
 //	필터링(해시태그 공유 일정)

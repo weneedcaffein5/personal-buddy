@@ -1,6 +1,7 @@
 package com.app.community.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,13 +16,32 @@ public class CommunityMainController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, SecurityException {
-		Result result = new Result();
 		CommunityDAO communityDAO = new CommunityDAO();
-		List<BoardViewDTO> boardList = communityDAO.selectAllBoardPost();
-        req.setAttribute("boardList", boardList);
-		
+
+		String sort = req.getParameter("sort");
+		if (sort == null || sort.trim().isEmpty()) {
+		    sort = "latest";
+		}
+
+		List<BoardViewDTO> posts = new ArrayList<>();
+
+		switch (sort) {
+		    case "like":
+		        posts = communityDAO.sortByLikes();
+		        break;
+		    case "view":
+		        posts = communityDAO.sortByViews();
+		        break;
+		    case "latest":
+		    default:
+		        posts = communityDAO.selectAllBoardPost();
+		}
+
+		req.setAttribute("posts", posts);
+		req.setAttribute("selectedSort", sort); // 선택된 정렬 상태 유지용
+
+		Result result = new Result();
 		result.setPath("community-main.jsp");
-		
 		return result;
 	}
 
