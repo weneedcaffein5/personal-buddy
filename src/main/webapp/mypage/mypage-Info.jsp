@@ -144,13 +144,12 @@
 			</div>
 		</div>
 	</div>
-	<div class="set-modal-container" style="display: none;">
+	<div class="set-modal-container">
 		<div class="set-modal-background-conntaier">
 			<div class="set-modal-top">
 				<span id="modal-title">모달 제목</span>
 				<button class="out-set-modal">X</button>
 			</div>
-
 
 			<div class="set-modal-bottom">
 				<div class="modal-contents-wrapper">
@@ -166,101 +165,5 @@
 		<div class="black-background"></div>
 	</div>
 </body>
-<script>
-	const modal = document.querySelector('.set-modal-container');
-	const modalTitle = document.getElementById('modal-title');
-	const modalMessage = document.getElementById('modal-message');
-	const modalInputArea = document.getElementById('modal-input-area');
-	
-	let currentModalType = null;
-	
-	document.querySelectorAll('.open-modal-button').forEach(button => {
-		button.addEventListener('click', () => {
-			currentModalType = button.dataset.type;
-			modal.style.display = 'block';
-			
-			// 초기화
-			modalInputArea.innerHTML = '';
-			
-			switch (type) {
-			case 'password':
-				modalTitle.textContent = '비밀번호 변경';
-				modalMessage.textContent = '기존 비밀번호를 입력해주세요';
-				modalInputArea.innerHTML = `
-					<input type="password" id="oldPassword" placeholder="기존 비밀번호" class="modal-input" />
-				`;
-				break;
-
-			case 'name':
-				modalTitle.textContent = '이름 변경';
-				modalMessage.textContent = '새 이름을 입력해주세요';
-				modalInputArea.innerHTML = `
-					<input type="text" id="newName" placeholder="새 이름" class="modal-input" />
-				`;
-				break;
-
-			case 'birth':
-				modalTitle.textContent = '생년월일 변경';
-				modalMessage.textContent = '생년월일을 입력해주세요';
-				modalInputArea.innerHTML = `
-					<input type="text" id="newBirth" placeholder="YYYY.MM.DD" class="modal-input" />
-				`;
-				break;
-
-			case 'phone':
-				modalTitle.textContent = '전화번호 변경';
-				modalMessage.textContent = '전화번호를 입력해주세요';
-				modalInputArea.innerHTML = `
-					<input type="text" id="newPhone" placeholder="010-0000-0000" class="modal-input" />
-				`;
-				break;
-		}
-		})
-	})
-	// 모달 닫기
-	document.querySelector('.out-set-modal').addEventListener('click', () => {
-	modal.style.display = 'none';
-	});
-	document.querySelector('.set-modal-no-button').addEventListener('click', () => {
-	modal.style.display = 'none';
-	});
-	
-	
-	document.querySelector('.set-modal-ok-button').addEventListener('click', () => {
-		if (currentModalType === 'password') {
-			const oldPassword = document.getElementById('oldPassword').value;
-
-			// 폼 데이터 형식으로 보내기 (key=value)
-			const formData = new URLSearchParams();
-			formData.append('password', oldPassword);
-
-			fetch('/mypage-info.mypage', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/x-www-form-urlencoded'
-				},
-				body: formData
-			})
-			.then(res => res.json())
-			.then(data => {
-				const input = document.getElementById('oldPassword');
-				const errorMessage = document.querySelector('.modal-error-message');
-				if (errorMessage) 
-				errorMessage.remove();
-				input.classList.remove('error');
-
-				if (data.result === 'fail') {
-					input.classList.add('error');
-					const message = document.createElement('div');
-					message.className = 'modal-error-message';
-					message.textContent = '틀린 비밀번호입니다';
-					input.after(message);
-				} else {
-					alert('비밀번호 확인 성공!');
-					modal.style.display = 'none';
-				}
-			});
-		}
-	});
-</script>
+<script src="../assets/js/mypage/mypage-info.js"></script>
 </html>

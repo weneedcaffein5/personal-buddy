@@ -1,7 +1,6 @@
 package com.app.mypage.controller;
 
 import java.io.IOException;
-import java.lang.reflect.Member;
 import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,32 +18,49 @@ public class MypageInfoController implements Action {
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("application/json");
         resp.setCharacterEncoding("UTF-8");
-        
-        String inputPassword = req.getParameter("password");
-        // 1. 비밀번호를 받아온다.
+
         HttpSession session = req.getSession();
         String email = (String) session.getAttribute("userEmail");
-        
+
+        // 임시 이메일 설정 (개발용)
+        if (email == null) {
+            email = "wlsud94@naver.com";
+            session.setAttribute("userEmail", email);
+        }
+
+        // DAO 준비
         MemberDAO memberDAO = new MemberDAO();
         Optional<MemberVO> memberVO = memberDAO.selectByEmail(email);
-        // 2. 비밀번호를 비교한다.
-        // - 1) 멤버 데이터베이스에 이메일로 비밀번호를 가져온다.
-        // - 2) dao selecbyemail로 memberVO에 비밀번호를 담는다
-        // - 3) req에 담아야하나? 힌트좀
-        
-        if (memberVO.isPresent()) {
-            if (memberVO.get().getMemberPassword().equals(inputPassword)) {
+
+        // 요청 구분: check or change
+        String mode = req.getParameter("mode");
+
+        // ✅ 비밀번호 확인
+        if ("check".equals(mode)) {
+            String inputPassword = req.getParameter("password");
+
+            if (memberVO.isPresent() && memberVO.get().getMemberPassword().equals(inputPassword)) {
                 resp.getWriter().write("{\"result\":\"success\"}");
             } else {
                 resp.getWriter().write("{\"result\":\"fail\"}");
             }
-        } else {
-            resp.getWriter().write("{\"result\":\"fail\"}");
         }
-        
-        
- 
+
+        // ✅ 비밀번호 변경
+        if ("change".equals(mode)) {
+            String newPassword = req.getParameter("newPassword");
+
+            if (memberVO.isPresent()) {
+                MemberVO member = memberVO.get();
+                member.setMemberPassword(newPassword);
+                memberDAO.updatePassword(member); // ✅ MemberVO 기반 update
+
+                resp.getWriter().write("{\"result\":\"success\"}");
+            } else {
+                resp.getWriter().write("{\"result\":\"fail\"}");
+            }
+        }
+
         return null;
-        
     }
 }
