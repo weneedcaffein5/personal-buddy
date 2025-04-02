@@ -14,7 +14,7 @@
 <body>
 	<%@ include file="../layout/header.jsp" %>
 	
-	<div class="body">
+	<div class="body">/
         <div class="container">
         <!-- 왼쪽 사이드바 (프로필, 링크) -->
             <div class="sidebar">
@@ -62,7 +62,7 @@
 	                    <a class="link" href="#">프로필 설정</a>
                 	</div>
                 	<div class="a-wrapper">
-	                    <a class="link" href="#">계정 설정</a>
+	                    <a class="link" href="mypage-info.mypage">계정 설정</a>
                 	</div>
                 	<div class="a-wrapper">
 	                    <a class="link" href="#">포인트 내역</a>                	

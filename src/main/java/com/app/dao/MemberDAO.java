@@ -60,4 +60,9 @@ public class MemberDAO {
 	public Optional<MemberProfileDTO> selectMemberProfileById(Long id) {
 		return Optional.ofNullable(sqlSession.selectOne("member.selectMemberProfileById", id));
 	}
+	
+//  비밀번호 변경
+	public void updatePassword(MemberVO memberVO) {
+	    sqlSession.update("member.updatePassword", memberVO);
+	}
 }

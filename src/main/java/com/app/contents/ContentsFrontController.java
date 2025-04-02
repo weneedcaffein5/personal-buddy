@@ -26,7 +26,7 @@ public class ContentsFrontController extends HttpServlet{
 		
 		if(target.equals("contents-achievement")) {
 			result = new ContentsAchievementController().execute(req, resp);
-		}else if(target.equals("myTree")) {
+		}else if(target.equals("contents-mytree")) {
 			result = new ContentsMyTreeController().execute(req, resp);
 		}else if(target.equals("contents-point-shop")) {
 			result = new ContentsPointShopController().execute(req, resp);
@@ -42,6 +42,7 @@ public class ContentsFrontController extends HttpServlet{
 			}
 		}
 	}
+	
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doGet(req, resp);
 	}
