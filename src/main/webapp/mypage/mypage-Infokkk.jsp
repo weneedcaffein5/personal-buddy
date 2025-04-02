@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="../assets/css/header.css">
 <link rel="stylesheet" type="text/css"
 	href="../assets/css/mypage/mypage-info.css" />
-<title>Insert title here</title>
+<title>마이페이지-계정설정</title>
 </head>
 <body>
 	<%@ include file="../layout/header.jsp"%>
