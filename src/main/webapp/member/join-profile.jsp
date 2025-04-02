@@ -14,22 +14,31 @@
 	<%
 		MemberVO newMember = (MemberVO)session.getAttribute("newMember");
 		MemberImgVO newMemberImage = (MemberImgVO)session.getAttribute("newMemberImage");
-		
-		System.out.println(newMember);
-		System.out.println(newMemberImage);
+
+	    if (newMember == null || newMemberImage == null) {
+	    	
+   	%>
+		<script>
+       		alert("세션정보가 만료되어 로그인 페이지로 이동합니다.");
+	    	// 세션 정보가 없으면 로그인 페이지로 리디렉션
+       		location.href = "<%= request.getContextPath() %>/member/login.member";
+    	</script>
+	<%        
+       	return;
+   		}
 	%>
 	
 	<img src="../assets/images/member/logo-login.png" alt="Personal Buddy 로고" class="logo">
 
     <div class="join-container">
-    	<form action="join-ok.member" method="post">
+    	<form action="join-ok.member" method="post" enctype="multipart/form-data">
         	<!-- 첫 번째 입력 박스 -->
         	<div class="input-group">
         		<!-- id(email 주소) -->
 	            <div class="wrapper">
 	            	<div id="image-wrapper">
 		            	<label id="image-plus-button">
-	            	 		<input type="file" id="imageInput" value="../assets/images/member/profile-default.png" name="newMemberImageInput"style="display: none;"/>
+	            	 		<input type="file" id="imageInput" name="newMemberImageInput"style="display: none;"/>
 	            	 	</label>
 	            	 	<div id="image-minus-button" style="display: none"></div>
 	                	<img src="../assets/images/member/profile-default.png" id="profile-image">
@@ -52,7 +61,7 @@
 	            <div class="wrapper">
                 	<span>상태 메세지</span>
                		<div class="input-wrapper" id="comment-wrapper">
-	                	<input type="text" id="comment" placeholder="메세지를 입력해주세요. (최대 20자)"  name= "memberComment" maxlength="20" />
+	                	<input type="text" id="comment" placeholder="메세지를 입력해주세요. (최대 20자)"  name="memberComment" maxlength="20" />
 		                <span id="comment-input-length"></span>
 	            	</div>
                	</div>

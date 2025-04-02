@@ -77,6 +77,8 @@
     	<mapper resource="com/app/mybatis/mapper/introduceMapper.xml" />
     	<mapper resource="com/app/mybatis/mapper/mainMapper.xml" />
     	<mapper resource="com/app/mybatis/mapper/myPageMapper.xml" />
+    	<mapper resource="com/app/mybatis/mapper/recommendMapper.xml" />
     </mappers>
+    
     
  </configuration>

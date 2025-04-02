@@ -53,6 +53,13 @@ public class MemberAllCheckController implements Action {
 			resp.getWriter().write("{\"allCheckResult\": " + allCheckResult + "}");
 			return null;
 		}
+
+		if(member.getMemberPhone() == null) {
+			allCheckResult = false;
+			resp.setContentType("application/json"); // JSON 응답으로 설정
+			resp.getWriter().write("{\"allCheckResult\": " + allCheckResult + "}");
+			return null;
+		}
 		
 		allCheckResult = true;
 		resp.setContentType("application/json"); // JSON 응답으로 설정
