@@ -2,4 +2,17 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="event">
+	<select id="eventList" resultType="EventViewDTO">
+		SELECT 
+		    TE.ID,
+		    TE.EVENT_TITLE, 
+		    TE.EVENT_START_DATE,
+		    TE.EVENT_END_DATE,
+		    TEI.EVENT_IMG_NAME,
+		    TEI.EVENT_IMG_PATH
+		FROM TBL_EVENT TE
+		INNER JOIN TBL_EVENT_IMG TEI
+		ON TE.ID = TEI.EVENT_ID
+		ORDER BY TE.ID ASC
+	</select>
 </mapper>
