@@ -37,12 +37,23 @@
 		<%@ include file="../layout/banner.jsp" %>
 		<!-- 메인 -->
 		<div class="main">
-			<div class="tab-box">
-				<div class="tab-container">
-					<div class="tab-btn"></div>
-					<div id="achievementTab" class="tab-text tab-text-off">업적</div>
-					<div id="myTreeTab" class="tab-text tab-text-on">나의 성장 나무</div>
-					<div id="pointShopTab" class="tab-text tab-text-off">포인트 샵</div>
+			<div class="tab-container">
+				<div class="tab">
+				    <div class="tab-sub-position tab-0">
+						<a href="contents-achievement.contents">
+					    	<span>업적</span>
+						</a>
+				    </div>
+				    <div class="tab-sub-position tab-100">
+						<a href="contents-mytree.contents">
+					    	<span>나의 성장 나무</span>
+						</a>
+				    </div>
+				    <div class="tab-position tab-200">
+						<a href="contents-point-shop.contents">
+					    	<span>포인트 샵</span>
+						</a>
+				    </div>
 				</div>
 			</div>
 			<div class="title">
@@ -50,7 +61,7 @@
 			</div>
 			<div class="point-info">
 				<span>🏆 보유 포인트  :</span>
-				<span class="member-point">1000 P</span>
+				<span class="member-point">${ }</span>
 			</div>
 			<div class="point-log">
 				<a>포인트 이용 내역 보기 >></a>

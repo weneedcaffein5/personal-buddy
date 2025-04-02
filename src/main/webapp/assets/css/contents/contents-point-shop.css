@@ -121,7 +121,7 @@ a {
 
 /* 탭 스타일 */
 
-.tab-box {
+.tab-container {
 	width: 100%;
 	height: 55px;
 	margin-top: 80px;
@@ -129,9 +129,9 @@ a {
 	justify-content: center;
 }
 
-.tab-container {
-    position: relative;
-    width: 830px;
+.tab {
+	position: relative;
+    width: 834px;
     height: 100%;
     background: var(--gray1);
     border-radius: 30px;
@@ -140,41 +140,50 @@ a {
     cursor: pointer;
 }
 
-.tab-btn {
-    position: absolute;
-    width:33.3%;
+.tab-position {
+	position: absolute;
+    width: 33.3%;
     height: 100%;
     background: var(--main-green);
     border-radius: 30px;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.tab-btn-0 {
+.tab-sub-position {
+	position: absolute;
+    width: 33.3%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab-0 {
 	transform: translateX(0%);
 }
 
-.tab-btn-200 {
-    transform: translateX(200%);
+.tab-100 {
+	transform: translateX(100%);
 }
 
-.tab-text {
-    flex: 1;
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    z-index: 2;
-    transition: color 0.3s ease-in-out;
+.tab-200 {
+	transform: translateX(200%);
 }
 
-.tab-text-on {
-    color: black;
-    font-weight: bold;
+
+.tab span{
+	font-weight: 600;
+	font-size: var(--h5);
 }
 
-.tab-text-off {
-    color: #999999;
-    font-weight: bold;
+.tab-sub-position span{
+	color: var(--gray4);
+}
+
+.tab span:hover {
+	color: var(--black);
 }
 
 /* 타이틀 텍스트 */
