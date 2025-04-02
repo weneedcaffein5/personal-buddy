@@ -1,0 +1,398 @@
+@charset "UTF-8";
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 100vw;
+    height: 100vh; */
+}
+.container {
+    width: 1400px;
+    display: flex;
+    justify-content: center;
+    margin: 0 260px;
+}
+
+/* 마이페이지 오른쪽 내용 */
+.right-contentbox {
+    width: 1159px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+}
+
+/* 마이페이지 왼쪽 바 */
+.sidebar {
+    width: 200px;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    border: solid #DDDDDD 1px;
+    margin: 70px 40px 0 0;
+}
+
+
+/* 나만의 나무 설명 텍스트 */
+.info {
+    width: 1159px;
+    height: 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.info-left {
+    width: 1160x;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-style {
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.go {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #424242;
+}
+
+.go-style {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* 유저 프로필 사진 */
+.profile {
+    width: 200px;
+    height: 200px;
+    border-bottom: solid #DDDDDD 1px;
+}
+
+/* 유저 닉네임, 상태 메세지 */
+.profile-setting {
+	font-weight: 300;
+	font-size: 14px;
+    width: 200px;
+    height: 120px;
+    border-bottom: solid #DDDDDD 1px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nickname {
+	width: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 24px;
+    padding-top: 20px;
+}
+
+.status-message {
+	padding-top: 5px;
+	width: 130px;
+	height: 48px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 14px;
+	font-weight: 200;
+}
+
+#select {
+	color: #01CD74;
+	text-decoration: underline;
+}
+
+/* 마이페이지 항목 */
+.mypage {
+    width: 200px;
+    height: 114px;
+    border-bottom: solid #DDDDDD 1px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 커뮤니티 항목 */
+.community {
+    width: 200px;
+    height: 114px;
+    border-bottom: solid #DDDDDD 1px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 내 정보 항목 */
+.myinfo {
+    width: 200px;
+    height: 195px;
+    border-bottom: solid #DDDDDD 1px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tap-name {
+	width: 200px;
+	height: 40px;
+	font-weight: 500;
+	line-height: 24px;
+	padding-bottom: 2px;
+}
+
+.a-wrapper {
+	height: 24px;
+	padding-top: 3px;
+	padding-left: 4px;
+}
+
+
+.icon {
+    padding-left: 20px;
+    padding-right: 5px;
+    padding-top: 20px;
+}
+
+.link {
+    font-size: 14px;
+    font-weight: 300;
+    padding: 2px 0 2px 44px;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #01CD74; 
+}
+
+.go-tree a {
+	font-weight: 300;
+}
+
+.right-contentbox{
+	display: flex;
+	flex-direction: column;
+	gap: 52px;
+}
+.content-wrapper {
+	width: 1000px;
+	height: 573px;
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+	justify-content: space-between;
+}
+
+.content-container {
+	display: flex;
+	flex-direction: column;
+	gap:35px;
+}
+
+.input-container {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+
+.input-wrapper {
+	width: 1000px;
+	height: 40px;
+	position: relative;
+}
+
+.input-wrapper button {
+	background: none;
+	border: none;
+	padding: 0;
+	color: #FF4E00; 
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.custom-input {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	padding-left: 20px;
+}
+
+.input-container button {
+	position: absolute;
+	right: 19px;
+	top: 50%;
+	transform: translateY(-50%);
+	display: flex;
+	flex-direction: column;
+	font-size: 16px;
+	gap: 5px;
+}
+
+.input-wrapper button:hover {
+	text-decoration: underline;
+}
+
+.account-delete {
+	width: 90px;
+	height: 40px;
+	border-radius: 50px;
+	background-color: #FF4E00;
+	border: none;
+	color: white;
+	font-weight: 600;
+}
+
+/* modal */
+.set-modal-container {
+	position: fixed;
+	width: 400px;
+	height: 260px;
+	background-color: var(--white);
+	z-index: 9999;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 20px;
+	display: none;
+	flex-direction: column;
+}
+
+.set-modal-container.active {
+	display: flex;
+}
+
+.set-modal-top {
+	width: 100%;
+	height: 40px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	display: flex;
+	justify-content: space-between;
+	background-color: var(--sub-blue);
+	align-items: center;
+}
+
+.set-modal-top span {
+	font-size: var(--h8);
+	margin-left: 25px;
+	color: white;
+}
+
+
+
+.set-modal-top button {
+	background: none;
+	border: none;
+	color: white;
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+	font-size: 14px;
+	margin-right: 25px;
+}
+
+.set-modal-bottom {
+  position: relative;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--white);
+}
+
+.set-modal-bottom {
+  height: 220px;
+}
+
+.set-modal-bottom.change {
+  height: 300px;
+}
+
+.set-modal-bottom span {
+	font-size: var(--h8);
+
+}
+
+.modal-contents-wrapper {
+	display:flex;
+	flex-direction: column;
+	gap: 11px;
+	margin-top: 46px;
+	width: 340px;
+}
+
+.modal-button-wrapper {
+	position: absolute;
+	gap: 10px;
+	bottom: 30px;
+	right: 30px;	
+}
+
+.set-modal-bottom button {
+	border: none;
+	border-radius: 50px;
+	text-align: center;
+	font-size: var(--h8);
+	color: white;
+}
+
+
+
+.set-modal-ok-button {
+	background-color: var(--sub-blue);
+	width: 60px;
+	height: 30px;
+}
+
+.set-modal-ok-button:hover {
+	background-color: #007699;
+}
+
+.set-modal-no-button {
+	background-color: var(--gray4);
+	width: 60px;
+	height: 30px;
+}
+
+.set-modal-no-button:hover {
+	background-color: var(--gray6);
+}
+
+.modal-input {
+	width: 340px;
+	height: 40px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	box-sizing: border-box;
+	gap:35px;
+}
+
+#modal-input-area {
+	display: flex;
+	flex-direction: column;
+	gap:10px;	
+}
+
+
+
+.modal-input.error {
+  border: 1px solid red;
+}
+
+.modal-error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}

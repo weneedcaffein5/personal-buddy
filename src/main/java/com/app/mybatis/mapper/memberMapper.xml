@@ -4,59 +4,86 @@
 <mapper namespace="member">
 	<insert id="insert" parameterType="MemberVO">
 		INSERT INTO TBL_MEMBER
-		VALUES(#{id}, #{memberEmail}, #{memberPassword}, #{memberNickName}, #{memberComment}, #{memberName},
-		#{memberGender}, #{memberBirth}, #{memberPhone}, #{memberPoint}, #{memberAdmin}, SYSTIMESTAMP, 
-		#{memberTermServiceAgree}, #{memberTermInformationAgree}, #{memberTermLocationAgree}, #{memberTermPormotionAgree})
+		VALUES(#{id}, #{memberEmail}, #{memberPassword}, #{memberNickName},
+		#{memberComment}, #{memberName},
+		#{memberGender}, #{memberBirth},
+		#{memberPhone}, #{memberPoint}, #{memberAdmin}, SYSTIMESTAMP,
+		#{memberTermServiceAgree}, #{memberTermInformationAgree},
+		#{memberTermLocationAgree}, #{memberTermPormotionAgree})
 	</insert>
 	<insert id="insertImg" parameterType="MemberImgVO">
 		INSERT INTO TBL_MEMBER_IMG
-		VALUES(SEQ_MEMBER_IMG.NEXTVAL, #{memberImgName}, #{memberImgPath}, #{memberId})
+		VALUES(SEQ_MEMBER_IMG.NEXTVAL, #{memberImgName}, #{memberImgPath},
+		#{memberId})
 	</insert>
 	<select id="selectNextId" resultType="Long">
 		SELECT SEQ_MEMBER.NEXTVAL
 		FROM DUAL
 	</select>
-	<select id="selectByEmailAndPassword" parameterType="MemberVO" resultType="Long">
+	<select id="selectByEmailAndPassword" parameterType="MemberVO"
+		resultType="Long">
 		SELECT ID
 		FROM TBL_MEMBER
-		WHERE MEMBER_EMAIL = #{memberEmail} AND MEMBER_PASSWORD = #{memberPassword}
+		WHERE MEMBER_EMAIL = #{memberEmail}
+		AND MEMBER_PASSWORD = #{memberPassword}
 	</select>
-	<select id="selectByEmail" parameterType="String" resultType="MemberVO">
+	<select id="selectByEmail" parameterType="String"
+		resultType="MemberVO">
 		SELECT ID, MEMBER_EMAIL, MEMBER_PASSWORD, MEMBER_NAME
-		FROM TBL_MEMBER
+		FROM
+		TBL_MEMBER
 		WHERE MEMBER_EMAIL = #{memberEmail}
 	</select>
-	<select id="selectMemberCountByEmail" parameterType="String" resultType="int">
+	<select id="selectMemberCountByEmail" parameterType="String"
+		resultType="int">
 		SELECT COUNT(*)
 		FROM TBL_MEMBER
-		WHERE MEMBER_EMAIL = #{memberEmail}
+		WHERE MEMBER_EMAIL =
+		#{memberEmail}
 	</select>
-	<select id="selectMemberCountByPhone" parameterType="String" resultType="int">
+	<select id="selectMemberCountByPhone" parameterType="String"
+		resultType="int">
 		SELECT COUNT(*)
 		FROM TBL_MEMBER
-		WHERE MEMBER_PHONE = #{memberPhone}
+		WHERE MEMBER_PHONE =
+		#{memberPhone}
 	</select>
-	<select id="selectMemberCountByNickName" parameterType="String" resultType="int">
+	<select id="selectMemberCountByNickName" parameterType="String"
+		resultType="int">
 		SELECT COUNT(*)
 		FROM TBL_MEMBER
-		WHERE MEMBER_NICKNAME = #{memberNickName}
+		WHERE MEMBER_NICKNAME =
+		#{memberNickName}
 	</select>
-	<select id="selectMemberProfileById" parameterType="Long" resultType="MemberProfileDTO">
+	<select id="selectMemberProfileById" parameterType="Long"
+		resultType="MemberProfileDTO">
 		SELECT
-			TBM.ID AS MEMBER_ID,
-			TBM.MEMBER_EMAIL AS MEMBER_EMAIL,
-			TBM.MEMBER_NICKNAME AS MEMBER_NICKNAME,
-			TBM.MEMBER_COMMENT AS MEMBER_COMMENT,
-			TBM.MEMBER_NAME AS MEMBER_NAME,
-			TBM.MEMBER_GENDER AS MEMBER_GENDER,
-			TBM.MEMBER_BIRTH AS MEMBER_BIRTH,
-			TBM.MEMBER_CREATE_DATE AS MEMBER_CREATE_DATE,
-			TBI.ID AS MEMBER_IMG_ID,
-			TBI.MEMBER_IMG_NAME AS MEMBER_IMG_NAME,
-			TBI.MEMBER_IMG_PATH AS MEMBER_IMG_PATH
-		FROM TBL_MEMBER TBM
+		TBM.ID AS MEMBER_ID,
+		TBM.MEMBER_EMAIL AS MEMBER_EMAIL,
+		TBM.MEMBER_NICKNAME AS MEMBER_NICKNAME,
+		TBM.MEMBER_COMMENT AS
+		MEMBER_COMMENT,
+		TBM.MEMBER_NAME AS MEMBER_NAME,
+		TBM.MEMBER_GENDER AS
+		MEMBER_GENDER,
+		TBM.MEMBER_BIRTH AS MEMBER_BIRTH,
+		TBM.MEMBER_CREATE_DATE
+		AS MEMBER_CREATE_DATE,
+		TBI.ID AS MEMBER_IMG_ID,
+		TBI.MEMBER_IMG_NAME AS
+		MEMBER_IMG_NAME,
+		TBI.MEMBER_IMG_PATH AS MEMBER_IMG_PATH
+		FROM TBL_MEMBER
+		TBM
 		JOIN TBL_MEMBER_IMG TBI
-		ON TBM.ID = TBI.MEMBER_ID
-		WHERE TBM.ID = #{memberId}
+		ON TBM.ID
+		= TBI.MEMBER_ID
+		WHERE TBM.ID =
+		#{memberId}
 	</select>
+	<update id="updatePassword" parameterType="MemberVO">
+		UPDATE TBL_MEMBER
+		SET MEMBER_PASSWORD = #{memberPassword}
+		WHERE MEMBER_EMAIL = #{memberEmail}
+	</update>
 </mapper>
