@@ -34,7 +34,7 @@
 			    P.BOARD_CONTENT_VIEWS AS boardContentViews,
 			    P.BOARD_HASHTAG AS boardHashtag,
 			    M.ID AS memberId,
-			    M.MEMBER_NICKNAME AS memberNickname,
+			    M.MEMBER_NICKNAME AS memberNickname,	
 			    NVL(MI.MEMBER_IMG_NAME, 'default.png') AS memberProfileImgName,
 			    NVL(MI.MEMBER_IMG_PATH, '/assets/images/mypage') AS memberProfileImgPath,
 			    (SELECT COUNT(*) FROM TBL_BOARD_LIKE WHERE BOARD_POST_ID = P.ID) AS likeCount,
