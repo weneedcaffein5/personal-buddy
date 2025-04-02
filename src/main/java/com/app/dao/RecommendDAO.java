@@ -18,7 +18,7 @@ public class RecommendDAO {
 		List<RecommendDTO> list =  sqlSession.selectList("recommendMapper.selectByCategoryList", category);
 		
 		for(RecommendDTO dto : list) {
-			dto.setDescription(dto.getDescription());
+			dto.setRecommendDescription(dto.getRecommendDescription());
 		}
 		return list;
 	}

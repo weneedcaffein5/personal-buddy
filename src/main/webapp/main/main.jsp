@@ -40,7 +40,7 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
     
     <div class="food-list">
     
-      <c:forEach var="recommend" items="${recommendList}">
+      <c:forEach var="recommend" items="${foodList}">
   		<div class="food-item">
 	    <!-- 이미지 링크 -->
 	    <div class="food-img">      

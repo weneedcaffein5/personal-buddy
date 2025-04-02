@@ -1,7 +1,9 @@
 package com.app.main.controller;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -35,8 +37,19 @@ public class MainMainController implements Action {
 		RecommendDAO recommendDAO = new RecommendDAO();
 		List<RecommendDTO> recommendList = recommendDAO.selectByMemberId(loginId);
 		
-		req.setAttribute("recommendList", recommendList);
-						
+		
+		
+		/* 카테고리만 필터링해서 4개 추출 */
+		 List<RecommendDTO> foodList = recommendList.stream()
+		 .filter(item -> "맛집 탐방".equalsIgnoreCase(item.getInterestBig()))
+		 .collect(Collectors.toList());
+		  
+		  
+		  Collections.shuffle(foodList); System.out.println(foodList); foodList =
+		 foodList.stream().limit(4).collect(Collectors.toList());
+		 
+		
+		req.setAttribute("foodList", foodList);
 		
 		result.setPath("main.jsp");
 		return result;

@@ -3,10 +3,14 @@ package com.app.dto;
 import java.util.Objects;
 
 public class RecommendDTO {
-	 private Long id;
-	 private String category;
-	 private String description;
-
+	private Long memberId;
+	private String membernickname;
+	private String interestBig;
+	private String interestSmall;
+	private Long recommendId;
+	private String recommendCategory;
+	private String recommendDescription;
+	 
 	 // 파싱된 필드들
 	 private String name;
 	 private String rating;
@@ -18,12 +22,11 @@ public class RecommendDTO {
 	 private String title;
 	 private String desc;
 	 
-	 public RecommendDTO() {;}
 	 
-	 // description 파싱 로직
-	 public void parseDescription() {
-		 if(description == null) return;
-		 String[] parts = description.split(";");
+	// description 파싱 로직
+	 public void parseRecommendDescription() {
+		 if(recommendDescription == null) return;
+		 String[] parts = recommendDescription.split(";");
 		 for (String part : parts) {
 			 String[] kv = part.split("=", 2);
 			 if (kv.length == 2) {
@@ -44,20 +47,24 @@ public class RecommendDTO {
 		 }
 	 }
 	 
-	 public void setDescription(String description) {
-		 this.description = description;
-		 parseDescription();
+	 public void setrecommendDescription(String recommendDescription) {
+		 this.recommendDescription = recommendDescription;
+		 parseRecommendDescription();
 	 }
+	 
+	 public RecommendDTO() {;}
 
-	 
-	 
-	 
-	public RecommendDTO(Long id, String category, String description, String name, String rating, String menu,
-			String price, String addr, String img, String link, String title, String desc) {
+	public RecommendDTO(Long memberId, String membernickname, String interestBig, String interestSmall,
+			Long recommendId, String recommendCategory, String recommendDescription, String name, String rating,
+			String menu, String price, String addr, String img, String link, String title, String desc) {
 		super();
-		this.id = id;
-		this.category = category;
-		this.description = description;
+		this.memberId = memberId;
+		this.membernickname = membernickname;
+		this.interestBig = interestBig;
+		this.interestSmall = interestSmall;
+		this.recommendId = recommendId;
+		this.recommendCategory = recommendCategory;
+		this.recommendDescription = recommendDescription;
 		this.name = name;
 		this.rating = rating;
 		this.menu = menu;
@@ -71,25 +78,67 @@ public class RecommendDTO {
 
 	@Override
 	public String toString() {
-		return "RecommendDTO [id=" + id + ", category=" + category + ", description=" + description + ", name=" + name
-				+ ", rating=" + rating + ", menu=" + menu + ", price=" + price + ", addr=" + addr + ", img=" + img
-				+ ", link=" + link + ", title=" + title + ", desc=" + desc + "]";
+		return "RecommendDTO [memberId=" + memberId + ", membernickname=" + membernickname + ", interestBig="
+				+ interestBig + ", interestSmall=" + interestSmall + ", recommendId=" + recommendId
+				+ ", recommendCategory=" + recommendCategory + ", recommendDescription=" + recommendDescription
+				+ ", name=" + name + ", rating=" + rating + ", menu=" + menu + ", price=" + price + ", addr=" + addr
+				+ ", img=" + img + ", link=" + link + ", title=" + title + ", desc=" + desc + "]";
 	}
 
-	public Long getId() {
-		return id;
+	public Long getMemberId() {
+		return memberId;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setMemberId(Long memberId) {
+		this.memberId = memberId;
 	}
 
-	public String getCategory() {
-		return category;
+	public String getMembernickname() {
+		return membernickname;
 	}
 
-	public void setCategory(String category) {
-		this.category = category;
+	public void setMembernickname(String membernickname) {
+		this.membernickname = membernickname;
+	}
+
+	public String getInterestBig() {
+		return interestBig;
+	}
+
+	public void setInterestBig(String interestBig) {
+		this.interestBig = interestBig;
+	}
+
+	public String getInterestSmall() {
+		return interestSmall;
+	}
+
+	public void setInterestSmall(String interestSmall) {
+		this.interestSmall = interestSmall;
+	}
+
+	public Long getRecommendId() {
+		return recommendId;
+	}
+
+	public void setRecommendId(Long recommendId) {
+		this.recommendId = recommendId;
+	}
+
+	public String getRecommendCategory() {
+		return recommendCategory;
+	}
+
+	public void setRecommendCategory(String recommendCategory) {
+		this.recommendCategory = recommendCategory;
+	}
+
+	public String getRecommendDescription() {
+		return recommendDescription;
+	}
+
+	public void setRecommendDescription(String recommendDescription) {
+		this.recommendDescription = recommendDescription;
 	}
 
 	public String getName() {
@@ -164,13 +213,9 @@ public class RecommendDTO {
 		this.desc = desc;
 	}
 
-	public String getDescription() {
-		return description;
-	}
-
 	@Override
 	public int hashCode() {
-		return Objects.hash(id);
+		return Objects.hash(memberId, recommendId);
 	}
 
 	@Override
@@ -182,8 +227,7 @@ public class RecommendDTO {
 		if (getClass() != obj.getClass())
 			return false;
 		RecommendDTO other = (RecommendDTO) obj;
-		return Objects.equals(id, other.id);
+		return Objects.equals(memberId, other.memberId) && Objects.equals(recommendId, other.recommendId);
 	}
-	 
 	 
 }
