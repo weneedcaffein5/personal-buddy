@@ -33,6 +33,7 @@ public class MemberJoinProfileController implements Action {
 		MemberImgVO memberImage = new MemberImgVO();
 		
 		memberImage.setMemberId(nextId);
+		memberImage.setMemberImgPath("/assets/images/profile/");
 		memberImage.setMemberImgName(String.valueOf(member.getId()) + "_" + member.getMemberName() + "_Profile.png");
 		
 		session.setAttribute("newMember", member);

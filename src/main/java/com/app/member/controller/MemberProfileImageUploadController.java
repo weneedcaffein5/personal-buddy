@@ -31,18 +31,22 @@ public class MemberProfileImageUploadController implements Action {
 			dir.mkdirs();
 		}
 		
+		String newFileName = memberImage.getMemberImgName();
+		File newFile = new File(directory, newFileName);
+		
+		if(newFile.exists()) {
+			newFile.delete();
+		}
+		
 		MultipartRequest multi = new MultipartRequest(req, directory, sizeLimit, "UTF-8", new DefaultFileRenamePolicy());
 		String originFileName = multi.getFilesystemName("imageInput");
 		
-		String newFileName = memberImage.getMemberImgName();
-		
 		File oldFile = new File(directory, originFileName);
-		File newFile = new File(directory, newFileName);
 		
 		if (oldFile.exists()) {
 		    oldFile.renameTo(newFile);
 		}
-		memberImage.setMemberImgPath("/assets/images/profile/");
+		
 		session.setAttribute("newMemberImage", memberImage);
 		req.setAttribute("newMemberImage", memberImage);
 		
