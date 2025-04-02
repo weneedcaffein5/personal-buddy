@@ -14,7 +14,7 @@
 <body>
 	<%@ include file="../layout/header.jsp" %>
 	
-	<div class="body">
+	<div class="body">/
         <div class="container">
         <!-- 왼쪽 사이드바 (프로필, 링크) -->
             <div class="sidebar">
