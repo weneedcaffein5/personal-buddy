@@ -65,7 +65,16 @@
 		        		</form>
 			        	<form class="next-form" action="interest-next.interest" method="post">
 			        		<input type="hidden" class="hidden-input" name="sub-category-reading">
-				            <button class="next-btn">다음으로</button>
+				            <button type="button" class="next-btn">
+				            	<c:choose>
+									<c:when test="${sessionScope.mainCategoryIndex == sessionScope.mainCategoryIndexCheck }">
+										<span>완료하기</span>
+									</c:when>
+									<c:otherwise>
+										<span>다음으로</span>
+									</c:otherwise>
+								</c:choose>
+				            </button>
 			        	</form>
 	        		</div>
 	        	</div>

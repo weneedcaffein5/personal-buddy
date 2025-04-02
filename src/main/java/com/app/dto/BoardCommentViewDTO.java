@@ -1,114 +1,116 @@
 package com.app.dto;
 
+import java.sql.Timestamp;
 import java.util.Date;
+import java.util.Objects;
 
 public class BoardCommentViewDTO {
 
-    // 댓글 정보
-    private Long commentId;
-    private String content;
-    private Date createDate;
+	Long id;
+	Long boardPostId;
+	Long memberId;
+	String memberNickname;
+	String boardCommentContent;
+	Timestamp boardCommentCreateDate;
+	int likeCount;
+	
+	public BoardCommentViewDTO() {;}
 
-    // 작성자 정보
-    private Long memberId;
-    private String memberNickname;
-    private String memberProfileImgName;
-    private String memberProfileImgPath;
+	public BoardCommentViewDTO(Long id, Long boardPostId, Long memberId, String memberNickname,
+			String boardCommentContent, Timestamp boardCommentCreateDate, int likeCount) {
+		super();
+		this.id = id;
+		this.boardPostId = boardPostId;
+		this.memberId = memberId;
+		this.memberNickname = memberNickname;
+		this.boardCommentContent = boardCommentContent;
+		this.boardCommentCreateDate = boardCommentCreateDate;
+		this.likeCount = likeCount;
+	}
 
-    // 좋아요 정보
-    private int likeCount;
-    private boolean likedByLoginUser;
+	public Long getId() {
+		return id;
+	}
 
-    // 기본 생성자
-    public BoardCommentViewDTO() {}
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    // 전체 필드 생성자
-    public BoardCommentViewDTO(Long commentId, String content, Date createDate,
-                               Long memberId, String memberNickname,
-                               String memberProfileImgName, String memberProfileImgPath,
-                               int likeCount, boolean likedByLoginUser) {
-        this.commentId = commentId;
-        this.content = content;
-        this.createDate = createDate;
-        this.memberId = memberId;
-        this.memberNickname = memberNickname;
-        this.memberProfileImgName = memberProfileImgName;
-        this.memberProfileImgPath = memberProfileImgPath;
-        this.likeCount = likeCount;
-        this.likedByLoginUser = likedByLoginUser;
-    }
+	public Long getBoardPostId() {
+		return boardPostId;
+	}
 
-    // Getter & Setter
+	public void setBoardPostId(Long boardPostId) {
+		this.boardPostId = boardPostId;
+	}
 
-    public Long getCommentId() {
-        return commentId;
-    }
+	public Long getMemberId() {
+		return memberId;
+	}
 
-    public void setCommentId(Long commentId) {
-        this.commentId = commentId;
-    }
+	public void setMemberId(Long memberId) {
+		this.memberId = memberId;
+	}
 
-    public String getContent() {
-        return content;
-    }
+	public String getMemberNickname() {
+		return memberNickname;
+	}
 
-    public void setContent(String content) {
-        this.content = content;
-    }
+	public void setMemberNickname(String memberNickname) {
+		this.memberNickname = memberNickname;
+	}
 
-    public Date getCreateDate() {
-        return createDate;
-    }
+	public String getBoardCommentContent() {
+		return boardCommentContent;
+	}
 
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
-    }
+	public void setBoardCommentContent(String boardCommentContent) {
+		this.boardCommentContent = boardCommentContent;
+	}
 
-    public Long getMemberId() {
-        return memberId;
-    }
+	public Timestamp getBoardCommentCreateDate() {
+		return boardCommentCreateDate;
+	}
 
-    public void setMemberId(Long memberId) {
-        this.memberId = memberId;
-    }
+	public void setBoardCommentCreateDate(Timestamp boardCommentCreateDate) {
+		this.boardCommentCreateDate = boardCommentCreateDate;
+	}
 
-    public String getMemberNickname() {
-        return memberNickname;
-    }
+	public int getLikeCount() {
+		return likeCount;
+	}
 
-    public void setMemberNickname(String memberNickname) {
-        this.memberNickname = memberNickname;
-    }
+	public void setLikeCount(int likeCount) {
+		this.likeCount = likeCount;
+	}
 
-    public String getMemberProfileImgName() {
-        return memberProfileImgName;
-    }
+	@Override
+	public String toString() {
+		return "BoardCommentViewDTO [id=" + id + ", boardPostId=" + boardPostId + ", memberId=" + memberId
+				+ ", memberNickname=" + memberNickname + ", boardCommentContent=" + boardCommentContent
+				+ ", boardCommentCreateDate=" + boardCommentCreateDate + ", likeCount=" + likeCount + "]";
+	}
 
-    public void setMemberProfileImgName(String memberProfileImgName) {
-        this.memberProfileImgName = memberProfileImgName;
-    }
+	@Override
+	public int hashCode() {
+		return Objects.hash(boardCommentContent, boardCommentCreateDate, boardPostId, id, likeCount, memberId,
+				memberNickname);
+	}
 
-    public String getMemberProfileImgPath() {
-        return memberProfileImgPath;
-    }
-
-    public void setMemberProfileImgPath(String memberProfileImgPath) {
-        this.memberProfileImgPath = memberProfileImgPath;
-    }
-
-    public int getLikeCount() {
-        return likeCount;
-    }
-
-    public void setLikeCount(int likeCount) {
-        this.likeCount = likeCount;
-    }
-
-    public boolean isLikedByLoginUser() {
-        return likedByLoginUser;
-    }
-
-    public void setLikedByLoginUser(boolean likedByLoginUser) {
-        this.likedByLoginUser = likedByLoginUser;
-    }
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		BoardCommentViewDTO other = (BoardCommentViewDTO) obj;
+		return Objects.equals(boardCommentContent, other.boardCommentContent)
+				&& Objects.equals(boardCommentCreateDate, other.boardCommentCreateDate)
+				&& Objects.equals(boardPostId, other.boardPostId) && Objects.equals(id, other.id)
+				&& likeCount == other.likeCount && Objects.equals(memberId, other.memberId)
+				&& Objects.equals(memberNickname, other.memberNickname);
+	}
+	
 }

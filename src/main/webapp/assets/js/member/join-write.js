@@ -129,6 +129,7 @@ function mailCheck() {
 			mailCheckMessage.style.opacity = 1;
 			mailCheckMessage.style.color = "var(--main-green)";
 			mailCheckMessage.innerText = "※ 이메일 인증 완료"
+			clearInterval(mailCheckTimer); // 타이머 중지
 		}else{
 			idWrapper.style.border = "1px solid var(--warning-red)";
 			idAuthWrapper.style.border = "1px solid var(--warning-red)";
@@ -139,15 +140,35 @@ function mailCheck() {
 			mailCheckMessage.style.opacity = 1;
 			mailCheckMessage.style.color = "var(--warning-red)";
 			mailCheckMessage.innerText = "※ 이메일 인증 실패"
+			clearInterval(mailCheckTimer); // 타이머 중지
 		}
+		
+		allCheck();
         
 	})
 	.catch(error => {
 		console.error("Error:", error)
 	}); // 에러 처리
-	
-	allCheck();
 };
+
+
+document.getElementById("email").addEventListener("focus", (e) => {
+	e.target.value = "";
+	const idWrapper = document.getElementById("id-wrapper");
+	const idAuthWrapper = document.getElementById("id-auth-wrapper");
+	const idAuthInput = document.getElementById("mail-authCode");
+	const mailCheckMessage = document.getElementById("mail-fail-message");
+	const button = document.querySelector(".signup-btn");
+	
+	idWrapper.style.border = "1px solid var(--gray2)";
+	idAuthWrapper.style.border = "1px solid var(--gray2)";
+	idAuthWrapper.style.zIndex = 0;
+	idAuthInput.value = "";
+	mailCheckMessage.style.opacity = 0;
+	
+	button.classList.remove("active");
+    button.setAttribute("disabled", "true");
+});
 
 document.getElementById("password").addEventListener("blur", (e) => {
     let password = e.target.value;
@@ -177,12 +198,12 @@ document.getElementById("password").addEventListener("blur", (e) => {
         }
 		passWordFailMessage.style.opacity = 1;
 		passWordFailMessage.innerText = data.passwordCheckResultMessage;
+		
+		allCheck();
     })
 	.catch(err => {
 		console.error("요청 실패:", err);
     });
-	
-	allCheck();
 });
 
 
@@ -226,12 +247,11 @@ document.getElementById("name").addEventListener("blur", (e) => {
 			nameFailMessage.style.color = "var(--warning-red)";
 		}
 		
+		allCheck();
     })
 	.catch(err => {
 		console.error("요청 실패:", err);
     });
-	
-	allCheck();
 });
 
 document.getElementById("name").addEventListener("focus", (e) => {
@@ -242,7 +262,9 @@ document.getElementById("name").addEventListener("focus", (e) => {
 	nameFailMessage.style.display = "none";
 	nameWrapper.style.border = "1px solid var(--gray2)";
 	nameWrapper.style.zIndex = 0;
-	
+
+	button.classList.remove("active");
+	button.setAttribute("disabled", "true");
 });
 
 
@@ -273,11 +295,13 @@ document.querySelectorAll(".gender-select-radio").forEach((radio) => {
 				changeSpan.style.color = "var(--sub-green)";
 				changeSpan.style.fontWeight = "500";
 			}
+			
+			allCheck();
 		})
 		.catch(err => {
 			console.error("요청 실패:", err);
         });;
-		allCheck();
+		
 	}))
 });
 
@@ -317,12 +341,12 @@ flatpickr("#birth", {
 					birthFailMessage.style.display = "block";
 					birthFailMessage.style.color = "var(--warning-red)";
 				}
+				
+				allCheck();
 			})
 			.catch(err => {
 				console.error("요청 실패:", err);
 			});
-			
-			allCheck();
 		}
 	}
 });
@@ -426,6 +450,7 @@ function phoneCheck() {
 			phoneCheckMessage.style.display = "block";
 			phoneCheckMessage.style.color = "var(--main-green)";
 			phoneCheckMessage.innerText = "※ 핸드폰 인증 성공";
+			clearInterval(phoneCheckTimer); // 타이머 중지
 		}else{
 			phoneWrapper.style.border = "1px solid var(--warning-red)";
 			phoneAuthWrapper.style.border = "1px solid var(--warning-red)";
@@ -434,6 +459,7 @@ function phoneCheck() {
 			phoneCheckMessage.style.display = "block";
 			phoneCheckMessage.style.color = "var(--warning-red)";
 			phoneCheckMessage.innerText = "※ 핸드폰 인증 실패";
+			clearInterval(phoneCheckTimer); // 타이머 중지
 		}
         
 		allCheck();

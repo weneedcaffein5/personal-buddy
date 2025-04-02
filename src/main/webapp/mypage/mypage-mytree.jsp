@@ -86,13 +86,20 @@
                     </div>
                 </div>    
                 <div class="tree">
-                    <img class="tree-background" src="../assets/images/mypage/tree.png">
+                	<c:if test="${not empty userTree && userTree.itemId != null}">
+					    <img 
+					        src="/assets/images/items/default.png"
+					        style="position: absolute; left: ${userTree.positionX}px; top: ${userTree.positionY}px;" />
+					</c:if>
+				    <c:if test="${empty userTree.itemImgPath}">
+				        <p>🌱 아직 나무가 없어요!</p>
+				    </c:if>
                 </div>
                 <div class="guestbook-container">
                     <div class="guestbook-header">
-                        <span>방문록</span> <span class="visit-count">| 78</span>
+                        <span>방명록</span> <span class="visit-count">| 78</span>
                     </div>
-                    <p class="guestbook-info">방문록을 남겨보세요, 바르고 고운말을 사용합시다.</p>
+                    <p class="guestbook-info">방명록을 남겨보세요, 바르고 고운말을 사용합시다.</p>
                     
                     <div class="comment-box">
                         <textarea id="comment-input" placeholder="댓글을 입력해주세요" maxlength="500"></textarea>

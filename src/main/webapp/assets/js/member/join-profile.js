@@ -42,6 +42,13 @@ imageRemoveButton.addEventListener("click", function () {
     profileImage.src = "../assets/images/member/profile-default.png";
 	imageInsertButton.style.left = "calc(50% - 30px)";
     imageRemoveButton.style.display = "none";
+
+	fetch("join-profile-delete.member", {
+	        method: "POST",
+	    })
+		.catch(err => {
+			console.error("요청 실패:", err);
+	});
 });
 
 document.getElementById("nickname").addEventListener("blur", (e) => {
@@ -111,5 +118,6 @@ document.getElementById("comment").addEventListener('input', (e) => {
 	
 	const currentLength = e.target.value.length;
 	lengthSpan.innerText = currentLength + " / 20";
+
 });
 

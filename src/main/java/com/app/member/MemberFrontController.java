@@ -18,11 +18,13 @@ import com.app.member.controller.MemberJoinProfileController;
 import com.app.member.controller.MemberJoinWriteController;
 import com.app.member.controller.MemberLoginController;
 import com.app.member.controller.MemberLoginOkController;
+import com.app.member.controller.MemberLogoutController;
 import com.app.member.controller.MemberMailCheckController;
 import com.app.member.controller.MemberNameCheckController;
 import com.app.member.controller.MemberNickNameCheckController;
 import com.app.member.controller.MemberPasswordCheckController;
 import com.app.member.controller.MemberPhoneCheckController;
+import com.app.member.controller.MemberProfileImageDeleteController;
 import com.app.member.controller.MemberProfileImageUploadController;
 import com.app.member.controller.MemberSendMailController;
 import com.app.member.controller.MemberSendPhoneAuthController;
@@ -65,6 +67,8 @@ public class MemberFrontController extends HttpServlet{
 			result = new MemberJoinProfileController().execute(req, resp);
 		}else if(target.equals("join-profile-upload")) {
 			result = new MemberProfileImageUploadController().execute(req, resp);
+		}else if(target.equals("join-profile-delete")) {
+			result = new MemberProfileImageDeleteController().execute(req, resp);
 		}else if(target.equals("nickname-check")) {
 			result = new MemberNickNameCheckController().execute(req, resp);
 		}else if(target.equals("join-ok")) {
@@ -74,6 +78,9 @@ public class MemberFrontController extends HttpServlet{
 			result = new MemberLoginController().execute(req, resp);
 		}else if(target.equals("login-ok")) {
 			result = new MemberLoginOkController().execute(req, resp);
+		}else if(target.equals("logout")) {
+			redirectControllerName = "/member/";
+			result = new MemberLogoutController().execute(req, resp);
 		}else if(target.equals("find-id")) {
 			result = new MemberFindIdController().execute(req, resp);
 		}else if(target.equals("find-id-fail")) {

@@ -41,9 +41,11 @@
     	<typeAlias type="com.app.dto.AlertViewDTO" alias="AlertViewDTO"/>
     	<typeAlias type="com.app.dto.BoardCommentViewDTO" alias="BoardCommentViewDTO"/>
     	<typeAlias type="com.app.dto.BoardViewDTO" alias="BoardViewDTO"/>
+    	<typeAlias type="com.app.dto.BoardPostViewDTO" alias="BoardPostViewDTO"/>
     	<typeAlias type="com.app.dto.CalendarViewDTO" alias="CalendarViewDTO"/>
     	<typeAlias type="com.app.dto.EventCommentViewDTO" alias="EventCommentViewDTO"/>
     	<typeAlias type="com.app.dto.EventViewDTO" alias="EventViewDTO"/>
+    	<typeAlias type="com.app.dto.EventPostViewDTO" alias="EventPostViewDTO"/>
     	<typeAlias type="com.app.dto.GetTargetDTO" alias="GetTargetDTO"/>
     	<typeAlias type="com.app.dto.GetTrophyDTO" alias="GetTrophyDTO"/>
     	<typeAlias type="com.app.dto.GuestCommentViewDTO" alias="GuestCommentViewDTO"/>
@@ -75,6 +77,8 @@
     	<mapper resource="com/app/mybatis/mapper/introduceMapper.xml" />
     	<mapper resource="com/app/mybatis/mapper/mainMapper.xml" />
     	<mapper resource="com/app/mybatis/mapper/myPageMapper.xml" />
+    	<mapper resource="com/app/mybatis/mapper/recommendMapper.xml" />
     </mappers>
+    
     
  </configuration>
