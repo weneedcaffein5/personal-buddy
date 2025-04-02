@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
+import com.app.event.controller.EventMainController;
 import com.app.interest.controller.InterestMainController;
 
 public class EventFrontController extends HttpServlet {
@@ -22,7 +23,7 @@ public class EventFrontController extends HttpServlet {
 		Result result = null;
 		
 		if(target.equals("event-main")) {
-			result = new InterestMainController().execute(req, resp);
+			result = new EventMainController().execute(req, resp);
 		}else if(target.equals("interest-category")) {
 			
 		}else {

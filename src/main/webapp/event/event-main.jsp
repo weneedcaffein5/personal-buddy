@@ -1,3 +1,5 @@
+<%@page import="java.util.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
@@ -25,12 +27,12 @@
 		<div class="tab-container">
 			<div class="tab">
 			    <div class="tab-position">
-					<a href="../event/event-main.jsp">
+					<a href="event-main.event">
 				    	<span>EVENT</span>
 					</a>
 			    </div>
 			    <div class="tab-sub-position">
-					<a href="../community/community-main.jsp">
+					<a href="community-main.community">
 				    	<span>BOARD</span>
 					</a>
 			    </div>
@@ -68,90 +70,42 @@
 		    <span>버디들의 챌린지</span>
 		</div>
         <div class="event-list-container">
-        	<div class="event-list">
-					<div class="event-list-info">
-			        	<a href="event-post.jsp?id=1">
-							<div class="event-list-img">
-								<img src="../assets/images/event/event-list1.png" alt="이벤트 리스트 이미지1">
-							</div>
-							<div class="event-list-title">
-								<span>오늘의 미션 : 오전6시 기상</span>
-							</div>
-							<div class="event-list-time">
-								<span>2025.03.05</span>
-							</div>
-			        	</a>
-					</div>    		
-				<div class="event-list-info">
-					<a href="event-post.jsp?id=">
-						<div class="event-list-img">
-							<img src="../assets/images/event/event-list2.png" alt="이벤트 리스트 이미지2">
-						</div>
-						<div class="event-list-title">
-							<span>매일매일 출석체크</span>
-						</div>
-						<div class="event-list-time">
-							<span>2025.03.05</span>
-						</div>
-			        </a>
-				</div>    		
-        	</div>
-        	<div class="event-list">
-				<div class="event-list-info">
-					<a href="event-post.jsp">
-						<div class="event-list-img">
-							<img src="../assets/images/event/event-list3.png" alt="이벤트 리스트 이미지3">
-						</div>
-						<div class="event-list-title">
-							<span>한 곡 타임 어택 챌린지</span>
-						</div>
-						<div class="event-list-time">
-							<span>2025.03.05</span>
-						</div>
-		        	</a>
-				</div>    		
-				<div class="event-list-info">
-					<a href="event-post.jsp">
-						<div class="event-list-img">
-							<img src="../assets/images/event/event-list4.png" alt="이벤트 리스트 이미지4">
-						</div>
-						<div class="event-list-title">
-							<span>오늘 하루는 힐링 데이</span>
-						</div>
-						<div class="event-list-time">
-							<span>2025.03.05</span>
-						</div>
-		        	</a>
-				</div>    		
-        	</div>
-        	<div class="event-list">
-				<div class="event-list-info">
-					<a href="event-post.jsp">
-						<div class="event-list-img">
-							<img src="../assets/images/event/event-list5.png" alt="이벤트 리스트 이미지5">
-						</div>
-						<div class="event-list-title">
-							<span>봄맞이 나들이 챌린지</span>
-						</div>
-						<div class="event-list-time">
-							<span>2025.03.05</span>
-						</div>
-		        	</a>
-				</div>    		
-				<div class="event-list-info">
-					<a href="event-post.jsp">
-						<div class="event-list-img">
-							<img src="../assets/images/event/event-list6.png" alt="이벤트 리스트 이미지6">
-						</div>
-						<div class="event-list-title">
-							<span>집중력 업! 공부 타임 챌린지</span>
-						</div>
-						<div class="event-list-time">
-							<span>2025.03.05</span>
-						</div>
-		        	</a>
-				</div>    		
-        	</div>
+		    <c:forEach var="event" items="${events}" varStatus="events">
+		        <c:if test="${events.index % 2 == 0}">
+		            <div class="event-list">
+		        </c:if>
+	        		<div class="event-list-info">
+	        			<c:choose>
+	        				<c:when test="${onEvent[events.index] }">
+					        	<a href="event-post.event?id=${event.id }">
+								<div class="event-list-img">
+									<img src="${event.eventImgPath}${event.eventImgName}" alt="이벤트 리스트 이미지">
+								</div>
+								<div class="event-list-title">
+									<span>${event.eventTitle }</span>
+								</div>
+								<div class="event-list-time">
+									<fmt:formatDate value="${event.eventStartDate }" pattern="yyyy-MM-dd HH:mm"/>
+								</div>
+					        	</a>
+	        				</c:when>
+	        				<c:otherwise>
+								<div class="event-list-img">
+									<img src="${event.eventImgPath}${event.eventImgName}" alt="이벤트 리스트 이미지">
+								</div>
+								<div class="event-list-title">
+									<span>${event.eventTitle }</span>
+								</div>
+								<div class="event-list-time">
+									<fmt:formatDate value="${event.eventStartDate }" pattern="yyyy-MM-dd HH:mm"/>
+								</div>
+	        				</c:otherwise>
+	        			</c:choose>
+					</div>   		
+		        <c:if test="${events.index % 2 == 1 or events.last}">
+		          	</div>
+		        </c:if>
+		    </c:forEach>
         </div>
     </div>
 </body>
