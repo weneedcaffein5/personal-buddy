@@ -21,6 +21,9 @@ public class RecommendDTO {
 	 private String link;
 	 private String title;
 	 private String desc;
+	 private String genre;   
+	 private String release;
+	 private String type;  // 지역 (서울/부산 등)
 	 
 	 
 	// description 파싱 로직
@@ -42,6 +45,9 @@ public class RecommendDTO {
 				 	case "link": link = value; break;
 				 	case "title": title = value; break;
 				 	case "desc": desc = value; break;
+				 	case "genre": genre = value; break;
+					case "release": release = value; break; 
+					case "type": type = value; break;
 				 }
 			 }
 		 }
@@ -52,11 +58,12 @@ public class RecommendDTO {
 		 parseRecommendDescription();
 	 }
 	 
-	 public RecommendDTO() {;}
+	public RecommendDTO() {;}
 
 	public RecommendDTO(Long memberId, String membernickname, String interestBig, String interestSmall,
 			Long recommendId, String recommendCategory, String recommendDescription, String name, String rating,
-			String menu, String price, String addr, String img, String link, String title, String desc) {
+			String menu, String price, String addr, String img, String link, String title, String desc, String genre,
+			String release, String type) {
 		super();
 		this.memberId = memberId;
 		this.membernickname = membernickname;
@@ -74,6 +81,9 @@ public class RecommendDTO {
 		this.link = link;
 		this.title = title;
 		this.desc = desc;
+		this.genre = genre;
+		this.release = release;
+		this.type = type;
 	}
 
 	@Override
@@ -82,7 +92,8 @@ public class RecommendDTO {
 				+ interestBig + ", interestSmall=" + interestSmall + ", recommendId=" + recommendId
 				+ ", recommendCategory=" + recommendCategory + ", recommendDescription=" + recommendDescription
 				+ ", name=" + name + ", rating=" + rating + ", menu=" + menu + ", price=" + price + ", addr=" + addr
-				+ ", img=" + img + ", link=" + link + ", title=" + title + ", desc=" + desc + "]";
+				+ ", img=" + img + ", link=" + link + ", title=" + title + ", desc=" + desc + ", genre=" + genre
+				+ ", release=" + release + ", type=" + type + "]";
 	}
 
 	public Long getMemberId() {
@@ -213,6 +224,30 @@ public class RecommendDTO {
 		this.desc = desc;
 	}
 
+	public String getGenre() {
+		return genre;
+	}
+
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
+
+	public String getRelease() {
+		return release;
+	}
+
+	public void setRelease(String release) {
+		this.release = release;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(memberId, recommendId);
@@ -229,5 +264,9 @@ public class RecommendDTO {
 		RecommendDTO other = (RecommendDTO) obj;
 		return Objects.equals(memberId, other.memberId) && Objects.equals(recommendId, other.recommendId);
 	}
+	
+	
+	
+	
 	 
 }
