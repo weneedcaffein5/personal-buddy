@@ -112,18 +112,18 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
         	관심 있는 브랜드의 코디를 추천해드려요</p>
 	
 	  <div class="cloth-grid">
-	    
 	    <!-- 코디 1 -->
-	    <div class="cloth-card">
-	      <img src="../assets/images/main/cloth-hug1.png" alt="코디1">
-	      <h3 class="cloth-card-title">자연스러운 멋이 담긴 꾸안꾸 무드</h3>
-	      <p class="cloth-card-desc">편안한 분위기의 짙은 브라운 원피스에 양쪽 번 헤어스타일로 귀여움을 더했어요. 튀지 않는 컬러와 조화로운 실루엣으로 실내에서도 자연스럽게 시선을 사로잡는 룩입니다.</p>
-	    </div>
-	
-	    
+	    <c:forEach var="recommend" items="${clothList}">
+	    	<c:if test="${recommend.interestBig eq '코디 추천'}">
+			    <div class="cloth-card">
+			      <img src="${pageContext.request.contextPath}/${recommend.img}" alt="${recommend.title}">
+			      <h3 class="cloth-card-title">${recommend.title}</h3>
+			      <p class="cloth-card-desc">${recommend.desc}</p>
+			    </div>
+		    </c:if>
+	    </c:forEach>
 	  </div>
 	</div>
-
 </div> 	
 </div>
 
