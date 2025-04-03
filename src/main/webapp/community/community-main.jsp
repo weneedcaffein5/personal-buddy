@@ -339,7 +339,6 @@ tags.forEach(function (tag) {
 
 // ⭐ 정렬 및 필터 비동기 처리
 const sortButtons = document.querySelectorAll(".post-sort");
-const hashtagTags = document.querySelectorAll(".search-tag");
 
 let currentSort = "latest";
 let currentHashtag = "";
@@ -371,21 +370,19 @@ sortButtons.forEach(function (button) {
 });
 
 // 해시태그 필터 이벤트
-hashtagTags.forEach(function (tag) {
-  tag.addEventListener("click", function () {
-    if (tag.classList.contains("selected")) {
-      tag.classList.remove("selected");
-      currentHashtag = "";
-    } else {
-      hashtagTags.forEach(function (t) {
-        t.classList.remove("selected");
-      });
-      tag.classList.add("selected");
-      currentHashtag = tag.dataset.hashtag;
-    }
-    console.log("🔍 현재 해시태그:", currentHashtag);
-    updatePosts();
-  });
+document.querySelector(".tags").addEventListener("click", function(e) {
+  const clicked = e.target;
+  if (!clicked.classList.contains("search-tag")) return;
+
+  // 기존 선택된 거 해제
+  document.querySelectorAll(".search-tag").forEach(tag => tag.classList.remove("selected"));
+
+  // 현재 선택
+  clicked.classList.add("selected");
+  currentHashtag = clicked.dataset.hashtag;
+
+  console.log("🔍 현재 해시태그:", currentHashtag);
+  updatePosts();
 });
 </script>
 </body>
