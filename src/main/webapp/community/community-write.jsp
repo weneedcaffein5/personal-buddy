@@ -19,8 +19,8 @@
 
 	<div class="page-container">
 		<div class="title">
-			<div class="title-container">
 
+			<div class="title-container">
 				<span class="line1">커뮤니티<br /></span> <strong class="line2">글쓰기</strong>
 
 			</div>
@@ -29,16 +29,15 @@
 		<hr />
 
 		<div class="form-container">
-			<form class="form">
+			<form class="form" method="post" action="writeOk.community">
 				<div class="title-container">
-					<label for="subject">제목 <span
-						class="required-star">*</span></label> <input type="text" id="subject"
-						placeholder="제목을 입력해주세요." required class="custom-input" />
+					<label for="subject">제목 <span class="required-star">*</span></label>
+					<input type="text" id="subject" placeholder="제목을 입력해주세요." required
+						class="custom-input" />
 				</div>
 
 				<div class="category-container">
-					<label for="category">카테고리 <span
-						class="required-star">*</span></label>
+					<label for="category">카테고리 <span class="required-star">*</span></label>
 					<div class="custom-select-wrapper">
 						<select class="custom-select" required>
 							<option value="" disabled selected>카테고리를 선택해주세요.</option>
@@ -52,8 +51,7 @@
 				<div class="file-content-container">
 					<div class="content-count-container">
 						<div class="content-container">
-							<label for="content">글 내용 <span
-								class="required-star">*</span></label>
+							<label for="content">글 내용 <span class="required-star">*</span></label>
 							<textarea id="content" rows="8" placeholder="내용을 입력해주세요."
 								maxlength="3000" required class="custom-content-input"></textarea>
 						</div>
@@ -72,13 +70,14 @@
 							<input type="file" id="file" />
 						</div>
 						<div class="file-info">
-							<span class="file-size"><span
-								class="bold">0MB</span> / 30MB</span>
+							<span class="file-size"><span class="bold">0MB</span> /
+								30MB</span>
 						</div>
 						<button type="submit" class="submit-btn">등록하기</button>
 					</div>
 				</div>
 			</form>
+
 		</div>
 	</div>
 </body>
