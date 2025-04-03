@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.app.Action;
 import com.app.Result;
 import com.app.community.controller.CommunityMainController;
+import com.app.community.controller.CommunitySortController;
 
 public class CommunityFrontController extends HttpServlet{
 	
@@ -21,6 +22,7 @@ public class CommunityFrontController extends HttpServlet{
 	public void init() throws ServletException {
 	    urlMap = new HashMap<>();
 	    urlMap.put("community-main", new CommunityMainController());
+	    urlMap.put("community-sort", new CommunitySortController());
 	}
 	
 	

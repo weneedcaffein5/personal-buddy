@@ -18,31 +18,14 @@ public class CommunityMainController implements Action {
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, SecurityException {
 		CommunityDAO communityDAO = new CommunityDAO();
 
-		String sort = req.getParameter("sort");
-		if (sort == null || sort.trim().isEmpty()) {
-		    sort = "latest";
-		}
+		// 최초 진입 시 최신순으로 불러오기
+        List<BoardViewDTO> posts = communityDAO.sortByLatestAndHashtag(null);
+        req.setAttribute("postList", posts);
+        req.setAttribute("selectedSort", "latest"); // 현재 정렬 방식 (JSP에서 active 표시용)
 
-		List<BoardViewDTO> posts = new ArrayList<>();
-
-		switch (sort) {
-		    case "like":
-		        posts = communityDAO.sortByLikes();
-		        break;
-		    case "view":
-		        posts = communityDAO.sortByViews();
-		        break;
-		    case "latest":
-		    default:
-		        posts = communityDAO.selectAllBoardPost();
-		}
-
-		req.setAttribute("posts", posts);
-		req.setAttribute("selectedSort", sort); // 선택된 정렬 상태 유지용
-
-		Result result = new Result();
-		result.setPath("community-main.jsp");
-		return result;
-	}
+        Result result = new Result();
+        result.setPath("community-main.jsp");
+        return result;
+    }
 
 }

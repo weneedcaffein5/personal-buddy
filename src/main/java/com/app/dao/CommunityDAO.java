@@ -16,40 +16,22 @@ public class CommunityDAO {
 	
 //	검색 (타이틀만)
 	
-//	모든 글 조회
-	public List<BoardViewDTO> selectAllBoardPost() {
-		return 	sqlSession.selectList("community.selectAllBoardPost");
-	}
-	
-//	정렬 (최신 순)
-	public List<BoardViewDTO> sortByLatest() {
-		return sqlSession.selectList("community.sortByLatest");
-	}
-	
-//	정렬 (좋아요 순)
-	public List<BoardViewDTO> sortByLikes() {
-		return sqlSession.selectList("community.sortByLikes");
-	}
-	
-//	정렬 (조회 순)
-	public List<BoardViewDTO> sortByViews() {
-		return sqlSession.selectList("community.sortByViews");
-	}
-	
-//	필터링(해시태그 자유 게시글)
-	public List<BoardViewDTO> filterByFreePost() {
-		return sqlSession.selectList("community.filterByFreePost");
-	}
+    // 최신 순 + 해시태그
+    public List<BoardViewDTO> sortByLatestAndHashtag(String hashtag) {
+        return sqlSession.selectList("community.sortByLatestAndHashtag", hashtag);
+    }
 
-//	필터링(해시태그 관심 일정)
-	public List<BoardViewDTO> filterByInterestSchedule() {
-		return sqlSession.selectList("community.filterByInterestSchdule");
-	}
+    // 좋아요 순 + 해시태그
+    public List<BoardViewDTO> sortByLikesAndHashtag(String hashtag) {
+        return sqlSession.selectList("community.sortByLikesAndHashtag", hashtag);
+    }
+
+    // 조회수 순 + 해시태그
+    public List<BoardViewDTO> sortByViewsAndHashtag(String hashtag) {
+        return sqlSession.selectList("community.sortByViewsAndHashtag", hashtag);
+    }
 	
-//	필터링(해시태그 공유 일정)
-	public List<BoardViewDTO> filterByShareSchedule() {
-		return sqlSession.selectList("board.filterByShareSchdule");
-	}
+
 	
 //	게시글 추가
 	
