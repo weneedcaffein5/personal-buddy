@@ -5,6 +5,6 @@
 	<select id="memberPoint" parameterType="Long" resultType="int">
 		SELECT MEMBER_POINT
 		FROM TBL_MEMBER
-		WHERE ID = ${id}
+		WHERE ID = #{id}
 	</select>
 </mapper>

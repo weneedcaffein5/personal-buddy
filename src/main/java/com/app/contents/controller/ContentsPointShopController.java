@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.app.Action;
 import com.app.Result;
@@ -19,15 +20,17 @@ public class ContentsPointShopController implements Action{
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, SecurityException {
 		Result result = new Result();
+		HttpSession session = req.getSession();
 		ShopDAO shopDAO = new ShopDAO();
-		List<ItemVO> itemVO = shopDAO.getItemsByType("");
+		List<ItemVO> items = shopDAO.getItemsByType("");
 		PointDAO pointDAO = new PointDAO();
-		Long id = (long) 1;
+		Long id = (Long)session.getAttribute("loginId");
 		int memberPoint = pointDAO.memberPoint(id);
 		
-//		itemVO.forEach(System.out::println);
+//		items.forEach(System.out::println);
+//		System.out.println(memberPoint);
 		
-		req.setAttribute("itemVO", itemVO);
+		req.setAttribute("items", items);
 		req.setAttribute("memberPoint", memberPoint);
 		result.setPath("contents-point-shop.jsp");
 		return result;

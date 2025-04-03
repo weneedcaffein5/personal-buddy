@@ -31,7 +31,6 @@ public class ContentsFrontController extends HttpServlet{
 		}else if(target.equals("contents-point-shop")) {
 			result = new ContentsPointShopController().execute(req, resp);
 		}else if(target.equals("contents-point-shop-view-item")) {
-			result = new ContentsPointShopController().execute(req, resp);
 		}else {
 			
 		}

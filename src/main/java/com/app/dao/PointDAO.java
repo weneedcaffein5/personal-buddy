@@ -13,7 +13,7 @@ public class PointDAO {
 	
 	// 포인트 읽기
 	public int memberPoint(Long id) {
-		return sqlSession.selectOne("point.memberPoint");
+		return sqlSession.selectOne("point.memberPoint", id);
 	}
 	
 	// 구매 시 포인트 차감 (CU)

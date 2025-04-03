@@ -201,6 +201,7 @@ a {
 	width: 100%;
 	margin-top: 40px;
 	display: flex;
+	align-items: center;
 }
 
 .point-info span {
@@ -227,6 +228,7 @@ a {
 }
 
 .point-shop-tab-box {
+	display:flex;
 	margin-top: 20px;
 }
 
@@ -243,6 +245,7 @@ a {
     cursor: pointer;
     color: var(--main-green);
     font-size: var(--h7);
+    margin-right: 3px;
 }
 
 .point-shop-tab-style-on {
@@ -301,6 +304,7 @@ a {
 }
 
 .item-list-box {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	width: 1200px;
@@ -420,4 +424,37 @@ a {
 
 .view-item:hover {
 	color: var(--white);
+}
+
+/* pagination */
+
+.pagination {
+	position: absolute;
+	bottom: -15%;
+	left: 50%;
+	transform: translate(-50%, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--h6);
+    font-weight: 400;
+}
+
+.pagination a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30px;
+	height: 30px;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.pagination a:hover {
+    background: var(--gray2);
+}
+
+.active {
+    background: var(--main-green);
+    color: var(--white);
 }
