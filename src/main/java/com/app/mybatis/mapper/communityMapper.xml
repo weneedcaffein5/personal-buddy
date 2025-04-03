@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="community">
+
 	<!-- 최신순 정렬 + 해시태그 -->
 	<select id="sortByLatestAndHashtag" parameterType="string" resultType="BoardViewDTO">
 	    SELECT
@@ -76,4 +77,134 @@
 	    WHERE (#{hashtag, jdbcType=VARCHAR} IS NULL OR P.BOARD_HASHTAG = #{hashtag, jdbcType=VARCHAR})
 	    ORDER BY P.BOARD_CONTENT_VIEWS DESC
 	</select>
+	<select id="selectAllBoardPost" resultType="BoardViewDTO">
+		SELECT
+		P.ID AS postId,
+		P.BOARD_TITLE AS boardTitle,
+		P.BOARD_CONTENT AS boardContent,
+		P.BOARD_CONTENT_CREATE_DATE AS boardContentCreateDate,
+		P.BOARD_CONTENT_VIEWS AS boardContentViews,
+		P.BOARD_HASHTAG AS
+		boardHashtag,
+		M.ID AS memberId,
+		M.MEMBER_NICKNAME AS memberNickname,
+		NVL(MI.MEMBEgiR_IMG_NAME, 'default.png') AS memberProfileImgName,
+		NVL(MI.MEMBER_IMG_PATH, '/assets/images/mypage') AS
+		memberProfileImgPath,
+		(SELECT COUNT(*) FROM TBL_BOARD_LIKE BL WHERE
+		BL.BOARD_POST_ID = P.ID) AS
+		likeCount,
+		(SELECT COUNT(*) FROM
+		TBL_BOARD_COMMENT BC WHERE BC.BOARD_POST_ID = P.ID) AS
+		commentCount,
+		NVL(BI.BOARD_IMG_PATH, 'default.png') AS boardImgPath,
+		NVL(BI.BOARD_IMG_NAME, '/assets/images/community') AS boardImgName
+		FROM TBL_BOARD_POST P
+		JOIN TBL_MEMBER M ON P.MEMBER_ID = M.ID
+		LEFT JOIN
+		TBL_MEMBER_IMG MI ON M.ID = MI.MEMBER_ID
+		LEFT JOIN TBL_BOARD_IMG BI ON
+		P.ID = BI.BOARD_POST_ID
+		ORDER BY P.BOARD_CONTENT_CREATE_DATE DESC
+	</select>
+
+	<select id="sortByLikes" resultType="BoardViewDTO">
+		SELECT
+		P.ID AS postId,
+		P.BOARD_TITLE AS boardTitle,
+		P.BOARD_CONTENT AS boardContent,
+		P.BOARD_CONTENT_CREATE_DATE AS boardContentCreateDate,
+		P.BOARD_CONTENT_VIEWS AS boardContentViews,
+		P.BOARD_HASHTAG AS
+		boardHashtag,
+		M.ID AS memberId,
+		M.MEMBER_NICKNAME AS memberNickname,
+		NVL(MI.MEMBER_IMG_NAME, 'default.png') AS memberProfileImgName,
+		NVL(MI.MEMBER_IMG_PATH, '/assets/images/mypage') AS
+		memberProfileImgPath,
+		(SELECT COUNT(*) FROM TBL_BOARD_LIKE WHERE
+		BOARD_POST_ID = P.ID) AS
+		likeCount,
+		(SELECT COUNT(*) FROM
+		TBL_BOARD_COMMENT WHERE BOARD_POST_ID = P.ID) AS
+		commentCount,
+		NVL(BI.BOARD_IMG_NAME, 'default.png') AS boardImgName,
+		NVL(BI.BOARD_IMG_PATH, '/assets/images/community') AS boardImgPath
+		FROM TBL_BOARD_POST P
+		JOIN TBL_MEMBER M ON P.MEMBER_ID = M.ID
+		LEFT JOIN
+		TBL_MEMBER_IMG MI ON M.ID = MI.MEMBER_ID
+		LEFT JOIN TBL_BOARD_IMG BI ON
+		P.ID = BI.BOARD_POST_ID
+		ORDER BY likeCount DESC
+	</select>
+
+	<select id="sortByViews" resultType="BoardViewDTO">
+		SELECT
+		P.ID AS postId,
+		P.BOARD_TITLE AS boardTitle,
+		P.BOARD_CONTENT AS boardContent,
+		P.BOARD_CONTENT_CREATE_DATE AS boardContentCreateDate,
+		P.BOARD_CONTENT_VIEWS AS boardContentViews,
+		P.BOARD_HASHTAG AS
+		boardHashtag,
+		M.ID AS memberId,
+		M.MEMBER_NICKNAME AS memberNickname,
+		NVL(MI.MEMBER_IMG_NAME, 'default.png') AS memberProfileImgName,
+		NVL(MI.MEMBER_IMG_PATH, '/assets/images/mypage') AS
+		memberProfileImgPath,
+		(SELECT COUNT(*) FROM TBL_BOARD_LIKE WHERE
+		BOARD_POST_ID = P.ID) AS
+		likeCount,
+		(SELECT COUNT(*) FROM
+		TBL_BOARD_COMMENT WHERE BOARD_POST_ID = P.ID) AS
+		commentCount,
+		NVL(BI.BOARD_IMG_NAME, 'default.png') AS boardImgName,
+		NVL(BI.BOARD_IMG_PATH, '/assets/images/community') AS boardImgPath
+		FROM TBL_BOARD_POST P
+		JOIN TBL_MEMBER M ON P.MEMBER_ID = M.ID
+		LEFT JOIN
+		TBL_MEMBER_IMG MI ON M.ID = MI.MEMBER_ID
+		LEFT JOIN TBL_BOARD_IMG BI ON
+		P.ID = BI.BOARD_POST_ID
+		ORDER BY P.BOARD_CONTENT_VIEWS DESC
+	</select>
+<select id="getNextPostId" resultType="long">
+		SELECT SEQ_BOARD_POST.NEXTVAL FROM DUAL
+	</select>
+	<insert id="insertPost" parameterType="BoardPostVO">
+		INSERT INTO TBL_BOARD_POST (
+		ID,
+		BOARD_TITLE,
+		BOARD_CONTENT,
+		BOARD_CONTENT_CREATE_DATE,
+		BOARD_CONTENT_UPDATE_DATE,
+		BOARD_HASHTAG,
+		MEMBER_ID
+		) VALUES (
+		#{id},
+		#{boardTitle},
+		#{boardContent},
+		SYSDATE,
+		SYSDATE,
+		#{boardHashtag},
+		#{memberId}
+		)
+	</insert>
+	<insert id="insertBoardImg" parameterType="BoardImgVO">
+		INSERT INTO
+		TBL_BOARD_IMG (
+		ID,
+		BOARD_IMG_PATH,
+		BOARD_IMG_NAME,
+		BOARD_POST_ID
+		) VALUES
+		(
+		SEQ_BOARD_IMG.NEXTVAL,
+		#{boardImgPath},
+		#{boardImgName},
+		#{boardPostId}
+		)
+	</insert>
+
 </mapper>
