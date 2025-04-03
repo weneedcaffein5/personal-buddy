@@ -68,18 +68,18 @@
 			</div>
 			<div class="point-shop-box">
 				<div class="point-shop-tab-box">
-					<form action="" method="post">
-						<button class="point-shop-tab-style point-shop-tab-style-on">전체</button>
-					</form>
-					<form action="">
-						<button class="point-shop-tab-style">배경</button>
-					</form>
-					<form action="">
-						<button class="point-shop-tab-style">스티커</button>
-					</form>
-					<form action="">
-						<button class="point-shop-tab-style">나무</button>
-					</form>
+					<a href="contents-point-shop.contents" class="point-shop-tab-style">
+						<span>전체</span>
+					</a>
+					<a href="contents-point-shop.contents?type=background" class="point-shop-tab-style">
+						<span>배경</span>
+					</a>
+					<a href="contents-point-shop.contents?type=sticker" class="point-shop-tab-style">
+						<span>스티커</span>
+					</a>
+					<a href="contents-point-shop.contents?type=tree" class="point-shop-tab-style">
+						<span>나무</span>
+					</a>
 				</div>
 				<div class="point-shop-item-box">
 					<div class="item-selecter-box">
@@ -127,17 +127,18 @@
 						<div class="pagination">
 							<c:set var="totalPages" value="${Math.ceil(items.size() / onePageVar)}" />
 							<c:if test="${page > 1}">
-								<a href="?page=${page - 1}">
+								<a href="?type=${currentType}&page=${page - 1}">
 									<img alt="prev" src="../assets/images/contents/default/prev-page.png">
 								</a>
 							</c:if>
-							<c:forEach var="i" begin="1" end="${totalPages }">
-								<a href="?page=${i}" class="page-btn ${i == page ? 'active' : ''}">
-									<span>${i}</span>
-								</a>
+							<c:set var="currentType" value="${param.type ne null ? param.type : ''}" />
+							<c:forEach var="i" begin="1" end="${totalPages}">
+							    <a href="?type=${currentType}&page=${i}" class="page-btn ${i == page ? 'active' : ''}">
+							        <span>${i}</span>
+							    </a>
 							</c:forEach>
 							<c:if test="${page < totalPages}">
-								<a href="?page=${page + 1}">
+								<a href="?type=${currentType}&page=${page + 1}">
 									<img alt="next" src="../assets/images/contents/default/next-page.png">
 								</a>
 							</c:if>
