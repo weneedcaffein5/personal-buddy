@@ -85,7 +85,7 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
 	      <p class="place-title1">여기 가보는 거 어때요?</p>
 	      <c:forEach var="recommend" items="${placeList}">
 	        <c:if test="${recommend.interestBig eq '장소 추천'}">
-	          <div class="place-item">
+	          <div class="place-item ${status.first ? 'active' : ''}">
 	            <div class="place-hover"></div>
 	            <img src="${pageContext.request.contextPath}/${recommend.img}" alt="${recommend.title}">
 	            <div class="place-info">
