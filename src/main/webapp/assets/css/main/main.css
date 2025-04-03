@@ -122,7 +122,9 @@
 
 .place-wrapper {
   display: flex;
-  gap: 2rem; 
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
 }
 
 .place-recommend {
@@ -134,9 +136,10 @@
 }
 
 .place-list {
-  	display: 1;
-  	width: 600px;
-  	gap: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 650px;
+  gap: 20px;
 }
 
 .place-item {
@@ -186,19 +189,11 @@
 
 
 .place-details {
-    width: 680px;
-    height: auto; 
-    max-height: 520px; 
-    padding: 20px;
-    background-color: #f5f5f5;
-    border-radius: 10px;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    top: 0;
-     bottom: 0; 
+  width: 680px;
+  height: 520px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
 }
 
 .place-details.active {

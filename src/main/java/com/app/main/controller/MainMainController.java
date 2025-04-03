@@ -57,7 +57,8 @@ public class MainMainController implements Action {
 		    .collect(Collectors.toList());
 
 		Collections.shuffle(placeList);
-		placeList = placeList.stream().limit(4).collect(Collectors.toList());
+		placeList = placeList.stream().limit(3).collect(Collectors.toList());
+		
 		req.setAttribute("placeList", placeList);
 		
 		result.setPath("main.jsp");
