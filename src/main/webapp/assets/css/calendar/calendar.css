@@ -1,23 +1,551 @@
 @charset "UTF-8";
 
+.container {
+	border: 1px var(--gray2) solid	; 
+	margin: 10px; 
+}
+
+.calendar-upper{
+	margin: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.calendar-upper-left{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.today-span{
+	letter-spacing: 1px;
+	font-size: var(--h6);
+	
+}
+
+.today-span:hover{
+	color: var(--main-green);
+}
+
+.calendar-upper-right{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.custom-select-wrapper {
+	position: relative;
+	width: 140px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#custom-select-label {
+	display: block;
+	width: 80px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 30px;
+	background: var(--main-green);
+	color: var(--white);
+	font-size: var(--h6);
+	font-weight: 400;
+	cursor: pointer;
+	user-select: none;
+}
+
+.custom-select-options {
+	position: absolute;
+	top: 100%;
+	left: 30px;
+	width: 80px;
+	background: var(--light-green);
+	color: var(--sub-green);
+	border: 1px solid #ddd;
+	border-radius: 20px;
+	text-align: center;
+	overflow: hidden;
+	
+	/* 애니메이션 초기 상태 */
+	max-height: 0;
+	opacity: 0;
+	transform: translateY(-10px);
+	transition: all 0.3s ease;
+	pointer-events: none;
+	z-index: 100;
+}
+
+.custom-select-options.show {
+	max-height: 300px;
+	opacity: 1;
+	transform: translateY(0);
+	pointer-events: auto;
+}
+
+.calendar-option {
+	padding: 8px 12px;
+	cursor: pointer;
+}
+
+.custom-select-options .calendar-option:hover {
+	background-color: var(--main-green);
+	color: var(--light-green);
+}
+
+.calendar-wrapper {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+}
+
 #calendar {
-    width: 80vw;
-    height: 80vh;
+  flex: 2;
+  max-width: 800px;
 }
 
-#yrModal {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(50, 150, 150, 0.7);
-    display: none;
-    z-index: 1000;
+.fc-header-toolbar {
+  display: flex !important;
+  justify-content: center; /* 기본 정렬 */
 }
 
-#cont {
-    margin: 50px auto;
-    width: 50%;
-    height: 70%;
-    background-color: darkblue;
-    color: yellow;
+.fc-header-toolbar .fc-toolbar-chunk:nth-child(1) {
+	width: 10%;
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+	align-items: center;
+}
+
+.fc-header-toolbar .fc-toolbar-chunk:nth-child(2) {
+	width: 80%;
+}
+
+.fc-header-toolbar .fc-toolbar-chunk:nth-child(2) div{
+	width: 100%;
+	display: flex;
+	gap: 30px;
+	justify-content: center;
+	align-items: center;
+}
+
+.fc-header-toolbar .fc-toolbar-chunk:nth-child(2) h2{
+	text-align: center;
+}
+
+.fc-header-toolbar .fc-toolbar-chunk:nth-child(3) {
+	width: 10%;
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/* 이전/다음 버튼 커스터마이징 */
+.fc-header-toolbar .fc-toolbar-chunk div button{
+	display: inline-flex;
+	width: 20px;
+	height: 20px;
+	margin: 10px;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	background-color: var(--white);
+	font-size: 16px;
+	font-weight: lighter;
+	border: none;
+}
+
+.fc-header-toolbar .fc-toolbar-chunk div button:hover{
+	background-color: var(--light-green);
+}
+.fc-header-toolbar .fc-toolbar-chunk div button:focus,
+.fc-header-toolbar .fc-toolbar-chunk div button:focus-visible,
+.fc-header-toolbar .fc-toolbar-chunk div button:active{
+	background-color: var(--light-green) !important;
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+.fc .fc-button .fc-icon {
+	color: var(--main-green);
+    font-size: 1.5em;
+    vertical-align: middle;
+}
+
+
+.fc-daygrid-day-frame {
+  height: 100%;
+}
+
+/* 타이틀 스타일 */
+.fc-toolbar-title {
+	font-size: 20px;
+	font-weight: 500;
+	color: var(--main-green);
+}
+
+
+
+/* ✅ 전체 FullCalendar 외곽 및 테두리 제거 */
+.fc,
+.fc-scrollgrid,
+.fc-scrollgrid-section,
+.fc-scrollgrid-section-body,
+.fc-scrollgrid-sync-table,
+.fc-daygrid-body,
+.fc-scroller {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* ✅ 헤더(요일) 스타일 및 보더 제거 */
+.fc-col-header,
+.fc-col-header-cell {
+  border: none !important;
+  background-color: var(--main-green); /* 원하는 헤더 배경색 */
+  color: white;               /* 요일 텍스트 색상 */
+  font-size: var(--h7);
+  font-weight: 400;
+}
+
+/* ✅ 날짜 셀 보더 제거 */
+.fc-daygrid-day,
+.fc-daygrid-day-frame,
+.fc-daygrid-day-top {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* ✅ 날짜 셀 내부 구조 안정화 (첫째 주 열 깨짐 방지) */
+.fc-daygrid-day-frame {
+  padding: 4px !important;
+  box-sizing: border-box;
+  height: auto !important;
+  min-height: 80px; /* 원하는 기본 높이 조절 가능 */
+}
+
+/* ✅ 내부 테이블 구조 보더 제거 */
+.fc-scrollgrid table,
+.fc-scrollgrid tr,
+.fc-scrollgrid td,
+.fc-scrollgrid th {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  font-size: var(--h8);
+  font-weight: 300;
+}
+
+/* ✅ 마지막 행의 하단 보더 제거 */
+.fc-scrollgrid-sync-table tbody > tr:last-child td {
+  border-bottom: none !important;
+}
+
+/* ✅ 스크롤바 제거 */
+.fc-scroller {
+  scrollbar-width: none !important;         /* Firefox */
+  -ms-overflow-style: none !important;      /* IE */
+}
+.fc-scroller::-webkit-scrollbar {
+  display: none !important;                 /* Chrome/Safari */
+}
+.fc-scroller::-webkit-scrollbar-track {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* ✅ 스크롤 영역 밀림 제거 */
+.fc-scrollgrid-section-body {
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+  border-right: none !important;
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+}
+
+/* ✅ 혹시 남아 있는 가상요소 제거 */
+.fc-scrollgrid-section-body::after {
+  display: none !important;
+} 
+
+/* 요일 헤더 전체 테두리 제거 */
+.fc-col-header {
+	border: none !important;
+}
+
+/* 오늘 날짜의 숫자 텍스트만 스타일링 */
+.fc-dayGridMonth-view .fc-day-today{
+	background-color: var(--white) !important;
+}
+
+/* 오늘 날짜의 숫자 텍스트만 스타일링 */
+.fc-dayGridMonth-view .fc-day-today .fc-daygrid-day-number {
+	background-color: var(--main-green);
+	width: 30px;
+	text-align: right;
+	border-radius: 5px;
+	color: var(--white);
+}
+
+.fc-timegrid-col-misc{
+	display: none;
+}
+
+.fc-timegrid-slots tr {
+  line-height: 40px !important;
+  border: none !important;
+}
+
+.fc-timegrid-slot.fc-timegrid-slot-minor {
+  border-bottom: 1px solid var(--gray3) !important;
+}
+.fc-timegrid-slots colgroup{
+	border-left: 1px solid var(--gray3) !important;
+}
+.fc-timegrid-col-frame{
+	border-right: 1px solid var(--gray3) !important;
+}
+
+.fc-direction-ltr .fc-timegrid-slot-label-frame{
+	position: relative;
+	top: 50%;
+	text-align: center;
+}
+
+.fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink{
+	border: none;
+}
+
+/* 월간 뷰 기준 - 날짜 헤더 숫자 중 일요일만 빨간색 */
+.fc-daygrid-day.fc-day-sun .fc-daygrid-day-number {
+  color: red;
+}
+/* 월간 뷰 기준 - 날짜 헤더 숫자 중 토요일은 빨간색 */
+.fc-daygrid-day.fc-day-sat .fc-daygrid-day-number {
+  color: blue;
+}
+
+.calendar-detail-panel {
+	flex: 1;
+	border-left: 1px solid #eee;
+	background-color: #fff;
+	min-width: 300px;
+	padding-left: 20px;
+}
+
+#title-wrapper{
+	border: none;
+}
+
+.calendar-title{
+	border-bottom: 1px solid var(--gray2);
+}
+
+#title-input{
+	font-size: var(--h4);
+	height: 30px;
+	line-height: 30px;
+	border: none;
+	margin: 15px 0;
+}
+
+#title-input:focus{
+	outline: none;
+	border: none;
+	box-shadow: none;
+}
+
+.calendar-date-set{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.calendar-section {
+	height: 40px;
+	display: flex; 
+	gap: 90px;
+	align-items: center;
+}
+
+.calendar-section > span {
+	display: inline-block;
+	line-height: 30px;
+	height: 30px; 
+	flex-shrink: 0;
+	vertical-align: center;
+	font-size: var(--h8);
+	font-weight: 400;
+	text-align: center;
+}
+.color-select {
+  position: relative;
+  width: 200px;
+  font-size: 14px;
+  user-select: none;
+  margin-left: 8px;
+}
+
+.color-selected {
+  background-color: #fafafa;
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
+  font-size: var(--h8);
+}
+
+.color-options {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  z-index: 99;
+}
+
+.color-options div {
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.color-options div:hover {
+  background-color: #f2f2f2;
+}
+
+.color-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.color-dot {
+	width: 12px;
+	height: 12px;
+	display: inline-block;
+	border-radius: 50%;
+	margin-right: 8px;
+}
+
+.calendar-section input,
+.calendar-section textarea {
+	background-color: #fafafa;
+	width: 100%;
+	padding: 8px;
+	border-radius: 6px;
+	border: none !important;
+	outline: none !important;	
+	box-shadow: none !important;	
+}
+
+.calendar-section input:focus,
+.calendar-section textarea:focus {
+	border: none;	
+	outline: none;	
+	box-shadow: none;	
+}
+
+.calendar-section textarea {
+	margin-top: 8px;
+	height: 250px;
+	border: 1px solid #ddd;
+
+}
+
+.calendar-btns {
+	text-align: right;
+	margin-top: 16px;
+}
+
+.cancel-btn, .save-btn {
+	padding: 8px 16px;
+	border-radius: 6px;
+	border: none;
+	margin-left: 8px;
+	cursor: pointer;
+}
+
+.cancel-btn {
+	border: 1px solid var(--gray1);
+	background-color: var(--white);
+	color: var(--gray3);
+}
+
+.cancel-btn:hover{
+	border: 1px solid var(--gray1);
+	background-color: var(--light-green);
+	color: var(--main-green);
+} 
+
+.fc-timegrid-event,
+.fc-timegrid-event .fc-event-main {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.fc-daygrid-event-harness{
+	overflow: hidden;
+}
+
+.fc-event {
+  border-left: 4px solid var(--event-color, #01cd74);
+  background-color: rgba(1, 205, 116, 0.2);
+  padding: 4px 6px;
+  font-size: 13px;
+  border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.fc-dot {
+  flex-shrink: 0;
+}
+.fc-event-title,
+.fc-event-time {
+  vertical-align: middle;
+}
+.color-green {
+  --event-color: #01cd74;
+}
+.color-blue {
+  --event-color: #3b82f6;
+}
+
+.fc-more-link {
+	display: inline-block;
+	background-color: var(--gray1);
+	color: var(--black);
+	height: 15px;
+	font-weight: 500;
+	border-radius: 4px;
+	font-size: var(--h9);
+	margin-top: 2px;
+	margin-left: 70%;
+	margin-right: 2px;
+	cursor: pointer;
+}
+
+.fc-more-link:hover {
+  background-color: #d0f0db;
+  text-decoration: underline;
+}
+
+.save-btn {
+	background-color: #01cd74;
+	color: white;
 }
