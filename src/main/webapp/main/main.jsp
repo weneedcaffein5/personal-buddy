@@ -40,7 +40,7 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
     
     <div class="food-list">
     
-      <c:forEach var="recommend" items="${recommendList}">
+      <c:forEach var="recommend" items="${foodList}">
   		<div class="food-item">
 	    <!-- 이미지 링크 -->
 	    <div class="food-img">      
@@ -77,53 +77,35 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
     </div>
   </div>
 
-
-    
    <!-- 장소 추천 -->
     <div class="place-recommend">
-     <div class="place-wrapper">
-    	<div class="place-list">
-        	<p class="place-title1">괜찮은 카페를 찾아봤어요!	</p>
-
-        	<div class="place-item">
-            	<div class="place-hover"></div>
-            	<img src="../assets/images/main/카페사진1.png" alt="카페1">
-            	<div class="place-info">
-                	<h3 class="place-name">조용한 분위기의 공부 잘되는 카페!</h3>
-                	<p class="place-sub">카페인사이드</p>
-                	<p class="place-rating">4.4(69) · ₩1~10,000 · 카페</p>
-                	<p class="place-location">도곡로3길 27</p>
-            	</div>
-        	</div>
-        </div>
-         
-        <div class="place-item">
-            <div class="place-hover"></div>
-            <img src="../assets/images/main/카페사진2.png" alt="카페2">
-            <div class="place-info">
-                <h3 class="place-name">라떼가 맛있는 카페</h3>
-                <p class="place-sub">지오바네커피</p>
-                <p class="place-rating">4.7(53) · ₩1~10,000 · 커피숍</p>
-                <p class="place-location">서울특별시 강남구 역삼동 667-17</p>
-            </div>
-        </div>
-        
-        <div class="place-item">
-            <div class="place-hover"></div>
-            <img src="../assets/images/main/place-baguetteK.png" alt="카페3">
-            <div class="place-info">
-                <h3 class="place-name">24시간 공부할수 있는 카페를 찾으신다면?</h3>
-                <p class="place-sub">타우너스 에스프레소바</p>
-                <p class="place-rating">4.7(53) · ₩1~10,000 · 커피숍</p>
-                <p class="place-location">역삼동 667-17 1층 101호</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="place-details"> </div>
+	  <div class="place-wrapper">
+	  
+	    <div class="place-list">
+	      <p class="place-title1">여기 가보는 거 어때요?</p>
+	      <c:forEach var="recommend" items="${placeList}">
+	        <c:if test="${recommend.interestBig eq '장소 추천'}">
+	          <div class="place-item">
+	            <div class="place-hover"></div>
+	            <img src="${pageContext.request.contextPath}/${recommend.img}" alt="${recommend.title}">
+	            <div class="place-info">
+	              <h3 class="place-name">${recommend.title}</h3>
+	              <p class="place-sub">${recommend.name}</p>
+	              <p class="place-rating">${recommend.price} | ${recommend.type}</p>
+	              <p class="place-location">${recommend.addr}</p>
+	            </div>
+	          </div>
+	       </c:if>
+	      </c:forEach>
+	    </div>
+	    
+	    <div class="place-details" id="map-container">
+	      <div id="map" style="width:100%; height:600px; border-radius:10px;"></div>
+	    </div>
+	    
+	  </div>
 	</div>
-	
-	
+
     <!-- 코디 추천 -->
 	<div class="cloth-grid-wrap">
 	  <p class="place-title1">이런 코디 어때요?<br>

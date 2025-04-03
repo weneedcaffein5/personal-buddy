@@ -65,8 +65,8 @@ textarea::placeholder {
 }
 
 .custom-content-input {
-  padding-left: 20px;
-  padding-top: 20px;
+  padding-left: 9px;
+  padding-top: 9px;
 }
 .category-container {
   display: flex;

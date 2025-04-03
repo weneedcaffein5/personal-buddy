@@ -19,14 +19,14 @@
         <!-- 왼쪽 사이드바 (프로필, 링크) -->
             <div class="sidebar">
                 <div class="profile">
-                    <span><img src="../assets/images/mypage/profile-default-image.png"></span>
+                    <img src="../${loginProfile.memberImgPath}${loginProfile.memberImgName}" alt="프로필 이미지">
                 </div>
                 <div class="profile-setting">
                 	<div class="nickname">
-	                    <span>나는신이다</span>                	
+	                    <span>${loginProfile.memberNickName}</span>                	
                 	</div>
                 	<div class="status-message">
-	                    <span>반가워요</span>                	
+	                    <span>${loginProfile.memberComment}</span>                	
                 	</div>
                 </div>
                 <div class="mypage">
@@ -35,10 +35,10 @@
                     	<span>마이페이지</span>
                     </div>
                     <div class="a-wrapper">
-                    	<a id="now" class="link" href="mypage-mytree.mypage">나의 나무</a>
+                    	<a id="now" class="link" href="mypage-mytree.mypage?id=${ loginId }">나의 나무</a>
                     </div>
                     <div class="a-wrapper">
-                    	<a class="link" href="mypage-myachievement.mypage">나의 업적</a>
+                    	<a class="link" href="mypage-myachievement.mypage?id=${ loginId }">나의 업적</a>
                     </div>
                 </div>
                 <div class="community">
@@ -62,7 +62,7 @@
 	                    <a class="link" href="#">프로필 설정</a>
                 	</div>
                 	<div class="a-wrapper">
-	                    <a class="link" href="#">계정 설정</a>
+	                    <a class="link" href="mypage-info.mypage?id=${ loginId }">계정 설정</a>
                 	</div>
                 	<div class="a-wrapper">
 	                    <a class="link" href="#">포인트 내역</a>                	
@@ -86,20 +86,13 @@
                     </div>
                 </div>    
                 <div class="tree">
-                	<c:if test="${not empty userTree && userTree.itemId != null}">
-					    <img 
-					        src="/assets/images/items/default.png"
-					        style="position: absolute; left: ${userTree.positionX}px; top: ${userTree.positionY}px;" />
-					</c:if>
-				    <c:if test="${empty userTree.itemImgPath}">
-				        <p>🌱 아직 나무가 없어요!</p>
-				    </c:if>
+                    <img class="tree-background" src="../assets/images/mypage/tree.png">
                 </div>
                 <div class="guestbook-container">
                     <div class="guestbook-header">
-                        <span>방명록</span> <span class="visit-count">| 78</span>
+                        <span>방문록</span> <span class="visit-count">| 78</span>
                     </div>
-                    <p class="guestbook-info">방명록을 남겨보세요, 바르고 고운말을 사용합시다.</p>
+                    <p class="guestbook-info">방문록을 남겨보세요, 바르고 고운말을 사용합시다.</p>
                     
                     <div class="comment-box">
                         <textarea id="comment-input" placeholder="댓글을 입력해주세요" maxlength="500"></textarea>

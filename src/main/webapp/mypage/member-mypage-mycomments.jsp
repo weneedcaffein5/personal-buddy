@@ -13,16 +13,17 @@
 	<%@ include file="../layout/header.jsp" %>
 	<div class="body">
         <div class="container">
+        <!-- 왼쪽 사이드바 (프로필, 링크) -->
             <div class="sidebar">
                 <div class="profile">
-                    <span><img src="../assets/images/mypage/profile-default-image.png"></span>
+                    <img src="../${loginProfile.memberImgPath}${loginProfile.memberImgName}" alt="프로필 이미지">
                 </div>
                 <div class="profile-setting">
                 	<div class="nickname">
-	                    <span>나는신이다</span>                	
+	                    <span>${loginProfile.memberNickName}</span>                	
                 	</div>
                 	<div class="status-message">
-	                    <span>반가워요</span>                	
+	                    <span>${loginProfile.memberComment}</span>                	
                 	</div>
                 </div>
                 <div class="mypage">
@@ -31,10 +32,10 @@
                     	<span>마이페이지</span>
                     </div>
                     <div class="a-wrapper">
-                    	<a id="now" class="link" href="mypage-mytree.mypage">나의 나무</a>
+                    	<a class="link" href="mypage-mytree.mypage?id=${ loginId }">나의 나무</a>
                     </div>
                     <div class="a-wrapper">
-                    	<a class="link" href="mypage-myachievement.mypage">나의 업적</a>
+                    	<a class="link" href="mypage-myachievement.mypage?id=${ loginId }">나의 업적</a>
                     </div>
                 </div>
                 <div class="community">
@@ -46,7 +47,7 @@
 	                    <a class="link" href="mypage-myposts.jsp">내 게시물</a>
                 	</div>
                 	<div class="a-wrapper">
-	                    <a class="link" href="#">내가 쓴 댓글</a>
+	                    <a id="now" class="link" href="#">내가 쓴 댓글</a>
                 	</div>
                 </div>
                 <div class="myinfo">
@@ -58,7 +59,7 @@
 	                    <a class="link" href="#">프로필 설정</a>
                 	</div>
                 	<div class="a-wrapper">
-	                    <a class="link" href="#">계정 설정</a>
+	                    <a class="link" href="mypage-info.mypage?id=${ loginId }">계정 설정</a>
                 	</div>
                 	<div class="a-wrapper">
 	                    <a class="link" href="#">포인트 내역</a>                	

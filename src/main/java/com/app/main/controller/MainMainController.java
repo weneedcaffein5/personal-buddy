@@ -1,7 +1,9 @@
 package com.app.main.controller;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -35,8 +37,42 @@ public class MainMainController implements Action {
 		RecommendDAO recommendDAO = new RecommendDAO();
 		List<RecommendDTO> recommendList = recommendDAO.selectByMemberId(loginId);
 		
-		req.setAttribute("recommendList", recommendList);
-						
+		System.out.println(recommendList);
+		
+		// 맛집탐방
+		/* 카테고리만 필터링해서 4개 추출 */
+		 List<RecommendDTO> foodList = recommendList.stream()
+		 .filter(item -> "맛집 탐방".equals(item.getInterestBig()))
+		 .collect(Collectors.toList());
+		  
+		  Collections.shuffle(foodList); 
+		  foodList = foodList.stream().limit(4).collect(Collectors.toList());
+		 
+		req.setAttribute("foodList", foodList);
+		
+		
+		// 장소 추천
+		List<RecommendDTO> placeList = recommendList.stream()
+		    .filter(item -> "장소 추천".equals(item.getInterestBig()))
+		    .collect(Collectors.toList());
+
+		Collections.shuffle(placeList);
+		placeList = placeList.stream().limit(3).collect(Collectors.toList());
+		
+		req.setAttribute("placeList", placeList);
+		
+		
+		String checkGender = memberProfileDTO.getMemberGender();
+		// 코디 추천
+		List<RecommendDTO> clothList = recommendList.stream()
+			    .filter(item -> "코디 추천".equals(item.getInterestBig()))
+			    .filter(item -> item.getType() == null || item.getType().equals(checkGender))
+			    .collect(Collectors.toList());
+
+			Collections.shuffle(clothList);
+			clothList = clothList.stream().limit(3).collect(Collectors.toList());
+			
+			req.setAttribute("clothList", clothList);
 		
 		result.setPath("main.jsp");
 		return result;
