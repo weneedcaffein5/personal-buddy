@@ -75,7 +75,7 @@ document.querySelector('.set-modal-ok-button').addEventListener('click', () => {
 		if (currentModalStep === 'check-password') {
 			const oldPassword = document.getElementById('oldPassword').value;
 
-			fetch('/personal-buddy/mypage-info.mypage', {
+			fetch('/personal-buddy/mypage/mypage-info.mypage', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
@@ -86,6 +86,7 @@ document.querySelector('.set-modal-ok-button').addEventListener('click', () => {
 				.then(text => {
 					let data;
 					try {
+						console.log('비밀번호 확인 요청 mode:', 'check');
 						data = JSON.parse(text);
 					} catch (err) {
 						console.error('JSON 파싱 오류:', err);
@@ -155,7 +156,7 @@ document.querySelector('.set-modal-ok-button').addEventListener('click', () => {
 				return;
 			}
 
-			fetch('/personal-buddy/mypage-info.mypage', {
+			fetch('/personal-buddy/mypage/mypage-info.mypage', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
@@ -164,6 +165,7 @@ document.querySelector('.set-modal-ok-button').addEventListener('click', () => {
 			})
 				.then(res => res.text())
 				.then(text => {
+					console.log('📦 서버 응답:', text);
 					let data;
 					try {
 						data = JSON.parse(text);

@@ -19,11 +19,11 @@ public class MyPageFrontController extends HttpServlet {
         resp.setContentType("text/html; charset=utf-8;");
         String controllerName = "/mypage/";
         String target = req.getRequestURI().replace(req.getContextPath() + controllerName, "").split("\\.")[0];
-        System.out.println("요청 URI: " + req.getRequestURI());
-        System.out.println("ContextPath: " + req.getContextPath());
-        System.out.println("최종 target: " + target);
+       
         Result result = null;
-
+        System.out.println("URI: " + req.getRequestURI());
+        System.out.println("ContextPath: " + req.getContextPath());
+        System.out.println("Target: " + target);
         // ✅ target 값으로 분기 처리
         if (target.equals("mypage-info")) {
         	System.out.println("진입");

@@ -18,9 +18,12 @@ public class MypageInfoController implements Action {
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("application/json");
         resp.setCharacterEncoding("UTF-8");
-        System.out.println("성공");
+        
         HttpSession session = req.getSession();
-        String email = (String) session.getAttribute("userEmail");
+        System.out.println("▶ [MypageInfoController] 요청 도착");
+        System.out.println("▶ mode = " + req.getParameter("mode"));
+        System.out.println("▶ session loginId = " + session.getAttribute("loginId"));
+        Long id = (Long) session.getAttribute("loginId");
 
 		/*
 		 * // 임시 이메일 설정 (개발용) if (email == null) { email = "wlsud94@naver.com";
@@ -28,12 +31,11 @@ public class MypageInfoController implements Action {
 		 */
         // DAO 준비
         MemberDAO memberDAO = new MemberDAO();
-        Optional<MemberVO> memberVO = memberDAO.selectByEmail(email);
-        System.out.println(email);
+        Optional<MemberVO> memberVO = memberDAO.selectById(id);
+
         // 요청 구분: check or change
         String mode = req.getParameter("mode");
-        
-        System.out.println(mode);
+       
         if (mode == null) {
             Result result = new Result();
             result.setPath("mypage-Infokkk.jsp");
@@ -43,6 +45,7 @@ public class MypageInfoController implements Action {
         
         //  비밀번호 확인
         if ("check".equals(mode)) {
+        	
             String inputPassword = req.getParameter("password");
 
             if (memberVO.isPresent() && memberVO.get().getMemberPassword().equals(inputPassword)) {
@@ -54,17 +57,21 @@ public class MypageInfoController implements Action {
 
         //  비밀번호 변경
         if ("change".equals(mode)) {
+        	
             String newPassword = req.getParameter("newPassword");
-
+            System.out.println("▶ newPassword = " + newPassword);
+            System.out.println("▶ memberVO.isPresent() = " + memberVO.isPresent());
             if (memberVO.isPresent()) {
                 MemberVO member = memberVO.get();
                 member.setMemberPassword(newPassword);
+                System.out.println("▶ 비밀번호 업데이트 시도");
                 memberDAO.updatePassword(member);
 
                 resp.getWriter().write("{\"result\":\"success\"}");
             } else {
                 resp.getWriter().write("{\"result\":\"fail\"}");
             }
+            return null;
         }
 
         return null;
