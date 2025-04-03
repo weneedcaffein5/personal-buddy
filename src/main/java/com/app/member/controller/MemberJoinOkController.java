@@ -53,16 +53,16 @@ public class MemberJoinOkController implements Action {
 	        }
 		}
 		
-		String comment = req.getParameter("memberComment");
+		String comment = multi.getParameter("memberComment");
 		
-		if(comment == null)
+		if(comment == null || comment == "")
 		{
 			comment = "";
 		}
+		
 		member.setMemberComment(comment);
 		MemberDAO memberDAO = new MemberDAO();
 		
-		System.out.println(memberImg);
 		memberDAO.insert(member);
 		memberDAO.insertImg(memberImg);
 		
