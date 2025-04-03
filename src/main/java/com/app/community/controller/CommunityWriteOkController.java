@@ -12,7 +12,8 @@ public class CommunityWriteOkController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, SecurityException {
-		// TODO Auto-generated method stub
+		Result result = new Result();
+		
 		return null;
 	}
 
