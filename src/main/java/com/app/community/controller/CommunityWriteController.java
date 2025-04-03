@@ -12,7 +12,8 @@ public class CommunityWriteController implements Action {
 	
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, SecurityException {
-		
-		return null;
+		Result result = new Result();
+		result.setPath("write.jsp");
+		return result;
 	}
 }
