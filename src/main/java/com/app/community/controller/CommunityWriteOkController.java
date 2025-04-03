@@ -75,8 +75,8 @@ public class CommunityWriteOkController implements Action {
         }
 
         // 7. 완료 후 리다이렉트
-        result.setPath(req.getContextPath() + "/community-main.community");
         result.setRedirect(true);
+        result.setPath(req.getContextPath() + "/community/community-main.community");
         return result;
     }
 }
