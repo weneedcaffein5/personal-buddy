@@ -53,6 +53,7 @@
     	<typeAlias type="com.app.dto.MemberProfileDTO" alias="MemberProfileDTO"/>
     	<typeAlias type="com.app.dto.PurchaseDTO" alias="PurchaseDTO"/>
     	<typeAlias type="com.app.dto.TreeViewDTO" alias="TreeViewDTO"/>
+    	<typeAlias type="com.app.dto.RecommendDTO" alias="RecommendDTO"/>
     </typeAliases>
     
    <environments default="oracle">

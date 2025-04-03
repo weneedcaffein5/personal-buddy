@@ -81,9 +81,16 @@
 		WHERE TBM.ID =
 		#{memberId}
 	</select>
+	<select id="selectById" parameterType="Long"
+		resultType="MemberVO">
+		SELECT ID, MEMBER_PASSWORD
+		FROM TBL_MEMBER
+		WHERE ID = #{id}
+	</select>
 	<update id="updatePassword" parameterType="MemberVO">
 		UPDATE TBL_MEMBER
-		SET MEMBER_PASSWORD = #{memberPassword}
-		WHERE MEMBER_EMAIL = #{memberEmail}
+		SET
+		MEMBER_PASSWORD = #{memberPassword}
+		WHERE ID = #{id}
 	</update>
 </mapper>
