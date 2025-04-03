@@ -86,12 +86,12 @@
 	pointer-events: auto;
 }
 
-.option {
+.calendar-option {
 	padding: 8px 12px;
 	cursor: pointer;
 }
 
-.custom-select-options .option:hover {
+.custom-select-options .calendar-option:hover {
 	background-color: var(--main-green);
 	color: var(--light-green);
 }
@@ -284,6 +284,7 @@
 .fc-dayGridMonth-view .fc-day-today{
 	background-color: var(--white) !important;
 }
+
 /* 오늘 날짜의 숫자 텍스트만 스타일링 */
 .fc-dayGridMonth-view .fc-day-today .fc-daygrid-day-number {
 	background-color: var(--main-green);
@@ -322,17 +323,43 @@
 	border: none;
 }
 
-/* 선택된 셀 스타일 */
-.fc-selected {
-  background-color: var(--sub-blue) !important;
+/* 월간 뷰 기준 - 날짜 헤더 숫자 중 일요일만 빨간색 */
+.fc-daygrid-day.fc-day-sun .fc-daygrid-day-number {
+  color: red;
+}
+/* 월간 뷰 기준 - 날짜 헤더 숫자 중 토요일은 빨간색 */
+.fc-daygrid-day.fc-day-sat .fc-daygrid-day-number {
+  color: blue;
 }
 
 .calendar-detail-panel {
 	flex: 1;
 	border-left: 1px solid #eee;
-	padding: 20px;
 	background-color: #fff;
 	min-width: 300px;
+	padding-left: 20px;
+}
+
+#title-wrapper{
+	border: none;
+}
+
+.calendar-title{
+	border-bottom: 1px solid var(--gray2);
+}
+
+#title-input{
+	font-size: var(--h4);
+	height: 30px;
+	line-height: 30px;
+	border: none;
+	margin: 15px 0;
+}
+
+#title-input:focus{
+	outline: none;
+	border: none;
+	box-shadow: none;
 }
 
 .calendar-date-set{
@@ -344,31 +371,100 @@
 .calendar-section {
 	height: 40px;
 	display: flex; 
-	gap: 95px;
+	gap: 90px;
+	align-items: center;
 }
 
-.calendar-section label {
-	line-height: 100%;
+.calendar-section > span {
+	display: inline-block;
+	line-height: 30px;
+	height: 30px; 
+	flex-shrink: 0;
 	vertical-align: center;
 	font-size: var(--h8);
 	font-weight: 400;
 	text-align: center;
 }
-
-.calendar-section input,
-.calendar-section textarea {
-	width: 100%;
-	padding: 8px;
-	border: 1px solid #ddd;
-	border-radius: 6px;
+.color-select {
+  position: relative;
+  width: 200px;
+  font-size: 14px;
+  user-select: none;
+  margin-left: 8px;
 }
 
+.color-selected {
+  background-color: #fafafa;
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
+  font-size: var(--h8);
+}
+
+.color-options {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  z-index: 99;
+}
+
+.color-options div {
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.color-options div:hover {
+  background-color: #f2f2f2;
+}
+
+.color-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
 .color-dot {
 	width: 12px;
 	height: 12px;
 	display: inline-block;
 	border-radius: 50%;
 	margin-right: 8px;
+}
+
+.calendar-section input,
+.calendar-section textarea {
+	background-color: #fafafa;
+	width: 100%;
+	padding: 8px;
+	border-radius: 6px;
+	border: none !important;
+	outline: none !important;	
+	box-shadow: none !important;	
+}
+
+.calendar-section input:focus,
+.calendar-section textarea:focus {
+	border: none;	
+	outline: none;	
+	box-shadow: none;	
+}
+
+.calendar-section textarea {
+	margin-top: 8px;
+	height: 250px;
+	border: 1px solid #ddd;
+
 }
 
 .calendar-btns {
@@ -385,7 +481,68 @@
 }
 
 .cancel-btn {
-	background-color: #eee;
+	border: 1px solid var(--gray1);
+	background-color: var(--white);
+	color: var(--gray3);
+}
+
+.cancel-btn:hover{
+	border: 1px solid var(--gray1);
+	background-color: var(--light-green);
+	color: var(--main-green);
+} 
+
+.fc-timegrid-event,
+.fc-timegrid-event .fc-event-main {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.fc-daygrid-event-harness{
+	overflow: hidden;
+}
+
+.fc-event {
+  border-left: 4px solid var(--event-color, #01cd74);
+  background-color: rgba(1, 205, 116, 0.2);
+  padding: 4px 6px;
+  font-size: 13px;
+  border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.fc-dot {
+  flex-shrink: 0;
+}
+.fc-event-title,
+.fc-event-time {
+  vertical-align: middle;
+}
+.color-green {
+  --event-color: #01cd74;
+}
+.color-blue {
+  --event-color: #3b82f6;
+}
+
+.fc-more-link {
+	display: inline-block;
+	background-color: var(--gray1);
+	color: var(--black);
+	height: 15px;
+	font-weight: 500;
+	border-radius: 4px;
+	font-size: var(--h9);
+	margin-top: 2px;
+	margin-left: 70%;
+	margin-right: 2px;
+	cursor: pointer;
+}
+
+.fc-more-link:hover {
+  background-color: #d0f0db;
+  text-decoration: underline;
 }
 
 .save-btn {
