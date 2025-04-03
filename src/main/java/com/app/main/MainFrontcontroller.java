@@ -23,9 +23,9 @@ public class MainFrontcontroller extends HttpServlet {
 		
 		if(target.equals("main")) {
 			result = new MainMainController().execute(req, resp);
-		} else {
-			result = new Result();
-			result.setPath("/error/error.jsp");
+		} else { 
+			// 404 error page
+			resp.sendRedirect(req.getContextPath() + "/error/error.jsp");
 		}
 		if(result != null) {
 			if(result.isRedirect()) {
