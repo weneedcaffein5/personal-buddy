@@ -12,17 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 import com.app.Action;
 import com.app.Result;
 import com.app.community.controller.CommunityMainController;
+import com.app.community.controller.CommunityWriteController;
+import com.app.community.controller.CommunityWriteOkController;
+
 
 public class CommunityFrontController extends HttpServlet{
-	
-	private Map<String, Action> urlMap;
-	
-	@Override
-	public void init() throws ServletException {
-	    urlMap = new HashMap<>();
-	    urlMap.put("community-main", new CommunityMainController());
-	}
-	
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -33,14 +27,17 @@ public class CommunityFrontController extends HttpServlet{
 		
 		String target = req.getRequestURI().replace(req.getContextPath() + controllerName, "").split("\\.")[0];
 		Result result = null;
-		Action controller = urlMap.get(target);
 		
-		if (controller != null) {
-            result = controller.execute(req, resp);
-        } else {
-            resp.sendError(HttpServletResponse.SC_NOT_FOUND);
-            return;
-        }
+		  if (target.equals("community-main")) {
+	            result = new CommunityMainController().execute(req, resp);
+	        } else if (target.equals("write")) {
+	            result = new CommunityWriteController().execute(req, resp);
+	        } else if (target.equals("writeOk")) {
+	            result = new CommunityWriteOkController ().execute(req, resp);
+	        } else {
+	            // 404나 기본 처리 등 추가 가능
+	            System.out.println("해당 컨트롤러를 찾을 수 없습니다: " + target);
+	        }
 		
 		if(result != null) {
 			if(result.isRedirect()) {
