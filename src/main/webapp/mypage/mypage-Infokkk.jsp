@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -91,8 +93,9 @@
 						<div class="input-container">
 							<label for="email">이메일</label>
 							<div class="input-wrapper">
-								<input type="text" id="email" placeholder="kimys31892@gmail.com"
-									required class="custom-input" />
+								<input type="text" id="email"
+									placeholder="${member.memberEmail}" required
+									class="custom-input" />
 
 							</div>
 						</div>
@@ -110,8 +113,8 @@
 						<div class="input-container">
 							<label for="name">이름</label>
 							<div class="input-wrapper">
-								<input type="text" id="name" placeholder="김영수" required
-									class="custom-input" />
+								<input type="text" id="name" placeholder="${member.memberName}"
+									required class="custom-input" />
 								<button class="open-modal-button" data-type="name">이름
 									변경</button>
 							</div>
@@ -120,8 +123,11 @@
 						<div class="input-container">
 							<label for="birth">생년월일</label>
 							<div class="input-wrapper">
-								<input type="text" id="birth" placeholder="2001.11.12" required
-									class="custom-input" />
+								<fmt:formatDate value="${member.memberBirth}"
+									pattern="yyyy.MM.dd" var="birthFormatted" />
+								<input type="text" id="birth" placeholder="${birthFormatted}"
+									required class="custom-input" />
+
 								<button class="open-modal-button" data-type="birth">생년월일
 									변경</button>
 							</div>
@@ -130,7 +136,7 @@
 						<div class="input-container">
 							<label for="phone">전화번호</label>
 							<div class="input-wrapper">
-								<input type="text" id="phone" placeholder="010-2330-3189"
+								<input type="text" id="phone" placeholder="${member.memberPhone}"
 									required class="custom-input" />
 								<button class="open-modal-button" data-type="number">전화번호
 									변경</button>
