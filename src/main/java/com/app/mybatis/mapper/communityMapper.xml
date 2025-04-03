@@ -76,7 +76,7 @@
 	    LEFT JOIN TBL_BOARD_IMG BI ON P.ID = BI.BOARD_POST_ID
 	    WHERE (#{hashtag, jdbcType=VARCHAR} IS NULL OR P.BOARD_HASHTAG = #{hashtag, jdbcType=VARCHAR})
 	    ORDER BY P.BOARD_CONTENT_VIEWS DESC
-
+	</select>
 	<select id="selectAllBoardPost" resultType="BoardViewDTO">
 		SELECT
 		P.ID AS postId,
@@ -88,7 +88,7 @@
 		boardHashtag,
 		M.ID AS memberId,
 		M.MEMBER_NICKNAME AS memberNickname,
-		NVL(MI.MEMBER_IMG_NAME, 'default.png') AS memberProfileImgName,
+		NVL(MI.MEMBEgiR_IMG_NAME, 'default.png') AS memberProfileImgName,
 		NVL(MI.MEMBER_IMG_PATH, '/assets/images/mypage') AS
 		memberProfileImgPath,
 		(SELECT COUNT(*) FROM TBL_BOARD_LIKE BL WHERE
@@ -169,6 +169,42 @@
 		P.ID = BI.BOARD_POST_ID
 		ORDER BY P.BOARD_CONTENT_VIEWS DESC
 	</select>
-
+<select id="getNextPostId" resultType="long">
+		SELECT SEQ_BOARD_POST.NEXTVAL FROM DUAL
+	</select>
+	<insert id="insertPost" parameterType="BoardPostVO">
+		INSERT INTO TBL_BOARD_POST (
+		ID,
+		BOARD_TITLE,
+		BOARD_CONTENT,
+		BOARD_CONTENT_CREATE_DATE,
+		BOARD_CONTENT_UPDATE_DATE,
+		BOARD_HASHTAG,
+		MEMBER_ID
+		) VALUES (
+		#{id},
+		#{boardTitle},
+		#{boardContent},
+		SYSDATE,
+		SYSDATE,
+		#{boardHashtag},
+		#{memberId}
+		)
+	</insert>
+	<insert id="insertBoardImg" parameterType="BoardImgVO">
+		INSERT INTO
+		TBL_BOARD_IMG (
+		ID,
+		BOARD_IMG_PATH,
+		BOARD_IMG_NAME,
+		BOARD_POST_ID
+		) VALUES
+		(
+		SEQ_BOARD_IMG.NEXTVAL,
+		#{boardImgPath},
+		#{boardImgName},
+		#{boardPostId}
+		)
+	</insert>
 
 </mapper>

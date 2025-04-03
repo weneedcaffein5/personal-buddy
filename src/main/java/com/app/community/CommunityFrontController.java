@@ -33,7 +33,7 @@ public class CommunityFrontController extends HttpServlet{
                result = new CommunitySortController().execute(req, resp);
            } else if (target.equals("write")) {
         	   result = new CommunityWriteController().execute(req, resp);
-           } else if (target.equals("writeOk")) {
+           } else if (target.equals("write-ok")) {
                result = new CommunityWriteOkController ().execute(req, resp);
            } else {
                // 404나 기본 처리 등 추가 가능
