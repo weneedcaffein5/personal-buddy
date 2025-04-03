@@ -185,8 +185,8 @@
 		#{id},
 		#{boardTitle},
 		#{boardContent},
-		SYSDATE,
-		SYSDATE,
+		SYSTIMESTAMP,
+    	SYSTIMESTAMP,
 		#{boardHashtag},
 		#{memberId}
 		)
