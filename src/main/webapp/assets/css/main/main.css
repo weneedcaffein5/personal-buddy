@@ -121,10 +121,10 @@
 /* 장소 추천 */
 
 .place-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
+  	display: flex;
+  	justify-content: space-between;
+  	align-items: flex-end;
+  	gap: 40px;
 }
 
 .place-recommend {
@@ -136,10 +136,9 @@
 }
 
 .place-list {
-  display: flex;
-  flex-direction: column;
-  width: 650px;
-  gap: 20px;
+  	display: flex;
+  	flex-direction: column;
+  	width: 650px;
 }
 
 .place-item {
@@ -189,11 +188,18 @@
 
 
 .place-details {
-  width: 680px;
-  height: 520px;
-  padding: 10px;
-  background-color: #f5f5f5;
-  border-radius: 10px;
+    width: 680px;
+    height: auto; 
+    max-height: 520px; 
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    top: 0;
+    bottom: 0; 
 }
 
 .place-details.active {

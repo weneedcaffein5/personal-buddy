@@ -61,6 +61,17 @@ public class MainMainController implements Action {
 		
 		req.setAttribute("placeList", placeList);
 		
+		
+		// 코디 추천
+		List<RecommendDTO> clothList = recommendList.stream()
+			    .filter(item -> "코디 추천".equals(item.getInterestBig()))
+			    .collect(Collectors.toList());
+
+			Collections.shuffle(clothList);
+			clothList = clothList.stream().limit(3).collect(Collectors.toList());
+			
+			req.setAttribute("clothList", clothList);
+		
 		result.setPath("main.jsp");
 		return result;
 	}

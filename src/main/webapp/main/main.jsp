@@ -77,13 +77,10 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
     </div>
   </div>
 
-
-    
    <!-- 장소 추천 -->
     <div class="place-recommend">
 	  <div class="place-wrapper">
 	  
-	    <!-- 왼쪽: 장소 리스트 -->
 	    <div class="place-list">
 	      <p class="place-title1">여기 가보는 거 어때요?</p>
 	      <c:forEach var="recommend" items="${placeList}">
@@ -98,19 +95,17 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
 	              <p class="place-location">${recommend.addr}</p>
 	            </div>
 	          </div>
-	       	</c:if>
+	       </c:if>
 	      </c:forEach>
 	    </div>
 	    
-a	    <div class="place-details" id="map-container">
-	      <div id="map" style="width:100%; height:520px; border-radius:10px;"></div>
+	    <div class="place-details" id="map-container">
+	      <div id="map" style="width:100%; height:600px; border-radius:10px;"></div>
 	    </div>
 	    
 	  </div>
 	</div>
 
-	
-	
     <!-- 코디 추천 -->
 	<div class="cloth-grid-wrap">
 	  <p class="place-title1">이런 코디 어때요?<br>
@@ -124,7 +119,8 @@ a	    <div class="place-details" id="map-container">
 	      <h3 class="cloth-card-title">자연스러운 멋이 담긴 꾸안꾸 무드</h3>
 	      <p class="cloth-card-desc">편안한 분위기의 짙은 브라운 원피스에 양쪽 번 헤어스타일로 귀여움을 더했어요. 튀지 않는 컬러와 조화로운 실루엣으로 실내에서도 자연스럽게 시선을 사로잡는 룩입니다.</p>
 	    </div>
-dd	    
+	
+	    
 	  </div>
 	</div>
 
