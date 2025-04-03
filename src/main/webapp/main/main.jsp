@@ -90,7 +90,6 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
 	          <div class="place-item">
 	            <div class="place-hover"></div>
 	              <img src="${pageContext.request.contextPath}/${recommend.img}" alt="${recommend.title}">
-	            </a>
 	            <div class="place-info">
 	              <h3 class="place-name">${recommend.title}</h3>
 	              <p class="place-sub">${recommend.name}</p>
