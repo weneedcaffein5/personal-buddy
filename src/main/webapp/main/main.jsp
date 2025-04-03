@@ -77,20 +77,17 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
     </div>
   </div>
 
-
-    
    <!-- 장소 추천 -->
     <div class="place-recommend">
 	  <div class="place-wrapper">
+	  
 	    <div class="place-list">
 	      <p class="place-title1">여기 가보는 거 어때요?</p>
-	
 	      <c:forEach var="recommend" items="${placeList}">
 	        <c:if test="${recommend.interestBig eq '장소 추천'}">
 	          <div class="place-item">
 	            <div class="place-hover"></div>
-	              <img src="${pageContext.request.contextPath}/${recommend.img}" alt="${recommend.title}">
-	            </a>
+	            <img src="${pageContext.request.contextPath}/${recommend.img}" alt="${recommend.title}">
 	            <div class="place-info">
 	              <h3 class="place-name">${recommend.title}</h3>
 	              <p class="place-sub">${recommend.name}</p>
@@ -98,17 +95,17 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
 	              <p class="place-location">${recommend.addr}</p>
 	            </div>
 	          </div>
-	        </c:if>
+	       </c:if>
 	      </c:forEach>
-	    </div> 
-	
-	    <div class="place-details"></div>
-	
+	    </div>
+	    
+	    <div class="place-details" id="map-container">
+	      <div id="map" style="width:100%; height:600px; border-radius:10px;"></div>
+	    </div>
+	    
 	  </div>
 	</div>
 
-	
-	
     <!-- 코디 추천 -->
 	<div class="cloth-grid-wrap">
 	  <p class="place-title1">이런 코디 어때요?<br>
