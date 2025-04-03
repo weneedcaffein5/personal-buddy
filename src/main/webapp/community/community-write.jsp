@@ -38,7 +38,7 @@
 				<div class="category-container">
 					<label for="category">카테고리 <span class="required-star">*</span></label>
 					<div class="custom-select-wrapper">
-						<select class="custom-select" name="boardContent" required>
+						<select class="custom-select" name="boardHashtag" required>
 							<option value="" disabled selected>카테고리를 선택해주세요.</option>
 							<option value="qna">질문</option>
 							<option value="free">자유</option>
@@ -51,7 +51,7 @@
 					<div class="content-count-container">
 						<div class="content-container">
 							<label for="content">글 내용 <span class="required-star">*</span></label>
-							<textarea id="content" name="boardHashtag" rows="8" placeholder="내용을 입력해주세요."
+							<textarea id="content" name="boardContent" rows="8" placeholder="내용을 입력해주세요."
 								maxlength="3000" required class="custom-content-input"></textarea>
 						</div>
 						<div class="char-count">

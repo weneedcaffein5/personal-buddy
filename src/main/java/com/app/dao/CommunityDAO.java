@@ -6,6 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.app.dto.BoardViewDTO;
 import com.app.mybatis.config.MyBatisConfig;
+import com.app.vo.BoardImgVO;
+import com.app.vo.BoardPostVO;
 
 public class CommunityDAO {
 	public SqlSession sqlSession;
@@ -52,7 +54,18 @@ public class CommunityDAO {
 	}
 	
 //	게시글 추가
-	
+	public void insertPost(BoardPostVO boardPostVO) {
+		sqlSession.insert("community.insertPost", boardPostVO);
+	}
+
+// 	게시글 이미지 추가
+	public void insertImg(BoardImgVO boardImgVO) {
+		sqlSession.insert("community.insertBoardImg", boardImgVO);
+	}
+
+	public Long getNextPostId() {
+	    return sqlSession.selectOne("community.getNextPostId");
+	}
 //	댓글 추가
 	
 //	게시글 수정
