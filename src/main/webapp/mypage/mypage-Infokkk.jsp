@@ -6,8 +6,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="../assets/css/global.css" />
 <link rel="stylesheet" href="../assets/css/header.css">
-<link rel="stylesheet" type="text/css"
-	href="../assets/css/mypage/mypage-info.css" />
+<link rel="stylesheet" type="text/css" href="../assets/css/mypage/mypage-info.css" />
 <title>마이페이지-계정설정</title>
 </head>
 <body>
@@ -15,33 +14,32 @@
 	<!-- 배너 -->
 
 	<div class="body">
-		<div class="container">
-			<!-- 왼쪽 사이드바 (프로필, 링크) -->
-			<div class="sidebar">
-				<div class="profile">
-					<span><img
-						src="../assets/images/mypage/profile-default-image.png"></span>
-				</div>
-				<div class="profile-setting">
-					<div class="nickname">
-						<span>나는신이다</span>
-					</div>
-					<div class="status-message">
-						<span>반가워요</span>
-					</div>
-				</div>
-				<div class="mypage">
-					<div class="tap-name">
-						<img class="icon" src="../assets/images/mypage/mypage-icon.png">
-						<span>마이페이지</span>
-					</div>
-					<div class="a-wrapper">
-						<a class="link" href="mypage-mytree.mypage">나의 나무</a>
-					</div>
-					<div class="a-wrapper">
-						<a class="link" href="mypage-myachievement.mypage">나의 업적</a>
-					</div>
-				</div>
+        <div class="container">
+        <!-- 왼쪽 사이드바 (프로필, 링크) -->
+            <div class="sidebar">
+                <div class="profile">
+                    <img src="../${loginProfile.memberImgPath}${loginProfile.memberImgName}" alt="프로필 이미지">
+                </div>
+                <div class="profile-setting">
+                	<div class="nickname">
+	                    <span>${loginProfile.memberNickName}</span>                	
+                	</div>
+                	<div class="status-message">
+	                    <span>${loginProfile.memberComment}</span>                	
+                	</div>
+                </div>
+                <div class="mypage">
+                    <div class="tap-name">
+                    	<img class="icon" src="../assets/images/mypage/mypage-icon.png">
+                    	<span>마이페이지</span>
+                    </div>
+                    <div class="a-wrapper">
+                    	<a id="now" class="link" href="mypage-mytree.mypage?id=${ loginId }">나의 나무</a>
+                    </div>
+                    <div class="a-wrapper">
+                    	<a class="link" href="mypage-myachievement.mypage?id=${ loginId }">나의 업적</a>
+                    </div>
+                </div>
 				<div class="community">
 					<div class="tap-name">
 						<img class="icon" src="../assets/images/mypage/community-icon.png">

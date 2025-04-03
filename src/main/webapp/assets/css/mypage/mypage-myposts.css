@@ -73,9 +73,10 @@
 }
 
 /* 유저 프로필 사진 */
-.profile {
+.profile img{
     width: 200px;
     height: 200px;
+    object-fit: contain;
     border-bottom: solid #DDDDDD 1px;
 }
 
