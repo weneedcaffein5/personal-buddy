@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="../assets/css/global.css" />
 <link rel="stylesheet" href="../assets/css/header.css" />
 <link rel="stylesheet" href="../assets/css/banner.css" />
+<link rel="stylesheet" href="../assets/css/footer.css" />
 <link rel="stylesheet" href="../assets/css/contents/contents-mytree.css" />
 </head>
 <body>
@@ -110,7 +111,7 @@
 		</div>
 		<div class="black-background"></div>
 	</div>
-
+	<%@ include file="../layout/footer.jsp"%>
 	<script src="../assets/js/contents/contents-mytree.js"></script>
 </body>
 </html>
