@@ -15,6 +15,7 @@ import com.app.community.controller.CommunityWriteOkController;
 
 
 public class CommunityFrontController extends HttpServlet{
+
    
    @Override
    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -47,6 +48,7 @@ public class CommunityFrontController extends HttpServlet{
          }
       }
    }
+
 
    
    @Override
