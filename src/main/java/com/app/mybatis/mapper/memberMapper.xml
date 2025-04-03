@@ -83,7 +83,7 @@
 	</select>
 	<select id="selectById" parameterType="Long"
 		resultType="MemberVO">
-		SELECT ID, MEMBER_PASSWORD
+		SELECT ID, MEMBER_NAME, MEMBER_EMAIL, MEMBER_BIRTH, MEMBER_PHONE
 		FROM TBL_MEMBER
 		WHERE ID = #{id}
 	</select>
