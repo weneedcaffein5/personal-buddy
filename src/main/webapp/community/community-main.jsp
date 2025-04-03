@@ -2,6 +2,11 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%
+	String contextPath = request.getContextPath();
+	String selectedSort = request.getParameter("sort");
+	if (selectedSort == null) selectedSort = "latest";
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -227,20 +232,11 @@
 
 		<div class="post-container">
 			<div class="post-array">
-				<a href="${pageContext.request.contextPath}/community/community-main.community?sort=latest"
-				   class="post-sort ${selectedSort eq 'latest' || empty selectedSort ? 'active' : ''}">
-				   최신 순
-				</a>
-				<span>|</span>
-				<a href="${pageContext.request.contextPath}/community/community-main.community?sort=like"
-				   class="post-sort ${selectedSort eq 'like' ? 'active' : ''}">
-				   좋아요 순
-				</a>
-				<span>|</span>
-				<a href="${pageContext.request.contextPath}/community/community-main.community?sort=view"
-				   class="post-sort ${selectedSort eq 'view' ? 'active' : ''}">
-				   조회 순
-				</a>
+				<span class="post-sort active" data-sort="latest">최신 순</span>
+				<span class="divider">|</span>
+				<span class="post-sort" data-sort="likes">좋아요 순</span>
+				<span class="divider">|</span>
+				<span class="post-sort" data-sort="views">조회 순</span>
 			</div>
 			<div class="main2">
 				<div class="main2-left">
@@ -258,9 +254,9 @@
 			            	</form>
 						</div>
 		        		<div class="tags">
-		            		<span class="search-tag">#관심 일정</span>
-		            		<span class="search-tag">#자유 게시글</span>
-		            		<span class="search-tag">#공유 일정</span>
+		            		<span class="search-tag" data-hashtag="관심 일정">#관심 일정</span>
+		            		<span class="search-tag" data-hashtag="자유 게시글">#자유 게시글</span>
+		            		<span class="search-tag" data-hashtag="공유 일정">#공유 일정</span>
 		        		</div>
 					</div>
 				</div>
@@ -273,64 +269,33 @@
 				</div>
         	</div>
 			<div class="post-contents">
-				<c:forEach var="post" items="${posts}">
-				    <div class="post-content">
-				        <a href="#"><img class="img" src="${pageContext.request.contextPath}${post.boardImgPath}/${post.boardImgName}" /></a>
-				        <span class="tag">${post.boardHashtag}</span>
-				        <span class="content-name">${post.boardTitle}</span>
-				        <div class="user-info">
-				            <img class="mini-profile" src="${pageContext.request.contextPath}${post.memberProfileImgPath}/${post.memberProfileImgName}" />
-				            <span class="user-nickname">${post.memberNickname}</span>
-				        </div>
-				        <span class="content-date">
-				            <fmt:formatDate value="${post.boardContentCreateDate}" pattern="yyyy.MM.dd HH:mm" /> 게시
-				        </span>
-				        <div class="content-info">
-				            <span class="likes"><img class="icon" src="../assets/images/community/like-icon.png">${post.likeCount}</span>
-				            <span class="views"><img class="icon" src="../assets/images/community/view-icon.png">${post.boardContentViews}</span>
-				            <span class="comments"><img class="icon" src="../assets/images/community/comment-icon.png">${post.commentCount}</span>
-				        </div>
-				    </div>
-				</c:forEach>
+				<jsp:include page="partial-post-list.jsp" />
 			</div>
 		</div>
 	</div>
-</body>
 <script>
-const tags = document.querySelectorAll(".search-tag");
-
-tags.forEach(tag => {
-  tag.addEventListener("click", () => {
-    if (tag.classList.contains("selected")) {
-      tag.classList.remove("selected"); // 다시 누르면 해제
-    } else {
-      tags.forEach(t => t.classList.remove("selected")); // 다른 선택 해제
-      tag.classList.add("selected"); // 현재 선택
-    }
-  });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
+  // ⭐ 슬라이더 로직
   let currentIndex = 0;
 
   const items = document.querySelectorAll(".content");
   const totalItems = items.length;
   const visibleItems = 3;
-  const itemWidth = items[0].offsetWidth;
+  const itemWidth = items[0]?.offsetWidth || 300;
   const gap = 100;
   const contentWidth = itemWidth + gap;
 
   const leftBtnImg = document.getElementById("leftImg");
   const rightBtnImg = document.getElementById("rightImg");
 
-  document.querySelector(".button-left").addEventListener("click", () => {
+  document.querySelector(".button-left").addEventListener("click", function () {
     if (currentIndex > 0) {
       currentIndex--;
       updateSlider();
     }
   });
 
-  document.querySelector(".button-right").addEventListener("click", () => {
+  document.querySelector(".button-right").addEventListener("click", function () {
     if (currentIndex < totalItems - visibleItems) {
       currentIndex++;
       updateSlider();
@@ -340,40 +305,87 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateSlider() {
     const slider = document.getElementById("slider");
     const offset = contentWidth * currentIndex;
-    slider.style.setProperty("transform", "translateX(" + -offset + "px)");
-
+    slider.style.setProperty("transform", "translateX(" + (-offset) + "px)");
     updateButtonImages();
   }
 
   function updateButtonImages() {
-    if (currentIndex === 0) {
-      leftBtnImg.src = "../assets/images/community/button-left-off.png";
-    } else {
-      leftBtnImg.src = "../assets/images/community/button-left-on.png";
-    }
-
-    if (currentIndex >= totalItems - visibleItems) {
-      rightBtnImg.src = "../assets/images/community/button-right-off.png";
-    } else {
-      rightBtnImg.src = "../assets/images/community/button-right-on.png";
-    }
+    leftBtnImg.src = currentIndex === 0
+      ? "../assets/images/community/button-left-off.png"
+      : "../assets/images/community/button-left-on.png";
+    rightBtnImg.src = currentIndex >= totalItems - visibleItems
+      ? "../assets/images/community/button-right-off.png"
+      : "../assets/images/community/button-right-on.png";
   }
 
-  // 초기 버튼 이미지 설정
   updateButtonImages();
 });
 
-const sortButtons = document.querySelectorAll(".post-sort");
+// ⭐ 태그 선택 로직
+const tags = document.querySelectorAll(".search-tag");
 
-sortButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    // 기존 active 제거
-    sortButtons.forEach(btn => btn.classList.remove("active"));
-
-    // 현재 클릭한 버튼에 active 추가
-    button.classList.add("active");
+tags.forEach(function (tag) {
+  tag.addEventListener("click", function () {
+    if (tag.classList.contains("selected")) {
+      tag.classList.remove("selected");
+    } else {
+      tags.forEach(function (t) {
+        t.classList.remove("selected");
+      });
+      tag.classList.add("selected");
+    }
   });
 });
+
+// ⭐ 정렬 및 필터 비동기 처리
+const sortButtons = document.querySelectorAll(".post-sort");
+
+let currentSort = "latest";
+let currentHashtag = "";
+
+function updatePosts() {
+  const contextPath = "${pageContext.request.contextPath}";
+  fetch(contextPath + "/community/community-sort.community?sort=" + currentSort + "&hashtag=" + encodeURIComponent(currentHashtag))
+    .then(function (res) {
+      return res.text();
+    })
+    .then(function (html) {
+      document.querySelector(".post-contents").innerHTML = html;
+    })
+    .catch(function (e) {
+      console.error("정렬/필터 실패", e);
+    });
+}
+
+// 정렬 버튼 이벤트
+sortButtons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    sortButtons.forEach(function (btn) {
+      btn.classList.remove("active");
+    });
+    button.classList.add("active");
+    currentSort = button.dataset.sort;
+    updatePosts();
+  });
+});
+
+// 해시태그 필터 이벤트
+document.querySelector(".tags").addEventListener("click", function(e) {
+  const clicked = e.target;
+  if (!clicked.classList.contains("search-tag")) return;
+
+  // 기존 선택된 거 해제
+  document.querySelectorAll(".search-tag").forEach(tag => tag.classList.remove("selected"));
+
+  // 현재 선택
+  clicked.classList.add("selected");
+  currentHashtag = clicked.dataset.hashtag;
+
+  console.log("🔍 현재 해시태그:", currentHashtag);
+  updatePosts();
+});
 </script>
+</body>
+
 
 </html> 
