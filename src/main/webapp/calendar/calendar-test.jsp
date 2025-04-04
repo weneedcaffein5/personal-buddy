@@ -11,7 +11,7 @@
 <title>캘린더 테스트</title>
 </head>
 <body>
-	<div class="container" style="width: 1400px;">
+	<div class="container" style="width: 1400px; height: 800px;">
 		<div class="calendar-upper">
 			<div class="calendar-upper-left">
 				<span class="today-span"></span>

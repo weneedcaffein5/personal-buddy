@@ -206,5 +206,107 @@
 		#{boardPostId}
 		)
 	</insert>
+	
+	<!-- 게시물 단일 조회 -->
+	<select id="readPost" parameterType="Long" resultType="BoardPostViewDTO">
+		SELECT
+			TBP.ID,
+			TBP.BOARD_TITLE,
+			TBP.BOARD_CONTENT,
+			TBP.BOARD_CONTENT_CREATE_DATE,
+			TBP.MEMBER_ID,
+			TM.MEMBER_NICKNAME,
+			TBP.BOARD_CONTENT_VIEWS,
+		    (SELECT COUNT(*) FROM TBL_BOARD_LIKE TBL WHERE TBL.BOARD_POST_ID = TBP.ID) AS LIKE_COUNT,
+		    (SELECT COUNT(*) FROM TBL_BOARD_COMMENT TBC WHERE TBC.BOARD_POST_ID = TBP.ID) AS COMMENT_COUNT
+		FROM TBL_BOARD_POST TBP
+		JOIN TBL_MEMBER TM ON TBP.MEMBER_ID = TM.ID AND TBP.ID = #{id}
+	</select>
+	
+	<!-- 게시물 이미지 조회 -->
+	<select id="readPostImg" parameterType="Long" resultType="BoardImgVO">
+		SELECT *
+		FROM TBL_BOARD_IMG
+		WHERE BOARD_POST_ID = #{id}
+	</select>
+	
+	<!-- 게시물 좋아요 생성 -->
+	<insert id="insertLike" parameterType="BoardLikeVO">
+	    INSERT INTO TBL_BOARD_LIKE (ID, MEMBER_ID, BOARD_POST_ID)
+	    VALUES (SEQ_BOARD_LIKE.NEXTVAL, #{memberId}, #{boardPostId})
+	</insert>
+	
+	<!-- 게시물 좋아요 삭제 -->
+	<delete id="deleteLike" parameterType="Long">
+    	DELETE FROM TBL_BOARD_LIKE 
+    	WHERE ID = #{id}
+	</delete>
+	
+	<!-- 게시물 좋아요 조회 -->
+	<select id="selectPostLike" resultType="BoardLikeVO" parameterType="BoardLikeVO">
+		SELECT *
+		FROM TBL_BOARD_LIKE
+		WHERE BOARD_POST_ID = #{boardPostId} AND MEMBER_ID = #{memberId}
+	</select>
+	<!-- 게시물 좋아요 아이디 조회 -->
+	<select id="selectPostLikeId" resultType="BoardLikeVO" parameterType="Long">
+		SELECT *
+		FROM TBL_BOARD_LIKE
+		WHERE ID = #{id}
+	</select>
+	<!-- 댓글 작성 -->
+	<insert id="insertPostComment" parameterType="BoardCommentVO">
+		INSERT INTO TBL_BOARD_COMMENT (ID, BOARD_COMMENT_CONTENT, MEMBER_ID, BOARD_POST_ID)
+		VALUES (SEQ_BOARD_COMMENT.NEXTVAL, #{boardCommentContent}, #{memberId}, #{boardPostId})
+	</insert>
+	
+	<!-- 댓글 조회 -->
+	<select id="selectCommentList" resultType="BoardCommentViewDTO" parameterType="Long">
+		SELECT 
+		    TBC.ID,
+		    TBC.BOARD_POST_ID,
+		    TBC.MEMBER_ID,
+		    TM.MEMBER_NICKNAME,
+		    TBC.BOARD_COMMENT_CONTENT,
+		    TBC.BOARD_COMMENT_CREATE_DATE,
+		    (
+		        SELECT COUNT(*) 
+		        FROM TBL_BOARD_COMMENT_LIKE TBCL 
+		        WHERE TBCL.BOARD_COMMENT_ID = TBC.ID
+		    ) AS LIKE_COUNT
+		FROM TBL_BOARD_COMMENT TBC
+		JOIN TBL_MEMBER TM ON TBC.MEMBER_ID = TM.ID
+		WHERE TBC.BOARD_POST_ID = #{id}
+		ORDER BY TBC.BOARD_COMMENT_CREATE_DATE DESC
+	</select>
+	
+	<!-- 댓글 수정 -->	
+	<update id="updateComment" parameterType="BoardCommentVO">
+		UPDATE TBL_BOARD_COMMENT SET BOARD_COMMENT_CONTENT = #{boardCommentContent}
+		WHERE ID = #{id} AND MEMBER_ID = #{memberId}
+    </update>
 
+    <!-- 댓글 삭제 -->
+    <delete id="deleteComment" parameterType="Long">
+        DELETE FROM TBL_BOARD_COMMENT
+        WHERE ID = #{id}
+    </delete>
+	
+	<!-- 댓글 좋아요 생성 -->
+	<insert id="insertCommentLike" parameterType="BoardCommentLikeVO">
+		INSERT INTO TBL_BOARD_COMMENT_LIKE (ID, MEMBER_ID, BOARD_COMMENT_ID)
+        VALUES (SEQ_BOARD_COMMENT_LIKE.NEXTVAL, #{memberId}, #{boardCommentId})
+	</insert>
+	
+	<delete id="deleteCommentLike" parameterType="Long">
+		DELETE FROM TBL_BOARD_COMMENT_LIKE 
+		WHERE ID = #{id}
+	</delete>
+	
+	<select id="checkCommentLike" resultType="BoardCommentLikeVO">
+	    SELECT ID, BOARD_COMMENT_LIKE_CREATE_DATE, MEMBER_ID, BOARD_COMMENT_ID
+		FROM TBL_BOARD_COMMENT_LIKE
+	</select>
+
+	
 </mapper>

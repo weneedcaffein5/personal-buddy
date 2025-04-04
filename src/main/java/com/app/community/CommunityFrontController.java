@@ -8,8 +8,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
+import com.app.community.controller.CommunityCommentInsertLikeController;
+import com.app.community.controller.CommunityDeleteCommentController;
+import com.app.community.controller.CommunityInsertCommentController;
 import com.app.community.controller.CommunityMainController;
+import com.app.community.controller.CommunityPostController;
+import com.app.community.controller.CommunityPostLikeController;
+import com.app.community.controller.CommunityPostOffLikeController;
 import com.app.community.controller.CommunitySortController;
+import com.app.community.controller.CommunityUpdateCommentController;
 import com.app.community.controller.CommunityWriteController;
 import com.app.community.controller.CommunityWriteOkController;
 
@@ -35,6 +42,22 @@ public class CommunityFrontController extends HttpServlet{
         	   result = new CommunityWriteController().execute(req, resp);
            } else if (target.equals("write-ok")) {
                result = new CommunityWriteOkController ().execute(req, resp);
+           } else if (target.equals("community-post")) {
+        	   result = new CommunityPostController().execute(req, resp);
+           } else if (target.equals("community-post-like")) {
+        	   result = new CommunityPostLikeController().execute(req, resp);
+           } else if (target.equals("community-post-off-like")) {
+        	   result = new CommunityPostOffLikeController().execute(req, resp);
+           } else if (target.equals("community-insert-comment")) {
+        	   result = new CommunityInsertCommentController().execute(req, resp);
+           } else if (target.equals("community-update-comment")) {
+        	   result = new CommunityUpdateCommentController().execute(req, resp);
+           } else if (target.equals("community-delete-comment")) {
+        	   result = new CommunityDeleteCommentController().execute(req, resp);
+           } else if (target.equals("community-comment-insert-like")) {
+        	   result = new CommunityCommentInsertLikeController().execute(req, resp);
+           } else if (target.equals("community-comment-delete-like")) {
+        	   result = new CommunityDeleteCommentController().execute(req, resp);
            } else {
                // 404나 기본 처리 등 추가 가능
                System.out.println("해당 컨트롤러를 찾을 수 없습니다: " + target);

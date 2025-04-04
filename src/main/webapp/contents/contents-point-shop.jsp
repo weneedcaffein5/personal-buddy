@@ -37,12 +37,23 @@
 		<%@ include file="../layout/banner.jsp" %>
 		<!-- 메인 -->
 		<div class="main">
-			<div class="tab-box">
-				<div class="tab-container">
-					<div class="tab-btn"></div>
-					<div id="achievementTab" class="tab-text tab-text-off">업적</div>
-					<div id="myTreeTab" class="tab-text tab-text-on">나의 성장 나무</div>
-					<div id="pointShopTab" class="tab-text tab-text-off">포인트 샵</div>
+			<div class="tab-container">
+				<div class="tab">
+				    <div class="tab-sub-position tab-0">
+						<a href="contents-achievement.contents">
+					    	<span>업적</span>
+						</a>
+				    </div>
+				    <div class="tab-sub-position tab-100">
+						<a href="contents-mytree.contents">
+					    	<span>나의 성장 나무</span>
+						</a>
+				    </div>
+				    <div class="tab-position tab-200">
+						<a href="contents-point-shop.contents">
+					    	<span>포인트 샵</span>
+						</a>
+				    </div>
 				</div>
 			</div>
 			<div class="title">
@@ -50,17 +61,25 @@
 			</div>
 			<div class="point-info">
 				<span>🏆 보유 포인트  :</span>
-				<span class="member-point">1000 P</span>
+				<span class="member-point">${memberPoint != null ? memberPoint : 0} P</span>
 			</div>
 			<div class="point-log">
 				<a>포인트 이용 내역 보기 >></a>
 			</div>
 			<div class="point-shop-box">
 				<div class="point-shop-tab-box">
-					<button class="point-shop-tab-style point-shop-tab-style-on">전체</button>
-					<button class="point-shop-tab-style">배경</button>
-					<button class="point-shop-tab-style">스티커</button>
-					<button class="point-shop-tab-style">나무</button>
+					<a href="contents-point-shop.contents" class="point-shop-tab-style">
+						<span>전체</span>
+					</a>
+					<a href="contents-point-shop.contents?type=background" class="point-shop-tab-style">
+						<span>배경</span>
+					</a>
+					<a href="contents-point-shop.contents?type=sticker" class="point-shop-tab-style">
+						<span>스티커</span>
+					</a>
+					<a href="contents-point-shop.contents?type=tree" class="point-shop-tab-style">
+						<span>나무</span>
+					</a>
 				</div>
 				<div class="point-shop-item-box">
 					<div class="item-selecter-box">
@@ -72,39 +91,57 @@
 						</select>
 					</div>
 					<div class="item-list-box">
-						<div class="item-list">
-							<div class="item">
-								<div class="img-box">
-									<img alt="" src="">
-								</div>
-								<div class="item-info-box">
-									<span class="item-info">나무</span>
-									<span class="item-info">🏆 1000P</span>
-								</div>
-								<div class="item-btn-box">
-									<button class="buy-item-btn hide">구매</button>
-									<button class="select-item-btn hide">담기</button>
-								</div>
-								<div class="view-item-box">
-									<button class="view-item hide">미리보기</button>
-								</div>
-							</div>
-							<div class="item">
-								<div class="img-box">
-									<img alt="" src="">
-								</div>
-								<div class="item-info-box">
-									<span class="item-info">나무</span>
-									<span class="item-info">🏆 1000P</span>
-								</div>
-								<div class="item-btn-box">
-									<button class="buy-item-btn hide">구매</button>
-									<button class="select-item-btn hide">담기</button>
-								</div>
-								<div class="view-item-box">
-									<button class="view-item hide">미리보기</button>
-								</div>
-							</div>
+					
+						<c:set var="page" value="${param.page ne null ? param.page : 1}" />
+						<c:set var="onePageVar" value="24" />
+						<c:set var="startIndex" value="${(page - 1) * onePageVar}" />
+						<c:set var="endIndex" value="${startIndex + onePageVar - 1}" />
+						
+						<c:forEach var="item" items="${items}" varStatus="var">
+							<c:if test="${var.index >= startIndex and var.index <= endIndex}">
+								<c:if test="${var.index % 6 == 0}">
+									<div class="item-list">
+								</c:if>
+									<div class="item">
+										<div class="img-box">
+											<img alt="" src="">
+										</div>
+										<div class="item-info-box">
+											<span class="item-info">${item.itemName}</span>
+											<span class="item-info">🏆 ${item.itemPrice}P</span>
+										</div>
+										<div class="item-btn-box">
+											<button class="buy-item-btn hide">구매</button>
+											<button class="select-item-btn hide">담기</button>
+										</div>
+										<div class="view-item-box">
+											<button class="view-item hide">미리보기</button>
+										</div>
+									</div>
+								<c:if test="${var.index % 6 == 5 or var.index == endIndex}">
+									</div>
+								</c:if>
+							</c:if>
+						</c:forEach>
+						<!-- 페이지 네이션 -->
+						<div class="pagination">
+							<c:set var="totalPages" value="${Math.ceil(items.size() / onePageVar)}" />
+							<c:if test="${page > 1}">
+								<a href="?type=${currentType}&page=${page - 1}">
+									<img alt="prev" src="../assets/images/contents/default/prev-page.png">
+								</a>
+							</c:if>
+							<c:set var="currentType" value="${param.type ne null ? param.type : ''}" />
+							<c:forEach var="i" begin="1" end="${totalPages}">
+							    <a href="?type=${currentType}&page=${i}" class="page-btn ${i == page ? 'active' : ''}">
+							        <span>${i}</span>
+							    </a>
+							</c:forEach>
+							<c:if test="${page < totalPages}">
+								<a href="?type=${currentType}&page=${page + 1}">
+									<img alt="next" src="../assets/images/contents/default/next-page.png">
+								</a>
+							</c:if>
 						</div>
 					</div>
 				</div>
