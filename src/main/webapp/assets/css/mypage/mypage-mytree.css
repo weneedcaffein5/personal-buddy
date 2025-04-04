@@ -288,7 +288,7 @@ textarea {
 }
 
 .comment {
-	width: 100%;
+	width: 1160px;
 	height: auto;
 }
 
@@ -315,7 +315,7 @@ textarea {
 }
 
 .user-profile span {
-	display:flex;
+	display: flex;
 	justify-content: left;
 	align-items: center;
 	width: 300px;
@@ -343,8 +343,8 @@ textarea {
 
 .text {
 	display: flex;
-	width: 1000px;
-	height: auto	;
+	width: 1160px;
+	height: auto;
 	margin-left: 30px;
 	justify-content: left;
 	white-space: pre-wrap;
