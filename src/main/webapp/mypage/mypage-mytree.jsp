@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="../assets/css/event/event-post.css" />
 <link rel="stylesheet" type="text/css" href="../assets/css/header.css" />
 <title>나의 나무</title>
-</head>
+</head>		
 <body>
 	<%@ include file="../layout/header.jsp" %>
 	
@@ -92,165 +93,119 @@
                     <div class="guestbook-header">
                         <span>방문록</span> <span class="visit-count">| 78</span>
                     </div>
-                    <p class="guestbook-info">방문록을 남겨보세요, 바르고 고운말을 사용합시다.</p>
-                    
+                    	<p class="guestbook-info">방문록을 남겨보세요, 바르고 고운말을 사용합시다.</p>
                     <div class="comment-box">
                         <textarea id="comment-input" placeholder="댓글을 입력해주세요" maxlength="500"></textarea>
-                        <div class="comment-footer">
-                            <span id="char-count">0 / 500</span>
-                            <button id="submit-btn" disabled>등록</button>
-                        </div>
                     </div>
-                    <div class="post-comment-box">
-                <div class="post-comment">
-                    <div class="comment-member-box">
-                        <div class="member-info">
-                            <img src="../assets/images/community/프로필 사진.png" alt="프로필 사진">
-                            <span class="member-name">나무조하</span>
-                        </div>
-                        <button class="member-comment-modify">수정</button>
+					<div class="comment-footer">
+						<span id="char-count">0 / 500</span>
+						<button id="submit-btn" disabled onclick="addComment()">등록</button>
+					</div>
+                    <div class="comments-box" id="comments-box">
+                    	<c:forEach var="comment" items="${guestComments}">
+					        <div class="comment">
+							    <div class="user-info">
+							        <div class="user-profile">
+										<img class="mini-profile" src="${pageContext.request.contextPath}/${comment.memberProfileImgPath}${comment.memberProfileImgName}" alt="프로필 이미지" />
+							            <span>${comment.memberNickname}</span>
+							        </div>
+							        <div class="update-button">
+							            <c:if test="${comment.memberId == loginId}">
+							                <span class="delete-btn" data-id="${comment.guestCommentId}">삭제</span>
+							            </c:if>
+							        </div>
+							    </div>
+							    <div class="text">
+							        <span>${comment.description}</span>
+							    </div>
+							    <div class="date">
+							        <span><fmt:formatDate value="${comment.createDate}" pattern="yyyy-MM-dd HH:mm" /></span>
+							    </div>
+							</div>
+					    </c:forEach>
                     </div>
-                    <div class="member-comment-box">
-                        <span class="member-comment">소나무 인가요? 좋네요.</span>
-                    </div>
-                    <div class="modify-hide-box">
-                        <span class="comment-text-count hide">0</span>
-                        <span class="comment-text-max hide">/ 500</span>
-                        <button class="modify-delete-btn hide">삭제</button>
-                        <button class="modify-add-btn hide">수정 완료</button>
-                    </div>
-                    <div class="comment-info">
-                        <div class="comment-create-time">2025.02.05  03:20</div>
-                        <div class="comment-like-count">♡ 99</div>
-                    </div>
-                </div>
-                <div class="post-comment">
-                    <div class="comment-member-box">
-                        <div class="member-info">
-                            <img src="../assets/images/community/프로필 사진.png" alt="프로필 사진">
-                            <span class="member-name">캣대디</span>
-                        </div>
-                        <button class="member-comment-modify">수정</button>
-                    </div>
-                    <div class="member-comment-box">
-                        <span class="member-comment">포인트 나눔 부탁드려요~~~</span>
-                    </div>
-                    <div class="modify-hide-box">
-                        <span class="comment-text-count hide">0</span>
-                        <span class="comment-text-max hide">/ 500</span>
-                        <button class="modify-delete-btn hide">삭제</button>
-                        <button class="modify-add-btn hide">수정 완료</button>
-                    </div>
-                    <div class="comment-info">
-                        <div class="comment-create-time">2025.02.05  03:20</div>
-                        <div class="comment-like-count">♡ 99</div>
-                    </div>
-                </div>
-                <div class="post-comment">
-                    <div class="comment-member-box">
-                        <div class="member-info">
-                            <img src="../assets/images/community/프로필 사진.png" alt="프로필 사진">
-                            <span class="member-name">쓰소미</span>
-                        </div>
-                        <button class="member-comment-modify none">수정</button>
-                    </div>
-                    <div class="member-comment-box">
-                        <span class="member-comment">요즘 날씨에 건강 유의하세요~ 공감 꾹 누르고 갑니당😊</span>
-                    </div>
-                    <div class="modify-hide-box">
-                        <span class="comment-text-count hide">0</span>
-                        <span class="comment-text-max hide">/ 500</span>
-                        <button class="modify-delete-btn hide">삭제</button>
-                        <button class="modify-add-btn hide">수정 완료</button>
-                    </div>
-                    <div class="comment-info">
-                        <div class="comment-create-time">2025.02.05  03:20</div>
-                        <div class="comment-like-count">♡ 99</div>
-                    </div>
-                </div>
-                <div class="post-comment">
-                    <div class="comment-member-box">
-                        <div class="member-info">
-                            <img src="../assets/images/community/프로필 사진.png" alt="프로필 사진">
-                            <span class="member-name">강이주인</span>
-                        </div>
-                        <button class="member-comment-modify none">수정</button>
-                    </div>
-                    <div class="member-comment-box">
-                        <span class="member-comment">
-                        	제 헤드셋 여기 있나요?
-						</span>
-                    </div>
-                    <div class="modify-hide-box">
-                        <span class="comment-text-count hide">0</span>
-                        <span class="comment-text-max hide">/ 500</span>
-                        <button class="modify-delete-btn hide">삭제</button>
-                        <button class="modify-add-btn hide">수정 완료</button>
-                    </div>
-                    <div class="comment-info">
-                        <div class="comment-create-time">2025.02.05  03:20</div>
-                        <div class="comment-like-count">♡ 99</div>
-                    </div>
-                </div>
-                <div class="post-comment">
-                    <div class="comment-member-box">
-                        <div class="member-info">
-                            <img src="../assets/images/community/프로필 사진.png" alt="프로필 사진">
-                            <span class="member-name">고령신씨</span>
-                        </div>
-                        <button class="member-comment-modify none">수정</button>
-                    </div>
-                    <div class="member-comment-box">
-                        <span class="member-comment">
-                        	체조 3회 실시.
-						</span>
-                    </div>
-                    <div class="modify-hide-box">
-                        <span class="comment-text-count hide">0</span>
-                        <span class="comment-text-max hide">/ 500</span>
-                        <button class="modify-delete-btn hide">삭제</button>
-                        <button class="modify-add-btn hide">수정 완료</button>
-                    </div>
-                    <div class="comment-info">
-                        <div class="comment-create-time">2025.02.05  03:20</div>
-                        <div class="comment-like-count">♡ 99</div>
-                    </div>
-                </div>
-            </div>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-    const commentInput = document.getElementById("comment-input");
-    const charCount = document.getElementById("char-count");
-    const submitBtn = document.getElementById("submit-btn");
+<script>
+    // 등록 로직 (이미 있음)
+    function addComment() {
+        const inputField = document.getElementById("comment-input");
+        const commentText = inputField.value.trim();
+        if (commentText === "") return;
 
-    commentInput.addEventListener("input", function () {
-        let length = commentInput.value.length;
-        charCount.textContent = length + " / 500";
+        fetch("mypage-mytree-write-ok.mypage", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: "comment=" + encodeURIComponent(commentText)
+        })
+        .then(response => {
+            if (response.ok) {
+                location.reload(); // 새로고침해서 방명록 다시 불러오기
+            } else {
+                alert("댓글 등록에 실패했습니다.");
+            }
+        });
 
-        if (length > 0) {
-            submitBtn.style.backgroundColor = "#009DCC";
-            submitBtn.style.cursor = "pointer";
-            submitBtn.disabled = false;
-        } else {
-            submitBtn.style.backgroundColor = "#ccc";
-            submitBtn.style.cursor = "not-allowed";
-            submitBtn.disabled = true;
-        }
+        // 초기화
+        inputField.value = "";
+        document.getElementById("char-count").textContent = "0 / 500";
+        const submitBtn = document.getElementById("submit-btn");
+        submitBtn.style.backgroundColor = "#ccc";
+        submitBtn.style.cursor = "not-allowed";
+        submitBtn.disabled = true;
+    }
+
+    // 👉 여기서 글자 수 & 버튼 상태 감지
+    window.addEventListener("DOMContentLoaded", function () {
+        const inputField = document.getElementById("comment-input");
+        const charCount = document.getElementById("char-count");
+        const submitBtn = document.getElementById("submit-btn");
+
+        inputField.addEventListener("input", function () {
+            const length = inputField.value.length;
+            charCount.textContent = length + " / 500";
+
+            if (length > 0) {
+                submitBtn.disabled = false;
+                submitBtn.style.backgroundColor = "#009DCC";
+                submitBtn.style.cursor = "pointer";
+            } else {
+                submitBtn.disabled = true;
+                submitBtn.style.backgroundColor = "#ccc";
+                submitBtn.style.cursor = "not-allowed";
+            }
+        });
     });
     
-    function addComment() {
-        let inputField = document.getElementById("comment-input");
-        let commentDisplay = document.getElementById("comment-display");
-        
-        if (inputField.value.trim() !== "") {
-            commentDisplay.innerHTML = `<p>${inputField.value}</p>`;
-            inputField.value = "";
-        }
-    }
-    </script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // 삭제 버튼 모두 찾아서 클릭 이벤트 연결
+        document.querySelectorAll(".delete-btn").forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                const guestCommentId = this.dataset.id;
+
+                if (!confirm("정말 삭제하시겠습니까?")) return;
+
+                fetch("mypage-mytree-delete-ok.mypage", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    body: "guestCommentId=" + encodeURIComponent(guestCommentId)
+                })
+                .then(res => {
+                    if (res.ok) {
+                        location.reload(); // 또는 DOM에서 직접 삭제해도 됨
+                    } else {
+                        alert("삭제에 실패했습니다.");
+                    }
+                });
+            });
+        });
+    });
+</script>
 </body>
-<script src="../assets/js/community/community-post.js"></script>
 </html>
