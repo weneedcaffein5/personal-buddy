@@ -15,6 +15,7 @@ import com.app.dao.MemberDAO;
 import com.app.dto.BoardCommentViewDTO;
 import com.app.dto.BoardPostViewDTO;
 import com.app.dto.MemberProfileDTO;
+import com.app.vo.BoardCommentLikeVO;
 import com.app.vo.BoardImgVO;
 import com.app.vo.BoardLikeVO;
 
@@ -32,7 +33,7 @@ public class CommunityPostController implements Action {
 		Long userId = ((Long)session.getAttribute("loginId"));
 		List<BoardImgVO> postImgs = communityDAO.readPostImg(postId);
 		List<BoardCommentViewDTO> comments = communityDAO.selectCommentList(postId);
-		
+		List<BoardCommentLikeVO> boardCommentLikeVO = communityDAO.checkCommentLike();
 		
 		boardPostViewDTO = communityDAO.readPost(postId);
 		boardLikeVO.setMemberId(userId);
@@ -44,7 +45,9 @@ public class CommunityPostController implements Action {
 //		System.out.println(boardPostViewDTO);
 //		System.out.println(userLike);
 		comments.forEach(System.out::println);
+		boardCommentLikeVO.forEach(System.out::println);
 		
+		req.setAttribute("commentLikes", boardCommentLikeVO);
 		req.setAttribute("comments", comments);
 		req.setAttribute("userLike", userLike);
 		req.setAttribute("postImgs", postImgs);
