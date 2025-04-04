@@ -8,6 +8,7 @@ import com.app.dto.BoardCommentViewDTO;
 import com.app.dto.BoardPostViewDTO;
 import com.app.dto.BoardViewDTO;
 import com.app.mybatis.config.MyBatisConfig;
+import com.app.vo.BoardCommentLikeVO;
 import com.app.vo.BoardCommentVO;
 import com.app.vo.BoardImgVO;
 import com.app.vo.BoardLikeVO;
@@ -88,4 +89,26 @@ public class CommunityDAO {
 	public List<BoardCommentViewDTO> selectCommentList(Long id) {
 		return sqlSession.selectList("community.selectCommentList", id);
 	}
+//	댓글 수정
+	public void updateComment(BoardCommentVO boardCommentVO) {
+		sqlSession.update("community.updateComment", boardCommentVO);
+	}
+//	댓글 삭제
+	public void deleteComment(Long id) {
+		sqlSession.delete("community.deleteComment", id);
+	}
+//	댓글 좋아요 생성
+	public void insertCommentLike(BoardCommentLikeVO boardCommentLikeVO) {
+		sqlSession.insert("community.insertCommentLike", boardCommentLikeVO);
+	}
+//	댓글 좋아요 삭제
+	public void deleteCommentLike(Long id) {
+		sqlSession.delete("community.deleteCommentLike", id);
+	}
+//	댓글 좋아요 체크
+	public List<BoardCommentLikeVO> checkCommentLike() {
+		return sqlSession.selectList("community.checkCommentLike");
+	}
+	
+	
 }
