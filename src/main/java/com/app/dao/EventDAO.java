@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.app.dto.EventCommentViewDTO;
 import com.app.dto.EventViewDTO;
 import com.app.mybatis.config.MyBatisConfig;
 
@@ -29,7 +30,9 @@ public class EventDAO {
 	// 이벤트 좋아요 추가 삭제 (CRUD)
 		
 	// 이벤트 댓글 조회 / 추가 / 삭제 (CRD)
-		
+	public List<EventCommentViewDTO> selectEventComments(Long eventId) {
+		return sqlSession.selectList("event.selectEventComments", eventId);
+	}
 	// 이벤트 댓글 좋아요 추가 삭제 (CRD)
 	
 }
