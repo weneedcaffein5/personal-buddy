@@ -65,12 +65,14 @@ public class MainMainController implements Action {
 		String checkGender = memberProfileDTO.getMemberGender();
 		// 코디 추천
 		List<RecommendDTO> clothList = recommendList.stream()
-			    .filter(item -> "코디 추천".equals(item.getInterestBig()))
-			    .filter(item -> item.getType() == null || item.getType().equals(checkGender))
-			    .collect(Collectors.toList());
+			.filter(item -> "코디 추천".equals(item.getInterestBig()))
+			.filter(item -> item.getType() == null || item.getType().equals(checkGender))
+			.collect(Collectors.toList());
 
 			Collections.shuffle(clothList);
 			clothList = clothList.stream().limit(3).collect(Collectors.toList());
+			
+			/* System.out.println(clothList); */
 			
 			req.setAttribute("clothList", clothList);
 		

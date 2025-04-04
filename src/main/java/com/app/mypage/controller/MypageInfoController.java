@@ -38,6 +38,10 @@ public class MypageInfoController implements Action {
        
         if (mode == null) {
             Result result = new Result();
+            if(memberVO.isPresent()) {
+            	req.setAttribute("member", memberVO.get());
+            }
+            
             result.setPath("mypage-Infokkk.jsp");
             result.setRedirect(false);
             return result;

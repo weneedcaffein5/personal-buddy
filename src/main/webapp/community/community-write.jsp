@@ -40,9 +40,9 @@
 					<div class="custom-select-wrapper">
 						<select class="custom-select" name="boardHashtag" required>
 							<option value="" disabled selected>카테고리를 선택해주세요.</option>
-							<option value="qna">질문</option>
-							<option value="free">자유</option>
-							<option value="notice">공지</option>
+							<option value="공유 일정">공유 일정</option>
+							<option value="자유 게시글">자유 게시글</option>
+							<option value="관심 일정">관심 일정</option>
 						</select> <span class="custom-arrow">∨</span>
 					</div>
 				</div>
