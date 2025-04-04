@@ -105,8 +105,6 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
 	</div>
 
 
-
-
     <!-- 코디 추천 -->
 	<div class="cloth-grid-wrap">
 	  <p class="place-title1">이런 코디 어때요?<br>
@@ -126,6 +124,20 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
 	  </div>
 	</div>
 </div> 	
+</div>
+
+<!-- 모달 창 -->
+<div id="clothModal" class="modal">
+    <div class="modal-content">
+        <div class="close-btn">&times;</div>
+        <h2>
+        	이 코디를 내 코디에 추가하기
+        </h2>
+        <img id="modalImage" src="" alt="코디 이미지">
+        <h3 id="modalTitle">${modalTitle}</h3>
+        <p id="modalDesc">${modalDesc}</p>
+        <button id="addToMyClothes">내 코디에 추가</button>
+    </div>
 </div>
 
 <%@ include file="../layout/footer.jsp" %>
