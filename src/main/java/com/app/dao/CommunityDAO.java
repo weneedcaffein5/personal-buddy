@@ -4,9 +4,13 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.app.dto.BoardCommentViewDTO;
+import com.app.dto.BoardPostViewDTO;
 import com.app.dto.BoardViewDTO;
 import com.app.mybatis.config.MyBatisConfig;
+import com.app.vo.BoardCommentVO;
 import com.app.vo.BoardImgVO;
+import com.app.vo.BoardLikeVO;
 import com.app.vo.BoardPostVO;
 
 public class CommunityDAO {
@@ -48,13 +52,40 @@ public class CommunityDAO {
 	public Long getNextPostId() {
 	    return sqlSession.selectOne("community.getNextPostId");
 	}
-//	댓글 추가
 	
-//	게시글 수정
+//	게시글 단일 조회
+	public BoardPostViewDTO readPost(Long id) {
+		return sqlSession.selectOne("community.readPost", id);
+	}
 	
-//	댓글 수정
+//	조회된 게시글 이미지
+	public List<BoardImgVO> readPostImg(Long id) {
+		return sqlSession.selectList("community.readPostImg", id);
+	}
 	
-//	게시글 삭제
+//	게시물 좋아요 생성
+	public void insertLike(BoardLikeVO boardLikeVO) {
+		sqlSession.insert("community.insertLike", boardLikeVO);
+	}
+//	게시물 좋아요 삭제
+	public void deleteLike(Long id) {
+		sqlSession.delete("community.deleteLike", id);
+	}
+//	게시물 좋아요 조회
+	public BoardLikeVO selectPostLike(BoardLikeVO boardLikeVO) {
+		return sqlSession.selectOne("community.selectPostLike", boardLikeVO);
+	}
+//	게시물 좋아요 조회[아이디]
+	public BoardLikeVO selectPostLikeId(Long id) {
+		return sqlSession.selectOne("community.selectPostLikeId", id);
+	}
 	
-//	댓글 삭제
+//	댓글 작성
+	public void insertPostComment(BoardCommentVO BoardCommentVO) {
+		sqlSession.insert("community.insertPostComment", BoardCommentVO);
+	}
+//	댓글 리스트 조회
+	public List<BoardCommentViewDTO> selectCommentList(Long id) {
+		return sqlSession.selectList("community.selectCommentList", id);
+	}
 }

@@ -26,12 +26,12 @@ public class CommunityWriteOkController implements Action {
         String filePath = "/assets/images/community";
         String directory = req.getServletContext().getRealPath(filePath);
         int sizeLimit = 30 * 1024 * 1024; // 최대 30MB
-
+        
         File uploadDir = new File(directory);
         if (!uploadDir.exists()) {
             uploadDir.mkdirs();
         }
-
+        
         MultipartRequest multi = new MultipartRequest(
             req,
             directory,
@@ -39,7 +39,7 @@ public class CommunityWriteOkController implements Action {
             "UTF-8",
             new DefaultFileRenamePolicy()
         );
-
+        
         // 2. 파라미터 꺼내기
         String title = multi.getParameter("boardTitle");
         String category = multi.getParameter("boardHashtag");
