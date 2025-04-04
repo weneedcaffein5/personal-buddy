@@ -104,7 +104,8 @@
 
 #calendar {
   flex: 2;
-  max-width: 800px;
+  max-width: 1400px;
+  max-height: 700px;
 }
 
 .fc-header-toolbar {
@@ -333,11 +334,24 @@
 }
 
 .calendar-detail-panel {
-	flex: 1;
+	flex: none;
+	width: 0px;
+	height: 95%;
+	overflow: hidden;
 	border-left: 1px solid #eee;
 	background-color: #fff;
-	min-width: 300px;
 	padding-left: 20px;
+	transition: width 0.5s ease;
+}
+
+.calendar-detail-panel.expanded {
+  width: 450px;
+}
+
+.calendar-detail-panel .child {
+  width: 0;
+  overflow: hidden; /* 내부 내용 잘리게 함 */
+  transition: width 0.3s ease;
 }
 
 #title-wrapper{
@@ -464,7 +478,7 @@
 	margin-top: 8px;
 	height: 250px;
 	border: 1px solid #ddd;
-
+	resize: none;
 }
 
 .calendar-btns {
