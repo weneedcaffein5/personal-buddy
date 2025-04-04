@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
 import com.app.event.controller.EventMainController;
-import com.app.interest.controller.InterestMainController;
+import com.app.event.controller.EventPostController;
 
 public class EventFrontController extends HttpServlet {
 	@Override
@@ -24,8 +24,8 @@ public class EventFrontController extends HttpServlet {
 		
 		if(target.equals("event-main")) {
 			result = new EventMainController().execute(req, resp);
-		}else if(target.equals("interest-category")) {
-			
+		}else if(target.equals("event-post")) {
+			result = new EventPostController().execute(req, resp);
 		}else {
 //			전부 404
 		}
