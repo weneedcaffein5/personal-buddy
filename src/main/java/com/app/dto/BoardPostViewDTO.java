@@ -6,7 +6,7 @@ import java.util.Objects;
 public class BoardPostViewDTO {
 	private Long id;
 	private String boardTitle;
-	private String board_content;
+	private String boardContent;
 	private Timestamp boardContentCreateDate;
 	private Long memberId;
 	private String memberNickname;
@@ -16,12 +16,12 @@ public class BoardPostViewDTO {
 	
 	public BoardPostViewDTO() {;}
 
-	public BoardPostViewDTO(Long id, String boardTitle, String board_content, Timestamp boardContentCreateDate,
+	public BoardPostViewDTO(Long id, String boardTitle, String boardContent, Timestamp boardContentCreateDate,
 			Long memberId, String memberNickname, int boardContentViews, int likeCount, int commentCount) {
 		super();
 		this.id = id;
 		this.boardTitle = boardTitle;
-		this.board_content = board_content;
+		this.boardContent = boardContent;
 		this.boardContentCreateDate = boardContentCreateDate;
 		this.memberId = memberId;
 		this.memberNickname = memberNickname;
@@ -46,12 +46,12 @@ public class BoardPostViewDTO {
 		this.boardTitle = boardTitle;
 	}
 
-	public String getBoard_content() {
-		return board_content;
+	public String getBoardContent() {
+		return boardContent;
 	}
 
-	public void setBoard_content(String board_content) {
-		this.board_content = board_content;
+	public void setBoardContent(String boardContent) {
+		this.boardContent = boardContent;
 	}
 
 	public Timestamp getBoardContentCreateDate() {
@@ -104,7 +104,7 @@ public class BoardPostViewDTO {
 
 	@Override
 	public String toString() {
-		return "BoradPostViewDTO [id=" + id + ", boardTitle=" + boardTitle + ", board_content=" + board_content
+		return "BoardPostViewDTO [id=" + id + ", boardTitle=" + boardTitle + ", boardContent=" + boardContent
 				+ ", boardContentCreateDate=" + boardContentCreateDate + ", memberId=" + memberId + ", memberNickname="
 				+ memberNickname + ", boardContentViews=" + boardContentViews + ", likeCount=" + likeCount
 				+ ", commentCount=" + commentCount + "]";
@@ -112,7 +112,7 @@ public class BoardPostViewDTO {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(boardContentCreateDate, boardContentViews, boardTitle, board_content, commentCount, id,
+		return Objects.hash(boardContent, boardContentCreateDate, boardContentViews, boardTitle, commentCount, id,
 				likeCount, memberId, memberNickname);
 	}
 
@@ -125,11 +125,11 @@ public class BoardPostViewDTO {
 		if (getClass() != obj.getClass())
 			return false;
 		BoardPostViewDTO other = (BoardPostViewDTO) obj;
-		return Objects.equals(boardContentCreateDate, other.boardContentCreateDate)
+		return Objects.equals(boardContent, other.boardContent)
+				&& Objects.equals(boardContentCreateDate, other.boardContentCreateDate)
 				&& boardContentViews == other.boardContentViews && Objects.equals(boardTitle, other.boardTitle)
-				&& Objects.equals(board_content, other.board_content) && commentCount == other.commentCount
-				&& Objects.equals(id, other.id) && likeCount == other.likeCount
+				&& commentCount == other.commentCount && Objects.equals(id, other.id) && likeCount == other.likeCount
 				&& Objects.equals(memberId, other.memberId) && Objects.equals(memberNickname, other.memberNickname);
 	}
-	
+
 }

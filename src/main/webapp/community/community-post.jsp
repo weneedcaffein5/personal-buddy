@@ -25,7 +25,7 @@
             <div class="title">
                 <div class="title-top">
                 	<div class="title-top-reft">
-	                    <span class="post-title">2025 토트넘 경기 일정</span>
+	                    <span class="post-title">${boardPostViewDTO.boardTitle }</span>
                 	</div>
                     <div class="title-top-right">
 	                    <form action="">
@@ -34,144 +34,110 @@
 	                    <form action="">
 		                    <button class="post-delete">삭제</button>
 	                    </form>
-	                    <span class="post-create-time">2025.01.28게시</span>
+	                    <span class="post-create-time">
+	                    	<fmt:formatDate value="${boardPostViewDTO.boardContentCreateDate}" pattern="yyyy-MM-dd" /> 게시
+	                    </span>
                     </div>
                 </div>
                 <div class="title-bottom">
                     <div class="member-info">
                         <img src="../assets/images/community/프로필 사진.png" alt="프로필 사진">
-                        <span class="member-name">슛돌이</span>
+                        <span class="member-name">${boardPostViewDTO.memberNickname }</span>
                     </div>
                     <div class="post-info">
                         <div class="post-info-box">
                             <span class="post-info-text">조회 수</span>
-                            <span class="post-info-count">9999</span>
+                            <span class="post-info-count">${boardPostViewDTO.boardContentViews }</span>
                         </div>
                         <div class="post-info-box">
                             <span class="post-info-text">좋아요</span>
-                            <span class="post-info-count">999</span>
+                            <span class="post-info-count">${boardPostViewDTO.likeCount }</span>
                         </div>
                         <div class="post-info-box">
                             <span class="post-info-text">댓글</span>
-                            <span class="post-info-count">99</span>
+                            <span class="post-info-count">${boardPostViewDTO.commentCount }</span>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="post-main">
-            	<img alt="" src="../assets/images/community/토트넘 경기일정 1.png">
+            	<c:forEach var="image" items="${postImgs}">
+				    <img alt="포스트 이미지" src="..${image.boardImgPath}${image.boardImgName}">
+				</c:forEach>
             	<span>
-	                2025 토트넘 경기 일정입니다.<br>
-					1월 2월 3월 4월 5월 6월 7월 8월 9월 10월 11월 12월<br>
-					축구 하나도 몰라도 일단 일정 하나쯤은 알고 있어야지 
+					${boardPostViewDTO.boardContent }
             	</span>
             </div>
+            
+            <!-- 좋아요 -->
             <div class="post-like-btn">
-                <button class="post-like-btn-off">좋아요</button>
-            </div>
+			    <!-- 사용자가 좋아요를 누르지 않은 경우 (userLike가 null) -->
+			    <c:if test="${empty userLike}">
+			        <form action="community-post-like.community" method="post">
+			            <input type="hidden" name="postId" value="${boardPostViewDTO.id}" />
+			            <button class="post-like-btn-off">좋아요</button>
+			        </form>
+			    </c:if>
+			
+			    <!-- 사용자가 이미 좋아요를 누른 경우 (userLike가 존재) -->
+			    <c:if test="${not empty userLike}">
+			        <form action="community-post-off-like.community" method="post">
+			            <input type="hidden" name="postId" value="${boardPostViewDTO.id}" />
+			            <input type="hidden" name="boardLikeId" value="${userLike.id}" />
+			            <button class="post-like-btn-off post-like-btn-on">♥ ${boardPostViewDTO.likeCount}</button>
+			        </form>
+			    </c:if>
+			</div>
+			
             <div class="post-comment-title">
                 <span class="post-comment-title-text">댓글</span>
-                <span class="post-comment-title-count">99</span>    
+                <span class="post-comment-title-count">${boardPostViewDTO.commentCount }</span>    
             </div>
-            <textarea class="input-comment" maxlength="500" placeholder="댓글을 입력해주세요"></textarea>
-            <div class="insert-box">
-                <span class="comment-text-count">0</span>
-                <span class="comment-text-max">/ 500</span>
-                <button class="insert-comment-btn">등록</button>
-            </div>
+            <form action="community-insert-comment.community" method="post">
+            	<input type="hidden" name="postId" value="${boardPostViewDTO.id}">
+	            <textarea class="input-comment" name="boardCommentContent" maxlength="499" placeholder="댓글을 입력해주세요"></textarea>
+	            <div class="insert-box">
+	                <span class="comment-text-count">0</span>
+	                <span class="comment-text-max">/ 500</span>
+	                <button class="insert-comment-btn">등록</button>
+	            </div>
+            </form>
+            
             <div class="post-comment-box">
-                <div class="post-comment">
-                    <div class="comment-member-box">
-                        <div class="member-info">
-                            <img src="../assets/images/community/프로필 사진.png" alt="프로필 사진">
-                            <span class="member-name">슛돌이</span>
-                        </div>
-                        <button class="member-comment-modify">수정</button>
-                    </div>
-                    <div class="member-comment-box">
-                        <span class="member-comment">뭔가 가벼운거</span>
-                        <button class="member-comment-like-btn none">♥</button>
-                    </div>
-                    <div class="modify-hide-box">
-                        <span class="comment-text-count hide">0</span>
-                        <span class="comment-text-max hide">/ 500</span>
-                        <button class="modify-delete-btn hide">삭제</button>
-                        <button class="modify-add-btn hide">수정 완료</button>
-                    </div>
-                    <div class="comment-info">
-                        <div class="comment-create-time">2025.02.05  03:20</div>
-                        <div class="comment-like-count">♡ 99</div>
-                    </div>
-                </div>
-                <div class="post-comment">
-                    <div class="comment-member-box">
-                        <div class="member-info">
-                            <img src="../assets/images/community/프로필 사진.png" alt="프로필 사진">
-                            <span class="member-name">슛돌이</span>
-                        </div>
-                        <button class="member-comment-modify">수정</button>
-                    </div>
-                    <div class="member-comment-box">
-                        <span class="member-comment">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span>
-                        <button class="member-comment-like-btn none">♥</button>
-                    </div>
-                    <div class="modify-hide-box">
-                        <span class="comment-text-count hide">0</span>
-                        <span class="comment-text-max hide">/ 500</span>
-                        <button class="modify-delete-btn hide">삭제</button>
-                        <button class="modify-add-btn hide">수정 완료</button>
-                    </div>
-                    <div class="comment-info">
-                        <div class="comment-create-time">2025.02.05  03:20</div>
-                        <div class="comment-like-count">♡ 99</div>
-                    </div>
-                </div>
-                <div class="post-comment">
-                    <div class="comment-member-box">
-                        <div class="member-info">
-                            <img src="../assets/images/community/프로필 사진.png" alt="프로필 사진">
-                            <span class="member-name">아스날</span>
-                        </div>
-                        <button class="member-comment-modify none">수정</button>
-                    </div>
-                    <div class="member-comment-box">
-                        <span class="member-comment">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span>
-                        <button class="member-comment-like-btn">♥</button>
-                    </div>
-                    <div class="modify-hide-box">
-                        <span class="comment-text-count hide">0</span>
-                        <span class="comment-text-max hide">/ 500</span>
-                        <button class="modify-delete-btn hide">삭제</button>
-                        <button class="modify-add-btn hide">수정 완료</button>
-                    </div>
-                    <div class="comment-info">
-                        <div class="comment-create-time">2025.02.05  03:20</div>
-                        <div class="comment-like-count">♡ 99</div>
-                    </div>
-                </div>
-                <div class="post-comment">
-                    <div class="comment-member-box">
-                        <div class="member-info">
-                            <img src="../assets/images/community/프로필 사진.png" alt="프로필 사진">
-                            <span class="member-name">아스날</span>
-                        </div>
-                        <button class="member-comment-modify none">수정</button>
-                    </div>
-                    <div class="member-comment-box">
-                        <span class="member-comment">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span>
-                        <button class="member-comment-like-btn">♥</button>
-                    </div>
-                    <div class="modify-hide-box">
-                        <span class="comment-text-count hide">0</span>
-                        <span class="comment-text-max hide">/ 500</span>
-                        <button class="modify-delete-btn hide">삭제</button>
-                        <button class="modify-add-btn hide">수정 완료</button>
-                    </div>
-                    <div class="comment-info">
-                        <div class="comment-create-time">2025.02.05  03:20</div>
-                        <div class="comment-like-count">♡ 99</div>
-                    </div>
-                </div>
+            	<c:forEach var="comment" items="${comments }">
+	                <div class="post-comment">
+	                    <div class="comment-member-box">
+	                        <div class="member-info">
+	                            <img src="../assets/images/community/프로필 사진.png" alt="프로필 사진">
+	                            <span class="member-name">${comment.memberNickname }</span>
+	                        </div>
+	                        <c:if test="${sessionScope.loginId eq comment.memberId}">
+			                    <button class="member-comment-modify">수정</button>
+			                </c:if>
+	                    </div>
+	                    <div class="member-comment-box">
+	                        <span class="member-comment">${comment.boardCommentContent }</span>
+	                        <c:if test="${sessionScope.loginId ne comment.memberId}">
+			                    <button class="member-comment-like-btn">♥</button>
+			                </c:if>
+	                    </div>
+	                    <div class="modify-hide-box">
+	                        <span class="comment-text-count text-count2 hide">0</span>
+	                        <span class="comment-text-max hide">/ 500</span>
+	                        <form action="community-delete-comment.community" method="post">
+	                        	<input type="hidden" name="commentId" value="${comment.id }">
+		                        <button class="modify-delete-btn hide">삭제</button>
+	                        </form>	
+	                        <button type="button" class="modify-add-btn hide">수정 완료</button>
+	                    </div>
+	                    <div class="comment-info">
+	                        <div class="comment-create-time">
+	                        	<fmt:formatDate value="${comment.boardCommentCreateDate}" pattern="yyyy-MM-dd HH:mm" />
+	                        </div>
+	                        <div class="comment-like-count">♡ ${comment.likeCount }</div>
+	                    </div>
+	                </div>
+            	</c:forEach>
             </div>
         </div>
     </div>

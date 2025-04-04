@@ -10,18 +10,17 @@ public class ItemVO {
 	private String itemImgPath;
 	private String itemImgName;
 	private String itemType;
-	private String itemCategory;
 	
 	public ItemVO() {;}
-	public ItemVO(Long id, String itemName, int itemPrice, String itemImgPath, String itemImgName, String itemType,
-			String itemCategory) {
+
+	public ItemVO(Long id, String itemName, int itemPrice, String itemImgPath, String itemImgName, String itemType) {
+		super();
 		this.id = id;
 		this.itemName = itemName;
 		this.itemPrice = itemPrice;
 		this.itemImgPath = itemImgPath;
 		this.itemImgName = itemImgName;
 		this.itemType = itemType;
-		this.itemCategory = itemCategory;
 	}
 
 	public Long getId() {
@@ -72,24 +71,15 @@ public class ItemVO {
 		this.itemType = itemType;
 	}
 
-	public String getItemCategory() {
-		return itemCategory;
-	}
-
-	public void setItemCategory(String itemCategory) {
-		this.itemCategory = itemCategory;
-	}
-
 	@Override
 	public String toString() {
 		return "ItemVO [id=" + id + ", itemName=" + itemName + ", itemPrice=" + itemPrice + ", itemImgPath="
-				+ itemImgPath + ", itemImgName=" + itemImgName + ", itemType=" + itemType + ", itemCategory="
-				+ itemCategory + "]";
+				+ itemImgPath + ", itemImgName=" + itemImgName + ", itemType=" + itemType + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, itemCategory, itemImgName, itemImgPath, itemName, itemPrice, itemType);
+		return Objects.hash(id, itemImgName, itemImgPath, itemName, itemPrice, itemType);
 	}
 
 	@Override
@@ -101,10 +91,9 @@ public class ItemVO {
 		if (getClass() != obj.getClass())
 			return false;
 		ItemVO other = (ItemVO) obj;
-		return Objects.equals(id, other.id) && Objects.equals(itemCategory, other.itemCategory)
-				&& Objects.equals(itemImgName, other.itemImgName) && Objects.equals(itemImgPath, other.itemImgPath)
-				&& Objects.equals(itemName, other.itemName) && itemPrice == other.itemPrice
-				&& Objects.equals(itemType, other.itemType);
+		return Objects.equals(id, other.id) && Objects.equals(itemImgName, other.itemImgName)
+				&& Objects.equals(itemImgPath, other.itemImgPath) && Objects.equals(itemName, other.itemName)
+				&& itemPrice == other.itemPrice && Objects.equals(itemType, other.itemType);
 	}
 	
 }
