@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -117,18 +118,47 @@
 	                    </div>
 	                    <div class="member-comment-box">
 	                        <span class="member-comment">${comment.boardCommentContent }</span>
-	                        <c:if test="${sessionScope.loginId ne comment.memberId}">
-			                    <button class="member-comment-like-btn">♥</button>
-			                </c:if>
+
+							<c:set var="likedCommentIds" value="" />
+							<c:forEach var="like" items="${commentLikes}">
+							    <c:set var="likedCommentIds" value="${likedCommentIds},${like.boardCommentId}" />
+							</c:forEach>
+							
+							<c:if test="${sessionScope.loginId ne comment.memberId}">
+							    <c:choose>
+							        <c:when test="${fn:contains(likedCommentIds, comment.id)}">
+							            <form action="community-comment-delete-like.community" method="post">
+							                <input type="hidden" name="commentId" value="${comment.id}" />
+							                <input type="hidden" name="postId" value="${boardPostViewDTO.id}" />
+							                <button class="member-comment-like-btn member-comment-like-btn-on">♥</button>
+							            </form>
+							        </c:when>
+							
+							        <c:otherwise>
+							            <form action="community-comment-insert-like.community" method="post">
+							                <input type="hidden" name="commentId" value="${comment.id}" />
+							                <input type="hidden" name="postId" value="${boardPostViewDTO.id}" />
+							                <button class="member-comment-like-btn">♡</button>
+							            </form>
+							        </c:otherwise>
+							    </c:choose>
+							</c:if>
+
 	                    </div>
 	                    <div class="modify-hide-box">
 	                        <span class="comment-text-count text-count2 hide">0</span>
 	                        <span class="comment-text-max hide">/ 500</span>
 	                        <form action="community-delete-comment.community" method="post">
 	                        	<input type="hidden" name="commentId" value="${comment.id }">
+	                        	<input type="hidden" name="postId" value="${boardPostViewDTO.id }">
 		                        <button class="modify-delete-btn hide">삭제</button>
-	                        </form>	
-	                        <button type="button" class="modify-add-btn hide">수정 완료</button>
+	                        </form>
+	                        <form action="community-update-comment.community" method="post">
+	                        	<input type="hidden" name="commentId" value="${comment.id }">
+	                        	<input type="hidden" name="postId" value="${boardPostViewDTO.id }">
+	                        	<input type="hidden" name="textVal">
+		                        <button type="submit" class="modify-add-btn hide">수정 완료</button>
+	                        </form>
 	                    </div>
 	                    <div class="comment-info">
 	                        <div class="comment-create-time">

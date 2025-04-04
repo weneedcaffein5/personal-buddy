@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		  calendar.changeView(value); // FullCalendar 뷰 변경
 		});
 	});
-
+	
 	// 외부 클릭 → 드롭다운 닫기
 	document.addEventListener("click", () => {
 		options.classList.remove("show");
@@ -211,14 +211,50 @@ document.addEventListener("DOMContentLoaded", function () {
     calendar.render();
 	calendar.updateSize(); // 클릭 위치와 시간 매칭 맞추기 위해 꼭 호출
 	
-	calendar.on("eventMouseEnter", info => console.log("eEnter:", info));
-	calendar.on("eventMouseLeave", info => console.log("eLeave:", info));
-	
 	function isTimeIncluded(date) {
 		return !(date.getHours() === 0 && date.getMinutes() === 0 && date.getSeconds() === 0);
 	}
 	
+	function checkDetailPanelOpen() {
+		const detailPanel = document.querySelector(".calendar-detail-panel");
+		return getComputedStyle(detailPanel).width === '450px';
+	}
+	
+	function openDetailPanel() {
+		const detailPanel = document.querySelector(".calendar-detail-panel");
+		detailPanel.classList.add('expanded');
+
+		// transition 끝나는 시점에 캘린더 사이즈 업데이트
+		const onTransitionEnd = (e) => {
+			if (e.propertyName === 'width') {
+				calendar.render();
+				calendar.updateSize(); // 클릭 위치와 시간 매칭 맞추기 위해 꼭 호출
+				detailPanel.removeEventListener('transitionend', onTransitionEnd);
+			}
+		};
+
+		detailPanel.addEventListener('transitionend', onTransitionEnd);
+	}
+
+	function closeDetailPanel() {
+		const detailPanel = document.querySelector(".calendar-detail-panel");
+		detailPanel.classList.remove('expanded');
+
+		// transition 끝나는 시점에 캘린더 사이즈 업데이트
+		const onTransitionEnd = (e) => {
+			if (e.propertyName === 'width') {
+				calendar.render();
+				calendar.updateSize(); // 클릭 위치와 시간 매칭 맞추기 위해 꼭 호출
+				detailPanel.removeEventListener('transitionend', onTransitionEnd);
+			}
+		};
+
+		detailPanel.addEventListener('transitionend', onTransitionEnd);
+	}
+	
 	calendar.on("dateClick", info => {
+		openDetailPanel();
+		
 		const date = info.date;
 		const year = date.getFullYear();
 		const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -243,9 +279,15 @@ document.addEventListener("DOMContentLoaded", function () {
 		
 		document.getElementById('start-time').value = formatStartTime;
 		document.getElementById('end-time').value = formatEndTime;
+		
+		document.getElementById("title-input").value = "";
+		document.getElementById("event-desc").value = "";
+		
 	});
 	
 	calendar.on("select", info => {
+		openDetailPanel();
+		
 		let startDate = info.start;
 		let startYear = startDate.getFullYear();
 		let startMonth = String(startDate.getMonth() + 1).padStart(2, '0');
@@ -288,17 +330,62 @@ document.addEventListener("DOMContentLoaded", function () {
 		document.getElementById('start-time').value = formatStartTime;
 		document.getElementById('end-time').value = formatEndTime;
 	});
-	
-	function hexToRGBA(hex, alpha = 1) {
-		hex = hex.replace('#', '');
-		const r = parseInt(hex.substring(0, 2), 16);
-		const g = parseInt(hex.substring(2, 4), 16);
-		const b = parseInt(hex.substring(4, 6), 16);
-		return `rgba(${r}, ${g}, ${b}, ${alpha})`;
-	}
-	
-	document.querySelector(".save-btn").addEventListener("click", (e) => {
+
+	calendar.on("eventClick", (info) => {
+		const event = info.event;
 		
+		let startYear = event.start.getFullYear();
+		let startMonth = String(event.start.getMonth() + 1).padStart(2, '0');
+		let startDay = String(event.start.getDate()).padStart(2, '0');
+		
+		let eventStartDate = `${startYear}-${startMonth}-${startDay}`;
+		
+		let startHour = String(event.start.getHours()).padStart(2, '0');
+		let startMinute = String(event.start.getMinutes()).padStart(2, '0');
+		
+		let eventStartTime = `${startHour}:${startMinute}`;
+		
+
+		let endYear = event.end.getFullYear();
+		let endMonth = String(event.end.getMonth() + 1).padStart(2, '0');
+		let endDay = String(event.end.getDate()).padStart(2, '0');
+
+		let eventEndDate = `${endYear}-${endMonth}-${endDay}`;
+
+		let endHour = String(event.end.getHours()).padStart(2, '0');
+		let endMinute = String(event.end.getMinutes()).padStart(2, '0');
+
+		let eventEndTime = `${endHour}:${endMinute}`;
+		
+		
+		const calendarTitle = document.getElementById("title-input");
+		const calendarDesc = document.getElementById("event-desc");
+		
+		const calendarScheduleColor = document.getElementById("colorSelectedValue");
+		
+		const startDate = document.getElementById("start-date");
+		const startTime = document.getElementById("start-time");
+
+		const endDate = document.getElementById("end-date");
+		const endTime = document.getElementById("end-time");
+		
+		calendarTitle.value = event.title;
+		calendarDesc.value = event.extendedProps.description;
+		
+		calendarScheduleColor.value = event.color;
+
+		startDate.value = eventStartDate;
+		startTime.value = eventStartTime;
+		
+		endDate.value = eventEndDate;
+		endTime.value = eventEndTime;
+		
+		openDetailPanel();
+	});
+	
+	calendar.on("eventMouseLeave", info => console.log("eLeave:", info));
+
+	document.querySelector(".save-btn").addEventListener("click", (e) => {
 		const calendarTitle = document.getElementById("title-input").value;
 		const calendarDesc = document.getElementById("event-desc").value;
 		
@@ -306,11 +393,11 @@ document.addEventListener("DOMContentLoaded", function () {
 		
 		const startDate = document.getElementById("start-date").value;
 		const startTime = document.getElementById("start-time").value;
-		const startDateAndTime = changeFormatDateAndTime(startDate,startTime);
+		const startDateAndTime = changeDateAndTimeToForamt(startDate,startTime);
 
 		const endDate = document.getElementById("end-date").value;
 		const endTime = document.getElementById("end-time").value;
-		const endDateAndTime = changeFormatDateAndTime(endDate,endTime);
+		const endDateAndTime = changeDateAndTimeToForamt(endDate,endTime);
 		
 		if(calendarTitle == null || calendarTitle == ""){
 			alert("일정의 제목을 작성해주세요.");
@@ -324,6 +411,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		
 		calendar.addEvent({
 		    title: calendarTitle,
+			description: calendarDesc,
 		    start: startDateAndTime,
 		    end: endDateAndTime,
 			color: calendarScheduleColor, // ✔ dot 색상용 (필수)
@@ -333,17 +421,23 @@ document.addEventListener("DOMContentLoaded", function () {
 			},
 			textColor: "#000",
 		  });
+		  
+		  closeDetailPanel();
+	})
+
+	document.querySelector(".cancel-btn").addEventListener("click", (e) => {
+		closeDetailPanel();
 	})
 	
 	function hexToRGBA(hex, alpha = 1) {
-	  hex = hex.replace('#', '');
-	  const r = parseInt(hex.slice(0, 2), 16);
-	  const g = parseInt(hex.slice(2, 4), 16);
-	  const b = parseInt(hex.slice(4, 6), 16);
-	  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+		hex = hex.replace('#', '');
+		const r = parseInt(hex.substring(0, 2), 16);
+		const g = parseInt(hex.substring(2, 4), 16);
+		const b = parseInt(hex.substring(4, 6), 16);
+		return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 	}
 	
-	function changeFormatDateAndTime(date, time){
+	function changeDateAndTimeToForamt(date, time){
 		let result = "";
 		result = date + "T" + time + ":00";
 		return result;

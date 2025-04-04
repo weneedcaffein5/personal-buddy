@@ -280,4 +280,33 @@
 		ORDER BY TBC.BOARD_COMMENT_CREATE_DATE DESC
 	</select>
 	
+	<!-- 댓글 수정 -->	
+	<update id="updateComment" parameterType="BoardCommentVO">
+		UPDATE TBL_BOARD_COMMENT SET BOARD_COMMENT_CONTENT = #{boardCommentContent}
+		WHERE ID = #{id} AND MEMBER_ID = #{memberId}
+    </update>
+
+    <!-- 댓글 삭제 -->
+    <delete id="deleteComment" parameterType="Long">
+        DELETE FROM TBL_BOARD_COMMENT
+        WHERE ID = #{id}
+    </delete>
+	
+	<!-- 댓글 좋아요 생성 -->
+	<insert id="insertCommentLike" parameterType="BoardCommentLikeVO">
+		INSERT INTO TBL_BOARD_COMMENT_LIKE (ID, MEMBER_ID, BOARD_COMMENT_ID)
+        VALUES (SEQ_BOARD_COMMENT_LIKE.NEXTVAL, #{memberId}, #{boardCommentId})
+	</insert>
+	
+	<delete id="deleteCommentLike" parameterType="Long">
+		DELETE FROM TBL_BOARD_COMMENT_LIKE 
+		WHERE ID = #{id}
+	</delete>
+	
+	<select id="checkCommentLike" resultType="BoardCommentLikeVO">
+	    SELECT ID, BOARD_COMMENT_LIKE_CREATE_DATE, MEMBER_ID, BOARD_COMMENT_ID
+		FROM TBL_BOARD_COMMENT_LIKE
+	</select>
+
+	
 </mapper>
