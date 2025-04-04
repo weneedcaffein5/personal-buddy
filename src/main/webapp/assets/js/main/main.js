@@ -108,7 +108,79 @@ document.querySelectorAll('.cloth-thumbnail').forEach(item => {
     });
 });
 
-
 /* console.log("Clicked thumbnail:", this.src);
 console.log("Title:", this.getAttribute('data-title'));
 console.log("Description:", this.getAttribute('data-desc')); */
+
+
+document.addEventListener("DOMContentLoaded", function(){
+	const clothCards = document.querySelectorAll('.cloth-card');
+	const modal = document.getElementById('clothModal');
+	const closeModalBtn = document.querySelector('.close-btn');
+	const addToMyClothesBtn = document.getElementById('addToMyClothes');
+	const modalImage = document.getElementById('modalImage');
+	const modalTitle = document.getElementById('modalTitle');
+	const modalDesc = document.getElementById('modalDesc');
+	
+	
+	// 코디 카드 클릭 시
+	clothCards.forEach(card => {
+	    card.addEventListener('click', function() {
+	       /* console.log("클릭된 코디 카드:", this); // 클릭된 카드 정보*/
+
+	        const title = this.querySelector('.cloth-card-title').textContent;
+	        const desc = this.querySelector('.cloth-card-desc').textContent;
+	        const imgSrc = this.querySelector('img').src;
+
+	        /*console.log("타이틀:", title); 
+	        console.log("설명:", desc); 
+	        console.log("이미지 주소:", imgSrc); */
+	        
+			
+	        modalImage.src = imgSrc;
+	        modalTitle.textContent = title;
+	        modalDesc.textContent = desc;
+
+			/*console.log("Clicked Cloth:", title, desc, imgSrc);*/
+			
+	        modal.style.display = 'block'; // 모달 열기
+			modal.classList.add('active');
+	    });
+	});
+	
+	// 내 코디에 추가 버튼 클릭 시
+	addToMyClothesBtn.addEventListener('click', function() {
+	   /* console.log("내 코디에 추가 버튼 클릭됨");*/
+
+	    // 사용자에게 코디를 추가할 것인지 확인
+	    alert("이 코디가 내 코디에 추가되었습니다!");
+
+	    // 추가된 후 모달 닫기
+	    modal.style.display = 'none';
+
+	    // 일단 로컬 스토리지에 저장 (DB에 저장하는 코드 추후에 필요)
+	    const newCloth = {
+	        title: modalTitle.textContent,
+	        desc: modalDesc.textContent,
+	        img: modalImage.src
+	    };
+
+		/*console.log("새로 추가된 코디:", newCloth);*/
+		
+	    let myClothes = JSON.parse(localStorage.getItem('myClothes')) || [];
+	    myClothes.push(newCloth);
+	    localStorage.setItem('myClothes', JSON.stringify(myClothes));
+
+	   console.log("내 코디 목록:", myClothes);
+	});
+
+
+	/*모달 닫기*/
+	closeModalBtn.addEventListener('click', function(){
+		modal.style.display = 'none';
+	});
+	
+});
+
+
+	
