@@ -106,18 +106,7 @@
 					        <div class="comment">
 							    <div class="user-info">
 							        <div class="user-profile">
-							            <c:choose>
-							                <c:when test="${empty comment.memberProfileImgName}">
-							                    <img class="mini-profile"
-							                         src="${pageContext.request.contextPath}/assets/images/mypage/profile-default-image.png"
-							                         alt="기본 이미지" />
-							                </c:when>
-							                <c:otherwise>
-							                    <img class="mini-profile"
-							                         src="../${comment.memberProfileImgPath}${comment.memberProfileImgName}"
-							                         alt="프로필 이미지" />
-							                </c:otherwise>
-							            </c:choose>
+										<img class="mini-profile" src="${pageContext.request.contextPath}/${comment.memberProfileImgPath}${comment.memberProfileImgName}" alt="프로필 이미지" />
 							            <span>${comment.memberNickname}</span>
 							        </div>
 							        <div class="update-button">
@@ -189,6 +178,32 @@
                 submitBtn.style.backgroundColor = "#ccc";
                 submitBtn.style.cursor = "not-allowed";
             }
+        });
+    });
+    
+    document.addEventListener("DOMContentLoaded", function () {
+        // 삭제 버튼 모두 찾아서 클릭 이벤트 연결
+        document.querySelectorAll(".delete-btn").forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                const guestCommentId = this.dataset.id;
+
+                if (!confirm("정말 삭제하시겠습니까?")) return;
+
+                fetch("mypage-mytree-delete-ok.mypage", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    body: "guestCommentId=" + encodeURIComponent(guestCommentId)
+                })
+                .then(res => {
+                    if (res.ok) {
+                        location.reload(); // 또는 DOM에서 직접 삭제해도 됨
+                    } else {
+                        alert("삭제에 실패했습니다.");
+                    }
+                });
+            });
         });
     });
 </script>
