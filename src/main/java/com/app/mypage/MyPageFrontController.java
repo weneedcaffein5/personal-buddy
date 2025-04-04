@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.app.Result;
 import com.app.mypage.controller.MyPageMyAchievement;
 import com.app.mypage.controller.MyPageMyTreeController;
+import com.app.mypage.controller.MyPageMyTreeWriteController;
 import com.app.mypage.controller.MypageInfoController;
 
 public class MyPageFrontController extends HttpServlet {
@@ -30,6 +31,8 @@ public class MyPageFrontController extends HttpServlet {
             result = new MypageInfoController().execute(req, resp);
         } else if (target.equals("mypage-mytree")) {
             result = new MyPageMyTreeController().execute(req, resp);
+        } else if (target.equals("mypage-mytree-write-ok")) {
+        	result = new MyPageMyTreeWriteController().execute(req, resp);
         } else if (target.equals("mypage-myachievement")) {
             result = new MyPageMyAchievement().execute(req, resp);
         } else {

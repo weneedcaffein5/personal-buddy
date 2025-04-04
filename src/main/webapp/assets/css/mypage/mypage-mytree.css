@@ -280,6 +280,7 @@ textarea {
 
 .comments-box {
 	display: flex;
+	flex-direction: column;
 	width: 100%;
 	height: 600px;
 	border-top: solid 1px #999999;
@@ -288,8 +289,6 @@ textarea {
 .comment {
 	width: 100%;
 	height: 150px;
-	margin: 30px 0;
-	border-bottom: solid 1px #999999;
 }
 
 .user-info {
@@ -303,10 +302,14 @@ textarea {
 	font-size: 16px;
 	color: #FF3F3F;
 	height: 28px;
+	cursor: pointer;
 }
+
 
 .user-profile {
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 100px;
 }
 
@@ -317,13 +320,15 @@ textarea {
 	width: 300px;
 	height: 28px;
 	font-size: 14px;
-	margin-left: 24px;
+	margin-left: 10px;
+	font-weight: 700;
 }
 
 .mini-profile {
 	width: 24px;
 	height: 24px;
 	object-fit: cover;
+	border-radius: 100px;
 }
 
 .update-button {
@@ -336,14 +341,25 @@ textarea {
 }
 
 .text {
+	display: flex;
 	width: 1000px;
-	margin-left: 30px;
 	height: 28px;
+	margin-left: 30px;
+	justify-content: left;
+	align-items: center;
+	padding-top: 8px;
+	padding-bottom: 10px;
 }
 
-.date {
+.date span {
 	margin-left: 30px;
 	font-size: 12px;
 	color: #999999;
+}
+
+.date {
+	width: 1160px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #999999;
 }
 
