@@ -54,37 +54,3 @@ pointShopTabStyle.forEach((tab) => {
 		tab.classList.add("point-shop-tab-style-on");
 	})
 })
-
-
-/* 탭 버튼 */
-achievementTab.addEventListener("click", () => {
-	tabBtn.classList.add("tab-btn-0")
-	tabBtn.classList.remove("tab-btn-200")
-	achievementTab.classList.add("tab-text-on");
-    achievementTab.classList.remove("tab-text-off");
-    myTreeTab.classList.add("tab-text-off");
-    myTreeTab.classList.remove("tab-text-on");
-    pointShopTab.classList.add("tab-text-off");
-    pointShopTab.classList.remove("tab-text-on");
-});
-
-myTreeTab.addEventListener("click", () => {
-	tabBtn.classList.remove("tab-btn-0" ,"tab-btn-200")
-	myTreeTab.classList.add("tab-text-on");
-    myTreeTab.classList.remove("tab-text-off");
-    achievementTab.classList.add("tab-text-off");
-    achievementTab.classList.remove("tab-text-on");
-    pointShopTab.classList.add("tab-text-off");
-    pointShopTab.classList.remove("tab-text-on");
-});
-
-pointShopTab.addEventListener("click", () => {
-	tabBtn.classList.remove("tab-btn-0")
-	tabBtn.classList.add("tab-btn-200")
-	pointShopTab.classList.add("tab-text-on");
-    pointShopTab.classList.remove("tab-text-off");
-    myTreeTab.classList.add("tab-text-off");
-    myTreeTab.classList.remove("tab-text-on");
-    achievementTab.classList.add("tab-text-off");
-    achievementTab.classList.remove("tab-text-on");
-});

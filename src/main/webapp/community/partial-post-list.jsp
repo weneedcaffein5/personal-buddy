@@ -4,7 +4,7 @@
 
 <c:forEach var="post" items="${postList}">
     <div class="post-content">
-        <a href="#"><img class="img" src="${pageContext.request.contextPath}${post.boardImgPath}/${post.boardImgName}" /></a>
+        <a href="community-post.community?id=${post.postId}"><img class="img" src="${pageContext.request.contextPath}${post.boardImgPath}/${post.boardImgName}" /></a>
         <span class="tag">${post.boardHashtag}</span>
         <span class="content-name">${post.boardTitle}</span>
         <div class="user-info">
