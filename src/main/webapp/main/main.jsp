@@ -44,7 +44,7 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
   		<div class="food-item">
 	    <!-- 이미지 링크 -->
 	    <div class="food-img">      
-	      <a href="${recommend.link}">
+	      <a href="${recommend.link}" target="_blank">
 	        <img src="${pageContext.request.contextPath}/${recommend.img}" alt="${recommend.name}">
 	      </a>
 	    </div>
@@ -77,13 +77,12 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
     </div>
   </div>
 
-   <!-- 장소 추천 -->
-    <div class="place-recommend">
+<!-- 장소 추천 -->
+	<div class="place-recommend">
 	  <div class="place-wrapper">
-	  
 	    <div class="place-list">
 	      <p class="place-title1">여기 가보는 거 어때요?</p>
-	      <c:forEach var="recommend" items="${placeList}">
+	      <c:forEach var="recommend" items="${placeList}" varStatus="status">
 	        <c:if test="${recommend.interestBig eq '장소 추천'}">
 	          <div class="place-item ${status.first ? 'active' : ''}">
 	            <div class="place-hover"></div>
@@ -95,16 +94,18 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
 	              <p class="place-location">${recommend.addr}</p>
 	            </div>
 	          </div>
-	       </c:if>
+	        </c:if>
 	      </c:forEach>
 	    </div>
-	    
+	
 	    <div class="place-details" id="map-container">
 	      <div id="map" style="width:100%; height:600px; border-radius:10px;"></div>
 	    </div>
-	    
 	  </div>
 	</div>
+
+
+
 
     <!-- 코디 추천 -->
 	<div class="cloth-grid-wrap">
