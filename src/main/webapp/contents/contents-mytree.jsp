@@ -85,7 +85,7 @@
 					<button class="decorate-tab" onclick="showContent('나무')">나무</button>
 				</div>
 				<div class="item-wrapper" id="content-container">
-					<%@ include file="contents-sticker.jsp"%>
+					<%@ include file="contents-all.jsp"%>
 				</div>
 			</div>
 

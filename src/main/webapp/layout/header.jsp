@@ -22,7 +22,7 @@
         <div class="leftheader">
            <a href="#" class="logo"><img src="<c:url value='/assets/images/mypage/logo.png' />" alt="로고"></a>
             <a href="<c:url value='/main/main.main' />">일정 관리</a>
-            <a href="<c:url value='/contents/contents-mytree.jsp' />">컨텐츠</a>
+            <a href="<c:url value='/contents/contents-mytree.contents' />">컨텐츠</a>
             <a href="<c:url value='../event/event-main.jsp' />">이벤트</a>
             <a href="<c:url value='/community/community-main.community' />">커뮤니티</a>
             <a href="<c:url value='../customer-service/customer-service.jsp' />">고객센터</a>
