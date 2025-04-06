@@ -2,22 +2,27 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="contents">
-	<update id="updateUserTree" parameterType="com.app.dto.TreeViewDTO">
+	<update id="updateUserTree"
+		parameterType="com.app.dto.TreeViewDTO">
 		UPDATE TBL_TREE
 		SET ID = #{treeId}
-		WHERE MEMBER_ID = #{memberId}
+		WHERE MEMBER_ID =
+		#{memberId}
 	</update>
-	
-	<select id="selectUserTree" parameterType="long" resultType="com.app.dto.TreeViewDTO">
-	    SELECT 
-	        ID AS treeId,
-	        MEMBER_ID AS memberId
-	    FROM TBL_TREE
-	    WHERE MEMBER_ID = #{memberId}
+
+	<select id="selectUserTree" parameterType="long"
+		resultType="com.app.dto.TreeViewDTO">
+		SELECT
+		ID AS treeId,
+		MEMBER_ID AS memberId
+		FROM TBL_TREE
+		WHERE MEMBER_ID = #{memberId}
 	</select>
-	
-	<select id="getItemsByType" parameterType="String" resultType="ItemVO">
-		SELECT ID, ITEM_NAME, ITEM_PRICE, ITEM_IMG_PATH, ITEM_IMG_NAME, ITEM_TYPE
+
+	<select id="getItemsByType" parameterType="String"
+		resultType="ItemVO">
+		SELECT ID, ITEM_NAME, ITEM_PRICE, ITEM_IMG_PATH, ITEM_IMG_NAME,
+		ITEM_TYPE
 		FROM TBL_ITEM
 		<where>
 			<if test="itemType != null and itemType != ''">
@@ -25,5 +30,40 @@
 			</if>
 		</where>
 	</select>
-	
+
+	<select id="selectOwnedBackgroundAndTreeItems"
+		parameterType="long" resultType="TreeViewDTO">
+		SELECT
+		i.ID AS itemId,
+		i.ITEM_NAME AS itemName,
+		i.ITEM_IMG_PATH AS itemImgPath,
+		i.ITEM_IMG_NAME AS itemImgName,
+		i.ITEM_TYPE AS itemType
+		FROM
+		TBL_ITEM i
+		JOIN
+		TBL_BUY_ITEM bi ON i.ID = bi.ITEM_ID
+		WHERE
+		bi.MEMBER_ID = #{memberId}
+		AND i.ITEM_TYPE IN ('TREE', 'BACKGROUND')
+		ORDER BY
+		i.ITEM_TYPE
+	</select>
+	<select id="selectOwnedStickerItems" parameterType="long"
+		resultType="TreeViewDTO">
+		SELECT
+		i.ID AS itemId,
+		i.ITEM_NAME AS itemName,
+		i.ITEM_IMG_PATH AS itemImgPath,
+		i.ITEM_IMG_NAME AS itemImgName,
+		i.ITEM_TYPE AS itemType,
+		bi.BUY_ITEM_COUNT AS itemCount
+		FROM
+		TBL_ITEM i
+		JOIN
+		TBL_BUY_ITEM bi ON i.ID = bi.ITEM_ID
+		WHERE
+		bi.MEMBER_ID = #{memberId}
+		AND i.ITEM_TYPE = 'STICKER'
+	</select>
 </mapper>
