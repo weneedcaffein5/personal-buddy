@@ -15,35 +15,34 @@
 			<!--  나무 아이템 출력 -->
 			<c:forEach var="item" items="${treeAndBgItems}">
 				<c:if test="${item.itemType == 'TREE'}">
-						<div class="folder-item">
-							<img
-								src="${pageContext.request.contextPath}${item.itemImgPath}/${item.itemImgName}"
-								alt="${item.itemName}" class="tree-item-image" /> <span>${item.itemName}</span>
-							<input type="hidden" name="selectedTreeId" value="${item.itemId}" />
-							<div class="tree-item-button-group">
-								<button class="change-button">변경</button>
-								<button class="remove-button">제거</button>
-							</div>
+					<div class="folder-item">
+						<img
+							src="${pageContext.request.contextPath}${item.itemImgPath}/${item.itemImgName}"
+							alt="${item.itemName}" class="tree-item-image" /> <span>${item.itemName}</span>
+						<input type="hidden" name="selectedTreeId" value="${item.itemId}" />
+						<div class="tree-item-button-group">
+							<button class="change-button">변경</button>
+							<button class="remove-button">제거</button>
 						</div>
-					
+					</div>
 				</c:if>
 			</c:forEach>
 
 			<!--  배경 아이템 출력 -->
 			<c:forEach var="item" items="${treeAndBgItems}">
 				<c:if test="${item.itemType == 'BACKGROUND'}">
-						<div class="folder-item">
-							<div class="image-text-container">
-								<img
-									src="${pageContext.request.contextPath}${item.itemImgPath}/${item.itemImgName}"
-									alt="${item.itemName}" class="background-image" /> <span>${item.itemName}</span>
-							</div>
-							<input type="hidden" name="selectedBackgroundId"
-								value="${item.itemId}" />
-							<div class="background-button-group">
-								<button class="change-button">변경</button>
-								<button class="remove-button">제거</button>
-							</div>
+					<div class="folder-item">
+						<div class="image-text-container">
+							<img
+								src="${pageContext.request.contextPath}${item.itemImgPath}/${item.itemImgName}"
+								alt="${item.itemName}" class="background-image" /> <span>${item.itemName}</span>
+						</div>
+						<input type="hidden" name="selectedBackgroundId"
+							value="${item.itemId}" />
+						<div class="background-button-group">
+							<button class="change-button">변경</button>
+							<button class="remove-button">제거</button>
+						</div>
 					</div>
 				</c:if>
 			</c:forEach>

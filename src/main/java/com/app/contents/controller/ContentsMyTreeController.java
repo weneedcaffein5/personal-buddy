@@ -23,33 +23,36 @@ public class ContentsMyTreeController implements Action{
         HttpSession session = req.getSession();
     
         Long memberId = (Long) session.getAttribute("loginId");
-        System.out.println("회원 ID: " + memberId);
+		/* System.out.println("회원 ID: " + memberId); */
         TreeDAO treeDAO = new TreeDAO();
         
         List<TreeViewDTO> treeAndBgItems = treeDAO.selectOwnedBackgroundAndTreeItems(memberId);
         List<TreeViewDTO> stickerItems = treeDAO.selectOwnedStickerItems(memberId);
-        System.out.println("treeAndBgItems: " + treeAndBgItems);
-        System.out.println("stickerItems: " + stickerItems);
+		/*
+		 * System.out.println("treeAndBgItems: " + treeAndBgItems);
+		 * System.out.println("stickerItems: " + stickerItems);
+		 */
      // 전체 리스트 통합
 		
 		List<TreeViewDTO> allItems = new ArrayList<>(); 
 		allItems.addAll(treeAndBgItems);
 		allItems.addAll(stickerItems);
 		 
-		for (TreeViewDTO item : allItems) {
-		    System.out.println(item);
-		}
+		/*
+		 * for (TreeViewDTO item : allItems) { System.out.println(item); }
+		 */
         // JSP로 넘기기
 		req.setAttribute("treeAndBgItems", treeAndBgItems);
 		req.setAttribute("stickerItems", stickerItems);
 		req.setAttribute("allItems", allItems);
         // JSP에서 사용하기 위해 request에 담기
 
-		treeAndBgItems.forEach(item -> {
-		    System.out.println(">>> itemId = " + item.getItemId());
-		    System.out.println(">>> itemName = " + item.getItemName());
-		    System.out.println(">>> itemCount = " + item.getItemCount());
-		});
+		/*
+		 * treeAndBgItems.forEach(item -> { System.out.println(">>> itemId = " +
+		 * item.getItemId()); System.out.println(">>> itemName = " +
+		 * item.getItemName()); System.out.println(">>> itemCount = " +
+		 * item.getItemCount()); });
+		 */
         Result result = new Result();
         result.setPath("contents-mytree.jsp");
         return result;

@@ -142,31 +142,37 @@ document.addEventListener("DOMContentLoaded", function () {
   const modalTitle = document.getElementById("modal-title");
   const modalMessage = document.getElementById("modal-message");
 
-  // 변경 버튼 클릭 시 미리보기 변경
   document.addEventListener("click", function (e) {
+    // "변경" 버튼 클릭 시
     if (e.target.classList.contains("change-button")) {
-      const treeForm = e.target.closest(".tree-change-form");
-      const backgroundForm = e.target.closest(".background-change-form");
+      const folder = e.target.closest(".folder-item");
+      if (!folder) return;
 
-      //  나무
-      if (treeForm) {
-        selectedTreeId = treeForm.querySelector("input[name='selectedTreeId']").value;
+      // ---  나무 선택 처리 ---
+      const selectedTreeIdInput = folder.querySelector("input[name='selectedTreeId']");
+      if (selectedTreeIdInput) {
+        selectedTreeId = selectedTreeIdInput.value;
+
+        // 썸네일 이미지 src 그대로 복사
+        const previewImage = folder.querySelector(".tree-item-image");
         const treeImage = document.getElementById("treeImage");
-        if (treeImage) {
-          treeImage.src = `../assets/images/contents/tree/tree${selectedTreeId}.png`;
-          treeImage.classList.add("enlarged");
+        if (previewImage && treeImage) {
+          treeImage.src = previewImage.src;
+          treeImage.classList.add("enlarged"); // 선택 효과
+          console.log(" 선택된 나무 ID:", selectedTreeId);
         }
-        console.log(" 선택된 나무:", selectedTreeId);
       }
 
-      //  배경
-      if (backgroundForm) {
-        selectedBackgroundId = backgroundForm.querySelector("input[name='selectedBackgroundId']").value;
+      // ---  배경 선택 처리 ---
+      const selectedBackgroundIdInput = folder.querySelector("input[name='selectedBackgroundId']");
+      if (selectedBackgroundIdInput) {
+        selectedBackgroundId = selectedBackgroundIdInput.value;
+
         const bgImage = document.getElementById("backgroundImage");
         if (bgImage && backgroundImageMap[selectedBackgroundId]) {
           bgImage.src = `../assets/images/contents/${backgroundImageMap[selectedBackgroundId]}`;
+          console.log(" 선택된 배경 ID:", selectedBackgroundId);
         }
-        console.log(" 선택된 배경:", selectedBackgroundId);
       }
     }
   });
