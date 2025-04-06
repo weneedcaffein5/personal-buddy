@@ -1,79 +1,132 @@
 package com.app.dto;
 
 public class TreeViewDTO {
-    private Long treeId;
-    private Long memberId;
-    private int positionX;
-    private int positionY;
-    private int apply;
-    private Long itemId;
+	private Long treeId;
+	private Long memberId;
+	private int positionX;
+	private int positionY;
+	private int apply;
+	private Long itemId;
+	private Long itemCount;
+	private String itemType;
+	private String itemName;
+	private String itemImgPath;
+	private String itemImgName;
+	
+	public TreeViewDTO() {;}
 
-    // 👉 이미지 경로용 필드 추가
-    private String itemImgPath;
-    private String itemImgName;
+	public TreeViewDTO(Long treeId, Long memberId, int positionX, int positionY, int apply, Long itemId, Long itemCount,
+			String itemType, String itemName, String itemImgPath, String itemImgName) {
+		super();
+		this.treeId = treeId;
+		this.memberId = memberId;
+		this.positionX = positionX;
+		this.positionY = positionY;
+		this.apply = apply;
+		this.itemId = itemId;
+		this.itemCount = itemCount;
+		this.itemType = itemType;
+		this.itemName = itemName;
+		this.itemImgPath = itemImgPath;
+		this.itemImgName = itemImgName;
+	}
 
-    // --- Getter & Setter ---
-    public Long getTreeId() {
-        return treeId;
-    }
+	@Override
+	public String toString() {
+		return "TreeViewDTO [treeId=" + treeId + ", memberId=" + memberId + ", positionX=" + positionX + ", positionY="
+				+ positionY + ", apply=" + apply + ", itemId=" + itemId + ", itemCount=" + itemCount + ", itemType="
+				+ itemType + ", itemName=" + itemName + ", itemImgPath=" + itemImgPath + ", itemImgName=" + itemImgName
+				+ "]";
+	}
 
-    public void setTreeId(Long treeId) {
-        this.treeId = treeId;
-    }
+	public Long getTreeId() {
+		return treeId;
+	}
 
-    public Long getMemberId() {
-        return memberId;
-    }
+	public void setTreeId(Long treeId) {
+		this.treeId = treeId;
+	}
 
-    public void setMemberId(Long memberId) {
-        this.memberId = memberId;
-    }
+	public Long getMemberId() {
+		return memberId;
+	}
 
-    public int getPositionX() {
-        return positionX;
-    }
+	public void setMemberId(Long memberId) {
+		this.memberId = memberId;
+	}
 
-    public void setPositionX(int positionX) {
-        this.positionX = positionX;
-    }
+	public int getPositionX() {
+		return positionX;
+	}
 
-    public int getPositionY() {
-        return positionY;
-    }
+	public void setPositionX(int positionX) {
+		this.positionX = positionX;
+	}
 
-    public void setPositionY(int positionY) {
-        this.positionY = positionY;
-    }
+	public int getPositionY() {
+		return positionY;
+	}
 
-    public int getApply() {
-        return apply;
-    }
+	public void setPositionY(int positionY) {
+		this.positionY = positionY;
+	}
 
-    public void setApply(int apply) {
-        this.apply = apply;
-    }
+	public int getApply() {
+		return apply;
+	}
 
-    public Long getItemId() {
-        return itemId;
-    }
+	public void setApply(int apply) {
+		this.apply = apply;
+	}
 
-    public void setItemId(Long itemId) {
-        this.itemId = itemId;
-    }
+	public Long getItemId() {
+		return itemId;
+	}
 
-    public String getItemImgPath() {
-        return itemImgPath;
-    }
+	public void setItemId(Long itemId) {
+		this.itemId = itemId;
+	}
 
-    public void setItemImgPath(String itemImgPath) {
-        this.itemImgPath = itemImgPath;
-    }
+	public Long getItemCount() {
+		return itemCount;
+	}
 
-    public String getItemImgName() {
-        return itemImgName;
-    }
+	public void setItemCount(Long itemCount) {
+		this.itemCount = itemCount;
+	}
 
-    public void setItemImgName(String itemImgName) {
-        this.itemImgName = itemImgName;
-    }
+	public String getItemType() {
+		return itemType;
+	}
+
+	public void setItemType(String itemType) {
+		this.itemType = itemType;
+	}
+
+	public String getItemName() {
+		return itemName;
+	}
+
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
+	}
+
+	public String getItemImgPath() {
+		return itemImgPath;
+	}
+
+	public void setItemImgPath(String itemImgPath) {
+		this.itemImgPath = itemImgPath;
+	}
+
+	public String getItemImgName() {
+		return itemImgName;
+	}
+
+	public void setItemImgName(String itemImgName) {
+		this.itemImgName = itemImgName;
+	}
+	
+	
+	
 }

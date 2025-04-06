@@ -1,5 +1,7 @@
 package com.app.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.app.dto.TreeViewDTO;
@@ -17,9 +19,18 @@ public class TreeDAO {
         return sqlSession.selectOne("contents.selectUserTree", memberId);
     }
     
-	public void updateUserTree(TreeViewDTO dto) {
-	    sqlSession.update("contents.updateUserTree", dto);
+	public void updateUserTree(TreeViewDTO treeViewDTO) {
+	    sqlSession.update("contents.updateUserTree", treeViewDTO);
 	}
+	
+	public List<TreeViewDTO> selectOwnedBackgroundAndTreeItems(Long memberId) {
+		return sqlSession.selectList("contents.selectOwnedBackgroundAndTreeItems", memberId);
+	}
+	
+	public List<TreeViewDTO> selectOwnedStickerItems(Long memberId) {
+		return sqlSession.selectList("contents.selectOwnedStickerItems", memberId);
+	}
+	// 회원의 트리에 붙은 스티커 목록
 	// 회원의 트리에 붙은 스티커 목록 조회 (R)
 	
 	// 성장나무 커스터마이징 (적용여부 변경) (U)
