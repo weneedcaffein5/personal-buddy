@@ -29,7 +29,7 @@ public class MemberJoinOkController implements Action {
 		MemberImgVO memberImg = (MemberImgVO)session.getAttribute("newMemberImage");
 		String directory = req.getServletContext().getRealPath("/assets/images/profile/");
 		int sizeLimit = 30 * 1024 * 1024; // 300mb
-
+				
 		File dir = new File(directory);
 		
 //		폴더가 없다면 만든다.
@@ -65,6 +65,10 @@ public class MemberJoinOkController implements Action {
 		
 		memberDAO.insert(member);
 		memberDAO.insertImg(memberImg);
+		
+		Long loginId = member.getId();
+		System.out.println(loginId);
+		session.setAttribute("loginId", loginId);
 		
 		result.setRedirect(true);
 		result.setPath("interest-main.interest");
