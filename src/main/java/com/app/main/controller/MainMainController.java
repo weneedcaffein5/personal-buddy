@@ -53,7 +53,7 @@ public class MainMainController implements Action {
 		
 		// 장소 추천
 		List<RecommendDTO> placeList = recommendList.stream()
-		    .filter(item -> "장소 추천".equals(item.getInterestBig()))
+		    .filter(item -> "여행".equals(item.getInterestBig()))
 		    .collect(Collectors.toList());
 
 		Collections.shuffle(placeList);
@@ -65,7 +65,7 @@ public class MainMainController implements Action {
 		String checkGender = memberProfileDTO.getMemberGender();
 		// 코디 추천
 		List<RecommendDTO> clothList = recommendList.stream()
-			.filter(item -> "코디 추천".equals(item.getInterestBig()))
+			.filter(item -> "패션".equals(item.getInterestBig()))
 			.filter(item -> item.getType() == null || item.getType().equals(checkGender))
 			.collect(Collectors.toList());
 

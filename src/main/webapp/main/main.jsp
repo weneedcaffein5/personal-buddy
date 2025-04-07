@@ -83,7 +83,7 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
 	    <div class="place-list">
 	      <p class="place-title1">여기 가보는 거 어때요?</p>
 	      <c:forEach var="recommend" items="${placeList}" varStatus="status">
-	        <c:if test="${recommend.interestBig eq '장소 추천'}">
+	        <c:if test="${recommend.interestBig eq '여행'}">
 	          <div class="place-item ${status.first ? 'active' : ''}">
 	            <div class="place-hover"></div>
 	            <img src="${pageContext.request.contextPath}/${recommend.img}" alt="${recommend.title}">
@@ -113,7 +113,7 @@ src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6c57aa7b913e5fba1d1a904f83fc5a
 	  <div class="cloth-grid">
 	    <!-- 코디 1 -->
 	    <c:forEach var="recommend" items="${clothList}">
-	    	<c:if test="${recommend.interestBig eq '코디 추천'}">
+	    	<c:if test="${recommend.interestBig eq '패션'}">
 			    <div class="cloth-card">
 			      <img src="${pageContext.request.contextPath}/${recommend.img}" alt="${recommend.title}">
 			      <h3 class="cloth-card-title">${recommend.title}</h3>
