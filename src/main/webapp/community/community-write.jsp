@@ -43,7 +43,7 @@
 							<option value="공유 일정">공유 일정</option>
 							<option value="자유 게시글">자유 게시글</option>
 							<option value="관심 일정">관심 일정</option>
-						</select> <span class="custom-arrow">∨</span>
+						</select> <img src="../assets/images/community/arrow.png" class="custom-arrow">
 					</div>
 				</div>
 
