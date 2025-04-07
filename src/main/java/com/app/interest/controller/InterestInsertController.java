@@ -20,8 +20,7 @@ public class InterestInsertController implements Action{
 		InterestVO interestVO = new InterestVO();
 		String category = "";
 		String[] categoryArray = null;
-//		Long loginId = (Long)session.getAttribute("loginId");
-		Long loginId = (long)1;
+		Long loginId = (Long)session.getAttribute("loginId");
 		
 		if (session.getAttribute("sub-category-ball-games") != null) {
 			category = (String)session.getAttribute("sub-category-ball-games");
@@ -133,7 +132,7 @@ public class InterestInsertController implements Action{
 		}
 		
 		result.setRedirect(true);
-		result.setPath("../main/main.jsp");
+		result.setPath("../main/main.main");
 		return result;
 	}
 }
