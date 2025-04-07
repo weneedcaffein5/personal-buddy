@@ -22,12 +22,14 @@ button {
   font-size: 14px;
 }
 
-.form {
+form {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 70px;
 }
+
+
 
 .title-container,
 .content-container {
@@ -118,6 +120,8 @@ label {
 
 .custom-arrow {
   position: absolute;
+  width: 20px;
+  height: 20px;
   top: 50%;
   right: 23px;
   transform: translateY(-50%);
